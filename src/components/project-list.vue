@@ -1,11 +1,12 @@
 
 <template>
   <div
-    class="projects-list"
+    class="project-list"
     v-on:mouseover="mouseOverListener"
     v-on:mouseout="mouseOutListener"
   >
     <h2
+      class="project-list__title"
       v-bind:style="{color: currentColor}"
     >
       {{title}}

@@ -1,13 +1,20 @@
 
 <template>
-  <navigation class="navigation">
-    <h2>Navigation<h2>
-      <ul>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Random</li>
-      </ul>
-  </navigation>
+  <nav class="navigation">
+    <h2 class="visually-hidden">Navigation</h2>
+    <a href="#">
+      Projects
+    </a>
+    <a href="#">
+      About
+    </a>
+    <a href="#">
+      Random
+    </a>
+    <a href="#">
+      Contact
+    </a>
+  </nav>
 </template>
 
 <script>

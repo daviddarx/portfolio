@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <div class="projects">
     <ProjectList
       class="projects-list"
       v-for="project in projects.main"
