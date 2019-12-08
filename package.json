@@ -1,0 +1,44 @@
+{
+  "name": "daviddarx-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio 2020",
+  "main": ".src/main.js",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.0",
+    "eslint": "^6.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "eslint-traverser": "^1.5.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-eslint": "^1.0.7",
+    "parcel-plugin-static-files-copy": "^2.2.1",
+    "parcel-plugin-svg-sprite": "^1.4.1",
+    "postcss-import": "^12.0.1",
+    "reset-css": "^4.0.1",
+    "sass": "^1.23.7",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.10.0",
+    "svgo": "^1.3.0",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "test": "npm run build",
+    "clean": "rm -rf .cache/ && rm -rf dist/",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --ext .js,.vue src",
+    "lint:css": "npm run lint:css:vue && npm run lint:css:scss",
+    "lint:css:vue": "stylelint 'src/**/*.vue'",
+    "lint:css:scss": "stylelint 'src/**/*.scss'",
+    "imageoptim": "svgo static/images/assets/ --pretty --enable removeDimensions --disable=removeViewBox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviddarx/portfolio.git"
+  },
+  "author": "David Darx",
+  "license": "ISC"
+}
