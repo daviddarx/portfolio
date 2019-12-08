@@ -1,33 +1,40 @@
 
 <template>
-  <div>
-    Je suis une app vue {{test2}} {{test1}}
+  <div
+    class="website-container"
+  >
+    <Logo></Logo>
+    <CustomNavigation></CustomNavigation>
+    <Projects></Projects>
   </div>
 </template>
 
 <script>
 
   import Vue from "vue";
+  import Logo from './components/logo.vue';
+  import CustomNavigation from './components/navigation.vue';
+  import Projects from './components/projects.vue';
 
   export default Vue.extend({
     components: {
+      Logo,
+      CustomNavigation,
+      Projects
     },
     data() {
       return {
-        test2: "test 2"
+        isDark: false
       }
     },
     computed: {
-      test1: function() {
-        return 'test 1';
-      },
     },
     mounted () {
       this.init();
     },
     methods: {
       init: function () {
-        console.log("test");
+        console.log("init app");
       }
     }
   });
