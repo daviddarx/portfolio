@@ -3,27 +3,32 @@
     {
       "title": "Project 01",
       "type": "Type",
-      "year": "2019"
+      "year": "2019",
+      "color": "orange"
     },
     {
       "title": "Project 02",
       "type": "Type",
-      "year": "2019"
+      "year": "2019",
+      "color": "pink"
     },
     {
       "title": "Project 03",
       "type": "Type",
-      "year": "2019"
+      "year": "2019",
+      "color": "violet"
     },
     {
       "title": "Project 04",
       "type": "Type",
-      "year": "2019"
+      "year": "2019",
+      "color": "blue"
     },
     {
       "title": "Project 05",
       "type": "Type",
-      "year": "2019"
+      "year": "2019",
+      "color": "red"
     }
   ]
 }

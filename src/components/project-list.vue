@@ -2,8 +2,12 @@
 <template>
   <div
     class="projects-list"
+    v-on:mouseover="mouseOverListener"
+    v-on:mouseout="mouseOutListener"
   >
-    <h2>
+    <h2
+      v-bind:style="{color: currentColor}"
+    >
       {{title}}
     </h2>
     <p>
@@ -18,17 +22,22 @@
     props: {
       title: String,
       type: String,
-      year: String
+      year: String,
+      color: String
     },
     data: function () {
       return {
+        currentColor: ""
       }
     },
     mounted () {
-      this.init();
     },
     methods: {
-      init: function () {
+      mouseOverListener: function(){
+        this.currentColor = this.color;
+      },
+      mouseOutListener: function(){
+        this.currentColor = "";
       }
     }
   }

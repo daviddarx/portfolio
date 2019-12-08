@@ -8,6 +8,7 @@
       v-bind:title="project.title"
       v-bind:type="project.type"
       v-bind:year="project.year"
+      v-bind:color="project.color"
     >
     </ProjectList>
   </div>
