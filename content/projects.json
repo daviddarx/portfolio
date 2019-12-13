@@ -1,30 +1,35 @@
 {
   "main": [
     {
+      "uid": "project-01",
       "title": "Project 01",
       "type": "Type",
       "year": "2019",
       "color": "orange"
     },
     {
+      "uid": "project-02",
       "title": "Project 02",
       "type": "Type",
       "year": "2019",
       "color": "pink"
     },
     {
+      "uid": "project-03",
       "title": "Project 03",
       "type": "Type",
       "year": "2019",
       "color": "violet"
     },
     {
+      "uid": "project-04",
       "title": "Project 04",
       "type": "Type",
       "year": "2019",
       "color": "blue"
     },
     {
+      "uid": "project-05",
       "title": "Project 05",
       "type": "Type",
       "year": "2019",

@@ -8,23 +8,21 @@
     <h2
       class="project-list__title"
       v-bind:style="{color: currentColor}"
+      v-on:click="$emit('open-project', datas.uid)"
     >
-      {{title}}
+      {{datas.title}}
     </h2>
     <p>
-      {{year}} – {{type}}
+      {{datas.year}} – {{datas.type}}
     <p>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'projectlist',
+    name: 'project-list',
     props: {
-      title: String,
-      type: String,
-      year: String,
-      color: String
+      datas: Object
     },
     data: function () {
       return {
@@ -35,7 +33,7 @@
     },
     methods: {
       mouseOverListener: function(){
-        this.currentColor = this.color;
+        this.currentColor = this.datas.color;
       },
       mouseOutListener: function(){
         this.currentColor = "";

@@ -1,16 +1,14 @@
 
 <template>
   <div class="projects">
-    <ProjectList
+    <project-list
       class="projects-list"
       v-for="project in projects.main"
       v-bind:key="project.title"
-      v-bind:title="project.title"
-      v-bind:type="project.type"
-      v-bind:year="project.year"
-      v-bind:color="project.color"
+      v-bind:datas="project"
+      v-on:open-project="openProject($event)"
     >
-    </ProjectList>
+    </project-list>
   </div>
 </template>
 
@@ -21,7 +19,7 @@
 
   export default Vue.extend({
     components: {
-      ProjectList
+      'project-list': ProjectList
     },
     data() {
       return {
@@ -33,7 +31,11 @@
     },
     methods: {
       init: function () {
+      },
+      openProject: function (event) {
+        console.log("open " + event );
       }
     }
   });
 </script>
+

@@ -3,9 +3,9 @@
   <div
     class="website-container"
   >
-    <Logo></Logo>
-    <CustomNavigation></CustomNavigation>
-    <Projects></Projects>
+    <logo></logo>
+    <custom-navigation></custom-navigation>
+    <projects></projects>
   </div>
 </template>
 
@@ -18,9 +18,9 @@
 
   export default Vue.extend({
     components: {
-      Logo,
-      CustomNavigation,
-      Projects
+      'logo': Logo,
+      'custom-navigation': CustomNavigation,
+      'projects': Projects
     },
     data() {
       return {
