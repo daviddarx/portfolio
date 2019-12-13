@@ -1,4 +1,26 @@
 
+@import url("https://hello.myfonts.net/count/3ab588");
+
+@font-face {
+  font-family: 'Mont-Book';
+  src: url('webfonts/3AB588_0_0.eot');
+  src: url('webfonts/3AB588_0_0.eot?#iefix') format('embedded-opentype'), url('webfonts/3AB588_0_0.woff2') format('woff2'), url('webfonts/3AB588_0_0.woff') format('woff'), url('webfonts/3AB588_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mont-Bold';
+  src: url('webfonts/3AB588_1_0.eot');
+  src: url('webfonts/3AB588_1_0.eot?#iefix') format('embedded-opentype'), url('webfonts/3AB588_1_0.woff2') format('woff2'), url('webfonts/3AB588_1_0.woff') format('woff'), url('webfonts/3AB588_1_0.ttf') format('truetype');
+}
+
+@mixin fontMontBook() {
+  font-family: Mont-Book, Arial, Helvetica, sans-serif;
+}
+
+@mixin fontMontBold() {
+  font-family: Mont-Bold, Arial, Helvetica, sans-serif;
+}
+
 @import 'reset-css/reset.css';
 
 * {
@@ -69,9 +91,14 @@ $breakpoints: (
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @include fontMontBold;
+}
+
 html {
+  @include fontMontBook;
+
   font-size: screen-ratio-mix(0.5, 1440, 22);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
