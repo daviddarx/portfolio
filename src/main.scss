@@ -91,18 +91,31 @@ $breakpoints: (
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include fontMontBold;
+
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: var(--s-text);
+  text-decoration: none;
 }
 
 html {
   @include fontMontBook;
 
-  font-size: screen-ratio-mix(0.5, 1440, 22);
+  font-size: screen-ratio-mix(0.8, 1440, 22);
 }
 
 body {
   font-size: var(--s-text);
+  color: var(--c-text);
   padding: var(--s-gutter);
 }
 
@@ -110,7 +123,7 @@ body {
   position: fixed;
   top: var(--s-gutter);
   left: var(--s-gutter);
-  transform: rotate(-90deg) translate(-100%, -20%);
+  transform: rotate(-90deg) translate(-99%, -20%);
   transform-origin: top left;
 
   &__el {
@@ -140,14 +153,27 @@ body {
 .projects {
   width: 50%;
   margin-left: 50%;
+  border-bottom: 1px solid black;
 }
 
 .project-list {
-  margin-bottom: calc(var(--s-gutter) * 0.25);
+  border-top: 1px solid black;
+  padding: 1em 0;
 
   &__title {
     font-size: var(--s-text-list);
+    transition: color ease-out 0.2s;
+    will-change: color;
   }
+
+  &__separation {
+    display: inline-block;
+    padding: 0 0.2em;
+  }
+}
+
+.project {
+
 }
 
 // helper classes
