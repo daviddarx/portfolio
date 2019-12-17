@@ -1,24 +1,17 @@
 
 <template>
-  <div class="project">
-    Swisscom - SwissTrustRoom
-  </div>
+  <project>
+    Contenu SwissTrustRoom
+  </project>
 </template>
 
 <script>
   import Vue from "vue";
+  import Project from '../components/project.vue';
 
   export default Vue.extend({
-    data() {
-      return {
-      }
-    },
-    mounted () {
-      this.init();
-    },
-    methods: {
-      init: function () {
-      }
+    components: {
+      'project': Project
     }
   });
 </script>

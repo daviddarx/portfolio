@@ -8,6 +8,9 @@
       v-bind:datas="project"
     >
     </project-list>
+    <div class="credits">
+      Frontend: David Darx – Copyright © 2019
+    </div>
   </div>
 </template>
 

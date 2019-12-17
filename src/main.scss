@@ -79,11 +79,15 @@ $breakpoints: (
 
 :root {
   //colors
-  --c-text: #000;
+  --c-text: rgba(0, 0, 0, 1);
+  --c-text-inverted: rgba(255, 255, 255, 0.9);
+  --c-lines: rgba(0, 0, 0, 1);
+  --c-lines-inverted: rgba(255, 255, 255, 0.9);
 
   //sizes
   --s-text: 2.7rem;
-  --s-text-list: calc(var(--s-text) * 2);
+  --s-text-h1: calc(var(--s-text) * 3);
+  --s-text-h2: calc(var(--s-text) * 2);
   --s-gutter: 8vw;
 
   //eases
@@ -116,7 +120,6 @@ html {
 body {
   font-size: var(--s-text);
   color: var(--c-text);
-  padding: var(--s-gutter);
 }
 
 .logo {
@@ -130,12 +133,14 @@ body {
     display: block;
     width: auto;
     height: 5vw;
+    fill: var(--c-text);
 
     &--black {
       position: absolute;
       opacity: 0;
       transition: opacity ease-out 0.2s;
       will-change: opacity;
+      fill: black;
 
       :hover > & {
         opacity: 1;
@@ -153,15 +158,17 @@ body {
 .projects {
   width: 50%;
   margin-left: 50%;
-  border-bottom: 1px solid black;
+  margin-top: var(--s-gutter);
+  border-top: 1px solid var(--c-lines);
 }
 
 .project-list {
-  border-top: 1px solid black;
+  border-bottom: 1px solid var(--c-lines);
   padding: 1em 0;
+  padding-right: var(--s-gutter);
 
   &__title {
-    font-size: var(--s-text-list);
+    font-size: var(--s-text-h2);
     transition: color ease-out 0.2s;
     will-change: color;
   }
@@ -173,7 +180,90 @@ body {
 }
 
 .project {
+  position: relative;
+  z-index: 100;
 
+  &.is-inverted {
+    color: var(--c-text-inverted);
+  }
+
+  &__header {
+    padding: var(--s-gutter);
+  }
+
+  &__title {
+    font-size: var(--s-text-h1);
+  }
+
+  &__content {
+    min-height: 20vh;
+  }
+
+  &__pagination {
+    margin-top: var(--s-gutter);
+  }
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.close {
+  --s-dims: 2em;
+
+  position: fixed;
+  top: var(--s-gutter);
+  right: var(--s-gutter);
+  width: var(--s-dims);
+  height: var(--s-dims);
+  transform: rotate(45deg);
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: var(--s-dims);
+    height: 1px;
+    background-color: var(--c-lines);
+
+    .is-inverted & {
+      background-color: var(--c-lines-inverted);
+    }
+
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.pagination {
+  color: var(--c-text-inverted);
+  background-color: var(--c-text);
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    box-sizing: border-box;
+    padding: calc(var(--s-gutter) * 2) var(--s-gutter);
+
+    &:first-child {
+      border-right: 1px solid var(--c-lines-inverted);
+    }
+  }
+}
+
+.credits {
+  margin-top: var(--s-gutter);
+  padding-right: var(--s-gutter);
 }
 
 // helper classes

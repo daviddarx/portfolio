@@ -2,18 +2,28 @@
   "routesPath":"/projects/",
   "main": [
     {
+      "uid": "seed",
+      "title": "Seed Communication",
+      "type": "Digital-Auftritt",
+      "year": "2018",
+      "color": "#d9d930",
+      "inverted": false
+    },
+    {
       "uid": "swisstrustroom",
       "title": "Swisscom SwissTrustRoom",
       "type": "Produkt One-Pager",
       "year": "2018",
-      "color": "#1781e3"
+      "color": "#1b548b", // 203072 // 001155 // 1781e3
+      "inverted": true
     },
     {
       "uid": "pom",
       "title": "pom+Consulting",
       "type": "Digital-Auftritt",
       "year": "2017",
-      "color": "#13d96b"
+      "color": "#13d96b",
+      "inverted": false
     }
   ]
 }
