@@ -7,6 +7,7 @@
   >
     <router-link
       v-bind:to="route"
+      class="project-list__link"
     >
       <h2
         class="project-list__title"
@@ -14,11 +15,13 @@
       >
         {{datas.title}}
       </h2>
-      <p>
+      <p
+        class="project-list__detail"
+      >
         {{datas.year}}
         <span class="project-list__separation">–</span>
         {{datas.type}}
-      <p>
+      </p>
     </router-link>
   </div>
 </template>

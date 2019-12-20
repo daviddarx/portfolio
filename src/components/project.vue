@@ -84,7 +84,7 @@
       this.title = projects.main[this.indexCurrent].title;
       this.year = projects.main[this.indexCurrent].year;
       this.type = projects.main[this.indexCurrent].type;
-      this.color = projects.main[this.indexCurrent].color;
+      this.color = projects.main[this.indexCurrent].colorCase;
       this.isInverted = projects.main[this.indexCurrent].inverted;
     }
   }

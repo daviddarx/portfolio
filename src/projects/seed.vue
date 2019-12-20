@@ -1,7 +1,7 @@
 
 <template>
   <project>
-    Contenu Seed
+    <!-- Contenu Seed -->
   </project>
 </template>
 

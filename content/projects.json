@@ -7,6 +7,7 @@
       "type": "Digital-Auftritt",
       "year": "2018",
       "color": "#d9d930",
+      "colorCase": "#d9d930",
       "inverted": false
     },
     {
@@ -14,7 +15,8 @@
       "title": "Swisscom SwissTrustRoom",
       "type": "Produkt One-Pager",
       "year": "2018",
-      "color": "#1b548b", // 203072 // 001155 // 1781e3
+      "color": "#3a86d0",
+      "colorCase": "#1b548b",
       "inverted": true
     },
     {
@@ -23,6 +25,7 @@
       "type": "Digital-Auftritt",
       "year": "2017",
       "color": "#13d96b",
+      "colorCase": "#13d96b",
       "inverted": false
     }
   ]

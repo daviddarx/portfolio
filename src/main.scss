@@ -52,6 +52,29 @@ $breakpoints: (
   }
 }
 
+@keyframes twerk {
+  10%,
+  90% {
+    transform: translate3d(calc(var(--s-twerk) * -1), calc(var(--s-twerk) * 1), 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(calc(var(--s-twerk) * -1), calc(var(--s-twerk) * 1), 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(calc(var(--s-twerk) * 1), calc(var(--s-twerk) * -1), 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(calc(var(--s-twerk) * 1), calc(var(--s-twerk) * 1), 0);
+  }
+}
+
 ///
 /// screen-ratio-mix: Mixes the base-font-size with a given view-width ratio
 ///
@@ -86,9 +109,13 @@ $breakpoints: (
 
   //sizes
   --s-text: 2.7rem;
+  --s-text-small: calc(var(--s-text) * 0.75);
   --s-text-h1: calc(var(--s-text) * 3);
   --s-text-h2: calc(var(--s-text) * 2);
-  --s-gutter: 8vw;
+  --s-gutter: 8vh;
+  --s-logo: 5vh;
+  --s-lines: 2px;
+  --s-twerk: 0.5px;
 
   //eases
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -103,7 +130,7 @@ h5,
 h6 {
   @include fontMontBold;
 
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -123,54 +150,165 @@ body {
 }
 
 .logo {
+  $root: #{&};
+
   position: fixed;
   top: var(--s-gutter);
   left: var(--s-gutter);
   transform: rotate(-90deg) translate(-99%, -20%);
   transform-origin: top left;
 
+  &__container {
+    &:hover {
+      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    }
+  }
+
+  &__mask {
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 100%;
+    transform: translateX(-100%);
+    overflow: hidden;
+    transition: width var(--e-inout) 0.5s;
+
+    #{$root}:hover & {
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+  }
+
   &__el {
     display: block;
     width: auto;
-    height: 5vw;
+    height: var(--s-logo);
     fill: var(--c-text);
 
     &--black {
-      position: absolute;
-      opacity: 0;
-      transition: opacity ease-out 0.2s;
-      will-change: opacity;
       fill: black;
+      position: absolute;
+      right: 0;
 
-      :hover > & {
-        opacity: 1;
+      #{$root}:hover & {
+        position: relative;
+        right: 0;
       }
     }
   }
 }
 
 .navigation {
+  @include fontMontBold;
+
   position: fixed;
   bottom: var(--s-gutter);
   left: var(--s-gutter);
+  font-size: 1.5vh;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transform: rotate(-90deg) translate(0, 100%);
+  transform-origin: bottom left;
+
+  &__link {
+    --s-padding: -0.3em;
+
+    display: inline-block;
+    position: relative;
+    margin-right: 3vh;
+    transition: color ease-out 0.25s;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: var(--s-padding);
+      bottom: calc(var(--s-padding) + 0.15em);
+      right: var(--s-padding);
+      left: var(--s-padding);
+      background-color: var(--c-text);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: top right;
+      transition: transform var(--e-inout) 0.25s;
+      will-change: transform;
+    }
+
+    &::after {
+      left: 0;
+      right: 0;
+      top: 1em;
+      bottom: auto;
+      height: var(--s-lines);
+    }
+
+    &:hover {
+      color: white;
+      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+
+      &::before {
+        transform: none;
+        transform-origin: top left;
+      }
+    }
+
+    &.is-current {
+      cursor: default;
+
+      &::before {
+        transform-origin: top right;
+      }
+
+      &::after {
+        transform: none;
+      }
+
+      &:hover {
+        color: var(--c-text);
+        animation: none;
+
+        &::before {
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
 }
 
 .projects {
   width: 50%;
   margin-left: 50%;
   margin-top: var(--s-gutter);
-  border-top: 1px solid var(--c-lines);
+  border-top: var(--s-lines) solid var(--c-lines);
 }
 
 .project-list {
-  border-bottom: 1px solid var(--c-lines);
-  padding: 1em 0;
-  padding-right: var(--s-gutter);
+  $root: #{&};
+
+  border-bottom: var(--s-lines) solid var(--c-lines);
+
+  &__link {
+    display: block;
+    padding: 2em 0;
+    padding-right: var(--s-gutter);
+  }
 
   &__title {
     font-size: var(--s-text-h2);
+    padding-bottom: 0.3em;
     transition: color ease-out 0.2s;
     will-change: color;
+
+    #{$root}:hover & {
+      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    }
+  }
+
+  &__detail {
+    font-size: var(--s-text-small);
   }
 
   &__separation {
@@ -223,6 +361,10 @@ body {
   height: var(--s-dims);
   transform: rotate(45deg);
 
+  &::after {
+    transform: rotate(90deg);
+  }
+
   &::before,
   &::after {
     content: "";
@@ -230,40 +372,47 @@ body {
     position: absolute;
     top: 50%;
     width: var(--s-dims);
-    height: 1px;
+    height: var(--s-lines);
     background-color: var(--c-lines);
 
     .is-inverted & {
       background-color: var(--c-lines-inverted);
     }
-
-  }
-
-  &::after {
-    transform: rotate(90deg);
   }
 }
 
 .pagination {
   color: var(--c-text-inverted);
-  background-color: var(--c-text);
 
   &__link {
     display: inline-block;
     text-align: center;
     width: 50%;
+    background-color: var(--c-text);
     box-sizing: border-box;
     padding: calc(var(--s-gutter) * 2) var(--s-gutter);
 
     &:first-child {
-      border-right: 1px solid var(--c-lines-inverted);
+      width: calc(50% - var(--s-lines));
+      margin-right: var(--s-lines);
     }
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: var(--s-text-small);
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    @include fontMontBold();
   }
 }
 
 .credits {
-  margin-top: var(--s-gutter);
+  font-size: calc(var(--s-text-small) * 0.5);
   padding-right: var(--s-gutter);
+  margin: var(--s-gutter) 0;
 }
 
 // helper classes

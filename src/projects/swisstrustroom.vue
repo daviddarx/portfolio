@@ -1,7 +1,7 @@
 
 <template>
   <project>
-    Contenu SwissTrustRoom
+    <!-- Contenu SwissTrustRoom -->
   </project>
 </template>
 

@@ -9,7 +9,7 @@
     >
     </project-list>
     <div class="credits">
-      Frontend: David Darx – Copyright © 2019
+      Copyright © 2019 - Frontend: David Darx
     </div>
   </div>
 </template>

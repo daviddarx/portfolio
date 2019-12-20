@@ -5,6 +5,7 @@ import Contact from './components/contact.vue';
 import * as ProjectsComponents from './projects/*.vue';
 import * as ProjectsDatas from '../content/projects.json';
 
+//basic routes
 let routes = [
   {
     path: '/',
@@ -32,6 +33,7 @@ let routes = [
   }
 ];
 
+//dynamically create routes for projects
 ProjectsDatas.main.forEach(project => {
   routes.push(
     {

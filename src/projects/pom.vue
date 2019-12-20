@@ -1,7 +1,7 @@
 
 <template>
   <project>
-    Contenu Pom
+    <!-- Contenu Pom -->
   </project>
 </template>
 
