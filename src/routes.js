@@ -14,6 +14,7 @@ let routes = [
   {
     label: 'Projects',
     path: '/projects',
+    name: 'projects',
     component: Projects
   },
   {

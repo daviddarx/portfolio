@@ -6,7 +6,6 @@ Vue.use(VueRouter);
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
-    // savedPosition is only available for popstate navigations.
     return savedPosition;
   } else {
     const position = {};
@@ -14,25 +13,17 @@ const scrollBehavior = (to, from, savedPosition) => {
     position.x = 0;
     position.y = 0;
 
-    // if has a hash
-    if (to.hash) {
-      position.selector = to.hash;
-
-      //async scroll to avoid bug in safari
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(position)
-        }, 100);
-      });
-    } else {
-      return position;
+    if (to.name == 'projects' && window.scrollPosition) {
+      position.y = window.scrollPosition;
     }
+
+    return position;
   }
 }
 
 const router = new VueRouter({
-  scrollBehavior,
   routes,
+  scrollBehavior,
   mode: 'history',
   base: '/',
   linkActiveClass: 'is-current',

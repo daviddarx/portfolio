@@ -40,7 +40,7 @@
     },
     mounted () {
       this.$router.afterEach(this.afterEach);
-      requestAnimationFrame(this.displayProjects);
+      this.displayProjects();
     },
     methods: {
       afterEach: function (to, from) {
