@@ -6,6 +6,7 @@
     <logo></logo>
     <custom-navigation></custom-navigation>
     <router-view></router-view>
+    <transition-backround></transition-backround>
   </div>
 </template>
 
@@ -14,11 +15,13 @@
   import Vue from "vue";
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
+  import TransitionBackground from './components/transition-background.vue';
 
   export default Vue.extend({
     components: {
       'logo': Logo,
       'custom-navigation': CustomNavigation,
+      'transition-backround': TransitionBackground,
     },
     data() {
       return {
@@ -28,11 +31,8 @@
     computed: {
     },
     mounted () {
-      this.init();
     },
     methods: {
-      init: function () {
-      }
     }
   });
 </script>

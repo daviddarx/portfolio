@@ -2,27 +2,30 @@
 <template>
   <div
     class="project"
-    v-bind:class="{ 'is-inverted': this.isInverted }"
+    v-bind:class="{ 'is-inverted': this.isInverted, 'is-displayed': this.isDisplayed }"
+    v-bind:style="{backgroundColor: this.color}"
   >
     <router-link
       class="close"
       to="/"
     ></router-link>
 
-    <div class="project__header">
-      <h1 class="project__title">
-        {{this.title}}
-      </h1>
-      <p class="project__date">
-        {{this.year}}
-      </p>
-      <p class="project__type">
-        {{this.type}}
-      </p>
-    </div>
+    <div class="project__container">
+      <div class="project__header">
+        <h1 class="project__title project--animate-in">
+          {{this.title}}
+        </h1>
+        <p class="project__date project--animate-in">
+          {{this.year}}
+        </p>
+        <p class="project__type project--animate-in">
+          {{this.type}}
+        </p>
+      </div>
 
-    <div class="project__content">
-      <slot></slot>
+      <div class="project__content">
+        <slot></slot>
+      </div>
     </div>
 
     <project-pagination
@@ -33,12 +36,6 @@
       :title-next="this.titleNext"
     >
     </project-pagination>
-
-    <div
-      class="project__background"
-      v-bind:style="{backgroundColor: this.color}"
-    >
-    </div>
   </div>
 </template>
 
@@ -65,7 +62,8 @@
         year: '',
         type: '',
         color: '',
-        isInverted: false
+        isInverted: false,
+        isDisplayed : false
       }
     },
     mounted () {
@@ -86,6 +84,13 @@
       this.type = projects.main[this.indexCurrent].type;
       this.color = projects.main[this.indexCurrent].colorCase;
       this.isInverted = projects.main[this.indexCurrent].inverted;
+
+      requestAnimationFrame(this.displayProject);
+    },
+    methods: {
+      displayProject: function() {
+        this.isDisplayed = true;
+      }
     }
   }
 </script>

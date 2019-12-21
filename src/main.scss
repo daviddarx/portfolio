@@ -282,13 +282,16 @@ body {
   width: 50%;
   margin-left: 50%;
   margin-top: var(--s-gutter);
-  border-top: var(--s-lines) solid var(--c-lines);
 }
 
 .project-list {
   $root: #{&};
 
   border-bottom: var(--s-lines) solid var(--c-lines);
+
+  &:first-child {
+    border-top: var(--s-lines) solid var(--c-lines);
+  }
 
   &__link {
     display: block;
@@ -318,11 +321,39 @@ body {
 }
 
 .project {
+  --d-delay: 0s;
+  --d-delay-step: 0.1s;
+  --d-in-opacity: 1s;
+  --e-opacity: ease;
+  --d-in-transform: 1s;
+  --e-transform: var(--e-out);
+  --delay-id: 0;
+
+  $root: #{&};
+
   position: relative;
   z-index: 100;
+  transition: opacity ease-out 0.3s;
 
   &.is-inverted {
     color: var(--c-text-inverted);
+  }
+
+  &--animate-in {
+    opacity: 0;
+    transform: translateY(10vh);
+    transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
+    transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
+    will-change: opacity, transform;
+
+    #{$root}.is-displayed & {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  &__container {
+    min-height: 100vh;
   }
 
   &__header {
@@ -331,10 +362,15 @@ body {
 
   &__title {
     font-size: var(--s-text-h1);
+    padding-right: var(--s-gutter);
   }
 
-  &__content {
-    min-height: 20vh;
+  &__date {
+    --delay-id: 1;
+  }
+
+  &__type {
+    --delay-id: 2;
   }
 
   &__pagination {
@@ -355,6 +391,7 @@ body {
   --s-dims: 2em;
 
   position: fixed;
+  z-index: 1000;
   top: var(--s-gutter);
   right: var(--s-gutter);
   width: var(--s-dims);
@@ -413,6 +450,56 @@ body {
   font-size: calc(var(--s-text-small) * 0.5);
   padding-right: var(--s-gutter);
   margin: var(--s-gutter) 0;
+}
+
+.transition-background {
+  &__el {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    background-color: white;
+  }
+}
+
+.transition-wave-enter-active {
+  transition: transform var(--e-inout) 0.5s;
+  transform-origin: top left;
+}
+
+.transition-wave-enter,
+.transition-wave-leave-to {
+  transform: scaleY(0);
+}
+
+.transition-logo-enter-active {
+  transition: opacity var(--e-inout) 0.5s;
+}
+
+.transition-logo-enter,
+.transition-logo-leave-to {
+  opacity: 0;
+}
+
+.transition-nav-enter-active {
+  transition: opacity var(--e-inout) 0.5s;
+}
+
+.transition-nav-enter,
+.transition-nav-leave-to {
+  opacity: 0;
+}
+
+.transition-projects-enter-active {
+  transition: opacity var(--e-inout) 0.5s;
+}
+
+.transition-projects-enter,
+.transition-projects-leave-to {
+  opacity: 0;
 }
 
 // helper classes
