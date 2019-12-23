@@ -52,9 +52,7 @@
           this.isNormalPage = false;
         } else {
           this.color = undefined;
-          if (to.name != 'projects') {
-           this.isNormalPage = true;
-          }
+          this.isNormalPage = true;
         }
         this.isWaveInDisplayed = true;
         this.nextFunction = next;
