@@ -157,6 +157,7 @@ body {
   left: var(--s-gutter);
   transform: rotate(-90deg) translate(-99%, -20%);
   transform-origin: top left;
+  will-change: transform;
 
   &__container {
     &:hover {
