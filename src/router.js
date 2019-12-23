@@ -13,7 +13,7 @@ const scrollBehavior = (to, from, savedPosition) => {
     position.x = 0;
     position.y = 0;
 
-    if (to.name == 'projects' && window.scrollPosition) {
+    if (to.name == 'projects' && window.scrollPosition && from.name.split('project').length!=1) {
       position.y = window.scrollPosition;
     }
 
