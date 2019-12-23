@@ -45,7 +45,7 @@ ProjectsDatas.main.forEach(project => {
       path: ProjectsDatas.routesPath + project.uid,
       name: 'project-'+project.uid,
       component: ProjectsComponents[project.uid].default,
-      meta: { color: project.colorCase }
+      meta: { color: project.colorCase, isNavHidden: true }
     }
   );
 });

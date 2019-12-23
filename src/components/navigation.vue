@@ -55,12 +55,14 @@
       afterEach: function (to, from) {
         if (to.meta.color) {
           this.isDisplayed = false;
-        }else {
+        } else {
           this.isDisplayed = true;
         }
       },
       displayNav: function () {
-        this.isDisplayed = true;
+        if(this.$route.meta.isNavHidden != true){
+          this.isDisplayed = true;
+        }
       }
     }
   });
