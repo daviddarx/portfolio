@@ -1,7 +1,9 @@
 
 <template>
-  <div class="about">
-    Contact
+  <div class="contact">
+    <div class="content-temp">
+      Kontakt
+    </div>
   </div>
 </template>
 
@@ -14,11 +16,8 @@
       }
     },
     mounted () {
-      this.init();
     },
     methods: {
-      init: function () {
-      }
     }
   });
 </script>

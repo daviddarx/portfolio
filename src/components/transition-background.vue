@@ -4,14 +4,25 @@
     class="transition-background"
   >
     <transition
-      name="transition-wave"
-      v-on:after-enter="afterEnter"
+      name="transition-wave-in"
+      v-on:after-enter="waveInAfterEnter"
     >
       <div
-        class="transition-background__el"
-        v-if="this.isDisplayed"
+        class="transition-background__el-in"
+        v-if="this.isWaveInDisplayed"
         v-bind:style="{backgroundColor: this.color}"
-        v-bind:class="{ 'animate-out': this.isAnimatingOut}"
+        v-bind:class="{ 'is-normal-page': this.isNormalPage}"
+      >
+      </div>
+    </transition>
+     <transition
+      name="transition-wave-out"
+      v-on:after-enter="waveOutAfterEnter"
+    >
+      <div
+        class="transition-background__el-out"
+        v-if="this.isWaveOutDisplayed"
+        v-bind:class="{ 'is-normal-page': this.isNormalPage}"
       >
       </div>
     </transition>
@@ -25,8 +36,9 @@
     data() {
       return {
         color: '#ff0000',
-        isDisplayed: false,
-        isAnimatingIn: false,
+        isWaveInDisplayed: false,
+        isWaveOutDisplayed: false,
+        isNormalPage: false,
         nextFunction: undefined,
       }
     },
@@ -37,17 +49,25 @@
       beforeEach: function (to, from, next) {
         if(to.meta.color){
           this.color = to.meta.color;
-          this.isAnimatingOut = false;
+          this.isNormalPage = false;
         } else {
           this.color = undefined;
-          this.isAnimatingOut = true;
+          if (to.name != 'projects') {
+           this.isNormalPage = true;
+          }
         }
-        this.isDisplayed = true;
+        this.isWaveInDisplayed = true;
         this.nextFunction = next;
       },
-      afterEnter: function() {
-        this.isDisplayed = false;
+      waveInAfterEnter: function() {
+        this.isWaveInDisplayed = false;
         this.nextFunction();
+        if (this.isNormalPage == true) {
+          this.isWaveOutDisplayed = true;
+        }
+      },
+      waveOutAfterEnter: function() {
+        this.isWaveOutDisplayed = false;
       }
     }
   });

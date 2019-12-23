@@ -1,7 +1,9 @@
 
 <template>
-  <div class="about">
-    Random
+  <div class="misc">
+    <div class="content-temp">
+      Kunterbunt
+    </div>
   </div>
 </template>
 
@@ -14,11 +16,8 @@
       }
     },
     mounted () {
-      this.init();
     },
     methods: {
-      init: function () {
-      }
     }
   });
 </script>

@@ -204,6 +204,7 @@ body {
   @include fontMontBold;
 
   position: fixed;
+  z-index: 999;
   bottom: var(--s-gutter);
   left: var(--s-gutter);
   font-size: 1.5vh;
@@ -276,6 +277,12 @@ body {
       }
     }
   }
+}
+
+.content-temp {
+  width: 50%;
+  margin-left: 50%;
+  margin-top: var(--s-gutter);
 }
 
 .projects {
@@ -453,7 +460,8 @@ body {
 }
 
 .transition-background {
-  &__el {
+  &__el-in,
+  &__el-out {
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -462,17 +470,36 @@ body {
     height: 100%;
     will-change: transform;
     background-color: white;
+
+    &.is-normal-page {
+      background-color: black;
+      z-index: 998;
+    }
   }
 }
 
-.transition-wave-enter-active {
+.transition-wave-in-enter-active {
   transition: transform var(--e-inout) 0.5s;
   transform-origin: top left;
 }
 
-.transition-wave-enter,
-.transition-wave-leave-to {
+.transition-wave-in-enter,
+.transition-wave-in-leave-to {
   transform: scaleY(0);
+}
+
+.transition-wave-out-enter-active {
+  transform: scaleY(0);
+  transition: transform var(--e-inout) 0.5s;
+  transform-origin: bottom left;
+}
+
+.transition-wave-out-leave-active {
+  transform: scaleY(0);
+}
+
+.transition-wave-out-enter {
+  transform: scaleY(1);
 }
 
 .transition-logo-enter-active {

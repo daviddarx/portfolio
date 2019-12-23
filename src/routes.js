@@ -20,16 +20,19 @@ let routes = [
   {
     label: 'Misc',
     path: '/misc',
+    name: 'misc',
     component: Misc
   },
   {
     label: 'Info',
     path: '/info',
+    name: 'info',
     component: Info
   },
   {
     label: 'Contact',
     path: '/contact',
+    name: 'contact',
     component: Contact
   }
 ];
@@ -40,6 +43,7 @@ ProjectsDatas.main.forEach(project => {
     {
       label: project.uid,
       path: ProjectsDatas.routesPath + project.uid,
+      name: 'project-'+project.uid,
       component: ProjectsComponents[project.uid].default,
       meta: { color: project.colorCase }
     }

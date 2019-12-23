@@ -4,7 +4,7 @@
     class="logo"
   >
     <transition
-      name="transition-nav"
+      name="transition-logo"
     >
       <div
         class="logo__container"
