@@ -2,7 +2,7 @@
 <template>
   <nav class="navigation">
     <transition
-      name="transition-logo"
+      name="transition-nav"
     >
       <div
         class="navigation__container"
