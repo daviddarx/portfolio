@@ -36,10 +36,6 @@
       beforeEach: function (to, from, next) {
         if (from.name == 'projects') {
           window.scrollPosition = window.pageYOffset;
-        } else {
-          if (to.name != 'projects') {
-            window.scrollPosition = undefined;
-          }
         }
         next();
       },
