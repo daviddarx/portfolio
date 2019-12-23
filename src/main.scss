@@ -507,29 +507,6 @@ body {
   transition: opacity var(--e-inout) 0.5s;
 }
 
-.transition-logo-enter,
-.transition-logo-leave-to {
-  opacity: 0;
-}
-
-.transition-nav-enter-active {
-  transition: opacity var(--e-inout) 0.5s;
-}
-
-.transition-nav-enter,
-.transition-nav-leave-to {
-  opacity: 0;
-}
-
-.transition-projects-enter-active {
-  transition: opacity var(--e-inout) 0.5s;
-}
-
-.transition-projects-enter,
-.transition-projects-leave-to {
-  opacity: 0;
-}
-
 // helper classes
 .visually-hidden {
   position: absolute !important;

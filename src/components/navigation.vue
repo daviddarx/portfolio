@@ -1,40 +1,36 @@
 
 <template>
   <nav class="navigation">
-    <transition
-      name="transition-nav"
+    <div
+      class="navigation__container"
+      v-if="this.isDisplayed"
     >
-      <div
-        class="navigation__container"
-        v-if="this.isDisplayed"
+      <h2 class="visually-hidden">Navigation</h2>
+      <router-link
+        class="navigation__link"
+        to="/projects"
       >
-        <h2 class="visually-hidden">Navigation</h2>
-        <router-link
-          class="navigation__link"
-          to="/projects"
-        >
-          Projekte
-        </router-link>
-        <router-link
-          class="navigation__link"
-          to="/misc"
-        >
-          Kunterbunt
-        </router-link>
-        <router-link
-          class="navigation__link"
-          to="/info"
-        >
-          Info
-        </router-link>
-        <router-link
-          class="navigation__link"
-          to="/contact"
-        >
-          Kontakt
-        </router-link>
-      </div>
-    </transition>
+        Projekte
+      </router-link>
+      <router-link
+        class="navigation__link"
+        to="/misc"
+      >
+        Kunterbunt
+      </router-link>
+      <router-link
+        class="navigation__link"
+        to="/info"
+      >
+        Info
+      </router-link>
+      <router-link
+        class="navigation__link"
+        to="/contact"
+      >
+        Kontakt
+      </router-link>
+    </div>
   </nav>
 </template>
 

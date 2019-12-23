@@ -1,25 +1,16 @@
 
 <template>
   <div class="projects">
-    <transition
-      name="transition-projects"
+    <project-list
+      class="projects-list"
+      v-for="project in projects.main"
+      v-bind:key="project.title"
+      v-bind:datas="project"
     >
-      <div
-        class="projects__container"
-        v-if="this.isDisplayed"
-      >
-        <project-list
-          class="projects-list"
-          v-for="project in projects.main"
-          v-bind:key="project.title"
-          v-bind:datas="project"
-        >
-        </project-list>
-        <div class="credits">
-          Copyright © 2019 - Frontend von David Darx
-        </div>
-      </div>
-    </transition>
+    </project-list>
+    <div class="credits">
+      Copyright © 2019 - Frontend von David Darx
+    </div>
   </div>
 </template>
 
@@ -34,25 +25,12 @@
     },
     data() {
       return {
-        projects: projects,
-        isDisplayed: false
+        projects: projects
       }
     },
     mounted () {
-      this.$router.afterEach(this.afterEach);
-      this.displayProjects();
     },
     methods: {
-      afterEach: function (to, from) {
-        if (to.meta.color) {
-          this.isDisplayed = false;
-        }else {
-          this.isDisplayed = true;
-        }
-      },
-      displayProjects: function () {
-        this.isDisplayed = true;
-      }
     }
   });
 </script>
