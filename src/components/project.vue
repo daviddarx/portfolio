@@ -12,13 +12,13 @@
 
     <div class="project__container">
       <div class="project__header">
-        <h1 class="project__title project--animate-in">
+        <h1 class="project__title animate-in">
           {{this.title}}
         </h1>
-        <p class="project__date project--animate-in">
+        <p class="project__date animate-in animate-in__s1">
           {{this.year}}
         </p>
-        <p class="project__type project--animate-in">
+        <p class="project__type animate-in animate-in__s2">
           {{this.type}}
         </p>
       </div>

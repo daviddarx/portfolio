@@ -346,14 +346,6 @@ body {
 }
 
 .project {
-  --d-delay: 0s;
-  --d-delay-step: 0.1s;
-  --d-in-opacity: 1s;
-  --e-opacity: ease;
-  --d-in-transform: 1s;
-  --e-transform: var(--e-out);
-  --delay-id: 0;
-
   $root: #{&};
 
   position: relative;
@@ -362,19 +354,6 @@ body {
 
   &.is-inverted {
     color: var(--c-text-inverted);
-  }
-
-  &--animate-in {
-    opacity: 0;
-    transform: translateY(var(--s-translateYAnimateIn));
-    transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
-    transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
-    will-change: opacity, transform;
-
-    #{$root}.is-displayed & {
-      opacity: 1;
-      transform: none;
-    }
   }
 
   &__container {
@@ -388,14 +367,6 @@ body {
   &__title {
     font-size: var(--s-text-h1);
     padding-right: var(--s-gutter);
-  }
-
-  &__date {
-    --delay-id: 1;
-  }
-
-  &__type {
-    --delay-id: 2;
   }
 
   &__pagination {
@@ -492,6 +463,33 @@ body {
     &.is-normal-page {
       background-color: black;
       z-index: 998;
+    }
+  }
+}
+
+.animate-in {
+  --d-delay: 0.25s;
+  --d-delay-step: 0.2s;
+  --d-in-opacity: 0.75s;
+  --e-opacity: ease;
+  --d-in-transform: 1s;
+  --e-transform: var(--e-out);
+  --delay-id: 0;
+
+  opacity: 0;
+  transform: translateY(var(--s-translateYAnimateIn));
+  transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
+  transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
+  will-change: opacity, transform;
+
+  .is-displayed & {
+    opacity: 1;
+    transform: none;
+  }
+
+  @for $i from 1 to 10 {
+    &__s#{$i} {
+      --delay-id: #{$i};
     }
   }
 }
