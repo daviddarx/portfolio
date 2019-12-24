@@ -46,7 +46,7 @@
       //without having trouble with first scroll position of app
       this.height = getComputedStyle(this.$refs.projects).height;
 
-      setTimeout(this.animateProjectsIn, 150);
+      setTimeout(this.animateProjectsIn, 100);
     },
     methods: {
       animateProjectsIn: function () {
@@ -56,7 +56,7 @@
         setTimeout(() => {
           this.isTranslated = false;
           this.height = 'auto';
-        }, 100);
+        }, 50);
       }
     }
   });
