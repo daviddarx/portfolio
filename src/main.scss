@@ -116,6 +116,7 @@ $breakpoints: (
   --s-logo: 5vh;
   --s-lines: 2px;
   --s-twerk: 0.5px;
+  --s-translateYAnimateIn: 10vh;
 
   //eases
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -287,9 +288,25 @@ body {
 }
 
 .projects {
-  width: 50%;
-  margin-left: 50%;
-  margin-top: var(--s-gutter);
+  --d-opacity: 0.35s;
+
+  overflow: hidden;
+
+  &__container {
+    width: 50%;
+    margin-left: 50%;
+    padding-top: var(--s-gutter);
+    transition: transform var(--e-inout) 0.75s, opacity ease var(--d-opacity);
+
+    &.is-masked {
+      opacity: 0;
+    }
+
+    &.is-translated {
+      transform: translateY(var(--s-translateYAnimateIn));
+      transition: opacity ease var(--d-opacity);
+    }
+  }
 }
 
 .project-list {
@@ -349,7 +366,7 @@ body {
 
   &--animate-in {
     opacity: 0;
-    transform: translateY(10vh);
+    transform: translateY(var(--s-translateYAnimateIn));
     transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
     transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
     will-change: opacity, transform;
