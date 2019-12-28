@@ -150,6 +150,67 @@ body {
   color: var(--c-text);
 }
 
+.close-button {
+  --s-dims: 2em;
+  $root: #{&};
+
+  width: var(--s-dims);
+  height: var(--s-dims);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: var(--s-dims);
+    height: var(--s-dims);
+    background-color: black;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: transform var(--e-out) 0.35s;
+  }
+
+  &:hover {
+    animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+
+    &::before {
+      transform-origin: bottom left;
+      transform: scaleY(1);
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: var(--s-dims);
+    height: var(--s-dims);
+    transform: rotate(45deg);
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: var(--s-dims);
+      height: var(--s-lines);
+      background-color: var(--c-lines);
+      transition: background-color ease-out 0.25s;
+
+      .is-inverted & {
+        background-color: var(--c-lines-inverted);
+      }
+
+      #{$root}:hover & {
+        background-color: white;
+      }
+    }
+  }
+}
+
 .logo {
   $root: #{&};
 
@@ -360,6 +421,13 @@ body {
     min-height: 100vh;
   }
 
+  &__close-button {
+    position: fixed;
+    z-index: 1000;
+    top: var(--s-gutter);
+    right: var(--s-gutter);
+  }
+
   &__header {
     padding: var(--s-gutter);
   }
@@ -380,37 +448,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-  }
-}
-
-.close {
-  --s-dims: 2em;
-
-  position: fixed;
-  z-index: 1000;
-  top: var(--s-gutter);
-  right: var(--s-gutter);
-  width: var(--s-dims);
-  height: var(--s-dims);
-  transform: rotate(45deg);
-
-  &::after {
-    transform: rotate(90deg);
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    width: var(--s-dims);
-    height: var(--s-lines);
-    background-color: var(--c-lines);
-
-    .is-inverted & {
-      background-color: var(--c-lines-inverted);
-    }
   }
 }
 

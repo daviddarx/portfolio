@@ -5,10 +5,12 @@
     v-bind:class="{ 'is-inverted': this.isInverted, 'is-displayed': this.isDisplayed }"
     v-bind:style="{backgroundColor: this.color}"
   >
-    <router-link
-      class="close"
-      to="/"
-    ></router-link>
+    <div class="project__close-button close-button animate-in animate-in__s3">
+      <router-link
+        class="close-button__link"
+        to="/"
+      ></router-link>
+    </div>
 
     <div class="project__container">
       <div class="project__header">
