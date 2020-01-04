@@ -141,7 +141,8 @@ body {
 }
 
 .close-button {
-  --s-dims: 2em;
+  --s-dims: 2.5em;
+  --s-square: -0.5em;
   $root: #{&};
 
   width: var(--s-dims);
@@ -151,8 +152,10 @@ body {
     content: "";
     display: block;
     position: absolute;
-    width: var(--s-dims);
-    height: var(--s-dims);
+    top: var(--s-square);
+    right: var(--s-square);
+    bottom: var(--s-square);
+    left: var(--s-square);
     background-color: black;
     transform: scaleY(0);
     transform-origin: top left;
