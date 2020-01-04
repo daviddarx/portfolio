@@ -24,9 +24,7 @@
         >
         </project-list>
       </div>
-      <div class="credits">
-        Copyright © 2019 - Frontend von David Darx
-      </div>
+      <credits></credits>
     </div>
   </div>
 </template>
@@ -34,11 +32,13 @@
 <script>
   import Vue from "vue";
   import ProjectList from './project-list.vue';
+  import Credits from './credits.vue';
   import * as projects from '../../content/projects.json';
 
   export default Vue.extend({
     components: {
-      'project-list': ProjectList
+      'project-list': ProjectList,
+      'credits': Credits
     },
     data() {
       return {

@@ -1,29 +1,23 @@
 
 <template>
-  <div class="info">
-    <div class="content-temp">
-      Info
-      <credits></credits>
-    </div>
+  <div class="credits">
+    Copyright © {{this.year}} - Frontend von David Darx
   </div>
 </template>
 
 <script>
   import Vue from "vue";
-  import Credits from './credits.vue';
 
   export default Vue.extend({
-    components: {
-      'credits': Credits
-    },
     data() {
       return {
+        year: 2020
       }
     },
     mounted () {
+      this.year = new Date().getFullYear();
     },
     methods: {
     }
   });
 </script>
-
