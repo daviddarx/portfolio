@@ -453,17 +453,16 @@ body {
 
 .pagination {
   color: var(--c-text-inverted);
+  display: flex;
 
   &__link {
-    display: inline-block;
+    flex-basis: 50%;
     text-align: center;
-    width: 50%;
     background-color: var(--c-text);
     box-sizing: border-box;
-    padding: calc(var(--s-gutter) * 2) var(--s-gutter);
+    padding: calc(var(--s-gutter) * 1.5) calc(var(--s-gutter) * 0.5);
 
     &:first-child {
-      width: calc(50% - var(--s-lines));
       margin-right: var(--s-lines);
     }
   }
