@@ -22,6 +22,12 @@
   font-family: Mont-Bold, Arial, Helvetica, sans-serif;
 }
 
+@mixin title() {
+  @include fontMontBold();
+
+  line-height: var(--s-line-height-titles);
+  letter-spacing: -0.01em;
+}
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
@@ -75,29 +81,6 @@ $breakpoints: (
   }
 }
 
-///
-/// screen-ratio-mix: Mixes the base-font-size with a given view-width ratio
-///
-/// $screenWidthRatio: @float [0-1] .1 means 10% of the font size is relative to the browser width
-/// $designWidth: @int reference resolution, mostly the width of the sketch / photoshop file or the current breakpoint
-/// $targetPXSize: @int PX value at $designWidth
-///
-/// @return @string calc that mixes VW with %
-/// because we mix it with % it only works for font-sizes
-///
-@function screen-ratio-mix(
-  $screen-width-ratio: 0.1,
-  /// adds 10% of screen-width
-  $design-width: 1440,
-  /// the target width (artboard width)
-  $target-px-size: 10
-  /// target size in PX
-) {
-  $percent-size: $target-px-size / 16% * 100%;
-
-  @return calc(#{$percent-size - $percent-size * $screen-width-ratio}% + #{$screen-width-ratio * (100 / $design-width) * 10}vw);
-}
-
 // styles
 
 :root {
@@ -108,12 +91,15 @@ $breakpoints: (
   --c-lines-inverted: rgba(255, 255, 255, 0.9);
 
   //sizes
-  --s-text: 2.7rem;
-  --s-text-small: calc(var(--s-text) * 0.75);
-  --s-text-h1: calc(var(--s-text) * 3);
-  --s-text-h2: calc(var(--s-text) * 2);
+  --s-text: 1.5rem;
+  --s-text-small: calc(var(--s-text) * 0.65);
+  --s-text-h1: calc(var(--s-text) * 4);
+  --s-text-h2: calc(var(--s-text) * 3);
+  --s-text-navigation: 1.8vh;
+  --s-line-height: 1.6;
+  --s-line-height-titles: 1;
   --s-gutter: 8vh;
-  --s-logo: 5vh;
+  --s-logo: 6vh;
   --s-lines: 2px;
   --s-twerk: 0.5px;
   --s-translateYAnimateIn: 10vh;
@@ -121,6 +107,11 @@ $breakpoints: (
   //eases
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1);
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1);
+
+  @media (min-height: 1024px) {
+    --s-text-navigation: 1.4vh;
+    --s-logo: 5vh;
+  }
 }
 
 h1,
@@ -129,24 +120,23 @@ h3,
 h4,
 h5,
 h6 {
-  @include fontMontBold;
-
-  letter-spacing: -0.02em;
+  @include title;
 }
 
 a {
-  color: var(--s-text);
+  color: var(--c-text);
   text-decoration: none;
 }
 
 html {
   @include fontMontBook;
 
-  font-size: screen-ratio-mix(0.8, 1440, 22);
+  font-size: 1vw;
 }
 
 body {
   font-size: var(--s-text);
+  line-height: var(--s-line-height);
   color: var(--c-text);
 }
 
@@ -270,14 +260,17 @@ body {
   z-index: 999;
   bottom: var(--s-gutter);
   left: var(--s-gutter);
-  font-size: 1.5vh;
+  font-size: var(--s-text-navigation);
+  line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transform: rotate(-90deg) translate(0, 100%);
   transform-origin: bottom left;
 
+
+
   &__link {
-    --s-padding: -0.3em;
+    --s-padding: -0.5em;
 
     display: inline-block;
     position: relative;
@@ -290,7 +283,7 @@ body {
       display: inline-block;
       position: absolute;
       top: var(--s-padding);
-      bottom: calc(var(--s-padding) + 0.15em);
+      bottom: calc(var(--s-padding) + 0.2em);
       right: var(--s-padding);
       left: var(--s-padding);
       background-color: var(--c-text);
@@ -381,7 +374,7 @@ body {
 
   &__link {
     display: block;
-    padding: 2em 0;
+    padding: 3em 0;
     padding-right: var(--s-gutter);
   }
 
@@ -394,10 +387,6 @@ body {
     #{$root}:hover & {
       animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
     }
-  }
-
-  &__detail {
-    font-size: var(--s-text-small);
   }
 
   &__separation {
@@ -437,6 +426,10 @@ body {
     padding-right: var(--s-gutter);
   }
 
+  &__lead {
+    width: 50%;
+  }
+
   &__pagination {
     margin-top: var(--s-gutter);
   }
@@ -456,6 +449,7 @@ body {
   display: flex;
 
   &__link {
+    color: var(--c-text-inverted);
     flex-basis: 50%;
     text-align: center;
     background-color: var(--c-text);
@@ -479,7 +473,7 @@ body {
 }
 
 .credits {
-  font-size: calc(var(--s-text-small) * 0.5);
+  font-size: calc(var(--s-text-small));
   padding-right: var(--s-gutter);
   margin: var(--s-gutter) 0;
 }
