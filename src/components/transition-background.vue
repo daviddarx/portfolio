@@ -3,6 +3,11 @@
   <div
     class="transition-background"
   >
+    <logo
+      class="transition-logo"
+      v-bind:class="{'is-displayed': this.isLogoDisplayed}"
+    ></logo>
+
     <transition
       name="transition-wave-in"
       v-on:after-enter="waveInAfterEnter"
@@ -31,13 +36,18 @@
 
 <script>
   import Vue from "vue";
+  import Logo from './logo.vue';
 
   export default Vue.extend({
+    components: {
+      'logo': Logo
+    },
     data() {
       return {
         color: '#ff0000',
         isWaveInDisplayed: false,
         isWaveOutDisplayed: false,
+        isLogoDisplayed: false,
         isNormalPage: false,
         nextFunction: undefined,
       }
@@ -53,6 +63,7 @@
         } else {
           this.color = undefined;
           this.isNormalPage = true;
+          this.isLogoDisplayed = true;
         }
         this.isWaveInDisplayed = true;
         this.nextFunction = next;
@@ -62,6 +73,7 @@
         this.nextFunction();
         if (this.isNormalPage == true) {
           this.isWaveOutDisplayed = true;
+          this.isLogoDisplayed = false;
         }
       },
       waveOutAfterEnter: function() {

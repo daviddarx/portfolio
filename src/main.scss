@@ -502,6 +502,26 @@ body {
   margin: var(--s-gutter) 0;
 }
 
+.transition-logo {
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity ease-out 0.2s;
+
+  &.is-displayed {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .logo__mask {
+    display: none;
+  }
+
+  .logo__el {
+    fill: white;
+  }
+}
+
 .transition-background {
   &__el-in,
   &__el-out {
