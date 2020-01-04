@@ -23,6 +23,9 @@
         <p class="project__type animate-in animate-in__s2">
           {{this.type}}
         </p>
+        <p class="project__lead animate-in animate-in__s3">
+          Vivamus aliquet, ex vitae pharetra ultrices, nulla nisi auctor dui, ut sollicitudin metus massa a orci. Vestibulum maximus tristique ultrices. Pellentesque blandit nibh dolor, quis volutpat nibh suscipit eu.
+        </p>
       </div>
 
       <div class="project__content">
