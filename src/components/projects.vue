@@ -10,13 +10,20 @@
       ref="projectsContainer"
       v-bind:class="{ 'is-translated': this.isTranslated, 'is-masked': this.isMasked }"
     >
-      <project-list
-        class="projects-list"
-        v-for="project in projects.main"
-        v-bind:key="project.title"
-        v-bind:datas="project"
-      >
-      </project-list>
+      <h1 class="projects__title">
+        David Darx
+        <span class="projects__title-separation">–</span>
+        <span class="projects__title-detail">Digital Design &amp; Art Direction</span>
+      </h1>
+      <div>
+        <project-list
+          class="projects-list"
+          v-for="project in projects.main"
+          v-bind:key="project.title"
+          v-bind:datas="project"
+        >
+        </project-list>
+      </div>
       <div class="credits">
         Copyright © 2019 - Frontend von David Darx
       </div>

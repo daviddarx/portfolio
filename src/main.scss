@@ -361,6 +361,20 @@ body {
       transition: opacity ease var(--d-opacity);
     }
   }
+
+  &__title {
+    padding-bottom: 3em;
+  }
+
+  &__title-detail {
+    @include fontMontBook();
+  }
+
+  &__title-separation {
+    @include fontMontBook();
+    display: inline-block;
+    padding: 0 0.2em;
+  }
 }
 
 .project-list {
