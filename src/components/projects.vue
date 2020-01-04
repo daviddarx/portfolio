@@ -12,14 +12,14 @@
     >
       <h1 class="projects__title">
         David Darx
-        <span class="projects__title-separation">–</span>
+        <span class="separe separe--spaced">–</span>
         <span class="projects__title-detail">Digital Design &amp; Art Direction</span>
       </h1>
       <div>
         <project-list
           class="projects-list"
           v-for="project in projects.main"
-          v-bind:key="project.title"
+          v-bind:key="project.agency"
           v-bind:datas="project"
         >
         </project-list>

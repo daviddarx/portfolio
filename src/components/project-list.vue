@@ -19,7 +19,7 @@
         class="project-list__detail"
       >
         {{datas.year}}
-        <span class="project-list__separation">–</span>
+        <span class="separe">–</span>
         {{datas.type}}
       </p>
     </router-link>

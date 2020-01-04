@@ -123,6 +123,10 @@ h6 {
   @include title;
 }
 
+b, strong {
+  @include fontMontBold();
+}
+
 a {
   color: var(--c-text);
   text-decoration: none;
@@ -256,6 +260,27 @@ body {
   }
 }
 
+.separe {
+  color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  position: relative;
+  width: 0.5em;
+
+  &--spaced {
+    margin: 0 0.2em;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: var(--s-lines);
+    top: 42%;
+    background-color: var(--c-lines);
+  }
+}
+
 .navigation {
   @include fontMontBold;
 
@@ -269,8 +294,6 @@ body {
   text-transform: uppercase;
   transform: rotate(-90deg) translate(0, 100%);
   transform-origin: bottom left;
-
-
 
   &__link {
     --s-padding: -0.5em;
@@ -338,10 +361,43 @@ body {
   }
 }
 
-.content-temp {
+.content-page {
   width: 50%;
   margin-left: 50%;
   margin-top: var(--s-gutter);
+  padding-right: var(--s-gutter);
+  box-sizing: border-box;
+
+  &__lead {
+    position: relative;
+    margin-top: -0.3em;
+  }
+
+  &__title {
+    @include title();
+  }
+
+  &__subtitle {
+    position: relative;
+    font-size: var(--s-text-small);
+    text-transform: uppercase;
+    margin-top: 5em;
+    margin-bottom: 3.5em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: calc(var(--s-gutter) * -1);
+      bottom: -0.2em;
+      height: var(--s-lines);
+      background-color: var(--c-lines);
+    }
+  }
+
+  &__list {
+    margin-top: 1.5em;
+  }
 }
 
 .projects {
@@ -371,12 +427,6 @@ body {
 
   &__title-detail {
     @include fontMontBook();
-  }
-
-  &__title-separation {
-    @include fontMontBook();
-    display: inline-block;
-    padding: 0 0.2em;
   }
 }
 

@@ -1,7 +1,7 @@
 
 <template>
   <div class="contact">
-    <div class="content-temp">
+    <div class="content-page">
       Kontakt
       <credits></credits>
     </div>

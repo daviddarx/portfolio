@@ -1,0 +1,46 @@
+{
+  "lead":"David Darx is an experienced Digital Art Director with a demonstrated history of working in the internet industry. Skilled in Typography, XHTML, Content Management Systems (CMS), Web Design, and Art Direction. Strong arts and design professional graduated from EMAF, Ecole de multimédia et d'art de Fribourg.",
+  "experience": [
+    {
+      "title": "Digital Art Director",
+      "agency": "Eyekon AG",
+      "date1": "2016",
+      "date2": "Heute",
+      "place": "Zürich"
+    },
+    {
+      "title": "Digital Designer",
+      "agency": "Unic AG",
+      "date1": "2014",
+      "date2": "2016",
+      "place": "Zürich"
+    },
+    {
+      "title": "Web Designer",
+      "agency": "Custom Design Sàrl",
+      "date1": "2012",
+      "date2": "2014",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Web Designer",
+      "agency": "Freelance",
+      "date1": "2011",
+      "date2": "2012",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Interactive Designer",
+      "agency": "Horsform Sàrl",
+      "date1": "2007",
+      "date2": "2012",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Praktikum Multimedia Designer",
+      "agency": "Custom Design Sàrl",
+      "date1": "2007",
+      "place": "Fribourg"
+    }
+  ]
+}
