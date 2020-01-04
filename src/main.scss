@@ -478,11 +478,21 @@ body {
   &__subtitle {
     display: block;
     font-size: var(--s-text-small);
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+
+    :hover > & {
+      animation: twerk 0.5s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    }
   }
 
   &__title {
     @include fontMontBold();
+
+    display: block;
+
+    :hover > & {
+      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    }
   }
 }
 
