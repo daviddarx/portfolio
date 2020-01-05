@@ -20,7 +20,7 @@
           {{experience.agency}} <span class="separe separe--spaced">–</span> {{experience.title}}
         </h3>
         <p>
-          {{experience.date1}} <span class="separe">–</span> {{experience.date2}}, {{experience.place}}
+          {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="separe" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}
         </p>
       </div>
 
@@ -28,13 +28,49 @@
         Expertise
       </h2>
 
+      <div
+        class="content-page__list"
+        v-for="expertise in info.expertise"
+        v-bind:key="expertise.title"
+      >
+        <h3 class="content-page__title">
+          {{expertise.title}}
+        </h3>
+        <p v-html="expertise.desc">
+        </p>
+      </div>
+
       <h2 class="content-page__subtitle">
         Ausbildung
       </h2>
 
+      <div
+        class="content-page__list"
+        v-for="education in info.education"
+        v-bind:key="education.title"
+      >
+        <h3 class="content-page__title">
+          {{education.title}}
+        </h3>
+        <p>
+          {{education.desc}}
+        </p>
+        <p>
+          {{education.date1}} <span class="separe">–</span> {{education.date2}}, {{education .place}}
+        </p>
+      </div>
+
       <h2 class="content-page__subtitle">
         Kunden
       </h2>
+      <p>
+         <span
+          v-for="(client, index) in info.clients"
+          v-bind:key="client"
+         >
+          {{client}} <span class="separe separe--spaced " v-if="index < info.clients.length-1">-</span>
+        </span>
+      </p>
 
       <credits></credits>
     </div>

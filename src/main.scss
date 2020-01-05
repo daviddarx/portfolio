@@ -132,6 +132,12 @@ a {
   text-decoration: none;
 }
 
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
 html {
   @include fontMontBook;
 
@@ -212,6 +218,7 @@ body {
   $root: #{&};
 
   position: fixed;
+  z-index: 1;
   top: var(--s-gutter);
   left: var(--s-gutter);
   transform: rotate(-90deg) translate(-99%, -20%);
@@ -278,6 +285,40 @@ body {
     height: var(--s-lines);
     top: 42%;
     background-color: var(--c-lines);
+  }
+}
+
+.text-link {
+  --s-padding: -0.1em;
+
+  display: inline-block;
+  position: relative;
+  transition: color ease-out 0.25s;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: var(--s-padding);
+    bottom: calc(var(--s-padding) + 0.2em);
+    right: calc(var(--s-padding) * 3);
+    left: calc(var(--s-padding) * 3);
+    background-color: var(--c-text);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition: transform var(--e-inout) 0.25s;
+    will-change: transform;
+  }
+
+  &:hover {
+    color: white;
+    animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+
+    &::before {
+      transform: none;
+      transform-origin: top left;
+    }
   }
 }
 
@@ -362,9 +403,13 @@ body {
 }
 
 .content-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   margin-left: 50%;
-  margin-top: var(--s-gutter);
+  min-height: 100vh;
+  padding-top: var(--s-gutter);
   padding-right: var(--s-gutter);
   box-sizing: border-box;
 
@@ -375,13 +420,15 @@ body {
 
   &__title {
     @include title();
+
+    padding-bottom: 0.3em;
   }
 
   &__subtitle {
     position: relative;
     font-size: var(--s-text-small);
     text-transform: uppercase;
-    margin-top: 5em;
+    margin-top: 7em;
     margin-bottom: 3.5em;
 
     &::after {
@@ -396,7 +443,7 @@ body {
   }
 
   &__list {
-    margin-top: 1.5em;
+    margin-top: 2em;
   }
 }
 
@@ -551,8 +598,12 @@ body {
 
 .credits {
   font-size: calc(var(--s-text-small));
-  padding-right: var(--s-gutter);
-  margin: var(--s-gutter) 0;
+  padding: var(--s-gutter);
+  padding-left: 0;
+
+  &__text {
+    transform: translateY(0.5em);
+  }
 }
 
 .transition-logo {

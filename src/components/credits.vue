@@ -1,7 +1,9 @@
 
 <template>
   <div class="credits">
-    Copyright © {{this.year}} - Frontend von David Darx
+    <p class="credits__text">
+      Copyright © {{this.year}} - Frontend von David Darx
+    </p>
   </div>
 </template>
 

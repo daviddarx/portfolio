@@ -42,5 +42,64 @@
       "date1": "2007",
       "place": "Fribourg"
     }
+  ],
+  "expertise": [
+    {
+      "title": "Konzeption & Gestaltung",
+      "desc": "Konzept & Wireframes, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management."
+    },
+    {
+      "title": "Umsetzung",
+      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Libraries & Frameworks: Github, Jquery, Sass, GSAP, PixiJS, Three.js, Vue.js und und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
+    },
+    {
+      "title": "Sprachen",
+      "desc": "Französisch (Muttersprache), Deutsch, Englisch, Spanish."
+    }
+  ],
+  "education": [
+    {
+      "title": "Eikon, Berufsfachschule für Gestaltung",
+      "desc": "Multimedia Design, Spezialausbildung Interaction Design",
+      "date1": "2004",
+      "date2": "2007",
+      "place": "Fribourg"
+    },
+    {
+      "title": "Kollegium Heilig Kreuz",
+      "desc": "Matura, Spezialausbildung Spanish & Visuelle Gestaltung",
+      "date1": "2000",
+      "date2": "2004",
+      "place": "Fribourg"
+    }
+  ],
+  "clients": [
+    "ETH Zürich",
+    "Swisscom",
+    "UZH Zürich",
+    "St.Morritz, Engadin Mountains",
+    "Coop",
+    "Interdiscount",
+    "Axa Winterthur Versicherung",
+    "Mobiliär Versicherung",
+    "Mammut Sport",
+    "Jungfrau Region",
+    "ASO Auslandschweizer-Organisation",
+    "MAZ, Die Schweizer Journalistenschule",
+    "Flughafen Zürich",
+    "Microspot.ch",
+    "Olma Messen St.Gallen",
+    "Swisslos.ch",
+    "HfH, Interkantonale Hochschule für Heilpädagogik",
+    "MediData",
+    "Stadt Winterthur",
+    "Images Festival Vevey",
+    "Antidoping Schweiz",
+    "GastroFribourg",
+    "SwissAid",
+    "EPFL Lausanne",
+    "Montreux Jazz Festival",
+    "UEFA",
+    "u.v.m."
   ]
 }
