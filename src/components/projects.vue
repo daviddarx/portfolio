@@ -17,7 +17,6 @@
       </h1>
       <div>
         <project-list
-          class="projects-list"
           v-for="project in projects.main"
           v-bind:key="project.agency"
           v-bind:datas="project"

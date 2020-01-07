@@ -1,5 +1,6 @@
 import Projects from './components/projects.vue';
 import Misc from './components/misc.vue';
+import MiscDetail from './components/misc-detail.vue';
 import Info from './components/info.vue';
 import Contact from './components/contact.vue';
 import * as ProjectsComponents from './projects/*.vue';
@@ -22,6 +23,13 @@ let routes = [
     path: '/misc',
     name: 'misc',
     component: Misc
+  },
+  {
+    label: 'Misc Detail',
+    path: '/misc/:id',
+    name: 'misc-detail',
+    component: MiscDetail,
+    meta: { isNavHidden: true }
   },
   {
     label: 'Info',

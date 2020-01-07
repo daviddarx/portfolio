@@ -2,13 +2,14 @@
 <template>
   <div
     class="pagination"
+    v-bind:class="{ 'is-black': isBlack }"
   >
     <router-link
       class="pagination__link"
       v-bind:to="routePrev"
     >
       <span class="pagination__subtitle">
-        Voriges Projekt
+        {{ subtitlePrev }}
       </span>
       <span class="pagination__title">
         {{ titlePrev }}
@@ -19,7 +20,7 @@
       v-bind:to="routeNext"
     >
       <span class="pagination__subtitle">
-        Nächstes Projekt
+        {{ subtitleNext }}
       </span>
       <span class="pagination__title">
         {{ titleNext }}
@@ -37,7 +38,13 @@
       routePrev: String,
       routeNext: String,
       titlePrev: String,
-      titleNext: String
+      titleNext: String,
+      subtitlePrev: String,
+      subtitleNext: String,
+      isBlack: {
+        type: Boolean,
+        default: false
+      }
     },
   }
 </script>

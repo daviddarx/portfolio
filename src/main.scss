@@ -39,6 +39,14 @@
   text-shadow: none;
 }
 
+.is-selection-inverted {
+  *::selection {
+    background: rgba(255, 255, 255, 0.99);
+    color: black;
+    text-shadow: none;
+  }
+}
+
 // utilities
 $breakpoints: (
   'desktop-xl': 'min-width: 1921px',
@@ -123,7 +131,8 @@ h6 {
   @include title;
 }
 
-b, strong {
+b,
+strong {
   @include fontMontBold();
 }
 
@@ -153,6 +162,9 @@ body {
 .close-button {
   --s-dims: 2.5em;
   --s-square: -0.5em;
+  --c-square: var(--c-text);
+  --c-arrow: var(--c-lines);
+
   $root: #{&};
 
   width: var(--s-dims);
@@ -166,13 +178,15 @@ body {
     right: var(--s-square);
     bottom: var(--s-square);
     left: var(--s-square);
-    background-color: black;
+    background-color: var(--c-square);
     transform: scaleY(0);
     transform-origin: top left;
     transition: transform var(--e-out) 0.35s;
   }
 
   &:hover {
+    --c-arrow: white;
+
     animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 
     &::before {
@@ -200,16 +214,20 @@ body {
       top: 50%;
       width: var(--s-dims);
       height: var(--s-lines);
-      background-color: var(--c-lines);
+      background-color: var(--c-arrow);
       transition: background-color ease-out 0.25s;
+    }
+  }
 
-      .is-inverted & {
-        background-color: var(--c-lines-inverted);
-      }
+  .is-inverted & {
+    --c-arrow: var(--c-lines-inverted);
+  }
 
-      #{$root}:hover & {
-        background-color: white;
-      }
+  &--black {
+    --c-square: white;
+
+    &:hover {
+      --c-arrow: black;
     }
   }
 }
@@ -416,6 +434,7 @@ body {
   &__lead {
     position: relative;
     margin-top: -0.3em;
+    margin-bottom: 5em;
   }
 
   &__title {
@@ -429,7 +448,11 @@ body {
     font-size: var(--s-text-small);
     text-transform: uppercase;
     margin-top: 7em;
-    margin-bottom: 3.5em;
+    margin-bottom: 4em;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &::after {
       content: "";
@@ -444,6 +467,10 @@ body {
 
   &__list {
     margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
@@ -510,11 +537,8 @@ body {
 }
 
 .project {
-  $root: #{&};
-
   position: relative;
   z-index: 100;
-  transition: opacity ease-out 0.3s;
 
   &.is-inverted {
     color: var(--c-text-inverted);
@@ -544,10 +568,6 @@ body {
     width: 50%;
   }
 
-  &__pagination {
-    margin-top: var(--s-gutter);
-  }
-
   &__background {
     position: fixed;
     top: 0;
@@ -558,7 +578,50 @@ body {
   }
 }
 
+.miscs {
+  &__container {
+    flex-grow: 1;
+  }
+}
+
+.misc {
+  position: relative;
+  z-index: 100;
+  background-color: black;
+  color: white;
+
+  &.is-inverted {
+    color: var(--c-text-inverted);
+  }
+
+  &__container {
+    min-height: 100vh;
+  }
+
+  &__close-button {
+    position: fixed;
+    z-index: 1000;
+    top: var(--s-gutter);
+    right: var(--s-gutter);
+  }
+
+  &__header {
+    padding: var(--s-gutter);
+  }
+
+  &__title {
+    font-size: var(--s-text-h1);
+    padding-right: var(--s-gutter);
+  }
+
+  &__lead {
+    width: 50%;
+  }
+}
+
 .pagination {
+  $root: #{&};
+
   color: var(--c-text-inverted);
   display: flex;
 
@@ -572,6 +635,10 @@ body {
 
     &:first-child {
       margin-right: var(--s-lines);
+
+      #{$root}.is-black & {
+        border-right: var(--s-lines) solid white;
+      }
     }
   }
 

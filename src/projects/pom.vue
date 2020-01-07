@@ -7,7 +7,7 @@
 
 <script>
   import Vue from "vue";
-  import Project from '../components/project.vue';
+  import Project from '../components/project-detail.vue';
 
   export default Vue.extend({
     components: {

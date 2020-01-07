@@ -33,25 +33,27 @@
       </div>
     </div>
 
-    <project-pagination
+    <pagination
       class="project__pagination"
       :route-prev="this.routePrev"
       :route-next="this.routeNext"
       :title-prev="this.titlePrev"
       :title-next="this.titleNext"
+      :subtitle-prev="this.subtitlePrev"
+      :subtitle-next="this.subtitleNext"
     >
-    </project-pagination>
+    </pagination>
   </div>
 </template>
 
 <script>
   import * as projects from '../../content/projects.json';
-  import ProjectPagination from './project-pagination.vue';
+  import Pagination from './pagination.vue';
 
   export default {
     name: 'project',
     components: {
-      'project-pagination': ProjectPagination
+      'pagination': Pagination
     },
     data: function () {
       return {
@@ -68,7 +70,9 @@
         type: '',
         color: '',
         isInverted: false,
-        isDisplayed : false
+        isDisplayed: false,
+        subtitlePrev: 'Voriges Projekt',
+        subtitleNext: 'Nächstes Projekt'
       }
     },
     mounted () {

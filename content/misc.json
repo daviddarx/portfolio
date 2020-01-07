@@ -1,0 +1,30 @@
+{
+  "lead":"Die Sammlung von den Vergessenen: Gebeinen von anderen Ären, nicht ausgewählte Varianten oder Projekte, Experimentationen, alles was nicht in den Projekten dürfte, trozten aber noch exisitieren sollte.",
+  "routesPath":"/misc/",
+  "collection": [
+    {
+      "uid": "misc-1",
+      "title": "Misc 1",
+      "date": "2010",
+      "lead": "Vivamus aliquet, ex vitae pharetra ultrices, nulla nisi auctor dui, ut sollicitudin."
+    },
+    {
+      "uid": "misc-2",
+      "title": "Misc 2",
+      "date": "2010",
+      "lead": "Vivamus aliquet, ex vitae pharetra ultrices, nulla nisi auctor dui, ut sollicitudin."
+    },
+    {
+      "uid": "misc-3",
+      "title": "Misc. 3",
+      "date": "2010",
+      "lead": ""
+    },
+    {
+      "uid": "misc-4",
+      "title": "Misc év4",
+      "date": "2010",
+      "lead": ""
+    }
+  ]
+}
