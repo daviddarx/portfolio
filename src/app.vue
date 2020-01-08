@@ -5,7 +5,7 @@
   >
     <logo></logo>
     <custom-navigation></custom-navigation>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
     <transition-backround></transition-backround>
   </div>
 </template>
