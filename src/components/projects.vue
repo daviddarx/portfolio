@@ -3,12 +3,10 @@
   <div
     class="projects"
     ref="projects"
-    v-bind:style="{height: this.height}"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div
-      class="projects__container"
-      ref="projectsContainer"
-      v-bind:class="{ 'is-translated': this.isTranslated, 'is-masked': this.isMasked }"
+      class="projects__container animate-in"
     >
       <h1 class="projects__title">
         David Darx
@@ -42,27 +40,15 @@
     data() {
       return {
         projects: projects,
-        height: 'auto',
-        isTranslated: false,
-        isMasked: true
+        isDisplayed : false,
       }
     },
     mounted () {
-      //hack to be able to translateY the projects for animation in
-      //without having trouble with first scroll position of app
-      this.height = getComputedStyle(this.$refs.projects).height;
-
-      setTimeout(this.animateProjectsIn, 100);
+      setTimeout(this.displayProject, 100);
     },
     methods: {
-      animateProjectsIn: function () {
-        this.isTranslated = true;
-        this.isMasked = false;
-
-        setTimeout(() => {
-          this.isTranslated = false;
-          this.height = 'auto';
-        }, 50);
+      displayProject: function() {
+        this.isDisplayed = true;
       }
     }
   });

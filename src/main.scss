@@ -502,15 +502,6 @@ body {
     margin-left: 50%;
     padding-top: var(--s-gutter);
     transition: transform var(--e-out) 0.75s, opacity ease var(--d-opacity);
-
-    &.is-masked {
-      opacity: 0;
-    }
-
-    &.is-translated {
-      transform: translateY(var(--s-translateYAnimateIn));
-      transition: opacity ease var(--d-opacity);
-    }
   }
 
   &__title {

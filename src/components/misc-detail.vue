@@ -118,8 +118,7 @@
     methods: {
       displayProject: function() {
         this.isDisplayed = true;
-      },
-
+      }
     }
   }
 </script>
