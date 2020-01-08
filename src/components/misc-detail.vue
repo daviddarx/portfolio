@@ -20,7 +20,7 @@
           {{this.infos.date}}
         </p>
         <p
-          class="misc__lead animate-in animate-in__s3"
+          class="misc__lead animate-in animate-in__s2"
           v-html="infos.lead"
         >
         </p>
@@ -70,7 +70,7 @@
       }
     },
     mounted () {
-      this.currentUid = this.$router.currentRoute.path.split('/').pop();
+      this.currentUid = this.$route.params.id;
 
       this.indexCurrent = misc.collection.findIndex(item => item.uid === this.currentUid);
       this.indexPrev = (this.indexCurrent - 1 >= 0) ? this.indexCurrent - 1 : misc.collection.length - 1;
@@ -84,14 +84,13 @@
 
       this.infos = misc.collection[this.indexCurrent];
 
-      console.log(this.infos.title);
-
       requestAnimationFrame(this.displayProject);
     },
     methods: {
       displayProject: function() {
         this.isDisplayed = true;
-      }
+      },
+
     }
   }
 </script>
