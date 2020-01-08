@@ -49,11 +49,12 @@
     },
     methods: {
       afterEach: function (to, from) {
-        if (to.meta.color) {
+        if (to.meta.isNavHidden == true) {
           this.isDisplayed = false;
         } else {
           this.isDisplayed = true;
         }
+        this.displayNav();
       },
       displayNav: function () {
         if(this.$route.meta.isNavHidden != true){
