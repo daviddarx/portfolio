@@ -139,6 +139,10 @@ strong {
 a {
   color: var(--c-text);
   text-decoration: none;
+
+  .is-inverted & {
+    color: var(--c-text-inverted);
+  }
 }
 
 html,
@@ -303,6 +307,10 @@ body {
     height: var(--s-lines);
     top: 42%;
     background-color: var(--c-lines);
+
+    .is-inverted & {
+      background-color: var(--c-lines-inverted);
+    }
   }
 }
 
@@ -312,6 +320,7 @@ body {
   display: inline-block;
   position: relative;
   transition: color ease-out 0.25s;
+  text-decoration: underline;
 
   &::before {
     content: "";
@@ -327,11 +336,20 @@ body {
     transform-origin: top right;
     transition: transform var(--e-inout) 0.25s;
     will-change: transform;
+
+    .is-inverted & {
+      background-color: white;
+    }
   }
 
   &:hover {
     color: white;
     animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    text-decoration: none;
+
+    .is-inverted & {
+      color: black;
+    }
 
     &::before {
       transform: none;
@@ -610,12 +628,20 @@ body {
   }
 
   &__title {
-    font-size: var(--s-text-h1);
+    line-height: var(--s-line-height);
     padding-right: var(--s-gutter);
   }
 
   &__lead {
     width: 50%;
+  }
+
+  &__links {
+    margin-top: 1.5em;
+  }
+
+  &__link {
+    margin-right: 1.5em;
   }
 }
 

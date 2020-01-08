@@ -17,14 +17,33 @@
     {
       "uid": "misc-3",
       "title": "Misc. 3",
-      "date": "2010",
-      "lead": ""
+      "date": "2010"
     },
     {
-      "uid": "misc-4",
-      "title": "Misc év4",
-      "date": "2010",
-      "lead": ""
+      "uid": "digital-playground",
+      "title": "Digital Playground",
+      "date": "2019",
+      "lead": "Sammlung von verschiedenen mehr oder weniger abstrakten Creative Coding Exprerimenten.",
+      "links": [
+        {
+          "title": "Szene 01",
+          "url": "https://daviddarx.com/stage-01.html"
+        },
+        {
+          "title": "Szene 02",
+          "url": "https://daviddarx.com/stage-02.html"
+        },
+        {
+          "title": "Szene 03",
+          "url": "https://daviddarx.com/stage-03.html"
+        }
+      ],
+      "medias": [
+        {
+          "type": "image",
+          "url": ""
+        }
+      ]
     }
   ]
 }

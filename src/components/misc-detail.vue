@@ -14,16 +14,28 @@
     <div class="misc__container">
       <div class="misc__header">
         <h1 class="misc__title animate-in">
-          {{this.infos.title}}
+          {{this.infos.title}} <span class="separe separe--spaced">–</span> <span class="misc__date">{{this.infos.date}}</span>
         </h1>
-        <p class="misc__date animate-in animate-in__s1">
-          {{this.infos.date}}
-        </p>
         <p
           class="misc__lead animate-in animate-in__s2"
+          v-if="infos.lead"
           v-html="infos.lead"
         >
         </p>
+        <p
+          class="misc__links animate-in animate-in__s3"
+          v-if="infos.links"
+        >
+          <a
+            class="misc__link text-link"
+            v-for="link in infos.links"
+            v-bind:key="link.url"
+            v-bind:href="link.url"
+            target="_blank"
+          >
+            {{link.title}}
+          </a>
+        <p>
       </div>
 
       <div class="misc__content">
@@ -84,7 +96,7 @@
 
       this.infos = misc.collection[this.indexCurrent];
 
-      requestAnimationFrame(this.displayProject);
+      setTimeout(this.displayProject, 100);
     },
     methods: {
       displayProject: function() {
