@@ -113,10 +113,10 @@
 
       this.infos = misc.collection[this.indexCurrent];
 
-      setTimeout(this.displayProject, 100);
+      setTimeout(this.displayMisc, 100);
     },
     methods: {
-      displayProject: function() {
+      displayMisc: function() {
         this.isDisplayed = true;
       }
     }
