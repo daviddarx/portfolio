@@ -501,7 +501,7 @@ body {
     width: 50%;
     margin-left: 50%;
     padding-top: var(--s-gutter);
-    transition: transform var(--e-inout) 0.75s, opacity ease var(--d-opacity);
+    transition: transform var(--e-out) 0.75s, opacity ease var(--d-opacity);
 
     &.is-masked {
       opacity: 0;
@@ -642,6 +642,20 @@ body {
 
   &__link {
     margin-right: 1.5em;
+  }
+
+  &__medias {
+    margin-top: calc(var(--s-gutter) * 2);
+  }
+
+  &__media {
+    margin-top: var(--s-gutter);
+  }
+
+  &__img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }
 

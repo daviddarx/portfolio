@@ -17,13 +17,13 @@
           {{this.infos.title}} <span class="separe separe--spaced">–</span> <span class="misc__date">{{this.infos.date}}</span>
         </h1>
         <p
-          class="misc__lead animate-in animate-in__s2"
+          class="misc__lead animate-in animate-in__s1"
           v-if="infos.lead"
           v-html="infos.lead"
         >
         </p>
         <p
-          class="misc__links animate-in animate-in__s3"
+          class="misc__links animate-in animate-in__s2"
           v-if="infos.links"
         >
           <a
@@ -36,6 +36,23 @@
             {{link.title}}
           </a>
         <p>
+        <div
+          class="misc__medias animate-in animate-in__s6"
+          v-if="infos.medias"
+        >
+          <div
+            class="misc__media"
+            v-for="media in infos.medias"
+            v-bind:key="media.url"
+          >
+            <img
+              v-if="media.type=='image'"
+              class="misc__img"
+              v-bind:src="misc.mediasPath+media.url"
+              v-bind:alt="infos.title"
+            >
+          </div>
+        </div>
       </div>
 
       <div class="misc__content">

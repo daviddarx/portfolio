@@ -1,6 +1,7 @@
 {
   "lead":"Die Sammlung von den Vergessenen: Gebeinen von anderen Ären, nicht ausgewählte Varianten oder Projekte, Experimentationen, alles was nicht in den Projekten dürfte, trozten aber noch exisitieren sollte.",
   "routesPath":"/misc/",
+  "mediasPath":"/miscs/",
   "collection": [
     {
       "uid": "misc-1",
@@ -41,7 +42,15 @@
       "medias": [
         {
           "type": "image",
-          "url": ""
+          "url": "digital_playground/stage_02_1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_02_2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_02_3.jpg"
         }
       ]
     }
