@@ -51,6 +51,18 @@
               v-bind:src="misc.mediasPath+media.url"
               v-bind:alt="infos.title"
             >
+            <video
+              v-else
+              muted
+              autoplay
+              loop
+              class="misc__video"
+            >
+              <source
+                v-bind:src="misc.mediasPath+media.url"
+                type="video/mp4"
+              >
+            </video>
           </div>
         </div>
       </div>

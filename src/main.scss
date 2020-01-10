@@ -637,16 +637,23 @@ body {
 
   &__medias {
     margin-top: calc(var(--s-gutter) * 2);
+    padding-left: var(--s-gutter);
+    padding-right: var(--s-gutter);
   }
 
   &__media {
-    margin-top: var(--s-gutter);
+    margin-top: calc(var(--s-gutter) * 2);
   }
 
   &__img {
     max-width: 100%;
     display: block;
     margin: 0 auto;
+  }
+
+  &__video {
+    max-width: 100%;
+    height: auto;
   }
 }
 
