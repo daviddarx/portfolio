@@ -13,13 +13,15 @@
 
     <div class="misc__container">
       <div class="misc__header">
-        <h1 class="misc__title animate-in">
-          {{this.infos.title}} <span class="separe separe--spaced">–</span> <span class="misc__date">{{this.infos.date}}</span>
+        <h1
+          class="misc__title animate-in"
+          v-html="this.infos.title+getDashSpaced()+this.infos.date"
+        >
         </h1>
         <p
           class="misc__lead animate-in animate-in__s1"
           v-if="infos.lead"
-          v-html="infos.lead"
+          v-html="replaceDashesSpaced(infos.lead)"
         >
         </p>
         <p
@@ -87,12 +89,14 @@
 <script>
   import * as misc from '../../content/misc.json';
   import Pagination from './pagination.vue';
+  import dash from '../mixins/dash';
 
   export default {
     name: 'misc',
     components: {
       'pagination': Pagination
     },
+    mixins: [dash],
     data: function () {
       return {
         misc: misc,

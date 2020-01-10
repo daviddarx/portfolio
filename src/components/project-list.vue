@@ -17,10 +17,8 @@
       </h2>
       <p
         class="project-list__detail"
+        v-html="datas.year+getDashSpaced()+datas.type"
       >
-        {{datas.year}}
-        <span class="separe">–</span>
-        {{datas.type}}
       </p>
     </router-link>
   </div>
@@ -28,9 +26,11 @@
 
 <script>
   import * as projects from '../../content/projects.json';
+  import dash from '../mixins/dash';
 
   export default {
     name: 'project-list',
+    mixins: [dash],
     props: {
       datas: Object
     },
