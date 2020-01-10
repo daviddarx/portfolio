@@ -17,7 +17,7 @@
           <a href="mailto:hoi@daviddarx.com" target="_blank" class="text-link">hoi@daviddarx.com</a>
         </p>
         <p class="animate-in animate-in__s2">
-          <a href="https://www.linkedin.com/in/daviddarx" target="_blank" class="text-link">www.linkedin.com/in/daviddarx</a>
+          <a href="https://www.linkedin.com/in/daviddarx" target="_blank" class="text-link">Linkedin</a>
         </p>
       </div>
       <credits></credits>
