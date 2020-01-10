@@ -136,6 +136,10 @@ strong {
   @include fontMontBold();
 }
 
+p {
+  margin-bottom: 1.5em;
+}
+
 a {
   color: var(--c-text);
   text-decoration: none;
@@ -625,10 +629,6 @@ body {
 
   &__lead {
     width: 50%;
-  }
-
-  &__links {
-    margin-top: 1.5em;
   }
 
   &__link {

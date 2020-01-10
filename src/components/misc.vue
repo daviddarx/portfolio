@@ -1,12 +1,15 @@
 
 <template>
-  <div class="miscs">
+  <div
+    class="miscs"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <div class="content-page">
-      <p class="content-page__lead">
+      <p class="content-page__lead animate-in">
         {{misc.lead}}
       </p>
 
-      <div class="miscs__container">
+      <div class="miscs__container animate-in animate-in__s1">
         <div
           class="misc-list"
           v-for="miscItem in misc.collection"
@@ -36,7 +39,8 @@
     },
     data() {
       return {
-        misc: misc
+        misc: misc,
+        isDisplayed : false
       }
     },
     created () {
@@ -45,8 +49,12 @@
       });
     },
     mounted () {
+      setTimeout(this.displayMisc, 100);
     },
     methods: {
+      displayMisc: function() {
+        this.isDisplayed = true;
+      }
     }
   });
 </script>

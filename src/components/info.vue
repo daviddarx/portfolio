@@ -1,13 +1,16 @@
 
 <template>
-  <div class="info">
+  <div
+    class="info"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <div class="content-page">
       <h1 class="visually-hidden"> David Darx – Digital Design &amp; Art Direction</h1>
-      <p class="content-page__lead">
+      <p class="content-page__lead animate-in">
         {{this.info.lead}}
       </p>
 
-      <div class="content-page__content">
+      <div class="content-page__content animate-in animate-in__s1">
         <h2 class="content-page__subtitle">
           Erfahrung
         </h2>
@@ -95,12 +98,17 @@
     },
     data() {
       return {
-        info: info
+        info: info,
+        isDisplayed : false
       }
     },
     mounted () {
+      setTimeout(this.displayInfo, 100);
     },
     methods: {
+      displayInfo: function() {
+        this.isDisplayed = true;
+      }
     }
   });
 </script>
