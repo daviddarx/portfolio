@@ -16,9 +16,9 @@
         {{datas.title}}
       </h2>
       <p
-        class="project-list__detail"
-        v-html="datas.year+getDashSpaced()+datas.type"
+        class="project-list__detail no-margin"
       >
+        <span class="project-list__date">{{datas.year}}</span> <span class="separe separe--spaced">–</span> {{datas.type}}
       </p>
     </router-link>
   </div>

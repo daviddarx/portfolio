@@ -553,6 +553,10 @@ body {
     }
   }
 
+  &__date {
+    @include fontMontBold;
+  }
+
   &__separation {
     display: inline-block;
     padding: 0 0.2em;
