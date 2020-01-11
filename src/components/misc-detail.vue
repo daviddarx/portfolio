@@ -19,13 +19,13 @@
         >
         </h1>
         <p
-          class="misc__lead animate-in animate-in__s1"
+          class="misc__lead animate-in animate-in__s1 no-margin"
           v-if="infos.lead"
           v-html="replaceDashesSpaced(infos.lead)"
         >
         </p>
         <p
-          class="misc__links animate-in animate-in__s2"
+          class="misc__links animate-in animate-in__s2 margin-top"
           v-if="infos.links"
         >
           <a
@@ -37,39 +37,51 @@
           >
             {{link.title}}
           </a>
-        <p>
-        <div
-          class="misc__medias animate-in animate-in__s6"
-          v-if="infos.medias"
-        >
-          <div
-            class="misc__media"
-            v-for="media in infos.medias"
-            v-bind:key="media.url"
-          >
-            <img
-              v-if="media.type=='image'"
-              class="misc__img"
-              v-bind:src="misc.mediasPath+media.url"
-              v-bind:alt="infos.title"
-            >
-            <video
-              v-else
-              muted
-              autoplay
-              loop
-              class="misc__video"
-            >
-              <source
-                v-bind:src="misc.mediasPath+media.url"
-                type="video/mp4"
-              >
-            </video>
-          </div>
-        </div>
+        </p>
       </div>
-
-      <div class="misc__content">
+      <div
+        class="misc__medias animate-in animate-in__s6"
+        v-if="infos.medias"
+      >
+        <div
+          class="misc__media"
+          v-for="(media, i) in infos.medias"
+          v-bind:key="media.url"
+        >
+          <img
+            v-if="media.type=='image'"
+            v-bind:src="misc.mediasPath+media.url"
+            v-bind:alt="infos.title"
+            class="misc__img"
+            v-bind:class="{'scroll-animate-in' : i!=0}"
+            v-observe-visibility="{
+              callback: visibilityChanged,
+              intersection: {
+                rootMargin: rootMargin,
+              },
+            }"
+          >
+          <video
+            v-else-if="media.type=='video'"
+            muted
+            autoplay
+            loop
+            class="misc__video video"
+            v-bind:class="{'scroll-animate-in' : i!=0}"
+            v-observe-visibility="{
+              callback: visibilityChanged,
+              intersection: {
+                rootMargin: rootMargin,
+              },
+            }"
+            ref="video"
+          >
+            <source
+              v-bind:src="misc.mediasPath+media.url"
+              type="video/mp4"
+            >
+          </video>
+        </div>
       </div>
     </div>
     <pagination
@@ -87,9 +99,13 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import VueObserveVisibility from 'vue-observe-visibility';
   import * as misc from '../../content/misc.json';
   import Pagination from './pagination.vue';
   import dash from '../mixins/dash';
+
+  Vue.use(VueObserveVisibility);
 
   export default {
     name: 'misc',
@@ -111,7 +127,8 @@
         isDisplayed : false,
         infos: '',
         subtitlePrev: 'Voriges',
-        subtitleNext: 'Nächstes'
+        subtitleNext: 'Nächstes',
+        rootMargin: '0%' // -20vh css transform considered
       }
     },
     mounted () {
@@ -134,6 +151,39 @@
     methods: {
       displayMisc: function() {
         this.isDisplayed = true;
+        this.setScrollAnimatedIn();
+      },
+      setScrollAnimatedIn: function() {
+        if (!!window.IntersectionObserver) {
+          if (this.$refs.video) {
+            this.$refs.video.forEach(item => {
+              item.removeAttribute('autoplay');
+            });
+          }
+        } else {
+          if (this.$refs.video) {
+            const scrollAnimatedElements = document.querySelectorAll('.scroll-animate-in');
+            if (scrollAnimatedElements.length !=0) {
+              scrollAnimatedElements.forEach(item => {
+                item.classList.add('is-displayed');
+              });
+            }
+          }
+        }
+      },
+      visibilityChanged (isVisible, entry) {
+        if (isVisible == true && entry.boundingClientRect.width != 0) {
+          if (entry.target.classList.contains('scroll-animate-in')) {
+            entry.target.classList.add('is-displayed');
+          }
+          if (entry.target.classList.contains('video')) {
+            entry.target.play();
+          }
+        } else if (isVisible == false) {
+          if (entry.target.classList.contains('video')) {
+            entry.target.pause();
+          }
+        }
       }
     }
   }
