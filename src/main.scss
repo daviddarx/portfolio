@@ -22,31 +22,6 @@
   font-family: Mont-Bold, Arial, Helvetica, sans-serif;
 }
 
-@mixin title() {
-  @include fontMontBold();
-
-  line-height: var(--s-line-height-titles);
-  letter-spacing: -0.01em;
-}
-
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-}
-
-::selection {
-  background: rgba(0, 0, 0, 0.99);
-  color: white;
-  text-shadow: none;
-}
-
-.is-selection-inverted {
-  *::selection {
-    background: rgba(255, 255, 255, 0.99);
-    color: black;
-    text-shadow: none;
-  }
-}
-
 // utilities
 $breakpoints: (
   'desktop-xl': 'min-width: 1921px',
@@ -64,6 +39,17 @@ $breakpoints: (
       @content;
     }
   }
+}
+
+@mixin title() {
+  @include fontMontBold();
+
+  line-height: var(--s-line-height-titles);
+  letter-spacing: -0.01em;
+}
+
+@mixin twerk-anime {
+  animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 }
 
 @keyframes twerk {
@@ -86,6 +72,24 @@ $breakpoints: (
   40%,
   60% {
     transform: translate3d(calc(var(--s-twerk) * 1), calc(var(--s-twerk) * 1), 0);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.99);
+  color: white;
+  text-shadow: none;
+}
+
+.is-selection-inverted {
+  *::selection {
+    background: rgba(255, 255, 255, 0.99);
+    color: black;
+    text-shadow: none;
   }
 }
 
@@ -205,7 +209,7 @@ body {
   &:hover {
     --c-arrow: white;
 
-    animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    @include twerk-anime();
 
     &::before {
       transform-origin: bottom left;
@@ -263,7 +267,7 @@ body {
 
   &__container {
     &:hover {
-      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+      @include twerk-anime();
     }
   }
 
@@ -358,7 +362,7 @@ body {
 
   &:hover {
     color: white;
-    animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+    @include twerk-anime();
     text-decoration: none;
 
     .is-inverted & {
@@ -421,7 +425,7 @@ body {
 
     &:hover {
       color: white;
-      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+      @include twerk-anime();
 
       &::before {
         transform: none;
@@ -549,7 +553,7 @@ body {
     will-change: color;
 
     #{$root}:hover & {
-      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+      @include twerk-anime();
     }
   }
 
@@ -615,16 +619,21 @@ body {
 }
 
 .misc-list {
+  width: 50%;
   margin-top: var(--s-gutter);
 
   &:first-child {
     margin-top: 0;
   }
 
+  &:hover {
+    @include twerk-anime();
+  }
+
   &__img {
     --filter: grayscale(100%) contrast(2) brightness(2) invert(1);
 
-    width: 50%;
+    width: 100%;
     -webkit-filter: var(--filter);
     filter: var(--filter);
     transition: filter ease-out 0.3s;
@@ -735,7 +744,7 @@ body {
     margin-bottom: 0.5em;
 
     :hover > & {
-      animation: twerk 0.5s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+      @include twerk-anime();
     }
   }
 
@@ -745,7 +754,7 @@ body {
     display: block;
 
     :hover > & {
-      animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
+      @include twerk-anime();
     }
   }
 }

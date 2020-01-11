@@ -23,8 +23,10 @@
               class="misc-list__img"
               v-bind:src="misc.mediasPath+miscItem.thumb"
             >
-              <h2 class="misc-list__title">
-                {{miscItem.title}}
+              <h2
+                class="misc-list__title"
+                v-html="miscItem.title+getDashSpaced()+miscItem.date"
+              >
               </h2>
           </router-link>
         </div>
@@ -38,11 +40,13 @@
   import Vue from "vue";
   import Credits from './credits.vue';
   import * as misc from '../../content/misc.json';
+  import dash from '../mixins/dash';
 
   export default Vue.extend({
     components: {
       'credits': Credits
     },
+    mixins: [dash],
     data() {
       return {
         misc: misc,
