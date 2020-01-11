@@ -19,7 +19,13 @@
             v-bind:to="misc.routesPath + miscItem.uid"
             class="misc-list__link"
           >
-            {{miscItem.title}}
+            <img
+              class="misc-list__img"
+              v-bind:src="misc.mediasPath+miscItem.thumb"
+            >
+              <h2 class="misc-list__title">
+                {{miscItem.title}}
+              </h2>
           </router-link>
         </div>
       </div>

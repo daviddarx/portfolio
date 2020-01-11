@@ -4,9 +4,65 @@
   "mediasPath":"/miscs/",
   "collection": [
     {
+      "uid": "digital-playground",
+      "title": "Digital Playground",
+      "date": "2019",
+      "thumb": "digital_playground/thumb.jpg",
+      "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Exprerimenten – Farbenverbot als einzige Spielregel.",
+      "links": [
+        {
+          "title": "01",
+          "url": "https://daviddarx.com/stage-01.html"
+        },
+        {
+          "title": "02",
+          "url": "https://daviddarx.com/stage-02.html"
+        },
+        {
+          "title": "03",
+          "url": "https://daviddarx.com/stage-03.html"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "digital_playground/stages.mp4"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_01_01.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_01_02.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_01_03.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_02_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_02_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_02_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_playground/stage_03_01.png"
+        }
+      ]
+    },
+    {
       "uid": "digital-watches",
       "title": "Digital Watches",
       "date": "2017 – 2018",
+      "thumb": "digital_watches/thumb.jpg",
       "lead": "Sammlung von verschiedenen digitalen Uhren, die weder Hand noch Fuß haben.",
       "links": [
         {
@@ -65,59 +121,5 @@
         }
       ]
     },
-    {
-      "uid": "digital-playground",
-      "title": "Digital Playground",
-      "date": "2019",
-      "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Exprerimenten – Farbenverbot als einzige Spielregel.",
-      "links": [
-        {
-          "title": "01",
-          "url": "https://daviddarx.com/stage-01.html"
-        },
-        {
-          "title": "02",
-          "url": "https://daviddarx.com/stage-02.html"
-        },
-        {
-          "title": "03",
-          "url": "https://daviddarx.com/stage-03.html"
-        }
-      ],
-      "medias": [
-        {
-          "type": "video",
-          "url": "digital_playground/stages.mp4"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_01_01.png"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_01_02.png"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_01_03.png"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_02_01.jpg"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_02_02.jpg"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_02_03.jpg"
-        },
-        {
-          "type": "image",
-          "url": "digital_playground/stage_03_01.png"
-        }
-      ]
-    }
   ]
 }

@@ -608,6 +608,25 @@ body {
 .miscs {
   &__container {
     flex-grow: 1;
+    position: relative;
+    left: -25vw;
+    width: 75vw;
+  }
+}
+
+.misc-list {
+  margin-top: var(--s-gutter);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__img {
+    width: 50%;
+  }
+
+  &__title {
+    margin-top: 0.5em;
   }
 }
 
