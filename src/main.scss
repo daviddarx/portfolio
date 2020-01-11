@@ -622,7 +622,17 @@ body {
   }
 
   &__img {
+    --filter: grayscale(100%) contrast(2) brightness(2) invert(1);
+
     width: 50%;
+    -webkit-filter: var(--filter);
+    filter: var(--filter);
+    transition: filter ease-out 0.3s;
+    will-change: filter;
+
+    &:hover {
+      filter: none;
+    }
   }
 
   &__title {
