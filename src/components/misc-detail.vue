@@ -15,7 +15,7 @@
       <div class="misc__header">
         <h1
           class="misc__title animate-in"
-          v-html="this.infos.title+getDashSpaced()+this.infos.date"
+          v-html="this.infos.title+getDashSpaced()+replaceDashesSpaced(this.infos.date)"
         >
         </h1>
         <p

@@ -6,7 +6,64 @@
     {
       "uid": "digital-watches",
       "title": "Digital Watches",
-      "date": "2017 – 2019"
+      "date": "2017 – 2018",
+      "lead": "Sammlung von verschiedenen digitalen Uhren, die weder Hand noch Fuß haben.",
+      "links": [
+        {
+          "title": "01",
+          "url": "https://files.daviddarx.com/cc/digital-watches/01/"
+        },
+        {
+          "title": "02",
+          "url": "https://files.daviddarx.com/cc/digital-watches/02/"
+        },
+        {
+          "title": "03",
+          "url": "https://files.daviddarx.com/cc/digital-watches/03/"
+        },
+        {
+          "title": "04",
+          "url": "https://files.daviddarx.com/cc/digital-watches/04/"
+        },
+        {
+          "title": "05",
+          "url": "https://files.daviddarx.com/cc/digital-watches/05/"
+        },
+        {
+          "title": "06",
+          "url": "https://files.daviddarx.com/cc/digital-watches/06/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "digital_watches/dw.mp4"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_01.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_02.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_04.jpg"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_05.png"
+        },
+        {
+          "type": "image",
+          "url": "digital_watches/dw_06.png"
+        }
+      ]
     },
     {
       "uid": "digital-playground",
