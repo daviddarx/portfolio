@@ -126,7 +126,40 @@
       "uid": "barbu",
       "title": "Barbu TV",
       "date": "2012",
-      "thumb": "barbu/thumb.jpg"
+      "thumb": "barbu/thumb.jpg",
+      "lead": "Online Portfolio für ein Video Studio.",
+      "links": [
+        {
+          "title": "Grid Konzept",
+          "url": "https://files.daviddarx.com/works/barbu/grid/"
+        },
+        {
+          "title": "Template",
+          "url": "https://files.daviddarx.com/works/barbu/website/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "barbu/barbu.mp4"
+        },
+        {
+          "type": "image",
+          "url": "barbu/barbu_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "barbu/barbu_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "barbu/barbu_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "barbu/barbu_04.jpg"
+        }
+      ]
     }
   ]
 }
