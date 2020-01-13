@@ -121,5 +121,12 @@
         }
       ]
     },
+
+    {
+      "uid": "barbu",
+      "title": "Barbu TV",
+      "date": "2012",
+      "thumb": "barbu/thumb.jpg"
+    }
   ]
 }
