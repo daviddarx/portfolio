@@ -121,7 +121,6 @@
         }
       ]
     },
-
     {
       "uid": "barbu",
       "title": "Barbu TV",
@@ -158,6 +157,41 @@
         {
           "type": "image",
           "url": "barbu/barbu_04.jpg"
+        }
+      ]
+    },
+    {
+      "uid": "predentec",
+      "title": "Predentec",
+      "date": "2014",
+      "thumb": "predentec/thumb.jpg",
+      "lead": "One-pager für ein Zahnarzt.",
+      "links": [
+        {
+          "title": "Template",
+          "url": "https://files.daviddarx.com/works/predentec/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "predentec/predentec.mp4"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_04.jpg"
         }
       ]
     }
