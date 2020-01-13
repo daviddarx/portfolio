@@ -193,6 +193,7 @@ body {
   height: var(--s-dims);
 
   &::before {
+    pointer-events: none;
     content: "";
     display: block;
     position: absolute;
