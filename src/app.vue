@@ -34,7 +34,7 @@
     },
     methods: {
       beforeEach: function (to, from, next) {
-        if (from.name == 'projects') {
+        if (from.name == 'projects' || from.name == 'misc') {
           window.scrollPosition = window.pageYOffset;
         }
         next();

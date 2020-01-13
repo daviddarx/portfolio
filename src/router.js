@@ -15,6 +15,8 @@ const scrollBehavior = (to, from, savedPosition) => {
 
     if (to.name == 'projects' && window.scrollPosition && from.name.split('project').length!=1) {
       position.y = window.scrollPosition;
+    } else if (to.name == 'misc' && window.scrollPosition && from.name.split('misc').length!=1) {
+      position.y = window.scrollPosition;
     }
 
     return position;
