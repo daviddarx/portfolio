@@ -122,6 +122,89 @@
       ]
     },
     {
+      "uid": "coop-grillerinstinkt",
+      "title": "Coop Grillerinstinkt",
+      "date": "2015",
+      "thumb": "coop_grillerinstinkt/thumb.jpg",
+      "lead": "Rezeptblog für die Grillwerken von dem wallenden Andreas Stüssi.",
+      "medias": [
+        {
+          "type": "image",
+          "url": "coop_grillerinstinkt/coop_grillerinstinkt_blog_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "coop_grillerinstinkt/coop_grillerinstinkt_blog_02.jpg"
+        }
+      ]
+    },
+    {
+      "uid": "predentec",
+      "title": "Predentec",
+      "date": "2014",
+      "thumb": "predentec/thumb.jpg",
+      "lead": "One-pager für ein Zahnarzt.",
+      "links": [
+        {
+          "title": "Template",
+          "url": "https://files.daviddarx.com/works/predentec/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "predentec/predentec.mp4"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "predentec/predentec_04.jpg"
+        }
+      ]
+    },
+    {
+      "uid": "olio-leo",
+      "title": "Olio Leo",
+      "date": "2013",
+      "thumb": "olio_leo/thumb.jpg",
+      "lead": "Corporate Design & Digital Auftritt für handwerklichen Olivenöle.",
+      "links": [
+        {
+          "title": "Template",
+          "url": "https://files.daviddarx.com/works/olio-leo/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "image",
+          "url": "olio_leo/olio_leo_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "olio_leo/olio_leo_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "olio_leo/olio_leo_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "olio_leo/olio_leo_04.jpg"
+        }
+      ]
+    },
+    {
       "uid": "barbu",
       "title": "Barbu TV",
       "date": "2012",
@@ -161,37 +244,33 @@
       ]
     },
     {
-      "uid": "predentec",
-      "title": "Predentec",
-      "date": "2014",
-      "thumb": "predentec/thumb.jpg",
-      "lead": "One-pager für ein Zahnarzt.",
+      "uid": "swissaid",
+      "title": "Swissaid",
+      "date": "2011",
+      "thumb": "swissaid/thumb.jpg",
+      "lead": "Digital Auftritt für die Schweizerische Stiftung für Entwicklungszusammenarbeit.",
       "links": [
         {
           "title": "Template",
-          "url": "https://files.daviddarx.com/works/predentec/"
+          "url": "https://files.daviddarx.com/works/swissaid/"
         }
       ],
       "medias": [
         {
-          "type": "video",
-          "url": "predentec/predentec.mp4"
+          "type": "image",
+          "url": "swissaid/swissaid_01.jpg"
         },
         {
           "type": "image",
-          "url": "predentec/predentec_01.jpg"
+          "url": "swissaid/swissaid_02.jpg"
         },
         {
           "type": "image",
-          "url": "predentec/predentec_02.jpg"
+          "url": "swissaid/swissaid_03.jpg"
         },
         {
           "type": "image",
-          "url": "predentec/predentec_03.jpg"
-        },
-        {
-          "type": "image",
-          "url": "predentec/predentec_04.jpg"
+          "url": "swissaid/swissaid_04.jpg"
         }
       ]
     }
