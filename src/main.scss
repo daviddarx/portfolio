@@ -3,9 +3,8 @@
 @import 'reset-css/reset.css';
 
 @font-face {
-  font-family: 'Mont-Book';
-  src: url('webfonts/3AB588_0_0.eot');
-  src: url('webfonts/3AB588_0_0.eot?#iefix') format('embedded-opentype'), url('webfonts/3AB588_0_0.woff2') format('woff2'), url('webfonts/3AB588_0_0.woff') format('woff'), url('webfonts/3AB588_0_0.ttf') format('truetype');
+  font-family: 'Sang-Bleu-Sunrise';
+  src: url('webfonts/SangBleuSunrise-Regular-WebS.woff2') format('woff2'), url('webfonts/SangBleuSunrise-Regular-WebS.woff') format('woff');
 }
 
 @font-face {
@@ -14,11 +13,11 @@
   src: url('webfonts/3AB588_1_0.eot?#iefix') format('embedded-opentype'), url('webfonts/3AB588_1_0.woff2') format('woff2'), url('webfonts/3AB588_1_0.woff') format('woff'), url('webfonts/3AB588_1_0.ttf') format('truetype');
 }
 
-@mixin fontMontBook() {
-  font-family: Mont-Book, Arial, Helvetica, sans-serif;
+@mixin fontRunText() {
+  font-family: Sang-Bleu-Sunrise, Arial, Helvetica, sans-serif;
 }
 
-@mixin fontMontBold() {
+@mixin fontTitle() {
   font-family: Mont-Bold, Arial, Helvetica, sans-serif;
 }
 
@@ -42,7 +41,7 @@ $breakpoints: (
 }
 
 @mixin title() {
-  @include fontMontBold();
+  @include fontTitle();
 
   line-height: var(--s-line-height-titles);
   letter-spacing: -0.01em;
@@ -136,7 +135,7 @@ h6 {
 
 b,
 strong {
-  @include fontMontBold();
+  @include fontTitle();
 }
 
 p {
@@ -170,7 +169,7 @@ body {
 }
 
 html {
-  @include fontMontBook;
+  @include fontRunText;
 
   font-size: 1vw;
 }
@@ -379,7 +378,7 @@ body {
 }
 
 .navigation {
-  @include fontMontBold;
+  @include fontTitle;
 
   position: fixed;
   z-index: 999;
@@ -530,7 +529,7 @@ body {
   }
 
   &__title-detail {
-    @include fontMontBook();
+    @include fontRunText();
   }
 }
 
@@ -561,7 +560,7 @@ body {
   }
 
   &__date {
-    @include fontMontBold;
+    @include fontTitle;
   }
 
   &__separation {
@@ -752,7 +751,7 @@ body {
   }
 
   &__title {
-    @include fontMontBold();
+    @include fontTitle();
 
     display: block;
 
