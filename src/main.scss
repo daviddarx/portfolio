@@ -359,9 +359,9 @@ body {
     display: block;
     position: absolute;
     top: var(--s-padding);
-    bottom: calc(var(--s-padding) + 0.2em);
-    right: calc(var(--s-padding) * 3);
-    left: calc(var(--s-padding) * 3);
+    bottom: calc(var(--s-padding) + 0.05em);
+    right: calc(var(--s-padding) * 4);
+    left: calc(var(--s-padding) * 4);
     background-color: var(--c-text);
     z-index: -1;
     transform: scaleX(0);
