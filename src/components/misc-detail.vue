@@ -14,7 +14,7 @@
     <div class="misc__container">
       <div class="misc__header">
         <h1
-          class="misc__title animate-in"
+          class="misc__title small-title font-compensated animate-in"
           v-html="this.infos.title+getDashSpaced()+replaceDashesSpaced(this.infos.date)"
         >
         </h1>

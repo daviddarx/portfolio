@@ -102,13 +102,15 @@ $breakpoints: (
   --c-lines-inverted: rgba(255, 255, 255, 1);
 
   //sizes
-  --s-text: 1.5rem;
-  --s-text-small: calc(var(--s-text) * 0.65);
+  --s-text: 1.75rem;
+  --s-text-title-font-compensated: 1.1;
+  --s-text-small: calc(var(--s-text) * 0.75);
   --s-text-h1: calc(var(--s-text) * 4);
   --s-text-h2: calc(var(--s-text) * 3);
   --s-text-navigation: 1.8vh;
   --s-line-height: 1.6;
   --s-line-height-titles: 1;
+  --s-line-height-titles-small: 1.2;
   --s-gutter: 8vh;
   --s-logo: 6vh;
   --s-lines: 2px;
@@ -178,6 +180,10 @@ body {
   font-size: var(--s-text);
   line-height: var(--s-line-height);
   color: var(--c-text);
+}
+
+.font-compensated {
+  font-size: calc(var(--s-text) * var(--s-text-title-font-compensated));
 }
 
 .close-button {
@@ -332,6 +338,14 @@ body {
   }
 }
 
+.small-title {
+  @include title();
+
+  display: block;
+  line-height: var(--s-line-height-titles-small);
+  padding-bottom: 0.3em;
+}
+
 .text-link {
   --s-padding: -0.1em;
 
@@ -419,7 +433,7 @@ body {
     &::after {
       left: 0;
       right: 0;
-      top: 1em;
+      top: 0.95em;
       bottom: auto;
       height: var(--s-lines);
     }
@@ -475,12 +489,6 @@ body {
     margin-bottom: 5em;
   }
 
-  &__title {
-    @include title();
-
-    padding-bottom: 0.3em;
-  }
-
   &__subtitle {
     position: relative;
     font-size: var(--s-text-small);
@@ -525,11 +533,20 @@ body {
   }
 
   &__title {
-    padding-bottom: 3em;
+    @include fontRunText();
+
+    position: relative;
+    margin-top: -0.4em;
+    line-height: var(--s-line-height);
+    padding-bottom: 1em;
   }
 
   &__title-detail {
     @include fontRunText();
+  }
+
+  &__title-name {
+    @include fontTitle();
   }
 }
 
@@ -676,11 +693,6 @@ body {
     padding: var(--s-gutter);
   }
 
-  &__title {
-    line-height: var(--s-line-height);
-    padding-right: var(--s-gutter);
-  }
-
   &__lead {
     width: 50%;
   }
@@ -767,7 +779,8 @@ body {
   padding-left: 0;
 
   &__text {
-    transform: translateY(0.5em);
+    display: block;
+    transform: translateY(0.35em);
   }
 }
 

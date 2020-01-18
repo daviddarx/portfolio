@@ -9,7 +9,7 @@
       class="projects__container animate-in"
     >
       <h1 class="projects__title">
-        David Darx
+        <span class="projects__title-name font-compensated">David Darx</span>
         <span class="separe separe--spaced">–</span>
         <span class="projects__title-detail">Digital Design &amp; Art Direction</span>
       </h1>

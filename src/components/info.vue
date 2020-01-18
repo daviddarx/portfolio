@@ -20,7 +20,7 @@
             v-for="experience in info.experience"
             v-bind:key="experience.agency + experience.title"
           >
-            <h3 class="content-page__title">
+            <h3 class="content-page__title small-title font-compensated">
               {{experience.agency}} <span class="separe separe--spaced">–</span> {{experience.title}}
             </h3>
             <p>
@@ -39,7 +39,7 @@
             v-for="expertise in info.expertise"
             v-bind:key="expertise.title"
           >
-            <h3 class="content-page__title">
+            <h3 class="content-page__title small-title font-compensated">
               {{expertise.title}}
             </h3>
             <p v-html="expertise.desc">
@@ -57,13 +57,11 @@
             v-for="education in info.education"
             v-bind:key="education.title"
           >
-            <h3 class="content-page__title">
+            <h3 class="content-page__title small-title font-compensated">
               {{education.title}}
             </h3>
             <p>
-              {{education.desc}}
-            </p>
-            <p>
+              {{education.desc}}<br>
               {{education.date1}} <span class="separe">–</span> {{education.date2}}, {{education .place}}
             </p>
           </div>

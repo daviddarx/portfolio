@@ -11,7 +11,7 @@
       <span class="pagination__subtitle">
         {{ subtitlePrev }}
       </span>
-      <span class="pagination__title">
+      <span class="pagination__title font-compensated">
         {{ titlePrev }}
       </span>
     </router-link><!--
@@ -22,7 +22,7 @@
       <span class="pagination__subtitle">
         {{ subtitleNext }}
       </span>
-      <span class="pagination__title">
+      <span class="pagination__title font-compensated">
         {{ titleNext }}
       </span>
     </router-link>

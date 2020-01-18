@@ -18,7 +18,7 @@
       <p
         class="project-list__detail no-margin"
       >
-        <span class="project-list__date">{{datas.year}}</span> <span class="separe separe--spaced">–</span> {{datas.type}}
+        <span class="project-list__date font-compensated">{{datas.year}}</span> <span class="separe separe--spaced">–</span> {{datas.type}}
       </p>
     </router-link>
   </div>
