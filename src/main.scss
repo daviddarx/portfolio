@@ -104,7 +104,7 @@ $breakpoints: (
   //sizes
   --s-text: 1.75rem;
   --s-text-title-font-compensated: 1.1;
-  --s-text-small: calc(var(--s-text) * 0.75);
+  --s-text-small: calc(var(--s-text) * 0.65);
   --s-text-h1: calc(var(--s-text) * 4);
   --s-text-h2: calc(var(--s-text) * 3);
   --s-text-navigation: 1.8vh;
@@ -489,6 +489,12 @@ body {
     margin-bottom: 5em;
   }
 
+  &__3-4 {
+    position: relative;
+    left: -25vw;
+    width: 75vw;
+  }
+
   &__subtitle {
     position: relative;
     font-size: var(--s-text-small);
@@ -519,6 +525,8 @@ body {
     }
   }
 }
+
+
 
 .projects {
   --d-opacity: 0.35s;
@@ -630,20 +638,20 @@ body {
 
 .miscs {
   &__container {
-    flex-grow: 1;
-    position: relative;
-    left: -25vw;
-    width: 75vw;
+    flex-grow: 1
   }
 }
 
-.misc-list {
-  width: 50%;
-  margin-top: var(--s-gutter);
+.miscs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: var(--s-gutter);
+  align-items: center;
+}
 
-  &:first-child {
-    margin-top: 0;
-  }
+.misc-list {
+  $root: #{&};
 
   &:hover {
     @include twerk-anime();
@@ -655,16 +663,28 @@ body {
     width: 100%;
     -webkit-filter: var(--filter);
     filter: var(--filter);
-    transition: filter ease-out 0.3s;
-    will-change: filter;
+    transition: filter ease-out 0.3s, transform var(--e-out) 0.3s;
+    will-change: filter, transform;
 
-    &:hover {
+    #{$root}:hover & {
       filter: none;
+      transform: scale(0.9);
+    }
+  }
+
+  &__info {
+    margin-top: 0.75em;
+    text-align: center;
+    transition: transform var(--e-out) 0.3s;
+    will-change: transform;
+
+    #{$root}:hover & {
+      transform: translateY(-1em);
     }
   }
 
   &__title {
-    margin-top: 0.5em;
+    @include fontRunText();
   }
 }
 

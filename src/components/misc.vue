@@ -9,9 +9,9 @@
         {{misc.lead}}
       </p>
 
-      <div class="miscs__container animate-in animate-in__s1">
+      <div class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s1">
         <div
-          class="misc-list"
+          class="misc-list miscs-grid__item"
           v-for="miscItem in misc.collection"
           v-bind:key="miscItem.title"
         >
@@ -24,9 +24,11 @@
               v-bind:src="misc.mediasPath+miscItem.thumb"
             >
               <h2
-                class="misc-list__title"
-                v-html="miscItem.title+getDashSpaced()+miscItem.date"
+                class="misc-list__info"
               >
+                <span class="misc-list__date font-compensated">{{miscItem.date}}</span>
+                <span class="dash dash--spaced">–</span>
+                <span class="misc-list__title">{{miscItem.title}}</span>
               </h2>
           </router-link>
         </div>
