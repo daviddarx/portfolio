@@ -10,7 +10,7 @@
           <b class="font-compensated small-title">David Darx</b>
           Pflanzschulstrasse 35<br>
           8004 Zürich<br>
-          CH <span class="separe">–</span> Schweiz
+          CH <span class="dash">–</span> Schweiz
         </p>
         <p class="animate-in animate-in__s1">
           078 805 89 63<br>

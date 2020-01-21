@@ -21,10 +21,10 @@
             v-bind:key="experience.agency + experience.title"
           >
             <h3 class="content-page__title small-title font-compensated">
-              {{experience.agency}} <span class="separe separe--spaced">–</span> {{experience.title}}
+              {{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.title}}
             </h3>
             <p>
-              {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="separe" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}
+              {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}
             </p>
           </div>
         </div>
@@ -62,7 +62,7 @@
             </h3>
             <p>
               {{education.desc}}<br>
-              {{education.date1}} <span class="separe">–</span> {{education.date2}}, {{education .place}}
+              {{education.date1}} <span class="dash">–</span> {{education.date2}}, {{education .place}}
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@
             v-for="(client, index) in info.clients"
             v-bind:key="client"
           >
-            {{client}} <span class="separe separe--spaced " v-if="index < info.clients.length-1">-</span>
+            {{client}} <span class="dash dash--spaced " v-if="index < info.clients.length-1">-</span>
           </span>
         </p>
       </div>
