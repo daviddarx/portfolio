@@ -675,17 +675,16 @@ body {
     @include twerk-anime();
   }
 
-  &__img {
-    // --filter: grayscale(100%) contrast(2) brightness(2) invert(1);
+  &__img-el {
+    display: none;
+  }
 
-    width: 100%;
-    // -webkit-filter: var(--filter);
-    // filter: var(--filter);
-    // transition: filter ease-out 0.3s, transform var(--e-out) 0.3s;
-    // will-change: filter, transform;
+  &__img-canvas {
+    display: block;
+    transition: transform var(--e-out) 0.2s;
+  // will-change: transform; // TESTER PERFS
 
     #{$root}:hover & {
-      // filter: none;
       transform: scale(0.9);
     }
   }
