@@ -651,23 +651,41 @@ body {
 }
 
 .misc-list {
+  --s-translateYAnimateIn: 10vh;
+  --d-in-opacity: 0.75s;
+  --e-opacity: ease;
+  --d-in-transform: 1s;
+  --e-transform: var(--e-out);
+
   $root: #{&};
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(var(--s-translateYAnimateIn));
+  transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
+  // will-change: opacity, transform; // TESTER PERFS
+
+  &.is-displayed {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
 
   &:hover {
     @include twerk-anime();
   }
 
   &__img {
-    --filter: grayscale(100%) contrast(2) brightness(2) invert(1);
+    // --filter: grayscale(100%) contrast(2) brightness(2) invert(1);
 
     width: 100%;
-    -webkit-filter: var(--filter);
-    filter: var(--filter);
-    transition: filter ease-out 0.3s, transform var(--e-out) 0.3s;
-    will-change: filter, transform;
+    // -webkit-filter: var(--filter);
+    // filter: var(--filter);
+    // transition: filter ease-out 0.3s, transform var(--e-out) 0.3s;
+    // will-change: filter, transform;
 
     #{$root}:hover & {
-      filter: none;
+      // filter: none;
       transform: scale(0.9);
     }
   }

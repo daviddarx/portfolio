@@ -10,28 +10,17 @@
       </p>
 
       <div class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s1">
-        <div
-          class="misc-list miscs-grid__item"
+        <misc-list
           v-for="miscItem in misc.collection"
           v-bind:key="miscItem.title"
+          v-bind:route="misc.routesPath + miscItem.uid"
+          v-bind:imgURL="misc.mediasPath+miscItem.thumb"
+          v-bind:date="miscItem.date"
+          v-bind:title="miscItem.title"
+          v-on:loaed="loadNextMisc"
+          ref="miscItem"
         >
-          <router-link
-            v-bind:to="misc.routesPath + miscItem.uid"
-            class="misc-list__link"
-          >
-            <img
-              class="misc-list__img"
-              v-bind:src="misc.mediasPath+miscItem.thumb"
-            >
-              <h2
-                class="misc-list__info"
-              >
-                <span class="misc-list__date font-compensated">{{miscItem.date}}</span>
-                <span class="dash dash--spaced">–</span>
-                <span class="misc-list__title">{{miscItem.title}}</span>
-              </h2>
-          </router-link>
-        </div>
+        </misc-list>
       </div>
       <credits></credits>
     </div>
@@ -40,19 +29,22 @@
 
 <script>
   import Vue from "vue";
+  import MiscList from './misc-list.vue';
   import Credits from './credits.vue';
   import * as misc from '../../content/misc.json';
   import dash from '../mixins/dash';
 
   export default Vue.extend({
     components: {
+      'misc-list': MiscList,
       'credits': Credits
     },
     mixins: [dash],
     data() {
       return {
         misc: misc,
-        isDisplayed : false
+        isDisplayed : false,
+        miscItemLoadID: 0,
       }
     },
     created () {
@@ -66,6 +58,14 @@
     methods: {
       displayMisc: function() {
         this.isDisplayed = true;
+
+        this.$refs.miscItem[0].launchLoading();
+      },
+      loadNextMisc: function () {
+        if (this.miscItemLoadID < this.$refs.miscItem.length-1) {
+          this.miscItemLoadID++;
+          this.$refs.miscItem[this.miscItemLoadID].launchLoading();
+        }
       }
     }
   });
