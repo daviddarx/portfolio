@@ -46,6 +46,7 @@
         imgWidth: 0,
         imgHeight: 0,
         imgRatioHtoW: 0,
+        imgScale: undefined,
         imgDimensions: undefined,
         canvas:undefined,
         pixiApp:undefined,
@@ -82,6 +83,7 @@
           this.imgDimensions = this.getImageComputedDimensions();
           this.pixiApp.renderer.resize(this.imgDimensions.width, this.imgDimensions.height);
           this.pixiApp.view.style.display = 'block';
+          this.resizeImage();
         });
       },
       initPixi: function () {
@@ -94,14 +96,25 @@
           resolution: window.devicePixelRatio
         });
         this.pixiApp.renderer.autoResize = true;
+        this.pixiApp.stop();
         this.$refs.imageContainer.appendChild(this.pixiApp.view);
         this.pixiApp.view.classList.add('misc-list__img-canvas');
       },
       setupImage: function () {
         this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
+        this.pixiApp.stage.addChild(this.pixiSprite);
+        this.resizeImage();
+
+        setTimeout(() => {
+          this.pixiSprite.scale.set(this.imgScale.x * 0.6, this.imgScale.y * 0.6);
+          this.pixiApp.renderer.render( this.pixiApp.stage);
+        }, 2000);
+      },
+      resizeImage: function () {
         this.pixiSprite.width = this.imgDimensions.width;
         this.pixiSprite.height = this.imgDimensions.height;
-        this.pixiApp.stage.addChild(this.pixiSprite);
+        this.imgScale = this.pixiSprite.scale;
+        this.pixiApp.renderer.render( this.pixiApp.stage);
       }
     }
   }
