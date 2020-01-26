@@ -32,8 +32,9 @@
 </template>
 
 <script>
+  import {AdjustmentFilter} from '@pixi/filter-adjustment';
   import * as PIXI from 'pixi.js';
-  import gsap, {Power4} from 'gsap';
+  import gsap, {Power3} from 'gsap';
 
 
   export default {
@@ -56,7 +57,13 @@
         canvas:undefined,
         pixiApp:undefined,
         pixiSprite: undefined,
-        pixiEase: Power4
+        pixiEase: Power3,
+        pixiScaleAnimationDuration: 0.3,
+        pixiFilterAnimationDuration: 0.6,
+        pixiFilter: undefined,
+        pixiFilterSaturation: 0,
+        pixiFilterContrast: 2,
+        pixiFilterBrightness: 2,
       }
     },
     mounted () {
@@ -102,12 +109,23 @@
           resolution: window.devicePixelRatio
         });
         this.pixiApp.renderer.autoResize = true;
-        this.pixiApp.stop();
         this.$refs.imageContainer.appendChild(this.pixiApp.view);
         this.pixiApp.view.classList.add('misc-list__img-canvas');
+        this.pixiFilter = new AdjustmentFilter();
+        this.pixiFilter.saturation = this.pixiFilterSaturation;
+        this.pixiFilter.contrast = this.pixiFilterContrast;
+        this.pixiFilter.brightness = this.pixiFilterBrightness;
+        this.stopPixi();
+      },
+      startPixi: function() {
+        this.pixiApp.start();
+      },
+      stopPixi: function() {
+        this.pixiApp.stop();
       },
       setupImage: function () {
         this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
+        this.pixiSprite.filters = [this.pixiFilter];
         this.pixiApp.stage.addChild(this.pixiSprite);
         this.resizeImage();
       },
@@ -124,21 +142,37 @@
         this.renderImage();
       },
       imageMouseOver: function () {
+        this.startPixi();
         gsap.to(this.pixiSprite.scale, {
-          duration: 0.3,
+          duration: this.pixiScaleAnimationDuration,
           ease:this.pixiEase.easeOut,
           x: this.imgScale * this.imgHoverScale,
-          y: this.imgScale * this.imgHoverScale,
-          onUpdate: this.renderImage
+          y: this.imgScale * this.imgHoverScale
+        });
+        gsap.to(this.pixiFilter, {
+          duration: this.pixiFilterAnimationDuration,
+          ease:this.pixiEase.easeOut,
+          saturation: 1,
+          contrast:1,
+          brightness: 1,
+          onComplete: this.stopPixi
         });
       },
       imageMouseOut: function() {
+        this.startPixi();
         gsap.to(this.pixiSprite.scale, {
-          duration: 0.3,
+          duration: this.pixiScaleAnimationDuration,
           ease:this.pixiEase.easeOut,
           x: this.imgScale,
-          y: this.imgScale,
-          onUpdate: this.renderImage
+          y: this.imgScale
+        });
+        gsap.to(this.pixiFilter, {
+          duration: this.pixiFilterAnimationDuration,
+          ease:this.pixiEase.easeOut,
+          saturation: this.pixiFilterSaturation,
+          contrast: this.pixiFilterContrast,
+          brightness: this.pixiFilterBrightness,
+          onComplete: this.stopPixi
         });
       }
     }
