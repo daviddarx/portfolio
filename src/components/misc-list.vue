@@ -3,6 +3,8 @@
   <div
     class="misc-list miscs-grid__item"
     v-bind:class="{ 'is-displayed' : this.isLoaded }"
+    @mouseover="imageMouseOver"
+    @mouseleave="imageMouseOut"
   >
     <router-link
       v-bind:to="route"
@@ -30,7 +32,9 @@
 </template>
 
 <script>
-  import * as PIXI from 'pixi.js'
+  import * as PIXI from 'pixi.js';
+  import gsap, {Power4} from 'gsap';
+
 
   export default {
     name: 'misc-list',
@@ -46,11 +50,13 @@
         imgWidth: 0,
         imgHeight: 0,
         imgRatioHtoW: 0,
-        imgScale: undefined,
+        imgHoverScale: 0.8,
+        imgScale: 0,
         imgDimensions: undefined,
         canvas:undefined,
         pixiApp:undefined,
-        pixiSprite: undefined
+        pixiSprite: undefined,
+        pixiEase: Power4
       }
     },
     mounted () {
@@ -104,17 +110,36 @@
         this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
         this.pixiApp.stage.addChild(this.pixiSprite);
         this.resizeImage();
-
-        setTimeout(() => {
-          this.pixiSprite.scale.set(this.imgScale.x * 0.6, this.imgScale.y * 0.6);
-          this.pixiApp.renderer.render( this.pixiApp.stage);
-        }, 2000);
+      },
+      renderImage: function () {
+        this.pixiApp.renderer.render( this.pixiApp.stage);
       },
       resizeImage: function () {
         this.pixiSprite.width = this.imgDimensions.width;
         this.pixiSprite.height = this.imgDimensions.height;
-        this.imgScale = this.pixiSprite.scale;
-        this.pixiApp.renderer.render( this.pixiApp.stage);
+        this.pixiSprite.x = this.imgDimensions.width * 0.5;
+        this.pixiSprite.y = this.imgDimensions.height * 0.5;
+        this.pixiSprite.anchor.x = this.pixiSprite.anchor.y = 0.5;
+        this.imgScale = this.pixiSprite.scale.x;
+        this.renderImage();
+      },
+      imageMouseOver: function () {
+        gsap.to(this.pixiSprite.scale, {
+          duration: 0.3,
+          ease:this.pixiEase.easeOut,
+          x: this.imgScale * this.imgHoverScale,
+          y: this.imgScale * this.imgHoverScale,
+          onUpdate: this.renderImage
+        });
+      },
+      imageMouseOut: function() {
+        gsap.to(this.pixiSprite.scale, {
+          duration: 0.3,
+          ease:this.pixiEase.easeOut,
+          x: this.imgScale,
+          y: this.imgScale,
+          onUpdate: this.renderImage
+        });
       }
     }
   }
