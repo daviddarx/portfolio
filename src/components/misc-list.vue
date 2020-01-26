@@ -34,7 +34,7 @@
 <script>
   import {AdjustmentFilter} from '@pixi/filter-adjustment';
   import * as PIXI from 'pixi.js';
-  import gsap, {Power3} from 'gsap';
+  import gsap, {Power2} from 'gsap';
 
 
   export default {
@@ -51,15 +51,15 @@
         imgWidth: 0,
         imgHeight: 0,
         imgRatioHtoW: 0,
-        imgHoverScale: 0.8,
         imgScale: 0,
         imgDimensions: undefined,
         canvas:undefined,
         pixiApp:undefined,
         pixiSprite: undefined,
-        pixiEase: Power3,
+        pixiEase: Power2,
+        pixiScaleOnHover: 0.9,
         pixiScaleAnimationDuration: 0.3,
-        pixiFilterAnimationDuration: 0.6,
+        pixiFilterAnimationDuration: 0.5,
         pixiFilter: undefined,
         pixiFilterSaturation: 0,
         pixiFilterContrast: 2,
@@ -121,7 +121,9 @@
         this.pixiApp.start();
       },
       stopPixi: function() {
-        this.pixiApp.stop();
+        setTimeout(() => {
+          this.pixiApp.stop();
+        }, 200);
       },
       setupImage: function () {
         this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
@@ -142,16 +144,16 @@
         this.renderImage();
       },
       imageMouseOver: function () {
+        this.killTweens();
         this.startPixi();
         gsap.to(this.pixiSprite.scale, {
           duration: this.pixiScaleAnimationDuration,
           ease:this.pixiEase.easeOut,
-          x: this.imgScale * this.imgHoverScale,
-          y: this.imgScale * this.imgHoverScale
+          x: this.imgScale * this.pixiScaleOnHover,
+          y: this.imgScale * this.pixiScaleOnHover
         });
         gsap.to(this.pixiFilter, {
           duration: this.pixiFilterAnimationDuration,
-          ease:this.pixiEase.easeOut,
           saturation: 1,
           contrast:1,
           brightness: 1,
@@ -159,6 +161,7 @@
         });
       },
       imageMouseOut: function() {
+        this.killTweens();
         this.startPixi();
         gsap.to(this.pixiSprite.scale, {
           duration: this.pixiScaleAnimationDuration,
@@ -168,12 +171,16 @@
         });
         gsap.to(this.pixiFilter, {
           duration: this.pixiFilterAnimationDuration,
-          ease:this.pixiEase.easeOut,
           saturation: this.pixiFilterSaturation,
           contrast: this.pixiFilterContrast,
           brightness: this.pixiFilterBrightness,
           onComplete: this.stopPixi
         });
+      },
+      killTweens: function () {
+        gsap.killTweensOf(this.pixiSprite.scale);
+        gsap.killTweensOf(this.pixiFilter);
+        gsap.killTweensOf(this.stopPixi);
       }
     }
   }
