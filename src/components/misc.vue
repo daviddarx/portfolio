@@ -17,7 +17,7 @@
           v-bind:imgURL="misc.mediasPath+miscItem.thumb"
           v-bind:date="miscItem.date"
           v-bind:title="miscItem.title"
-          v-on:loaed="loadNextMisc"
+          v-on:loaded="loadNextMisc"
           ref="miscItem"
         >
         </misc-list>

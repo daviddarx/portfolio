@@ -526,8 +526,6 @@ body {
   }
 }
 
-
-
 .projects {
   --d-opacity: 0.35s;
 
@@ -638,7 +636,7 @@ body {
 
 .miscs {
   &__container {
-    flex-grow: 1
+    flex-grow: 1;
   }
 }
 
@@ -663,7 +661,6 @@ body {
   opacity: 0;
   transform: translateY(var(--s-translateYAnimateIn));
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
-  // will-change: opacity, transform; // TESTER PERFS
 
   &.is-displayed {
     visibility: visible;
@@ -680,20 +677,20 @@ body {
   }
 
   &__img-canvas {
-    display: block;
-    transition: transform var(--e-out) 0.2s;
-  // will-change: transform; // TESTER PERFS
+    // display: block;
+    // transition: transform var(--e-out) 0.2s;
+    // // will-change: transform; // TESTER PERFS
 
-    #{$root}:hover & {
-      transform: scale(0.9);
-    }
+    // #{$root}:hover & {
+    //   transform: scale(0.9);
+    // }
   }
 
   &__info {
     margin-top: 0.75em;
     text-align: center;
     transition: transform var(--e-out) 0.3s;
-    will-change: transform;
+    // will-change: transform;
 
     #{$root}:hover & {
       transform: translateY(-1em);

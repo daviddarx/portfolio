@@ -46,8 +46,10 @@
         imgWidth: 0,
         imgHeight: 0,
         imgRatioHtoW: 0,
+        imgDimensions: undefined,
         canvas:undefined,
-        pixiApp:undefined
+        pixiApp:undefined,
+        pixiSprite: undefined
       }
     },
     mounted () {
@@ -63,7 +65,10 @@
         this.imgRatioHtoW = this.imgHeight / this.imgWidth;
         this.initPixi();
         window.addEventListener('resize', this.resize);
-        this.$emit('loaed');
+        PIXI.Loader.shared.add(this.imgURL).load(() => {
+          this.$emit('loaded');
+          this.setupImage();
+        });
       },
       getImageComputedDimensions: function () {
         return {
@@ -74,17 +79,29 @@
       resize: function () {
         this.pixiApp.view.style.display = 'none';
         requestAnimationFrame(() => {
-          const imgDimensions = this.getImageComputedDimensions();
-          this.pixiApp.renderer.resize(imgDimensions.width, imgDimensions.height);
+          this.imgDimensions = this.getImageComputedDimensions();
+          this.pixiApp.renderer.resize(this.imgDimensions.width, this.imgDimensions.height);
           this.pixiApp.view.style.display = 'block';
         });
       },
       initPixi: function () {
-        const imgDimensions = this.getImageComputedDimensions();
-        this.pixiApp = new PIXI.Application({width: imgDimensions.width, height: imgDimensions.height});
+        this.imgDimensions = this.getImageComputedDimensions();
+        this.pixiApp = new PIXI.Application({
+          width: this.imgDimensions.width,
+          height: this.imgDimensions.height,
+          backgroundColor: '0xffffff',
+          antialias: true,
+          resolution: window.devicePixelRatio
+        });
         this.pixiApp.renderer.autoResize = true;
         this.$refs.imageContainer.appendChild(this.pixiApp.view);
         this.pixiApp.view.classList.add('misc-list__img-canvas');
+      },
+      setupImage: function () {
+        this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
+        this.pixiSprite.width = this.imgDimensions.width;
+        this.pixiSprite.height = this.imgDimensions.height;
+        this.pixiApp.stage.addChild(this.pixiSprite);
       }
     }
   }
