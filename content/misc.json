@@ -273,6 +273,105 @@
           "url": "swissaid/swissaid_04.jpg"
         }
       ]
+    },
+    {
+      "uid": "little-chaperon",
+      "title": "Little Chaperon",
+      "date": "2009",
+      "thumb": "little_chaperon/thumb.jpg",
+      "lead": "Flash Website für Little Chaperon, Fashion Design aus Fribourg.",
+      "medias": [
+        {
+          "type": "video",
+          "url": "little_chaperon/little_chaperon.mp4"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_04.jpg"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_05.jpg"
+        },
+        {
+          "type": "image",
+          "url": "little_chaperon/little_chaperon_06.jpg"
+        }
+      ]
+    },
+    {
+      "uid": "flash-experimente",
+      "title": "Flash Experimente",
+      "date": "2009",
+      "thumb": "flash_experimente/thumb.jpg",
+      "lead": "Diverse Flash Animationen – Timeline & Actionscript.",
+      "medias": [
+        {
+          "type": "video",
+          "url": "flash_experimente/flash_experimente.mp4"
+        },
+        {
+          "type": "image",
+          "url": "flash_experimente/flash_experimente_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "flash_experimente/flash_experimente_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "flash_experimente/flash_experimente_06.jpg"
+        },
+        {
+          "type": "image",
+          "url": "flash_experimente/flash_experimente_04.jpg"
+        },
+        {
+          "type": "image",
+          "url": "flash_experimente/flash_experimente_05.jpg"
+        }
+      ]
+    },
+    {
+      "uid": "custom-design",
+      "title": "Custom Design",
+      "date": "2008",
+      "thumb": "custom_design/thumb.jpg",
+      "lead": "Flash Website für die DIY Könige.",
+      "medias": [
+        {
+          "type": "video",
+          "url": "custom_design/custom_design.mp4"
+        },
+        {
+          "type": "image",
+          "url": "custom_design/custom_design_01.jpg"
+        },
+        {
+          "type": "image",
+          "url": "custom_design/custom_design_02.jpg"
+        },
+        {
+          "type": "image",
+          "url": "custom_design/custom_design_03.jpg"
+        },
+        {
+          "type": "image",
+          "url": "custom_design/custom_design_04.jpg"
+        }
+      ]
     }
   ]
 }
