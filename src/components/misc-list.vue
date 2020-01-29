@@ -55,6 +55,8 @@
         imgDimensions: undefined,
         canvas:undefined,
         pixiApp:undefined,
+        pixiTexture: undefined,
+        pixiTextureBase: undefined,
         pixiSprite: undefined,
         pixiEase: Power2,
         pixiScaleOnHover: 0.9,
@@ -79,10 +81,8 @@
         this.imgRatioHtoW = this.imgHeight / this.imgWidth;
         this.initPixi();
         window.addEventListener('resize', this.resize);
-        PIXI.Loader.shared.add(this.imgURL).load(() => {
-          this.$emit('loaded');
-          this.setupImage();
-        });
+        this.setupImage();
+        this.$emit('loaded');
       },
       getImageComputedDimensions: function () {
         return {
@@ -121,12 +121,15 @@
         this.pixiApp.start();
       },
       stopPixi: function() {
-        setTimeout(() => {
-          this.pixiApp.stop();
-        }, 200);
+        this.pixiApp.stop();
       },
       setupImage: function () {
-        this.pixiSprite = new PIXI.Sprite(PIXI.Loader.shared.resources[this.imgURL].texture);
+        this.pixiTextureBase = new PIXI.BaseTexture(this.$refs.image);
+        //remettre loader
+        console.log(PIXI.utils.TextureCache);
+        this.pixiTexture = new PIXI.Texture(this.pixiTextureBase),
+        this.pixiSprite = new PIXI.Sprite(this.pixiTexture);
+
         this.pixiSprite.filters = [this.pixiFilter];
         this.pixiApp.stage.addChild(this.pixiSprite);
         this.resizeImage();
