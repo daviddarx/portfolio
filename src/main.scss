@@ -40,11 +40,16 @@ $breakpoints: (
   }
 }
 
-@mixin title() {
+@mixin title {
   @include fontTitle();
 
   line-height: var(--s-line-height-titles);
   letter-spacing: -0.01em;
+}
+
+@mixin label {
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
 }
 
 @mixin twerk-anime {
@@ -393,6 +398,7 @@ body {
 
 .navigation {
   @include fontTitle;
+  @include label;
 
   position: fixed;
   z-index: 999;
@@ -400,8 +406,6 @@ body {
   left: var(--s-gutter);
   font-size: var(--s-text-navigation);
   line-height: 1;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   transform: rotate(-90deg) translate(0, 100%);
   transform-origin: bottom left;
 
