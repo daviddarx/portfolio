@@ -654,10 +654,17 @@ body {
   --e-opacity: ease;
   --d-in-transform: 1s;
   --e-transform: var(--e-out);
+  --d-fading: 0.5s;
+  --s-scaleHover: 0.75;
+  --d-scaleHover: 0.35s;
+  --e-scaleHover: var(--e-out);
+  --s-translateHover: -1.5em;
+  --d-translateHover: 0.35s;
 
   $root: #{&};
 
   visibility: hidden;
+  position: relative;
   opacity: 0;
   transform: translateY(var(--s-translateYAnimateIn));
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
@@ -672,28 +679,44 @@ body {
     @include twerk-anime();
   }
 
+  &__img {
+    transition: transform var(--e-scaleHover) var(--d-scaleHover);
+
+    #{$root}:hover & {
+      transform: scale3d(var(--s-scaleHover), var(--s-scaleHover), 1);
+    }
+  }
+
   &__img-el {
-    display: none;
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    transition: visibility linear var(--d-fading);
+
+    #{$root}:hover & {
+      visibility: visible;
+    }
   }
 
   &__img-canvas {
-    // display: block;
-    // transition: transform var(--e-out) 0.2s;
-    // // will-change: transform; // TESTER PERFS
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity ease-out var(--d-fading);
 
-    // #{$root}:hover & {
-    //   transform: scale(0.9);
-    // }
+    #{$root}:hover & {
+      opacity: 0;
+    }
   }
 
   &__info {
     margin-top: 0.75em;
     text-align: center;
-    transition: transform var(--e-out) 0.3s;
-    // will-change: transform;
+    transition: transform var(--e-scaleHover) var(--d-translateHover);
 
     #{$root}:hover & {
-      transform: translateY(-1em);
+      transform: translateY(var(--s-translateHover));
     }
   }
 
