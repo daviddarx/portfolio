@@ -3,6 +3,7 @@
   <div
     class="website-container"
   >
+    <h1 class="visually-hidden">David Darx</h1>
     <logo></logo>
     <custom-navigation></custom-navigation>
     <router-view :key="$route.fullPath"></router-view>
