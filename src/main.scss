@@ -658,13 +658,12 @@ body {
   }
 
   &__img {
-    --filter: grayscale(100%) contrast(2) brightness(2); //invert(1);
+    --filter: grayscale(100%) contrast(2) brightness(2);
 
     width: 100%;
     -webkit-filter: var(--filter);
     filter: var(--filter);
     transition: filter ease-out 0.3s, transform var(--e-out) 0.3s;
-    // will-change: filter, transform;
 
     #{$root}:hover & {
       filter: none;
@@ -676,7 +675,6 @@ body {
     margin-top: 0.75em;
     text-align: center;
     transition: transform var(--e-out) 0.3s;
-    // will-change: transform;
 
     #{$root}:hover & {
       transform: translateY(-1em);
