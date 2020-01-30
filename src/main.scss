@@ -52,6 +52,12 @@ $breakpoints: (
   text-transform: uppercase;
 }
 
+@mixin label-small {
+  @include label;
+
+  font-size: var(--s-text-small);
+}
+
 @mixin twerk-anime {
   animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 }
@@ -112,6 +118,7 @@ $breakpoints: (
   --s-text-small: calc(var(--s-text) * 0.65);
   --s-text-h1: calc(var(--s-text) * 4);
   --s-text-h2: calc(var(--s-text) * 3);
+  --s-text-lead: calc(var(--s-text) * 1.5);
   --s-text-navigation: 1.8vh;
   --s-line-height: 1.6;
   --s-line-height-titles: 1;
@@ -477,6 +484,7 @@ body {
 }
 
 .content-page {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -487,10 +495,18 @@ body {
   padding-right: var(--s-gutter);
   box-sizing: border-box;
 
+  &__page-title {
+    @include label-small;
+
+    position: absolute;
+    left: -25vw;
+  }
+
   &__lead {
     position: relative;
-    margin-top: -0.3em;
-    margin-bottom: 5em;
+    font-size: var(--s-text-lead);
+    margin-top: -0.4em;
+    margin-bottom: var(--s-gutter);
   }
 
   &__3-4 {
@@ -500,9 +516,9 @@ body {
   }
 
   &__subtitle {
+    @include label-small;
+
     position: relative;
-    font-size: var(--s-text-small);
-    text-transform: uppercase;
     margin-top: 7em;
     margin-bottom: 4em;
 
@@ -649,11 +665,11 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2px;
   grid-row-gap: var(--s-gutter);
+  padding-bottom: 50%;
   align-items: center;
 }
 
 .misc-list {
-  --s-translateYAnimateIn: 10vh;
   --d-in-opacity: 0.75s;
   --e-opacity: ease;
   --d-in-transform: 1s;
@@ -661,7 +677,7 @@ body {
   --d-fading: 0.5s;
   --s-scaleHover: 0.75;
   --d-scaleHover: 0.35s;
-  --e-scaleHover: var(--e-out);
+  --e-scaleHover: var(--e-inout);
   --s-translateHover: -1.5em;
   --d-translateHover: 0.35s;
 
@@ -670,7 +686,6 @@ body {
   visibility: hidden;
   position: relative;
   opacity: 0;
-  transform: translateY(var(--s-translateYAnimateIn));
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
 
   &.is-displayed {
@@ -681,6 +696,12 @@ body {
 
   &:hover {
     @include twerk-anime();
+  }
+
+  &__container {
+    #{$root}:nth-child(2n+0) & {
+      transform: translateY(50%);
+    }
   }
 
   &__img {
@@ -715,7 +736,7 @@ body {
   }
 
   &__info {
-    margin-top: 0.75em;
+    margin-top: 1em;
     text-align: center;
     transition: transform var(--e-scaleHover) var(--d-translateHover);
 

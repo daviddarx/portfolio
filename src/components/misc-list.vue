@@ -4,33 +4,35 @@
     class="misc-list miscs-grid__item"
     v-bind:class="{ 'is-displayed' : this.isReady }"
   >
-    <router-link
-      v-bind:to="route"
-      class="misc-list__link"
-    >
-      <div
-        class="misc-list__img"
-        ref="imageContainer"
+    <div class="misc-list__container">
+      <router-link
+        v-bind:to="route"
+        class="misc-list__link"
       >
-        <img
-          class="misc-list__img-el"
-          @load="imageLoaded"
-          ref="image"
+        <div
+          class="misc-list__img"
+          ref="imageContainer"
         >
-        <canvas
-          class="misc-list__img-canvas"
-          ref="canvas"
+          <img
+            class="misc-list__img-el"
+            @load="imageLoaded"
+            ref="image"
+          >
+          <canvas
+            class="misc-list__img-canvas"
+            ref="canvas"
+          >
+          </canvas>
+        </div>
+        <h2
+          class="misc-list__info"
         >
-        </canvas>
-      </div>
-      <h2
-        class="misc-list__info"
-      >
-        <span class="misc-list__date font-compensated">{{date}}</span>
-        <span class="dash dash--spaced">–</span>
-        <span class="misc-list__title">{{title}}</span>
-      </h2>
-    </router-link>
+          <span class="misc-list__date font-compensated">{{date}}</span>
+          <span class="dash dash--spaced">–</span>
+          <span class="misc-list__title">{{title}}</span>
+        </h2>
+      </router-link>
+    </div>
   </div>
 </template>
 

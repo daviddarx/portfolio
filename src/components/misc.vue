@@ -5,10 +5,13 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content-page">
-      <p class="content-page__lead animate-in">
+      <h2 class="content-page__page-title font-compensated animate-in">
+        Kunterbunt
+      </h2>
+      <p class="content-page__lead animate-in animate-in__s1">
         {{misc.lead}}
       </p>
-      <div class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s1">
+      <div class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2">
         <misc-list
           v-for="(miscItem, index) in misc.collection"
           v-bind:key="miscItem.title"

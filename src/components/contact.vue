@@ -5,9 +5,12 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content-page">
+      <h2 class="content-page__page-title font-compensated animate-in">
+        Kontakt
+      </h2>
       <div class="content-page__lead">
         <p class="animate-in">
-          <b class="font-compensated small-title">David Darx</b>
+          David Darx<br>
           Pflanzschulstrasse 35<br>
           8004 Zürich<br>
           CH <span class="dash">–</span> Schweiz

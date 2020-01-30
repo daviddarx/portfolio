@@ -5,12 +5,14 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content-page">
-      <h1 class="visually-hidden"> David Darx – Digital Design &amp; Art Direction</h1>
-      <p class="content-page__lead animate-in">
+      <h2 class="content-page__page-title font-compensated animate-in">
+        Info
+      </h2>
+      <p class="content-page__lead animate-in animate-in__s1">
         {{this.info.lead}}
       </p>
 
-      <div class="content-page__content animate-in animate-in__s1">
+      <div class="content-page__content animate-in animate-in__s2">
         <h2 class="content-page__subtitle">
           Erfahrung
         </h2>
