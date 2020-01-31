@@ -559,20 +559,29 @@ body {
   }
 
   &__title {
-    @include fontRunText();
+    @include label-small;
 
-    position: relative;
-    margin-top: -0.4em;
-    line-height: var(--s-line-height);
-    padding-bottom: 1em;
+    position: fixed;
+    left: 25vw;
+    top: var(--s-gutter);
+    width: 20vw;
+  }
+
+  &__title-name {
+    @include label-small;
+
+    letter-spacing: 0.01em;
   }
 
   &__title-detail {
     @include fontRunText();
-  }
 
-  &__title-name {
-    @include fontTitle();
+    display: block;
+    font-size: calc(var(--s-text-small) * (2 - var(--s-text-title-font-compensated)));
+    text-transform: none;
+    letter-spacing: 0.0425em;
+    padding-top: 0.35em;
+    transform: translateX(-0.02em);
   }
 }
 
