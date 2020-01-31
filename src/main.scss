@@ -679,6 +679,7 @@ body {
   --d-scaleHover: 0.35s;
   --e-scaleHover: var(--e-inout);
   --s-translateHover: -1.5em;
+  --s-translateHoverAddedScale: 2;
   --d-translateHover: 0.35s;
 
   $root: #{&};
@@ -720,7 +721,7 @@ body {
     width: 100%;
     display: block;
     visibility: hidden;
-    transition: visibility linear var(--d-fading);
+    transition: visibility linear calc(var(--d-fading) * 0.7);
 
     #{$root}:hover & {
       visibility: visible;
@@ -740,12 +741,12 @@ body {
   }
 
   &__info {
-    margin-top: 1em;
-    text-align: center;
+    margin-top: 1.5em;
+    padding-left: 1.5em;
     transition: transform var(--e-scaleHover) var(--d-translateHover);
 
     #{$root}:hover & {
-      transform: translateY(var(--s-translateHover));
+      transform: translateY(calc(var(--s-translateHover) - 0.75em));
     }
   }
 
