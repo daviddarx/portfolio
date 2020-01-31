@@ -10,7 +10,6 @@
       </h2>
       <div class="content-page__lead">
         <p class="animate-in">
-          David Darx<br>
           Pflanzschulstrasse 35<br>
           8004 Zürich<br>
           CH <span class="dash">–</span> Schweiz
