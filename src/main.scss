@@ -694,14 +694,18 @@ body {
     transform: none;
   }
 
-  &:hover {
-    @include twerk-anime();
+  &:nth-child(2n+0) {
+    transform: translateY(35%);
   }
 
   &__container {
-    #{$root}:nth-child(2n+0) & {
-      transform: translateY(50%);
+    #{$root}:hover & {
+      @include twerk-anime();
     }
+  }
+
+  &__link {
+    display: block;
   }
 
   &__img {
