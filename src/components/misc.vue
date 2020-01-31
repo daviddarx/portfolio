@@ -4,14 +4,19 @@
     class="miscs"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <div class="content-page">
+    <div
+      class="content-page"
+      ref="contentPage"
+    >
       <h2 class="content-page__page-title font-compensated animate-in">
         Kunterbunt
       </h2>
       <p class="content-page__lead animate-in animate-in__s1">
         {{misc.lead}}
       </p>
-      <div class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2">
+      <div
+        class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2"
+      >
         <misc-list
           v-for="(miscItem, index) in misc.collection"
           v-bind:key="miscItem.title"
@@ -70,6 +75,9 @@
       this.initPixi();
       window.addEventListener('resize', this.resize);
       setTimeout(this.displayMisc, 100);
+      if (window.contentPageSavedHeight) {
+        this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
+      }
     },
     beforeRouteLeave (to, from, next) {
       this.pixi.app.destroy(true, {
@@ -78,6 +86,7 @@
         baseTexture: false
       });
       window.removeEventListener('resize', this.resize);
+      window.contentPageSavedHeight = this.$refs.contentPage.clientHeight;
       next();
     },
     methods: {
