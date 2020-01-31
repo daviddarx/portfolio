@@ -3,6 +3,7 @@
   <div
     class="misc-list miscs-grid__item"
     v-bind:class="{ 'is-displayed' : this.isReady }"
+    ref="miscList"
   >
     <div class="misc-list__container">
       <router-link
@@ -48,10 +49,13 @@
     },
     data: function () {
       return {
-        isReady: false
+        isReady: false,
+        hoverScale: 0,
+        hoverTranslateY: 0,
       }
     },
     mounted () {
+      this.hoverScale = getComputedStyle(this.$refs.miscList).getPropertyValue('--s-scaleHover');
     },
     methods: {
       launchLoading: function () {
@@ -70,9 +74,15 @@
         this.$refs.canvas.width = pixiCanvas.width;
         this.$refs.canvas.height = pixiCanvas.height;
         this.$refs.canvas.getContext('2d').drawImage(pixiCanvas, 0, 0);
+
+        this.resize();
       },
       setReady: function () {
         this.isReady = true;
+      },
+      resize: function () {
+        this.hoverTranslateY = this.$refs.image.clientHeight * (1-this.hoverScale) * -0.5;
+        this.$refs.miscList.style.setProperty('--s-translateHover', this.hoverTranslateY + 'px');
       }
     }
   }
