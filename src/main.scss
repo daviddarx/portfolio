@@ -696,7 +696,7 @@ body {
   visibility: hidden;
   position: relative;
   opacity: 0;
-  transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
+  transition: opacity var(--e-opacity) var(--d-in-opacity);
 
   &.is-displayed {
     visibility: visible;
