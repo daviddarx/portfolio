@@ -127,6 +127,7 @@ $breakpoints: (
   --s-logo: 6vh;
   --s-lines: 2px;
   --s-twerk: 0.5px;
+  --s-decal-close-to-corner: 0.5em;
 
   //eases
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -200,7 +201,7 @@ body {
 
 .close-button {
   --s-dims: 2.5em;
-  --s-square: -0.5em;
+  --s-square: -0.4em;
   --c-square: var(--c-text);
   --c-arrow: var(--c-lines);
 
@@ -209,7 +210,8 @@ body {
   width: var(--s-dims);
   height: var(--s-dims);
 
-  &::before {
+  &::before,
+  &::after {
     pointer-events: none;
     content: "";
     display: block;
@@ -265,6 +267,12 @@ body {
 
   &--black {
     --c-square: white;
+
+    &::after {
+      z-index: -1;
+      transform: scale(1);
+      background-color: black;
+    }
 
     &:hover {
       --c-arrow: black;
@@ -654,8 +662,8 @@ body {
   &__close-button {
     position: fixed;
     z-index: 1000;
-    top: var(--s-gutter);
-    right: var(--s-gutter);
+    top: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
+    right: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
   }
 
   &__header {
@@ -799,8 +807,8 @@ body {
   &__close-button {
     position: fixed;
     z-index: 1000;
-    top: var(--s-gutter);
-    right: var(--s-gutter);
+    top: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
+    right: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
   }
 
   &__header {
@@ -922,6 +930,7 @@ body {
   @include fontTitle();
 
   position: fixed;
+  pointer-events: none;
   z-index: 999;
   bottom: var(--s-gutter);
   right: var(--s-gutter);
