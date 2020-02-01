@@ -918,6 +918,29 @@ body {
   }
 }
 
+.transition-title {
+  @include fontTitle();
+
+  position: fixed;
+  z-index: 999;
+  bottom: var(--s-gutter);
+  right: var(--s-gutter);
+  line-height: var(--s-line-height-titles);
+  color: white;
+  text-transform: uppercase;
+  font-size: var(--s-text-h2);
+  letter-spacing: 0.025em;
+  transform: rotate(-90deg) translateX(100%);
+  transform-origin: bottom right;
+  opacity: 0;
+  transition: opacity ease-out 0.2s;
+
+  &.is-displayed {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+}
+
 .transition-background {
   &__el-in,
   &__el-out {
