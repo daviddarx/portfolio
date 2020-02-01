@@ -5,14 +5,30 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content-page">
-      <h2 class="content-page__page-title font-compensated animate-in">
-        Info
+      <h2
+        class="content-page__page-title font-compensated animate-in"
+        v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+      >
+        <span class="content-page__page-title__el">
+          Info
+        </span>
       </h2>
       <p class="content-page__lead animate-in animate-in__s1">
         {{this.info.lead}}
       </p>
 
       <div class="content-page__content animate-in animate-in__s2">
+        <div
+          class="info__img content-page__3-4"
+          v-observe-visibility="{
+            callback: intersectionObserver,
+            intersection: {
+              rootMargin: rootMargin,
+            },
+          }"
+        >
+        </div>
+
         <h2 class="content-page__subtitle">
           Erfahrung
         </h2>
@@ -91,11 +107,13 @@
   import Vue from "vue";
   import Credits from './credits.vue';
   import * as info from '../../content/info.json';
+  import contentPageTitle from '../mixins/content-page-title';
 
   export default Vue.extend({
     components: {
       'credits': Credits
     },
+    mixins: [contentPageTitle],
     data() {
       return {
         info: info,

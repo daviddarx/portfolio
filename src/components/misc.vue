@@ -8,14 +8,25 @@
       class="content-page"
       ref="contentPage"
     >
-      <h2 class="content-page__page-title font-compensated animate-in">
-        Kunterbunt
+      <h2
+        class="content-page__page-title font-compensated animate-in"
+        v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+      >
+        <span class="content-page__page-title__el">
+          Kunterbunt
+        </span>
       </h2>
       <p class="content-page__lead animate-in animate-in__s1">
         {{misc.lead}}
       </p>
       <div
         class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2"
+        v-observe-visibility="{
+          callback: intersectionObserver,
+          intersection: {
+            rootMargin: rootMargin,
+          },
+        }"
       >
         <misc-list
           v-for="(miscItem, index) in misc.collection"
@@ -41,6 +52,7 @@
   import Credits from './credits.vue';
   import * as misc from '../../content/misc.json';
   import dash from '../mixins/dash';
+  import contentPageTitle from '../mixins/content-page-title';
 
   import {AdjustmentFilter} from '@pixi/filter-adjustment';
   import * as PIXI from 'pixi.js';
@@ -50,7 +62,7 @@
       'misc-list': MiscList,
       'credits': Credits
     },
-    mixins: [dash],
+    mixins: [dash, contentPageTitle],
     data() {
       return {
         misc: misc,

@@ -498,8 +498,19 @@ body {
   &__page-title {
     @include label-small;
 
-    position: absolute;
-    left: -25vw;
+    position: fixed;
+    top: var(--s-gutter);
+    left: 25vw;
+
+    &__el {
+      display: block;
+      transition: opacity var(--e-out) 0.2s, transform var(--e-out) 0.2s;
+
+      .is-hidden > & {
+        opacity: 0;
+        transform: translateY(calc(var(--s-gutter) * -0.25));
+      }
+    }
   }
 
   &__lead {
@@ -543,6 +554,13 @@ body {
     &:first-child {
       margin-top: 0;
     }
+  }
+}
+
+.info {
+  &__img {
+    height: 75vw;
+    background-color: black;
   }
 }
 
