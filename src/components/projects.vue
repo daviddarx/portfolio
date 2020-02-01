@@ -5,12 +5,12 @@
     ref="projects"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <h1 class="projects__title">
+    <h1 class="projects__title animate-in">
         <span class="projects__title-name font-compensated">David Darx</span>
         <span class="projects__title-detail">Digital Design &amp; Art Direction</span>
     </h1>
     <div
-      class="projects__container animate-in"
+      class="projects__container animate-in animate-in__s1"
     >
       <div>
         <project-list
