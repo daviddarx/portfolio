@@ -902,50 +902,49 @@ body {
     --c-background: var(--c-text-inverted);
     --c-text-hover: var(--c-text);
   }
+}
 
-  &__link {
-    $link: #{&};
+.pagination-link {
+  $root: #{&};
 
-    position: relative;
-    flex-basis: 50%;
-    text-align: center;
+  position: relative;
+  flex-basis: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: calc(var(--s-gutter) * 3) calc(var(--s-gutter) * 2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--c-background);
+    transform: scaleY(0);
+    transform-origin: left bottom;
+    transition: transform var(--e-inout) 0.4s;
+  }
+
+  &:hover {
+    color: var(--c-text-hover);
 
     &::before {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--c-background);
-      transform: scaleY(0);
-      transform-origin: left bottom;
-      transition: transform var(--e-inout) 0.4s;
+      transform: none;
     }
+  }
 
-    &:hover {
-      color: var(--c-text-hover);
+  &:first-child {
+    border-right: var(--s-lines) solid var(--c-text);
 
-      &::before {
-        transform: none;
-      }
-    }
-
-    &:first-child {
-      border-right: var(--s-lines) solid var(--c-text);
-
-      #{$root}.is-black & {
-        border-right: var(--s-lines) solid white;
-      }
+    .is-black & {
+      border-right: var(--s-lines) solid white;
     }
   }
 
   &__text-container {
-    box-sizing: border-box;
-    padding: calc(var(--s-gutter) * 3) calc(var(--s-gutter) * 2);
-
-    :hover > & {
+    #{$root}:hover & {
       @include twerk-anime();
     }
   }
@@ -962,7 +961,7 @@ body {
     font-size: var(--s-text-small);
     margin-bottom: 0.5em;
 
-    :hover > & {
+    #{$root}:hover & {
       transform: translateY(var(--s-text-translate));
     }
   }
@@ -973,7 +972,7 @@ body {
     line-height: var(--s-line-height-titles-small);
     transition-duration: 0.2s, 0.5s;
 
-    :hover > & {
+    #{$root}:hover & {
       transform: translateY(var(--s-text-translate));
     }
   }
@@ -992,7 +991,7 @@ body {
       transform: var(--t) scaleX(-1);
     }
 
-    :hover > & {
+    #{$root}:hover & {
       --s-width: 2.8em;
       --s-height: 0.65em;
     }
