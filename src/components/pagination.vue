@@ -8,23 +8,29 @@
       class="pagination__link"
       v-bind:to="routePrev"
     >
-      <span class="pagination__subtitle">
-        {{ subtitlePrev }}
-      </span>
-      <span class="pagination__title font-compensated">
-        {{ titlePrev }}
-      </span>
+      <div class="pagination__text-container">
+        <span class="pagination__subtitle">
+          {{ subtitlePrev }}
+        </span>
+        <span class="pagination__title font-compensated">
+          {{ titlePrev }}
+        </span>
+        <div class="pagination__arrow arrow"></div>
+      </div>
     </router-link><!--
     --><router-link
       class="pagination__link"
       v-bind:to="routeNext"
     >
-      <span class="pagination__subtitle">
-        {{ subtitleNext }}
-      </span>
-      <span class="pagination__title font-compensated">
-        {{ titleNext }}
-      </span>
+      <div class="pagination__text-container">
+        <span class="pagination__subtitle">
+          {{ subtitleNext }}
+        </span>
+        <span class="pagination__title font-compensated">
+          {{ titleNext }}
+        </span>
+        <div class="pagination__arrow pagination__arrow--next arrow"></div>
+      </div>
     </router-link>
   </div>
 </template>
