@@ -1,20 +1,17 @@
 export default {
   methods: {
-    replaceDashes: function(string) {
+    replaceDashes: function(string, isSpaced, isTitle) {
+      let additionalClass = (isSpaced == true) ? ' dash--spaced' : '';
+          additionalClass = (isTitle == true) ? additionalClass+' dash--title' : additionalClass;
       if(string){
-        return string.replace('–', '<span class="dash">–</span>');
+        return string.replace('–', `<span class="dash${additionalClass}">–</span>`);
       }
     },
-    replaceDashesSpaced: function(string) {
-      if(string){
-        return string.replace('–', '<span class="dash dash--spaced">–</span>');
-      }
-    },
-    getDash: function() {
-      return ' <span class="dash">–</span> ';
-    },
-    getDashSpaced: function() {
-      return ' <span class="dash dash--spaced">–</span> ';
+    getDash: function(isSpaced, isTitle) {
+      let additionalClass = (isSpaced == true) ? ' dash--spaced' : '';
+          additionalClass = (isTitle == true) ? additionalClass+' dash--title' : additionalClass;
+
+      return ` <span class="dash${additionalClass}">–</span> `;
     }
   }
 }

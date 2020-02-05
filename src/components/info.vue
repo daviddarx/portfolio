@@ -39,7 +39,7 @@
             v-bind:key="experience.agency + experience.title"
           >
             <h3 class="content-page__title small-title font-compensated">
-              {{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.title}}
+              {{experience.agency}} <span class="dash dash--spaced dash--title">–</span> {{experience.title}}
             </h3>
             <p>
               {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}

@@ -370,13 +370,20 @@ body {
 }
 
 .dash {
+  --s-top: 0.675em;
+
   color: rgba(0, 0, 0, 0);
   display: inline-block;
   position: relative;
   width: 0.5em;
+  font-size: 1em;
 
   &--spaced {
     margin: 0 0.2em;
+  }
+
+  &--title {
+    --s-top: 0.5em;
   }
 
   &::before {
@@ -385,7 +392,7 @@ body {
     position: absolute;
     width: 100%;
     height: var(--s-lines);
-    top: 42%;
+    top: var(--s-top);
     background-color: var(--c-lines);
 
     .is-inverted & {
@@ -812,6 +819,7 @@ body {
   }
 
   &__info {
+    line-height: var(--s-line-height);
     margin-top: 1.5em;
     padding-left: 1.5em;
     transition: transform var(--e-scaleHover) var(--d-translateHover);

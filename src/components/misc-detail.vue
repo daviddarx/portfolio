@@ -15,13 +15,13 @@
       <div class="misc__header">
         <h1
           class="misc__title small-title font-compensated animate-in"
-          v-html="this.infos.title+getDashSpaced()+replaceDashesSpaced(this.infos.date)"
+          v-html="this.infos.title+getDash(true, true)+this.infos.date"
         >
         </h1>
         <p
           class="misc__lead animate-in animate-in__s1 no-margin"
           v-if="infos.lead"
-          v-html="replaceDashesSpaced(infos.lead)"
+          v-html="replaceDashes(infos.lead, true)"
         >
         </p>
         <p
