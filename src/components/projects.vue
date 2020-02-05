@@ -12,7 +12,7 @@
     <div
       class="projects__container animate-in animate-in__s1"
     >
-      <div>
+      <div class="projects__list-container">
         <project-list
           v-for="project in projects.main"
           v-bind:key="project.agency"

@@ -627,6 +627,10 @@ body {
     transition: transform var(--e-out) 0.75s, opacity ease var(--d-opacity);
   }
 
+  &__list-container {
+    padding-bottom: var(--s-gutter);
+  }
+
   &__title {
     @include label-small;
 
@@ -742,8 +746,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2px;
-  grid-row-gap: var(--s-gutter);
-  padding-bottom: 50%;
+  grid-row-gap: calc(var(--s-gutter) * 1);
+  padding-bottom: 40%;
   align-items: center;
 }
 
@@ -774,7 +778,11 @@ body {
   }
 
   &:nth-child(2n+0) {
-    transform: translateY(35%);
+    transform: translateY(200px);
+
+    @media (min-height: 800px) {
+      transform: translateY(400px);
+    }
   }
 
   &__container {
@@ -820,7 +828,7 @@ body {
 
   &__info {
     line-height: var(--s-line-height);
-    margin-top: 1.5em;
+    margin-top: 1.2em;
     padding-left: 1.5em;
     transition: transform var(--e-scaleHover) var(--d-translateHover);
 
