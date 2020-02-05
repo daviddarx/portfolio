@@ -66,7 +66,7 @@
     },
     methods: {
       beforeEach: function (to, from, next) {
-        this.titleValue = to.name;
+        this.titleValue = to.meta.transitionTitle;
         if(to.meta.color){
           this.color = to.meta.color;
           this.isNormalPage = false;
@@ -74,9 +74,7 @@
           this.color = undefined;
           this.isNormalPage = true;
           this.isLogoDisplayed = true;
-          if (to.meta.isTitleHidden != true){
-            this.isTitleDisplayed = true;
-          }
+          this.isTitleDisplayed = true;
         }
         this.isWaveInDisplayed = true;
         this.nextFunction = next;
