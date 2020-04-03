@@ -21,12 +21,6 @@
       </p>
       <div
         class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2"
-        v-observe-visibility="{
-          callback: intersectionObserver,
-          intersection: {
-            rootMargin: rootMargin,
-          },
-        }"
       >
         <misc-list
           v-for="(miscItem, index) in misc.collection"

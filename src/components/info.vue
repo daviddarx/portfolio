@@ -20,23 +20,11 @@
       <div class="content-page__content animate-in animate-in__s2">
         <div
           class="info__img content-page__3-4"
-          v-observe-visibility="{
-            callback: intersectionObserver,
-            intersection: {
-              rootMargin: rootMargin,
-            },
-          }"
         >
         </div>
 
         <h2
           class="content-page__subtitle content-page__3-4"
-          v-observe-visibility="{
-            callback: intersectionObserver,
-            intersection: {
-              rootMargin: rootMargin,
-            },
-          }"
         >
           Erfahrung
         </h2>
@@ -57,12 +45,6 @@
 
         <h2
           class="content-page__subtitle content-page__3-4"
-          v-observe-visibility="{
-            callback: intersectionObserver,
-            intersection: {
-              rootMargin: rootMargin,
-            },
-          }"
         >
           Expertise
         </h2>
@@ -83,12 +65,6 @@
 
         <h2
           class="content-page__subtitle content-page__3-4"
-          v-observe-visibility="{
-            callback: intersectionObserver,
-            intersection: {
-              rootMargin: rootMargin,
-            },
-          }"
         >
           Ausbildung
         </h2>
@@ -111,12 +87,6 @@
 
         <h2
           class="content-page__subtitle content-page__3-4"
-          v-observe-visibility="{
-            callback: intersectionObserver,
-            intersection: {
-              rootMargin: rootMargin,
-            },
-          }"
         >
           Kunden
         </h2>
