@@ -47,20 +47,16 @@
           class="misc__media"
           v-for="(media, i) in infos.medias"
           v-bind:key="media.url"
-          v-bind:class="{'misc__media--margin-top' : media.additionalMargin==true}"
+          v-bind:class="{'misc__media--margin-top' : media.additionalMargin==true, 'scroll-animate-in' : i!=0}"
+          v-bind:id="i"
+          v-bind:isvideo="media.type=='video'"
+          ref="media"
         >
           <img
             v-if="media.type=='image'"
             v-bind:src="misc.mediasPath+media.url"
             v-bind:alt="infos.title"
             class="misc__img"
-            v-bind:class="{'scroll-animate-in' : i!=0}"
-            v-observe-visibility="{
-              callback: visibilityChanged,
-              intersection: {
-                rootMargin: rootMargin,
-              },
-            }"
           >
           <video
             v-else-if="media.type=='video'"
@@ -68,13 +64,6 @@
             autoplay
             loop
             class="misc__video video"
-            v-bind:class="{'scroll-animate-in' : i!=0}"
-            v-observe-visibility="{
-              callback: visibilityChanged,
-              intersection: {
-                rootMargin: rootMargin,
-              },
-            }"
             ref="video"
           >
             <source
@@ -101,12 +90,9 @@
 
 <script>
   import Vue from 'vue';
-  import VueObserveVisibility from 'vue-observe-visibility';
   import * as misc from '../../content/misc.json';
   import Pagination from './pagination.vue';
   import dash from '../mixins/dash';
-
-  Vue.use(VueObserveVisibility);
 
   export default {
     name: 'misc',
@@ -129,7 +115,8 @@
         infos: '',
         subtitlePrev: 'Voriges',
         subtitleNext: 'Nächstes',
-        rootMargin: '0%' // -20vh css transform considered
+        observer: undefined,
+        observerRootMargin: "-10%" //20vh to compensate
       }
     },
     mounted () {
@@ -152,39 +139,45 @@
     methods: {
       displayMisc: function() {
         this.isDisplayed = true;
-        this.setScrollAnimatedIn();
+        this.setIntersectionObserver();
       },
-      setScrollAnimatedIn: function() {
+      setIntersectionObserver: function() {
         if (!!window.IntersectionObserver) {
+          this.observer = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.observerRootMargin
+          });
+
+          this.$refs.media.forEach(media => {
+            this.observer.observe(media);
+          });
+
           if (this.$refs.video) {
             this.$refs.video.forEach(item => {
               item.removeAttribute('autoplay');
             });
           }
         } else {
-          if (this.$refs.video) {
-            const scrollAnimatedElements = document.querySelectorAll('.scroll-animate-in');
-            if (scrollAnimatedElements.length !=0) {
-              scrollAnimatedElements.forEach(item => {
-                item.classList.add('is-displayed');
-              });
-            }
-          }
+          this.$refs.media.forEach(media => {
+            media.classList.add('is-displayed');
+          });
         }
       },
-      visibilityChanged (isVisible, entry) {
-        if (isVisible == true && entry.boundingClientRect.width != 0) {
-          if (entry.target.classList.contains('scroll-animate-in')) {
+      intersectionListener: function (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
             entry.target.classList.add('is-displayed');
+
+            if (entry.target.hasAttribute('isvideo') == false) {
+              observer.unobserve(entry.target);
+            } else {
+              entry.target.querySelector('video').play();
+            }
+          } else {
+            if (entry.target.hasAttribute('isvideo') == true) {
+              entry.target.querySelector('video').pause();
+            }
           }
-          if (entry.target.classList.contains('video')) {
-            entry.target.play();
-          }
-        } else if (isVisible == false) {
-          if (entry.target.classList.contains('video')) {
-            entry.target.pause();
-          }
-        }
+        });
       }
     }
   }
