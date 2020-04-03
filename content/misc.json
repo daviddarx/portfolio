@@ -216,7 +216,7 @@
         {
           "type": "image",
           "url": "olio_leo/olio_leo_02.jpg",
-          "additionalMargin": true
+          "additionalMargin": false
         },
         {
           "type": "image",
