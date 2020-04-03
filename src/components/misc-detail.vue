@@ -56,6 +56,7 @@
             v-if="media.type=='image'"
             v-bind:url="misc.mediasPath+media.url"
             v-bind:title="infos.title"
+            v-bind:zoomable="media.zoomable"
             ref="image"
           >
           </media-image>

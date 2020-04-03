@@ -970,6 +970,14 @@ body {
     outline-color: transparent;
   }
 
+  &.is-zoomable {
+    cursor: zoom-in;
+  }
+
+  &.is-zoomed {
+    cursor: zoom-out;
+  }
+
   &__el {
     position: absolute;
     display: block;
@@ -977,12 +985,16 @@ body {
     margin: 0 auto;
     opacity: 0;
     visibility: hidden;
-    transition: opacity linear 0.2s 0.2s;
+    transition: opacity linear 0.2s 0.2s, transform var(--e-inout) 0.5s;
 
     #{$root}.is-loaded & {
       position: relative;
       visibility: visible;
       opacity: 1;
+    }
+
+    #{$root}.is-zoomed & {
+      transform: scale(1.2);
     }
   }
 
