@@ -1001,11 +1001,34 @@ body {
 }
 
 .media-video {
+  $root: #{&};
+
+  position: relative;
+
   &__el {
     display: block;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    opacity: 0.35;
+    transition: opacity linear 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 1;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity linear 0.2s, visibility 0s 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
