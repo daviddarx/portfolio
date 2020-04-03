@@ -58,19 +58,13 @@
             v-bind:title="infos.title"
           >
           </media-image>
-          <video
+          <media-video
             v-else-if="media.type=='video'"
-            muted
-            autoplay
-            loop
-            class="misc__video video"
+            v-bind:url="misc.mediasPath+media.url"
+            v-bind:title="infos.title"
             ref="video"
           >
-            <source
-              v-bind:src="misc.mediasPath+media.url"
-              type="video/mp4"
-            >
-          </video>
+          </media-video>
         </div>
       </div>
     </div>
@@ -93,12 +87,14 @@
   import * as misc from '../../content/misc.json';
   import Pagination from './pagination.vue';
   import MediaImage from './media-image.vue';
+  import MediaVideo from './media-video.vue';
   import dash from '../mixins/dash';
 
   export default {
     name: 'misc',
     components: {
       'media-image': MediaImage,
+      'media-video': MediaVideo,
       'pagination': Pagination
     },
     mixins: [dash],
@@ -155,7 +151,7 @@
 
           if (this.$refs.video) {
             this.$refs.video.forEach(item => {
-              item.removeAttribute('autoplay');
+              item.$el.querySelector('video').removeAttribute('autoplay');
             });
           }
         } else {
