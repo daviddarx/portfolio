@@ -29,7 +29,15 @@
         >
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+          v-observe-visibility="{
+            callback: intersectionObserver,
+            intersection: {
+              rootMargin: rootMargin,
+            },
+          }"
+        >
           Erfahrung
         </h2>
         <div class="content-page__list-container">
@@ -47,7 +55,15 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+          v-observe-visibility="{
+            callback: intersectionObserver,
+            intersection: {
+              rootMargin: rootMargin,
+            },
+          }"
+        >
           Expertise
         </h2>
 
@@ -65,7 +81,15 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+          v-observe-visibility="{
+            callback: intersectionObserver,
+            intersection: {
+              rootMargin: rootMargin,
+            },
+          }"
+        >
           Ausbildung
         </h2>
 
@@ -85,7 +109,15 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+          v-observe-visibility="{
+            callback: intersectionObserver,
+            intersection: {
+              rootMargin: rootMargin,
+            },
+          }"
+        >
           Kunden
         </h2>
         <p>

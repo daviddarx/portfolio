@@ -592,7 +592,7 @@ body {
       content: "";
       position: absolute;
       left: 0;
-      right: calc(var(--s-gutter) * -1);
+      right: 0;
       bottom: -0.2em;
       height: var(--s-lines);
       background-color: var(--c-lines);
