@@ -47,6 +47,7 @@
           class="misc__media"
           v-for="(media, i) in infos.medias"
           v-bind:key="media.url"
+          v-bind:class="{'misc__media--margin-top' : media.additionalMargin==true}"
         >
           <img
             v-if="media.type=='image'"
