@@ -894,16 +894,18 @@ body {
     }
   }
 
-  &__img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
   &__video {
     display: block;
     max-width: 100%;
     height: auto;
+    margin: 0 auto;
+  }
+}
+
+.media-image {
+  &__img {
+    display: block;
+    max-width: 100%;
     margin: 0 auto;
   }
 }

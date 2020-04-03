@@ -52,12 +52,12 @@
           v-bind:isvideo="media.type=='video'"
           ref="media"
         >
-          <img
+          <media-image
             v-if="media.type=='image'"
-            v-bind:src="misc.mediasPath+media.url"
-            v-bind:alt="infos.title"
-            class="misc__img"
+            v-bind:imgURL="misc.mediasPath+media.url"
+            v-bind:imgTitle="infos.title"
           >
+          </media-image>
           <video
             v-else-if="media.type=='video'"
             muted
@@ -92,11 +92,13 @@
   import Vue from 'vue';
   import * as misc from '../../content/misc.json';
   import Pagination from './pagination.vue';
+  import MediaImage from './media-image.vue';
   import dash from '../mixins/dash';
 
   export default {
     name: 'misc',
     components: {
+      'media-image': MediaImage,
       'pagination': Pagination
     },
     mixins: [dash],
