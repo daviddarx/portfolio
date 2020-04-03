@@ -4,20 +4,20 @@
     class="media-image"
   >
     <img
-      v-bind:src="this.imgURL"
-      v-bind:alt="this.imgTitle"
+      v-bind:src="this.url"
+      v-bind:alt="this.title"
       @load="imageLoaded"
-      class="media-image__img"
+      class="media-image__el"
     >
   </div>
 </template>
 
 <script>
   export default {
-    name: 'misc-list',
+    name: 'media-image',
     props: {
-      imgURL: String,
-      imgTitle: String
+      url: String,
+      title: String
     },
     data: function () {
       return {

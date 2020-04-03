@@ -54,8 +54,8 @@
         >
           <media-image
             v-if="media.type=='image'"
-            v-bind:imgURL="misc.mediasPath+media.url"
-            v-bind:imgTitle="infos.title"
+            v-bind:url="misc.mediasPath+media.url"
+            v-bind:title="infos.title"
           >
           </media-image>
           <video
