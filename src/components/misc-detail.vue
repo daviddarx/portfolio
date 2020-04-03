@@ -56,6 +56,7 @@
             v-if="media.type=='image'"
             v-bind:url="misc.mediasPath+media.url"
             v-bind:title="infos.title"
+            ref="image"
           >
           </media-image>
           <media-video
@@ -133,6 +134,25 @@
       this.infos = misc.collection[this.indexCurrent];
 
       setTimeout(this.displayMisc, 100);
+    },
+    beforeDestroy () {
+      if (this.observer) {
+        this.$refs.media.forEach(media => {
+          this.observer.observe(media);
+        });
+      }
+
+      if (this.$refs.video) {
+        this.$refs.video.forEach(video => {
+          video.destroy();
+        });
+      }
+
+      if (this.$refs.video) {
+        this.$refs.image.forEach(image => {
+          image.destroy();
+        });
+      }
     },
     methods: {
       displayMisc: function() {

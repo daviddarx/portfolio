@@ -31,7 +31,10 @@
     },
     methods: {
       videoLoaded: function () {
-        console.log("isLoaded");
+        console.log("loaded video " + this.title);
+      },
+      destroy: function () {
+        console.log("destroy video " + this.title);
       }
     }
   }

@@ -27,7 +27,10 @@
     },
     methods: {
       imageLoaded: function () {
-        console.log("isLoaded");
+        console.log("loaded image " + this.title);
+      },
+      destroy: function () {
+        console.log("destroy image " + this.title);
       }
     }
   }
