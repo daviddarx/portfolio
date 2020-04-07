@@ -149,7 +149,7 @@
         });
       }
 
-      if (this.$refs.video) {
+      if (this.$refs.image) {
         this.$refs.image.forEach(image => {
           image.destroy();
         });
