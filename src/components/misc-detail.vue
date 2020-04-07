@@ -135,6 +135,8 @@
       this.infos = misc.collection[this.indexCurrent];
 
       setTimeout(this.displayMisc, 100);
+
+      window.addEventListener('resize', this.resize);
     },
     beforeDestroy () {
       if (this.observer) {
@@ -154,6 +156,8 @@
           image.destroy();
         });
       }
+
+      window.removeEventListener('resize', this.resize);
     },
     methods: {
       displayMisc: function() {
@@ -197,6 +201,13 @@
             }
           }
         });
+      },
+      resize: function () {
+        if (this.$refs.image) {
+          this.$refs.image.forEach(image => {
+          image.resize();
+        });
+      }
       }
     }
   }

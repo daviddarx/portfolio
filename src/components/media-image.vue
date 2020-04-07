@@ -2,7 +2,7 @@
 <template>
   <div
     class="media-image"
-    v-bind:class="{'is-loaded' : isLoaded, 'is-zoomable': zoomable, 'is-zoomed': isZoomed}"
+    v-bind:class="{'is-loaded' : isLoaded, 'is-zoomable': isZoomable, 'is-zoomed': isZoomed}"
   >
     <preloader class="media-image__preloader"></preloader>
     <img
@@ -31,7 +31,9 @@
     data: function () {
       return {
         isLoaded: false,
-        isZoomed: false
+        isZoomed: false,
+        isZoomable: false,
+        zoomRatio: 0 //remove?
       }
     },
     mounted () {
@@ -42,22 +44,58 @@
     methods: {
       imageLoaded: function () {
         this.isLoaded = true;
+
+        this.checkIfZoomable();
       },
-      imageClickListener: function () {
-        if (this.isZoomed == false) {
-          this.zoomImage();
+      checkIfZoomable: function () {
+        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
+          this.isZoomable = true;
+          this.zoomRatio = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
         } else {
-          this.dezoomImage();
+          this.isZoomable = false;
         }
       },
+      imageClickListener: function () {
+        if(this.isZoomable) {
+          if (this.isZoomed == false) {
+            this.zoomImage();
+          } else {
+            this.dezoomImage();
+          }
+        }
+      },
+      createZoomedImage: function () {
+        this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
+        this.$refs.zoomedImage.className = '';
+        this.$refs.zoomedImage.classList.add("media-image-zoomed");
+        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
+        this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.zoomRatio);
+        document.body.appendChild(this.$refs.zoomedImage);
+      },
       zoomImage: function () {
+        if (this.$refs.zoomedImage == undefined) {
+          this.createZoomedImage();
+        }
+
+        requestAnimationFrame(() => {
+          this.$refs.zoomedImage.classList.add("is-active");
+        });
+
         this.isZoomed = true;
       },
       dezoomImage: function () {
+        if (this.$refs.zoomedImage) {
+          this.$refs.zoomedImage.classList.remove("is-active");
+        }
         this.isZoomed = false;
       },
       destroy: function () {
         this.$refs.image.removeEventListener("click", this.imageClickListener);
+        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
+      },
+      resize: function () {
+        this.checkIfZoomable();
+        this.dezoomImage();
       }
     }
   }
