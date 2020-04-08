@@ -1026,7 +1026,7 @@ body {
   transform: scale(var(--s-scale-dezoomed));
 
   &.is-active {
-    // transform: scale(var(--s-scale-zoomed));
+    transform: scale(var(--s-scale-zoomed));
   }
 }
 

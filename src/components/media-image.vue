@@ -33,7 +33,11 @@
         isLoaded: false,
         isZoomed: false,
         isZoomable: false,
-        zoomRatio: 0 //remove?
+        zoomRatio: 0,
+        zoomedImagePosition: {
+          x: 0,
+          x: 0
+        },
       }
     },
     mounted () {
@@ -47,14 +51,6 @@
 
         this.checkIfZoomable();
       },
-      checkIfZoomable: function () {
-        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
-          this.isZoomable = true;
-          this.zoomRatio = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
-        } else {
-          this.isZoomable = false;
-        }
-      },
       imageClickListener: function () {
         if(this.isZoomable) {
           if (this.isZoomed == false) {
@@ -64,18 +60,41 @@
           }
         }
       },
+      setZoomedImage: function () {
+        const imageRect = this.$refs.image.getBoundingClientRect();
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        this.zoomedImagePosition.x = (imageRect.left + scrollLeft) - (this.$refs.image.naturalWidth - this.$refs.image.offsetWidth) * 0.5;
+        this.zoomedImagePosition.y = (imageRect.top + scrollTop) - (this.$refs.image.naturalHeight - this.$refs.image.offsetHeight) * 0.5;
+
+        this.$refs.zoomedImage.style.left = this.zoomedImagePosition.x + "px";
+        this.$refs.zoomedImage.style.top = this.zoomedImagePosition.y + "px";
+
+        this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.zoomRatio);
+      },
+      checkIfZoomable: function () {
+        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
+          this.isZoomable = true;
+          this.zoomRatio = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
+        } else {
+          this.isZoomable = false;
+        }
+      },
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
         this.$refs.zoomedImage.className = '';
         this.$refs.zoomedImage.classList.add("media-image-zoomed");
-        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.zoomRatio);
+        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
         document.body.appendChild(this.$refs.zoomedImage);
       },
       zoomImage: function () {
         if (this.$refs.zoomedImage == undefined) {
           this.createZoomedImage();
         }
+
+        this.setZoomedImage();
 
         requestAnimationFrame(() => {
           this.$refs.zoomedImage.classList.add("is-active");
