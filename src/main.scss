@@ -958,7 +958,6 @@ body {
 
 .media-image {
   --c-border: rgba(255, 255, 255, 0.1);
-  // --s-scale-dezoomed: 1;
 
   $root: #{&};
 
@@ -986,17 +985,13 @@ body {
     margin: 0 auto;
     opacity: 0;
     visibility: hidden;
-    transition: opacity linear 0.2s 0.2s; //, transform var(--e-inout) 0.5s;
+    transition: opacity linear 0.2s 0.2s;
 
     #{$root}.is-loaded & {
       position: relative;
       visibility: visible;
       opacity: 1;
     }
-
-    // #{$root}.is-zoomed & {
-    //   transform: scale(var(--s-scale-dezoomed));
-    // }
   }
 
   &__preloader {
@@ -1016,17 +1011,22 @@ body {
 .media-image-zoomed {
   --s-scale-dezoomed: 1;
   --s-scale-zoomed: 1;
+  --d-zooming: 0.5s;
 
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
+  visibility: hidden;
   cursor: zoom-out;
-  transition: transform var(--e-inout) 0.5s;
+  transition: transform var(--e-out) var(--d-zooming), visibility linear 0s var(--d-zooming);
   transform: scale(var(--s-scale-dezoomed));
+  will-change: transform, visibility, left, top;
 
   &.is-active {
     transform: scale(var(--s-scale-zoomed));
+    transition-delay: 0s;
+    visibility: visible;
   }
 }
 
