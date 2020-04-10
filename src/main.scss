@@ -960,42 +960,65 @@ body {
 .zoom-icon {
   --s-dimensions: calc(var(--s-gutter) * 0.75);
   --t-icon: translate(-50%, -1px);
+  --d-transform: 0.5s;
+
+  $root: #{&};
 
   width: var(--s-dimensions);
   height: var(--s-dimensions);
-  box-sizing: border-box;
-  border-radius: 100%;
-  border: var(--s-lines) var(--c-lines) solid;
-  background-color: var(--c-lines-inverted);
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: var(--s-lines);
-    top: 50%;
-    left: 50%;
-    transform: var(--t-icon);
-    background-color: var(--c-lines);
-  }
-
-  &::after {
-    transform: var(--t-icon) rotate(90deg);
-  }
-
-  .is-inverted &,
-  &--inverted {
-    border-color: var(--c-lines-inverted);
-    background-color: var(--c-lines);
+  &__el {
+    width: var(--s-dimensions);
+    height: var(--s-dimensions);
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: var(--s-lines) var(--c-lines) solid;
+    background-color: var(--c-lines-inverted);
+    will-change: transform;
 
     &::before,
     &::after {
-      background-color: var(--c-lines-inverted);
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: var(--s-lines);
+      top: 50%;
+      left: 50%;
+      transform: var(--t-icon);
+      background-color: var(--c-lines);
+    }
+
+    &::before {
+      transition: transform var(--e-out) var(--d-transform);
+    }
+
+    &::after {
+      transform: var(--t-icon) rotate(90deg);
+    }
+
+    .is-inverted &,
+    #{$root}.is-inverted & {
+      border-color: var(--c-lines-inverted);
+      background-color: var(--c-lines);
+
+      &::before,
+      &::after {
+        background-color: var(--c-lines-inverted);
+      }
+    }
+
+    #{$root}.is-global.is-zoomed & {
+      &::before {
+        transform: var(--t-icon) scaleX(0);
+      }
+    }
+
+    #{$root}.is-global & {
+      @include twerk-anime();
     }
   }
 
-  &--global {
+  &.is-global {
     --s-decal-x: 50%;
     --s-decal-y: 50%;
 
@@ -1005,15 +1028,22 @@ body {
     left: 50%;
     z-index: 2000;
     opacity: 0;
+    visibility: hidden;
     transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
-    transition: transform var(--e-in) 0.2s, opacity linear 0.2s;
+    transition: transform var(--e-in) var(--d-transform), opacity linear var(--d-transform), visibility linear 0s var(--d-transform);
     will-change: transform, opacity, top, left;
 
     &.is-active,
     &.is-zoomed {
       opacity: 1;
+      visibility: visible;
       transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(0deg);
       transition-timing-function: var(--e-out), linear;
+      transition-delay: 0s;
+    }
+
+    &.is-zoomed {
+      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(-90deg);
     }
   }
 }

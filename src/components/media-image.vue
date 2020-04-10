@@ -112,22 +112,27 @@
         this.startZoomIconMouseMoveListening();
       },
       imageLeaveListener: function (e) {
-        window.zoomIcon.classList.remove('is-active');
         if(this.isZoomed == false) {
+          window.zoomIcon.classList.remove('is-active');
           this.stopZoomIconMouseMoveListening();
         }
       },
       createZoomIcon: function () {
+        let zoomIconEl = document.createElement('div');
+            zoomIconEl.classList.add('zoom-icon__el');
+
         this.$refs.zoomIcon = document.createElement('div');
         this.$refs.zoomIcon.classList.add('zoom-icon');
         this.$refs.zoomIcon.classList.add('media-image__zoom-icon');
+        this.$refs.zoomIcon.appendChild(zoomIconEl);
         this.$refs.container.appendChild(this.$refs.zoomIcon);
 
         if (!window.zoomIcon) {
           window.zoomIcon = document.createElement('div');
           window.zoomIcon.classList.add('zoom-icon');
-          window.zoomIcon.classList.add('zoom-icon--global');
-          window.zoomIcon.classList.add('zoom-icon--inverted');
+          window.zoomIcon.classList.add('is-global');
+          window.zoomIcon.classList.add('is-inverted');
+          window.zoomIcon.appendChild(zoomIconEl.cloneNode(true));
           document.body.appendChild(window.zoomIcon);
         }
       },
@@ -212,7 +217,6 @@
       animateZoomedImageOutComplete: function () {
         clearInterval(this.zoomedImageAnimationOutInterval);
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
-        window.zoomIcon.classList.remove('is-zoomed');
       },
       launchZoomedImageAnimationOut: function () {
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
@@ -251,12 +255,18 @@
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
           this.$refs.zoomedImage.classList.remove('is-active');
+
           window.zoomedImageBackground.classList.remove('is-active');
           window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
+
           if (this.scrollDebounced) this.scrollDebounced.cancel();
+
           window.removeEventListener('scroll', this.scrollDebounced);
           window.removeEventListener('mousemove', this.zoomedImageMouseMoveListener);
+
           this.launchZoomedImageAnimationOut();
+
+          window.zoomIcon.classList.remove('is-zoomed');
         }
 
         this.isZoomed = false;
