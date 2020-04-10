@@ -185,7 +185,7 @@
           this.$refs.zoomedImageBackground.addEventListener("click", this.dezoomImage);
         });
 
-        if (this.windowW < this.$refs.image.naturalWidth) {
+        if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
           this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
           window.addEventListener('mousemove', this.mouseMoveListener);
         }
