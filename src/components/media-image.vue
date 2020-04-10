@@ -48,6 +48,12 @@
           x: undefined,
           y: undefined,
         },
+        zoomIconPositionTarget: {
+          x: undefined,
+          y: undefined,
+        },
+        zoomedIconAnimationFrame: undefined,
+        zoomedIconAnimationEase: 0.2,
         zoomedImagePosition: {
           x: 0,
           x: 0
@@ -142,11 +148,14 @@
         if (this.isZoomIconListeningMouseMove == false) {
           this.isZoomIconListeningMouseMove = true;
           window.addEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
+          this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
         }
       },
       stopZoomIconMouseMoveListening: function () {
         this.isZoomIconListeningMouseMove = false;
         window.removeEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
+        window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
+        this.zoomIconPosition.x = this.zoomIconPosition.y = undefined;
       },
       deactiveZoomIcon: function () {
         window.zoomIcon.classList.remove('is-active');
@@ -155,6 +164,15 @@
       positionZoomIcon: function () {
         window.zoomIcon.style.left = this.zoomIconPosition.x + 'px';
         window.zoomIcon.style.top = this.zoomIconPosition.y + 'px';
+      },
+      animateZoomIcon: function () {
+        if (this.zoomIconPosition.x != undefined) { 
+          this.zoomIconPosition.x = this.zoomIconPosition.x + (this.zoomIconPositionTarget.x - this.zoomIconPosition.x) * this.zoomedIconAnimationEase;
+          this.zoomIconPosition.y = this.zoomIconPosition.y + (this.zoomIconPositionTarget.y - this.zoomIconPosition.y) * this.zoomedIconAnimationEase;
+          this.positionZoomIcon();
+        }
+
+        this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
       },
       createZoomedBackground: function () {
         if (!window.zoomedImageBackground) {
@@ -285,10 +303,14 @@
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
       },
       zoomIconMouseMoveListener: function (e) {
-        this.zoomIconPosition.x = e.clientX;
-        this.zoomIconPosition.y = e.clientY;
-
-        this.positionZoomIcon();
+        console.log("mouse move "+e.clientX);
+        if (this.zoomIconPosition.x == undefined) { 
+          this.zoomIconPosition.x = e.clientX;
+          this.zoomIconPosition.y = e.clientY;
+          this.positionZoomIcon();
+        }
+        this.zoomIconPositionTarget.x = e.clientX;
+        this.zoomIconPositionTarget.y = e.clientY;
       },
       scrollListener: function (e) {
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -316,7 +338,7 @@
         if(this.$refs.zoomedImage) {
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
           document.body.removeChild(this.$refs.zoomedImage);
-          this.$refs.zoomedImage = undefined
+          this.$refs.zoomedImage = undefined;
           if (window.zoomIcon) {
             document.body.removeChild(window.zoomIcon);
             window.zoomIcon = undefined;
