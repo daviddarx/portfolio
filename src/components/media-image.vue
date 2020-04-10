@@ -42,7 +42,12 @@
         isLoaded: false,
         isZoomed: false,
         isZoomable: false,
+        isZoomIconListeningMouseMove: false,
         zoomRatio: 0,
+        zoomIconPosition: {
+          x: undefined,
+          y: undefined,
+        },
         zoomedImagePosition: {
           x: 0,
           x: 0
@@ -84,6 +89,14 @@
 
         this.checkIfZoomable();
       },
+      checkIfZoomable: function () {
+        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
+          this.isZoomable = true;
+          this.zoomRatio = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
+        } else {
+          this.isZoomable = false;
+        }
+      },
       imageClickListener: function (e) {
         if(this.isZoomable) {
           if (this.isZoomed == false) {
@@ -96,16 +109,12 @@
       },
       imageEnterListener: function (e) {
         window.zoomIcon.classList.add('is-active');
+        this.startZoomIconMouseMoveListening();
       },
       imageLeaveListener: function (e) {
         window.zoomIcon.classList.remove('is-active');
-      },
-      checkIfZoomable: function () {
-        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
-          this.isZoomable = true;
-          this.zoomRatio = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
-        } else {
-          this.isZoomable = false;
+        if(this.isZoomed == false) {
+          this.stopZoomIconMouseMoveListening();
         }
       },
       createZoomIcon: function () {
@@ -122,13 +131,26 @@
           document.body.appendChild(window.zoomIcon);
         }
       },
+      startZoomIconMouseMoveListening: function () {
+        if (this.isZoomIconListeningMouseMove == false) {
+          this.isZoomIconListeningMouseMove = true;
+          window.addEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
+        }
+      },
+      stopZoomIconMouseMoveListening: function () {
+        this.isZoomIconListeningMouseMove = false;
+        window.removeEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
+      },
+      positionZoomIcon: function () {
+        window.zoomIcon.style.left = this.zoomIconPosition.x + 'px';
+        window.zoomIcon.style.top = this.zoomIconPosition.y + 'px';
+      },
       createZoomedBackground: function () {
         if (!window.zoomedImageBackground) {
           window.zoomedImageBackground = document.createElement('div');
           window.zoomedImageBackground.classList.add('media-image-zoomed-background');
           document.body.appendChild(window.zoomedImageBackground);
         }
-
       },
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
@@ -184,9 +206,13 @@
         this.zoomedImagePosition.x = this.easeZoomedImage(this.zoomedImageAnimationOutTime, this.zoomedImagePositionFrom.x, this.zoomedImagePositionInit.x - this.zoomedImagePositionFrom.x, this.zoomedImageAnimationOutDuration);
 
         if (this.zoomedImageAnimationOutTime >= this.zoomedImageAnimationOutDuration) {
-          clearInterval(this.zoomedImageAnimationOutInterval);
-          window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
+          this.animateZoomedImageOutComplete();
         }
+      },
+      animateZoomedImageOutComplete: function () {
+        clearInterval(this.zoomedImageAnimationOutInterval);
+        window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
+        window.zoomIcon.classList.remove('is-zoomed');
       },
       launchZoomedImageAnimationOut: function () {
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
@@ -214,10 +240,11 @@
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
           this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
-          window.addEventListener('mousemove', this.mouseMoveListener);
+          window.addEventListener('mousemove', this.zoomedImageMouseMoveListener);
         }
 
         window.addEventListener('scroll', this.scrollDebounced);
+        window.zoomIcon.classList.add('is-zoomed');
 
         this.isZoomed = true;
       },
@@ -228,14 +255,20 @@
           window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
           if (this.scrollDebounced) this.scrollDebounced.cancel();
           window.removeEventListener('scroll', this.scrollDebounced);
-          window.removeEventListener('mousemove', this.mouseMoveListener);
+          window.removeEventListener('mousemove', this.zoomedImageMouseMoveListener);
           this.launchZoomedImageAnimationOut();
         }
 
         this.isZoomed = false;
       },
-      mouseMoveListener: function (e) {
+      zoomedImageMouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
+      },
+      zoomIconMouseMoveListener: function (e) {
+        this.zoomIconPosition.x = e.clientX;
+        this.zoomIconPosition.y = e.clientY;
+
+        this.positionZoomIcon();
       },
       scrollListener: function (e) {
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -256,6 +289,7 @@
           this.$refs.image.removeEventListener('click', this.imageClickListener);
           this.$refs.image.removeEventListener('mouseenter', this.imageEnterListener);
           this.$refs.image.removeEventListener('mouseleave', this.imageLeaveListener);
+          this.stopZoomIconMouseMoveListening();
         }
         if(this.$refs.zoomedImage) {
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);

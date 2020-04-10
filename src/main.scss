@@ -996,18 +996,23 @@ body {
   }
 
   &--global {
+    --s-decal-x: 50%;
+    --s-decal-y: 50%;
+
     position: fixed;
     pointer-events: none;
     top: 50%;
     left: 50%;
     z-index: 2000;
     opacity: 0;
-    transform: scale(0) rotate(360deg);
+    transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
     transition: transform var(--e-in) 0.2s, opacity linear 0.2s;
+    will-change: transform, opacity, top, left;
 
-    &.is-active {
+    &.is-active,
+    &.is-zoomed {
       opacity: 1;
-      transform: scale(1) rotate(0deg);
+      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(0deg);
       transition-timing-function: var(--e-out), linear;
     }
   }
