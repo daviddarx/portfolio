@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import debounce from 'lodash/debounce';
   import Preloader from './preloader.vue';
 
   export default {
@@ -32,6 +33,7 @@
     data: function () {
       return {
         scrollTop: 0,
+        scrollDebounced: undefined,
         windowW: 0,
         windowH: 0,
         windowGutter: 0,
@@ -169,6 +171,7 @@
         if (this.$refs.zoomedImage == undefined) {
           this.createZoomedBackground();
           this.createZoomedImage();
+          this.scrollDebounced = debounce(this.scrollListener, 200);
         }
 
         this.setZoomedImage();
@@ -181,8 +184,7 @@
 
         this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
         window.addEventListener('mousemove', this.mouseMoveListener)
-
-        window.addEventListener('scroll', this.scrollListener);
+        window.addEventListener('scroll', this.scrollDebounced);
 
         this.isZoomed = true;
       },
@@ -191,9 +193,11 @@
           this.$refs.zoomedImage.classList.remove("is-active");
           this.$refs.zoomedImageBackground.classList.remove("is-active");
           this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+          if (this.scrollDebounced) this.scrollDebounced.cancel();
+          window.removeEventListener('scroll', this.scrollDebounced);
+          window.removeEventListener('mousemove', this.mouseMoveListener)
+          this.launchZoomedImageAnimationOut();
         }
-        this.launchZoomedImageAnimationOut();
-        window.removeEventListener('mousemove', this.mouseMoveListener)
         this.isZoomed = false;
       },
       mouseMoveListener: function (e) {
