@@ -146,6 +146,10 @@
         this.isZoomIconListeningMouseMove = false;
         window.removeEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
       },
+      deactiveZoomIcon: function () {
+        window.zoomIcon.classList.remove('is-active');
+        this.stopZoomIconMouseMoveListening();
+      },
       positionZoomIcon: function () {
         window.zoomIcon.style.left = this.zoomIconPosition.x + 'px';
         window.zoomIcon.style.top = this.zoomIconPosition.y + 'px';
@@ -156,6 +160,10 @@
           window.zoomedImageBackground.classList.add('media-image-zoomed-background');
           document.body.appendChild(window.zoomedImageBackground);
         }
+      },
+      backgroundImageClickListener: function () {
+        this.dezoomImage();
+        this.deactiveZoomIcon();
       },
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
@@ -239,7 +247,7 @@
         requestAnimationFrame(() => {
           this.$refs.zoomedImage.classList.add('is-active');
           window.zoomedImageBackground.classList.add('is-active');
-          window.zoomedImageBackground.addEventListener('click', this.dezoomImage);
+          window.zoomedImageBackground.addEventListener('click', this.backgroundImageClickListener);
         });
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
@@ -257,7 +265,7 @@
           this.$refs.zoomedImage.classList.remove('is-active');
 
           window.zoomedImageBackground.classList.remove('is-active');
-          window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
+          window.zoomedImageBackground.removeEventListener('click', this.backgroundImageClickListener);
 
           if (this.scrollDebounced) this.scrollDebounced.cancel();
 
@@ -288,8 +296,10 @@
 
         if (scrollDirection == 1 && imageRect.top > this.windowH * this.zoomedImageScrollRatioToDezoom) { // imageRect.height prendre en compte scale final si limitée (pour mobile)
           this.dezoomImage();
+          this.deactiveZoomIcon();
         } else if (scrollDirection == 0 && (imageRect.bottom - this.windowH) * -1 > this.windowH * this.zoomedImageScrollRatioToDezoom) {
           this.dezoomImage();
+          this.deactiveZoomIcon();
         }
 
         this.scrollTopLast = this.scrollTop <= 0 ? 0 : this.scrollTop;
@@ -310,7 +320,7 @@
             window.zoomIcon = undefined;
           }
           if (window.zoomedImageBackground) {
-            window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
+            window.zoomedImageBackground.removeEventListener('click', this.backgroundImageClickListener);
             document.body.removeChild(window.zoomedImageBackground);
             window.zoomedImageBackground = undefined;
           }
