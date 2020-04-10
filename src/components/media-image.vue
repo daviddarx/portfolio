@@ -3,6 +3,7 @@
   <div
     class="media-image"
     v-bind:class="{'is-loaded' : isLoaded, 'is-zoomable': isZoomable, 'is-zoomed': isZoomed}"
+    ref="container"
   >
     <preloader class="media-image__preloader"></preloader>
     <img
@@ -71,6 +72,7 @@
       if(this.zoomable == true){
         this.getWindowSize();
         this.getWindowGutter();
+        this.createZoomIcon();
         this.$refs.image.addEventListener("click", this.imageClickListener);
       }
     },
@@ -97,6 +99,12 @@
         } else {
           this.isZoomable = false;
         }
+      },
+      createZoomIcon: function () {
+        this.$refs.zoomIcon = document.createElement('div');
+        this.$refs.zoomIcon.classList.add('zoom-icon');
+        this.$refs.zoomIcon.classList.add('media-image__zoom-icon');
+        this.$refs.container.appendChild(this.$refs.zoomIcon);
       },
       createZoomedBackground: function () {
         this.$refs.zoomedImageBackground = document.createElement('div');

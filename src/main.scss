@@ -956,8 +956,47 @@ body {
   }
 }
 
+.zoom-icon {
+  --s-dimensions: calc(var(--s-gutter) * 0.75);
+  --t-icon: translate(-50%, -1px);
+
+  width: var(--s-dimensions);
+  height: var(--s-dimensions);
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: var(--s-lines) var(--c-lines) solid;
+  background-color: var(--c-lines-inverted);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: var(--s-lines);
+    top: 50%;
+    left: 50%;
+    transform: var(--t-icon);
+    background-color: var(--c-lines);
+  }
+
+  &::after {
+    transform: var(--t-icon) rotate(90deg);
+  }
+
+  .is-inverted & {
+    border-color: var(--c-lines-inverted);
+    background-color: var(--c-lines);
+
+    &::before,
+    &::after {
+      background-color: var(--c-lines-inverted);
+    }
+  }
+}
+
 .media-image {
   --c-border: rgba(255, 255, 255, 0.1);
+  --d-zooming: 0.5s;
 
   $root: #{&};
 
@@ -971,11 +1010,7 @@ body {
   }
 
   &.is-zoomable {
-    cursor: zoom-in;
-  }
-
-  &.is-zoomed {
-    cursor: zoom-out;
+    cursor: pointer;
   }
 
   &__el {
@@ -1006,6 +1041,24 @@ body {
       visibility: hidden;
     }
   }
+
+  &__zoom-icon {
+    --s-margin: calc(var(--s-gutter) * 0.5);
+
+    position: absolute;
+    top: var(--s-margin);
+    right: 0;
+    transform: translateX(50%);
+    transition: opacity ease-out 0.2s var(--d-zooming);
+
+    #{$root}.is-zoomed & {
+      opacity: 0;
+    }
+
+    @media not all and (hover: none) {
+      display: none;
+    }
+  }
 }
 
 .media-image-zoomed {
@@ -1018,7 +1071,7 @@ body {
   left: 0;
   z-index: 1000;
   visibility: hidden;
-  cursor: zoom-out;
+  cursor: pointer;
   transition: transform var(--e-out) var(--d-zooming), visibility linear 0s var(--d-zooming);
   transform: scale(var(--s-scale-dezoomed));
   will-change: transform, visibility, left, top;
