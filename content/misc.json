@@ -264,15 +264,15 @@
           "type": "image",
           "url": "olio_leo/olio_leo_03.jpg",
           "additionalMargin": false,
-          "zoomable": false,
+          "zoomable": true,
           "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "olio_leo/olio_leo_04.jpg",
           "additionalMargin": false,
-          "zoomable": false,
-          "zoomableGutter": false
+          "zoomable": true,
+          "zoomableGutter": true
         }
       ]
     },
