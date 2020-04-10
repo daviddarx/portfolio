@@ -185,8 +185,11 @@
           this.$refs.zoomedImageBackground.addEventListener("click", this.dezoomImage);
         });
 
-        this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
-        window.addEventListener('mousemove', this.mouseMoveListener)
+        if (this.windowW < this.$refs.image.naturalWidth) {
+          this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
+          window.addEventListener('mousemove', this.mouseMoveListener);
+        }
+
         window.addEventListener('scroll', this.scrollDebounced);
 
         this.isZoomed = true;
@@ -198,9 +201,10 @@
           this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
           if (this.scrollDebounced) this.scrollDebounced.cancel();
           window.removeEventListener('scroll', this.scrollDebounced);
-          window.removeEventListener('mousemove', this.mouseMoveListener)
+          window.removeEventListener('mousemove', this.mouseMoveListener);
           this.launchZoomedImageAnimationOut();
         }
+
         this.isZoomed = false;
       },
       mouseMoveListener: function (e) {
@@ -247,9 +251,14 @@
         }
       },
       resize: function () {
-        this.getWindowGutter();
-        this.checkIfZoomable();
-        this.dezoomImage();
+        this.getWindowSize();
+        if (this.zoomable) {
+          this.getWindowGutter();
+          this.checkIfZoomable();
+          if (this.isZoomed) {
+            this.dezoomImage();
+          }
+        }
       }
     }
   }
