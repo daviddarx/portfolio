@@ -960,7 +960,7 @@ body {
 .zoom-icon {
   --s-dimensions: calc(var(--s-gutter) * 0.75);
   --t-icon: translate(-50%, -1px);
-  --d-transform: 0.5s;
+  --d-transform: 0.2s;
 
   $root: #{&};
 
@@ -970,7 +970,6 @@ body {
   &__el {
     width: var(--s-dimensions);
     height: var(--s-dimensions);
-    box-sizing: border-box;
     border-radius: 100%;
     border: var(--s-lines) var(--c-lines) solid;
     background-color: var(--c-lines-inverted);
@@ -1016,6 +1015,10 @@ body {
     #{$root}.is-global & {
       @include twerk-anime();
     }
+  }
+
+  &.is-active {
+    --d-transform: 0.5s;
   }
 
   &.is-global {

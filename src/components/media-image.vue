@@ -44,16 +44,8 @@
         isZoomable: false,
         isZoomIconListeningMouseMove: false,
         zoomRatio: 0,
-        zoomIconPosition: {
-          x: undefined,
-          y: undefined,
-        },
-        zoomIconPositionTarget: {
-          x: undefined,
-          y: undefined,
-        },
         zoomedIconAnimationFrame: undefined,
-        zoomedIconAnimationEase: 0.2,
+        zoomedIconAnimationEase: 0.1,
         zoomedImagePosition: {
           x: 0,
           x: 0
@@ -116,13 +108,11 @@
       imageEnterListener: function (e) {
         if (this.isZoomable == true) {
           window.zoomIcon.classList.add('is-active');
-          this.startZoomIconMouseMoveListening();
         }
       },
       imageLeaveListener: function (e) {
         if(this.isZoomable == true && this.isZoomed == false) {
           window.zoomIcon.classList.remove('is-active');
-          this.stopZoomIconMouseMoveListening();
         }
       },
       createZoomIcon: function () {
@@ -142,37 +132,50 @@
           window.zoomIcon.classList.add('is-inverted');
           window.zoomIcon.appendChild(zoomIconEl.cloneNode(true));
           document.body.appendChild(window.zoomIcon);
+          this.startZoomIconMouseMoveAnimation(); //only one media-image manage the global zoom icon on window
         }
-      },
-      startZoomIconMouseMoveListening: function () {
-        if (this.isZoomIconListeningMouseMove == false) {
-          this.isZoomIconListeningMouseMove = true;
-          window.addEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
-          this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
-        }
-      },
-      stopZoomIconMouseMoveListening: function () {
-        this.isZoomIconListeningMouseMove = false;
-        window.removeEventListener('mousemove', this.zoomIconMouseMoveListener); //debounce?
-        window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
-        this.zoomIconPosition.x = this.zoomIconPosition.y = undefined;
       },
       deactiveZoomIcon: function () {
         window.zoomIcon.classList.remove('is-active');
-        this.stopZoomIconMouseMoveListening();
+      },
+      startZoomIconMouseMoveAnimation: function () {
+        window.zoomIconPosition = {
+          x: this.windowW * 0.5,
+          y: this.windowH * 0.5,
+        };
+        window.zoomIconPositionTarget = {
+           x: this.windowW * 0.5,
+          y: this.windowH * 0.5,
+        };
+        this.isZoomIconListeningMouseMove = true;
+        window.addEventListener('mousemove', this.zoomIconMouseMoveListener);
+        this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
+      },
+      stopZoomIconMouseMoveAnimation: function () {
+        if (this.isZoomIconListeningMouseMove == true) {
+          this.isZoomIconListeningMouseMove = false;
+          window.removeEventListener('mousemove', this.zoomIconMouseMoveListener);
+          window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
+          document.body.removeChild(window.zoomIcon);
+          window.zoomIcon = undefined;
+        }
       },
       positionZoomIcon: function () {
-        window.zoomIcon.style.left = this.zoomIconPosition.x + 'px';
-        window.zoomIcon.style.top = this.zoomIconPosition.y + 'px';
+        window.zoomIcon.style.left = window.zoomIconPosition.x + 'px';
+        window.zoomIcon.style.top = window.zoomIconPosition.y + 'px';
       },
       animateZoomIcon: function () {
-        if (this.zoomIconPosition.x != undefined) { 
-          this.zoomIconPosition.x = this.zoomIconPosition.x + (this.zoomIconPositionTarget.x - this.zoomIconPosition.x) * this.zoomedIconAnimationEase;
-          this.zoomIconPosition.y = this.zoomIconPosition.y + (this.zoomIconPositionTarget.y - this.zoomIconPosition.y) * this.zoomedIconAnimationEase;
+        if (window.zoomIconPosition.x != undefined) { 
+          window.zoomIconPosition.x = window.zoomIconPosition.x + (window.zoomIconPositionTarget.x - window.zoomIconPosition.x) * this.zoomedIconAnimationEase;
+          window.zoomIconPosition.y = window.zoomIconPosition.y + (window.zoomIconPositionTarget.y - window.zoomIconPosition.y) * this.zoomedIconAnimationEase;
           this.positionZoomIcon();
         }
 
         this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
+      },
+      zoomIconMouseMoveListener: function (e) {
+        window.zoomIconPositionTarget.x = e.clientX;
+        window.zoomIconPositionTarget.y = e.clientY;
       },
       createZoomedBackground: function () {
         if (!window.zoomedImageBackground) {
@@ -302,16 +305,6 @@
       zoomedImageMouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
       },
-      zoomIconMouseMoveListener: function (e) {
-        console.log("mouse move "+e.clientX);
-        if (this.zoomIconPosition.x == undefined) { 
-          this.zoomIconPosition.x = e.clientX;
-          this.zoomIconPosition.y = e.clientY;
-          this.positionZoomIcon();
-        }
-        this.zoomIconPositionTarget.x = e.clientX;
-        this.zoomIconPositionTarget.y = e.clientY;
-      },
       scrollListener: function (e) {
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -333,16 +326,12 @@
           this.$refs.image.removeEventListener('click', this.imageClickListener);
           this.$refs.image.removeEventListener('mouseenter', this.imageEnterListener);
           this.$refs.image.removeEventListener('mouseleave', this.imageLeaveListener);
-          this.stopZoomIconMouseMoveListening();
+          this.stopZoomIconMouseMoveAnimation();
         }
         if(this.$refs.zoomedImage) {
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
           document.body.removeChild(this.$refs.zoomedImage);
           this.$refs.zoomedImage = undefined;
-          if (window.zoomIcon) {
-            document.body.removeChild(window.zoomIcon);
-            window.zoomIcon = undefined;
-          }
           if (window.zoomedImageBackground) {
             window.zoomedImageBackground.removeEventListener('click', this.backgroundImageClickListener);
             document.body.removeChild(window.zoomedImageBackground);
