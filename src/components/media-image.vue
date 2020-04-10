@@ -73,7 +73,9 @@
         this.getWindowSize();
         this.getWindowGutter();
         this.createZoomIcon();
-        this.$refs.image.addEventListener("click", this.imageClickListener);
+        this.$refs.image.addEventListener('click', this.imageClickListener);
+        this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
+        this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
       }
     },
     methods: {
@@ -92,6 +94,12 @@
           }
         }
       },
+      imageEnterListener: function (e) {
+        window.zoomIcon.classList.add('is-active');
+      },
+      imageLeaveListener: function (e) {
+        window.zoomIcon.classList.remove('is-active');
+      },
       checkIfZoomable: function () {
         if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
           this.isZoomable = true;
@@ -105,6 +113,14 @@
         this.$refs.zoomIcon.classList.add('zoom-icon');
         this.$refs.zoomIcon.classList.add('media-image__zoom-icon');
         this.$refs.container.appendChild(this.$refs.zoomIcon);
+
+        if (!window.zoomIcon) {
+          window.zoomIcon = document.createElement('div');
+          window.zoomIcon.classList.add('zoom-icon');
+          window.zoomIcon.classList.add('zoom-icon--global');
+          window.zoomIcon.classList.add('zoom-icon--inverted');
+          document.body.appendChild(window.zoomIcon);
+        }
       },
       createZoomedBackground: function () {
         if (!window.zoomedImageBackground) {
@@ -117,9 +133,9 @@
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
         this.$refs.zoomedImage.className = '';
-        this.$refs.zoomedImage.classList.add("media-image-zoomed");
+        this.$refs.zoomedImage.classList.add('media-image-zoomed');
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.zoomRatio);
-        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
+        this.$refs.zoomedImage.addEventListener('click', this.dezoomImage);
         document.body.appendChild(this.$refs.zoomedImage);
 
         this.zoomedImageAnimationOutDuration = parseFloat(getComputedStyle(this.$refs.zoomedImage).getPropertyValue('--d-zooming').split('s')[0]) * 1000;
@@ -139,8 +155,8 @@
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.zoomRatio);
       },
       positionZoomedImage: function() {
-        this.$refs.zoomedImage.style.left = this.zoomedImagePosition.x + "px";
-        this.$refs.zoomedImage.style.top = this.zoomedImagePosition.y + "px";
+        this.$refs.zoomedImage.style.left = this.zoomedImagePosition.x + 'px';
+        this.$refs.zoomedImage.style.top = this.zoomedImagePosition.y + 'px';
       },
       easeZoomedImage: function (t, b, c, d) {
         return -c * ((t=t/d-1)*t*t*t - 1) + b; // outQuart https://kodhus.com/easings/
@@ -191,9 +207,9 @@
         this.setZoomedImage();
 
         requestAnimationFrame(() => {
-          this.$refs.zoomedImage.classList.add("is-active");
-          window.zoomedImageBackground.classList.add("is-active");
-          window.zoomedImageBackground.addEventListener("click", this.dezoomImage);
+          this.$refs.zoomedImage.classList.add('is-active');
+          window.zoomedImageBackground.classList.add('is-active');
+          window.zoomedImageBackground.addEventListener('click', this.dezoomImage);
         });
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
@@ -207,9 +223,9 @@
       },
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
-          this.$refs.zoomedImage.classList.remove("is-active");
-          window.zoomedImageBackground.classList.remove("is-active");
-          window.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+          this.$refs.zoomedImage.classList.remove('is-active');
+          window.zoomedImageBackground.classList.remove('is-active');
+          window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
           if (this.scrollDebounced) this.scrollDebounced.cancel();
           window.removeEventListener('scroll', this.scrollDebounced);
           window.removeEventListener('mousemove', this.mouseMoveListener);
@@ -237,14 +253,20 @@
       },
       destroy: function () {
         if(this.zoomable == true){
-          this.$refs.image.removeEventListener("click", this.imageClickListener);
+          this.$refs.image.removeEventListener('click', this.imageClickListener);
+          this.$refs.image.removeEventListener('mouseenter', this.imageEnterListener);
+          this.$refs.image.removeEventListener('mouseleave', this.imageLeaveListener);
         }
         if(this.$refs.zoomedImage) {
-          this.$refs.zoomedImage.removeEventListener("click", this.dezoomImage);
+          this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
           document.body.removeChild(this.$refs.zoomedImage);
           this.$refs.zoomedImage = undefined
+          if (window.zoomIcon) {
+            document.body.removeChild(window.zoomIcon);
+            window.zoomIcon = undefined;
+          }
           if (window.zoomedImageBackground) {
-            window.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+            window.zoomedImageBackground.removeEventListener('click', this.dezoomImage);
             document.body.removeChild(window.zoomedImageBackground);
             window.zoomedImageBackground = undefined;
           }
