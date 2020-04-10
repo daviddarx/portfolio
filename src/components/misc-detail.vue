@@ -57,6 +57,7 @@
             v-bind:url="misc.mediasPath+media.url"
             v-bind:title="infos.title"
             v-bind:zoomable="media.zoomable"
+            v-bind:zoomableGutter="media.zoomableGutter"
             ref="image"
           >
           </media-image>

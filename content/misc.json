@@ -33,43 +33,50 @@
           "type": "image",
           "url": "digital_playground/stage_01_01.png",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_01_02.png",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_01_03.png",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_02_01.jpg",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_02_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_02_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_playground/stage_03_01.png",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -115,37 +122,43 @@
           "type": "image",
           "url": "digital_watches/dw_01.png",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_watches/dw_02.png",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_watches/dw_03.jpg",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_watches/dw_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_watches/dw_05.png",
           "additionalMargin": true,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "digital_watches/dw_06.png",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -160,13 +173,15 @@
           "type": "image",
           "url": "coop_grillerinstinkt/coop_grillerinstinkt_blog_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "coop_grillerinstinkt/coop_grillerinstinkt_blog_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -192,25 +207,29 @@
           "type": "image",
           "url": "predentec/predentec_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "predentec/predentec_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "predentec/predentec_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "predentec/predentec_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -231,25 +250,29 @@
           "type": "image",
           "url": "olio_leo/olio_leo_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "olio_leo/olio_leo_02.jpg",
           "additionalMargin": false,
-          "zoomable": true
+          "zoomable": true,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "olio_leo/olio_leo_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "olio_leo/olio_leo_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -279,25 +302,29 @@
           "type": "image",
           "url": "barbu/barbu_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "barbu/barbu_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "barbu/barbu_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "barbu/barbu_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -318,25 +345,29 @@
           "type": "image",
           "url": "swissaid/swissaid_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "swissaid/swissaid_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "swissaid/swissaid_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "swissaid/swissaid_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -356,37 +387,43 @@
           "type": "image",
           "url": "little_chaperon/little_chaperon_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "little_chaperon/little_chaperon_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "little_chaperon/little_chaperon_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "little_chaperon/little_chaperon_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "little_chaperon/little_chaperon_05.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "little_chaperon/little_chaperon_06.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -406,31 +443,36 @@
           "type": "image",
           "url": "flash_experimente/flash_experimente_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "flash_experimente/flash_experimente_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "flash_experimente/flash_experimente_06.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "flash_experimente/flash_experimente_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "flash_experimente/flash_experimente_05.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     },
@@ -450,25 +492,29 @@
           "type": "image",
           "url": "custom_design/custom_design_01.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "custom_design/custom_design_02.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "custom_design/custom_design_03.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         },
         {
           "type": "image",
           "url": "custom_design/custom_design_04.jpg",
           "additionalMargin": false,
-          "zoomable": false
+          "zoomable": false,
+          "zoomableGutter": false
         }
       ]
     }

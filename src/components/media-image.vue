@@ -26,7 +26,8 @@
     props: {
       url: String,
       title: String,
-      zoomable: Boolean
+      zoomable: Boolean,
+      zoomableGutter: Boolean
     },
     data: function () {
       return {
@@ -132,13 +133,10 @@
         return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
       },
       setZoomedImagePositionOnMouseMove: function (mouseX, mouseY) {
-        this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/this.windowW, 0, 1, this.windowGutter, (this.$refs.image.naturalWidth - this.windowW + this.windowGutter) * -1); // prendre en compte scale final si limitée (pour mobile)
-        this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/this.windowH, 0, 1, this.scrollTop + this.windowGutter, this.scrollTop - this.$refs.image.naturalHeight + this.windowH - this.windowGutter); // prendre en compte scale final si limitée (pour mobile)
       },
       animateZoomedImage: function () {
         this.zoomedImagePosition.x = this.zoomedImagePosition.x + (this.zoomedImagePositionTarget.x - this.zoomedImagePosition.x) * this.zoomedImageAnimationEase;
-        this.zoomedImagePosition.y = this.zoomedImagePosition.y + (this.zoomedImagePositionTarget.y - this.zoomedImagePosition.y) * this.zoomedImageAnimationEase;
 
         this.positionZoomedImage();
 
@@ -152,7 +150,6 @@
         this.zoomedImageAnimationOutTime = new Date().getTime() - this.zoomedImageAnimationOutStart;
 
         this.zoomedImagePosition.x = this.easeZoomedImage(this.zoomedImageAnimationOutTime, this.zoomedImagePositionFrom.x, this.zoomedImagePositionInit.x - this.zoomedImagePositionFrom.x, this.zoomedImageAnimationOutDuration);
-        this.zoomedImagePosition.y = this.easeZoomedImage(this.zoomedImageAnimationOutTime, this.zoomedImagePositionFrom.y, this.zoomedImagePositionInit.y - this.zoomedImagePositionFrom.y, this.zoomedImageAnimationOutDuration);;
 
         if (this.zoomedImageAnimationOutTime >= this.zoomedImageAnimationOutDuration) {
           clearInterval(this.zoomedImageAnimationOutInterval);
@@ -163,7 +160,6 @@
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
 
         this.zoomedImagePositionFrom.x = this.zoomedImagePosition.x;
-        this.zoomedImagePositionFrom.y = this.zoomedImagePosition.y;
 
         this.zoomedImageAnimationOutStart = new Date().getTime();
         this.zoomedImageAnimationOutInterval = setInterval(this.animateZoomedImageOutInterval, 1000 / 60);
@@ -186,6 +182,8 @@
         this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
         window.addEventListener('mousemove', this.mouseMoveListener)
 
+        window.addEventListener('scroll', this.scrollListener);
+
         this.isZoomed = true;
       },
       dezoomImage: function () {
@@ -200,6 +198,9 @@
       },
       mouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
+      },
+      scrollListener: function (e) {
+        console.log(window.scrollY);
       },
       destroy: function () {
         if(this.zoomable == true){
@@ -217,12 +218,14 @@
         this.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       },
       getWindowGutter: function () {
-        const windowGutterCSS = getComputedStyle(document.body).getPropertyValue('--s-gutter');
+        if (this.zoomableGutter) {
+          const windowGutterCSS = getComputedStyle(document.body).getPropertyValue('--s-gutter');
 
-        if (windowGutterCSS.split('vw').length > 1) {
-          this.windowGutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * this.windowW;
-        } else {
-          this.windowGutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * this.windowH;
+          if (windowGutterCSS.split('vw').length > 1) {
+            this.windowGutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * this.windowW;
+          } else {
+            this.windowGutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * this.windowH;
+          }
         }
       },
       resize: function () {

@@ -1032,7 +1032,6 @@ body {
 
 .media-image-zoomed-background {
   --d-fading: 0.5s;
-  --d-delay: 0.5s;
 
   position: fixed;
   top: 0;
@@ -1049,7 +1048,7 @@ body {
     cursor: zoom-out;
     opacity: 1;
     visibility: visible;
-    transition-delay: var(--d-delay), 0s;
+    transition-delay: 0s, 0s;
   }
 }
 
