@@ -1138,6 +1138,10 @@ body {
     transition-delay: 0s;
     visibility: visible;
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .media-image-zoomed-background {

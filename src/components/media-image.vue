@@ -302,6 +302,13 @@
 
         this.isZoomed = false;
       },
+      hideZoomedImageOnResize: function () {
+        this.$refs.zoomedImage.classList.add('is-hidden');
+        setTimeout(() => {
+          this.$refs.zoomedImage.classList.remove('is-hidden');
+        }, this.zoomedImageAnimationOutDuration);
+        this.dezoomImage();
+      },
       zoomedImageMouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
       },
@@ -362,7 +369,7 @@
           this.getWindowGutter();
           this.checkIfZoomable();
           this.deactiveZoomIcon();
-          if (this.isZoomed) this.dezoomImage();
+          if (this.isZoomed) this.hideZoomedImageOnResize();
         }
       }
     }
