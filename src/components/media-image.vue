@@ -108,11 +108,13 @@
         }
       },
       imageEnterListener: function (e) {
-        window.zoomIcon.classList.add('is-active');
-        this.startZoomIconMouseMoveListening();
+        if (this.isZoomable == true) {
+          window.zoomIcon.classList.add('is-active');
+          this.startZoomIconMouseMoveListening();
+        }
       },
       imageLeaveListener: function (e) {
-        if(this.isZoomed == false) {
+        if(this.isZoomable == true && this.isZoomed == false) {
           window.zoomIcon.classList.remove('is-active');
           this.stopZoomIconMouseMoveListening();
         }
@@ -348,9 +350,8 @@
         if (this.zoomable) {
           this.getWindowGutter();
           this.checkIfZoomable();
-          if (this.isZoomed) {
-            this.dezoomImage();
-          }
+          this.deactiveZoomIcon();
+          if (this.isZoomed) this.dezoomImage();
         }
       }
     }
