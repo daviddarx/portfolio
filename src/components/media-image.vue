@@ -30,6 +30,10 @@
     },
     data: function () {
       return {
+        scrollTop: 0,
+        windowW: 0,
+        windowH: 0,
+        windowGutter: 0,
         isLoaded: false,
         isZoomed: false,
         isZoomable: false,
@@ -56,10 +60,6 @@
         zoomedImageAnimationOutInterval: undefined,
         zoomedImageAnimationOutStart: 0,
         zoomedImageAnimationOutTime: 0,
-        scrollTop: 0,
-        windowW: 0,
-        windowH: 0,
-        windowGutter: 0,
       }
     },
     mounted () {
@@ -92,6 +92,11 @@
         } else {
           this.isZoomable = false;
         }
+      },
+      createZoomedBackground: function () {
+        this.$refs.zoomedImageBackground = document.createElement('div');
+        this.$refs.zoomedImageBackground.classList.add('media-image-zoomed-background');
+        document.body.appendChild(this.$refs.zoomedImageBackground);
       },
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
@@ -166,6 +171,7 @@
       },
       zoomImage: function () {
         if (this.$refs.zoomedImage == undefined) {
+          this.createZoomedBackground();
           this.createZoomedImage();
         }
 
@@ -173,6 +179,8 @@
 
         requestAnimationFrame(() => {
           this.$refs.zoomedImage.classList.add("is-active");
+          this.$refs.zoomedImageBackground.classList.add("is-active");
+          this.$refs.zoomedImageBackground.addEventListener("click", this.dezoomImage);
         });
 
         this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
@@ -183,6 +191,8 @@
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
           this.$refs.zoomedImage.classList.remove("is-active");
+          this.$refs.zoomedImageBackground.classList.remove("is-active");
+          this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
         }
         this.launchZoomedImageAnimationOut();
         window.removeEventListener('mousemove', this.mouseMoveListener)
@@ -192,8 +202,15 @@
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
       },
       destroy: function () {
-        this.$refs.image.removeEventListener("click", this.imageClickListener);
-        this.$refs.zoomedImage.addEventListener("click", this.dezoomImage);
+        if(this.zoomable == true){
+          this.$refs.image.removeEventListener("click", this.imageClickListener);
+        }
+        if(this.$refs.zoomedImage) {
+          this.$refs.zoomedImage.removeEventListener("click", this.dezoomImage);
+          this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+          if(this.zoomedImageAnimationOutInterval) clearInterval(this.zoomedImageAnimationOutInterval);
+          if(this.zoomedImageAnimationFrame) window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
+        }
       },
       getWindowSize: function () {
         this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);

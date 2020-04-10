@@ -1030,6 +1030,29 @@ body {
   }
 }
 
+.media-image-zoomed-background {
+  --d-fading: 0.5s;
+  --d-delay: 0.5s;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  visibility: hidden;
+  background-color: black;
+  opacity: 0;
+  transition: opacity ease-out var(--d-fading) 0s, visibility linear 0s calc(var(--d-fading));
+
+  &.is-active {
+    cursor: zoom-out;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: var(--d-delay), 0s;
+  }
+}
+
 .media-video {
   $root: #{&};
 
