@@ -107,9 +107,12 @@
         this.$refs.container.appendChild(this.$refs.zoomIcon);
       },
       createZoomedBackground: function () {
-        this.$refs.zoomedImageBackground = document.createElement('div');
-        this.$refs.zoomedImageBackground.classList.add('media-image-zoomed-background');
-        document.body.appendChild(this.$refs.zoomedImageBackground);
+        if (!window.zoomedImageBackground) {
+          window.zoomedImageBackground = document.createElement('div');
+          window.zoomedImageBackground.classList.add('media-image-zoomed-background');
+          document.body.appendChild(window.zoomedImageBackground);
+        }
+
       },
       createZoomedImage: function () {
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
@@ -189,8 +192,8 @@
 
         requestAnimationFrame(() => {
           this.$refs.zoomedImage.classList.add("is-active");
-          this.$refs.zoomedImageBackground.classList.add("is-active");
-          this.$refs.zoomedImageBackground.addEventListener("click", this.dezoomImage);
+          window.zoomedImageBackground.classList.add("is-active");
+          window.zoomedImageBackground.addEventListener("click", this.dezoomImage);
         });
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
@@ -205,8 +208,8 @@
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
           this.$refs.zoomedImage.classList.remove("is-active");
-          this.$refs.zoomedImageBackground.classList.remove("is-active");
-          this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+          window.zoomedImageBackground.classList.remove("is-active");
+          window.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
           if (this.scrollDebounced) this.scrollDebounced.cancel();
           window.removeEventListener('scroll', this.scrollDebounced);
           window.removeEventListener('mousemove', this.mouseMoveListener);
@@ -238,9 +241,15 @@
         }
         if(this.$refs.zoomedImage) {
           this.$refs.zoomedImage.removeEventListener("click", this.dezoomImage);
-          this.$refs.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
-          if(this.zoomedImageAnimationOutInterval) clearInterval(this.zoomedImageAnimationOutInterval);
-          if(this.zoomedImageAnimationFrame) window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
+          document.body.removeChild(this.$refs.zoomedImage);
+          this.$refs.zoomedImage = undefined
+          if (window.zoomedImageBackground) {
+            window.zoomedImageBackground.removeEventListener("click", this.dezoomImage);
+            document.body.removeChild(window.zoomedImageBackground);
+            window.zoomedImageBackground = undefined;
+          }
+          if (this.zoomedImageAnimationOutInterval) clearInterval(this.zoomedImageAnimationOutInterval);
+          if (this.zoomedImageAnimationFrame) window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
         }
       },
       getWindowSize: function () {
