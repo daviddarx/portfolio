@@ -196,6 +196,7 @@ body {
   font-size: var(--s-text);
   line-height: var(--s-line-height);
   color: var(--c-text);
+  overflow-x: hidden;
 }
 
 .font-compensated {
