@@ -841,11 +841,7 @@ body {
   }
 
   &:nth-child(2n+0) {
-    transform: translateY(200px);
-
-    @media (min-height: 800px) {
-      transform: translateY(400px);
-    }
+      transform: translateY(15vw);
   }
 
   &__container {
