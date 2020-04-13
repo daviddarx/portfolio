@@ -1060,10 +1060,11 @@ body {
   position: relative;
   min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
   outline: var(--s-lines) solid var(--c-border);
-  transition: outline-color linear 0.2s;
+  transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
 
   &.is-loaded {
     outline-color: transparent;
+    min-height: 0;
   }
 
   &.is-zoomable {
