@@ -322,11 +322,13 @@
         this.isZoomed = false;
       },
       hideZoomedImageOnResize: function () {
-        this.$refs.zoomedImage.classList.add('is-hidden');
-        setTimeout(() => {
-          this.$refs.zoomedImage.classList.remove('is-hidden');
-        }, this.zoomedImageAnimationOutDuration);
-        this.dezoomImage();
+        if (window.isTouch == false) { //fix resize bug on iphone
+          this.$refs.zoomedImage.classList.add('is-hidden');
+          setTimeout(() => {
+            this.$refs.zoomedImage.classList.remove('is-hidden');
+          }, this.zoomedImageAnimationOutDuration);
+          this.dezoomImage();
+        }
       },
       zoomedImageMouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
