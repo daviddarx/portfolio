@@ -36,6 +36,8 @@
         scrollTop: 0,
         scrollTopLast: 0,
         scrollDebounced: undefined,
+        moveDebounced: undefined,
+        moveDebouncedZoomIcon: undefined,
         windowW: 0,
         windowH: 0,
         windowGutter: 0,
@@ -157,13 +159,14 @@
           y: this.windowH * 0.5,
         };
         this.isZoomIconListeningMouseMove = true;
-        window.addEventListener('mousemove', this.zoomIconMouseMoveListener);
+        this.moveDebouncedZoomIcon = debounce(this.zoomIconMouseMoveListener, 1);
+        window.addEventListener('mousemove', this.moveDebouncedZoomIcon);
         this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
       },
       stopZoomIconMouseMoveAnimation: function () {
         if (this.isZoomIconListeningMouseMove == true) {
           this.isZoomIconListeningMouseMove = false;
-          window.removeEventListener('mousemove', this.zoomIconMouseMoveListener);
+          window.removeEventListener('mousemove', this.moveDebouncedZoomIcon);
           window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
           document.body.removeChild(window.zoomIcon);
           window.zoomIcon = undefined;
@@ -294,9 +297,11 @@
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
           if (window.isTouch == false) {
-            window.addEventListener('mousemove', this.zoomedImageMouseMoveListener);
+            this.moveDebounced = debounce(this.zoomedImageMouseMoveListener, 1);
+            window.addEventListener('mousemove', this.moveDebounced);
           } else {
-            window.addEventListener('touchmove', this.zoomedImageTouchMoveListener);
+            this.moveDebounced = debounce(this.zoomedImageTouchMoveListener, 1);
+            window.addEventListener('touchmove', this.moveDebounced);
           }
           this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
         }
@@ -314,13 +319,15 @@
           window.zoomedImageBackground.removeEventListener('click', this.backgroundImageClickListener);
 
           if (this.scrollDebounced) this.scrollDebounced.cancel();
+          if (this.moveDebounced) this.moveDebounced.cancel();
+          if (this.moveDebouncedZoomIcon) this.moveDebouncedZoomIcon.cancel();
 
           window.removeEventListener('scroll', this.scrollDebounced);
 
           if (window.isTouch == false) {
-            window.removeEventListener('mousemove', this.zoomedImageMouseMoveListener);
+            window.removeEventListener('mousemove', this.moveDebounced);
           } else {
-            window.removeEventListener('touchmove', this.zoomedImageTouchMoveListener);
+            window.removeEventListener('touchmove', this.moveDebounced);
           }
 
           this.launchZoomedImageAnimationOut();
