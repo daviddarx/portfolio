@@ -6,7 +6,9 @@
     <h1 class="visually-hidden">David Darx</h1>
     <logo></logo>
     <custom-navigation></custom-navigation>
-    <router-view :key="$route.fullPath"></router-view>
+    <keep-alive include="misc-keep">
+      <router-view :key="$route.fullPath"></router-view>
+    </keep-alive>
     <transition-backround></transition-backround>
   </div>
 </template>

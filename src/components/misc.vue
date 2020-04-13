@@ -52,6 +52,7 @@
   import * as PIXI from 'pixi.js';
 
   export default Vue.extend({
+    name: "misc-keep",
     components: {
       'misc-list': MiscList,
       'credits': Credits
@@ -61,6 +62,7 @@
       return {
         misc: misc,
         isDisplayed : false,
+        isMounted: false,
         miscItemLoadID: 0,
         pixi: {
           sprites: [],
@@ -79,23 +81,29 @@
     },
     mounted () {
       this.initPixi();
-      window.addEventListener('resize', this.resize);
-      setTimeout(this.displayMisc, 100);
-      if (window.contentPageSavedHeight) {
-        this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
+      this.setupMounting();
+    },
+    activated () {
+      if (this.isMounted == false) {
+        this.setupMounting();
       }
     },
     beforeRouteLeave (to, from, next) {
-      this.pixi.app.destroy(true, {
-        children: true,
-        texture: false,
-        baseTexture: false
-      });
       window.removeEventListener('resize', this.resize);
       window.contentPageSavedHeight = this.$refs.contentPage.clientHeight;
+      this.isMounted = false;
+      this.isDisplayed = false;
       next();
     },
     methods: {
+      setupMounting: function() {
+        this.isMounted = true;
+        window.addEventListener('resize', this.resize);
+        setTimeout(this.displayMisc, 100);
+        if (window.contentPageSavedHeight) {
+          this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
+        }
+      },
       displayMisc: function() {
         this.isDisplayed = true;
 
