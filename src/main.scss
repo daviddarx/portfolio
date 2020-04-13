@@ -968,12 +968,33 @@ body {
   width: var(--s-dimensions);
   height: var(--s-dimensions);
 
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: var(--s-lines) var(--c-lines) solid;
+    box-sizing: border-box;
+    background-color: var(--c-lines-inverted);
+    transform: rotate(45deg); //rotate to get smooth edges on each resolution
+
+    .is-inverted & {
+      border-color: var(--c-lines-inverted);
+      background-color: var(--c-lines);
+    }
+  }
+
+  &.is-inverted {
+    &::before {
+      border-color: var(--c-lines-inverted);
+      background-color: var(--c-lines);
+    }
+  }
+
   &__el {
     width: var(--s-dimensions);
     height: var(--s-dimensions);
-    border-radius: 100%;
-    border: var(--s-lines) var(--c-lines) solid;
-    background-color: var(--c-lines-inverted);
     will-change: transform;
 
     &::before,
@@ -998,9 +1019,6 @@ body {
 
     .is-inverted &,
     #{$root}.is-inverted & {
-      border-color: var(--c-lines-inverted);
-      background-color: var(--c-lines);
-
       &::before,
       &::after {
         background-color: var(--c-lines-inverted);
@@ -1011,10 +1029,6 @@ body {
       &::before {
         transform: var(--t-icon) scaleX(0);
       }
-    }
-
-    #{$root}.is-global & {
-      @include twerk-anime();
     }
   }
 
