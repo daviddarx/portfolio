@@ -1048,6 +1048,15 @@ body {
     &.is-zoomed {
       transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(-90deg);
     }
+
+    .is-touch & {
+      --s-decal-x: 0;
+      --s-decal-y: 0;
+
+      top: var(--s-gutter);
+      left: auto;
+      right: var(--s-gutter);
+    }
   }
 }
 
@@ -1104,6 +1113,7 @@ body {
     --s-margin: calc(var(--s-gutter) * 0.5);
 
     position: absolute;
+    display: none;
     top: var(--s-margin);
     right: 0;
     transform: translateX(50%);
@@ -1113,8 +1123,8 @@ body {
       opacity: 0;
     }
 
-    @media not all and (hover: none) {
-      display: none;
+    .is-touch & {
+      display: block;
     }
   }
 }

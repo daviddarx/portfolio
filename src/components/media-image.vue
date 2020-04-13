@@ -80,9 +80,12 @@
         this.getWindowSize();
         this.getWindowGutter();
         this.createZoomIcon();
-        this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
-        this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
         this.$refs.container.addEventListener('click', this.imageClickListener);
+
+        if (window.isTouch == false) {
+          this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
+          this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
+        }
       }
     },
     methods: {
@@ -129,14 +132,16 @@
         this.$refs.zoomIcon.appendChild(zoomIconEl);
         this.$refs.container.appendChild(this.$refs.zoomIcon);
 
-        if (!window.zoomIcon) {
+        if (!window.zoomIcon) { //only one media-image manage the global zoom icon on window
           window.zoomIcon = document.createElement('div');
           window.zoomIcon.classList.add('zoom-icon');
           window.zoomIcon.classList.add('is-global');
           window.zoomIcon.classList.add('is-inverted');
           window.zoomIcon.appendChild(zoomIconEl.cloneNode(true));
           document.body.appendChild(window.zoomIcon);
-          this.startZoomIconMouseMoveAnimation(); //only one media-image manage the global zoom icon on window
+          if (window.isTouch == false) {
+            this.startZoomIconMouseMoveAnimation();
+          }
         }
       },
       deactiveZoomIcon: function () {
