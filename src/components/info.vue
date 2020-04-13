@@ -6,11 +6,12 @@
   >
     <div class="content-page">
       <h2
-        class="content-page__page-title font-compensated animate-in"
+        class="content-page__page-title font-compensated animate-in hidable-title"
         v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+        titleInit="Info"
       >
         <span class="content-page__page-title__el">
-          Info
+          {{this.pageTitle}}
         </span>
       </h2>
       <p class="content-page__lead animate-in animate-in__s1">
@@ -19,12 +20,13 @@
 
       <div class="content-page__content animate-in animate-in__s2">
         <div
-          class="info__img content-page__3-4"
+          class="info__img content-page__3-4 hiding-title"
         >
         </div>
 
         <h2
-          class="content-page__subtitle content-page__3-4"
+          class="content-page__subtitle content-page__3-4 hiding-title"
+          titleReplace="Erfahrung"
         >
           Erfahrung
         </h2>
@@ -44,7 +46,8 @@
         </div>
 
         <h2
-          class="content-page__subtitle content-page__3-4"
+          class="content-page__subtitle content-page__3-4 hiding-title"
+          titleReplace="Expertise"
         >
           Expertise
         </h2>
@@ -64,7 +67,8 @@
         </div>
 
         <h2
-          class="content-page__subtitle content-page__3-4"
+          class="content-page__subtitle content-page__3-4 hiding-title"
+          titleReplace="Ausbildung"
         >
           Ausbildung
         </h2>
@@ -86,7 +90,8 @@
         </div>
 
         <h2
-          class="content-page__subtitle content-page__3-4"
+          class="content-page__subtitle content-page__3-4 hiding-title"
+          titleReplace="Kunden"
         >
           Kunden
         </h2>
@@ -119,11 +124,16 @@
     data() {
       return {
         info: info,
-        isDisplayed : false
+        isDisplayed : false,
+        pageTitle: "Info"
       }
     },
     mounted () {
       setTimeout(this.displayInfo, 100);
+      this.initTitlesObserver(this.pageTitle);
+    },
+    beforeDestroy () {
+      this.destroyTitlesObserver();
     },
     methods: {
       displayInfo: function() {
