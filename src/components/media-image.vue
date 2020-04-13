@@ -80,9 +80,9 @@
         this.getWindowSize();
         this.getWindowGutter();
         this.createZoomIcon();
-        this.$refs.image.addEventListener('click', this.imageClickListener);
         this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
         this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
+        this.$refs.container.addEventListener('click', this.imageClickListener);
       }
     },
     methods: {
@@ -344,7 +344,7 @@
       },
       destroy: function () {
         if(this.zoomable == true){
-          this.$refs.image.removeEventListener('click', this.imageClickListener);
+          this.$refs.container.removeEventListener('click', this.imageClickListener);
           this.$refs.image.removeEventListener('mouseenter', this.imageEnterListener);
           this.$refs.image.removeEventListener('mouseleave', this.imageLeaveListener);
           this.stopZoomIconMouseMoveAnimation();
