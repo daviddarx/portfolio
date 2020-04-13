@@ -45,6 +45,7 @@
         isZoomed: false,
         isZoomable: false,
         isZoomIconListeningMouseMove: false,
+        isMouseMoveVertical: false,
         scaleDezoomed: 0,
         scaleZoomed: 1,
         zoomMaxWidthRatioToWindowW: 1.2,
@@ -235,6 +236,8 @@
         this.zoomedImagePosition.x = this.zoomedImagePositionInit.x;
         this.zoomedImagePosition.y = this.zoomedImagePositionInit.y;
 
+        this.isMouseMoveVertical = (this.zoomedImagePosition.y < 0 ) ? true : false;
+
         this.positionZoomedImage();
       },
       positionZoomedImage: function() {
@@ -251,9 +254,17 @@
         this.zoomedImagePositionLeftSide = this.windowGutter + (this.$refs.image.naturalWidth - this.$refs.image.naturalWidth * this.scaleZoomed) * -0.5;
         this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.$refs.image.naturalWidth * this.scaleZoomed - this.windowW) - this.windowGutter * 2;
         this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/this.windowW, 0, 1, this.zoomedImagePositionLeftSide, this.zoomedImagePositionRightSide);
+
+        if (this.isMouseMoveVertical == true) {
+          this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/this.windowH, 0, 1, 0, this.zoomedImagePositionInit.y);
+        }
       },
       animateZoomedImage: function () {
         this.zoomedImagePosition.x = this.zoomedImagePosition.x + (this.zoomedImagePositionTarget.x - this.zoomedImagePosition.x) * this.zoomedImageAnimationEase;
+
+        if (this.isMouseMoveVertical == true) {
+          this.zoomedImagePosition.y = this.zoomedImagePosition.y + (this.zoomedImagePositionTarget.y - this.zoomedImagePosition.y) * this.zoomedImageAnimationEase;
+        }
 
         this.positionZoomedImage();
 
@@ -268,6 +279,10 @@
 
         this.zoomedImagePosition.x = this.easeZoomedImage(this.zoomedImageAnimationOutTime, this.zoomedImagePositionFrom.x, this.zoomedImagePositionInit.x - this.zoomedImagePositionFrom.x, this.zoomedImageAnimationOutDuration);
 
+        if (this.isMouseMoveVertical == true) {
+          this.zoomedImagePosition.y = this.easeZoomedImage(this.zoomedImageAnimationOutTime, this.zoomedImagePositionFrom.y, this.zoomedImagePositionInit.y - this.zoomedImagePositionFrom.y, this.zoomedImageAnimationOutDuration);
+        }
+
         if (this.zoomedImageAnimationOutTime >= this.zoomedImageAnimationOutDuration) {
           this.animateZoomedImageOutComplete();
         }
@@ -280,6 +295,7 @@
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
 
         this.zoomedImagePositionFrom.x = this.zoomedImagePosition.x;
+        this.zoomedImagePositionFrom.y = this.zoomedImagePosition.y;
 
         this.zoomedImageAnimationOutStart = new Date().getTime();
         this.zoomedImageAnimationOutInterval = setInterval(this.animateZoomedImageOutInterval, 1000 / 60);
