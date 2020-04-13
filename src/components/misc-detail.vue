@@ -142,8 +142,9 @@
     beforeDestroy () {
       if (this.observer) {
         this.$refs.media.forEach(media => {
-          this.observer.observe(media);
+          this.observer.unobserve(media);
         });
+        this.observer.disconnect();
       }
 
       if (this.$refs.video) {
