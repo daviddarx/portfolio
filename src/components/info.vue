@@ -5,13 +5,27 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="content-page">
-      <h1 class="visually-hidden"> David Darx – Digital Design &amp; Art Direction</h1>
-      <p class="content-page__lead animate-in">
+      <h2
+        class="content-page__page-title font-compensated animate-in"
+        v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+      >
+        <span class="content-page__page-title__el">
+          Info
+        </span>
+      </h2>
+      <p class="content-page__lead animate-in animate-in__s1">
         {{this.info.lead}}
       </p>
 
-      <div class="content-page__content animate-in animate-in__s1">
-        <h2 class="content-page__subtitle">
+      <div class="content-page__content animate-in animate-in__s2">
+        <div
+          class="info__img content-page__3-4"
+        >
+        </div>
+
+        <h2
+          class="content-page__subtitle content-page__3-4"
+        >
           Erfahrung
         </h2>
         <div class="content-page__list-container">
@@ -21,7 +35,7 @@
             v-bind:key="experience.agency + experience.title"
           >
             <h3 class="content-page__title small-title font-compensated">
-              {{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.title}}
+              {{experience.agency}} <span class="dash dash--spaced dash--title">–</span> {{experience.title}}
             </h3>
             <p>
               {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}
@@ -29,7 +43,9 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+        >
           Expertise
         </h2>
 
@@ -47,7 +63,9 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+        >
           Ausbildung
         </h2>
 
@@ -67,7 +85,9 @@
           </div>
         </div>
 
-        <h2 class="content-page__subtitle">
+        <h2
+          class="content-page__subtitle content-page__3-4"
+        >
           Kunden
         </h2>
         <p>
@@ -89,11 +109,13 @@
   import Vue from "vue";
   import Credits from './credits.vue';
   import * as info from '../../content/info.json';
+  import contentPageTitle from '../mixins/content-page-title';
 
   export default Vue.extend({
     components: {
       'credits': Credits
     },
+    mixins: [contentPageTitle],
     data() {
       return {
         info: info,

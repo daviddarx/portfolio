@@ -5,26 +5,32 @@
     v-bind:class="{ 'is-black': isBlack }"
   >
     <router-link
-      class="pagination__link"
+      class="pagination-link"
       v-bind:to="routePrev"
     >
-      <span class="pagination__subtitle">
-        {{ subtitlePrev }}
-      </span>
-      <span class="pagination__title font-compensated">
-        {{ titlePrev }}
-      </span>
+      <div class="pagination-link__text-container">
+        <span class="pagination-link__subtitle">
+          {{ subtitlePrev }}
+        </span>
+        <span class="pagination-link__title font-compensated">
+          {{ titlePrev }}
+        </span>
+        <div class="pagination-link__arrow arrow"></div>
+      </div>
     </router-link><!--
     --><router-link
-      class="pagination__link"
+      class="pagination-link"
       v-bind:to="routeNext"
     >
-      <span class="pagination__subtitle">
-        {{ subtitleNext }}
-      </span>
-      <span class="pagination__title font-compensated">
-        {{ titleNext }}
-      </span>
+      <div class="pagination-link__text-container">
+        <span class="pagination-link__subtitle">
+          {{ subtitleNext }}
+        </span>
+        <span class="pagination-link__title font-compensated">
+          {{ titleNext }}
+        </span>
+        <div class="pagination-link__arrow pagination-link__arrow--next arrow"></div>
+      </div>
     </router-link>
   </div>
 </template>

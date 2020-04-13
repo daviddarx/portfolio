@@ -8,6 +8,13 @@
       v-bind:class="{'is-displayed': this.isLogoDisplayed}"
     ></logo>
 
+    <div
+      class="transition-title"
+      v-bind:class="{'is-displayed': this.isTitleDisplayed}"
+    >
+      {{titleValue}}
+    </div>
+
     <transition
       name="transition-wave-in"
       v-on:after-enter="waveInAfterEnter"
@@ -49,7 +56,9 @@
         isWaveOutDisplayed: false,
         isLogoDisplayed: false,
         isNormalPage: false,
-        nextFunction: undefined,
+        isTitleDisplayed: false,
+        titleValue: '',
+        nextFunction: undefined
       }
     },
     mounted () {
@@ -57,6 +66,7 @@
     },
     methods: {
       beforeEach: function (to, from, next) {
+        this.titleValue = to.meta.transitionTitle;
         if(to.meta.color){
           this.color = to.meta.color;
           this.isNormalPage = false;
@@ -64,6 +74,7 @@
           this.color = undefined;
           this.isNormalPage = true;
           this.isLogoDisplayed = true;
+          this.isTitleDisplayed = true;
         }
         this.isWaveInDisplayed = true;
         this.nextFunction = next;
@@ -74,6 +85,7 @@
         if (this.isNormalPage == true) {
           this.isWaveOutDisplayed = true;
           this.isLogoDisplayed = false;
+          this.isTitleDisplayed = false;
         }
       },
       waveOutAfterEnter: function() {

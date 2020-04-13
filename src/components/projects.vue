@@ -5,15 +5,14 @@
     ref="projects"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <div
-      class="projects__container animate-in"
-    >
-      <h1 class="projects__title">
+    <h1 class="projects__title animate-in">
         <span class="projects__title-name font-compensated">David Darx</span>
-        <span class="dash dash--spaced">–</span>
         <span class="projects__title-detail">Digital Design &amp; Art Direction</span>
-      </h1>
-      <div>
+    </h1>
+    <div
+      class="projects__container animate-in animate-in__s1"
+    >
+      <div class="projects__list-container">
         <project-list
           v-for="project in projects.main"
           v-bind:key="project.agency"

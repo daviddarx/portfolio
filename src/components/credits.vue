@@ -2,7 +2,7 @@
 <template>
   <div class="credits">
     <span class="credits__text">
-      Copyright © {{this.year}} - Frontend von David Darx
+      Design+Code ©{{this.year}} David Darx
     </span>
   </div>
 </template>

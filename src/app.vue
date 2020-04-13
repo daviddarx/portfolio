@@ -3,6 +3,7 @@
   <div
     class="website-container"
   >
+    <h1 class="visually-hidden">David Darx</h1>
     <logo></logo>
     <custom-navigation></custom-navigation>
     <router-view :key="$route.fullPath"></router-view>
@@ -31,8 +32,18 @@
     },
     mounted () {
       this.$router.beforeEach(this.beforeEach);
+      this.checkIfUserTouch();
     },
     methods: {
+      checkIfUserTouch: function () {
+        window.isTouch = false;
+        window.addEventListener('touchstart', this.touchListener);
+      },
+      touchListener: function(e) {
+        window.isTouch = true;
+        document.body.classList.add('is-touch');
+        window.removeEventListener('touchstart', this.touchListener);
+      },
       beforeEach: function (to, from, next) {
         if (from.name == 'projects' || from.name == 'misc') {
           window.scrollPosition = window.pageYOffset;

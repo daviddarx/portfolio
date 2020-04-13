@@ -16,32 +16,36 @@ let routes = [
     label: 'Projects',
     path: '/projects',
     name: 'projects',
-    component: Projects
+    component: Projects,
+    meta: { transitionTitle: 'Projekte' }
   },
   {
     label: 'Misc',
     path: '/misc',
     name: 'misc',
-    component: Misc
+    component: Misc,
+    meta: { transitionTitle: 'Kunterbunt' }
   },
   {
     label: 'Misc Detail',
     path: '/misc/:id',
     name: 'misc-detail',
     component: MiscDetail,
-    meta: { isNavHidden: true }
+    meta: { isNavHidden: true, transitionTitle: '' }
   },
   {
     label: 'Info',
     path: '/info',
     name: 'info',
-    component: Info
+    component: Info,
+    meta: { transitionTitle: 'Info' }
   },
   {
     label: 'Contact',
     path: '/contact',
     name: 'contact',
-    component: Contact
+    component: Contact,
+    meta: { transitionTitle: 'Kontakt' }
   }
 ];
 
