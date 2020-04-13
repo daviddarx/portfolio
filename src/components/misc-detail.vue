@@ -206,9 +206,9 @@
       resize: function () {
         if (this.$refs.image) {
           this.$refs.image.forEach(image => {
-          image.resize();
-        });
-      }
+            image.resize();
+          });
+        }
       }
     }
   }
