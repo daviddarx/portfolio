@@ -41,6 +41,7 @@
       },
       touchListener: function(e) {
         window.isTouch = true;
+        document.body.classList.add('is-touch');
         window.removeEventListener('touchstart', this.touchListener);
       },
       beforeEach: function (to, from, next) {
