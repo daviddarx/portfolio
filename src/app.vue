@@ -32,8 +32,17 @@
     },
     mounted () {
       this.$router.beforeEach(this.beforeEach);
+      this.checkIfUserTouch();
     },
     methods: {
+      checkIfUserTouch: function () {
+        window.isTouch = false;
+        window.addEventListener('touchstart', this.touchListener);
+      },
+      touchListener: function(e) {
+        window.isTouch = true;
+        window.removeEventListener('touchstart', this.touchListener);
+      },
       beforeEach: function (to, from, next) {
         if (from.name == 'projects' || from.name == 'misc') {
           window.scrollPosition = window.pageYOffset;
