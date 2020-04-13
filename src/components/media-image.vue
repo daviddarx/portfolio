@@ -293,8 +293,12 @@
         });
 
         if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
+          if (window.isTouch == false) {
+            window.addEventListener('mousemove', this.zoomedImageMouseMoveListener);
+          } else {
+            window.addEventListener('touchmove', this.zoomedImageTouchMoveListener);
+          }
           this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
-          window.addEventListener('mousemove', this.zoomedImageMouseMoveListener);
         }
 
         window.addEventListener('scroll', this.scrollDebounced);
@@ -312,7 +316,12 @@
           if (this.scrollDebounced) this.scrollDebounced.cancel();
 
           window.removeEventListener('scroll', this.scrollDebounced);
-          window.removeEventListener('mousemove', this.zoomedImageMouseMoveListener);
+
+          if (window.isTouch == false) {
+            window.removeEventListener('mousemove', this.zoomedImageMouseMoveListener);
+          } else {
+            window.removeEventListener('touchmove', this.zoomedImageTouchMoveListener);
+          }
 
           this.launchZoomedImageAnimationOut();
 
@@ -332,6 +341,9 @@
       },
       zoomedImageMouseMoveListener: function (e) {
         this.setZoomedImagePositionOnMouseMove(e.clientX, e.clientY);
+      },
+      zoomedImageTouchMoveListener: function (e) {
+        this.setZoomedImagePositionOnMouseMove(e.touches[0].pageX, e.touches[0].pageY);
       },
       scrollListener: function (e) {
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
