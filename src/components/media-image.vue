@@ -74,7 +74,8 @@
         zoomedImageAnimationOutInterval: undefined,
         zoomedImageAnimationOutStart: 0,
         zoomedImageAnimationOutTime: 0,
-        zoomedImageScrollRatioToDezoom: 0.2
+        zoomedImageScrollRatioToDezoom: 0.2,
+        minimalRatioToZoomImageOnRetina: 1.25
       }
     },
     mounted () {
@@ -98,8 +99,12 @@
       },
       checkIfZoomable: function () {
         if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
-          this.isZoomable = true;
-          this.scaleDezoomed = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
+          if (window.devicePixelRatio > 1 && this.$refs.image.naturalWidth / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
+            this.isZoomable = false;
+          } else {
+            this.isZoomable = true;
+            this.scaleDezoomed = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
+          }
         } else {
           this.isZoomable = false;
         }
