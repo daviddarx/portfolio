@@ -9,8 +9,8 @@
       ref="contentPage"
     >
       <h2
-        class="content-page__page-title font-compensated animate-in"
-        v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+        class="content-page__page-title font-compensated animate-in hidable-title"
+        v-bind:class="{ 'is-hidden': this.isTitleHidden, 'is-below': this.isTitleBelow, 'is-jumping': this.isTitleJumping }"
       >
         <span class="content-page__page-title__el">
           Kunterbunt
@@ -20,7 +20,7 @@
         {{misc.lead}}
       </p>
       <div
-        class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2"
+        class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2 hiding-title"
       >
         <misc-list
           v-for="(miscItem, index) in misc.collection"
@@ -93,6 +93,7 @@
       window.contentPageSavedHeight = this.$refs.contentPage.clientHeight;
       this.isMounted = false;
       this.isDisplayed = false;
+      this.destroyTitlesObserver();
       next();
     },
     methods: {
@@ -103,6 +104,7 @@
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
+        this.initTitlesObserver(this.pageTitle);
       },
       displayMisc: function() {
         this.isDisplayed = true;
