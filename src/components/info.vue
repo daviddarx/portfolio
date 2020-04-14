@@ -27,6 +27,9 @@
             alt="David Darx"
           >
         </div>
+        <p class="info__introduction hiding-title">
+          {{this.info.introduction}}
+        </p>
 
         <h2
           class="content-page__subtitle content-page__3-4 hiding-title"

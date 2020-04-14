@@ -696,6 +696,10 @@ body {
       }
     }
   }
+
+  &__introduction {
+    margin-top: var(--s-gutter);
+  }
 }
 
 .contact {
