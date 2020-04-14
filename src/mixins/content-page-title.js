@@ -2,6 +2,8 @@ export default {
   data() {
     return {
       isTitleHidden: false,
+      isTitleBelow: false,
+      isTitleJumping: false,
       title: undefined,
       pageTitleInit: undefined,
       observer: undefined,
@@ -12,7 +14,7 @@ export default {
       windowW: 0,
       windowH: 0,
       rootMarginTop: 0,
-      rootMarginTopRatioToGutter: 0.5,
+      rootMarginTopRatioToGutter: 1,
       rootMarginBottom: 0,
       rootMarginBottomRatioToGutter: 2.5,
       isObserverFirstCallFired: false,
@@ -69,10 +71,6 @@ export default {
       this.rootMarginBottom = (this.windowH - Math.round(this.windowH * this.windowGutter + this.title.offsetHeight + this.windowH * this.windowGutter * this.rootMarginBottomRatioToGutter)) * -1;
 
       this.observerRootMargin = `${this.rootMarginTop}px 0px ${this.rootMarginBottom}px 0px`;
-
-      // console.log(this.rootMarginTop);
-      // console.log(this.rootMarginBottom);
-      // console.log(this.observerRootMargin);
     },
     resizeTitlesObserver () {
       this.destroyTitlesObserver();
@@ -82,10 +80,15 @@ export default {
       entries.forEach(entry => {
         if(entry.isIntersecting){
           this.observerEntriesActive.push(entry.target);
-          this.isTitleHidden = true;
 
-          // console.log("in " + (parseInt(entry.target.getAttribute('id'))));
-          // console.log("---");
+          const entryID = parseInt(entry.target.getAttribute('id'));
+          const isEntryAboveTitle = (entry.boundingClientRect.y < this.windowH * this.windowGutter);
+
+          if (isEntryAboveTitle == true) {
+            this.isTitleBelow = true;
+          }
+
+          this.isTitleHidden = true;
         } else {
           this.observerEntriesActive.splice(this.observerEntriesActive.indexOf(entry.target), 1);
 
@@ -113,11 +116,16 @@ export default {
           }
 
           if (this.observerEntriesActive.length == 0) {
-            this.isTitleHidden = false;
-          }
+            if (isEntryAboveTitle == true) {
+              this.isTitleBelow = true;
+              this.isTitleJumping = true;
+            }
 
-          if (entry.target.getAttribute('firstCalled') == 'true') { 
-            console.log("out " + entryID);
+            requestAnimationFrame(() => {
+              this.isTitleHidden = false;
+              this.isTitleBelow = false;
+              this.isTitleJumping = false;
+            });
           }
         }
 

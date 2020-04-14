@@ -7,7 +7,7 @@
     <div class="content-page">
       <h2
         class="content-page__page-title font-compensated animate-in hidable-title"
-        v-bind:class="{ 'is-hidden': this.isTitleHidden }"
+        v-bind:class="{ 'is-hidden': this.isTitleHidden, 'is-below': this.isTitleBelow, 'is-jumping': this.isTitleJumping }"
         titleInit="Info"
       >
         <span class="content-page__page-title__el">

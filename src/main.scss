@@ -610,6 +610,9 @@ body {
   box-sizing: border-box;
 
   &__page-title {
+    --s-decal-y: calc(var(--s-gutter) * 0.35);
+    --d-transition: 0.2s;
+
     @include label-small;
 
     position: fixed;
@@ -618,11 +621,19 @@ body {
 
     &__el {
       display: block;
-      transition: opacity var(--e-out) 0.2s, transform var(--e-out) 0.2s;
+      transition: opacity var(--e-out) var(--d-transition), transform var(--e-out) var(--d-transition);
 
       .is-hidden > & {
         opacity: 0;
-        transform: translateY(calc(var(--s-gutter) * -0.25));
+        transform: translateY(calc(var(--s-decal-y) * -1));
+      }
+
+      .is-jumping > & {
+        transition-duration: 0s;
+      }
+
+      .is-below > & {
+        transform: translateY(var(--s-decal-y)) !important;
       }
     }
   }
