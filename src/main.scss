@@ -685,7 +685,20 @@ body {
 .info {
   &__img {
     height: 75vh;
+    height: 45vw;
     background-color: black;
+  }
+}
+
+.contact {
+  &__img {
+    height: 45vw;
+    background-color: black;
+  }
+
+  &__address {
+    font-size: var(--s-text-lead);
+    margin-top: var(--s-gutter);
   }
 }
 
