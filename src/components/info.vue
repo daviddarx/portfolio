@@ -19,7 +19,7 @@
 
       <div class="content-page__content animate-in animate-in__s2">
         <div
-          class="info__img content-page__3-4 hiding-title"
+          class="info__image content-page__3-4 hiding-title"
         >
         </div>
 

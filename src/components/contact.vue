@@ -21,7 +21,7 @@
       </div>
       <div class="content-page__content animate-in animate-in__s2">
         <div
-          class="contact__img content-page__3-4 hiding-title"
+          class="contact__image content-page__3-4 hiding-title"
         >
         </div>
         <p class="contact__address">
