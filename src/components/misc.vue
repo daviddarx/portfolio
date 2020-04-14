@@ -72,6 +72,7 @@
             brightness: 2
           }
         },
+        pageTitle: "Kunterbunt"
       }
     },
     created () {
