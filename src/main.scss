@@ -611,7 +611,7 @@ body {
 
   &__page-title {
     --s-decal-y: calc(var(--s-gutter) * 0.35);
-    --d-transition: 0.2s;
+    --d-transition: 0.15s;
 
     @include label-small;
 
