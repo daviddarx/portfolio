@@ -616,7 +616,7 @@ body {
     @include label-small;
 
     position: fixed;
-    top: var(--s-gutter);
+    top: calc(var(--s-gutter) - 0.1em);
     left: 25vw;
 
     &__el {
