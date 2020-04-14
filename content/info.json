@@ -49,8 +49,8 @@
       "desc": "Konzept & Wireframes, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management."
     },
     {
-      "title": "Umsetzung",
-      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Libraries & Frameworks: Github, Jquery, Sass, GSAP, PixiJS, Three.js, Vue.js und und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
+      "title": "Entwicklung",
+      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Libraries & Frameworks: NPM & Parcel.js, Github, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js, und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
     },
     {
       "title": "Sprachen",
