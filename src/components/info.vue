@@ -21,6 +21,11 @@
         <div
           class="info__image content-page__3-4 hiding-title"
         >
+          <img
+            class="info__image-el"
+            src="../../static/info/daviddarx.gif"
+            alt="David Darx"
+          >
         </div>
 
         <h2

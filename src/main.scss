@@ -684,9 +684,17 @@ body {
 
 .info {
   &__image {
-    height: 75vh;
-    height: 45vw;
     background-color: black;
+
+    &-el {
+      display: block;
+      filter: grayscale(100%) contrast(2) brightness(2);
+      transition: filter var(--e-out) 0.3s;
+
+      &:hover {
+        filter: none;
+      }
+    }
   }
 }
 
