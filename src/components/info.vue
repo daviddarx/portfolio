@@ -90,16 +90,16 @@
 
         <h2
           class="content-page__subtitle content-page__3-4 hiding-title"
-          titleReplace="Kunden"
+          titleReplace="Kundenauszug"
         >
-          Kunden
+          Kundenauszug
         </h2>
         <p>
           <span
             v-for="(client, index) in info.clients"
             v-bind:key="client"
           >
-            {{client}} <span class="dash dash--spaced " v-if="index < info.clients.length-1">-</span>
+            {{client}}<span v-if="index < info.clients.length-1"><br></span>
           </span>
         </p>
       </div>
