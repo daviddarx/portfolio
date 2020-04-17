@@ -12,7 +12,7 @@
       >
         <span
           class="content-page__page-title__el"
-          v-html="this.getTitlePrefix+this.pageTitle"
+          v-html="this.getTitlePrefix+this.pageTitle+this.getTitleSuffix"
         >
         </span>
       </h2>
@@ -26,7 +26,7 @@
             class="content-page__subtitle content-page__3-4 hiding-title projects__subtitle"
             v-if="i!=0"
             v-bind:titleReplace="year"
-            v-html="getTitlePrefix+year"
+            v-html="getTitlePrefix+year+getTitleSuffix"
           >
           </h2>
           <div class="project-list-container">
@@ -76,7 +76,10 @@
         return years;
       },
       getTitlePrefix: function () {
-        return "Projekte <span class='dash dash--spaced'>–</span> ";
+        return "Projekte <span class='dash dash--spaced'>–</span> <span class='projects__date'>";
+      },
+      getTitleSuffix: function () {
+        return "</span>";
       }
     },
     mounted () {

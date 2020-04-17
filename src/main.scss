@@ -667,7 +667,7 @@ body {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -0.2em;
+      bottom: -0.4em;
       height: var(--s-lines);
       background-color: var(--c-lines);
     }
@@ -732,6 +732,12 @@ body {
     .dash {
       --s-top: 0.3em;
     }
+  }
+
+  &__date {
+    @include fontRunText();
+
+    font-size: 1rem;
   }
 }
 
