@@ -76,7 +76,7 @@
         return years;
       },
       getTitlePrefix: function () {
-        return "Projekte <span class='dash dash--spaced'>–</span> <span class='projects__date'>";
+        return "Projekte <span class='dash dash--spaced'>–</span> <span class='projects__year'>";
       },
       getTitleSuffix: function () {
         return "</span>";
