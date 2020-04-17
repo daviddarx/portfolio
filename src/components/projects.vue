@@ -7,19 +7,18 @@
   >
     <div class="content-page">
       <h2
-        class="content-page__page-title font-compensated animate-in hidable-title"
+        class="content-page__page-title font-compensated animate-in hidable-title projects__title"
         v-bind:class="{ 'is-hidden': this.isTitleHidden, 'is-below': this.isTitleBelow, 'is-jumping': this.isTitleJumping }"
       >
-        <span class="content-page__page-title__el">
-          {{this.pageTitle}}
+        <span
+          class="content-page__page-title__el"
+          v-html="this.getTitlePrefix+this.pageTitle"
+        >
         </span>
       </h2>
-      <p class="content-page__lead animate-in animate-in__s1 projects__lead">
-        Einige handverlesenen Projekte, für die ich gerne gearbeitet habe.
-      </p>
       <div class="content-page__content animate-in animate-in__s2">
         <div
-          v-for="year in getYears"
+          v-for="(year, i) in getYears"
           v-bind:key="year"
           class="projects__year"
         >
@@ -27,14 +26,15 @@
             class="content-page__subtitle content-page__3-4 hiding-title projects__subtitle"
             v-if="i!=0"
             v-bind:titleReplace="year"
+            v-html="getTitlePrefix+year"
           >
-            {{year}}
           </h2>
           <div class="project-list-container">
             <project-list
               v-for="project in getProjectsForYear(year)"
               v-bind:key="project.title"
               v-bind:datas="project"
+              v-bind:class="{ 'is-fist': i==0}"
             >
             </project-list>
           </div>
@@ -66,7 +66,7 @@
         projects: projects,
         isDisplayed : false,
         isMounted: false,
-        pageTitle: "Projekte"
+        pageTitle: "2020"
       }
     },
     computed: {
@@ -74,6 +74,9 @@
         let years = this.projects.main.map(project => project.year);
             years = years.filter((item, index) => years.indexOf(item) === index);
         return years;
+      },
+      getTitlePrefix: function () {
+        return "Projekte <span class='dash dash--spaced'>–</span> ";
       }
     },
     mounted () {

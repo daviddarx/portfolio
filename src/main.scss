@@ -720,12 +720,18 @@ body {
 
   overflow: hidden;
 
-  &__lead {
-    margin-bottom: calc(var(--s-gutter) * 2);
+  &__title {
+    .dash {
+      --s-top: 0.3em;
+    }
   }
 
   &__subtitle {
     margin-bottom: 0;
+
+    .dash {
+      --s-top: 0.3em;
+    }
   }
 }
 
@@ -744,10 +750,16 @@ body {
     border-top: 0;
   }
 
+  &.is-fist {
+    border-top: var(--s-lines) solid var(--c-lines);
+  }
+
   &__link {
+    --s-padding: 2em;
+
     display: block;
-    padding-top: 2.5em;
-    padding-bottom: 2.2em;
+    padding-top: var(--s-padding);
+    padding-bottom: calc(var(--s-padding) - 0.3em);
     padding-left: 0;
     padding-right: var(--s-gutter);
   }
