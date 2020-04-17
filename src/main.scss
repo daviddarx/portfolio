@@ -720,62 +720,40 @@ body {
 
   overflow: hidden;
 
-  &__container {
-    width: 50%;
-    margin-left: 50%;
-    padding-top: var(--s-gutter);
-    transition: transform var(--e-out) 0.75s, opacity ease var(--d-opacity);
+  &__lead {
+    margin-bottom: calc(var(--s-gutter) * 2);
   }
 
-  &__list-container {
-    padding-bottom: var(--s-gutter);
+  &__year-subtitle {
+    margin-bottom: 0;
   }
+}
 
-  &__title {
-    @include label-small;
-
-    position: fixed;
-    left: 25vw;
-    top: var(--s-gutter);
-    width: 20vw;
-  }
-
-  &__title-name {
-    @include label-small;
-
-    letter-spacing: 0.01em;
-  }
-
-  &__title-detail {
-    @include fontRunText();
-
-    display: block;
-    font-size: calc(var(--s-text-small) * (2 - var(--s-text-title-font-compensated)));
-    text-transform: none;
-    letter-spacing: 0.0425em;
-    padding-top: 0.5em;
-    transform: translateX(-0.02em);
-  }
+.project-list-container {
+  padding-bottom: calc(var(--s-gutter) * 2);
 }
 
 .project-list {
   $root: #{&};
 
-  border-bottom: var(--s-lines) solid var(--c-lines);
+  position: relative;
+  border-top: var(--s-lines) solid var(--c-lines);
+  margin-right: calc(var(--s-gutter) * -1);
 
   &:first-child {
-    border-top: var(--s-lines) solid var(--c-lines);
+    border-top: 0;
   }
 
   &__link {
     display: block;
-    padding: 3em 0;
+    padding-top: 3em;
+    padding-bottom: 2.7em;
+    padding-left: 0;
     padding-right: var(--s-gutter);
   }
 
   &__title {
     font-size: var(--s-text-h2);
-    padding-bottom: 0.3em;
     transition: color ease-out 0.2s;
     will-change: color;
 
@@ -784,8 +762,8 @@ body {
     }
   }
 
-  &__date {
-    @include fontTitle;
+  &__detail {
+    padding-top: 0.5em;
   }
 
   &__separation {

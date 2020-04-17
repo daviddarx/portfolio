@@ -6,7 +6,7 @@
     <h1 class="visually-hidden">David Darx</h1>
     <logo></logo>
     <custom-navigation></custom-navigation>
-    <keep-alive include="misc-keep">
+    <keep-alive :include="['misc-keep', 'info-keep']">
       <router-view :key="$route.fullPath"></router-view>
     </keep-alive>
     <transition-backround></transition-backround>
