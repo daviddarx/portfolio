@@ -24,7 +24,8 @@
           class="projects__year"
         >
           <h2
-            class="content-page__subtitle content-page__3-4 hiding-title projects__year-subtitle"
+            class="content-page__subtitle content-page__3-4 hiding-title projects__subtitle"
+            v-if="i!=0"
             v-bind:titleReplace="year"
           >
             {{year}}
