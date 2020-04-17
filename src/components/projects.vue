@@ -13,12 +13,25 @@
       class="projects__container animate-in animate-in__s1"
     >
       <div class="projects__list-container">
-        <project-list
-          v-for="project in projects.main"
-          v-bind:key="project.agency"
-          v-bind:datas="project"
+        <div
+          v-for="year in this.years"
+          v-bind:key="year"
+          class="projects__year"
         >
-        </project-list>
+          <h2
+            class="content-page__subtitle content-page__3-4 hiding-title"
+            v-bind:titleReplace="year"
+          >
+            {{year}}
+          </h2>
+          <project-list
+            v-for="project in getProjectsForYear(year)"
+            v-bind:key="project.title"
+            v-bind:datas="project"
+          >
+          </project-list>
+        </div>
+
       </div>
       <credits></credits>
     </div>
@@ -31,6 +44,8 @@
   import Credits from './credits.vue';
   import * as projects from '../../content/projects.json';
 
+  delete projects.default;
+
   export default Vue.extend({
     components: {
       'project-list': ProjectList,
@@ -39,13 +54,20 @@
     data() {
       return {
         projects: projects,
+        years: undefined,
         isDisplayed : false,
       }
     },
     mounted () {
+      this.years = this.projects.main.map(project => project.year);
+      this.years = this.years.filter((item, index) => this.years.indexOf(item) === index);
+
       setTimeout(this.displayProject, 100);
     },
     methods: {
+      getProjectsForYear: function (year) {
+        return this.projects.main.filter(project => project.year == year);
+      },
       displayProject: function() {
         this.isDisplayed = true;
       }
