@@ -262,7 +262,14 @@
         },
         {
           "type": "image",
-          "url": "olio_leo/olio_leo_03.jpg",
+          "url": "olio_leo/olio_leo_05.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "olio_leo/olio_leo_06.jpg",
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
