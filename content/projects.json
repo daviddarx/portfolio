@@ -2,6 +2,131 @@
   "routesPath":"/projects/",
   "main": [
     {
+      "uid": "eaostop",
+      "title": "EAO E-Stop",
+      "type": "Produkt-Konfigurator",
+      "year": "2020",
+      "color": "#e1061b",
+      "colorCase": "#e1061b",
+      "inverted": false
+    },{
+      "uid": "astrorara",
+      "title": "ETH AstroRara",
+      "type": "Web App",
+      "year": "2020",
+      "color": "#759bde",
+      "colorCase": "#759bde",
+      "inverted": false
+    },
+    {
+      "uid": "maz",
+      "title": "MAZ",
+      "type": "Digitaler Auftritt & Webshop",
+      "year": "2020",
+      "color": "#1aa4bf",
+      "colorCase": "#1aa4bf",
+      "inverted": false
+    },
+    {
+      "uid": "anima",
+      "title": "Anima-Strath",
+      "type": "Digitaler Auftritt & Webshop",
+      "year": "2020",
+      "color": "#e02141",
+      "colorCase": "#e02141",
+      "inverted": false
+    },
+    {
+      "uid": "aso",
+      "title": "Ausland-schweizer-Organisation",
+      "type": "Brand Relaunch",
+      "year": "2020",
+      "color": "#e32236",
+      "colorCase": "#e32236",
+      "inverted": false
+    },
+    {
+      "uid": "bwi",
+      "title": "BWI",
+      "type": "Brand Relaunch",
+      "year": "2020",
+      "color": "#00b8ea",
+      "colorCase": "#00b8ea",
+      "inverted": false
+    },
+    {
+      "uid": "flm",
+      "title": "Freunde Landesmuseum",
+      "type": "One-Pager",
+      "year": "2019",
+      "color": "#3d7ac3",
+      "colorCase": "#3d7ac3",
+      "inverted": false
+    },
+    {
+      "uid": "uzhinno",
+      "title": "UZH Innovation Hub",
+      "type": "Online Präsentation",
+      "year": "2019",
+      "color": "#8439a2",
+      "colorCase": "#8439a2",
+      "inverted": false
+    },
+    {
+      "uid": "dionisio",
+      "title": "Claudio Dionisio",
+      "type": "One-Pager Auftritt",
+      "year": "2019",
+      "color": "#33a55c",
+      "colorCase": "#33a55c",
+      "inverted": false
+    },
+    {
+      "uid": "pornydays",
+      "title": "Porny Days",
+      "type": "Digitaler Auftritt",
+      "year": "2019",
+      "color": "#c55249",
+      "colorCase": "#c55249",
+      "inverted": false
+    },
+    {
+      "uid": "pornydays",
+      "title": "Porny Days",
+      "type": "Digitaler Auftritt",
+      "year": "2019",
+      "color": "#c55249",
+      "colorCase": "#c55249",
+      "inverted": false
+    },
+    {
+      "uid": "compona",
+      "title": "Compona",
+      "type": "Digitaler Auftritt & Webshop",
+      "year": "2018",
+      "color": "#e32236",
+      "colorCase": "#e32236",
+      "inverted": false
+    },
+    {
+      "uid": "intelliact",
+      "title": "Intelliact",
+      "type": "Brand Relaunch",
+      "year": "2018",
+      "color": "#ff004a",
+      "colorCase": "#ff004a",
+      "inverted": false
+    },
+    {
+      "uid": "medidata",
+      "title": "MediData",
+      "type": "Brand Relaunch",
+      "year": "2018",
+      "color": "#01519E",
+      "colorCase": "#01519E",
+      "inverted": false
+    },
+    {
       "uid": "seed",
       "title": "Seed Communication",
       "type": "Digitaler Auftritt",
@@ -14,7 +139,7 @@
       "uid": "swisstrustroom",
       "title": "Swisscom SwissTrustRoom",
       "type": "Produkt One-Pager",
-      "year": "2018",
+      "year": "2017",
       "color": "#3a86d0",
       "colorCase": "#1b548b",
       "inverted": true
@@ -26,6 +151,24 @@
       "year": "2017",
       "color": "#13d96b",
       "colorCase": "#13d96b",
+      "inverted": false
+    },
+    {
+      "uid": "mammut",
+      "title": "Mammut",
+      "type": "Digitaler Auftritt & Online Shop",
+      "year": "2016",
+      "color": "#e2001a",
+      "colorCase": "#e2001a",
+      "inverted": false
+    },
+    {
+      "uid": "cooprezepte",
+      "title": "Coop Rezepte",
+      "type": "Rezept-Platform",
+      "year": "2016",
+      "color": "#ff8c01",
+      "colorCase": "#ff8c01",
       "inverted": false
     }
   ]
