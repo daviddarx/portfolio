@@ -28,9 +28,9 @@
         <h2
           class="misc-list__info"
         >
-          <span class="misc-list__date font-compensated">{{date}}</span>
+          <span class="misc-list__date font-compensated">{{title}}</span>
           <span class="dash dash--spaced">–</span>
-          <span class="misc-list__title">{{title}}</span>
+          <span class="misc-list__title">{{date}}</span>
         </h2>
       </router-link>
     </div>
