@@ -32,19 +32,44 @@
     data: function () {
       return {
         isLoaded: false,
+        loadedImageID: 0,
+        loadedImages: [],
+        currentlyLoadedImage: undefined
       }
     },
     mounted () {
-      console.log(this.images);
     },
     methods: {
       imageLoaded: function () {
         this.isLoaded = true;
-        console.log("loaded");
+        this.loadedImageID++;
+        this.loadAdditionalImage();
+      },
+      loadAdditionalImage: function () {
+        console.log("load " + this.images[this.loadedImageID]);
+        this.currentlyLoadedImage = document.createElement('img');
+        this.currentlyLoadedImage.setAttribute('src',  this.path+this.images[this.loadedImageID]);
+        this.currentlyLoadedImage.classList.add('media-gif__additional-el');
+        this.currentlyLoadedImage.addEventListener('load', this.additionalImageLoadComplete);
+      },
+      additionalImageLoadComplete: function () {
+        this.currentlyLoadedImage.removeEventListener('load', this.additionalImageLoadComplete);
+        this.loadedImages.push(this.currentlyLoadedImage);
+        this.$refs.container.appendChild(this.currentlyLoadedImage);
+
+        console.log("loaded "+this.loadedImageID);
+        if (this.loadedImageID < this.images.length-1) {
+          this.loadedImageID++;
+          this.loadAdditionalImage();
+        } else {
+          this.currentlyLoadedImage = undefined;
+        }
       },
       destroy: function () {
-        //todo
-        //keep alive pour continuer le loading?
+        console.log("destroy");
+        if (this.currentlyLoadedImage) {
+          this.currentlyLoadedImage.removeEventListener('load', this.additionalImageLoadComplete);
+        }
       }
     }
   }

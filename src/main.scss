@@ -665,8 +665,17 @@ body {
     #{$root}.is-loaded & {
       position: relative;
       visibility: visible;
-      opacity: 1;
+      opacity: 0.2;
     }
+  }
+
+  &__additional-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0.2;
   }
 
   &__preloader {
