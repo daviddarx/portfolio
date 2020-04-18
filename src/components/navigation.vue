@@ -5,6 +5,12 @@
       class="navigation__container"
       v-if="this.isDisplayed"
     >
+      <router-link
+        class="navigation__link"
+        to="/info"
+      >
+        Info
+      </router-link>
       <h2 class="visually-hidden">Navigation</h2>
       <router-link
         class="navigation__link"
@@ -17,12 +23,6 @@
         to="/misc"
       >
         Kunterbunt
-      </router-link>
-      <router-link
-        class="navigation__link"
-        to="/info"
-      >
-        Info
       </router-link>
       <router-link
         class="navigation__link"

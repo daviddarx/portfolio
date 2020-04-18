@@ -1,3 +1,4 @@
+import Home from './components/home.vue';
 import Projects from './components/projects.vue';
 import Misc from './components/misc.vue';
 import MiscDetail from './components/misc-detail.vue';
@@ -9,8 +10,11 @@ import * as ProjectsDatas from '../content/projects.json';
 //basic routes
 let routes = [
   {
+    label: 'Home',
     path: '/',
-    redirect: '/projects'
+    name: 'home',
+    component: Home,
+    meta: { transitionTitle: '' }
   },
   {
     label: 'Projects',

@@ -715,6 +715,40 @@ body {
   }
 }
 
+.home {
+  &__title {
+    @include label-small;
+
+    position: fixed;
+    left: 25vw;
+    top: calc(var(--s-gutter) - 0.1em);
+    width: 20vw;
+  }
+
+  &__title-name {
+    @include label-small;
+
+    letter-spacing: 0.01em;
+  }
+
+  &__title-detail {
+    @include fontRunText();
+
+    display: block;
+    font-size: calc(var(--s-text-small) * (2 - var(--s-text-title-font-compensated)));
+    text-transform: none;
+    letter-spacing: 0.0425em;
+    padding-top: 0.5em;
+    transform: translateX(-0.02em);
+  }
+
+  &__stage {
+    width: 50vw;
+    height: calc(100vh - var(--s-gutter) * 2);
+    background-color: black;
+  }
+}
+
 .projects {
   --d-opacity: 0.35s;
 
