@@ -320,65 +320,6 @@ body {
   }
 }
 
-.preloader {
-  --c-line: white;
-
-  position: relative;
-  margin: 0 auto;
-  width: var(--s-preloader);
-
-  &::before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-
-  &__svg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    animation: preloader-rotate 2s linear infinite;
-    transform-origin: center center;
-  }
-
-  &__path {
-    stroke: var(--c-line);
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-width: var(--s-preloader-line);
-    animation: preloader-dash 1.5s ease-in-out infinite;
-  }
-}
-
-@keyframes preloader-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes preloader-dash {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-
-  50% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
-  }
-
-  100% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
-  }
-}
-
 .logo {
   $root: #{&};
 
@@ -513,6 +454,380 @@ body {
     &::before {
       transform: none;
       transform-origin: top left;
+    }
+  }
+}
+
+.zoom-icon {
+  --s-dimensions: calc(var(--s-gutter) * 0.75);
+  --t-icon: translate(-50%, -1px);
+  --d-transform: 0.2s;
+
+  $root: #{&};
+
+  width: var(--s-dimensions);
+  height: var(--s-dimensions);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: var(--s-lines) var(--c-lines) solid;
+    box-sizing: border-box;
+    background-color: var(--c-lines-inverted);
+    transform: rotate(45deg); //rotate to get smooth edges on each resolution
+
+    .is-inverted & {
+      border-color: var(--c-lines-inverted);
+      background-color: var(--c-lines);
+    }
+  }
+
+  &.is-inverted {
+    &::before {
+      border-color: var(--c-lines-inverted);
+      background-color: var(--c-lines);
+    }
+  }
+
+  &__el {
+    width: var(--s-dimensions);
+    height: var(--s-dimensions);
+    will-change: transform;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: var(--s-lines);
+      top: 50%;
+      left: 50%;
+      transform: var(--t-icon);
+      background-color: var(--c-lines);
+    }
+
+    &::before {
+      transition: transform var(--e-out) var(--d-transform);
+    }
+
+    &::after {
+      transform: var(--t-icon) rotate(90deg);
+    }
+
+    .is-inverted &,
+    #{$root}.is-inverted & {
+      &::before,
+      &::after {
+        background-color: var(--c-lines-inverted);
+      }
+    }
+
+    #{$root}.is-global.is-zoomed & {
+      &::before {
+        transform: var(--t-icon) scaleX(0);
+      }
+    }
+  }
+
+  &.is-active {
+    --d-transform: 0.5s;
+  }
+
+  &.is-global {
+    --s-decal-x: 50%;
+    --s-decal-y: 50%;
+
+    position: fixed;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
+    transition: transform var(--e-in) var(--d-transform), opacity linear var(--d-transform), visibility linear 0s var(--d-transform);
+    will-change: transform, opacity, top, left;
+
+    &.is-active,
+    &.is-zoomed {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(0deg);
+      transition-timing-function: var(--e-out), linear;
+      transition-delay: 0s;
+    }
+
+    &.is-zoomed {
+      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(-90deg);
+    }
+
+    .is-touch & {
+      --s-decal-x: 0;
+      --s-decal-y: 0;
+
+      top: var(--s-gutter);
+      left: auto;
+      right: var(--s-gutter);
+    }
+  }
+}
+
+.preloader {
+  --c-line: white;
+
+  position: relative;
+  margin: 0 auto;
+  width: var(--s-preloader);
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  &--inverted {
+    --c-line: black;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    animation: preloader-rotate 2s linear infinite;
+    transform-origin: center center;
+  }
+
+  &__path {
+    stroke: var(--c-line);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: var(--s-preloader-line);
+    animation: preloader-dash 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+.media-gif {
+  --c-border: rgba(0, 0, 0, 0.1);
+
+  $root: #{&};
+
+  position: relative;
+  min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
+  outline: var(--s-lines) solid var(--c-border);
+  transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
+
+  &.is-loaded {
+    outline-color: transparent;
+    min-height: 0;
+  }
+
+  &__el {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity linear 0.2s 0.2s;
+
+    #{$root}.is-loaded & {
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity linear 0.2s, visibility 0s 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.media-image {
+  --c-border: rgba(255, 255, 255, 0.1);
+  --d-zooming: 0.5s;
+
+  $root: #{&};
+
+  position: relative;
+  min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
+  outline: var(--s-lines) solid var(--c-border);
+  transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
+
+  &.is-loaded {
+    outline-color: transparent;
+    min-height: 0;
+  }
+
+  &.is-zoomable {
+    cursor: pointer;
+  }
+
+  &__el {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity linear 0.2s 0.2s;
+
+    #{$root}.is-loaded & {
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: var(--s-gutter);
+    transform: translateX(-50%);
+    transition: opacity linear 0.2s, visibility 0s 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__zoom-icon {
+    --s-margin: calc(var(--s-gutter) * 0.5);
+
+    position: absolute;
+    display: none;
+    top: var(--s-margin);
+    right: 0;
+    transform: translateX(50%);
+    transition: opacity ease-out 0.2s var(--d-zooming);
+
+    #{$root}.is-zoomed & {
+      opacity: 0;
+    }
+
+    .is-touch & {
+      display: block;
+    }
+  }
+}
+
+.media-image-zoomed {
+  --s-scale-dezoomed: 1;
+  --s-scale-zoomed: 1;
+  --d-zooming: 0.5s;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  visibility: hidden;
+  cursor: pointer;
+  transition: transform var(--e-out) var(--d-zooming), visibility linear 0s var(--d-zooming);
+  transform: scale(var(--s-scale-dezoomed));
+  will-change: transform, visibility, left, top;
+
+  &.is-active {
+    transform: scale(var(--s-scale-zoomed));
+    transition-delay: 0s;
+    visibility: visible;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.media-image-zoomed-background {
+  --d-fading: 0.5s;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  visibility: hidden;
+  background-color: black;
+  opacity: 0;
+  transition: opacity ease-out var(--d-fading) 0s, visibility linear 0s calc(var(--d-fading));
+
+  &.is-active {
+    cursor: zoom-out;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s, 0s;
+  }
+}
+
+.media-video {
+  $root: #{&};
+
+  position: relative;
+
+  &__el {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.35;
+    transition: opacity linear 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 1;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity linear 0.2s, visibility 0s 0.2s;
+
+    #{$root}.is-loaded & {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }
@@ -684,17 +999,16 @@ body {
 
 .info {
   &__image {
-    background-color: black;
+    filter: grayscale(100%) contrast(2) brightness(2);
+    transition: filter var(--e-out) 0.3s;
+
+    &:hover {
+      filter: none;
+      transition-duration: 1s;
+    }
 
     &-el {
-      display: block;
-      filter: grayscale(100%) contrast(2) brightness(2);
-      transition: filter var(--e-out) 0.3s;
-
-      &:hover {
-        filter: none;
-        transition-duration: 1s;
-      }
+      min-height: calc(75vw * 9 / 16);
     }
   }
 
@@ -1017,272 +1331,6 @@ body {
 
     &--margin-top {
       margin-top: calc(var(--s-gutter) * 2);
-    }
-  }
-}
-
-.zoom-icon {
-  --s-dimensions: calc(var(--s-gutter) * 0.75);
-  --t-icon: translate(-50%, -1px);
-  --d-transform: 0.2s;
-
-  $root: #{&};
-
-  width: var(--s-dimensions);
-  height: var(--s-dimensions);
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: var(--s-lines) var(--c-lines) solid;
-    box-sizing: border-box;
-    background-color: var(--c-lines-inverted);
-    transform: rotate(45deg); //rotate to get smooth edges on each resolution
-
-    .is-inverted & {
-      border-color: var(--c-lines-inverted);
-      background-color: var(--c-lines);
-    }
-  }
-
-  &.is-inverted {
-    &::before {
-      border-color: var(--c-lines-inverted);
-      background-color: var(--c-lines);
-    }
-  }
-
-  &__el {
-    width: var(--s-dimensions);
-    height: var(--s-dimensions);
-    will-change: transform;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      height: var(--s-lines);
-      top: 50%;
-      left: 50%;
-      transform: var(--t-icon);
-      background-color: var(--c-lines);
-    }
-
-    &::before {
-      transition: transform var(--e-out) var(--d-transform);
-    }
-
-    &::after {
-      transform: var(--t-icon) rotate(90deg);
-    }
-
-    .is-inverted &,
-    #{$root}.is-inverted & {
-      &::before,
-      &::after {
-        background-color: var(--c-lines-inverted);
-      }
-    }
-
-    #{$root}.is-global.is-zoomed & {
-      &::before {
-        transform: var(--t-icon) scaleX(0);
-      }
-    }
-  }
-
-  &.is-active {
-    --d-transform: 0.5s;
-  }
-
-  &.is-global {
-    --s-decal-x: 50%;
-    --s-decal-y: 50%;
-
-    position: fixed;
-    pointer-events: none;
-    top: 50%;
-    left: 50%;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
-    transition: transform var(--e-in) var(--d-transform), opacity linear var(--d-transform), visibility linear 0s var(--d-transform);
-    will-change: transform, opacity, top, left;
-
-    &.is-active,
-    &.is-zoomed {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(0deg);
-      transition-timing-function: var(--e-out), linear;
-      transition-delay: 0s;
-    }
-
-    &.is-zoomed {
-      transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(1) rotate(-90deg);
-    }
-
-    .is-touch & {
-      --s-decal-x: 0;
-      --s-decal-y: 0;
-
-      top: var(--s-gutter);
-      left: auto;
-      right: var(--s-gutter);
-    }
-  }
-}
-
-.media-image {
-  --c-border: rgba(255, 255, 255, 0.1);
-  --d-zooming: 0.5s;
-
-  $root: #{&};
-
-  position: relative;
-  min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
-  outline: var(--s-lines) solid var(--c-border);
-  transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
-
-  &.is-loaded {
-    outline-color: transparent;
-    min-height: 0;
-  }
-
-  &.is-zoomable {
-    cursor: pointer;
-  }
-
-  &__el {
-    position: absolute;
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity linear 0.2s 0.2s;
-
-    #{$root}.is-loaded & {
-      position: relative;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &__preloader {
-    position: absolute;
-    left: 50%;
-    top: var(--s-gutter);
-    transform: translateX(-50%);
-    transition: opacity linear 0.2s, visibility 0s 0.2s;
-
-    #{$root}.is-loaded & {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  &__zoom-icon {
-    --s-margin: calc(var(--s-gutter) * 0.5);
-
-    position: absolute;
-    display: none;
-    top: var(--s-margin);
-    right: 0;
-    transform: translateX(50%);
-    transition: opacity ease-out 0.2s var(--d-zooming);
-
-    #{$root}.is-zoomed & {
-      opacity: 0;
-    }
-
-    .is-touch & {
-      display: block;
-    }
-  }
-}
-
-.media-image-zoomed {
-  --s-scale-dezoomed: 1;
-  --s-scale-zoomed: 1;
-  --d-zooming: 0.5s;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  visibility: hidden;
-  cursor: pointer;
-  transition: transform var(--e-out) var(--d-zooming), visibility linear 0s var(--d-zooming);
-  transform: scale(var(--s-scale-dezoomed));
-  will-change: transform, visibility, left, top;
-
-  &.is-active {
-    transform: scale(var(--s-scale-zoomed));
-    transition-delay: 0s;
-    visibility: visible;
-  }
-
-  &.is-hidden {
-    display: none;
-  }
-}
-
-.media-image-zoomed-background {
-  --d-fading: 0.5s;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  visibility: hidden;
-  background-color: black;
-  opacity: 0;
-  transition: opacity ease-out var(--d-fading) 0s, visibility linear 0s calc(var(--d-fading));
-
-  &.is-active {
-    cursor: zoom-out;
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s, 0s;
-  }
-}
-
-.media-video {
-  $root: #{&};
-
-  position: relative;
-
-  &__el {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    opacity: 0.35;
-    transition: opacity linear 0.2s;
-
-    #{$root}.is-loaded & {
-      opacity: 1;
-    }
-  }
-
-  &__preloader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity linear 0.2s, visibility 0s 0.2s;
-
-    #{$root}.is-loaded & {
-      opacity: 0;
-      visibility: hidden;
     }
   }
 }
