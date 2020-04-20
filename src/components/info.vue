@@ -145,6 +145,7 @@
       this.initTitlesObserver(this.pageTitle);
     },
     beforeDestroy () {
+      this.$refs.gif.destroy();
       this.destroyTitlesObserver();
     },
     methods: {
