@@ -43,10 +43,14 @@
         giffingCurrentImage:undefined,
         giffingStartTimeout: undefined,
         giffingStartTimeoutDuration: 500,
+        hasGiffingStarted: false,
+        observer: undefined,
+        observerRootMargin: '0px 0px 0px 0px',
       }
     },
     mounted () {
       this.giffingStartTimeout = setTimeout(this.giffingStartTimeoutListener, this.giffingStartTimeoutDuration);
+      this.initObserver();
     },
     methods: {
       imageLoaded: function () {
@@ -55,6 +59,7 @@
         this.loadedImageID++;
         if (!this.giffingStartTimeout) {
           this.startGiffing();
+          this.hasGiffingStarted = true;
         }
         this.loadAdditionalImage();
       },
@@ -69,6 +74,7 @@
         if (this.isLoaded == true) {
           if (!this.giffingInterval) {
             this.startGiffing();
+            this.hasGiffingStarted = true;
           }
         }
         clearTimeout(this.giffingStartTimeout);
@@ -132,8 +138,37 @@
           this.loadingImage = undefined;
         }
       },
+      initObserver: function () {
+        if (!!window.IntersectionObserver) {
+          this.observer = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.observerRootMargin
+          });
+          this.observer.observe(this.$refs.container);
+        }
+      },
+      destroyObserver () {
+        if (!!window.IntersectionObserver) {
+          this.observer.unobserve(this.$refs.container);
+          this.observer.disconnect();
+          this.observer = undefined;
+        }
+      },
+      intersectionListener (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            if (this.hasGiffingStarted == true && this.giffingInterval == undefined) {
+              this.startGiffing();
+            }
+          } else {
+            if (this.giffingInterval) {
+              this.stopGiffing();
+            }
+          }
+        });
+      },
       destroy: function () {
         this.stopGiffing();
+        this.destroyObserver();
         if (this.giffingStartTimeout) {
           clearTimeout(this.giffingStartTimeout);
           this.giffingStartTimeout = undefined;
