@@ -42,16 +42,21 @@
         </h2>
         <div class="content-page__list-container">
           <div
-            class="content-page__list"
+            class="content-page__list info__steps-listing"
             v-for="experience in info.experience"
             v-bind:key="experience.agency + experience.title"
           >
-            <h3 class="content-page__title small-title font-compensated">
-              {{experience.agency}} <span class="dash dash--spaced dash--title">–</span> {{experience.title}}
-            </h3>
-            <p>
-              {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>, {{experience.place}}
-            </p>
+            <div class="info__step-infos">
+              <h3 class="content-page__title small-title font-compensated info__step-title">
+                {{experience.title}}
+              </h3>
+              <span>{{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.place}}</span>
+              <br v-if="experience.additional">
+              <span  v-if="experience.additional" class="info__step-additional">{{experience.additional}}</span>
+            </div>
+            <div class="info__step-date">
+              {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash dash--spaced" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>
+            </div>
           </div>
         </div>
 
@@ -85,17 +90,21 @@
 
         <div class="content-page__list-container">
           <div
-            class="content-page__list"
+            class="content-page__list info__steps-listing"
             v-for="education in info.education"
             v-bind:key="education.title"
           >
-            <h3 class="content-page__title small-title font-compensated">
-              {{education.title}}
-            </h3>
-            <p>
-              {{education.desc}}<br>
-              {{education.date1}} <span class="dash">–</span> {{education.date2}}, {{education .place}}
-            </p>
+            <div class="info__step-infos">
+              <h3 class="content-page__title small-title font-compensated info__step-title">
+                {{education.title}}
+              </h3>
+              <span>{{education.school}} <span class="dash dash--spaced">–</span> {{education.place}}</span>
+              <br v-if="education.additional">
+              <span  v-if="education.additional" class="info__step-additional">{{education.additional}}</span>
+            </div>
+            <div class="info__step-date">
+              {{education.date1}}<span v-if="education.date2">&nbsp;</span><span class="dash dash--spaced" v-if="education.date2">–</span><span v-if="education.date2"> {{education.date2}}</span>
+            </div>
           </div>
         </div>
 

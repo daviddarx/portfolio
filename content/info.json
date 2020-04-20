@@ -19,43 +19,45 @@
   "experience": [
     {
       "title": "Digital Art Director",
-      "agency": "Eyekon AG",
-      "date1": "2016",
+      "agency": "Eyekon",
+      "date1": "Sept. 2016",
       "date2": "Heute",
       "place": "Zürich"
     },
     {
       "title": "Digital Designer",
-      "agency": "Unic AG",
-      "date1": "2014",
-      "date2": "2016",
+      "agency": "Unic",
+      "date1": "Apr. 2014",
+      "date2": "Aug. 2016",
       "place": "Zürich"
     },
     {
       "title": "Web Designer",
-      "agency": "Custom Design Sàrl",
-      "date1": "2012",
-      "date2": "2014",
+      "agency": "Custom Design",
+      "date1": "Aug. 2012",
+      "date2": "März 2014",
       "place": "Fribourg"
     },
     {
       "title": "Web Designer",
       "agency": "Freelance",
-      "date1": "2011",
-      "date2": "2012",
+      "date1": "Jan. 2011",
+      "date2": "Aug. 2012",
       "place": "Fribourg"
     },
     {
       "title": "Interactive Designer",
-      "agency": "Horsform Sàrl",
-      "date1": "2007",
-      "date2": "2012",
+      "agency": "Horsform",
+      "date1": "Nov. 2007",
+      "date2": "Aug. 2012",
       "place": "Fribourg"
     },
     {
-      "title": "Praktikum Multimedia Designer",
-      "agency": "Custom Design Sàrl",
-      "date1": "2007",
+      "title": "Multimedia Designer",
+      "agency": "Custom Design",
+      "additional": "Praktikum",
+      "date1": "Aug. 2007",
+      "date2": "Nov. 2007",
       "place": "Fribourg"
     }
   ],
@@ -75,15 +77,17 @@
   ],
   "education": [
     {
-      "title": "Eikon, Berufsfachschule für Gestaltung",
-      "desc": "Multimedia Design, Spezialausbildung Interaction Design",
+      "title": "Interactive Media Design",
+      "school": "Eikon, Berufsfachschule für Gestaltung",
+      "additional": "Spezialausbildung Interaction Design",
       "date1": "2004",
       "date2": "2007",
       "place": "Fribourg"
     },
     {
-      "title": "Kollegium Heilig Kreuz",
-      "desc": "Matura, Spezialausbildung Spanish & Visuelle Gestaltung",
+      "title": "Matura",
+      "school": "Kollegium Heilig Kreuz",
+      "additional": "Spezialausbildung Spanish & Visuelle Gestaltung",
       "date1": "2000",
       "date2": "2004",
       "place": "Fribourg"
