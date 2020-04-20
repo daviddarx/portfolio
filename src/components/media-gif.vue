@@ -4,6 +4,8 @@
     class="media-gif"
     v-bind:class="{'is-loaded' : isLoaded}"
     ref="container"
+    @mouseenter="imageEnter"
+    @mouseleave="imageLeave"
   >
     <preloader class="media-gif__preloader preloader--inverted"></preloader>
     <img
@@ -39,6 +41,7 @@
         giffingDirection: 0,
         giffingInterval: undefined,
         giffingIntervalDuration: 100,
+        giffingCurrentImage:undefined
       }
     },
     mounted () {
@@ -46,26 +49,70 @@
     methods: {
       imageLoaded: function () {
         this.isLoaded = true;
-        this.startGiffing();
+        this.loadedImages.push(this.$refs.image);
         this.loadedImageID++;
+        this.startGiffing();
         this.loadAdditionalImage();
       },
+      imageEnter: function () {
+        if (this.isLoaded == true) {
+          this.stopGiffing();
+        } 
+      },
+      imageLeave: function () {
+        if (this.isLoaded == true) {
+          this.startGiffing();
+        } 
+      },
       startGiffing: function () {
-        this.giffingInterval = setInterval(this.gif, this.giffingIntervalDuration);
+        if (!this.giffingInterval) {
+          this.giffingInterval = setInterval(this.gif, this.giffingIntervalDuration);
+        }
       },
       stopGiffing: function () {
         if (this.giffingInterval) {
           clearInterval(this.giffingInterval);
+          this.giffingInterval = undefined;
         }
       },
       gif: function () {
-        console.log(this.giffingCurrentID + " / "+ this.loadedImages.length);
+        if (this.loadedImages.length > 2) {
+          if (this.giffingDirection == 0) {
+            if (this.giffingCurrentID < this.loadedImages.length-1) {
+              this.giffingCurrentID++;
+            } else {
+              this.giffingDirection = 1;
+              this.giffingCurrentID--;
+            }
+          } else {
+            if (this.giffingCurrentID > 1) {
+              this.giffingCurrentID--;
+            } else {
+              this.giffingDirection = 0;
+              this.giffingCurrentID = 0;
+            }
+          }
+        } else if (this.loadedImages.length == 2) {
+          if (this.giffingCurrentID == 0) {
+            this.giffingCurrentID = 1;
+          } else {
+            this.giffingCurrentID = 0;
+          }
+        }
+
+        if (this.giffingCurrentImage) this.giffingCurrentImage.classList.remove("is-active");
+        this.giffingCurrentImage = this.loadedImages[this.giffingCurrentID];
+        this.giffingCurrentImage.classList.add("is-active");
+        // console.log(this.giffingCurrentID + " / "+ this.loadedImages.length);
       },
       loadAdditionalImage: function () {
         this.loadingImage = document.createElement('img');
         this.loadingImage.setAttribute('src',  this.path+this.images[this.loadedImageID]);
         this.loadingImage.classList.add('media-gif__additional-el');
         this.loadingImage.addEventListener('load', this.additionalImageLoadComplete);
+        // this.loadingImage.addEventListener('load', () => {
+        //   setTimeout(this.additionalImageLoadComplete, 1000);
+        // });
       },
       additionalImageLoadComplete: function () {
         this.loadingImage.removeEventListener('load', this.additionalImageLoadComplete);
@@ -84,6 +131,7 @@
         this.stopGiffing();
         if (this.loadingImage) {
           this.loadingImage.removeEventListener('load', this.additionalImageLoadComplete);
+          this.loadingImage = undefined;
         }
       }
     }

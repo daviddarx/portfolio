@@ -658,14 +658,12 @@ body {
     display: block;
     width: 100%;
     max-width: 100%;
-    opacity: 0;
     visibility: hidden;
     transition: opacity linear 0.2s 0.2s;
 
     #{$root}.is-loaded & {
       position: relative;
       visibility: visible;
-      opacity: 0.2;
     }
   }
 
@@ -675,7 +673,11 @@ body {
     left: 0;
     width: 100%;
     max-width: 100%;
-    opacity: 0.2;
+    visibility: hidden;
+
+    &.is-active {
+      visibility: visible;
+    }
   }
 
   &__preloader {
