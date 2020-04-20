@@ -1054,6 +1054,12 @@ body {
   &__step-title {
     padding-bottom: 0.1em;
   }
+
+  &__step-additional {
+    display: block;
+    font-size: var(--s-text-small);
+    padding-top: 1em;
+  }
 }
 
 .contact {
