@@ -971,8 +971,9 @@ body {
   &__lead {
     position: relative;
     font-size: var(--s-text-lead);
+    letter-spacing: -0.005em;
     margin-top: -0.4em;
-    margin-bottom: var(--s-gutter);
+    margin-bottom: 2.5em;
   }
 
   &__3-4 {
