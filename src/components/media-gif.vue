@@ -40,17 +40,22 @@
         giffingDirection: 0,
         giffingInterval: undefined,
         giffingIntervalDuration: 100,
-        giffingCurrentImage:undefined
+        giffingCurrentImage:undefined,
+        giffingStartTimeout: undefined,
+        giffingStartTimeoutDuration: 500,
       }
     },
     mounted () {
+      this.giffingStartTimeout = setTimeout(this.giffingStartTimeoutListener, this.giffingStartTimeoutDuration);
     },
     methods: {
       imageLoaded: function () {
         this.isLoaded = true;
         this.loadedImages.push(this.$refs.image);
         this.loadedImageID++;
-        this.startGiffing();
+        if (!this.giffingStartTimeout) {
+          this.startGiffing();
+        }
         this.loadAdditionalImage();
       },
       imageClick: function () {
@@ -59,6 +64,15 @@
         } else {
           this.startGiffing();
         }
+      },
+      giffingStartTimeoutListener: function () {
+        if (this.isLoaded == true) {
+          if (!this.giffingInterval) {
+            this.startGiffing();
+          }
+        }
+        clearTimeout(this.giffingStartTimeout);
+        this.giffingStartTimeout = undefined;
       },
       startGiffing: function () {
         if (!this.giffingInterval) {
@@ -120,6 +134,10 @@
       },
       destroy: function () {
         this.stopGiffing();
+        if (this.giffingStartTimeout) {
+          clearTimeout(this.giffingStartTimeout);
+          this.giffingStartTimeout = undefined;
+        }
         if (this.loadingImage) {
           this.loadingImage.removeEventListener('load', this.additionalImageLoadComplete);
           this.loadingImage = undefined;
