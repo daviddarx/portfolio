@@ -99,16 +99,12 @@
         if (this.giffingCurrentImage) this.giffingCurrentImage.classList.remove("is-active");
         this.giffingCurrentImage = this.loadedImages[this.giffingCurrentID];
         this.giffingCurrentImage.classList.add("is-active");
-        // console.log(this.giffingCurrentID + " / "+ this.loadedImages.length);
       },
       loadAdditionalImage: function () {
         this.loadingImage = document.createElement('img');
         this.loadingImage.setAttribute('src',  this.path+this.images[this.loadedImageID]);
         this.loadingImage.classList.add('media-gif__additional-el');
         this.loadingImage.addEventListener('load', this.additionalImageLoadComplete);
-        // this.loadingImage.addEventListener('load', () => {
-        //   setTimeout(this.additionalImageLoadComplete, 1000);
-        // });
       },
       additionalImageLoadComplete: function () {
         this.loadingImage.removeEventListener('load', this.additionalImageLoadComplete);
@@ -123,7 +119,6 @@
         }
       },
       destroy: function () {
-        console.log("destroy");
         this.stopGiffing();
         if (this.loadingImage) {
           this.loadingImage.removeEventListener('load', this.additionalImageLoadComplete);
