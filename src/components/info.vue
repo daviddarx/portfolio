@@ -21,11 +21,14 @@
         <div
           class="info__image content-page__3-4 hiding-title"
         >
-          <img
+          <media-gif
             class="info__image-el"
-            src="../../static/info/daviddarx.gif"
-            alt="David Darx"
+            v-bind:title="info.gifTitle"
+            v-bind:path="info.gifPath"
+            v-bind:images="info.gifImages"
+            ref="gif"
           >
+          </media-gif>
         </div>
         <p class="info__introduction hiding-title">
           {{this.info.introduction}}
@@ -119,12 +122,14 @@
 
 <script>
   import Vue from "vue";
+  import MediaGif from './media-gif.vue';
   import Credits from './credits.vue';
   import * as info from '../../content/info.json';
   import contentPageTitle from '../mixins/content-page-title';
 
   export default Vue.extend({
     components: {
+      'media-gif': MediaGif,
       'credits': Credits
     },
     mixins: [contentPageTitle],
@@ -140,6 +145,7 @@
       this.initTitlesObserver(this.pageTitle);
     },
     beforeDestroy () {
+      this.$refs.gif.destroy();
       this.destroyTitlesObserver();
     },
     methods: {
