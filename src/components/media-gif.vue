@@ -4,8 +4,7 @@
     class="media-gif"
     v-bind:class="{'is-loaded' : isLoaded}"
     ref="container"
-    @mouseenter="imageEnter"
-    @mouseleave="imageLeave"
+    @click="imageClick"
   >
     <preloader class="media-gif__preloader preloader--inverted"></preloader>
     <img
@@ -54,15 +53,12 @@
         this.startGiffing();
         this.loadAdditionalImage();
       },
-      imageEnter: function () {
-        if (this.isLoaded == true) {
+      imageClick: function () {
+        if (this.giffingInterval) {
           this.stopGiffing();
-        } 
-      },
-      imageLeave: function () {
-        if (this.isLoaded == true) {
+        } else {
           this.startGiffing();
-        } 
+        }
       },
       startGiffing: function () {
         if (!this.giffingInterval) {
