@@ -648,6 +648,7 @@ body {
   min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
   outline: var(--s-lines) solid var(--c-border);
   transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
+  will-change: min-height;
 
   &.is-loaded {
     outline-color: transparent;
