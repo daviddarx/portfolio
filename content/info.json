@@ -21,6 +21,7 @@
       "title": "Digital Art Director",
       "agency": "Eyekon",
       "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additionalIndent": "true",
       "date1": "Sept. 2016",
       "date2": "Heute",
       "place": "Zürich"
@@ -29,6 +30,7 @@
       "title": "Digital Designer",
       "agency": "Unic",
       "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additionalIndent": "true",
       "date1": "Apr. 2014",
       "date2": "Aug. 2016",
       "place": "Zürich"
@@ -37,6 +39,7 @@
       "title": "Web Designer",
       "agency": "Custom Design",
       "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additionalIndent": "true",
       "date1": "Aug. 2012",
       "date2": "März 2014",
       "place": "Fribourg"
@@ -45,6 +48,7 @@
       "title": "Web Designer",
       "agency": "Freelance",
       "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additionalIndent": "true",
       "date1": "Jan. 2011",
       "date2": "Aug. 2012",
       "place": "Fribourg"
@@ -52,6 +56,7 @@
     {
       "title": "Interactive Designer",
       "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additionalIndent": "true",
       "agency": "Horsform",
       "date1": "Nov. 2007",
       "date2": "Aug. 2012",
@@ -61,6 +66,7 @@
       "title": "Multimedia Designer",
       "agency": "Custom Design",
       "additional": "Praktikum",
+      "additionalIndent": "false",
       "date1": "Aug. 2007",
       "date2": "Nov. 2007",
       "place": "Fribourg"
@@ -85,6 +91,7 @@
       "title": "Interactive Media Design",
       "school": "Eikon, Berufsfachschule für Gestaltung",
       "additional": "Spezialausbildung Interaction Design",
+      "additionalIndent": "false",
       "date1": "2004",
       "date2": "2007",
       "place": "Fribourg"
@@ -93,6 +100,7 @@
       "title": "Matura",
       "school": "Kollegium Heilig Kreuz",
       "additional": "Spezialausbildung Spanish & Visuelle Gestaltung",
+      "additionalIndent": "false",
       "date1": "2000",
       "date2": "2004",
       "place": "Fribourg"

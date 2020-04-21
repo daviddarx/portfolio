@@ -458,6 +458,10 @@ body {
   }
 }
 
+.text-indent {
+  text-indent: 2em;
+}
+
 .zoom-icon {
   --s-dimensions: calc(var(--s-gutter) * 0.75);
   --t-icon: translate(-50%, -1px);

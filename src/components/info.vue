@@ -51,8 +51,13 @@
                 {{experience.title}}
               </h3>
               <span>{{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.place}}</span>
-              <br v-if="experience.additional">
-              <span  v-if="experience.additional" class="info__step-additional">{{experience.additional}}</span>
+              <span
+                v-if="experience.additional"
+                class="info__step-additional"
+                v-bind:class="{'text-indent' : experience.additionalIndent == 'true'}"
+              >
+                {{experience.additional}}
+              </span>
             </div>
             <div class="info__step-date">
               {{experience.date1}}<span v-if="experience.date2">&nbsp;</span><span class="dash dash--spaced" v-if="experience.date2">–</span><span v-if="experience.date2"> {{experience.date2}}</span>
@@ -99,8 +104,13 @@
                 {{education.title}}
               </h3>
               <span>{{education.school}} <span class="dash dash--spaced">–</span> {{education.place}}</span>
-              <br v-if="education.additional">
-              <span  v-if="education.additional" class="info__step-additional">{{education.additional}}</span>
+              <span
+                v-if="education.additional"
+                class="info__step-additional"
+                v-bind:class="{'text-indent' : education.additionalIndent == 'true'}"
+              >
+                {{education.additional}}
+              </span>
             </div>
             <div class="info__step-date">
               {{education.date1}}<span v-if="education.date2">&nbsp;</span><span class="dash dash--spaced" v-if="education.date2">–</span><span v-if="education.date2"> {{education.date2}}</span>
