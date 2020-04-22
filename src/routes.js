@@ -42,7 +42,7 @@ let routes = [
     path: '/info',
     name: 'info',
     component: Info,
-    meta: { transitionTitle: 'Info' }
+    meta: { transitionTitle: 'Info', isDark: true }
   },
   {
     label: 'Contact',

@@ -35,21 +35,30 @@
     mounted () {
       this.$router.beforeEach(this.beforeEach);
       this.checkIfUserTouch();
+      this.checkIfDarkMode(this.$router.currentRoute.meta.isDark);
     },
     methods: {
       checkIfUserTouch: function () {
         window.isTouch = false;
         window.addEventListener('touchstart', this.touchListener);
       },
-      touchListener: function(e) {
+      touchListener: function (e) {
         window.isTouch = true;
         document.body.classList.add('is-touch');
         window.removeEventListener('touchstart', this.touchListener);
+      },
+      checkIfDarkMode: function (isDark) {
+        if (isDark == true) {
+          document.body.classList.add('is-dark');
+        } else {
+          document.body.classList.remove('is-dark');
+        }
       },
       beforeEach: function (to, from, next) {
         if (from.name == 'projects' || from.name == 'misc') {
           window.scrollPosition = window.pageYOffset;
         }
+        this.checkIfDarkMode(to.meta.isDark);
         next();
       },
     }

@@ -107,10 +107,10 @@ $breakpoints: (
 
 :root {
   //colors
-  --c-text: rgba(0, 0, 0, 1);
-  --c-text-inverted: rgba(255, 255, 255, 1);
-  --c-lines: rgba(0, 0, 0, 1);
-  --c-lines-inverted: rgba(255, 255, 255, 1);
+  --c-text: black;
+  --c-text-inverted: white;
+  --c-lines: black;
+  --c-lines-inverted: white;
 
   //sizes
   --s-text: 1.75rem;
@@ -197,6 +197,15 @@ body {
   line-height: var(--s-line-height);
   color: var(--c-text);
   overflow-x: hidden;
+
+  &.is-dark {
+    --c-text: rgba(255, 255, 255, 1);
+    --c-text-inverted: black;
+    --c-lines: rgba(255, 255, 255, 1);
+    --c-lines-inverted: black;
+
+    background-color: black;
+  }
 }
 
 .font-compensated {
@@ -331,6 +340,10 @@ body {
   transform-origin: top left;
   will-change: transform;
 
+  .is-dark & {
+    z-index: 2000;
+  }
+
   &__container {
     &:hover {
       @include twerk-anime();
@@ -361,7 +374,7 @@ body {
     fill: var(--c-text);
 
     &--black {
-      fill: black;
+      fill: var(--c-text);
       position: absolute;
       right: 0;
 
@@ -900,7 +913,7 @@ body {
     &:hover {
       @include twerk-anime();
 
-      color: white;
+      color: var(--c-text-inverted);
 
       &::before {
         transform: none;
