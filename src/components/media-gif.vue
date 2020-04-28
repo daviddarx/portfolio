@@ -42,7 +42,7 @@
         giffingIntervalDuration: 100,
         giffingCurrentImage:undefined,
         giffingStartTimeout: undefined,
-        giffingStartTimeoutDuration: 500,
+        giffingStartTimeoutDuration: 1000,
         hasGiffingStarted: false,
         observer: undefined,
         observerRootMargin: '0px 0px 0px 0px',
