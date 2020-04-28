@@ -14,6 +14,8 @@
           class="misc-list__img"
           ref="imageContainer"
         >
+          <preloader class="misc-list__preloader preloader--inverted"></preloader>
+
           <img
             class="misc-list__img-el"
             @load="imageLoaded"
@@ -38,8 +40,13 @@
 </template>
 
 <script>
+  import Preloader from './preloader.vue';
+
   export default {
     name: 'misc-list',
+    components: {
+      'preloader': Preloader
+    },
     props: {
       route: String,
       imgURL: String,

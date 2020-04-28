@@ -1273,17 +1273,6 @@ body {
 
   $root: #{&};
 
-  visibility: hidden;
-  position: relative;
-  opacity: 0;
-  transition: opacity var(--e-opacity) var(--d-in-opacity);
-
-  &.is-displayed {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-  }
-
   &:nth-child(2n+0) {
     transform: translateY(15vw);
   }
@@ -1298,8 +1287,36 @@ body {
     display: block;
   }
 
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity linear 0.2s, visibility 0s 0.2s;
+
+    #{$root}.is-displayed & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
   &__img {
-    transition: transform var(--e-scaleHover) var(--d-scaleHover);
+    --c-border-1: rgba(0, 0, 0, 0.1);
+    --c-border-2: white;
+
+    position: relative;
+    opacity: 0;
+    min-height: calc(75vw * 0.5);
+    box-shadow: 0 0 0 var(--s-lines) var(--c-border-1), 0 0 0 var(--s-lines) var(--c-border-2);
+    transition: box-shadow linear 0.2s, min-height linear 0s 0.2s, transform var(--e-scaleHover) var(--d-scaleHover), opacity ease-out 0.2s;
+
+    #{$root}.is-displayed & {
+      --c-border-1: transparent;
+      --c-border-2: transparent;
+
+      min-height: 0;
+      opacity: 1;
+    }
 
     #{$root}:hover & {
       transform: scale3d(var(--s-scaleHover), var(--s-scaleHover), 1);
