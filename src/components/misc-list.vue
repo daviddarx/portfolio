@@ -2,7 +2,7 @@
 <template>
   <div
     class="misc-list miscs-grid__item"
-    v-bind:class="{ 'is-displayed' : this.isReady }"
+    v-bind:class="{ 'is-displayed' : this.isReady, 'is-animated-in' : this.isAnimatedIn }"
     ref="miscList"
   >
     <div class="misc-list__container">
@@ -57,6 +57,7 @@
     data: function () {
       return {
         isReady: false,
+        isAnimatedIn: false,
         hoverScale: 0,
         hoverTranslateY: 0,
       }
@@ -86,6 +87,9 @@
       },
       setReady: function () {
         this.isReady = true;
+        setTimeout(() => {
+          this.isAnimatedIn = true;
+        }, 500);
       },
       resize: function () {
         this.hoverTranslateY = this.$refs.image.clientHeight * (1-this.hoverScale) * -0.5;

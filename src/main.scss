@@ -1260,8 +1260,6 @@ body {
 
 .misc-list {
   --d-animation-in: 0.2s;
-  --d-in-opacity: 0.75s;
-  --e-opacity: ease;
   --d-in-transform: 1s;
   --e-transform: var(--e-out);
   --d-fading: 0.5s;
@@ -1305,15 +1303,20 @@ body {
   &__img {
     --c-border-1: rgba(0, 0, 0, 0.1);
     --c-border-2: white;
+    --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
 
     position: relative;
     min-height: var(--s-image-height);
     box-shadow: 0 0 0 var(--s-lines) var(--c-border-1), 0 0 0 var(--s-lines) var(--c-border-2);
-    transition: box-shadow linear var(--d-animation-in), transform var(--e-scaleHover) var(--d-scaleHover);
+    transition: box-shadow linear var(--d-animation-in), var(--t-transform);
 
     #{$root}.is-displayed & {
       --c-border-1: transparent;
       --c-border-2: transparent;
+    }
+
+    #{$root}.is-animated-in & {
+      transition: var(--t-transform);
     }
 
     #{$root}:hover & {
@@ -1322,14 +1325,20 @@ body {
   }
 
   &__img-el {
+    --t-visibility: visibility linear calc(var(--d-fading) * 0.7);
+
     width: 100%;
     display: block;
     visibility: hidden;
     opacity: 0;
-    transition: visibility linear calc(var(--d-fading) * 0.7), opacity ease-out var(--d-fading);
+    transition: var(--t-visibility), opacity ease-out var(--d-fading);
 
     #{$root}.is-displayed & {
       opacity: 1;
+    }
+
+    #{$root}.is-animated-in & {
+      transition: var(--t-visibility);
     }
 
     #{$root}:hover & {
