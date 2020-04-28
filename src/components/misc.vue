@@ -30,6 +30,8 @@
           v-bind:date="miscItem.date"
           v-bind:title="miscItem.title"
           v-bind:id="index"
+          v-bind:thumbW="miscItem.thumbDimensions[0]"
+          v-bind:thumbH="miscItem.thumbDimensions[1]"
           v-on:loaded="loadCompleteListener"
           ref="miscItem"
         >
@@ -100,11 +102,16 @@
     methods: {
       setupMounting: function() {
         this.isMounted = true;
+
         window.addEventListener('resize', this.resize);
+        this.resize();
+
         setTimeout(this.displayMisc, 100);
+
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
+
         this.initTitlesObserver(this.pageTitle);
       },
       displayMisc: function() {
@@ -175,6 +182,9 @@
       },
       resize: function () {
         this.$refs.miscItem.forEach(miscItem => {
+          const thumbHeight = Math.round(miscItem.$el.offsetWidth * parseInt(miscItem.$el.getAttribute("thumbH")) / parseInt(miscItem.$el.getAttribute("thumbW")));
+          miscItem.$el.style.setProperty('--s-image-height', thumbHeight + 'px');
+
           if (this.pixi.sprites[miscItem.id]){
             this.drawPixiImage(miscItem);
             miscItem.cloneCanvas(this.pixi.app.view);
