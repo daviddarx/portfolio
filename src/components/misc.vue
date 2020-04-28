@@ -157,7 +157,7 @@
         this.pixi.app.renderer.render( this.pixi.app.stage);
       },
       loadCompleteListener: function () {
-        const miscItem = this.$refs.miscItem[this.miscItemLoadID]
+        const miscItem = this.$refs.miscItem[this.miscItemLoadID];
 
         if (PIXI.Loader.shared.resources[miscItem.imgURL] == undefined) {
           PIXI.Loader.shared.add(miscItem.imgURL).load(() => {
