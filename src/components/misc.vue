@@ -66,7 +66,6 @@
         isDisplayed : false,
         isMounted: false,
         miscItemsToLoad: [],
-        miscItemsToLoadStartNumber: 4,
         miscItemsToLoadNext: undefined,
         pixi: {
           sprites: [],
@@ -89,9 +88,7 @@
       this.setupMounting();
 
       this.$refs.miscItem.forEach((item, i) => {
-        if (i < this.miscItemsToLoadStartNumber) {
-          this.miscItemsToLoad.push(item);
-        }
+        this.miscItemsToLoad.push(item);
       });
       this.miscItemsToLoad[0].launchLoading();
     },
