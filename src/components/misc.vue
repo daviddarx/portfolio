@@ -176,14 +176,21 @@
           this.setPixiImage(miscItem);
         }
 
+        console.log("load completed");
+
         this.miscItemsToLoad.shift();
 
         if (this.miscItemsToLoad.length > 0) {
           this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        } else {
+          this.miscItemsToLoadNext = undefined;
+          console.log("loading finished");
         }
       },
       loadNext: function () {
-        this.miscItemsToLoadNext.launchLoading();
+        if (this.miscItemsToLoadNext) {
+          this.miscItemsToLoadNext.launchLoading();
+        }
       },
       resize: function () {
         this.$refs.miscItem.forEach(miscItem => {
