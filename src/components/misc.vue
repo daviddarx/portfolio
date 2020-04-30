@@ -65,7 +65,9 @@
         misc: misc,
         isDisplayed : false,
         isMounted: false,
-        miscItemLoadID: 0,
+        miscItemsToLoad: [],
+        miscItemsToLoadStartNumber: 4,
+        miscItemsToLoadNext: undefined,
         pixi: {
           sprites: [],
           settings: {
@@ -85,6 +87,13 @@
     mounted () {
       this.initPixi();
       this.setupMounting();
+
+      this.$refs.miscItem.forEach((item, i) => {
+        if (i < this.miscItemsToLoadStartNumber) {
+          this.miscItemsToLoad.push(item);
+        }
+      });
+      this.miscItemsToLoad[0].launchLoading();
     },
     activated () {
       if (this.isMounted == false) {
@@ -116,8 +125,6 @@
       },
       displayMisc: function() {
         this.isDisplayed = true;
-
-        this.$refs.miscItem[0].launchLoading();
       },
       initPixi: function() {
         this.pixi.app = new PIXI.Application({
@@ -163,9 +170,7 @@
       renderPixi: function() {
         this.pixi.app.renderer.render( this.pixi.app.stage);
       },
-      loadCompleteListener: function () {
-        const miscItem = this.$refs.miscItem[this.miscItemLoadID];
-
+      loadCompleteListener: function (miscItem) {
         if (PIXI.Loader.shared.resources[miscItem.imgURL] == undefined) {
           PIXI.Loader.shared.add(miscItem.imgURL).load(() => {
             this.setPixiImage(miscItem);
@@ -173,12 +178,15 @@
         } else {
           this.setPixiImage(miscItem);
         }
+
+        this.miscItemsToLoad.shift();
+
+        if (this.miscItemsToLoad.length > 0) {
+          this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        }
       },
       loadNext: function () {
-        if (this.miscItemLoadID < this.$refs.miscItem.length-1) {
-          this.miscItemLoadID++;
-          this.$refs.miscItem[this.miscItemLoadID].launchLoading();
-        }
+        this.miscItemsToLoadNext.launchLoading();
       },
       resize: function () {
         this.$refs.miscItem.forEach(miscItem => {

@@ -70,7 +70,7 @@
         this.$refs.image.setAttribute('src', this.imgURL);
       },
       imageLoaded: function () {
-        this.$emit('loaded');
+        this.$emit('loaded', this);
       },
       getImageDimensions: function () {
         return {
