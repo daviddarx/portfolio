@@ -65,9 +65,14 @@
         misc: misc,
         isDisplayed : false,
         isMounted: false,
+        isLoading: false,
         miscItemsToLoad: [],
         miscItemsToLoadStartNumber: 4,
         miscItemsToLoadNext: undefined,
+        miscItemsToObserve: undefined,
+        miscsObserver: undefined,
+        miscsObserverRootMargin: '0px 0px 0px 0px',
+        firstResized: false,
         pixi: {
           sprites: [],
           settings: {
@@ -86,14 +91,10 @@
     },
     mounted () {
       this.initPixi();
-      this.setupMounting();
 
-      this.$refs.miscItem.forEach((item, i) => {
-        if (i < this.miscItemsToLoadStartNumber) {
-          this.miscItemsToLoad.push(item);
-        }
-      });
-      this.miscItemsToLoad[0].launchLoading();
+      this.launchFirstLoads();
+
+      this.setupMounting();
     },
     activated () {
       if (this.isMounted == false) {
@@ -106,22 +107,35 @@
       this.isMounted = false;
       this.isDisplayed = false;
       this.destroyTitlesObserver();
+      this.destroyMiscsObserver();
       next();
     },
     methods: {
+      launchFirstLoads: function () {
+        this.$refs.miscItem.forEach((item, i) => {
+          item.$el.setAttribute('loadID', i);
+          if (i < this.miscItemsToLoadStartNumber) {
+            this.miscItemsToLoad.push(item);
+            item.$el.setAttribute('observed', 'false');
+          }
+        });
+        this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        this.loadNext();
+      },
       setupMounting: function() {
         this.isMounted = true;
 
         window.addEventListener('resize', this.resize);
         this.resize();
 
-        setTimeout(this.displayMisc, 100);
+        this.initTitlesObserver(this.pageTitle);
+        this.initMiscsObserver();
 
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
 
-        this.initTitlesObserver(this.pageTitle);
+        setTimeout(this.displayMisc, 100);
       },
       displayMisc: function() {
         this.isDisplayed = true;
@@ -183,12 +197,74 @@
 
         if (this.miscItemsToLoad.length > 0) {
           this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        } else {
+          this.miscItemsToLoadNext = undefined;
+          this.isLoading = false;
         }
       },
       loadNext: function () {
-        this.miscItemsToLoadNext.launchLoading();
+        if (this.miscItemsToLoadNext) {
+          this.miscItemsToLoadNext.launchLoading();
+          this.isLoading = true;
+        }
+      },
+      calculateMiscsRootMargin () {
+        const margin = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        this.miscsObserverRootMargin = `0px 0px ${margin}px 0px`;
+      },
+      initMiscsObserver: function () {
+        if (!!window.IntersectionObserver) {
+          this.miscItemsToObserve = [];
+          this.$refs.miscItem.forEach((item) => {
+            if (item.$el.getAttribute('observed') != 'false') {
+              this.miscItemsToObserve.push(item);
+            }
+          });
+
+          if (this.miscItemsToObserve.length > 0) {
+            this.calculateMiscsRootMargin();
+
+            this.miscsObserver = new IntersectionObserver(this.miscsIntersectionListener, {
+              rootMargin: this.miscsObserverRootMargin
+            });
+
+            this.miscItemsToObserve.forEach((item) => {
+              this.miscsObserver.observe(item.$el);
+            });
+          }
+        }
+      },
+      destroyMiscsObserver () {
+        if (!!window.IntersectionObserver && this.miscsObserver) {
+          this.miscItemsToObserve.forEach((item) => {
+            this.miscsObserver.unobserve(item.$el);
+          });
+          this.miscsObserver.disconnect();
+          this.miscsObserver = undefined;
+        }
+      },
+      miscsIntersectionListener (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            const miscItem = this.$refs.miscItem[parseInt(entry.target.getAttribute('loadID'))];
+            this.miscItemsToLoad.push(miscItem);
+
+            if (this.isLoading == false) {
+              this.miscItemsToLoadNext = miscItem;
+              this.loadNext();
+            }
+
+            entry.target.setAttribute('observed', 'false');
+            this.miscsObserver.unobserve(entry.target);
+          }
+        });
       },
       resize: function () {
+        if (this.firstResized == true && this.miscsObserver) {
+          this.destroyMiscsObserver();
+          this.initMiscsObserver();
+        }
+
         this.$refs.miscItem.forEach(miscItem => {
           const thumbHeight = Math.round(miscItem.$el.offsetWidth * parseInt(miscItem.$el.getAttribute("thumbH")) / parseInt(miscItem.$el.getAttribute("thumbW")));
           miscItem.$el.style.setProperty('--s-image-height', thumbHeight + 'px');
@@ -198,6 +274,8 @@
             miscItem.cloneCanvas(this.pixi.app.view);
           }
         });
+
+        this.firstResized = true;
       }
     }
   });
