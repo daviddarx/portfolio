@@ -30,7 +30,7 @@ export default {
 
         this.title = document.querySelector('.hidable-title');
 
-        this.calculateRootMargin ();
+        this.calculateRootMargin();
 
         this.observer = new IntersectionObserver(this.intersectionListener, {
           rootMargin: this.observerRootMargin
