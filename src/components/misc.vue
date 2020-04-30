@@ -81,6 +81,7 @@
             brightness: 2
           }
         },
+        loadedPixiImageToProcessOnMounting: undefined,
         pageTitle: "Kunterbunt"
       }
     },
@@ -131,6 +132,11 @@
         this.initTitlesObserver(this.pageTitle);
         this.initMiscsObserver();
 
+        if (this.loadedPixiImageToProcessOnMounting) {
+          this.setPixiImage(this.loadedPixiImageToProcessOnMounting);
+          this.loadedPixiImageToProcessOnMounting = undefined;
+        }
+
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
@@ -156,17 +162,21 @@
         this.pixi.filter.brightness = this.pixi.settings.brightness;
       },
       setPixiImage: function (miscItem) {
-        const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[miscItem.imgURL].texture);
+        if (this.isMounted == true) {
+          const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[miscItem.imgURL].texture);
               sprite.filters = [this.pixi.filter];
 
-        this.pixi.sprites[miscItem.id] = sprite;
+          this.pixi.sprites[miscItem.id] = sprite;
 
-        this.drawPixiImage(miscItem);
+          this.drawPixiImage(miscItem);
 
-        miscItem.cloneCanvas(this.pixi.app.view);
-        miscItem.setReady();
+          miscItem.cloneCanvas(this.pixi.app.view);
+          miscItem.setReady();
 
-        this.loadNext();
+          this.loadNext();
+        } else {
+          this.loadedPixiImageToProcessOnMounting = miscItem;
+        }
       },
       drawPixiImage: function (miscItem) {
         const imgSize = miscItem.getImageDimensions();
