@@ -2,7 +2,7 @@
 <template>
   <div
     class="misc-list miscs-grid__item"
-    v-bind:class="{ 'is-displayed' : this.isReady }"
+    v-bind:class="{ 'is-displayed' : this.isReady, 'is-animated-in' : this.isAnimatedIn }"
     ref="miscList"
   >
     <div class="misc-list__container">
@@ -14,6 +14,8 @@
           class="misc-list__img"
           ref="imageContainer"
         >
+          <preloader class="misc-list__preloader preloader--inverted"></preloader>
+
           <img
             class="misc-list__img-el"
             @load="imageLoaded"
@@ -28,9 +30,9 @@
         <h2
           class="misc-list__info"
         >
-          <span class="misc-list__date font-compensated">{{title}}</span>
+          <span class="misc-list__title font-compensated">{{title}}</span>
           <span class="dash dash--spaced">–</span>
-          <span class="misc-list__title">{{date}}</span>
+          <span class="misc-list__date">{{date}}</span>
         </h2>
       </router-link>
     </div>
@@ -38,8 +40,13 @@
 </template>
 
 <script>
+  import Preloader from './preloader.vue';
+
   export default {
     name: 'misc-list',
+    components: {
+      'preloader': Preloader
+    },
     props: {
       route: String,
       imgURL: String,
@@ -50,6 +57,7 @@
     data: function () {
       return {
         isReady: false,
+        isAnimatedIn: false,
         hoverScale: 0,
         hoverTranslateY: 0,
       }
@@ -62,7 +70,7 @@
         this.$refs.image.setAttribute('src', this.imgURL);
       },
       imageLoaded: function () {
-        this.$emit('loaded');
+        this.$emit('loaded', this);
       },
       getImageDimensions: function () {
         return {
@@ -79,6 +87,9 @@
       },
       setReady: function () {
         this.isReady = true;
+        setTimeout(() => {
+          this.isAnimatedIn = true;
+        }, 500);
       },
       resize: function () {
         this.hoverTranslateY = this.$refs.image.clientHeight * (1-this.hoverScale) * -0.5;

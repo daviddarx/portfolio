@@ -30,6 +30,8 @@
           v-bind:date="miscItem.date"
           v-bind:title="miscItem.title"
           v-bind:id="index"
+          v-bind:thumbW="miscItem.thumbDimensions[0]"
+          v-bind:thumbH="miscItem.thumbDimensions[1]"
           v-on:loaded="loadCompleteListener"
           ref="miscItem"
         >
@@ -63,7 +65,14 @@
         misc: misc,
         isDisplayed : false,
         isMounted: false,
-        miscItemLoadID: 0,
+        isLoading: false,
+        miscItemsToLoad: [],
+        miscItemsToLoadStartNumber: 4,
+        miscItemsToLoadNext: undefined,
+        miscItemsToObserve: undefined,
+        miscsObserver: undefined,
+        miscsObserverRootMargin: '0px 0px 0px 0px',
+        firstResized: false,
         pixi: {
           sprites: [],
           settings: {
@@ -72,6 +81,7 @@
             brightness: 2
           }
         },
+        loadedPixiImageToProcessOnMounting: undefined,
         pageTitle: "Kunterbunt"
       }
     },
@@ -82,6 +92,9 @@
     },
     mounted () {
       this.initPixi();
+
+      this.launchFirstLoads();
+
       this.setupMounting();
     },
     activated () {
@@ -95,22 +108,43 @@
       this.isMounted = false;
       this.isDisplayed = false;
       this.destroyTitlesObserver();
+      this.destroyMiscsObserver();
       next();
     },
     methods: {
+      launchFirstLoads: function () {
+        this.$refs.miscItem.forEach((item, i) => {
+          item.$el.setAttribute('loadID', i);
+          if (i < this.miscItemsToLoadStartNumber) {
+            this.miscItemsToLoad.push(item);
+            item.$el.setAttribute('observed', 'false');
+          }
+        });
+        this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        this.loadNext();
+      },
       setupMounting: function() {
         this.isMounted = true;
+
         window.addEventListener('resize', this.resize);
-        setTimeout(this.displayMisc, 100);
+        this.resize();
+
+        this.initTitlesObserver(this.pageTitle);
+        this.initMiscsObserver();
+
+        if (this.loadedPixiImageToProcessOnMounting) {
+          this.setPixiImage(this.loadedPixiImageToProcessOnMounting);
+          this.loadedPixiImageToProcessOnMounting = undefined;
+        }
+
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
-        this.initTitlesObserver(this.pageTitle);
+
+        setTimeout(this.displayMisc, 100);
       },
       displayMisc: function() {
         this.isDisplayed = true;
-
-        this.$refs.miscItem[0].launchLoading();
       },
       initPixi: function() {
         this.pixi.app = new PIXI.Application({
@@ -128,17 +162,21 @@
         this.pixi.filter.brightness = this.pixi.settings.brightness;
       },
       setPixiImage: function (miscItem) {
-        const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[miscItem.imgURL].texture);
+        if (this.isMounted == true) {
+          const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[miscItem.imgURL].texture);
               sprite.filters = [this.pixi.filter];
 
-        this.pixi.sprites[miscItem.id] = sprite;
+          this.pixi.sprites[miscItem.id] = sprite;
 
-        this.drawPixiImage(miscItem);
+          this.drawPixiImage(miscItem);
 
-        miscItem.cloneCanvas(this.pixi.app.view);
-        miscItem.setReady();
+          miscItem.cloneCanvas(this.pixi.app.view);
+          miscItem.setReady();
 
-        this.loadNext();
+          this.loadNext();
+        } else {
+          this.loadedPixiImageToProcessOnMounting = miscItem;
+        }
       },
       drawPixiImage: function (miscItem) {
         const imgSize = miscItem.getImageDimensions();
@@ -156,9 +194,7 @@
       renderPixi: function() {
         this.pixi.app.renderer.render( this.pixi.app.stage);
       },
-      loadCompleteListener: function () {
-        const miscItem = this.$refs.miscItem[this.miscItemLoadID]
-
+      loadCompleteListener: function (miscItem) {
         if (PIXI.Loader.shared.resources[miscItem.imgURL] == undefined) {
           PIXI.Loader.shared.add(miscItem.imgURL).load(() => {
             this.setPixiImage(miscItem);
@@ -166,20 +202,90 @@
         } else {
           this.setPixiImage(miscItem);
         }
-      },
-      loadNext: function () {
-        if (this.miscItemLoadID < this.$refs.miscItem.length-1) {
-          this.miscItemLoadID++;
-          this.$refs.miscItem[this.miscItemLoadID].launchLoading();
+
+        this.miscItemsToLoad.shift();
+
+        if (this.miscItemsToLoad.length > 0) {
+          this.miscItemsToLoadNext = this.miscItemsToLoad[0];
+        } else {
+          this.miscItemsToLoadNext = undefined;
+          this.isLoading = false;
         }
       },
+      loadNext: function () {
+        if (this.miscItemsToLoadNext) {
+          this.miscItemsToLoadNext.launchLoading();
+          this.isLoading = true;
+        }
+      },
+      calculateMiscsRootMargin () {
+        const margin = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        this.miscsObserverRootMargin = `0px 0px ${margin}px 0px`;
+      },
+      initMiscsObserver: function () {
+        if (!!window.IntersectionObserver) {
+          this.miscItemsToObserve = [];
+          this.$refs.miscItem.forEach((item) => {
+            if (item.$el.getAttribute('observed') != 'false') {
+              this.miscItemsToObserve.push(item);
+            }
+          });
+
+          if (this.miscItemsToObserve.length > 0) {
+            this.calculateMiscsRootMargin();
+
+            this.miscsObserver = new IntersectionObserver(this.miscsIntersectionListener, {
+              rootMargin: this.miscsObserverRootMargin
+            });
+
+            this.miscItemsToObserve.forEach((item) => {
+              this.miscsObserver.observe(item.$el);
+            });
+          }
+        }
+      },
+      destroyMiscsObserver () {
+        if (!!window.IntersectionObserver && this.miscsObserver) {
+          this.miscItemsToObserve.forEach((item) => {
+            this.miscsObserver.unobserve(item.$el);
+          });
+          this.miscsObserver.disconnect();
+          this.miscsObserver = undefined;
+        }
+      },
+      miscsIntersectionListener (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            const miscItem = this.$refs.miscItem[parseInt(entry.target.getAttribute('loadID'))];
+            this.miscItemsToLoad.push(miscItem);
+
+            if (this.isLoading == false) {
+              this.miscItemsToLoadNext = miscItem;
+              this.loadNext();
+            }
+
+            entry.target.setAttribute('observed', 'false');
+            this.miscsObserver.unobserve(entry.target);
+          }
+        });
+      },
       resize: function () {
+        if (this.firstResized == true && this.miscsObserver) {
+          this.destroyMiscsObserver();
+          this.initMiscsObserver();
+        }
+
         this.$refs.miscItem.forEach(miscItem => {
+          const thumbHeight = Math.round(miscItem.$el.offsetWidth * parseInt(miscItem.$el.getAttribute("thumbH")) / parseInt(miscItem.$el.getAttribute("thumbW")));
+          miscItem.$el.style.setProperty('--s-image-height', thumbHeight + 'px');
+
           if (this.pixi.sprites[miscItem.id]){
             this.drawPixiImage(miscItem);
             miscItem.cloneCanvas(this.pixi.app.view);
           }
         });
+
+        this.firstResized = true;
       }
     }
   });

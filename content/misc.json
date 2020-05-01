@@ -8,6 +8,7 @@
       "title": "Digital Playground",
       "date": "2019",
       "thumb": "digital_playground/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
       "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Exprerimenten – Farbenverbot als einzige Spielregel.",
       "links": [
         {
@@ -85,6 +86,7 @@
       "title": "Digital Watches",
       "date": "2016",
       "thumb": "digital_watches/thumb.jpg",
+      "thumbDimensions": [1000, 652],
       "lead": "Sammlung von verschiedenen digitalen Uhren, die weder Hand noch Fuß haben.",
       "links": [
         {
@@ -167,6 +169,7 @@
       "title": "Coop Grillerinstinkt",
       "date": "2015",
       "thumb": "coop_grillerinstinkt/thumb.jpg",
+      "thumbDimensions": [1024, 691],
       "lead": "Rezeptblog für die Grillwerken von dem wallenden Andreas Stüssi.",
       "medias": [
         {
@@ -190,6 +193,7 @@
       "title": "Predentec",
       "date": "2014",
       "thumb": "predentec/thumb.jpg",
+      "thumbDimensions": [1000, 685],
       "lead": "One-pager für ein Zahnarzt.",
       "links": [
         {
@@ -238,6 +242,7 @@
       "title": "Olio Leo",
       "date": "2013",
       "thumb": "olio_leo/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
       "lead": "Corporate Design & Digital Auftritt für handwerklichen Olivenöle.",
       "links": [
         {
@@ -288,6 +293,7 @@
       "title": "Barbu TV",
       "date": "2012",
       "thumb": "barbu/thumb.jpg",
+      "thumbDimensions": [1000, 800],
       "lead": "Online Portfolio für ein Video Studio.",
       "links": [
         {
@@ -340,6 +346,7 @@
       "title": "Swissaid",
       "date": "2011",
       "thumb": "swissaid/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
       "lead": "Digital Auftritt für die Schweizerische Stiftung für Entwicklungszusammenarbeit.",
       "links": [
         {
@@ -383,6 +390,7 @@
       "title": "Little Chaperon",
       "date": "2009",
       "thumb": "little_chaperon/thumb.jpg",
+      "thumbDimensions": [1000, 699],
       "lead": "Flash Website für Little Chaperon, Fashion Design aus Fribourg.",
       "medias": [
         {
@@ -439,6 +447,7 @@
       "title": "Flash Experimente",
       "date": "2009",
       "thumb": "flash_experimente/thumb.jpg",
+      "thumbDimensions": [1000, 720],
       "lead": "Diverse Flash Animationen – Timeline & Actionscript.",
       "medias": [
         {
@@ -488,6 +497,7 @@
       "title": "Custom Design",
       "date": "2008",
       "thumb": "custom_design/thumb.jpg",
+      "thumbDimensions": [1000, 741],
       "lead": "Flash Website für die DIY Könige.",
       "medias": [
         {

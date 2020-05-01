@@ -1259,8 +1259,7 @@ body {
 }
 
 .misc-list {
-  --d-in-opacity: 0.75s;
-  --e-opacity: ease;
+  --d-animation-in: 0.2s;
   --d-in-transform: 1s;
   --e-transform: var(--e-out);
   --d-fading: 0.5s;
@@ -1270,19 +1269,9 @@ body {
   --s-translateHover: -1.5em;
   --s-translateHoverAddedScale: 2;
   --d-translateHover: 0.35s;
+  --s-image-height: calc(75vw * 0.5);
 
   $root: #{&};
-
-  visibility: hidden;
-  position: relative;
-  opacity: 0;
-  transition: opacity var(--e-opacity) var(--d-in-opacity);
-
-  &.is-displayed {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-  }
 
   &:nth-child(2n+0) {
     transform: translateY(15vw);
@@ -1298,8 +1287,37 @@ body {
     display: block;
   }
 
+  &__preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity linear var(--d-animation-in), visibility 0s var(--d-animation-in);
+
+    #{$root}.is-displayed & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
   &__img {
-    transition: transform var(--e-scaleHover) var(--d-scaleHover);
+    --c-border-1: rgba(0, 0, 0, 0.1);
+    --c-border-2: white;
+    --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
+
+    position: relative;
+    min-height: var(--s-image-height);
+    box-shadow: 0 0 0 var(--s-lines) var(--c-border-1), 0 0 0 var(--s-lines) var(--c-border-2);
+    transition: box-shadow linear var(--d-animation-in), var(--t-transform);
+
+    #{$root}.is-displayed & {
+      --c-border-1: transparent;
+      --c-border-2: transparent;
+    }
+
+    #{$root}.is-animated-in & {
+      transition: var(--t-transform);
+    }
 
     #{$root}:hover & {
       transform: scale3d(var(--s-scaleHover), var(--s-scaleHover), 1);
@@ -1307,10 +1325,21 @@ body {
   }
 
   &__img-el {
+    --t-visibility: visibility linear calc(var(--d-fading) * 0.7);
+
     width: 100%;
     display: block;
     visibility: hidden;
-    transition: visibility linear calc(var(--d-fading) * 0.7);
+    opacity: 0;
+    transition: var(--t-visibility), opacity ease-out var(--d-fading);
+
+    #{$root}.is-displayed & {
+      opacity: 1;
+    }
+
+    #{$root}.is-animated-in & {
+      transition: var(--t-visibility);
+    }
 
     #{$root}:hover & {
       visibility: visible;
@@ -1322,7 +1351,12 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    opacity: 0;
     transition: opacity ease-out var(--d-fading);
+
+    #{$root}.is-displayed & {
+      opacity: 1;
+    }
 
     #{$root}:hover & {
       opacity: 0;
@@ -1340,7 +1374,7 @@ body {
     }
   }
 
-  &__title {
+  &__date {
     @include fontRunText();
   }
 }
