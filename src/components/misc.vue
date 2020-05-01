@@ -126,6 +126,7 @@
       setupMounting: function() {
         this.isMounted = true;
 
+        this.firstResized = false;
         window.addEventListener('resize', this.resize);
         this.resize();
 
@@ -273,6 +274,15 @@
         if (this.firstResized == true && this.miscsObserver) {
           this.destroyMiscsObserver();
           this.initMiscsObserver();
+        }
+
+        if (this.firstResized == true) {
+          this.$refs.contentPage.style.minHeight = '0px';
+          requestAnimationFrame(() => {
+            window.contentPageSavedHeight = this.$refs.contentPage.clientHeight;
+            this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
+            console.log(window.contentPageSavedHeight);
+          });
         }
 
         this.$refs.miscItem.forEach(miscItem => {
