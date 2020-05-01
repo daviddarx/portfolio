@@ -9,6 +9,7 @@
       muted
       autoplay
       loop
+      preload="auto"
       class="media-video__el"
       ref="video"
     >
