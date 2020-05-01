@@ -6,7 +6,7 @@
     {
       "uid": "digital-playground",
       "title": "Digital Playground",
-      "date": "2019",
+      "date": "2020",
       "thumb": "digital_playground/thumb.jpg",
       "thumbDimensions": [1000, 1000],
       "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Exprerimenten – Farbenverbot als einzige Spielregel.",
@@ -78,6 +78,288 @@
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
+        }
+      ]
+    },
+    {
+      "uid": "kliclick",
+      "title": "kliclick",
+      "date": "2020",
+      "thumb": "kliclick/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
+      "lead": "Kein Briefing, keine Users, keine Anforderungen. Online animierte Galerie für ziellose Bilder.",
+      "links": [
+        {
+          "title": "Zur Galerie",
+          "url": "https://kliclick.daviddarx.com"
+        }
+      ],
+      "medias": [
+        {
+          "type": "image",
+          "url": "kliclick/intro.png",
+          "additionalMargin": false,
+          "zoomable": false
+        },
+        {
+          "type": "video",
+          "url": "kliclick/kliclick.mp4",
+          "additionalMargin": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/klicklick_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/klicklick_03.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/klicklick_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/images_selection.png",
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/klicklick_05.jpg",
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        }
+      ]
+    },
+    {
+      "uid": "hfh",
+      "title": "HfH",
+      "date": "2019",
+      "thumb": "hfh/thumb.jpg",
+      "thumbDimensions": [1000, 591],
+      "lead": "Relaunch der Website für die HfH, Interkantonale Hochschule für Heilpädagogik",
+      "medias": [
+        {
+          "type": "image",
+          "url": "hfh/hfh_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "hfh/hfh_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "hfh/hfh_03.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "hfh/hfh_04.jpg",
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        }
+      ]
+    },
+    {
+      "uid": "studer",
+      "title": "Studer",
+      "date": "2018",
+      "thumb": "studer/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
+      "lead": "Visuelle Ausforschüngen für die Flaschen der Distrillerie Studer.",
+      "medias": [
+        {
+          "type": "image",
+          "url": "studer/studer_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_02.jpg",
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_03.jpg",
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_04.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_05.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_06.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "studer/studer_07.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        }
+      ]
+    },
+    {
+      "uid": "uzh-pitch",
+      "title": "UZH Pitch",
+      "date": "2018",
+      "thumb": "uzh_pitch/thumb.jpg",
+      "thumbDimensions": [1022, 790],
+      "lead": "Look&Feel Entwürfe für das Pitch des Relaunchs von der Universität Zürich",
+      "medias": [
+        {
+          "type": "image",
+          "url": "uzh_pitch/uzh_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "uzh_pitch/uzh_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        }
+      ]
+    },
+    {
+      "uid": "tcm",
+      "title": "TCM",
+      "date": "2018",
+      "thumb": "tcm/thumb.jpg",
+      "thumbDimensions": [1280, 1056],
+      "lead": "Look&Feel Entwürfe für TCM, die Experten für Traditionelle Chinesische Medizin und Akupunktur",
+      "medias": [
+        {
+          "type": "image",
+          "url": "tcm/tcm_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "tcm/tcm_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "tcm/tcm_03.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        }
+      ]
+    },
+    {
+      "uid": "myclimate",
+      "title": "myclimate",
+      "date": "2017",
+      "thumb": "myclimate/thumb.jpg",
+      "thumbDimensions": [1000, 588],
+      "lead": "Look&Feel Entwürfe der Startseite für myclimate",
+      "medias": [
+        {
+          "type": "image",
+          "url": "myclimate/myclimate_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "myclimate/myclimate_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "myclimate/myclimate_03.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        }
+      ]
+    },
+    {
+      "uid": "trend-analyser",
+      "title": "pom+ Trend Analyzer",
+      "date": "2016",
+      "thumb": "trend_analyzer/thumb.jpg",
+      "thumbDimensions": [1000, 922],
+      "lead": "Konzeption & Look&Feel für ein Trend Analyser von pom+",
+      "links": [
+        {
+          "title": "Konzept & Wireframes",
+          "url": "https://files.daviddarx.com/portfolio/trend_analyzer/trend_analyser_01_konzept.pdf"
+        }
+      ],
+      "medias": [
+        {
+          "type": "image",
+          "url": "trend_analyzer/ta_01.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "trend_analyzer/ta_02.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
+        },
+        {
+          "type": "image",
+          "url": "trend_analyzer/ta_03.jpg",
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": false
         }
       ]
     },
