@@ -281,7 +281,6 @@
           requestAnimationFrame(() => {
             window.contentPageSavedHeight = this.$refs.contentPage.clientHeight;
             this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
-            console.log(window.contentPageSavedHeight);
           });
         }
 
