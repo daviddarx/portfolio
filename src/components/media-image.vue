@@ -7,7 +7,7 @@
   >
     <preloader class="media-image__preloader"></preloader>
     <img
-      v-bind:src="this.url"
+      v-bind:src="this.finalURL"
       v-bind:alt="this.title"
       @load="imageLoaded"
       class="media-image__el"
@@ -28,11 +28,13 @@
     props: {
       url: String,
       title: String,
+      hdRatio: Number,
       zoomable: Boolean,
       zoomableGutter: Boolean
     },
     data: function () {
       return {
+        finalURL: undefined,
         scrollTop: 0,
         scrollTopLast: 0,
         scrollDebounced: undefined,
@@ -80,6 +82,15 @@
       }
     },
     mounted () {
+      if (window.devicePixelRatio > 1) {
+        const splittedURL = this.url.split('.');
+        this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
+      } else {
+        this.finalURL = this.url;
+      }
+      console.log(this.hdRatio);
+      console.log(this.finalURL);
+
       if(this.zoomable == true){
         this.getWindowSize();
         this.getWindowGutter();
