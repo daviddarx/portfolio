@@ -35,6 +35,9 @@
     data: function () {
       return {
         finalURL: undefined,
+        hdRatioReversed: undefined,
+        imageNaturalWidth: undefined,
+        imageNaturalHeight: undefined,
         scrollTop: 0,
         scrollTopLast: 0,
         scrollDebounced: undefined,
@@ -82,13 +85,15 @@
       }
     },
     mounted () {
-      if (window.devicePixelRatio > 1) {
+      if (window.devicePixelRatio == 1) {
         const splittedURL = this.url.split('.');
         this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
+        this.hdRatioReversed = 1 / this.hdRatio;
       } else {
         this.finalURL = this.url;
+        this.hdRatioReversed = 1;
       }
-      console.log(this.hdRatio);
+      console.log(this.hdRatioReversed);
       console.log(this.finalURL);
 
       if(this.zoomable == true){
@@ -107,15 +112,20 @@
       imageLoaded: function () {
         this.isLoaded = true;
 
+        this.computeImageNaturalDimensions();
         this.checkIfZoomable();
       },
+      computeImageNaturalDimensions: function () {
+        this.imageNaturalWidth = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
+        this.imageNaturalHeight = Math.round(this.$refs.image.naturalHeight * this.hdRatioReversed);
+      },
       checkIfZoomable: function () {
-        if(this.zoomable == true && this.$refs.image.offsetWidth < this.$refs.image.naturalWidth) {
-          if (window.devicePixelRatio > 1 && this.$refs.image.naturalWidth / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
+        if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidth) {
+          if (window.devicePixelRatio > 1 && this.imageNaturalWidth / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
             this.isZoomable = false;
           } else {
             this.isZoomable = true;
-            this.scaleDezoomed = this.$refs.image.offsetWidth / this.$refs.image.naturalWidth;
+            this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidth;
           }
         } else {
           this.isZoomable = false;
@@ -228,9 +238,9 @@
         this.zoomedImageAnimationOutDuration = parseFloat(getComputedStyle(this.$refs.zoomedImage).getPropertyValue('--d-zooming').split('s')[0]) * 1000;
       },
       setZoomedImage: function () {
-        if (this.$refs.image.naturalWidth / this.windowW > this.zoomMaxWidthRatioToWindowW) {
+        if (this.imageNaturalWidth / this.windowW > this.zoomMaxWidthRatioToWindowW) {
           const maxWidth = this.windowW * this.zoomMaxWidthRatioToWindowW;
-          this.scaleZoomed = maxWidth / this.$refs.image.naturalWidth;
+          this.scaleZoomed = maxWidth / this.imageNaturalWidth;
         } else {
           this.scaleZoomed = 1;
         }
@@ -242,8 +252,8 @@
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         this.scrollTopLast = this.scrollTop <= 0 ? 0 : this.scrollTop;
 
-        this.zoomedImagePositionInit.x = imageRect.left - (this.$refs.image.naturalWidth - this.$refs.image.offsetWidth) * 0.5;
-        this.zoomedImagePositionInit.y = (imageRect.top + this.scrollTop) - (this.$refs.image.naturalHeight - this.$refs.image.offsetHeight) * 0.5;
+        this.zoomedImagePositionInit.x = imageRect.left - (this.imageNaturalWidth - this.$refs.image.offsetWidth) * 0.5;
+        this.zoomedImagePositionInit.y = (imageRect.top + this.scrollTop) - (this.imageNaturalHeight - this.$refs.image.offsetHeight) * 0.5;
         this.zoomedImagePosition.x = this.zoomedImagePositionInit.x;
         this.zoomedImagePosition.y = this.zoomedImagePositionInit.y;
 
@@ -262,8 +272,8 @@
         return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
       },
       setZoomedImagePositionOnMouseMove: function (mouseX, mouseY) {
-        this.zoomedImagePositionLeftSide = this.windowGutter + (this.$refs.image.naturalWidth - this.$refs.image.naturalWidth * this.scaleZoomed) * -0.5;
-        this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.$refs.image.naturalWidth * this.scaleZoomed - this.windowW) - this.windowGutter * 2;
+        this.zoomedImagePositionLeftSide = this.windowGutter + (this.imageNaturalWidth - this.imageNaturalWidth * this.scaleZoomed) * -0.5;
+        this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.imageNaturalWidth * this.scaleZoomed - this.windowW) - this.windowGutter * 2;
         this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/this.windowW, 0, 1, this.zoomedImagePositionLeftSide, this.zoomedImagePositionRightSide);
 
         if (this.isMouseMoveVertical == true) {
@@ -327,7 +337,7 @@
           window.zoomedImageBackground.addEventListener('click', this.backgroundImageClickListener);
         });
 
-        if (this.windowW < this.$refs.image.naturalWidth + this.windowGutter * 2) {
+        if (this.windowW < this.imageNaturalWidth + this.windowGutter * 2) {
           if (window.isTouch == false) {
             this.moveDebounced = debounce(this.zoomedImageMouseMoveListener, 1);
             window.addEventListener('mousemove', this.moveDebounced);
