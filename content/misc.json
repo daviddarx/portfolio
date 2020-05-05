@@ -32,21 +32,24 @@
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_01.png",
+          "url": "digital_playground/stage_01_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_02.png",
+          "url": "digital_playground/stage_01_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_03.png",
+          "url": "digital_playground/stage_01_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -54,6 +57,7 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_01.jpg",
+          "hdRatio": 1.46,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
@@ -61,6 +65,7 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_02.jpg",
+          "hdRatio": 1.46,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -68,13 +73,15 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_03.jpg",
+          "hdRatio": 1.46,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_03_01.png",
+          "url": "digital_playground/stage_03_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
