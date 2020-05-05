@@ -36,6 +36,7 @@
       return {
         finalURL: undefined,
         hdRatioReversed: undefined,
+        hdMinViewportWidth: 768,
         imageNaturalWidth: undefined,
         imageNaturalHeight: undefined,
         scrollTop: 0,
@@ -85,19 +86,11 @@
       }
     },
     mounted () {
-      if (window.devicePixelRatio == 1) {
-        const splittedURL = this.url.split('.');
-        this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
-        this.hdRatioReversed = 1 / this.hdRatio;
-      } else {
-        this.finalURL = this.url;
-        this.hdRatioReversed = 1;
-      }
-      console.log(this.hdRatioReversed);
-      console.log(this.finalURL);
+      this.getWindowSize();
+
+      this.computeHD();
 
       if(this.zoomable == true){
-        this.getWindowSize();
         this.getWindowGutter();
         this.createZoomIcon();
         this.$refs.container.addEventListener('click', this.imageClickListener);
@@ -114,6 +107,17 @@
 
         this.computeImageNaturalDimensions();
         this.checkIfZoomable();
+      },
+      computeHD: function () {
+        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth) {
+          const splittedURL = this.url.split('.');
+          this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
+          this.hdRatioReversed = 1 / this.hdRatio;
+        } else {
+          this.finalURL = this.url;
+          this.hdRatioReversed = 1;
+        }
+        console.log(this.finalURL);
       },
       computeImageNaturalDimensions: function () {
         this.imageNaturalWidth = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
