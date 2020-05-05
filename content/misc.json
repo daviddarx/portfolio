@@ -57,7 +57,7 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_01.jpg",
-          "hdRatio": 1.46,
+          "hdRatio": 1.4666666666666668,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
@@ -65,7 +65,7 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_02.jpg",
-          "hdRatio": 1.46,
+          "hdRatio": 1.4666666666666668,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -73,7 +73,7 @@
         {
           "type": "image",
           "url": "digital_playground/stage_02_03.jpg",
-          "hdRatio": 1.46,
+          "hdRatio": 1.4666666666666668,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
