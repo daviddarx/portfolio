@@ -82,6 +82,8 @@
         zoomedImageAnimationOutStart: 0,
         zoomedImageAnimationOutTime: 0,
         zoomedImageScrollRatioToDezoom: 0.2,
+        displayZoomedImageTimeout: undefined,
+        displayZoomedImageTimeoutDuration: 100,
         minimalRatioToZoomImageOnRetina: 1.25
       }
     },
@@ -334,12 +336,20 @@
         }
 
         this.setZoomedImage();
+        if (this.displayZoomedImageTimeout) clearTimeout(this.displayZoomedImageTimeout);
+        this.displayZoomedImageTimeout = setTimeout(this.displayZoomedImage, this.displayZoomedImageTimeoutDuration);
 
-        requestAnimationFrame(() => {
-          this.$refs.zoomedImage.classList.add('is-active');
-          window.zoomedImageBackground.classList.add('is-active');
-          window.zoomedImageBackground.addEventListener('click', this.backgroundImageClickListener);
-        });
+        window.addEventListener('scroll', this.scrollDebounced);
+        window.zoomIcon.classList.add('is-zoomed');
+
+        this.isZoomed = true;
+      },
+      displayZoomedImage: function () {
+        if (this.displayZoomedImageTimeout) clearTimeout(this.displayZoomedImageTimeout);
+
+        this.$refs.zoomedImage.classList.add('is-active');
+        window.zoomedImageBackground.classList.add('is-active');
+        window.zoomedImageBackground.addEventListener('click', this.backgroundImageClickListener);
 
         if (this.windowW < this.imageNaturalWidthComputed + this.windowGutter * 2) {
           if (window.isTouch == false) {
@@ -351,11 +361,6 @@
           }
           this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
         }
-
-        window.addEventListener('scroll', this.scrollDebounced);
-        window.zoomIcon.classList.add('is-zoomed');
-
-        this.isZoomed = true;
       },
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
