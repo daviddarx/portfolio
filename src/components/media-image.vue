@@ -258,16 +258,21 @@
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.scaleDezoomed);
         this.$refs.zoomedImage.style.setProperty('--s-scale-zoomed', this.scaleZoomed);
 
-        const imageRect = this.$refs.image.getBoundingClientRect();
+        this.imageRect = this.$refs.image.getBoundingClientRect();
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         this.scrollTopLast = this.scrollTop <= 0 ? 0 : this.scrollTop;
 
-        this.zoomedImagePositionInit.x = imageRect.left - (this.$refs.image.naturalWidth - this.$refs.image.offsetWidth) * 0.5;
-        this.zoomedImagePositionInit.y = (imageRect.top + this.scrollTop) - (this.$refs.image.naturalHeight - this.$refs.image.offsetHeight) * 0.5;
+        this.zoomedImagePositionInit.x = this.imageRect.left - (this.$refs.image.naturalWidth - this.$refs.image.offsetWidth) * 0.5;
+        this.zoomedImagePositionInit.y = (this.imageRect.top + this.scrollTop) - (this.$refs.image.naturalHeight - this.$refs.image.offsetHeight) * 0.5;
         this.zoomedImagePosition.x = this.zoomedImagePositionInit.x;
         this.zoomedImagePosition.y = this.zoomedImagePositionInit.y;
 
         this.isMouseMoveVertical = (this.zoomedImagePosition.y < 0 ) ? true : false;
+        if (this.isMouseMoveVertical == true) {
+          this.mouseMoveVerticalGutter = this.getWindowGutter();
+        }
+
+        this.calculateZoomedImagePositionSides();
 
         this.positionZoomedImage();
       },
@@ -281,13 +286,24 @@
       mapZoomedImagePositionToMouse: function(num, in_min, in_max, out_min, out_max) {
         return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
       },
-      setZoomedImagePositionOnMouseMove: function (mouseX, mouseY) {
+      calculateZoomedImagePositionSides: function () {
         this.zoomedImagePositionLeftSide = this.windowGutter + (this.$refs.image.naturalWidth - this.$refs.image.naturalWidth * this.scaleZoomed) * -0.5;
         this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.$refs.image.naturalWidth * this.scaleZoomed - this.windowW) - this.windowGutter * 2;
+
+        if (this.isMouseMoveVertical == true) {
+          if (this.hdRatioReversed == 1){
+            this.zoomedImagePositionTopSide = this.mouseMoveVerticalGutter;
+          } else {
+            this.zoomedImagePositionTopSide = - this.$refs.image.naturalHeight * this.scaleZoomed * 0.5 + this.mouseMoveVerticalGutter;
+          }
+          this.zoomedImagePositionBottomSide = this.zoomedImagePositionInit.y;
+        }
+      },
+      setZoomedImagePositionOnMouseMove: function (mouseX, mouseY) {
         this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/this.windowW, 0, 1, this.zoomedImagePositionLeftSide, this.zoomedImagePositionRightSide);
 
         if (this.isMouseMoveVertical == true) {
-          this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/this.windowH, 0, 1, 0, this.zoomedImagePositionInit.y);
+          this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/this.windowH, 0, 1, this.zoomedImagePositionTopSide, this.zoomedImagePositionBottomSide);
         }
       },
       animateZoomedImage: function () {
@@ -332,6 +348,16 @@
         this.zoomedImageAnimationOutInterval = setInterval(this.animateZoomedImageOutInterval, 1000 / 60);
         this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImageOut);
       },
+      launchZoomedImageAnimation: function () {
+        if (window.isTouch == false) {
+          this.moveDebounced = debounce(this.zoomedImageMouseMoveListener, 1);
+          window.addEventListener('mousemove', this.moveDebounced);
+        } else {
+          this.moveDebounced = debounce(this.zoomedImageTouchMoveListener, 1);
+          window.addEventListener('touchmove', this.moveDebounced);
+        }
+        this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
+      },
       zoomImage: function () {
         if (this.$refs.zoomedImage == undefined) {
           this.createZoomedBackground();
@@ -355,15 +381,8 @@
         window.zoomedImageBackground.classList.add('is-active');
         window.zoomedImageBackground.addEventListener('click', this.backgroundImageClickListener);
 
-        if (this.windowW < this.imageNaturalWidthComputed + this.windowGutter * 2) {
-          if (window.isTouch == false) {
-            this.moveDebounced = debounce(this.zoomedImageMouseMoveListener, 1);
-            window.addEventListener('mousemove', this.moveDebounced);
-          } else {
-            this.moveDebounced = debounce(this.zoomedImageTouchMoveListener, 1);
-            window.addEventListener('touchmove', this.moveDebounced);
-          }
-          this.zoomedImageAnimationFrame = requestAnimationFrame(this.animateZoomedImage);
+        if (this.windowW < this.imageNaturalWidthComputed + this.windowGutter * 2 || this.isMouseMoveVertical == true) {
+          this.launchZoomedImageAnimation();
         }
       },
       dezoomImage: function () {
@@ -411,12 +430,12 @@
         this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         const scrollDirection = (this.scrollTop > this.scrollTopLast) ? 0 : 1;
-        const imageRect = this.$refs.zoomedImage.getBoundingClientRect();
+        this.imageRect = this.$refs.zoomedImage.getBoundingClientRect();
 
-        if (scrollDirection == 1 && imageRect.top > this.windowH * this.zoomedImageScrollRatioToDezoom) {
+        if (scrollDirection == 1 && this.imageRect.top > this.windowH * this.zoomedImageScrollRatioToDezoom) {
           this.dezoomImage();
           this.deactiveZoomIcon();
-        } else if (scrollDirection == 0 && (imageRect.bottom - this.windowH) * -1 > this.windowH * this.zoomedImageScrollRatioToDezoom) {
+        } else if (scrollDirection == 0 && (this.imageRect.bottom - this.windowH) * -1 > this.windowH * this.zoomedImageScrollRatioToDezoom) {
           this.dezoomImage();
           this.deactiveZoomIcon();
         }
@@ -431,6 +450,7 @@
           this.stopZoomIconMouseMoveAnimation();
         }
         if(this.$refs.zoomedImage) {
+          if (this.displayZoomedImageTimeout) clearTimeout(this.displayZoomedImageTimeout);
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
           document.body.removeChild(this.$refs.zoomedImage);
           this.$refs.zoomedImage = undefined;
@@ -447,21 +467,27 @@
         this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         this.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       },
-      getWindowGutter: function () {
+      setImageWindowGutter: function () {
         if (this.zoomableGutter) {
-          const windowGutterCSS = getComputedStyle(document.body).getPropertyValue('--s-gutter');
-
-          if (windowGutterCSS.split('vw').length > 1) {
-            this.windowGutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * this.windowW;
-          } else {
-            this.windowGutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * this.windowH;
-          }
+          this.windowGutter = this.getWindowGutter();
         }
+      },
+      getWindowGutter: function () {
+        const windowGutterCSS = getComputedStyle(document.body).getPropertyValue('--s-gutter');
+        let gutter;
+
+        if (windowGutterCSS.split('vw').length > 1) {
+          gutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * this.windowW;
+        } else {
+          gutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * this.windowH;
+        }
+
+        return gutter;
       },
       resize: function () {
         this.getWindowSize();
         if (this.zoomable) {
-          this.getWindowGutter();
+          this.setImageWindowGutter();
           this.checkIfZoomable();
           this.deactiveZoomIcon();
           if (this.isZoomed) this.hideZoomedImageOnResize();
