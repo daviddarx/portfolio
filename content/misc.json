@@ -32,7 +32,7 @@
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_01.jpg",
+          "url": "digital_playground/stage_01_01.png",
           "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
@@ -40,7 +40,7 @@
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_02.jpg",
+          "url": "digital_playground/stage_01_02.png",
           "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
@@ -48,7 +48,7 @@
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_01_03.jpg",
+          "url": "digital_playground/stage_01_03.png",
           "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
@@ -80,7 +80,7 @@
         },
         {
           "type": "image",
-          "url": "digital_playground/stage_03_01.jpg",
+          "url": "digital_playground/stage_03_01.png",
           "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
@@ -105,6 +105,7 @@
         {
           "type": "image",
           "url": "kliclick/intro.png",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": false
         },
@@ -115,7 +116,16 @@
         },
         {
           "type": "image",
+          "url": "kliclick/klicklick_01.jpg",
+          "hdRatio": 2,
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
           "url": "kliclick/klicklick_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -123,13 +133,7 @@
         {
           "type": "image",
           "url": "kliclick/klicklick_03.jpg",
-          "additionalMargin": false,
-          "zoomable": true,
-          "zoomableGutter": true
-        },
-        {
-          "type": "image",
-          "url": "kliclick/klicklick_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -137,13 +141,31 @@
         {
           "type": "image",
           "url": "kliclick/images_selection.png",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
+          "url": "kliclick/klicklick_04.jpg",
+          "hdRatio": 2,
+          "additionalMargin": false,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
           "url": "kliclick/klicklick_05.jpg",
+          "hdRatio": 2,
+          "additionalMargin": true,
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "kliclick/klicklick_06.jpg",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
