@@ -183,6 +183,7 @@
         {
           "type": "image",
           "url": "hfh/hfh_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -190,6 +191,7 @@
         {
           "type": "image",
           "url": "hfh/hfh_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -197,6 +199,7 @@
         {
           "type": "image",
           "url": "hfh/hfh_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -204,6 +207,7 @@
         {
           "type": "image",
           "url": "hfh/hfh_04.jpg",
+          "hdRatio": 1.6,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
@@ -220,14 +224,16 @@
       "medias": [
         {
           "type": "image",
-          "url": "studer/studer_01.jpg",
+          "url": "studer/studer_01.png",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
-          "url": "studer/studer_02.jpg",
+          "url": "studer/studer_02.png",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
@@ -235,6 +241,7 @@
         {
           "type": "image",
           "url": "studer/studer_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
@@ -242,6 +249,7 @@
         {
           "type": "image",
           "url": "studer/studer_04.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -249,6 +257,7 @@
         {
           "type": "image",
           "url": "studer/studer_05.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -256,13 +265,15 @@
         {
           "type": "image",
           "url": "studer/studer_06.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         },
         {
           "type": "image",
-          "url": "studer/studer_07.jpg",
+          "url": "studer/studer_07.png",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
@@ -280,6 +291,7 @@
         {
           "type": "image",
           "url": "uzh_pitch/uzh_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -287,6 +299,7 @@
         {
           "type": "image",
           "url": "uzh_pitch/uzh_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -304,6 +317,7 @@
         {
           "type": "image",
           "url": "tcm/tcm_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -311,6 +325,7 @@
         {
           "type": "image",
           "url": "tcm/tcm_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -318,6 +333,7 @@
         {
           "type": "image",
           "url": "tcm/tcm_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -335,6 +351,7 @@
         {
           "type": "image",
           "url": "myclimate/myclimate_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -342,6 +359,7 @@
         {
           "type": "image",
           "url": "myclimate/myclimate_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -349,6 +367,7 @@
         {
           "type": "image",
           "url": "myclimate/myclimate_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -372,6 +391,7 @@
         {
           "type": "image",
           "url": "trend_analyzer/ta_01.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -379,6 +399,7 @@
         {
           "type": "image",
           "url": "trend_analyzer/ta_02.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
@@ -386,6 +407,7 @@
         {
           "type": "image",
           "url": "trend_analyzer/ta_03.jpg",
+          "hdRatio": 2,
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": false
