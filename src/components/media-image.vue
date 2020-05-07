@@ -123,7 +123,6 @@
           this.finalURL = this.url;
           this.hdRatioReversed = 1;
         }
-        console.log(this.finalURL);
       },
       computeImageNaturalDimensions: function () {
         this.imageNaturalWidthComputed = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
