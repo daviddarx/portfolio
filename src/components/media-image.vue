@@ -37,6 +37,7 @@
         finalURL: undefined,
         hdRatioReversed: undefined,
         hdMinViewportWidth: 768,
+        imageRect: undefined,
         imageNaturalWidthComputed: undefined,
         imageNaturalHeightComputed: undefined,
         scrollTop: 0,
@@ -52,6 +53,7 @@
         isZoomable: false,
         isZoomIconListeningMouseMove: false,
         isMouseMoveVertical: false,
+        mouseMoveVerticalGutter: undefined,
         scaleDezoomed: 0,
         scaleZoomed: 1,
         zoomMaxWidthRatioToWindowW: 1.2,
@@ -75,6 +77,8 @@
         },
         zoomedImagePositionLeftSide: 0,
         zoomedImagePositionRightSide: 0,
+        zoomedImagePositionTopSide: 0,
+        zoomedImagePositionBottomSide: 0,
         zoomedImageAnimationFrame: undefined,
         zoomedImageAnimationEase: 0.05,
         zoomedImageAnimationOutDuration: 0,
@@ -93,7 +97,7 @@
       this.computeHD();
 
       if(this.zoomable == true){
-        this.getWindowGutter();
+        this.setImageWindowGutter();
         this.createZoomIcon();
         this.$refs.container.addEventListener('click', this.imageClickListener);
 
