@@ -19,7 +19,7 @@
         >
         </h1>
         <p
-          class="misc__lead animate-in animate-in__s1 no-margin"
+          class="misc__lead animate-in animate-in__s1 no-margin text-indent"
           v-if="infos.lead"
           v-html="replaceDashes(infos.lead, true)"
         >
