@@ -88,7 +88,7 @@
         zoomedImageScrollRatioToDezoom: 0.2,
         displayZoomedImageTimeout: undefined,
         displayZoomedImageTimeoutDuration: 100,
-        minimalRatioToZoomImageOnRetina: 1.25
+        minimalRatioToZoomImageOnRetina: 1
       }
     },
     mounted () {
