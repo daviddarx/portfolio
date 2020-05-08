@@ -266,7 +266,11 @@
         this.zoomedImagePosition.x = this.zoomedImagePositionInit.x;
         this.zoomedImagePosition.y = this.zoomedImagePositionInit.y;
 
-        this.isMouseMoveVertical = (this.zoomedImagePosition.y < 0 ) ? true : false;
+        if (this.hdRatioReversed == 1){
+          this.isMouseMoveVertical = (this.zoomedImagePosition.y < 0 ) ? true : false;
+        } else {
+          this.isMouseMoveVertical = (this.zoomedImagePosition.y < -this.$refs.image.naturalHeight * this.scaleZoomed * 0.5 ) ? true : false;
+        }
         if (this.isMouseMoveVertical == true) {
           this.mouseMoveVerticalGutter = this.getWindowGutter();
         }
