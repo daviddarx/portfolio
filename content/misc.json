@@ -28,6 +28,7 @@
         {
           "type": "video",
           "url": "digital_playground/stages.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -112,6 +113,7 @@
         {
           "type": "video",
           "url": "kliclick/kliclick.mp4",
+          "autoplay": true,
           "additionalMargin": true
         },
         {
@@ -451,6 +453,7 @@
         {
           "type": "video",
           "url": "digital_watches/dw.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -538,6 +541,7 @@
         {
           "type": "video",
           "url": "predentec/predentec.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -642,6 +646,7 @@
         {
           "type": "video",
           "url": "barbu/barbu.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -729,6 +734,7 @@
         {
           "type": "video",
           "url": "little_chaperon/little_chaperon.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -786,6 +792,7 @@
         {
           "type": "video",
           "url": "flash_experimente/flash_experimente.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
@@ -836,6 +843,7 @@
         {
           "type": "video",
           "url": "custom_design/custom_design.mp4",
+          "autoplay": true,
           "additionalMargin": false
         },
         {
