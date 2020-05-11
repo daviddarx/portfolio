@@ -66,6 +66,7 @@
             v-else-if="media.type=='video'"
             v-bind:url="misc.mediasPath+media.url"
             v-bind:title="infos.title"
+            v-bind:id="i"
             ref="video"
           >
           </media-video>
@@ -176,12 +177,6 @@
           this.$refs.media.forEach(media => {
             this.observer.observe(media);
           });
-
-          if (this.$refs.video) {
-            this.$refs.video.forEach(item => {
-              item.$el.querySelector('video').removeAttribute('autoplay');
-            });
-          }
         } else {
           this.$refs.media.forEach(media => {
             media.classList.add('is-displayed');
@@ -190,17 +185,29 @@
       },
       intersectionListener: function (entries, observer) {
         entries.forEach(entry => {
+          const isVideo = entry.target.hasAttribute('isvideo');
+          let videoComponent;
+
+          if (isVideo == true) {
+            const videoID = entry.target.getAttribute('id');
+            this.$refs.video.forEach((video) => {
+              if (video.$el.getAttribute('id') == videoID) {
+                videoComponent = video;
+              }
+            });
+          }
+
           if(entry.isIntersecting){
             entry.target.classList.add('is-displayed');
 
-            if (entry.target.hasAttribute('isvideo') == false) {
+            if (isVideo == false) {
               observer.unobserve(entry.target);
             } else {
-              entry.target.querySelector('video').play();
+              videoComponent.play();
             }
           } else {
-            if (entry.target.hasAttribute('isvideo') == true) {
-              entry.target.querySelector('video').pause();
+            if (isVideo == true) {
+              videoComponent.pause();
             }
           }
         });
