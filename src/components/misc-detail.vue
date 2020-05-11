@@ -178,12 +178,6 @@
           this.$refs.media.forEach(media => {
             this.observer.observe(media);
           });
-
-          if (this.$refs.video) {
-            this.$refs.video.forEach(video => {
-              video.pause();
-            });
-          }
         } else {
           this.$refs.media.forEach(media => {
             media.classList.add('is-displayed');
