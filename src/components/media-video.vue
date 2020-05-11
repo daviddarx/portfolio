@@ -8,7 +8,7 @@
     <video
       muted
       loop
-      preload="metadata"
+      preload
       class="media-video__el"
       ref="video"
     >
@@ -40,12 +40,13 @@
     mounted () {
       this.$refs.video.addEventListener('waiting', this.onWaiting);
       this.$refs.video.addEventListener('playing', this.onPlaying);
-      this.$refs.video.addEventListener('loadedmetadata', this.metadataListener);
+      this.$refs.video.addEventListener('progress', this.progressListener);
     },
     methods: {
       enter: function () {
         if (this.autoplay == true) {
-          this.play();
+          // this.play();
+          console.log("play");
         }
       },
       leave: function () {
@@ -57,11 +58,12 @@
       pause: function () {
         this.$refs.video.pause();
       },
-      metadataListener: function () {
-        if (this.$refs.video.buffered.length === 0) return;
-
-        var bufferedSeconds = this.$refs.video.buffered.end(0) - this.$refs.video.buffered.start(0);
-        console.log(bufferedSeconds + ' seconds of video are ready to play!');
+      progressListener: function () {
+        if (this.$refs.video.buffered.length > 0 && this.$refs.video.seekable.length > 0) {
+          const progress = Math.round( this.$refs.video.buffered.end(0)) / Math.round( this.$refs.video.seekable.end(0));
+          console.log("load" + progress);
+        }
+        console.log("--");
       },
       onWaiting: function () {
         this.isLoading = true;
