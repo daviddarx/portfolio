@@ -842,11 +842,10 @@ body {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    opacity: 0.35;
     transition: opacity linear 0.2s;
 
-    #{$root}.is-loaded & {
-      opacity: 1;
+    #{$root}.is-loading & {
+      opacity: 0.35;
     }
   }
 
@@ -856,10 +855,13 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: opacity linear 0.2s, visibility 0s 0.2s;
+    opacity: 0;
+    visibility: hidden;
 
-    #{$root}.is-loaded & {
-      opacity: 0;
-      visibility: hidden;
+    #{$root}.is-loading & {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
     }
   }
 }

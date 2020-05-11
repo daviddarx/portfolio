@@ -2,12 +2,11 @@
 <template>
   <div
     class="media-video"
-    v-bind:class="{'is-loaded' : isLoaded}"
+    v-bind:class="{'is-loading' : isLoading}"
   >
     <preloader class="media-video__preloader"></preloader>
     <video
       muted
-      autoplay
       loop
       preload="auto"
       class="media-video__el"
@@ -30,11 +29,12 @@
     },
     props: {
       url: String,
-      title: String
+      title: String,
+      autoplay: Boolean
     },
     data: function () {
       return {
-        isLoaded: false
+        isLoading: false,
       }
     },
     mounted () {
@@ -42,14 +42,29 @@
       this.$refs.video.addEventListener('playing', this.onPlaying);
     },
     methods: {
+      enter: function () {
+        if (this.autoplay == true) {
+          this.play();
+        }
+      },
+      leave: function () {
+        this.pause();
+      },
+      play: function () {
+        this.$refs.video.play();
+      },
+      pause: function () {
+        this.$refs.video.pause();
+      },
       onWaiting: function () {
-        this.isLoaded = false;
+        this.isLoading = false;
       },
 
       onPlaying: function () {
-        this.isLoaded = true;
+        this.isLoading = true;
       },
       destroy: function () {
+        this.pause();
         this.$refs.video.removeEventListener('waiting', this.onWaiting);
         this.$refs.video.removeEventListener('playing', this.onPlaying);
       }
