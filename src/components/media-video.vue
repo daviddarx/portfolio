@@ -41,12 +41,16 @@
       this.$refs.video.addEventListener('waiting', this.onWaiting);
       this.$refs.video.addEventListener('playing', this.onPlaying);
       this.$refs.video.addEventListener('progress', this.progressListener);
+      this.$refs.video.addEventListener('canplay', this.canplayListener);
+      this.$refs.video.addEventListener('canplaythrough', this.canplaythroughListener);
+      this.$refs.video.addEventListener('suspend', this.suspendListener);
     },
     methods: {
       enter: function () {
         if (this.autoplay == true) {
           // this.play();
           console.log("play");
+          //this.isplaying
         }
       },
       leave: function () {
@@ -58,12 +62,30 @@
       pause: function () {
         this.$refs.video.pause();
       },
+      buffered: function () {
+        var bufferedPercent =
+            this.$refs.video.duration > 0 && this.$refs.video.buffered.length > 0 ?
+            this.$refs.video.buffered.end(0) / this.$refs.video.duration * 100 :
+            0;
+        return 'buffered ' + bufferedPercent.toFixed(0) + '%';
+      },
       progressListener: function () {
-        if (this.$refs.video.buffered.length > 0 && this.$refs.video.seekable.length > 0) {
-          const progress = Math.round( this.$refs.video.buffered.end(0)) / Math.round( this.$refs.video.seekable.end(0));
-          console.log("load" + progress);
-        }
-        console.log("--");
+        console.log('progress: ' + this.buffered());
+        //tester en ligne de nouveau pour voir si preload auto forcer le preloading de toute la video.
+        //si this.isplaying and  position + x secondes, alors this.play
+        // https://stackoverflow.com/questions/29257675/how-to-check-if-html5-video-is-buffered-enough-to-play-without-stopping-to-buffe/32881221
+      },
+      canplayListener: function () {
+        console.log('canplay: ' + this.buffered());
+      },
+      canplaythroughListener: function () {
+        console.log("canplaythrough");
+      },
+      canplaythroughListener: function () {
+        console.log('canplaythrough: ' + this.buffered());
+      },
+      suspendListener: function () {
+        console.log('suspend: ' + this.buffered());
       },
       onWaiting: function () {
         this.isLoading = true;
@@ -77,6 +99,9 @@
         this.$refs.video.removeEventListener('waiting', this.onWaiting);
         this.$refs.video.removeEventListener('playing', this.onPlaying);
         this.$refs.video.removeEventListener('loadedmetadata', this.metadataListener);
+        this.$refs.video.removeEventListener('canplay', this.canplayListener);
+        this.$refs.video.removeEventListener('canplaythrough', this.canplaythroughListener);
+        this.$refs.video.removeEventListener('suspend', this.suspendListener);
       }
     }
   }
