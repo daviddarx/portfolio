@@ -66,6 +66,7 @@
             v-else-if="media.type=='video'"
             v-bind:url="misc.mediasPath+media.url"
             v-bind:title="infos.title"
+            v-bind:autoplay="media.autoplay"
             v-bind:id="i"
             ref="video"
           >
@@ -177,6 +178,12 @@
           this.$refs.media.forEach(media => {
             this.observer.observe(media);
           });
+
+          if (this.$refs.video) {
+            this.$refs.video.forEach(video => {
+              video.pause();
+            });
+          }
         } else {
           this.$refs.media.forEach(media => {
             media.classList.add('is-displayed');
