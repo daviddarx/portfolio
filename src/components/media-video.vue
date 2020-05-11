@@ -8,7 +8,7 @@
     <video
       muted
       loop
-      preload
+      preload="auto"
       class="media-video__el"
       ref="video"
     >
