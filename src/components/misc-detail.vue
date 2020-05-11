@@ -204,11 +204,11 @@
             if (isVideo == false) {
               observer.unobserve(entry.target);
             } else {
-              videoComponent.play();
+              videoComponent.enter();
             }
           } else {
             if (isVideo == true) {
-              videoComponent.pause();
+              videoComponent.leave();
             }
           }
         });
