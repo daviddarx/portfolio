@@ -57,11 +57,11 @@
         this.$refs.video.pause();
       },
       onWaiting: function () {
-        this.isLoading = false;
+        this.isLoading = true;
       },
 
       onPlaying: function () {
-        this.isLoading = true;
+        this.isLoading = false;
       },
       destroy: function () {
         this.pause();
