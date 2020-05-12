@@ -21,6 +21,7 @@
 
 <script>
   import Preloader from './preloader.vue';
+import { TextureUvs } from 'pixi.js';
 
   export default {
     name: 'media-video',
@@ -35,6 +36,7 @@
     data: function () {
       return {
         isLoading: false,
+        isPlaying: false,
       }
     },
     mounted () {
@@ -48,12 +50,12 @@
     methods: {
       enter: function () {
         if (this.autoplay == true) {
-          // this.play();
-          console.log("play");
-          //this.isplaying
+          this.isPlaying = true;
+          console.log("enter");
         }
       },
       leave: function () {
+        this.isPlaying = false;
         this.pause();
       },
       play: function () {
@@ -74,14 +76,16 @@
         //tester en ligne de nouveau pour voir si preload auto forcer le preloading de toute la video.
         //si this.isplaying and  position + x secondes, alors this.play
         // https://stackoverflow.com/questions/29257675/how-to-check-if-html5-video-is-buffered-enough-to-play-without-stopping-to-buffe/32881221
+        // si ca marche pas tester le custom buffer?  https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload
       },
       canplayListener: function () {
         console.log('canplay: ' + this.buffered());
       },
       canplaythroughListener: function () {
-        console.log("canplaythrough");
-      },
-      canplaythroughListener: function () {
+        if (this.isPlaying == true) {
+          this.play();
+          console.log("launch play");
+        }
         console.log('canplaythrough: ' + this.buffered());
       },
       suspendListener: function () {
