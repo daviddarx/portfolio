@@ -102,7 +102,7 @@ import { TextureUvs } from 'pixi.js';
         if (this.isLoadingTimeout) clearTimeout(this.isLoadingTimeout);
       },
       onWaiting: function () {
-        this.setIsLoadingDuringPlay();
+        this.setIsLoadingTimeout();
       },
       onPlaying: function () {
         this.clearIsLoadingTimeout();
