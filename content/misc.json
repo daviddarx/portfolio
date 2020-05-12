@@ -26,12 +26,6 @@
       ],
       "medias": [
         {
-          "type": "video",
-          "url": "digital_playground/stages.mp4",
-          "autoplay": true,
-          "additionalMargin": false
-        },
-        {
           "type": "image",
           "url": "digital_playground/stage_01_01.png",
           "hdRatio": 2,
@@ -54,6 +48,12 @@
           "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
+        },
+        {
+          "type": "video",
+          "url": "digital_playground/stages.mp4",
+          "autoplay": true,
+          "additionalMargin": false
         },
         {
           "type": "image",
