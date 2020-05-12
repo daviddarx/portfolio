@@ -51,10 +51,14 @@ import { TextureUvs } from 'pixi.js';
       enter: function () {
         if (this.autoplay == true) {
           this.isPlaying = true;
+          this.isLoading = true;
+
           console.log("enter");
 
           if (this.isCanplaythrough == true) {
+            this.isLoading = false;
             this.play();
+            console.log("playontenter");
           }
         }
       },
