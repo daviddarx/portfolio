@@ -37,6 +37,7 @@ import { TextureUvs } from 'pixi.js';
       return {
         isLoading: false,
         isPlaying: false,
+        bufferedPercent: 0
       }
     },
     mounted () {
@@ -51,6 +52,7 @@ import { TextureUvs } from 'pixi.js';
       enter: function () {
         if (this.autoplay == true) {
           this.isPlaying = true;
+          this.isLoading = true,
           console.log("enter");
         }
       },
@@ -65,18 +67,14 @@ import { TextureUvs } from 'pixi.js';
         this.$refs.video.pause();
       },
       buffered: function () {
-        var bufferedPercent =
-            this.$refs.video.duration > 0 && this.$refs.video.buffered.length > 0 ?
-            this.$refs.video.buffered.end(0) / this.$refs.video.duration * 100 :
-            0;
-        return 'buffered ' + bufferedPercent.toFixed(0) + '%';
+        this.bufferedPercent =
+          this.$refs.video.duration > 0 && this.$refs.video.buffered.length > 0 ?
+          this.$refs.video.buffered.end(0) / this.$refs.video.duration * 100 :
+          0;
+        return 'buffered ' + this.bufferedPercent.toFixed(0) + '%';
       },
       progressListener: function () {
         console.log('progress: ' + this.buffered());
-        //tester en ligne de nouveau pour voir si preload auto forcer le preloading de toute la video.
-        //si this.isplaying and  position + x secondes, alors this.play
-        // https://stackoverflow.com/questions/29257675/how-to-check-if-html5-video-is-buffered-enough-to-play-without-stopping-to-buffe/32881221
-        // si ca marche pas tester le custom buffer?  https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload
       },
       canplayListener: function () {
         console.log('canplay: ' + this.buffered());
