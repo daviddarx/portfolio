@@ -73,30 +73,26 @@ import { TextureUvs } from 'pixi.js';
       pause: function () {
         this.$refs.video.pause();
       },
-      buffered: function () {
+      getBuffered: function () {
         this.bufferedPercent =
           this.$refs.video.duration > 0 && this.$refs.video.buffered.length > 0 ?
           this.$refs.video.buffered.end(0) / this.$refs.video.duration * 100 :
           0;
-        return 'buffered ' + this.bufferedPercent.toFixed(0) + '%';
+        return this.bufferedPercent;
       },
       progressListener: function () {
-        console.log('progress: ' + this.buffered());
+        console.log('progress: ' + this.getBuffered());
       },
       canplaythroughListener: function () {
         if (this.isPlaying == true) {
           this.play();
         }
         this.isCanplaythrough = true;
-        console.log('canplaythrough: ' + this.buffered());
-      },
-      suspendListener: function () {
-        console.log('suspend: ' + this.buffered());
+        console.log('canplaythrough: ' + this.getBuffered());
       },
       onWaiting: function () {
         this.isLoading = true;
       },
-
       onPlaying: function () {
         this.isLoading = false;
       },
