@@ -39,6 +39,8 @@ import { TextureUvs } from 'pixi.js';
         isPlaying: false,
         isCanplaythrough: false,
         bufferedPercent: 0,
+        isLoadingTimeout: undefined,
+        isLoadingTimeoutDuration: 750
       }
     },
     mounted () {
@@ -90,14 +92,25 @@ import { TextureUvs } from 'pixi.js';
         this.isCanplaythrough = true;
         console.log('canplaythrough: ' + this.getBuffered());
       },
+      setIsLoadingTimeout: function () {
+        this.clearIsLoadingTimeout();
+        this.isLoadingTimeout = setTimeout(() => {
+          this.isLoading = true;
+        }, this.isLoadingTimeoutDuration);
+      },
+      clearIsLoadingTimeout: function () {
+        if (this.isLoadingTimeout) clearTimeout(this.isLoadingTimeout);
+      },
       onWaiting: function () {
-        this.isLoading = true;
+        this.setIsLoadingDuringPlay();
       },
       onPlaying: function () {
+        this.clearIsLoadingTimeout();
         this.isLoading = false;
       },
       destroy: function () {
         this.pause();
+        this.clearIsLoadingTimeout();
         this.$refs.video.removeEventListener('waiting', this.onWaiting);
         this.$refs.video.removeEventListener('playing', this.onPlaying);
         this.$refs.video.removeEventListener('progress', this.progressListener); // to remove
