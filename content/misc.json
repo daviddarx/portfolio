@@ -28,7 +28,7 @@
         {
           "type": "video",
           "url": "digital_playground/stages.mp4",
-          "autoplay": true,
+          "autoplay": false,
           "additionalMargin": false
         },
         {
