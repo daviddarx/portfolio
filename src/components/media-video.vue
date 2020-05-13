@@ -55,17 +55,13 @@ import { TextureUvs } from 'pixi.js';
           this.isPlaying = true;
           this.isLoading = true;
 
-          console.log("enter");
-
           if (this.isCanplaythrough == true) {
             this.isLoading = false;
             this.play();
-            console.log("playontenter");
           }
         }
       },
       leave: function () {
-        console.log("leave");
         this.isPlaying = false;
         this.pause();
       },
