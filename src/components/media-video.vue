@@ -58,7 +58,7 @@ import { TextureUvs } from 'pixi.js';
     mounted () {
       this.$refs.video.addEventListener('waiting', this.onWaiting);
       this.$refs.video.addEventListener('playing', this.onPlaying);
-      this.$refs.video.addEventListener('progress', this.progressListener); // to remove
+      // this.$refs.video.addEventListener('progress', this.progressListener); // to remove
       this.$refs.video.addEventListener('canplaythrough', this.canplaythroughListener);
     },
     methods: {
@@ -106,14 +106,13 @@ import { TextureUvs } from 'pixi.js';
         return this.bufferedPercent;
       },
       progressListener: function () {
-        console.log('progress: ' + this.getBuffered());
+        // console.log('progress: ' + this.getBuffered());
       },
       canplaythroughListener: function () {
         if (this.isPlaying == true) {
           this.play();
         }
         this.isCanplaythrough = true;
-        console.log('canplaythrough: ' + this.getBuffered());
       },
       setIsLoadingTimeout: function () {
         this.clearIsLoadingTimeout();
@@ -136,7 +135,7 @@ import { TextureUvs } from 'pixi.js';
         this.clearIsLoadingTimeout();
         this.$refs.video.removeEventListener('waiting', this.onWaiting);
         this.$refs.video.removeEventListener('playing', this.onPlaying);
-        this.$refs.video.removeEventListener('progress', this.progressListener); // to remove
+        // this.$refs.video.removeEventListener('progress', this.progressListener); // to remove
         this.$refs.video.removeEventListener('canplaythrough', this.canplaythroughListener);
       }
     }
