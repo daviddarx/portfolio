@@ -226,7 +226,7 @@ body {
   position: absolute;
   cursor: pointer;
   opacity: 0;
-  transition: opacity ease-out 0.1s;
+  transition: opacity ease-out 0.2s;
 
   &:hover {
     @include twerk-anime();
