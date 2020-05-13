@@ -225,6 +225,16 @@ body {
   z-index: 200;
   position: absolute;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity ease-out 0.1s;
+
+  &:hover {
+    @include twerk-anime();
+  }
+
+  &.is-displayed {
+    opacity: 1;
+  }
 
   &__el {
     display: block;
@@ -232,6 +242,7 @@ body {
     cursor: pointer;
     font-size: 0;
     text-decoration: none;
+    overflow: hidden;
     width: var(--s-dimensions);
     height: var(--s-dimensions);
     left: 50%;
@@ -240,7 +251,6 @@ body {
     border: var(--s-lines) var(--c-bt-bg) solid;
     border-radius: 100%;
     background-color: var(--c-bt-bg);
-    overflow: hidden;
 
     &::before {
       content: "";
@@ -275,10 +285,6 @@ body {
     #{$root}:hover & {
       border-color: var(--c-bt-bg);
     }
-  }
-
-  &:hover {
-    @include twerk-anime();
   }
 }
 

@@ -6,6 +6,8 @@
   >
     <div
       v-if="this.autoplay==false"
+      v-on:click="this.togglePlay"
+      v-bind:class="{'is-displayed' : !isPlaying}"
       class="media-video__play-button play-button"
     >
       <button
@@ -74,6 +76,21 @@ import { TextureUvs } from 'pixi.js';
       leave: function () {
         this.isPlaying = false;
         this.pause();
+      },
+      togglePlay: function () {
+        if (this.isPlaying == false) {
+          this.isPlaying = true;
+          this.isLoading = true;
+
+          if (this.isCanplaythrough == true) {
+            this.isLoading = false;
+            this.play();
+          }
+        } else {
+          this.isPlaying = false;
+          this.isLoading = false;
+          this.pause();
+        }
       },
       play: function () {
         this.$refs.video.play();
