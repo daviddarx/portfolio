@@ -4,6 +4,16 @@
     class="media-video"
     v-bind:class="{'is-loading' : isLoading}"
   >
+    <div
+      v-if="this.autoplay==false"
+      class="media-video__play-button play-button"
+    >
+      <button
+        class="play-button__el"
+      >
+        <span class="play-button__icon">Play</span>
+      </button>
+    </div>
     <preloader class="media-video__preloader"></preloader>
     <video
       muted

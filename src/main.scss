@@ -212,6 +212,76 @@ body {
   font-size: calc(var(--s-text) * var(--s-text-title-font-compensated));
 }
 
+.play-button {
+  --s-dimensions: calc(var(--s-gutter) * 2);
+  --s-icon: 20%;
+  --c-bt-bg: var(--c-lines);
+  --c-bt-lines: var(--c-lines-inverted);
+
+  $root: #{&};
+
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  position: absolute;
+  cursor: pointer;
+
+  &__el {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    font-size: 0;
+    text-decoration: none;
+    width: var(--s-dimensions);
+    height: var(--s-dimensions);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: var(--s-lines) var(--c-bt-bg) solid;
+    border-radius: 100%;
+    background-color: var(--c-bt-bg);
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: var(--c-bt-lines);
+      border-radius: 100%;
+      transform: scale(0);
+      transition: transform var(--e-out) 0.35s;
+
+      #{$root}:hover & {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: var(--s-icon);
+    height: var(--s-icon);
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    border-top: var(--s-lines) var(--c-bt-lines) solid;
+    border-right: var(--s-lines) var(--c-bt-lines) solid;
+    transform: translate(-70%, -50%) rotate(45deg);
+    transition: border-color ease-out 0.25s;
+
+    #{$root}:hover & {
+      border-color: var(--c-bt-bg);
+    }
+  }
+
+  &:hover {
+    @include twerk-anime();
+  }
+}
+
 .close-button {
   --s-dims: 1.5em;
   --s-square: -0.4em;
