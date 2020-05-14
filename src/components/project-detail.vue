@@ -9,7 +9,9 @@
       <router-link
         class="close-button__link"
         to="/projects"
-      ></router-link>
+      >
+        <span class="close-button__icon"></span>
+      </router-link>
     </div>
 
     <div class="project__container">

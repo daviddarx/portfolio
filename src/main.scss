@@ -289,8 +289,8 @@ body {
 }
 
 .close-button {
-  --s-dims: 1.5em;
-  --s-square: -0.4em;
+  --s-dims: 2em;
+  --s-icon: 1.6em;
   --c-square: var(--c-text);
   --c-arrow: var(--c-lines);
 
@@ -301,14 +301,11 @@ body {
 
   &::before,
   &::after {
-    pointer-events: none;
     content: "";
     display: block;
     position: absolute;
-    top: var(--s-square);
-    right: var(--s-square);
-    bottom: var(--s-square);
-    left: var(--s-square);
+    width: 100%;
+    height: 100%;
     background-color: var(--c-square);
     transform: scaleY(0);
     transform-origin: top left;
@@ -323,30 +320,6 @@ body {
     &::before {
       transform-origin: bottom left;
       transform: scaleY(1);
-    }
-  }
-
-  &__link {
-    display: block;
-    position: relative;
-    width: var(--s-dims);
-    height: var(--s-dims);
-    transform: rotate(45deg);
-
-    &::after {
-      transform: rotate(90deg);
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      width: var(--s-dims);
-      height: var(--s-lines);
-      background-color: var(--c-arrow);
-      transition: background-color ease-out 0.25s;
     }
   }
 
@@ -365,6 +338,40 @@ body {
 
     &:hover {
       --c-arrow: black;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: absolute;
+    width: var(--s-dims);
+    height: var(--s-dims);
+  }
+
+  &__icon {
+    display: block;
+    position: relative;
+    pointer-events: none;
+    width: var(--s-icon);
+    height: var(--s-icon);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: var(--s-icon);
+      height: var(--s-lines);
+      background-color: var(--c-arrow);
+      transition: background-color ease-out 0.25s;
     }
   }
 }
