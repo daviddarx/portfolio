@@ -8,7 +8,7 @@
     <div class="project__close-button close-button animate-in animate-in__s3">
       <router-link
         class="close-button__link"
-        to="/"
+        to="/projects"
       ></router-link>
     </div>
 
