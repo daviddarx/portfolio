@@ -58,6 +58,12 @@ $breakpoints: (
   font-size: var(--s-text-small);
 }
 
+@mixin anti-aliased {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
 @mixin twerk-anime {
   animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 }
@@ -1294,6 +1300,8 @@ body {
   z-index: 100;
 
   &.is-inverted {
+    @include anti-aliased();
+
     color: var(--c-text-inverted);
   }
 
@@ -1519,6 +1527,8 @@ body {
 }
 
 .misc {
+  @include anti-aliased();
+
   position: relative;
   z-index: 100;
   background-color: black;
