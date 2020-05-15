@@ -1314,6 +1314,8 @@ body {
 
 .project {
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
   z-index: 100;
 
   &.is-inverted {
