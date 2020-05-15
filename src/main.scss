@@ -140,6 +140,7 @@ $breakpoints: (
   --s-line-height-lead: 1.55;
   --s-letter-spacing-readability: 0.025em;
   --s-gutter: 8vh;
+  --s-gutter-col: calc(var(--s-gutter) * 0.25);
   --s-logo: 6vh;
   --s-lines: 2px;
   --s-twerk: 0.5px;
@@ -753,6 +754,7 @@ body {
 .deco-image {
   --opacity: 1;
 
+  display: block;
   pointer-events: none;
   opacity: 0;
   transition: opacity ease-out 0.3s;
@@ -1337,14 +1339,33 @@ body {
 
   &__cols {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+
+    &--reversed {
+      flex-direction: row-reverse;
+    }
   }
 
   &__col-left,
   &__col-right {
+    position: relative;
     flex-basis: 50%;
     flex-shrink: 0;
     box-sizing: border-box;
+  }
+
+  &__col-left {
+    padding-right: var(--s-gutter-col);
+  }
+
+  &__col-right {
+    padding-left: var(--s-gutter-col);
+  }
+
+  &__col-full {
+    flex-basis: 100%;
+    flex-shrink: 0;
   }
 
   &__header {
@@ -1404,6 +1425,37 @@ body {
 
     .is-inverted & {
       letter-spacing: var(--s-letter-spacing-readability);
+    }
+  }
+
+  &__section {
+    --c-background: black;
+    --s-padding: calc(var(--s-gutter) * 2);
+    --s-side-margin: calc(var(--s-gutter) * -1);
+
+    background-color: var(--c-background);
+    position: relative;
+    margin-left: var(--s-side-margin);
+    margin-right: var(--s-side-margin);
+    padding: var(--s-padding);
+  }
+
+  &__pick-title {
+    @include label-small;
+  }
+
+  &__pick-desc {
+    @include text-indent();
+
+    font-size: var(--s-text-small);
+    padding-top: 1em;
+  }
+
+  &__thumb {
+    margin-top: calc(var(--s-gutter-col) * 2);
+
+    &:first-child {
+      margin-top: 0;
     }
   }
 
