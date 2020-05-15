@@ -1,6 +1,7 @@
 
 <template>
   <nav class="navigation">
+    <h2 class="visually-hidden">Navigation</h2>
     <div
       class="navigation__container"
       v-if="this.isDisplayed"
