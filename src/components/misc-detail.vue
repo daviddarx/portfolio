@@ -21,7 +21,7 @@
         >
         </h1>
         <p
-          class="misc__lead animate-in animate-in__s1 no-margin text-indent"
+          class="misc__lead animate-in animate-in__s1 no-margin"
           v-if="infos.lead"
           v-html="replaceDashes(infos.lead, true)"
         >

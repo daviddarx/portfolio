@@ -64,6 +64,15 @@ $breakpoints: (
   -o-font-smoothing: antialiased;
 }
 
+@mixin text-indent {
+  text-indent: 2em;
+}
+
+.text-indent {
+  @include text-indent();
+}
+
+
 @mixin twerk-anime {
   animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 }
@@ -560,10 +569,6 @@ body {
       transform-origin: top left;
     }
   }
-}
-
-.text-indent {
-  text-indent: 2em;
 }
 
 .zoom-icon {
@@ -1391,6 +1396,8 @@ body {
   }
 
   &__desc {
+    @include text-indent();
+
     font-size: var(--s-text-small);
     padding-top: 1.5em;
 
@@ -1577,6 +1584,8 @@ body {
   }
 
   &__lead {
+    @include text-indent();
+
     width: 50%;
     padding-top: 0.5em;
   }
