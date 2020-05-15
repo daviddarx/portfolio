@@ -120,7 +120,7 @@ $breakpoints: (
   --s-text-h2: calc(var(--s-text) * 3);
   --s-text-lead: calc(var(--s-text) * 1.5);
   --s-text-navigation: 1.8vh;
-  --s-line-height: 1.6;
+  --s-line-height: 1.7;
   --s-line-height-titles: 1;
   --s-line-height-titles-small: 1.2;
   --s-line-height-lead: 1.55;
@@ -471,7 +471,7 @@ body {
 }
 
 .dash {
-  --s-top: 0.675em;
+  --s-top: calc(var(--s-line-height) * 0.45em);
 
   color: rgba(0, 0, 0, 0);
   display: inline-block;
@@ -1506,6 +1506,10 @@ body {
 
     #{$root}:hover & {
       transform: translateY(calc(var(--s-translateHover) - 0.75em));
+    }
+
+    .dash {
+      --s-top: calc(var(--s-line-height) * 0.4em);
     }
   }
 
