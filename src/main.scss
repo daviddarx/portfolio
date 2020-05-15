@@ -1374,11 +1374,9 @@ body {
     padding-bottom: calc(var(--s-gutter) * 2)
   }
 
-  &__lead {
-  }
-
   &__desc {
     font-size: var(--s-text-small);
+    padding-top: 1.5em;
     letter-spacing: var(--s-letter-spacing-readability);
   }
 
