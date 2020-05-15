@@ -1368,8 +1368,9 @@ body {
     }
 
     &-desc {
-      font-size: var(--s-text-small);
       display: block;
+      font-size: var(--s-text-small);
+      letter-spacing: var(--s-letter-spacing-readability);
     }
   }
 
