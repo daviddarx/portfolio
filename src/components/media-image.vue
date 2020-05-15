@@ -116,7 +116,8 @@
         this.checkIfZoomable();
       },
       computeHD: function () {
-        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth) {
+        console.log(this.hdRatio);
+        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio) {
           const splittedURL = this.url.split('.');
           this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
           this.hdRatioReversed = 1 / this.hdRatio;
