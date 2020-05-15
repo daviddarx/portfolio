@@ -749,6 +749,7 @@ body {
 .deco-image {
   --opacity: 1;
 
+  pointer-events: none;
   opacity: 0;
   transition: opacity ease-out 0.3s;
 
