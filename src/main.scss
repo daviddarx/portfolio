@@ -746,6 +746,17 @@ body {
   }
 }
 
+.deco-image {
+  --opacity: 1;
+
+  opacity: 0;
+  transition: opacity ease-out 0.3s;
+
+  &.is-loaded {
+    opacity: var(--opacity);
+  }
+}
+
 .media-gif {
   --c-border: rgba(0, 0, 0, 0.1);
 
