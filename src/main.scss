@@ -1371,7 +1371,10 @@ body {
     &-desc {
       display: block;
       font-size: var(--s-text-small);
-      letter-spacing: var(--s-letter-spacing-readability);
+
+      .is-inverted & {
+        letter-spacing: var(--s-letter-spacing-readability);
+      }
     }
   }
 
@@ -1390,7 +1393,10 @@ body {
   &__desc {
     font-size: var(--s-text-small);
     padding-top: 1.5em;
-    letter-spacing: var(--s-letter-spacing-readability);
+
+    .is-inverted & {
+      letter-spacing: var(--s-letter-spacing-readability);
+    }
   }
 
   &__background {
