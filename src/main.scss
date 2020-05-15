@@ -1308,17 +1308,64 @@ body {
     right: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
   }
 
+  &__cols {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col-left,
+  &__col-right {
+    flex-basis: 50%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
   &__header {
+    display: table;
     padding: var(--s-gutter);
+    padding-bottom: 0;
   }
 
   &__title {
+    display: block;
     font-size: var(--s-text-h1);
+    padding-right: var(--s-gutter);
+    padding-top: calc(var(--s-gutter) * 2);
+    padding-bottom: calc(var(--s-gutter) - 0.2em);
+  }
+
+  &__metas {
+    display: table-header-group;
+  }
+
+  &__meta {
+    margin-bottom: 0;
+
+    &-title {
+      @include label-small;
+
+      display: block;
+    }
+
+    &-desc {
+      font-size: var(--s-text-small);
+      display: block;
+    }
+  }
+
+  &__skills {
+    flex-basis: 50%;
+    flex-shrink: 0;
+    box-sizing: border-box;
     padding-right: var(--s-gutter);
   }
 
+  &__content {
+    padding: var(--s-gutter);
+    padding-bottom: calc(var(--s-gutter) * 2)
+  }
+
   &__lead {
-    width: 50%;
   }
 
   &__background {

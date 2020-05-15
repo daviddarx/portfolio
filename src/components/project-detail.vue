@@ -16,21 +16,32 @@
 
     <div class="project__container">
       <div class="project__header">
-        <h1 class="project__title animate-in">
+        <h1 class="project__title animate-in animate-in__s1">
           {{this.title}}
         </h1>
-        <p class="project__date animate-in animate-in__s1">
-          {{this.year}}
-        </p>
-        <p class="project__type animate-in animate-in__s2">
-          {{this.type}}
-        </p>
-        <p class="project__lead animate-in animate-in__s3">
-          Vivamus aliquet, ex vitae pharetra ultrices, nulla nisi auctor dui, ut sollicitudin metus massa a orci. Vestibulum maximus tristique ultrices. Pellentesque blandit nibh dolor, quis volutpat nibh suscipit eu.
-        </p>
+        <div class="project__metas animate-in">
+          <div class="project__cols">
+            <p class="project__meta project__date">
+              <strong class="project__meta-title">Jahr </strong>
+              <span class="project__meta-desc">{{this.year}}</span>
+            </p>
+            <p class="project__meta project__agency">
+              <strong class="project__meta-title">Agentur </strong>
+              <span class="project__meta-desc">{{this.agency}}</span>
+            </p>
+            <p class="project__meta project__type">
+              <strong class="project__meta-title">Typ </strong>
+              <span class="project__meta-desc">{{this.type}}</span>
+            </p>
+            <p class="project__meta project__skills">
+              <strong class="project__meta-title">Leistungen </strong>
+              <span class="project__meta-desc">{{this.skills}}</span>
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="project__content">
+      <div class="project__content animate-in animate-in__s2">
         <slot></slot>
       </div>
     </div>
@@ -92,6 +103,8 @@
 
       this.title = projects.main[this.indexCurrent].title;
       this.year = projects.main[this.indexCurrent].year;
+      this.agency = projects.main[this.indexCurrent].agency;
+      this.skills = projects.main[this.indexCurrent].skills;
       this.type = projects.main[this.indexCurrent].type;
       this.color = projects.main[this.indexCurrent].colorCase;
       this.isInverted = projects.main[this.indexCurrent].inverted;
