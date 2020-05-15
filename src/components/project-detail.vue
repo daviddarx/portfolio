@@ -2,7 +2,7 @@
 <template>
   <div
     class="project"
-    v-bind:class="{ 'is-inverted': this.isInverted, 'is-displayed': this.isDisplayed }"
+    v-bind:class="{ 'is-inverted': this.isInverted, 'is-selection-inverted': this.isInverted, 'is-displayed': this.isDisplayed }"
     v-bind:style="{backgroundColor: this.color}"
   >
     <div class="project__close-button close-button animate-in animate-in__s3">
