@@ -81,6 +81,8 @@
         title: '',
         year: '',
         type: '',
+        agency: '',
+        skills: '',
         color: '',
         isInverted: false,
         isDisplayed: false,
