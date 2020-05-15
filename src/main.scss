@@ -130,6 +130,7 @@ $breakpoints: (
   --s-line-height-titles: 1;
   --s-line-height-titles-small: 1.2;
   --s-line-height-lead: 1.55;
+  --s-letter-spacing-readability: 0.025em;
   --s-gutter: 8vh;
   --s-logo: 6vh;
   --s-lines: 2px;
@@ -1374,6 +1375,11 @@ body {
   }
 
   &__lead {
+  }
+
+  &__desc {
+    font-size: var(--s-text-small);
+    letter-spacing: var(--s-letter-spacing-readability);
   }
 
   &__background {
