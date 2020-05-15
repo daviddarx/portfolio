@@ -1410,6 +1410,7 @@ body {
     flex-shrink: 0;
     box-sizing: border-box;
     padding-right: var(--s-gutter);
+    padding-left: var(--s-gutter-col);
   }
 
   &__content {
