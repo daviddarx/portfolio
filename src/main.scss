@@ -64,6 +64,16 @@ $breakpoints: (
   -o-font-smoothing: antialiased;
 }
 
+@mixin aliased {
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -o-font-smoothing: auto;
+}
+
+.aliased {
+  @include aliased();
+}
+
 @mixin text-indent {
   text-indent: 2em;
 }
