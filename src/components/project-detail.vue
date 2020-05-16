@@ -111,6 +111,8 @@
       this.color = projects.main[this.indexCurrent].colorCase;
       this.isInverted = projects.main[this.indexCurrent].inverted;
 
+      document.body.style.setProperty('--project-color', this.color);
+
       requestAnimationFrame(this.displayProject);
     },
     methods: {
