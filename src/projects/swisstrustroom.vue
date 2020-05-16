@@ -50,6 +50,7 @@
           </h2>
           <p class="project__pick-desc">
             SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe für die Bildwelt und das Funktionieren des One-Pagers bevorzugt.
+          </p>
         </div>
         <div class="thumbs-bw-01">
           <media-image
@@ -115,6 +116,7 @@
           </h2>
           <p class="project__pick-desc">
             Da ein Safe weder modern noch digital wirkt, wurde eine abstraktere und grafischere Variante entwickelt, um das Produkt als sicheren Raum in der Cloud zu präsentieren, in dem eine starke Identifizierung nötig ist.
+          </p>
         </div>
       </div>
       <div class="project__col-right">
@@ -133,6 +135,25 @@
         >
         </deco-image>
       </div>
+    </section>
+
+
+    <section class="project__section section-sc">
+        <div class="pick-sc aliased project__cols">
+          <h2 class="project__pick-title project__col-left">
+            One-Pager Animation
+          </h2>
+          <p class="project__pick-desc project__col-right pick-sc__desc">
+            Um die Erfahrung zu beleben und einen Überraschungseffekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+          </p>
+        </div>
+        <media-video
+          v-bind:url="this.mediasPath+this.mediaVideos[0].url"
+          v-bind:autoplay="this.mediaVideos[0].autoplay"
+          ref="video-sc"
+          class="video-sc"
+        >
+        </media-video>
     </section>
 
   </project>
@@ -204,6 +225,12 @@
             zoomable: true,
             zoomableGutter: true
           }
+        ],
+        mediaVideos: [
+          {
+            url: "designs/st_4.mp4",
+            autoplay: false,
+          }
         ]
       }
     },
@@ -246,7 +273,7 @@
       --s-decal-x: -5%;
 
       width: 200%;
-      margin-top: calc(var(--s-gutter) * -2);
+      margin-top: calc(var(--s-gutter) * -1);
       margin-left: -25%;
     }
   }
@@ -274,7 +301,6 @@
   }
 
   .section-bw {
-    padding-top: var(--s-gutter);
     padding-bottom: 0;
   }
 
@@ -287,14 +313,13 @@
   }
 
   .thumbs-bw-02 {
-    transform: translateY(calc(var(--s-gutter) * -2));
+    transform: translateY(calc(var(--s-gutter) * -3));
   }
 
   .section-lf {
     --c-background: transparent;
 
     margin-top: calc(var(--s-gutter) * 1);
-    padding-bottom: 0;
   }
 
   .pick-lf {
@@ -315,6 +340,44 @@
     max-width: 1116px;
     position: relative;
     margin: 0 auto;
+  }
+
+  .section-sc {
+    --c-background: white;
+
+    padding-bottom: 0;
+  }
+
+  .pick-sc {
+    color: black;
+
+    &__desc {
+      text-indent: 0;
+      padding-top: 0;
+      margin-top: -0.4em;
+      margin-bottom: calc(var(--s-gutter) * 1);
+    }
+  }
+
+  .video-sc {
+    position: relative;
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 100vw;
+      height: 50%;
+      background-color: var(--project-color);
+      bottom: 0;
+      left: calc(var(--s-padding) * -1);
+    }
+
+    video {
+      position: relative;
+      z-index: 1;
+    }
   }
 </style>
 
