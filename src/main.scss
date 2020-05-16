@@ -1449,6 +1449,7 @@ body {
     margin-left: var(--s-side-margin);
     margin-right: var(--s-side-margin);
     padding: var(--s-padding);
+    padding-top: calc(var(--s-padding) - 0.35em);
   }
 
   &__pick-title {
