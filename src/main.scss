@@ -279,6 +279,10 @@ body {
     border-radius: 100%;
     background-color: var(--c-bt-bg);
 
+    &:focus {
+      outline: none;
+    }
+
     &::before {
       content: "";
       position: absolute;
