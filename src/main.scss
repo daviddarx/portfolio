@@ -1464,6 +1464,7 @@ body {
 
     &::before {
       content: "";
+      z-index: -1;
       position: absolute;
       top: var(--s-bg-margin-top);
       bottom: var(--s-bg-margin-bottom);
