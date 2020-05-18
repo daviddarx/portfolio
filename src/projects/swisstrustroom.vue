@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <section class="project__section project__cols section-bw">
+    <section class="project__section project__section--padding-2x project__section--colored project__cols section-bw">
       <div class="project__col-left">
         <div class="pick-bw">
           <h2 class="project__pick-title">
@@ -109,7 +109,7 @@
       </div>
     </section>
 
-    <section class="project__section project__cols project__cols--reversed section-lf">
+    <section class="project__section project__section--padding-2x project__cols project__cols--reversed section-lf">
       <div class="project__col-left">
         <div class="pick-lf">
           <h2 class="project__pick-title">
@@ -138,9 +138,8 @@
       </div>
     </section>
 
-
-    <section class="project__section section-sc">
-        <div class="pick-sc aliased project__cols">
+    <section class="project__section project__section--padding-4x project__section--colored section-sc">
+        <div class="pick-sc aliased project__cols is-selection-normal">
           <h2 class="project__pick-title project__col-left">
             One-Pager Animation
           </h2>
@@ -155,6 +154,38 @@
           class="video-sc"
         >
         </media-video>
+    </section>
+
+    <section class="project__section project__section--padding-2x section-fd">
+        <h2 class="project__pick-title title-fd">
+          Finales Design
+        </h2>
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[4].url"
+          v-bind:title="this.mediaImages[4].title"
+          v-bind:hdRatio="this.mediaImages[4].hdRatio"
+          v-bind:zoomable="this.mediaImages[4].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[4].zoomableGutter"
+          ref="image-fd"
+          class="project__thumb"
+        >
+        </media-image>
+    </section>
+
+    <section class="project__section project__section--padding-2x section-fd">
+        <h2 class="project__pick-title title-fd">
+          Responsive Design
+        </h2>
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[4].url"
+          v-bind:title="this.mediaImages[4].title"
+          v-bind:hdRatio="this.mediaImages[4].hdRatio"
+          v-bind:zoomable="this.mediaImages[4].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[4].zoomableGutter"
+          ref="image-fd"
+          class="project__thumb"
+        >
+        </media-image>
     </section>
 
   </project>
@@ -225,6 +256,13 @@
             hdRatio: 2,
             zoomable: true,
             zoomableGutter: true
+          },
+          {
+            title: "Finales Design",
+            url: "designs/st_desktop.jpg",
+            hdRatio: 2,
+            zoomable: true,
+            zoomableGutter: false
           }
         ],
         mediaVideos: [
@@ -333,12 +371,9 @@
 
   .section-lf {
     --c-background: transparent;
-
-    // margin-top: calc(var(--s-gutter) * 1);
   }
 
   .pick-lf {
-    padding-left: var(--s-gutter);
     margin-bottom: calc(var(--s-gutter) * 10);
   }
 
@@ -346,7 +381,7 @@
     position: absolute;
     width: 130vw;
     max-width: 1728px;
-    margin-left: -64%;
+    margin-left: -70%;
     margin-top: calc(var(--s-gutter) * 1.5);
   }
 
@@ -361,6 +396,7 @@
     --c-background: white;
 
     padding-bottom: 0;
+    padding-top: calc(var(--s-gutter) * 2);
   }
 
   .pick-sc {
@@ -376,7 +412,6 @@
 
   .video-sc {
     position: relative;
-    outline: 1px solid rgba(0, 0, 0, 0.2);
 
     &::before {
       content: "";
@@ -392,7 +427,17 @@
     video {
       position: relative;
       z-index: 1;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
     }
+  }
+
+  .section-fd {
+    text-align: center;
+    margin-top: calc(var(--s-gutter) * 2);
+  }
+
+  .title-fd {
+    margin-bottom: calc(var(--s-gutter) * 1.35);
   }
 </style>
 
