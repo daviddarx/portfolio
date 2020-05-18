@@ -1451,7 +1451,7 @@ body {
 
   &__section {
     --c-background: black;
-    --s-padding: calc(var(--s-gutter) * 2);
+    --s-padding: var(--s-gutter);
     --s-side-margin: calc(var(--s-gutter) * -1);
     --s-bg-margin-top: 0;
     --s-bg-margin-bottom: 0;
@@ -1462,15 +1462,29 @@ body {
     padding: var(--s-padding);
     padding-top: calc(var(--s-padding) - 0.35em);
 
-    &::before {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      top: var(--s-bg-margin-top);
-      bottom: var(--s-bg-margin-bottom);
-      right: 0;
-      left: 0;
-      background-color: var(--c-background);
+    &--padding-2x {
+      --s-padding: calc(var(--s-gutter) * 2);
+    }
+
+    &--padding-3x {
+      --s-padding: calc(var(--s-gutter) * 3);
+    }
+
+    &--padding-4x {
+      --s-padding: calc(var(--s-gutter) * 4);
+    }
+
+    &--colored {
+      &::before {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: var(--s-bg-margin-top);
+        bottom: var(--s-bg-margin-bottom);
+        right: 0;
+        left: 0;
+        background-color: var(--c-background);
+      }
     }
   }
 
