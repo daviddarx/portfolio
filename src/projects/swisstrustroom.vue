@@ -42,7 +42,6 @@
     </div>
 
     <section class="project__section project__cols section-bw">
-
       <div class="project__col-left">
         <div class="pick-bw">
           <h2 class="project__pick-title">
@@ -52,59 +51,61 @@
             SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe für die Bildwelt und das Funktionieren des One-Pagers bevorzugt.
           </p>
         </div>
-        <div class="thumbs-bw-01">
-          <media-image
-            v-bind:url="this.mediasPath+this.mediaImages[1].url"
-            v-bind:title="this.mediaImages[0].title"
-            v-bind:hdRatio="this.mediaImages[0].hdRatio"
-            v-bind:zoomable="this.mediaImages[0].zoomable"
-            v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
-            ref="image-bw-01"
-            class="project__thumb"
-          >
-          </media-image>
-          <media-image
-            v-bind:url="this.mediasPath+this.mediaImages[2].url"
-            v-bind:title="this.mediaImages[0].title"
-            v-bind:hdRatio="this.mediaImages[0].hdRatio"
-            v-bind:zoomable="this.mediaImages[0].zoomable"
-            v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
-            ref="image-bw-02"
-            class="project__thumb"
-          >
-          </media-image>
-        </div>
       </div>
 
       <div class="project__col-right">
-        <div class="thumbs-bw-02">
-          <media-image
-            v-bind:url="this.mediasPath+this.mediaImages[0].url"
-            v-bind:title="this.mediaImages[0].title"
-            v-bind:hdRatio="this.mediaImages[0].hdRatio"
-            v-bind:zoomable="this.mediaImages[0].zoomable"
-            v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
-            ref="image-bw-03"
-            class="project__thumb"
-          >
-          </media-image>
-          <media-image
-            v-bind:url="this.mediasPath+this.mediaImages[3].url"
-            v-bind:title="this.mediaImages[0].title"
-            v-bind:hdRatio="this.mediaImages[0].hdRatio"
-            v-bind:zoomable="this.mediaImages[0].zoomable"
-            v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
-            ref="image-bw-04"
-            class="project__thumb"
-          >
-          </media-image>
-          <deco-image
-            v-bind:url="this.mediasPath+this.decoImages[0].url"
-            v-bind:hdRatio="this.decoImages[0].hdRatio"
-            class="deco-cloud deco-cloud--3"
-          >
-          </deco-image>
-        </div>
+      </div>
+
+      <div class="project__col-left project__col-left--inverted thumbs-bw-01">
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[0].url"
+          v-bind:title="this.mediaImages[0].title"
+          v-bind:hdRatio="this.mediaImages[0].hdRatio"
+          v-bind:zoomable="this.mediaImages[0].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
+          ref="image-bw-01"
+          class="project__thumb"
+        >
+        </media-image>
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[1].url"
+          v-bind:title="this.mediaImages[1].title"
+          v-bind:hdRatio="this.mediaImages[1].hdRatio"
+          v-bind:zoomable="this.mediaImages[1].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[1].zoomableGutter"
+          ref="image-bw-02"
+          class="project__thumb"
+        >
+        </media-image>
+      </div>
+
+      <div class="project__col-right project__col-right--inverted thumbs-bw-02">
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[2].url"
+          v-bind:title="this.mediaImages[2].title"
+          v-bind:hdRatio="this.mediaImages[2].hdRatio"
+          v-bind:zoomable="this.mediaImages[2].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[2].zoomableGutter"
+          ref="image-bw-03"
+          class="project__thumb"
+        >
+        </media-image>
+        <media-image
+          v-bind:url="this.mediasPath+this.mediaImages[3].url"
+          v-bind:title="this.mediaImages[3].title"
+          v-bind:hdRatio="this.mediaImages[3].hdRatio"
+          v-bind:zoomable="this.mediaImages[3].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[3].zoomableGutter"
+          ref="image-bw-04"
+          class="project__thumb"
+        >
+        </media-image>
+        <deco-image
+          v-bind:url="this.mediasPath+this.decoImages[0].url"
+          v-bind:hdRatio="this.decoImages[0].hdRatio"
+          class="deco-cloud deco-cloud--3"
+        >
+        </deco-image>
       </div>
     </section>
 
@@ -273,8 +274,8 @@
       --s-decal-x: -5%;
 
       width: 200%;
-      margin-top: calc(var(--s-gutter) * -1);
-      margin-left: -25%;
+      bottom: -20%;
+      left: 0%;
     }
   }
 
@@ -301,25 +302,39 @@
   }
 
   .section-bw {
+    --s-bg-margin-bottom: calc(var(--s-gutter) * 2);
+
     padding-bottom: 0;
   }
 
   .pick-bw {
     padding-right: var(--s-gutter);
+    padding-bottom: calc(var(--s-gutter) * 1.25);
+  }
+
+  .thumbs-bw-01,
+  .thumbs-bw-02 {
+    .project__thumb {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .thumbs-bw-01 {
-    transform: translateY(var(--s-gutter));
+    order: 3;
+
+    .project__thumb {
+      transform: translateY(calc(-100% - var(--s-gutter-col) * 2));
+    }
   }
 
   .thumbs-bw-02 {
-    transform: translateY(calc(var(--s-gutter) * -3));
+    order: 2;
   }
 
   .section-lf {
     --c-background: transparent;
 
-    margin-top: calc(var(--s-gutter) * 1);
+    // margin-top: calc(var(--s-gutter) * 1);
   }
 
   .pick-lf {
