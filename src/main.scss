@@ -1367,10 +1367,20 @@ body {
 
   &__col-left {
     padding-right: var(--s-gutter-col);
+
+    &--inverted {
+      padding-right: 0;
+      padding-left: var(--s-gutter-col);
+    }
   }
 
   &__col-right {
     padding-left: var(--s-gutter-col);
+
+    &--inverted {
+      padding-left: 0;
+      padding-right: var(--s-gutter-col);
+    }
   }
 
   &__col-full {
@@ -1443,13 +1453,24 @@ body {
     --c-background: black;
     --s-padding: calc(var(--s-gutter) * 2);
     --s-side-margin: calc(var(--s-gutter) * -1);
+    --s-bg-margin-top: 0;
+    --s-bg-margin-bottom: 0;
 
-    background-color: var(--c-background);
     position: relative;
     margin-left: var(--s-side-margin);
     margin-right: var(--s-side-margin);
     padding: var(--s-padding);
     padding-top: calc(var(--s-padding) - 0.35em);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--s-bg-margin-top);
+      bottom: var(--s-bg-margin-bottom);
+      right: 0;
+      left: 0;
+      background-color: var(--c-background);
+    }
   }
 
   &__pick-title {
