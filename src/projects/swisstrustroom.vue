@@ -60,7 +60,6 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
-          v-bind:zoomableGutter="false"
           ref="image-bw-01"
           class="project__thumb"
         >
@@ -70,7 +69,6 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
-          v-bind:zoomableGutter="false"
           ref="image-bw-02"
           class="project__thumb"
         >
@@ -83,7 +81,6 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
-          v-bind:zoomableGutter="false"
           ref="image-bw-03"
           class="project__thumb"
         >
@@ -93,7 +90,6 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
-          v-bind:zoomableGutter="false"
           ref="image-bw-04"
           class="project__thumb"
         >
@@ -158,13 +154,35 @@
         Finales Design
       </h2>
       <media-image
-        v-bind:url="this.mediasPath+'designs/st_desktop.jpg'"
+        v-bind:url="this.mediasPath+'designs/st_desktop_01.jpg'"
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
-        v-bind:zoomableGutter="false"
         ref="image-fd"
-        class="project__thumb"
+      >
+      </media-image>
+      <media-image
+        v-bind:url="this.mediasPath+'designs/st_desktop_02.jpg'"
+        v-bind:title="'Finales Design'"
+        v-bind:hdRatio="2"
+        v-bind:zoomable="true"
+        ref="image-fd"
+      >
+      </media-image>
+      <media-image
+        v-bind:url="this.mediasPath+'designs/st_desktop_03.jpg'"
+        v-bind:title="'Finales Design'"
+        v-bind:hdRatio="2"
+        v-bind:zoomable="true"
+        ref="image-fd"
+      >
+      </media-image>
+      <media-image
+        v-bind:url="this.mediasPath+'designs/st_desktop_04.jpg'"
+        v-bind:title="'Finales Design'"
+        v-bind:hdRatio="2"
+        v-bind:zoomable="true"
+        ref="image-fd"
       >
       </media-image>
     </section>
