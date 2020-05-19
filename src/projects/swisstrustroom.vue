@@ -234,28 +234,28 @@
             url: "designs/st_l&f_01.jpg",
             hdRatio: 2,
             zoomable: true,
-            zoomableGutter: true
+            zoomableGutter: false
           },
           {
             title: "Look&Feel Untersuchung",
             url: "designs/st_l&f_02.jpg",
             hdRatio: 2,
             zoomable: true,
-            zoomableGutter: true
+            zoomableGutter: false
           },
           {
             title: "Look&Feel Untersuchung",
             url: "designs/st_l&f_03.jpg",
             hdRatio: 2,
             zoomable: true,
-            zoomableGutter: true
+            zoomableGutter: false
           },
           {
             title: "Look&Feel Untersuchung",
             url: "designs/st_l&f_04.jpg",
             hdRatio: 2,
             zoomable: true,
-            zoomableGutter: true
+            zoomableGutter: false
           },
           {
             title: "Finales Design",
