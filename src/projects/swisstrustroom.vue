@@ -337,7 +337,7 @@
     position: absolute;
     width: 190%;
     max-width: 1218px;
-    margin-left: -59%;
+    margin-left: -45%;
     margin-top: calc(var(--s-gutter) * 1.1);
   }
 
@@ -396,6 +396,7 @@
     max-width: 1116px;
     position: relative;
     margin: 0 auto;
+    margin-top: calc(var(--s-gutter) * 0.5);
   }
 
   .section-sc {
