@@ -58,21 +58,21 @@
 
       <div class="project__col-left project__col-left--inverted thumbs-bw-01">
         <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[0].url"
-          v-bind:title="this.mediaImages[0].title"
-          v-bind:hdRatio="this.mediaImages[0].hdRatio"
-          v-bind:zoomable="this.mediaImages[0].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[0].zoomableGutter"
+          v-bind:url="this.mediasPath+this.mediaImages[0][0].url"
+          v-bind:title="this.mediaImages[0][0].title"
+          v-bind:hdRatio="this.mediaImages[0][0].hdRatio"
+          v-bind:zoomable="this.mediaImages[0][0].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[0][0].zoomableGutter"
           ref="image-bw-01"
           class="project__thumb"
         >
         </media-image>
         <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[1].url"
-          v-bind:title="this.mediaImages[1].title"
-          v-bind:hdRatio="this.mediaImages[1].hdRatio"
-          v-bind:zoomable="this.mediaImages[1].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[1].zoomableGutter"
+          v-bind:url="this.mediasPath+this.mediaImages[0][1].url"
+          v-bind:title="this.mediaImages[0][1].title"
+          v-bind:hdRatio="this.mediaImages[0][1].hdRatio"
+          v-bind:zoomable="this.mediaImages[0][1].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[0][1].zoomableGutter"
           ref="image-bw-02"
           class="project__thumb"
         >
@@ -81,21 +81,21 @@
 
       <div class="project__col-right project__col-right--inverted thumbs-bw-02">
         <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[2].url"
-          v-bind:title="this.mediaImages[2].title"
-          v-bind:hdRatio="this.mediaImages[2].hdRatio"
-          v-bind:zoomable="this.mediaImages[2].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[2].zoomableGutter"
+          v-bind:url="this.mediasPath+this.mediaImages[0][2].url"
+          v-bind:title="this.mediaImages[0][2].title"
+          v-bind:hdRatio="this.mediaImages[0][2].hdRatio"
+          v-bind:zoomable="this.mediaImages[0][2].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[0][2].zoomableGutter"
           ref="image-bw-03"
           class="project__thumb"
         >
         </media-image>
         <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[3].url"
-          v-bind:title="this.mediaImages[3].title"
-          v-bind:hdRatio="this.mediaImages[3].hdRatio"
-          v-bind:zoomable="this.mediaImages[3].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[3].zoomableGutter"
+          v-bind:url="this.mediasPath+this.mediaImages[0][3].url"
+          v-bind:title="this.mediaImages[0][3].title"
+          v-bind:hdRatio="this.mediaImages[0][3].hdRatio"
+          v-bind:zoomable="this.mediaImages[0][3].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[0][3].zoomableGutter"
           ref="image-bw-04"
           class="project__thumb"
         >
@@ -161,31 +161,21 @@
           Finales Design
         </h2>
         <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[4].url"
-          v-bind:title="this.mediaImages[4].title"
-          v-bind:hdRatio="this.mediaImages[4].hdRatio"
-          v-bind:zoomable="this.mediaImages[4].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[4].zoomableGutter"
+          v-bind:url="this.mediasPath+this.mediaImages[1][0].url"
+          v-bind:title="this.mediaImages[1][0].title"
+          v-bind:hdRatio="this.mediaImages[1][0].hdRatio"
+          v-bind:zoomable="this.mediaImages[1][0].zoomable"
+          v-bind:zoomableGutter="this.mediaImages[1][0].zoomableGutter"
           ref="image-fd"
           class="project__thumb"
         >
         </media-image>
     </section>
 
-    <section class="project__section project__section--padding-2x section-fd">
-        <h2 class="project__pick-title title-fd">
+    <section class="project__section project__section--padding-2x section-rd">
+        <h2 class="project__pick-title title-rd">
           Responsive Design
         </h2>
-        <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[4].url"
-          v-bind:title="this.mediaImages[4].title"
-          v-bind:hdRatio="this.mediaImages[4].hdRatio"
-          v-bind:zoomable="this.mediaImages[4].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[4].zoomableGutter"
-          ref="image-fd"
-          class="project__thumb"
-        >
-        </media-image>
     </section>
 
   </project>
@@ -229,41 +219,45 @@
           }
         ],
         mediaImages: [
-          {
-            title: "Look&Feel Untersuchung",
-            url: "designs/st_l&f_01.jpg",
-            hdRatio: 2,
-            zoomable: true,
-            zoomableGutter: false
-          },
-          {
-            title: "Look&Feel Untersuchung",
-            url: "designs/st_l&f_02.jpg",
-            hdRatio: 2,
-            zoomable: true,
-            zoomableGutter: false
-          },
-          {
-            title: "Look&Feel Untersuchung",
-            url: "designs/st_l&f_03.jpg",
-            hdRatio: 2,
-            zoomable: true,
-            zoomableGutter: false
-          },
-          {
-            title: "Look&Feel Untersuchung",
-            url: "designs/st_l&f_04.jpg",
-            hdRatio: 2,
-            zoomable: true,
-            zoomableGutter: false
-          },
-          {
-            title: "Finales Design",
-            url: "designs/st_desktop.jpg",
-            hdRatio: 2,
-            zoomable: true,
-            zoomableGutter: false
-          }
+          [
+            {
+              title: "Look&Feel Untersuchung",
+              url: "designs/st_l&f_01.jpg",
+              hdRatio: 2,
+              zoomable: true,
+              zoomableGutter: false
+            },
+            {
+              title: "Look&Feel Untersuchung",
+              url: "designs/st_l&f_02.jpg",
+              hdRatio: 2,
+              zoomable: true,
+              zoomableGutter: false
+            },
+            {
+              title: "Look&Feel Untersuchung",
+              url: "designs/st_l&f_03.jpg",
+              hdRatio: 2,
+              zoomable: true,
+              zoomableGutter: false
+            },
+            {
+              title: "Look&Feel Untersuchung",
+              url: "designs/st_l&f_04.jpg",
+              hdRatio: 2,
+              zoomable: true,
+              zoomableGutter: false
+            }
+          ],
+          [
+            {
+              title: "Finales Design",
+              url: "designs/st_desktop.jpg",
+              hdRatio: 2,
+              zoomable: true,
+              zoomableGutter: false
+            }
+          ]
         ],
         mediaVideos: [
           {
