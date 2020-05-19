@@ -1523,10 +1523,6 @@ body {
 
   &__thumb {
     margin-top: calc(var(--s-gutter-col) * 2);
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   &__background {
