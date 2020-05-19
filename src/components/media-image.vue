@@ -162,15 +162,6 @@
         }
       },
       createZoomIcon: function () {
-        let zoomIconEl = document.createElement('div');
-            zoomIconEl.classList.add('zoom-icon__el');
-
-        this.$refs.zoomIcon = document.createElement('div');
-        this.$refs.zoomIcon.classList.add('zoom-icon');
-        this.$refs.zoomIcon.classList.add('media-image__zoom-icon');
-        this.$refs.zoomIcon.appendChild(zoomIconEl);
-        this.$refs.container.appendChild(this.$refs.zoomIcon);
-
         if (!window.zoomIcon) { //only one media-image manage the global zoom icon on window
           window.zoomIcon = document.createElement('div');
           window.zoomIcon.classList.add('zoom-icon');
