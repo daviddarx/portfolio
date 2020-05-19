@@ -866,6 +866,16 @@ body {
     cursor: pointer;
   }
 
+  &.is-inline {
+    display: inline-block;
+    min-width: calc(var(--s-gutter) + var(--s-preloader));
+    font-size: 0;
+
+    &.is-loaded {
+      min-width: auto;
+    }
+  }
+
   &__el {
     position: absolute;
     display: block;

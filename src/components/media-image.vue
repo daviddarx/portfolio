@@ -2,7 +2,7 @@
 <template>
   <div
     class="media-image"
-    v-bind:class="{'is-loaded' : isLoaded, 'is-zoomable': isZoomable, 'is-zoomed': isZoomed}"
+    v-bind:class="{'is-loaded' : isLoaded, 'is-zoomable': isZoomable, 'is-zoomed': isZoomed, 'is-inline': isInline}"
     ref="container"
   >
     <preloader class="media-image__preloader"></preloader>
@@ -30,7 +30,11 @@
       title: String,
       hdRatio: Number,
       zoomable: Boolean,
-      zoomableGutter: Boolean
+      zoomableGutter: Boolean,
+      isInline: {
+        type: Boolean,
+        default: false
+      }
     },
     data: function () {
       return {
