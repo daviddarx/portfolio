@@ -28,9 +28,18 @@
     props: {
       url: String,
       title: String,
-      hdRatio: Number,
-      zoomable: Boolean,
-      zoomableGutter: Boolean
+      hdRatio: {
+        type: Number,
+        default: 1
+      },
+      zoomable: {
+        type: Boolean,
+        default: false
+      },
+      zoomableGutter: {
+        type: Boolean,
+        default: false
+      }
     },
     data: function () {
       return {
