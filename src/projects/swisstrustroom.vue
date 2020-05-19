@@ -197,6 +197,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_01.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-01"
           >
           </media-image>
@@ -206,6 +207,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_02.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-02"
           >
           </media-image>
@@ -215,6 +217,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_03.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-03"
           >
           </media-image>
@@ -224,6 +227,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_04.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-04"
           >
           </media-image>
@@ -233,6 +237,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_05.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-05"
           >
           </media-image>
@@ -242,6 +247,7 @@
             v-bind:url="this.mediasPath+'designs/st_mobile_06.jpg'"
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
+            v-bind:hdMinViewportWidth="320"
             ref="image-rd-06"
           >
           </media-image>
