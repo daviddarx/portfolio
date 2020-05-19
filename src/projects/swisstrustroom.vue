@@ -139,43 +139,43 @@
     </section>
 
     <section class="project__section project__section--padding-4x project__section--colored section-sc">
-        <div class="pick-sc aliased project__cols is-selection-normal">
-          <h2 class="project__pick-title project__col-left">
-            One-Pager Animation
-          </h2>
-          <p class="project__pick-desc project__col-right pick-sc__desc">
-            Um die Erfahrung zu beleben und einen Überraschungseffekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
-          </p>
-        </div>
-        <media-video
-          v-bind:url="this.mediasPath+this.mediaVideos[0].url"
-          v-bind:autoplay="this.mediaVideos[0].autoplay"
-          ref="video-sc"
-          class="video-sc"
-        >
-        </media-video>
+      <div class="pick-sc aliased project__cols is-selection-normal">
+        <h2 class="project__pick-title project__col-left">
+          One-Pager Animation
+        </h2>
+        <p class="project__pick-desc project__col-right pick-sc__desc">
+          Um die Erfahrung zu beleben und einen Überraschungseffekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+        </p>
+      </div>
+      <media-video
+        v-bind:url="this.mediasPath+this.mediaVideos[0].url"
+        v-bind:autoplay="this.mediaVideos[0].autoplay"
+        ref="video-sc"
+        class="video-sc"
+      >
+      </media-video>
     </section>
 
     <section class="project__section project__section--padding-2x section-fd">
-        <h2 class="project__pick-title title-fd">
-          Finales Design
-        </h2>
-        <media-image
-          v-bind:url="this.mediasPath+this.mediaImages[1][0].url"
-          v-bind:title="this.mediaImages[1][0].title"
-          v-bind:hdRatio="this.mediaImages[1][0].hdRatio"
-          v-bind:zoomable="this.mediaImages[1][0].zoomable"
-          v-bind:zoomableGutter="this.mediaImages[1][0].zoomableGutter"
-          ref="image-fd"
-          class="project__thumb"
-        >
-        </media-image>
+      <h2 class="project__pick-title title-fd">
+        Finales Design
+      </h2>
+      <media-image
+        v-bind:url="this.mediasPath+this.mediaImages[1][0].url"
+        v-bind:title="this.mediaImages[1][0].title"
+        v-bind:hdRatio="this.mediaImages[1][0].hdRatio"
+        v-bind:zoomable="this.mediaImages[1][0].zoomable"
+        v-bind:zoomableGutter="this.mediaImages[1][0].zoomableGutter"
+        ref="image-fd"
+        class="project__thumb"
+      >
+      </media-image>
     </section>
 
     <section class="project__section project__section--padding-2x section-rd">
-        <h2 class="project__pick-title title-rd">
-          Responsive Design
-        </h2>
+      <h2 class="project__pick-title title-rd">
+        Responsive Design
+      </h2>
     </section>
 
   </project>
