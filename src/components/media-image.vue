@@ -32,6 +32,10 @@
         type: Number,
         default: 1
       },
+      hdMinViewportWidth: {
+        type: Number,
+        default: 768
+      },
       zoomable: {
         type: Boolean,
         default: false
@@ -45,7 +49,6 @@
       return {
         finalURL: undefined,
         hdRatioReversed: undefined,
-        hdMinViewportWidth: 768,
         imageRect: undefined,
         imageNaturalWidthComputed: undefined,
         imageNaturalHeightComputed: undefined,
@@ -124,7 +127,7 @@
         this.checkIfZoomable();
       },
       computeHD: function () {
-        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio) {
+        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio > 1) {
           const splittedURL = this.url.split('.');
           this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
           this.hdRatioReversed = 1 / this.hdRatio;
