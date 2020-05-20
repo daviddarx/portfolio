@@ -485,7 +485,12 @@
     }
 
     .media-image {
+      min-width: 320px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 15px 10px rgba(0, 0, 0, 0.15);
+
+      &.is-loaded {
+        min-width: 0;
+      }
     }
 
     &--01,
