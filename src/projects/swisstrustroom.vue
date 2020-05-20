@@ -192,6 +192,8 @@
         Responsive Design
       </h2>
       <div class="thumbs-rd project__cols">
+        <div class="thumbs-rd__break thumbs-rd__break--01"></div>
+        <div class="thumbs-rd__break thumbs-rd__break--02"></div>
         <div class="project__thumb thumb-rd thumb-rd--01">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_01.jpg'"
@@ -440,11 +442,84 @@
 
   .section-fd {
     text-align: center;
-    margin-top: calc(var(--s-gutter) * 2);
+    margin-top: calc(var(--s-gutter) * 0.8);
+    padding-bottom: 0;
   }
 
   .title-fd {
-    margin-bottom: calc(var(--s-gutter) * 1.35);
+    margin-bottom: calc(var(--s-gutter) * 1.15);
+  }
+
+  .section-rd {
+    text-align: center;
+    margin-top: calc(var(--s-gutter) * 0.8);
+  }
+
+  .title-rd {
+    margin-bottom: calc(var(--s-gutter) * 0.75);
+  }
+
+  .thumbs-rd {
+    &__break {
+      width: 100%;
+      height: 0;
+
+      &--01 {
+        background-color: violet;
+        order: 1;
+      }
+
+      &--02 {
+        display: none;
+      }
+    }
+  }
+
+  .thumb-rd {
+    --s-gutter-col-mid: calc(var(--s-gutter-col) * 4);
+
+    .media-image,
+    .media-image__el {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .media-image {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 15px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    &--01,
+    &--03,
+    &--04,
+    &--06 {
+      flex-grow: 1;
+    }
+
+    &--01,
+    &--04 {
+      .media-image {
+        margin: 0 0 0 auto;
+      }
+    }
+
+    &--02,
+    &--05 {
+      margin-left: var(--s-gutter-col-mid);
+      margin-right: var(--s-gutter-col-mid);
+      transform: translateY(var(--s-gutter-col-mid));
+    }
+
+    &--03,
+    &--06 {
+      transform: translateY(calc(var(--s-gutter-col-mid) * 2));
+    }
+
+    &--04,
+    &--05,
+    &--06 {
+      order: 2;
+      margin-top: var(--s-gutter-col-mid);
+    }
   }
 </style>
 
