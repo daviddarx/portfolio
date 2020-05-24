@@ -61,8 +61,6 @@
         scrollDebounced: undefined,
         moveDebounced: undefined,
         moveDebouncedZoomIcon: undefined,
-        windowW: 0,
-        windowH: 0,
         windowGutter: 0,
         isLoaded: false,
         isZoomed: false,
@@ -137,7 +135,7 @@
         this.checkIfZoomable();
       },
       computeHD: function () {
-        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio > 1) {
+        if (window.devicePixelRatio > 1 && window.windowW > this.hdMinViewportWidth && this.hdRatio > 1) {
           const splittedURL = this.url.split('.');
           this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
           this.hdRatioReversed = 1 / this.hdRatio;
@@ -166,7 +164,7 @@
         }
       },
       checkIfZoomedImageTooWide: function () {
-        if (this.windowW < this.imageNaturalWidthComputed + this.windowGutter * 2) {
+        if (window.windowW < this.imageNaturalWidthComputed + this.windowGutter * 2) {
           this.isZoomedImageTooWide = true;
         } else {
           this.isZoomedImageTooWide = false;
@@ -220,12 +218,12 @@
       },
       startZoomIconMouseMoveAnimation: function () {
         window.zoomIconPosition = {
-          x: this.windowW * 0.5,
-          y: this.windowH * 0.5,
+          x: window.windowW * 0.5,
+          y: window.windowH * 0.5,
         };
         window.zoomIconPositionTarget = {
-           x: this.windowW * 0.5,
-          y: this.windowH * 0.5,
+           x: window.windowW * 0.5,
+          y: window.windowH * 0.5,
         };
         this.isZoomIconListeningMouseMove = true;
         this.moveDebouncedZoomIcon = debounce(this.zoomIconMouseMoveListener, 1);
@@ -280,8 +278,8 @@
         this.zoomedImageAnimationOutDuration = parseFloat(getComputedStyle(this.$refs.zoomedImage).getPropertyValue('--d-zooming').split('s')[0]) * 1000;
       },
       setZoomedImage: function () {
-        if (this.imageNaturalWidthComputed / this.windowW > this.zoomMaxWidthRatioToWindowW) {
-          const maxWidth = this.windowW * this.zoomMaxWidthRatioToWindowW;
+        if (this.imageNaturalWidthComputed / window.windowW > this.zoomMaxWidthRatioToWindowW) {
+          const maxWidth = window.windowW * this.zoomMaxWidthRatioToWindowW;
           this.scaleZoomed = maxWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
         } else {
           this.scaleZoomed = 1 * this.hdRatioReversed;
@@ -326,7 +324,7 @@
       },
       calculateZoomedImagePositionSides: function () {
         this.zoomedImagePositionLeftSide = this.windowGutter + (this.$refs.image.naturalWidth - this.$refs.image.naturalWidth * this.scaleZoomed) * -0.5;
-        this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.$refs.image.naturalWidth * this.scaleZoomed - this.windowW) - this.windowGutter * 2;
+        this.zoomedImagePositionRightSide = this.zoomedImagePositionLeftSide - (this.$refs.image.naturalWidth * this.scaleZoomed - window.windowW) - this.windowGutter * 2;
 
         if (this.isMouseMoveVertical == true) {
           if (this.hdRatioReversed == 1){
@@ -340,13 +338,13 @@
       setZoomedImagePositionOnMouseMove: function (mouseX, mouseY) {
         if (this.isMouseMoveHorizontal == true) {
           if (this.isZoomedImageTooWide == true) {
-            this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/this.windowW, 0, 1, this.zoomedImagePositionLeftSide, this.zoomedImagePositionRightSide);
+            this.zoomedImagePositionTarget.x = this.mapZoomedImagePositionToMouse( mouseX/window.windowW, 0, 1, this.zoomedImagePositionLeftSide, this.zoomedImagePositionRightSide);
           } else {
-            this.zoomedImagePositionTarget.x = (this.windowW - this.$refs.image.naturalWidth) * 0.5;
+            this.zoomedImagePositionTarget.x = (window.windowW - this.$refs.image.naturalWidth) * 0.5;
           }
         }
         if (this.isMouseMoveVertical == true) {
-          this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/this.windowH, 0, 1, this.zoomedImagePositionTopSide, this.zoomedImagePositionBottomSide);
+          this.zoomedImagePositionTarget.y = this.mapZoomedImagePositionToMouse( mouseY/window.windowH, 0, 1, this.zoomedImagePositionTopSide, this.zoomedImagePositionBottomSide);
         }
       },
       animateZoomedImage: function () {
@@ -485,10 +483,10 @@
         const scrollDirection = (this.scrollTop > this.scrollTopLast) ? 0 : 1;
         this.imageRect = this.$refs.zoomedImage.getBoundingClientRect();
 
-        if (scrollDirection == 1 && this.imageRect.top > this.windowH * this.zoomedImageScrollRatioToDezoom) {
+        if (scrollDirection == 1 && this.imageRect.top > window.windowH * this.zoomedImageScrollRatioToDezoom) {
           this.dezoomImage();
           this.deactiveZoomIcon();
-        } else if (scrollDirection == 0 && (this.imageRect.bottom - this.windowH) * -1 > this.windowH * this.zoomedImageScrollRatioToDezoom) {
+        } else if (scrollDirection == 0 && (this.imageRect.bottom - window.windowH) * -1 > window.windowH * this.zoomedImageScrollRatioToDezoom) {
           this.dezoomImage();
           this.deactiveZoomIcon();
         }
@@ -517,8 +515,8 @@
         }
       },
       getWindowSize: function () {
-        this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        this.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        window.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        window.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       },
       setImageWindowGutter: function () {
         if (this.zoomableGutter) {
@@ -530,9 +528,9 @@
         let gutter;
 
         if (windowGutterCSS.split('vw').length > 1) {
-          gutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * this.windowW;
+          gutter = parseFloat(windowGutterCSS.split('vw')[0])/100 * window.windowW;
         } else {
-          gutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * this.windowH;
+          gutter = parseFloat(windowGutterCSS.split('vh')[0])/100 * window.windowH;
         }
 
         return gutter;
