@@ -137,7 +137,7 @@
           One-Pager Animation
         </h2>
         <p class="project__pick-desc project__col-right pick-sc__desc">
-          Um die Erfahrung zu beleben und einen Überraschungseffekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+          Um die Erfahrung zu beleben und einen Überraschungs&shy;effekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
         </p>
       </div>
       <media-video
