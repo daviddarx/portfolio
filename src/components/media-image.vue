@@ -378,6 +378,7 @@
         }
       },
       animateZoomedImageOutComplete: function () {
+        this.$refs.zoomedImage.removeEventListener('mouseleave', this.imageLeaveListener);
         clearInterval(this.zoomedImageAnimationOutInterval);
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
       },
@@ -438,6 +439,9 @@
       },
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
+          if (window.isTouch == false) {
+            this.$refs.zoomedImage.addEventListener('mouseleave', this.imageLeaveListener);
+          }
           this.$refs.zoomedImage.classList.remove('is-active');
 
           window.zoomedImageBackground.classList.remove('is-active');
