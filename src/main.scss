@@ -29,7 +29,9 @@ $breakpoints: (
   'tablet': 'max-width: 1024px',
   'phone': 'max-width: 640px',
   'phone-xs': 'max-width: 375px',
-  'hover': 'hover: hover'
+  'hover': 'hover: hover',
+  'vertical': 'max-aspect-ratio: 12/8',
+  'vertical-xl': 'max-aspect-ratio: 12/10'
 );
 
 @mixin viewport($name) {
@@ -174,6 +176,18 @@ $breakpoints: (
   @media (min-height: 1024px) {
     --s-text-navigation: 1.4vh;
     --s-logo: 5vh;
+  }
+
+  @include viewport('vertical') {
+    --s-gutter: 6vh;
+
+    @media (min-height: 1024px) {
+      --s-logo: 4.5vh;
+    }
+  }
+
+  @include viewport('vertical-xl') {
+    --s-gutter: 5vh;
   }
 }
 
