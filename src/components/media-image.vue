@@ -150,13 +150,16 @@
         this.imageNaturalWidthComputed = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
         this.imageNaturalHeightComputed = Math.round(this.$refs.image.naturalHeight * this.hdRatioReversed);
       },
+      getScaleDezoomed: function () {
+        this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
+      },
       checkIfZoomable: function () {
         if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidthComputed) {
           if (window.devicePixelRatio > 1 && this.imageNaturalWidthComputed / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
             this.isZoomable = false;
           } else {
             this.isZoomable = true;
-            this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
+            this.getScaleDezoomed();
           }
         } else {
           this.isZoomable = false;
@@ -283,6 +286,8 @@
         } else {
           this.scaleZoomed = 1 * this.hdRatioReversed;
         }
+
+        this.getScaleDezoomed();
 
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.scaleDezoomed);
         this.$refs.zoomedImage.style.setProperty('--s-scale-zoomed', this.scaleZoomed);
