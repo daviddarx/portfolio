@@ -60,6 +60,7 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:centered="false"
           ref="image-bw-01"
           class="project__thumb"
         >
@@ -69,6 +70,7 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:centered="false"
           ref="image-bw-02"
           class="project__thumb"
         >
@@ -81,6 +83,7 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:centered="false"
           ref="image-bw-03"
           class="project__thumb"
         >
@@ -90,6 +93,7 @@
           v-bind:title="'Look&Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:centered="false"
           ref="image-bw-04"
           class="project__thumb"
         >
