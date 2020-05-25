@@ -19,7 +19,6 @@
     <preloader class="media-video__preloader"></preloader>
     <video
       muted
-      loop
       preload="auto"
       class="media-video__el"
       ref="video"
@@ -60,6 +59,7 @@ import { TextureUvs } from 'pixi.js';
       this.$refs.video.addEventListener('playing', this.onPlaying);
       // this.$refs.video.addEventListener('progress', this.progressListener); // to remove
       this.$refs.video.addEventListener('canplaythrough', this.canplaythroughListener);
+      this.$refs.video.addEventListener('ended', this.endListener);
     },
     methods: {
       enter: function () {
@@ -114,6 +114,15 @@ import { TextureUvs } from 'pixi.js';
         }
         this.isCanplaythrough = true;
       },
+      endListener: function () {
+        this.$refs.video.currentTime = 0;
+
+        if (this.autoplay == true) {
+          this.play();
+        } else {
+          this.togglePlay();
+        }
+      },
       setIsLoadingTimeout: function () {
         this.clearIsLoadingTimeout();
         this.isLoadingTimeout = setTimeout(() => {
@@ -137,6 +146,7 @@ import { TextureUvs } from 'pixi.js';
         this.$refs.video.removeEventListener('playing', this.onPlaying);
         // this.$refs.video.removeEventListener('progress', this.progressListener); // to remove
         this.$refs.video.removeEventListener('canplaythrough', this.canplaythroughListener);
+        this.$refs.video.removeEventListener('ended', this.endListener);
       }
     }
   }
