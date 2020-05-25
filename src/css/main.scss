@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Sang-Bleu-Sunrise';
-  src: url('webfonts/SangBleuSunrise-Regular-WebS.woff2') format('woff2'), url('webfonts/SangBleuSunrise-Regular-WebS.woff') format('woff');
+  src: url('../webfonts/SangBleuSunrise-Regular-WebS.woff2') format('woff2'), url('../webfonts/SangBleuSunrise-Regular-WebS.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Mont-Bold';
-  src: url('webfonts/3AB588_1_0.eot');
-  src: url('webfonts/3AB588_1_0.eot?#iefix') format('embedded-opentype'), url('webfonts/3AB588_1_0.woff2') format('woff2'), url('webfonts/3AB588_1_0.woff') format('woff'), url('webfonts/3AB588_1_0.ttf') format('truetype');
+  src: url('../webfonts/3AB588_1_0.eot');
+  src: url('../webfonts/3AB588_1_0.eot?#iefix') format('embedded-opentype'), url('../webfonts/3AB588_1_0.woff2') format('woff2'), url('../webfonts/3AB588_1_0.woff') format('woff'), url('../webfonts/3AB588_1_0.ttf') format('truetype');
 }
 
 @mixin fontRunText() {
