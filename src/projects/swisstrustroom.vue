@@ -327,6 +327,8 @@
 
 
 <style lang="scss">
+  @import '../scss/assets.scss';
+
   .deco-cloud {
     --opacity: 0.5;
 
@@ -437,6 +439,10 @@
 
     padding-bottom: 0;
     padding-top: calc(var(--s-gutter) * 2);
+
+    // @include viewport('vertical') {
+    //   opacity: 0.1;
+    // }
   }
 
   .pick-sc {
