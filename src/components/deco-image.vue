@@ -14,14 +14,17 @@
     name: 'deco-image',
     props: {
       url: String,
-      hdRatio: Number,
+      hdRatio: {
+        type: Number,
+        default: 1
+      },
     },
     data: function () {
       return {
         finalURL: undefined,
         hdMinViewportWidth: 768,
         isLoaded: false,
-        windowW:0,
+        windowW: 0,
         windowH: 0
       }
     },
@@ -34,7 +37,7 @@
       },
       computeHD: function () {
         this.getWindowSize();
-        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio) {
+        if (window.devicePixelRatio > 1 && this.windowW > this.hdMinViewportWidth && this.hdRatio > 1) {
           const splittedURL = this.url.split('.');
           this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
         } else {
