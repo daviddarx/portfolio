@@ -416,7 +416,7 @@
   }
 
   .pick-lf {
-    margin-bottom: calc(var(--s-gutter) * 10);
+    margin-bottom: 102%;
   }
 
   .box-lf {
