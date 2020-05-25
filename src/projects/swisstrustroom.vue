@@ -18,8 +18,9 @@
     <div class="project__cols intro">
       <div class="project__col-left">
         <deco-image
-        v-bind:url="this.mediasPath+'cube_01.png'"
-        v-bind:hdRatio="2"
+        v-if="this.isMounted"
+        v-bind:url="this.boxHeaderDatas.url"
+        v-bind:hdRatio="this.boxHeaderDatas.hd"
         class="box-header"
       >
       </deco-image>
@@ -119,8 +120,8 @@
       </div>
       <div class="project__col-right">
         <deco-image
-          v-bind:url="this.mediasPath+'cube_02.png'"
-          v-bind:hdRatio="2"
+          v-bind:url="this.boxLFDatas.url"
+          v-bind:hdRatio="this.boxLFDatas.hd"
           class="box-lf"
         >
         </deco-image>
@@ -283,6 +284,36 @@
         mediasPath: "/projects/st/"
       }
     },
+    computed: {
+      boxHeaderDatas: function () {
+        const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let datas = {};
+
+        if (windowW > 1280) {
+          datas.url = this.mediasPath+'cube_01_hd.png';
+          datas.hd = 1;
+        } else {
+          datas.url = this.mediasPath+'cube_01.png';
+          datas.hd = 2;
+        }
+
+        return datas;
+      },
+      boxLFDatas: function () {
+        const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let datas = {};
+
+        if (windowW > 1280) {
+          datas.url = this.mediasPath+'cube_02_hd.png';
+          datas.hd = 1;
+        } else {
+          datas.url = this.mediasPath+'cube_02.png';
+          datas.hd = 2;
+        }
+
+        return datas;
+      }
+    },
     mounted () {
       this.mount();
     },
@@ -340,7 +371,6 @@
   .box-header {
     position: absolute;
     width: 190%;
-    max-width: 1218px;
     margin-left: -45%;
     margin-top: calc(var(--s-gutter) * 1.1);
   }
@@ -357,7 +387,7 @@
 
   .pick-bw {
     padding-right: var(--s-gutter);
-    padding-bottom: calc(var(--s-gutter) * 1.25);
+    padding-bottom: calc(var(--s-gutter) * 0.5);
   }
 
   .thumbs-bw-01,
@@ -390,7 +420,6 @@
   .box-lf {
     position: absolute;
     width: 130vw;
-    max-width: 1728px;
     margin-left: -70%;
     margin-top: calc(var(--s-gutter) * 1.5);
   }
@@ -412,6 +441,8 @@
 
   .pick-sc {
     color: black;
+    max-width: 1440px;
+    margin: 0 auto;
 
     &__desc {
       text-indent: 0;
