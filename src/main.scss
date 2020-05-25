@@ -291,13 +291,12 @@ body {
     cursor: pointer;
     font-size: 0;
     text-decoration: none;
-    overflow: hidden;
     width: var(--s-dimensions);
     height: var(--s-dimensions);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: var(--s-lines) var(--c-bt-bg) solid;
+    border: 0;
     border-radius: 100%;
     background-color: var(--c-bt-bg);
 
