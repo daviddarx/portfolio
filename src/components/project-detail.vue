@@ -20,7 +20,7 @@
           {{this.title}}
         </h1>
         <div class="project__metas animate-in">
-          <div class="project__cols">
+          <div class="project__cols project__metas-cols">
             <p class="project__meta project__date">
               <strong class="project__meta-title">Jahr </strong>
               <span class="project__meta-desc">{{this.year}}</span>
