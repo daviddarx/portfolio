@@ -163,7 +163,7 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
-        ref="image-fd"
+        ref="image-fd-01"
       >
       </media-image>
       <media-image
@@ -171,7 +171,7 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
-        ref="image-fd"
+        ref="image-fd-02"
       >
       </media-image>
       <media-image
@@ -179,7 +179,7 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
-        ref="image-fd"
+        ref="image-fd-03"
       >
       </media-image>
       <media-image
@@ -187,7 +187,7 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
-        ref="image-fd"
+        ref="image-fd-04"
       >
       </media-image>
     </section>
