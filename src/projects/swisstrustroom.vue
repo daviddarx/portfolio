@@ -289,7 +289,7 @@
         const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         let datas = {};
 
-        if (windowW > 1280) {
+        if (windowW >= 1280) {
           datas.url = this.mediasPath+'cube_01_hd.png';
           datas.hd = 1;
         } else {
@@ -303,7 +303,7 @@
         const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         let datas = {};
 
-        if (windowW > 1280) {
+        if (windowW >= 1280) {
           datas.url = this.mediasPath+'cube_02_hd.png';
           datas.hd = 1;
         } else {
@@ -423,7 +423,7 @@
     position: absolute;
     width: 130vw;
     margin-left: -70%;
-    margin-top: calc(var(--s-gutter) * 1.5);
+    margin-top: 20%;
   }
 
   .switches-lf {
@@ -440,9 +440,9 @@
     padding-bottom: 0;
     padding-top: calc(var(--s-gutter) * 2);
 
-    // @include viewport('vertical') {
-    //   opacity: 0.1;
-    // }
+    @include viewport('vertical') {
+      --s-padding: calc(var(--s-gutter) * 2);
+    }
   }
 
   .pick-sc {
