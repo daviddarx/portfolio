@@ -46,7 +46,7 @@
           <h2 class="project__pick-title">
             Konzept &amp; Bildwelt
           </h2>
-          <p class="project__pick-desc">
+          <p class="project__pick-desc pick-bw__desc">
             SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe für die Bildwelt und das Funktionieren des One-Pagers bevorzugt.
           </p>
         </div>
@@ -424,6 +424,12 @@
 
     @include viewport('tablet-s') {
       padding-right: 0;
+    }
+
+    &__desc {
+      @include viewport('mobile-l') {
+        margin-bottom: 0;
+      }
     }
   }
 
