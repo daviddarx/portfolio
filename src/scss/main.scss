@@ -1443,6 +1443,10 @@ body {
       --s-padding: calc(var(--s-gutter) * 2);
     }
 
+    @include viewport('tablet') {
+      --s-padding: calc(var(--s-gutter) * 2);
+    }
+
     @include viewport('tablet-s') {
       --s-padding: var(--s-gutter);
 
