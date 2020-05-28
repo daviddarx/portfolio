@@ -15,7 +15,7 @@
     >
     </deco-image>
 
-    <div class="project__cols intro">
+    <div class="project__cols project__intro">
       <div class="project__col-left">
         <deco-image
         v-if="this.isMounted"
@@ -341,6 +341,10 @@
       width: 75%;
       top: calc(var(--s-gutter) * -3);
       left: -35%;
+
+      @include viewport('tablet-s') {
+        top: calc(var(--s-gutter) * -6);
+      }
     }
 
     &--2 {
@@ -349,6 +353,10 @@
       width: 100%;
       top: calc(var(--s-gutter) * -5);
       left: 35%;
+
+      @include viewport('tablet-s') {
+        top: calc(var(--s-gutter) * -8);
+      }
     }
 
     &--3 {
@@ -375,10 +383,21 @@
     width: 190%;
     margin-left: -45%;
     margin-top: calc(var(--s-gutter) * 1.1);
-  }
 
-  .intro {
-    padding-bottom: calc(var(--s-gutter) * 4.5);
+    @include viewport('tablet-s') {
+      position: relative;
+      width: 150%;
+      margin-left: 0;
+      margin-top: 3%;
+      margin-bottom: 3%;
+      transform: translateX(-16%);
+    }
+
+    @include viewport('mobile') {
+      width: 250%;
+      margin-bottom: 1%;
+      transform: translateX(-30.25%);
+    }
   }
 
   .section-bw {
@@ -390,6 +409,14 @@
   .pick-bw {
     padding-right: var(--s-gutter);
     padding-bottom: calc(var(--s-gutter) * 0.5);
+
+    @include viewport('desktop') {
+      padding-bottom: calc(var(--s-gutter) * 0.15);
+    }
+
+    @include viewport('tablet-s') {
+      padding-right: 0;
+    }
   }
 
   .thumbs-bw-01,
@@ -404,6 +431,14 @@
 
     .project__thumb {
       transform: translateY(calc(-100% - var(--s-gutter-col) * 2));
+
+      @include viewport('tablet') {
+        transform: translateY(calc(-65% - var(--s-gutter-col) * 2));
+      }
+
+      @include viewport('tablet-s') {
+        transform: none;
+      }
     }
   }
 
@@ -417,6 +452,11 @@
 
   .pick-lf {
     margin-bottom: 102%;
+
+    @include viewport('tablet-s') {
+      margin-bottom: 0;
+      margin-top: var(--s-gutter);
+    }
   }
 
   .box-lf {
@@ -424,6 +464,28 @@
     width: 130vw;
     margin-left: -70%;
     margin-top: 20%;
+
+    @include viewport('desktop') {
+      margin-top: 30%;
+    }
+
+    @include viewport('tablet') {
+      margin-top: 40%;
+    }
+
+    @include viewport('tablet-s') {
+      position: relative;
+      width: 180%;
+      margin-left: 0;
+      margin-top: 8%;
+      transform: translateX(-16%);
+    }
+
+    @include viewport('tablet-s') {
+      width: 300%;
+      margin-top: 8%;
+      transform: translateX(-24.75%);
+    }
   }
 
   .switches-lf {
@@ -432,6 +494,18 @@
     position: relative;
     margin: 0 auto;
     margin-top: calc(var(--s-gutter) * 0.5);
+
+    @include viewport('desktop') {
+      margin-top: calc(var(--s-gutter) * 1);
+    }
+
+    @include viewport('tablet') {
+      margin-top: calc(var(--s-gutter) * 1.5);
+    }
+
+    @include viewport('tablet-s') {
+      margin-top: calc(var(--s-gutter) * 0.5);
+    }
   }
 
   .section-sc {
@@ -440,8 +514,8 @@
     padding-bottom: 0;
     padding-top: calc(var(--s-gutter) * 2);
 
-    @include viewport('vertical') {
-      --s-padding: calc(var(--s-gutter) * 2);
+    @include viewport('tablet-s') {
+      padding-top: var(--s-gutter);
     }
   }
 
@@ -450,11 +524,22 @@
     max-width: 1440px;
     margin: 0 auto;
 
+    @include viewport('tablet-s') {
+      display: block;
+    }
+
     &__desc {
       text-indent: 0;
       padding-top: 0;
       margin-top: -0.4em;
       margin-bottom: calc(var(--s-gutter) * 1);
+
+      @include viewport('tablet-s') {
+        padding-top: 1em;
+        margin-top: 0;
+
+        @include text-indent();
+      }
     }
   }
 
