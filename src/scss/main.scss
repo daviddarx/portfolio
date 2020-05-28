@@ -1307,6 +1307,10 @@ body {
       padding-top: 0;
       padding-bottom: calc(var(--s-gutter) * 1.3);
     }
+
+    @include viewport('mobile-l') {
+      padding-top: 0.25em;
+    }
   }
 
   &__metas {
@@ -1326,7 +1330,7 @@ body {
   }
 
   &__meta {
-    --s-mobile-margin-top: calc(var(--s-gutter) * 0.4);
+    --s-mobile-margin-top: 1em;
 
     margin-bottom: 0;
 
@@ -1452,6 +1456,10 @@ body {
 
       padding-top: var(--s-padding);
     }
+
+    @include viewport('mobile-s') {
+      padding-top: calc(var(--s-padding) + 0.5em) !important;
+    }
   }
 
   &__pick-title {
@@ -1467,6 +1475,10 @@ body {
 
   &__thumb {
     margin-top: calc(var(--s-gutter-col) * 2);
+
+    @include viewport('mobile-l') {
+      margin-top: var(--s-gutter);
+    }
   }
 
   &__mobile-thumbs {
