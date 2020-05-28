@@ -13,8 +13,10 @@ $breakpoints: (
   'desktop-l': 'max-width: 1440px',
   'desktop': 'max-width: 1280px',
   'tablet': 'max-width: 1024px',
-  'phone': 'max-width: 640px',
-  'phone-xs': 'max-width: 375px',
+  'tablet-s': 'max-width: 768px',
+  'mobile-l': 'max-width: 560px',
+  'mobile': 'max-width: 414px',
+  'mobile-s': 'max-width: 320px',
   'hover': 'hover: hover',
   'vertical': 'max-aspect-ratio: 12/8',
   'vertical-xl': 'max-aspect-ratio: 12/10'
@@ -97,32 +99,6 @@ $breakpoints: (
   }
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-}
-
-::selection {
-  background: rgba(0, 0, 0, 0.99);
-  color: white;
-  text-shadow: none;
-}
-
-.is-selection-inverted {
-  *::selection {
-    background: rgba(255, 255, 255, 0.99);
-    color: black;
-    text-shadow: none;
-  }
-}
-
-.is-selection-normal {
-  *::selection {
-    background: rgba(0, 0, 0, 0.99);
-    color: white;
-    text-shadow: none;
-  }
-}
-
 // styles
 :root {
   //colors
@@ -174,42 +150,30 @@ $breakpoints: (
   @include viewport('vertical-xl') {
     --s-gutter: 5vh;
   }
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include title;
-}
-
-b,
-strong {
-  @include fontTitle();
-}
-
-p {
-  --s-p-margin: 1.5em;
-
-  margin-bottom: var(--s-p-margin);
-
-  &.no-margin {
-    margin-bottom: 0;
+  @include viewport('desktop') {
+    --s-text: 2rem;
   }
 
-  &.margin-top {
-    margin-bottom: 0;
-    margin-top: var(--s-p-margin);
+  @include viewport('tablet') {
+    --s-text: 2.2rem;
   }
-}
 
-a {
-  color: var(--c-text);
-  text-decoration: none;
+  @include viewport('tablet-s') {
+    --s-text: 3.3rem;
+    --s-text-h1: calc(var(--s-text) * 2.5);
+    --s-decal-close-to-corner: 1em;
+  }
 
-  .is-inverted & {
-    color: var(--c-text-inverted);
+  @include viewport('mobile-l') {
+    --s-text: 4.5rem;
+    --s-text-h1: calc(var(--s-text) * 2);
+  }
+
+  @include viewport('mobile') {
+    --s-gutter: 8vw;
+    --s-text: 5.5rem;
+    --s-text-h1: calc(var(--s-text) * 1.8);
+    --s-decal-close-to-corner: 1em;
   }
 }
