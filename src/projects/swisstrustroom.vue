@@ -384,13 +384,21 @@
     margin-left: -45%;
     margin-top: calc(var(--s-gutter) * 1.1);
 
+    @include viewport('desktop-l') {
+      margin-left: -48%;
+    }
+
+    @include viewport('tablet') {
+      margin-left: -50%;
+    }
+
     @include viewport('tablet-s') {
       position: relative;
       width: 150%;
       margin-left: 0;
       margin-top: 3%;
       margin-bottom: 3%;
-      transform: translateX(-16%);
+      transform: translateX(-17%);
     }
 
     @include viewport('mobile') {
@@ -481,7 +489,7 @@
       transform: translateX(-16%);
     }
 
-    @include viewport('tablet-s') {
+    @include viewport('mobile') {
       width: 300%;
       margin-top: 8%;
       transform: translateX(-24.75%);
@@ -495,7 +503,7 @@
     margin: 0 auto;
     margin-top: calc(var(--s-gutter) * 0.5);
 
-    @include viewport('desktop') {
+    @include viewport('desktop-l') {
       margin-top: calc(var(--s-gutter) * 1);
     }
 
