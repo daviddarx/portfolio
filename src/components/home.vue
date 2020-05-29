@@ -12,7 +12,11 @@
         <span class="home__title-detail">Digital Design &amp; Art Direction</span>
       </h1>
 
-      <div class="home__stage animate-in animate-in__s2">
+      <router-link
+        to="/projects"
+      >
+        <div class="home__stage animate-in animate-in__s2">
+      </router-link>
 
       </div>
     </div>
