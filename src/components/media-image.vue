@@ -272,7 +272,9 @@
         this.$refs.zoomedImage.className = '';
         this.$refs.zoomedImage.classList.add('media-image-zoomed');
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.scaleDezoomed);
+        this.$refs.zoomedImage.style.width = this.$refs.image.naturalWidth + 1 + 'px'; // for rendering forcing to fix retina scale bug
         this.$refs.zoomedImage.addEventListener('click', this.dezoomImage);
+        this.$refs.zoomedImage.addEventListener('transitionend', this.forceZoomedImageRendering);
         document.body.appendChild(this.$refs.zoomedImage);
 
         this.zoomedImageAnimationOutDuration = parseFloat(getComputedStyle(this.$refs.zoomedImage).getPropertyValue('--d-zooming').split('s')[0]) * 1000;
@@ -311,6 +313,12 @@
         this.calculateZoomedImagePositionSides();
 
         this.positionZoomedImage();
+      },
+      forceZoomedImageRendering: function (e) {
+        if(e.propertyName == 'transform') {
+          const renderToggleWidth = this.isZoomed ? 0 : 1;
+          this.$refs.zoomedImage.style.width = this.$refs.image.naturalWidth + renderToggleWidth + 'px';
+        }
       },
       positionZoomedImage: function() {
         this.$refs.zoomedImage.style.left = this.zoomedImagePosition.x + 'px';
@@ -507,6 +515,7 @@
         if(this.$refs.zoomedImage) {
           if (this.displayZoomedImageTimeout) clearTimeout(this.displayZoomedImageTimeout);
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
+          this.$refs.zoomedImage.removeEventListener('transitionend', this.forceZoomedImageRendering);
           document.body.removeChild(this.$refs.zoomedImage);
           this.$refs.zoomedImage = undefined;
           if (window.zoomedImageBackground) {
