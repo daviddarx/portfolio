@@ -1673,7 +1673,8 @@ body {
   }
 
   &__img-el {
-    --t-visibility: visibility linear calc(var(--d-fading) * 0.7);
+    --d-delay: 0s;
+    --t-visibility: visibility linear calc(var(--d-fading) + var(--d-scaleHover));
 
     width: 100%;
     display: block;
@@ -1701,6 +1702,7 @@ body {
     width: 100%;
     opacity: 0;
     transition: opacity ease-out var(--d-fading);
+    transition-delay: var(--d-scaleHover);
 
     #{$root}.is-displayed & {
       opacity: 1;
