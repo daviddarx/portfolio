@@ -275,6 +275,10 @@
         this.deactiveZoomIcon();
       },
       createZoomedImage: function () {
+        this.$refs.zoomedImageContainer = document.createElement('div');
+        this.$refs.zoomedImageContainer.classList.add('media-image-zoomed-container');
+        document.body.appendChild(this.$refs.zoomedImageContainer);
+
         this.$refs.zoomedImage = this.$refs.image.cloneNode(true);
         this.$refs.zoomedImage.className = '';
         this.$refs.zoomedImage.classList.add('media-image-zoomed');
@@ -282,7 +286,7 @@
         this.$refs.zoomedImage.style.width = this.$refs.image.naturalWidth + 1 + 'px'; // for rendering forcing to fix retina scale bug
         this.$refs.zoomedImage.addEventListener('click', this.dezoomImage);
         this.$refs.zoomedImage.addEventListener('transitionend', this.forceZoomedImageRendering);
-        document.body.appendChild(this.$refs.zoomedImage);
+        this.$refs.zoomedImageContainer.appendChild(this.$refs.zoomedImage);
 
         this.zoomedImageAnimationOutDuration = parseFloat(getComputedStyle(this.$refs.zoomedImage).getPropertyValue('--d-zooming').split('s')[0]) * 1000;
       },
@@ -295,6 +299,10 @@
         }
 
         this.getScaleDezoomed();
+
+        if (window.isTouch == false) {
+          this.$refs.zoomedImageContainer.addEventListener('mouseleave', this.imageLeaveListener);
+        }
 
         this.$refs.zoomedImage.style.setProperty('--s-scale-dezoomed', this.scaleDezoomed);
         this.$refs.zoomedImage.style.setProperty('--s-scale-zoomed', this.scaleZoomed);
@@ -328,8 +336,8 @@
         }
       },
       positionZoomedImage: function() {
-        this.$refs.zoomedImage.style.left = this.zoomedImagePosition.x + 'px';
-        this.$refs.zoomedImage.style.top = this.zoomedImagePosition.y + 'px';
+        this.$refs.zoomedImageContainer.style.setProperty('--pos-x', Math.round(this.zoomedImagePosition.x) + 'px');
+        this.$refs.zoomedImageContainer.style.setProperty('--pos-y', Math.round(this.zoomedImagePosition.y) + 'px');
       },
       easeZoomedImage: function (t, b, c, d) {
         return -c * ((t=t/d-1)*t*t*t - 1) + b; // outQuart https://kodhus.com/easings/
@@ -454,9 +462,6 @@
       },
       dezoomImage: function () {
         if (this.$refs.zoomedImage) {
-          if (window.isTouch == false) {
-            this.$refs.zoomedImage.addEventListener('mouseleave', this.imageLeaveListener);
-          }
           this.$refs.zoomedImage.classList.remove('is-active');
 
           window.zoomedImageBackground.classList.remove('is-active');
@@ -523,8 +528,10 @@
           if (this.displayZoomedImageTimeout) clearTimeout(this.displayZoomedImageTimeout);
           this.$refs.zoomedImage.removeEventListener('click', this.dezoomImage);
           this.$refs.zoomedImage.removeEventListener('transitionend', this.forceZoomedImageRendering);
-          document.body.removeChild(this.$refs.zoomedImage);
+          this.$refs.zoomedImageContainer.removeChild(this.$refs.zoomedImage);
           this.$refs.zoomedImage = undefined;
+          document.body.removeChild(this.$refs.zoomedImageContainer);
+          this.$refs.zoomedImageContainer = undefined;
           if (window.zoomedImageBackground) {
             window.zoomedImageBackground.removeEventListener('click', this.backgroundImageClickListener);
             document.body.removeChild(window.zoomedImageBackground);

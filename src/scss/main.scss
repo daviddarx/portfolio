@@ -800,15 +800,11 @@ body {
   --s-scale-zoomed: 1;
   --d-zooming: 0.5s;
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
   visibility: hidden;
   cursor: pointer;
   transition: transform var(--e-out) var(--d-zooming), visibility linear 0s var(--d-zooming);
   transform: scale(var(--s-scale-dezoomed));
-  will-change: transform, visibility, left, top;
+  will-change: transform, visibility;
 
   &.is-active {
     transform: scale(var(--s-scale-zoomed));
@@ -819,6 +815,20 @@ body {
   &.is-hidden {
     display: none;
   }
+}
+
+.media-image-zoomed-container {
+  --pos-x: 0;
+  --pos-y: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 1000;
+  transform: translate(var(--pos-x), var(--pos-y));
+  will-change: transform;
 }
 
 .media-image-zoomed-background {
