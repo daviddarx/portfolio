@@ -32,7 +32,6 @@
 
 <script>
   import Preloader from './preloader.vue';
-import { TextureUvs } from 'pixi.js';
 
   export default {
     name: 'media-video',
