@@ -47,11 +47,16 @@
     mounted () {
     },
     methods: {
-      mouseOverListener: function(){
+      mouseOverListener: function (){
         this.currentColor = this.datas.color;
       },
-      mouseOutListener: function(){
+      mouseOutListener: function (){
         this.currentColor = "";
+      },
+      destroy: function () {
+        setTimeout(() => {
+          this.currentColor = "";
+        }, 500);
       }
     }
   }

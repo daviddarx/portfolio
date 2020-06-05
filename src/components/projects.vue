@@ -34,6 +34,7 @@
               v-bind:key="project.title"
               v-bind:datas="project"
               v-bind:class="{ 'is-fist': i==0}"
+              ref="projectList"
             >
             </project-list>
           </div>
@@ -93,6 +94,9 @@
       this.isMounted = false;
       this.isDisplayed = false;
       this.destroyTitlesObserver();
+      this.$refs.projectList.forEach(item => {
+        item.destroy();
+      });
       next();
     },
     methods: {
