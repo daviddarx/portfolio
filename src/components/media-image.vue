@@ -242,6 +242,8 @@
           window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
           window.zoomIconContainer.removeChild(window.zoomIcon);
           window.zoomIcon = undefined;
+          document.body.removeChild(window.zoomIconContainer);
+          window.zoomIconContainer = undefined;
         }
       },
       positionZoomIcon: function () {
