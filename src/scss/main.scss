@@ -550,7 +550,6 @@ body {
     visibility: hidden;
     transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
     transition: transform var(--e-in) var(--d-transform), opacity linear var(--d-transform), visibility linear 0s var(--d-transform);
-    will-change: transform, opacity, top, left;
 
     &.is-active,
     &.is-zoomed {
@@ -584,8 +583,11 @@ body {
   z-index: 2000;
   top: 0;
   left: 0;
+  width: 0;
+  height: 0;
   pointer-events: none;
   transform: translate(var(--pos-x), var(--pos-y));
+  will-change: transform;
 }
 
 .preloader {
