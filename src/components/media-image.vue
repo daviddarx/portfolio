@@ -212,6 +212,7 @@
           window.zoomIcon.classList.add('is-inverted');
           window.zoomIcon.appendChild(zoomIconEl.cloneNode(true));
           window.zoomIconContainer.appendChild(window.zoomIcon);
+
           if (window.isTouch == false) {
             this.startZoomIconMouseMoveAnimation();
           }
@@ -239,7 +240,7 @@
           this.isZoomIconListeningMouseMove = false;
           window.removeEventListener('mousemove', this.moveDebouncedZoomIcon);
           window.cancelAnimationFrame(this.zoomedIconAnimationFrame);
-          document.body.removeChild(window.zoomIcon);
+          window.zoomIconContainer.removeChild(window.zoomIcon);
           window.zoomIcon = undefined;
         }
       },
