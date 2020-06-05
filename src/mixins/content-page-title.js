@@ -51,12 +51,19 @@ export default {
     destroyTitlesObserver () {
       if (!!window.IntersectionObserver) {
         this.title = undefined;
-        this.observerEntries.forEach(element => {
-          this.observer.unobserve(element);
-        });
-        this.observerEntries = undefined;
-        this.observer.disconnect();
-        this.observer = undefined;
+
+        if (this.observerEntries) {
+          this.observerEntries.forEach(element => {
+            this.observer.unobserve(element);
+          });
+          this.observerEntries = undefined;
+        }
+
+        if (this.observer) {
+          this.observer.disconnect();
+          this.observer = undefined;
+        }
+
         this.isObserverFirstCallFired = false;
         window.removeEventListener('resize', this.resizeTitlesObserver);
       }
