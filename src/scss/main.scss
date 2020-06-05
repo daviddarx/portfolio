@@ -545,11 +545,7 @@ body {
     --s-decal-x: 50%;
     --s-decal-y: 50%;
 
-    position: fixed;
     pointer-events: none;
-    top: 50%;
-    left: 50%;
-    z-index: 2000;
     opacity: 0;
     visibility: hidden;
     transform: translate(var(--s-decal-x), var(--s-decal-x)) scale(0) rotate(360deg);
@@ -578,6 +574,18 @@ body {
       right: var(--s-gutter);
     }
   }
+}
+
+.zoom-icon-container {
+  --pos-x: 0;
+  --pos-y: 0;
+
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(var(--pos-x), var(--pos-y));
 }
 
 .preloader {

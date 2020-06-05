@@ -202,12 +202,16 @@
         this.$refs.container.appendChild(this.$refs.zoomIcon);
 
         if (!window.zoomIcon) { //only one media-image manage the global zoom icon on window
+          window.zoomIconContainer = document.createElement('div');
+          window.zoomIconContainer.classList.add('zoom-icon-container');
+          document.body.appendChild(window.zoomIconContainer);
+
           window.zoomIcon = document.createElement('div');
           window.zoomIcon.classList.add('zoom-icon');
           window.zoomIcon.classList.add('is-global');
           window.zoomIcon.classList.add('is-inverted');
           window.zoomIcon.appendChild(zoomIconEl.cloneNode(true));
-          document.body.appendChild(window.zoomIcon);
+          window.zoomIconContainer.appendChild(window.zoomIcon);
           if (window.isTouch == false) {
             this.startZoomIconMouseMoveAnimation();
           }
@@ -240,8 +244,8 @@
         }
       },
       positionZoomIcon: function () {
-        window.zoomIcon.style.left = window.zoomIconPosition.x + 'px';
-        window.zoomIcon.style.top = window.zoomIconPosition.y + 'px';
+        window.zoomIconContainer.style.setProperty('--pos-x', window.zoomIconPosition.x + 'px');
+        window.zoomIconContainer.style.setProperty('--pos-y', window.zoomIconPosition.y + 'px');
       },
       animateZoomIcon: function () {
         if (window.zoomIconPosition.x != undefined) { 
