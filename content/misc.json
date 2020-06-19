@@ -152,7 +152,7 @@
           "type": "image",
           "url": "kliclick/klicklick_04.jpg",
           "hdRatio": 2,
-          "additionalMargin": false,
+          "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
         },
@@ -160,7 +160,7 @@
           "type": "image",
           "url": "kliclick/klicklick_05.jpg",
           "hdRatio": 2,
-          "additionalMargin": true,
+          "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         },
@@ -168,7 +168,7 @@
           "type": "image",
           "url": "kliclick/klicklick_06.jpg",
           "hdRatio": 2,
-          "additionalMargin": true,
+          "additionalMargin": false,
           "zoomable": true,
           "zoomableGutter": true
         }
@@ -276,7 +276,7 @@
           "type": "image",
           "url": "studer/studer_07.png",
           "hdRatio": 2,
-          "additionalMargin": false,
+          "additionalMargin": true,
           "zoomable": true,
           "zoomableGutter": true
         }
