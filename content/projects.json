@@ -12,8 +12,10 @@
     },{
       "uid": "astrorara",
       "title": "ETH AstroRara",
-      "type": "Web App",
+      "type": "Progressive Web App",
       "year": "2020",
+      "agency": "Eyekon",
+      "skills": "Konzept & Wireframing, Digital Design & Art Direction",
       "color": "#759bde",
       "colorCase": "#759bde",
       "inverted": false
