@@ -1306,6 +1306,8 @@ body {
 
   &__header {
     display: table;
+    width: 100%;
+    box-sizing: border-box;
     padding: var(--s-gutter);
     padding-bottom: 0;
 
