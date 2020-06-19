@@ -49,7 +49,7 @@
           class="misc__media"
           v-for="(media, i) in infos.medias"
           v-bind:key="media.url"
-          v-bind:class="{'misc__media--margin-top' : media.additionalMargin==true, 'scroll-animate-in' : i!=0}"
+          v-bind:class="{'misc__media--margin-top-l' : media.additionalMargin=='l', 'misc__media--margin-top-xl' : media.additionalMargin=='xl'}"
           v-bind:id="i"
           v-bind:isvideo="media.type=='video'"
           ref="media"
@@ -121,8 +121,6 @@
         infos: '',
         subtitlePrev: 'Voriges',
         subtitleNext: 'Nächstes',
-        observer: undefined,
-        observerRootMargin: "-10%" //20vh to compensate
       }
     },
     mounted () {
@@ -145,13 +143,6 @@
       window.addEventListener('resize', this.resize);
     },
     beforeDestroy () {
-      if (this.observer) {
-        this.$refs.media.forEach(media => {
-          this.observer.unobserve(media);
-        });
-        this.observer.disconnect();
-      }
-
       if (this.$refs.video) {
         this.$refs.video.forEach(video => {
           video.destroy();
@@ -169,51 +160,6 @@
     methods: {
       displayMisc: function() {
         this.isDisplayed = true;
-        this.setIntersectionObserver();
-      },
-      setIntersectionObserver: function() {
-        if (!!window.IntersectionObserver) {
-          this.observer = new IntersectionObserver(this.intersectionListener, {
-            rootMargin: this.observerRootMargin
-          });
-
-          this.$refs.media.forEach(media => {
-            this.observer.observe(media);
-          });
-        } else {
-          this.$refs.media.forEach(media => {
-            media.classList.add('is-displayed');
-          });
-        }
-      },
-      intersectionListener: function (entries, observer) {
-        entries.forEach(entry => {
-          const isVideo = entry.target.hasAttribute('isvideo');
-          let videoComponent;
-
-          if (isVideo == true) {
-            const videoID = entry.target.getAttribute('id');
-            this.$refs.video.forEach((video) => {
-              if (video.$el.getAttribute('id') == videoID) {
-                videoComponent = video;
-              }
-            });
-          }
-
-          if(entry.isIntersecting){
-            entry.target.classList.add('is-displayed');
-
-            if (isVideo == false) {
-              observer.unobserve(entry.target);
-            } else {
-              videoComponent.enter();
-            }
-          } else {
-            if (isVideo == true) {
-              videoComponent.leave();
-            }
-          }
-        });
       },
       resize: function () {
         if (this.$refs.image) {
