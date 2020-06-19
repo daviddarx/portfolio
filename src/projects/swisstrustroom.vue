@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <section class="project__section project__section--padding-2x project__section--colored project__cols section-bw scroll-animate-in observed">
+    <section class="project__section project__section--padding-2x project__section--colored project__cols section-bw">
       <div class="project__col-left">
         <div class="pick-bw">
           <h2 class="project__pick-title">
@@ -107,7 +107,7 @@
       </div>
     </section>
 
-    <section class="project__section project__section--padding-2x project__cols project__cols--reversed section-lf scroll-animate-in observed">
+    <section class="project__section project__section--padding-2x project__cols project__cols--reversed section-lf">
       <div class="project__col-left">
         <div class="pick-lf">
           <h2 class="project__pick-title">
@@ -136,7 +136,7 @@
       </div>
     </section>
 
-    <section class="project__section project__section--padding-4x project__section--colored section-sc scroll-animate-in observed">
+    <section class="project__section project__section--padding-4x project__section--colored section-sc">
       <div class="pick-sc aliased project__cols is-selection-normal">
         <h2 class="project__pick-title project__col-left">
           One-Pager Animation
@@ -151,12 +151,12 @@
         v-bind:isvideo="true"
         v-bind:id="'video-sc'"
         ref="video-sc"
-        class="video-sc observed"
+        class="video-sc"
       >
       </media-video>
     </section>
 
-    <section class="project__section project__section--padding-2x section-fd scroll-animate-in observed">
+    <section class="project__section project__section--padding-2x section-fd">
       <h2 class="project__pick-title title-fd">
         Finales Design
       </h2>
@@ -194,7 +194,7 @@
       </media-image>
     </section>
 
-    <section class="project__section project__section--padding-2x section-rd scroll-animate-in observed">
+    <section class="project__section project__section--padding-2x section-rd">
       <h2 class="project__pick-title title-rd">
         Responsive Design
       </h2>
