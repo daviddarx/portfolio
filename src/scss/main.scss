@@ -2027,26 +2027,6 @@ body {
   }
 }
 
-.scroll-animate-in {
-  --s-translateYAnimateIn: 20vh;
-  --d-in-opacity: 0.75s;
-  --e-opacity: ease;
-  --d-in-transform: 1s;
-  --e-transform: var(--e-out);
-
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(var(--s-translateYAnimateIn));
-  transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
-  will-change: opacity, transform;
-
-  &.is-displayed {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-  }
-}
-
 .transition-wave-in-enter-active {
   transition: transform var(--e-inout) 0.5s;
   transform-origin: top left;
