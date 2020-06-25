@@ -42,13 +42,15 @@
 
     <section class="project__section project__section--padding-2x project__section--colored project__cols section-bw">
       <div class="project__col-left">
-        <div class="pick-bw">
+        <div class="project__pick pick-bw">
           <h2 class="project__pick-title">
             Konzept &amp; Bildwelt
           </h2>
-          <p class="project__pick-desc pick-bw__desc">
-            SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe für die Bildwelt und das Funktionieren des One-Pagers bevorzugt.
-          </p>
+          <div class="project__pick-desc pick-bw__desc">
+            <p>
+              SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe bevorzugt, für die Bildwelt und das Funktionieren des One-Pagers.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -113,9 +115,11 @@
           <h2 class="project__pick-title">
             Look &amp; Feel
           </h2>
-          <p class="project__pick-desc">
-            Da ein Safe weder modern noch digital wirkt, wurde eine abstraktere und grafischere Variante entwickelt, um das Produkt als sicheren Raum in der Cloud zu präsentieren, in dem eine starke Identifizierung nötig ist.
-          </p>
+          <div class="project__pick-desc">
+            <p >
+              Da ein Safe weder modern noch digital wirkt, wurde eine abstraktere und grafischere Variante entwickelt, um das Produkt als sicheren Raum in der Cloud zu präsentieren, in dem eine starke Identifizierung nötig ist.
+            </p>
+          </div>
         </div>
       </div>
       <div class="project__col-right">
@@ -141,9 +145,11 @@
         <h2 class="project__pick-title project__col-left">
           One-Pager Animation
         </h2>
-        <p class="project__pick-desc project__col-right pick-sc__desc">
-          Um die Erfahrung zu beleben und einen Überraschungs&shy;effekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
-        </p>
+        <div class="project__pick-desc project__col-right pick-sc__desc">
+          <p>
+            Um die Erfahrung zu beleben und einen Überraschungs&shy;effekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+          </p>
+        </div>
       </div>
       <media-video
         v-bind:url="this.mediasPath+'designs/st_4.mp4'"
@@ -384,7 +390,7 @@
     position: absolute;
     width: 190%;
     margin-left: -45%;
-    margin-top: calc(var(--s-gutter) * 1.1);
+    margin-top: calc(var(--s-gutter) * 0.3);
 
     @include viewport('desktop-l') {
       margin-left: -48%;
@@ -418,10 +424,10 @@
 
   .pick-bw {
     padding-right: var(--s-gutter);
-    padding-bottom: calc(var(--s-gutter) * 0.5);
+    padding-bottom: calc(var(--s-gutter) * 0.25);
 
     @include viewport('desktop') {
-      padding-bottom: calc(var(--s-gutter) * 0.15);
+      padding-bottom: calc(var(--s-gutter) * 0.1);
     }
 
     @include viewport('tablet-s') {
@@ -429,8 +435,10 @@
     }
 
     &__desc {
-      @include viewport('mobile-l') {
-        margin-bottom: 0;
+      p:last-of-type {
+        @include viewport('mobile-l') {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -545,16 +553,13 @@
     }
 
     &__desc {
-      text-indent: 0;
       padding-top: 0;
       margin-top: -0.4em;
-      margin-bottom: calc(var(--s-gutter) * 1);
+      margin-bottom: calc(var(--s-gutter) * 0.5);
 
       @include viewport('tablet-s') {
         padding-top: 1em;
         margin-top: 0;
-
-        @include text-indent();
       }
     }
   }
