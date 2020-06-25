@@ -1414,14 +1414,27 @@ body {
     padding-bottom: calc(var(--s-gutter) * 2);
   }
 
+  &__lead {
+    padding-right: var(--s-gutter);
+
+    @include viewport('tablet-s') {
+      padding-right: 0;
+    }
+  }
+
   &__desc {
     @include text-indent();
 
     font-size: var(--s-text-small);
+    padding-right: var(--s-gutter);
     padding-top: 1.5em;
 
     .is-inverted & {
       letter-spacing: var(--s-letter-spacing-readability);
+    }
+
+    @include viewport('tablet-s') {
+      padding-right: 0;
     }
   }
 
@@ -1482,13 +1495,15 @@ body {
     }
   }
 
+  &__pick {
+    @include text-indent();
+  }
+
   &__pick-title {
     @include label-small;
   }
 
   &__pick-desc {
-    @include text-indent();
-
     font-size: var(--s-text-small);
     padding-top: 1em;
   }
