@@ -30,9 +30,11 @@
           >
           </media-gif>
         </div>
-        <p class="info__introduction hiding-title">
-          {{this.info.introduction}}
-        </p>
+        <div
+          class="info__introduction hiding-title"
+          v-html="this.info.introduction"
+        >
+        </div>
 
         <h2
           class="content-page__subtitle content-page__3-4 hiding-title"
@@ -54,7 +56,6 @@
               <span
                 v-if="experience.additional"
                 class="info__step-additional"
-                v-bind:class="{'text-indent' : experience.additionalIndent == 'true'}"
               >
                 {{experience.additional}}
               </span>
@@ -107,7 +108,6 @@
               <span
                 v-if="education.additional"
                 class="info__step-additional"
-                v-bind:class="{'text-indent' : education.additionalIndent == 'true'}"
               >
                 {{education.additional}}
               </span>
