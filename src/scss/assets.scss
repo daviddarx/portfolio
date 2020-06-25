@@ -65,7 +65,18 @@ $breakpoints: (
 }
 
 @mixin text-indent {
-  text-indent: 2em;
+  p {
+    text-indent: 2em;
+    margin-bottom: 0;
+
+    &:first-of-type {
+      text-indent: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: var(--s-p-margin);
+    }
+  }
 }
 
 .text-indent {
@@ -119,6 +130,7 @@ $breakpoints: (
   --s-line-height-titles: 1;
   --s-line-height-titles-small: 1.2;
   --s-line-height-lead: 1.55;
+  --s-p-margin: 1.5em;
   --s-letter-spacing-readability: 0.025em;
   --s-gutter: 8vh;
   --s-gutter-col: calc(var(--s-gutter) * 0.25);
