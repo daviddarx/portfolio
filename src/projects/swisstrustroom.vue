@@ -18,12 +18,12 @@
     <div class="project__cols project__intro">
       <div class="project__col-left">
         <deco-image
-        v-if="this.isMounted"
-        v-bind:url="this.boxHeaderDatas.url"
-        v-bind:hdRatio="this.boxHeaderDatas.hd"
-        class="box-header"
-      >
-      </deco-image>
+          v-if="this.isMounted"
+          v-bind:url="this.boxHeaderDatas.url"
+          v-bind:hdRatio="this.boxHeaderDatas.hd"
+          class="box-header"
+        >
+        </deco-image>
       </div>
       <div class="project__col-right">
         <p class="project__lead">
