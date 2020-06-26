@@ -1419,22 +1419,6 @@ body {
     }
   }
 
-  &__intro {
-    padding-bottom: calc(var(--s-gutter) * 4.5);
-
-    @include viewport('desktop') {
-      padding-bottom: calc(var(--s-gutter) * 3);
-    }
-
-    @include viewport('tablet') {
-      padding-bottom: calc(var(--s-gutter) * 2);
-    }
-
-    @include viewport('tablet-s') {
-      padding-bottom: calc(var(--s-gutter) * 1);
-    }
-  }
-
   &__content {
     padding: var(--s-gutter);
     padding-bottom: calc(var(--s-gutter) * 2);
