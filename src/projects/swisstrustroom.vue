@@ -216,7 +216,7 @@
           >
           </media-image>
         </div>
-        <div class="project__mobile-thumb project__mobile-thumb--02">
+        <div class="project__mobile-thumb project__mobile-thumb--middle">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_02.jpg'"
             v-bind:title="'Responsive Design'"
@@ -226,7 +226,7 @@
           >
           </media-image>
         </div>
-        <div class="project__mobile-thumb project__mobile-thumb--03">
+        <div class="project__mobile-thumb project__mobile-thumb--right">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_03.jpg'"
             v-bind:title="'Responsive Design'"
@@ -236,7 +236,7 @@
           >
           </media-image>
         </div>
-        <div class="project__mobile-thumb project__mobile-thumb--04">
+        <div class="project__mobile-thumb project__mobile-thumb--line-2">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_04.jpg'"
             v-bind:title="'Responsive Design'"
@@ -246,7 +246,7 @@
           >
           </media-image>
         </div>
-        <div class="project__mobile-thumb project__mobile-thumb--05">
+        <div class="project__mobile-thumb project__mobile-thumb--middle project__mobile-thumb--line-2">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_05.jpg'"
             v-bind:title="'Responsive Design'"
@@ -256,7 +256,7 @@
           >
           </media-image>
         </div>
-        <div class="project__mobile-thumb project__mobile-thumb--06">
+        <div class="project__mobile-thumb project__mobile-thumb--right project__mobile-thumb--line-2">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_06.jpg'"
             v-bind:title="'Responsive Design'"
