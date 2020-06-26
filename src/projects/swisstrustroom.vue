@@ -2,6 +2,7 @@
 <template>
   <project
     v-if="this.isMounted"
+    class="st"
   >
     <deco-image
       v-bind:url="this.mediasPath+'cloud.png'"
@@ -15,7 +16,7 @@
     >
     </deco-image>
 
-    <div class="project__cols project__intro">
+    <div class="project__cols project__intro intro-st">
       <div class="project__col-left">
         <deco-image
           v-if="this.isMounted"
@@ -383,6 +384,22 @@
 
     to {
       transform: translateX(var(--s-decal-x));
+    }
+  }
+
+  .intro-st {
+    padding-bottom: calc(var(--s-gutter) * 4.5);
+
+    @include viewport('desktop') {
+      padding-bottom: calc(var(--s-gutter) * 3);
+    }
+
+    @include viewport('tablet') {
+      padding-bottom: calc(var(--s-gutter) * 2);
+    }
+
+    @include viewport('tablet-s') {
+      padding-bottom: calc(var(--s-gutter) * 1);
     }
   }
 
