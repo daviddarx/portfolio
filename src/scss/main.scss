@@ -1269,6 +1269,12 @@ body {
       flex-direction: row-reverse;
     }
 
+    &--third {
+      position: relative;
+      margin-left: calc(var(--s-gutter-col) * -1);
+      margin-right: calc(var(--s-gutter-col) * -1);
+    }
+
     @include viewport('tablet-s') {
       display: block;
     }
@@ -1308,6 +1314,13 @@ body {
       padding-left: 0;
       padding-right: 0;
     }
+  }
+
+  &__col-third {
+    flex-basis: 33.333%;
+    box-sizing: border-box;
+    padding-left: var(--s-gutter-col);
+    padding-right: var(--s-gutter-col);
   }
 
   &__col-full {
