@@ -76,6 +76,10 @@ $breakpoints: (
     &:last-of-type {
       margin-bottom: var(--s-p-margin);
     }
+
+    a {
+      text-indent: 0;
+    }
   }
 }
 
