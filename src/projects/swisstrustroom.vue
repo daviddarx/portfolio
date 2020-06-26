@@ -154,9 +154,10 @@
       <media-video
         v-bind:url="this.mediasPath+'designs/st_4.mp4'"
         v-bind:autoplay="false"
+        v-bind:isvideo="true"
         v-bind:id="'video-sc'"
         ref="video-sc"
-        class="video-sc"
+        class="video-sc observed"
       >
       </media-video>
     </section>
