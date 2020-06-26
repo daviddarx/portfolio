@@ -274,10 +274,10 @@
 <script>
   import Vue from "vue";
   import Project from '../components/project-detail.vue';
+  import projectsMixins from '../mixins/projects';
   import DecoImage from '../components/deco-image.vue';
   import MediaImage from '../components/media-image.vue';
   import MediaVideo from '../components/media-video.vue';
-  import projectsMixins from '../mixins/projects';
 
   export default Vue.extend({
     components: {
