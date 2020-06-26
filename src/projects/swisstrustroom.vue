@@ -205,7 +205,7 @@
       <h2 class="project__pick-title title-rd">
         Responsive Design
       </h2>
-      <div class="thumbs-rd project__mobile-thumbs">
+      <div class="project__mobile-thumbs">
         <div class="project__mobile-thumb project__mobile-thumb--01">
           <media-image
             v-bind:url="this.mediasPath+'designs/st_mobile_01.jpg'"
