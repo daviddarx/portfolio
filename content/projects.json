@@ -15,10 +15,10 @@
       "type": "Progressive Web App",
       "year": "2020",
       "agency": "Eyekon",
-      "skills": "Konzept & Wireframing, Digital Design & Art Direction",
+      "skills": "Konzept & Wireframes, Art Direction & Digital Design",
       "color": "#759bde",
-      "colorCase": "#759bde",
-      "inverted": false
+      "colorCase": "#222222",
+      "inverted": true
     },
     {
       "uid": "maz",
@@ -134,7 +134,7 @@
       "type": "Produkt One-Pager",
       "year": "2017",
       "agency": "Eyekon",
-      "skills": "Konzept & Wireframes, Digital Design & Art Direction, Animation",
+      "skills": "Konzept & Wireframes, Art Direction & Digital, Animation",
       "color": "#3a86d0",
       "colorCase": "#1b548b",
       "inverted": true
