@@ -1513,10 +1513,6 @@ body {
     }
   }
 
-  &__pick {
-    @include text-indent();
-  }
-
   &__pick-title {
     @include label-small;
 
