@@ -304,6 +304,7 @@
       >
       </deco-image>
     </section>
+    <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta">Projekt Online anschauen</a>
   </project>
 </template>
 
