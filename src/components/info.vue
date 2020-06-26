@@ -73,7 +73,7 @@
           Expertise
         </h2>
 
-        <div class="content-page__list-container">
+        <div class="content-page__list-container info__expertise">
           <div
             class="content-page__list"
             v-for="expertise in info.expertise"

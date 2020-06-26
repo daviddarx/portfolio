@@ -31,7 +31,7 @@
         </p>
         <div class="project__desc">
           <p>
-            Die SwissTrustRoom-Lösung wurde für Vorstandsmitglieder, Führungs&shy;kräfte oder Projektmanager entwickelt und bietet ein optimales Management vertraulicher Gruppenaufgaben und strategischer Projekte.
+            Die SwissTrustRoom-Lösung wurde für Vorstandsmitglieder, Führungskräfte oder Projektmanager entwickelt und bietet ein optimales Management vertraulicher Gruppenaufgaben und strategischer Projekte.
           </p>
           <p>
             Eyekon wurde beauftragt, eine Micro-Site zu entwickeln, um das Produkt und seine verschiedenen Vorteile zu präsentieren.
@@ -147,7 +147,7 @@
         </h2>
         <div class="project__pick-desc project__col-right pick-sc__desc">
           <p>
-            Um die Erfahrung zu beleben und einen Überraschungs&shy;effekt hinzu&shy;zufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+            Um die Erfahrung zu beleben und einen Überraschungseffekt hinzuzufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
           </p>
         </div>
       </div>

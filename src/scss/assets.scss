@@ -83,6 +83,13 @@ $breakpoints: (
   @include text-indent();
 }
 
+@mixin hyphens {
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
 @mixin twerk-anime {
   animation: twerk 0.4s cubic-bezier(0.3, 0.7, 0, 1.5) both infinite;
 }
