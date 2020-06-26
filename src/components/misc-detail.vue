@@ -121,6 +121,8 @@
         infos: '',
         subtitlePrev: 'Voriges',
         subtitleNext: 'Nächstes',
+        observer: undefined,
+        observerRootMargin: "-10%" //20vh to compensate
       }
     },
     mounted () {
@@ -143,6 +145,13 @@
       window.addEventListener('resize', this.resize);
     },
     beforeDestroy () {
+      if (this.observer) {
+        this.$refs.media.forEach(media => {
+          this.observer.unobserve(media);
+        });
+        this.observer.disconnect();
+      }
+
       if (this.$refs.video) {
         this.$refs.video.forEach(video => {
           video.destroy();
@@ -160,6 +169,41 @@
     methods: {
       displayMisc: function() {
         this.isDisplayed = true;
+        this.setIntersectionObserver();
+      },
+      setIntersectionObserver: function() {
+        if (!!window.IntersectionObserver) {
+          this.observer = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.observerRootMargin
+          });
+
+          this.$refs.media.forEach(media => {
+            if (media.getAttribute('isvideo') == 'true') {
+              this.observer.observe(media);
+            }
+          });
+        }
+      },
+      intersectionListener: function (entries, observer) {
+        entries.forEach(entry => {
+          const isVideo = entry.target.hasAttribute('isvideo');
+          let videoComponent;
+
+          if (isVideo == true) {
+            const videoID = entry.target.getAttribute('id');
+            this.$refs.video.forEach((video) => {
+              if (video.$el.getAttribute('id') == videoID) {
+                videoComponent = video;
+              }
+            });
+
+            if(entry.isIntersecting){
+              videoComponent.enter();
+            } else {
+              videoComponent.leave();
+            }
+          }
+        });
       },
       resize: function () {
         if (this.$refs.image) {
