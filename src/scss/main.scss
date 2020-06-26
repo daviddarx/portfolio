@@ -1519,6 +1519,8 @@ body {
 
   &__pick-title {
     @include label-small;
+
+    line-height: 1.4;
   }
 
   &__pick-desc {
@@ -1527,7 +1529,7 @@ body {
 
     text-align: justify;
     font-size: var(--s-text-small);
-    padding-top: 1em;
+    padding-top: 0.8em;
   }
 
   &__thumb {
