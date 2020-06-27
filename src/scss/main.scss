@@ -409,7 +409,7 @@ body {
   padding-bottom: 0.3em;
 }
 
-.text-link {
+@mixin text-link {
   --s-padding: -0.1em;
 
   display: inline-block;
@@ -451,6 +451,31 @@ body {
       transform: none;
       transform-origin: top left;
     }
+  }
+}
+
+.text-link {
+  @include text-link();
+}
+
+.cta {
+  @include text-link();
+
+  --c-bg: black;
+
+  padding: 0.8em 1.25em 0.75em 1.25em;
+  background-color: var(--c-bg);
+  text-decoration: none;
+
+  &::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &--small {
+    font-size: var(--s-text-small);
   }
 }
 
