@@ -1401,6 +1401,7 @@ body {
   }
 
   &__meta {
+    --s-tablet-margin-top: 1.35em;
     --s-mobile-margin-top: 1em;
 
     margin-bottom: 0;
@@ -1434,6 +1435,18 @@ body {
   &__agency {
     flex-shrink: 0;
     flex-basis: 15%; // 16.66%; for same sizes
+
+    @include viewport('tablet') {
+      flex-basis: 13%;
+    }
+
+    @include viewport('tablet-s') {
+      flex-basis: 33%;
+    }
+
+    @include viewport('mobile-l') {
+      flex-basis: 100%;
+    }
   }
 
   &__type {
@@ -1448,6 +1461,12 @@ body {
     padding-left: var(--s-gutter-col);
 
     @include viewport('tablet-s') {
+      flex-basis: 100%;
+      padding-left: 0;
+      margin-top: var(--s-tablet-margin-top);
+    }
+
+    @include viewport('mobile-l') {
       flex-basis: 100%;
       padding-left: 0;
       margin-top: var(--s-mobile-margin-top);
