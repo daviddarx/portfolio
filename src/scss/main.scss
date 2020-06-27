@@ -1597,6 +1597,7 @@ body {
     box-sizing: border-box;
 
     @include viewport('mobile') {
+      padding: 0;
       margin-top: var(--s-margin-top-mobile);
     }
 
