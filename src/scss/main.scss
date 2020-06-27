@@ -1430,6 +1430,16 @@ body {
     }
   }
 
+  &__date,
+  &__agency {
+    flex-shrink: 0;
+    flex-basis: 15%; // 16.66%; for same sizes
+  }
+
+  &__type {
+    flex-grow: 1;
+  }
+
   &__skills {
     flex-basis: 50%;
     flex-shrink: 0;
