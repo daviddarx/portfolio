@@ -85,7 +85,7 @@
               Dazu liefern ergänzende Texte zu Autoren und Werken zusätzliche Hintergrundinformationen, auch verfügbar zum Anhören als Audio-File. So hat der User die Möglichkeit, mehr über die Werke zu erfahren, während er/sie bedient.
             </p>
             <p>
-              AstroRara bietet auch gleichzeitig Zugriff auf die Originalveröffentlichungen auf der <a href="https://www.e-rara.ch/" target="_blank" class="text-link">e-rara Plattform</a> der ETH.
+              AstroRara bietet auch gleichzeitig Zugriff auf die Originalveröffentlichungen auf der <a href="https://www.e-rara.ch/" target="_blank" class="text-link">e-rara</a> Plattform der ETH.
             </p>
           </div>
         </div>
@@ -170,8 +170,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">01</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">01</span>
             Splash Screen
           </p>
         </div>
@@ -184,8 +184,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">02</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">02</span>
             Einführung
           </p>
         </div>
@@ -198,8 +198,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">03</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">03</span>
             Übersicht
           </p>
         </div>
@@ -212,8 +212,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">04</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">04</span>
             Interaktionsansicht
           </p>
         </div>
@@ -226,8 +226,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">05</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">05</span>
             Interaktion
           </p>
         </div>
@@ -240,8 +240,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">06</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">06</span>
             Interaktion
           </p>
         </div>
@@ -254,8 +254,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">07</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">07</span>
             Zoomansicht
           </p>
         </div>
@@ -268,8 +268,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">08</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">08</span>
             Informationen Overlay
           </p>
         </div>
@@ -282,8 +282,8 @@
             ref="image-fd-01"
           >
           </media-image>
-          <p class="fd-ar-desc">
-            <span class="fd-ar-number">09</span>
+          <p class="desc-fd-ar">
+            <span class="number-fd-ar">09</span>
             Navigation Overlay
           </p>
         </div>
@@ -304,7 +304,9 @@
       >
       </deco-image>
     </section>
-    <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta">Projekt Online anschauen</a>
+    <div class="cta-container-ar">
+      <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small">Projekt online anschauen</a>
+    </div>
   </project>
 </template>
 
@@ -405,41 +407,73 @@
   .deco-stars {
     --s-decal-x: 0;
     --s-rotate: 0deg;
-    --s-scale: 1;
+    --s-scale-x: 1;
+    --s-top: 0;
+    --s-left: 0;
+    --s-width: 100%;
 
     position: absolute;
-    transform: scaleX(var(--s-scale)) rotate(var(--s-rotate));
+    width: var(--s-width);
+    top: var(--s-top);
+    left: var(--s-left);
+    transform: scaleX(var(--s-scale-x)) rotate(var(--s-rotate));
     animation: stars 10s ease-in-out infinite alternate;
 
     &--1 {
       --s-decal-x: -4%;
       --s-rotate: 30deg;
-      --s-scale: 1;
+      --s-scale-x: 1;
+      --s-top: calc(var(--s-gutter) * -5);
+      --s-left: -40%;
 
-      width: 100%;
-      top: calc(var(--s-gutter) * -5);
-      left: -40%;
+      @include viewport('tablet-s') {
+        --s-top: calc(var(--s-gutter) * 0.5);
+        --s-left: -10%;
+        --s-width: 120%;
+      }
     }
 
     &--2 {
       --s-decal-x: -2%;
       --s-rotate: 30deg;
-      --s-scale: -1;
+      --s-scale-x: -1;
+      --s-top: calc(var(--s-gutter) * -12);
+      --s-left: 65%;
 
-      width: 100%;
-      top: calc(var(--s-gutter) * -12);
-      left: 65%;
+      @include viewport('tablet-s') {
+        --s-top: calc(var(--s-gutter) * -13);
+        --s-left: 60%;
+        --s-width: 110%;
+      }
+
+      @include viewport('mobile-l') {
+        --s-top: calc(var(--s-gutter) * -18);
+      }
     }
 
     &--3 {
       --s-decal-x: -2%;
       --s-rotate: 16deg;
-      --s-scale: 1;
+      --s-scale-x: 1;
+      --s-top: calc(var(--s-gutter) * -5);
+      --s-left: -65%;
+      --s-width: 175%;
 
-      width: 175%;
-      top: calc(var(--s-gutter) * -5);
-      left: -65%;
       z-index: -1;
+
+      @include viewport('desktop') {
+        --s-top: calc(var(--s-gutter) * -4);
+      }
+
+      @include viewport('tablet') {
+        --s-top: calc(var(--s-gutter) * -2);
+      }
+
+      @include viewport('tablet-s') {
+        --s-top: 0;
+        --s-left: -20%;
+        --s-width: 130%;
+      }
     }
 
     &--4,
@@ -447,47 +481,85 @@
     &--6 {
       --s-decal-x: -3%;
       --s-rotate: -16deg;
-      --s-scale: 1;
+      --s-scale-x: 1;
       --opacity: 0.5;
+      --s-top: 0;
+      --s-left: 0;
 
-      width: 100%;
-      top: 0;
-      left: 0;
       z-index: -10;
+
+      @include viewport('tablet') {
+        --s-width: 65%;
+        --s-left: 17%;
+      }
+
+      @media (min-width: 1600px) {
+        --s-width: 75%;
+        --s-left: 17%;
+      }
+
+      @media (min-width: 1920px) {
+        --s-width: 65%;
+        --s-left: 20%;
+      }
     }
 
     &--5 {
       --s-rotate: 16deg;
-
-      top: 35%;
+      --s-decal-x: 3%;
+      --s-top: 35%;
     }
 
     &--6 {
-      top: auto;
+      --s-top: auto;
+
       bottom: 0;
     }
   }
 
   @keyframes stars {
     from {
-      transform: translate(0, 0) scaleX(var(--s-scale)) rotate(var(--s-rotate));
+      transform: translate(0, 0) scaleX(var(--s-scale-x)) rotate(var(--s-rotate));
     }
 
     to {
-      transform: translate(var(--s-decal-x), var(--s-decal-x)) scaleX(var(--s-scale)) rotate(var(--s-rotate));
+      transform: translate(var(--s-decal-x), var(--s-decal-x)) scaleX(var(--s-scale-x)) rotate(var(--s-rotate));
     }
   }
 
   .intro-ar {
     padding-bottom: calc(var(--s-gutter) * 3);
+
+    @include viewport('desktop') {
+      padding-bottom: calc(var(--s-gutter) * 0.5);
+    }
+
+    @include viewport('tablet') {
+      padding-bottom: 0;
+    }
   }
 
   .book-intro {
     position: absolute;
     width: 115%;
     margin-left: -25%;
-    margin-top: calc(var(--s-gutter) * -0.15);
     transform: rotate(-6deg);
+
+    @include viewport('tablet-s') {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 5%;
+      margin-bottom: 7%;
+    }
+
+    @include viewport('mobile-l') {
+      width: 100%;
+    }
+  }
+
+  .section-ow {
+    margin-top: calc(var(--s-gutter) * 0.75);
   }
 
   .col-ow--l {
@@ -498,18 +570,53 @@
     flex-basis: 61%;
   }
 
-  .section-ow {
-    margin-top: calc(var(--s-gutter) * 0.75);
-  }
-
   .video-ow {
+    --s-t-left: 7%;
+    --s-t-top: -25%;
+
     position: absolute;
     width: 120%;
-    transform: rotate(-6deg) translate(7%, -25%);
+    max-width: 1440px;
+    transform: rotate(-6deg) translate(var(--s-t-left), var(--s-t-top));
+
+    @media (min-width: 2000px) {
+      --s-t-left: 12%;
+    }
+
+    @include viewport('desktop') {
+      --s-t-top: -15%;
+    }
+
+    @include viewport('tablet') {
+      --s-t-top: -5%;
+    }
+
+    @include viewport('tablet-s') {
+      --s-t-left: 0;
+      --s-t-top: 10%;
+
+      position: relative;
+      margin: 0 auto;
+      margin-top: 5%;
+      margin-bottom: 2%;
+      width: 90%;
+    }
+
+    @include viewport('mobile-l') {
+      width: 100%;
+    }
   }
 
   .section-ctx {
     margin-top: calc(var(--s-gutter) * 2);
+
+    @include viewport('desktop') {
+      margin-top: calc(var(--s-gutter) * 0.75);
+    }
+
+    @include viewport('tablet') {
+      margin-top: 0;
+    }
   }
 
   .col-ctx--l {
@@ -523,13 +630,52 @@
   }
 
   .image-ctx {
+    --s-t-left: -25%;
+    --s-t-top: -28%;
+    --s-width: 120%;
+
     position: absolute;
-    width: 120%;
-    transform: translate(-20%, -28%);
+    width: var(--s-width);
+    transform: translate(var(--s-t-left), var(--s-t-top));
+
+    @include viewport('desktop') {
+      --s-t-left: -28%;
+      --s-t-top: -25%;
+      --s-width: 130%;
+    }
+
+    @include viewport('tablet') {
+      --s-t-left: -30%;
+      --s-t-top: -20%;
+      --s-width: 130%;
+    }
+
+    @include viewport('tablet-s') {
+      --s-t-left: 0;
+      --s-t-top: 3%;
+      --s-width: 100%;
+
+      position: relative;
+      margin: 0 auto;
+    }
+
+    @include viewport('mobile') {
+      --s-t-left: -3%;
+      --s-width: 130%;
+    }
   }
 
   .section-logos {
     padding-bottom: calc(var(--s-padding) * 0.5);
+    margin-top: calc(var(--s-gutter) * 0.5);
+
+    @include viewport('desktop-xl') {
+      margin-top: calc(var(--s-gutter) * 2);
+    }
+
+    @include viewport('desktop') {
+      margin-top: 0;
+    }
   }
 
   .logos-ar {
@@ -538,11 +684,26 @@
 
   .logo-ar {
     width: 100%;
+
+    @include viewport('tablet-s') {
+      margin-top: calc(var(--s-gutter-col) * 2);
+    }
   }
 
   .section-balls {
     margin-top: calc(var(--s-gutter) * 0.25);
     padding-bottom: calc(var(--s-padding) * 0.75);
+
+    @media (min-width: 2000px) {
+      width: 1920px;
+      box-sizing: border-box;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: 2200px) {
+      padding-left: 0;
+    }
   }
 
   .pick-balls {
@@ -555,22 +716,63 @@
     }
 
     &__desc {
-      padding-top: 0;
-      margin-top: -0.2em;
+      margin-top: -1em;
       margin-bottom: calc(var(--s-gutter) * 0.5);
+
+      @include viewport('tablet-s') {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 2200px) {
+      width: 65%;
+    }
+
+    @include viewport('tablet-s') {
+      display: block;
+      width: 65%;
     }
   }
 
   .balls {
+    width: 100vw;
     position: relative;
     z-index: -1;
     margin-left: calc(var(--s-padding) * -1);
-    margin-top: calc(var(--s-gutter) * -2.5);
+    margin-top: -12%;
+
+    @media (min-width: 2000px) {
+      width: 1920px;
+    }
+
+    @media (min-width: 2200px) {
+      margin-left: 0;
+    }
+
+    @include viewport('tablet-s') {
+      width: 130vw;
+      margin-left: calc(var(--s-padding) * -1 - 15vw);
+      margin-top: -14%;
+    }
   }
 
   .section-fd-ar {
     text-align: center;
     margin-bottom: calc(var(--s-gutter) * 1);
+    margin-top: calc(var(--s-gutter) * 0.5);
+
+    @include viewport('desktop-xl') {
+      margin-top: calc(var(--s-gutter) * 1);
+    }
+
+    @include viewport('tablet') {
+      margin-top: 0;
+    }
+
+    @include viewport('tablet-s') {
+      margin-top: calc(var(--s-gutter) * 1);
+    }
   }
 
   .title-fd-ar {
@@ -590,13 +792,26 @@
     }
   }
 
-  .fd-ar-desc {
+  .desc-fd-ar {
     font-size: var(--s-text-small);
     text-align: center;
     padding-top: 1.5em;
+
+    @include viewport('desktop-xl') {
+      font-size: calc(var(--s-text-small) * 0.75);
+    }
+
+    @include viewport('tablet-s') {
+      font-size: calc(var(--s-text-small) * 0.75);
+    }
+
+    @include viewport('mobile') {
+      font-size: var(--s-text-small);
+      padding-top: 1em;
+    }
   }
 
-  .fd-ar-number {
+  .number-fd-ar {
     @include title;
     @include label-small;
 
@@ -604,6 +819,32 @@
     left: var(--s-gutter-col-mid);
     color: var(--c-title);
     margin-top: 0.4em;
+
+    @include viewport('desktop-xl') {
+      font-size: calc(var(--s-text-small) * 0.75);
+    }
+
+    @include viewport('tablet-s') {
+      font-size: calc(var(--s-text-small) * 0.75);
+    }
+
+    @include viewport('mobile-l') {
+      position: relative;
+      left: auto;
+      display: block;
+    }
+
+    @include viewport('mobile') {
+      position: relative;
+      display: inline-block;
+      padding-right: 0.5em;
+      font-size: var(--s-text-small);
+    }
+  }
+
+  .cta-container-ar {
+    padding-top: var(--s-gutter);
+    text-align: center;
   }
   </style>
 
