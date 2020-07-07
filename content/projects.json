@@ -58,11 +58,13 @@
     },
     {
       "uid": "flm",
-      "title": "Freunde Landesmuseum",
-      "type": "One-Pager",
+      "title": "Freunde Landesmuseum Zürich",
+      "type": "Branding & One-Pager",
       "year": "2019",
+      "agency": "Eyekon",
+      "skills": "Corporate Branding, Konzept & Wireframes,  Art Direction & Digital Design",
       "color": "#3d7ac3",
-      "colorCase": "#3d7ac3",
+      "colorCase": "#edf0f2",
       "inverted": false
     },
     {
@@ -134,7 +136,7 @@
       "type": "Produkt One-Pager",
       "year": "2017",
       "agency": "Eyekon",
-      "skills": "Konzept & Wireframes, Art Direction & Digital, Animation",
+      "skills": "Konzept & Wireframes, Art Direction & Digital Design, Animation",
       "color": "#3a86d0",
       "colorCase": "#1b548b",
       "inverted": true
