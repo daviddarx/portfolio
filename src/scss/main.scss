@@ -1909,17 +1909,15 @@ body {
 .pagination {
   $root: #{&};
 
+  --c-hover-bg: black;
+  --c-hover-text: white;
   --s-text-translate: calc(var(--s-text) * -2);
-  --c-text-normal: var(--c-text);
-  --c-text-hover: var(--c-text-inverted);
-  --c-background: var(--c-text);
 
-  color: var(--c-text-normal);
   display: flex;
 
   &.is-black {
-    --c-background: var(--c-text-inverted);
-    --c-text-hover: var(--c-text);
+    --c-hover-bg: white;
+    --c-hover-text: black;
   }
 
   @include viewport('tablet-s') {
@@ -1931,8 +1929,6 @@ body {
 }
 
 .pagination-link {
-  --c-border: var(--c-text);
-
   $root: #{&};
 
   position: relative;
@@ -1940,15 +1936,12 @@ body {
   text-align: center;
   box-sizing: border-box;
   padding: calc(var(--s-gutter) * 3) calc(var(--s-gutter) * 2);
+  color: var(--c-hover-bg);
 
   @include viewport('tablet-s') {
     display: block;
     padding: calc(var(--s-gutter) * 2);
-    border-top: var(--s-lines) solid var(--c-border);
-  }
-
-  &.is-black {
-    --c-border: white;
+    border-top: var(--s-lines) solid var(--c-hover-bg);
   }
 
   &::before {
@@ -1959,14 +1952,14 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: var(--c-background);
+    background-color: var(--c-hover-bg);
     transform: scaleY(0);
     transform-origin: left bottom;
     transition: transform var(--e-inout) 0.4s;
   }
 
   &:hover {
-    color: var(--c-text-hover);
+    color: var(--c-hover-text);
 
     &::before {
       transform: none;
@@ -1974,7 +1967,7 @@ body {
   }
 
   &:first-child {
-    border-right: var(--s-lines) solid var(--c-border);
+    border-right: var(--s-lines) solid var(--c-hover-bg);
 
     @include viewport('tablet-s') {
       border-right: 0;
@@ -2018,7 +2011,7 @@ body {
   &__arrow {
     --s-width: 0;
     --s-height: 0;
-    --c: var(--c-text-hover);
+    --c: var(--c-hover-text);
     --t: translate(-50%, 1em);
 
     position: absolute;
