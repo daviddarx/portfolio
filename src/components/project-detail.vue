@@ -48,6 +48,7 @@
 
     <pagination
       class="project__pagination"
+      v-bind:class="{'is-black' : this.isInverted}"
       :route-prev="this.routePrev"
       :route-next="this.routeNext"
       :title-prev="this.titlePrev"
