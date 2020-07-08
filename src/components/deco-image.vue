@@ -1,12 +1,18 @@
 
 <template>
-  <img
-    v-bind:src="this.finalURL"
-    alt="decoration"
-    @load="imageLoaded"
+  <div
     class="deco-image"
     v-bind:class="{'is-loaded' : isLoaded}"
+    ref="container"
   >
+    <img
+      v-bind:src="this.finalURL"
+      alt="decoration"
+      class="deco-image__el"
+      @load="imageLoaded"
+      v-bind:class="{'is-hidden' : this.backgroundImage}"
+    >
+  </div>
 </template>
 
 <script>
@@ -18,6 +24,10 @@
         type: Number,
         default: 1
       },
+      backgroundImage: {
+        type: Boolean,
+        default: false
+      }
     },
     data: function () {
       return {
@@ -30,6 +40,10 @@
     },
     mounted () {
       this.computeHD();
+
+      if (this.backgroundImage == true) {
+        this.$refs.container.style.backgroundImage=`url('${this.finalURL}')`;
+      }
     },
     methods: {
       imageLoaded: function () {

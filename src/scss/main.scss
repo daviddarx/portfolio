@@ -679,13 +679,21 @@ body {
 .deco-image {
   --opacity: 1;
 
-  display: block;
   pointer-events: none;
   opacity: 0;
   transition: opacity ease-out 0.3s;
 
   &.is-loaded {
     opacity: var(--opacity);
+  }
+
+  &__el {
+    display: block;
+    width: 100%;
+
+    &.is-hidden {
+      display: none;
+    }
   }
 }
 
