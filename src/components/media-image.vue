@@ -131,6 +131,8 @@
       imageLoaded: function () {
         this.isLoaded = true;
 
+        this.$emit('loaded');
+
         this.computeImageNaturalDimensions();
         this.checkIfZoomable();
       },
