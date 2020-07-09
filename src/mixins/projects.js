@@ -47,13 +47,16 @@ export default {
             videoComponent.enter();
           } else {
             videoComponent.leave();
-
           }
         }
       });
     },
 
     resize () {
+      if (this.customResize) {
+        this.customResize();
+      }
+
       this.refsArray.forEach(ref => {
         if (ref.resize) {
           ref.resize();
