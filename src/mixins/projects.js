@@ -61,12 +61,14 @@ export default {
       });
     },
     destroy () {
-      this.refsArray.forEach(ref => {
-        if (ref.destroy) {
-          ref.destroy();
-        }
-      });
-      this.refsArray = [];
+      if (this.refsArray) {
+        this.refsArray.forEach(ref => {
+          if (ref.destroy) {
+            ref.destroy();
+          }
+        });
+        this.refsArray = [];
+      }
 
       if (this.observer) {
         this.observerItems.forEach(item => {
