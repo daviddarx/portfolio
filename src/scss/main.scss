@@ -774,7 +774,7 @@ body {
 }
 
 .media-image {
-  --c-border: rgba(255, 255, 255, 0.1);
+  --c-border: rgba(0, 0, 0, 0.1);
   --d-zooming: 0.5s;
 
   $root: #{&};
@@ -791,6 +791,10 @@ body {
 
   &.is-zoomable {
     cursor: pointer;
+  }
+
+  .is-inverted & {
+    --c-border: rgba(255, 255, 255, 0.1);
   }
 
   &__el {
@@ -810,6 +814,8 @@ body {
   }
 
   &__preloader {
+    --c-line: black;
+
     position: absolute;
     left: 50%;
     top: var(--s-gutter);
@@ -819,6 +825,10 @@ body {
     #{$root}.is-loaded & {
       opacity: 0;
       visibility: hidden;
+    }
+
+    .is-inverted & {
+      --c-line: white;
     }
   }
 
