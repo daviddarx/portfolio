@@ -776,6 +776,7 @@ body {
 .media-image {
   --c-border: rgba(0, 0, 0, 0.1);
   --d-zooming: 0.5s;
+  --outline-final: var(--s-lines) solid transparent;
 
   $root: #{&};
 
@@ -785,7 +786,7 @@ body {
   transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
 
   &.is-loaded {
-    outline-color: transparent;
+    outline: var(--outline-final);
     min-height: 0;
   }
 
