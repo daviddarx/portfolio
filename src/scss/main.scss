@@ -469,7 +469,7 @@ body {
   color: var(--c-text);
 
   &:hover {
-    color: black;
+    color: var(--c-bg);
   }
 
   &::before {
@@ -492,6 +492,11 @@ body {
 
   &--small {
     font-size: var(--s-text-small);
+  }
+
+  &--inverted {
+    --c-text: black;
+    --c-bg: white;
   }
 }
 
