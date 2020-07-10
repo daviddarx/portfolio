@@ -1554,6 +1554,10 @@ body {
     padding: var(--s-padding);
     padding-top: calc(var(--s-padding) - 0.35em);
 
+    &--padding-none {
+      --s-padding: 0;
+    }
+
     &--padding-2x {
       --s-padding: calc(var(--s-gutter) * 2);
     }
