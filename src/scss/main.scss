@@ -1595,6 +1595,10 @@ body {
 
     @include viewport('tablet') {
       --s-padding: calc(var(--s-gutter) * 2);
+
+      &--padding-none {
+        --s-padding: 0;
+      }
     }
 
     @include viewport('tablet-s') {
