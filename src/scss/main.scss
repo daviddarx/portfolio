@@ -1651,6 +1651,7 @@ body {
   &__mobile-thumb {
     --s-margin-top: 0;
     --s-margin-top-mobile: var(--s-gutter);
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 15px 10px rgba(0, 0, 0, 0.15);
 
     position: relative;
     flex-basis: 33.33%;
@@ -1697,7 +1698,7 @@ body {
 
     .media-image {
       min-width: var(--s-mobile);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 15px 10px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--box-shadow);
 
       @include viewport('mobile') {
         min-width: 100%;
