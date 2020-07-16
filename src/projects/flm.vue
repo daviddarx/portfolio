@@ -855,7 +855,12 @@
   }
 
   .flm-final-de {
+    margin-top: var(--s-gutter);
     padding-bottom: 0;
+
+    @include viewport('desktop') {
+      margin-top: 0;
+    }
 
     &__title {
       text-align: center;
