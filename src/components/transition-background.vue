@@ -51,7 +51,7 @@
     },
     data() {
       return {
-        color: '#ff0000',
+        color: '#000000',
         isWaveInDisplayed: false,
         isWaveOutDisplayed: false,
         isLogoDisplayed: false,
