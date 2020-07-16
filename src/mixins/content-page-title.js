@@ -88,7 +88,6 @@ export default {
         if(entry.isIntersecting){
           this.observerEntriesActive.push(entry.target);
 
-          const entryID = parseInt(entry.target.getAttribute('id'));
           const isEntryAboveTitle = (entry.boundingClientRect.y < this.windowH * this.windowGutter);
 
           if (isEntryAboveTitle == true) {
