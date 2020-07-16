@@ -105,7 +105,7 @@
         zoomedImageAnimationOutInterval: undefined,
         zoomedImageAnimationOutStart: 0,
         zoomedImageAnimationOutTime: 0,
-        zoomedImageScrollRatioToDezoom: 0.2,
+        zoomedImageScrollRatioToDezoom: 0.5,
         displayZoomedImageTimeout: undefined,
         displayZoomedImageTimeoutDuration: 100,
         minimalRatioToZoomImageOnRetina: 1
