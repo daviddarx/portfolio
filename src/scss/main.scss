@@ -2113,18 +2113,13 @@ body {
   &__el-in,
   &__el-out {
     position: fixed;
-    z-index: 1000;
+    z-index: 998;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     will-change: transform;
     background-color: black;
-
-    &.is-normal-page {
-      background-color: black;
-      z-index: 998;
-    }
   }
 }
 
