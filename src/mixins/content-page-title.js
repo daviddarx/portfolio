@@ -97,7 +97,9 @@ export default {
 
           this.isTitleHidden = true;
         } else {
-          this.observerEntriesActive.splice(this.observerEntriesActive.indexOf(entry.target), 1);
+          if (this.observerEntriesActive.indexOf(entry.target) != -1) {
+            this.observerEntriesActive.splice(this.observerEntriesActive.indexOf(entry.target), 1);
+          }
 
           const entryID = parseInt(entry.target.getAttribute('id'));
           const isEntryAboveTitle = (entry.boundingClientRect.y < this.windowH * this.windowGutter);
