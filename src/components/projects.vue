@@ -66,6 +66,7 @@
         projects: projects,
         isDisplayed : false,
         isMounted: false,
+        pageTitleOnLoad: "2020",
         pageTitle: "2020"
       }
     },
@@ -104,7 +105,7 @@
         this.isMounted = true;
         setTimeout(this.displayProjects, 100);
 
-        this.initTitlesObserver(this.pageTitle);
+        this.initTitlesObserver(this.pageTitleOnLoad);
       },
       getProjectsForYear: function (year) {
         return this.projects.main.filter(project => project.year == year);
