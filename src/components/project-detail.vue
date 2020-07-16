@@ -114,7 +114,7 @@
 
       document.body.style.setProperty('--project-color', this.color);
 
-      requestAnimationFrame(this.displayProject);
+      setTimeout(this.displayProject, 350);
     },
     methods: {
       displayProject: function() {
