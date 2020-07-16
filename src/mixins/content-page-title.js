@@ -102,10 +102,11 @@ export default {
           }
 
           const entryID = parseInt(entry.target.getAttribute('id'));
+          const isEntryFirstCalled = entry.target.getAttribute('firstCalled') == 'true';
           const isEntryAboveTitle = (entry.boundingClientRect.y < this.windowH * this.windowGutter);
 
           const targetReplaceTitle = entry.target.getAttribute('titleReplace');
-          if (targetReplaceTitle != null && entry.target.getAttribute('firstCalled') == 'true') {
+          if (targetReplaceTitle != null && isEntryFirstCalled) {
             if (isEntryAboveTitle == true) {
               this.pageTitle = targetReplaceTitle;
             } else {
@@ -130,11 +131,13 @@ export default {
               this.isTitleJumping = true;
             }
 
-            requestAnimationFrame(() => {
-              this.isTitleHidden = false;
-              this.isTitleBelow = false;
-              this.isTitleJumping = false;
-            });
+            if (isEntryFirstCalled) {
+              requestAnimationFrame(() => {
+                this.isTitleHidden = false;
+                this.isTitleBelow = false;
+                this.isTitleJumping = false;
+              });
+            }
           }
         }
 
