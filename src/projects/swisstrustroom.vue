@@ -202,6 +202,11 @@
     </section>
 
     <section class="project__section project__section--padding-2x section-rd">
+      <deco-image
+        v-bind:url="this.mediasPath+'cloud.png'"
+        class="deco-cloud deco-cloud--4"
+      >
+      </deco-image>
       <h2 class="project__pick-title title-rd">
         Responsive Design
       </h2>
@@ -374,6 +379,15 @@
       width: 200%;
       bottom: -20%;
       left: 0%;
+    }
+
+    &--4 {
+      --s-decal-x: -5%;
+
+      width: 100%;
+      max-width: 1600px;
+      top: 12%;
+      left: 15%;
     }
   }
 
