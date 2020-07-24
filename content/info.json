@@ -1,5 +1,5 @@
 {
-  "lead":"David Darx dolor sit amet, consectetur adipiscing elit. Aliquam et aliquet nisl. Vivamus at enim mi. Nam ut faucibus leo. Quisque congue molestie dui, egestas condimentum neque ornare in",
+  "lead":"David Darx. Digital Art Director & Designer. 37 Jahre alt, davon 13 in der Digitalen Kommunikation. Ursprünglich aus Freiburg im Welschland stammend, bin ich 2014 in das Schweizer Digital Eldorado ausgewandert und führe seitdem ein glückliches Leben in Zürich.",
   "introduction":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et aliquet nisl. Vivamus at enim mi. Nam ut faucibus leo.</p><p>Quisque congue molestie dui, egestas condimentum neque ornare in. Vivamus at leo lectus. Quisque blandit finibus euismod.</p><p>Nunc non ante sed eros aliquam posuere. Sed iaculis nisi justo, nec posuere dui gravida eget.<p>",
   "gifTitle": "David Darx",
   "gifPath": "info/gif/",
@@ -69,15 +69,15 @@
   "expertise": [
     {
       "title": "Konzeption & Gestaltung",
-      "desc": "Konzept & Wireframes, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management."
+      "desc": "Konzept & Wireframes, IA, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management.<br><br>Figma, Sketch, Invision, Zeplin, Photoshop, Illustrator, InDesign, After Effects, Final Cut, Keynote."
     },
     {
       "title": "Entwicklung",
-      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Libraries & Frameworks: NPM & Parcel.js, Github, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js, und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
+      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Frameworks & Tools: Github, Tower, NPM, Parcel.js, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js, und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
     },
     {
       "title": "Sprachen",
-      "desc": "Französisch (Muttersprache), Deutsch, Englisch, Spanish."
+      "desc": "Französisch (Muttersprache), Deutsch, Englisch, Spanish (Grundlage)."
     }
   ],
   "education": [
