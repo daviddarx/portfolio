@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <section class="project__section logo-re">
+    <section class="project__section project__section--padding-none logo-re">
       <div
         class="logo-re__deco"
         ref="logoredeco"
@@ -646,6 +646,7 @@
 
   .logo-re {
     --height: 0;
+    --padding-left: calc(var(--s-gutter) * 2);
 
     position: relative;
     padding-top: 0;
@@ -661,6 +662,7 @@
         position: relative;
         height: 50vw;
         width: calc(100% + var(--s-gutter));
+        margin-left: var(--s-gutter);
       }
     }
 
@@ -668,19 +670,19 @@
       box-sizing: border-box;
       width: calc(50% - var(--s-gutter) * 1);
       padding-top: calc(var(--s-gutter) * 3);
-      padding-left: var(--s-gutter);
+      padding-left: var(--padding-left);
       padding-right: calc(var(--s-gutter) * 2);
       padding-bottom: calc(var(--s-gutter) * 0.75);
 
       @include viewport('tablet') {
-        padding-left: 0;
         padding-right: var(--s-gutter);
       }
 
       @include viewport('tablet-s') {
         width: 100%;
         padding-top: var(--s-gutter);
-        padding-right: 0;
+        padding-left: var(--s-gutter);
+        padding-right: var(--s-gutter);
       }
     }
 
@@ -691,10 +693,14 @@
       flex-wrap: wrap;
       justify-content: space-between;
       width: var(--s-col-wide);
-      margin-left: calc(var(--s-gutter) - 1px);
+      margin-left: calc(var(--padding-left) - 1px);
 
-      @include viewport('tablet') {
-        margin-left: -1px;
+      @include viewport('tablet-s') {
+        width: 100%;
+        box-sizing: border-box;
+        margin-left: 0;
+        padding-left: var(--s-gutter);
+        padding-right: var(--s-gutter);
       }
 
       @include viewport('mobile-l') {
@@ -775,7 +781,9 @@
     margin-top: calc(var(--s-gutter) * 2);
 
     @include viewport('tablet') {
-      margin-top: 0;
+      margin-top: var(--s-gutter);
+      padding-left: var(--s-gutter);
+      padding-right: var(--s-gutter);
     }
 
     &__logo-cols {
@@ -831,6 +839,10 @@
       flex-shrink: 1;
       padding: calc(var(--s-gutter) * 2);
       padding-top: calc(var(--s-gutter) * 2.65);
+
+      @include viewport('vertical') {
+        padding-top: calc(var(--s-gutter) * 2);
+      }
 
       @include viewport('tablet') {
         padding-left: var(--s-gutter);
