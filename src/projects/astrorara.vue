@@ -343,9 +343,6 @@
           datas.url = this.mediasPath+'intro.png';
           datas.hd = 2;
         }
-
-        console.log("book data");
-
         return datas;
       },
       contextImageDatas: function () {
@@ -378,7 +375,6 @@
       }
     },
     mounted () {
-      console.log("mounted");
       this.mount();
     },
     beforeDestroy () {
