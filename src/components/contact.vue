@@ -15,9 +15,10 @@
       </h2>
 
       <div class="content-page__lead animate-in animate-in__s1">
+          David Darx<br>
           078 805 89 63<br>
           <a href="mailto:hoi@daviddarx.com" target="_blank" class="text-link">hoi@daviddarx.com</a><br>
-          <a href="https://www.linkedin.com/in/daviddarx" target="_blank" class="text-link">Linkedin</a>
+          <a href="https://www.linkedin.com/in/daviddarx" target="_blank" class="text-link">LinkedIn</a>
       </div>
       <div class="content-page__content animate-in animate-in__s2">
         <div
