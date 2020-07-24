@@ -336,7 +336,7 @@
         const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         let datas = {};
 
-        if (windowW >= 1280) {
+        if (windowW >= 1600) {
           datas.url = this.mediasPath+'intro_hd.png';
           datas.hd = 1;
         } else {
@@ -344,13 +344,15 @@
           datas.hd = 2;
         }
 
+        console.log("book data");
+
         return datas;
       },
       contextImageDatas: function () {
         const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         let datas = {};
 
-        if (windowW >= 1441) {
+        if (windowW >= 1800) {
           datas.url = this.mediasPath+'informations_hd.png';
           datas.hd = 1;
         } else {
@@ -376,6 +378,7 @@
       }
     },
     mounted () {
+      console.log("mounted");
       this.mount();
     },
     beforeDestroy () {
