@@ -1591,6 +1591,10 @@ body {
 
     @include viewport('vertical') {
       --s-padding: calc(var(--s-gutter) * 2);
+
+      &--padding-none {
+        --s-padding: 0;
+      }
     }
 
     @include viewport('tablet') {
@@ -1605,6 +1609,10 @@ body {
       --s-padding: var(--s-gutter);
 
       padding-top: var(--s-padding);
+
+      &--padding-none {
+        --s-padding: 0;
+      }
     }
 
     @include viewport('mobile-s') {
