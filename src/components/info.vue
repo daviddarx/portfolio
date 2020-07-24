@@ -13,8 +13,10 @@
           {{this.pageTitle}}
         </span>
       </h2>
-      <p class="content-page__lead animate-in animate-in__s1">
-        {{this.info.lead}}
+      <p
+        class="content-page__lead animate-in animate-in__s1"
+        v-html="this.info.lead"
+      >
       </p>
 
       <div class="content-page__content animate-in animate-in__s2">

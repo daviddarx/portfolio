@@ -16,8 +16,10 @@
           Kunterbunt
         </span>
       </h2>
-      <p class="content-page__lead animate-in animate-in__s1">
-        {{misc.lead}}
+      <p
+        class="content-page__lead animate-in animate-in__s1"
+        v-html="misc.lead"
+      >
       </p>
       <div
         class="content-page__3-4 miscs__container miscs-grid animate-in animate-in__s2 hiding-title"
