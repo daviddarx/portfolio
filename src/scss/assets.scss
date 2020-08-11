@@ -157,21 +157,20 @@ $breakpoints: (
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1); // quart
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1); // quart
 
-  @media (min-height: 1024px) {
-    --s-text-navigation: 1.4vh;
-    --s-logo: 5vh;
-  }
-
   @include viewport('vertical') {
     --s-gutter: 6vh;
-
-    @media (min-height: 1024px) {
-      --s-logo: 4.5vh;
-    }
   }
 
   @include viewport('vertical-xl') {
     --s-gutter: 5vh;
+  }
+
+  @media (min-width: 1920px) {
+    --s-logo: 4.75vh;
+  }
+
+  @include viewport('desktop-xl') {
+    --s-logo: 4.5vh;
   }
 
   @include viewport('desktop') {
