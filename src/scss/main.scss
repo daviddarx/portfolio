@@ -1211,9 +1211,9 @@ body {
     @include fontRunText();
 
     display: block;
-    font-size: calc(var(--s-text-small) * (2 - var(--s-text-title-font-compensated)));
+    font-size: 1.05rem;
     text-transform: none;
-    letter-spacing: 0.0425em;
+    letter-spacing: 0.03em;
     padding-top: 0.5em;
     transform: translateX(-0.02em);
   }
@@ -1247,7 +1247,7 @@ body {
   &__year {
     @include fontRunText();
 
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
 
