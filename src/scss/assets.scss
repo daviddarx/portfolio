@@ -136,7 +136,7 @@ $breakpoints: (
   --s-text-h1: calc(var(--s-text) * 4);
   --s-text-h2: calc(var(--s-text) * 3);
   --s-text-lead: calc(var(--s-text) * 1.5);
-  --s-text-navigation: 1.8vh;
+  --s-text-navigation: var(--s-text-small);
   --s-line-height: 1.7;
   --s-line-height-titles: 1;
   --s-line-height-titles-small: 1.2;
@@ -145,7 +145,7 @@ $breakpoints: (
   --s-letter-spacing-readability: 0.025em;
   --s-gutter: 8vh;
   --s-gutter-col: calc(var(--s-gutter) * 0.25);
-  --s-logo: 6vh;
+  --s-logo: 5vh;
   --s-lines: 2px;
   --s-twerk: 0.5px;
   --s-decal-close-to-corner: 0.5em;
