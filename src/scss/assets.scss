@@ -173,8 +173,17 @@ $breakpoints: (
     --s-logo: 4.5vh;
   }
 
+  @media (min-aspect-ratio: 20/9) {
+    --s-logo: 6vh;
+  }
+
+  @include viewport('vertical-xl') {
+    --s-logo: 3.5vh;
+  }
+
   @include viewport('desktop') {
     --s-text: 2rem;
+    --s-text-h2: calc(var(--s-text) * 2.5);
   }
 
   @include viewport('tablet') {
