@@ -971,6 +971,16 @@ body {
     margin-right: 3.5vh;
     transition: color ease-out 0.25s;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .vertical & {
+      display: table;
+      margin-bottom: 1.5rem;
+      margin-right: 0;
+    }
+
     &::before,
     &::after {
       content: "";
