@@ -321,7 +321,6 @@ body {
   left: var(--s-gutter);
   transform: rotate(-90deg) translate(-99%, -20%);
   transform-origin: top left;
-  will-change: transform;
 
   .is-dark & {
     z-index: 2000;
@@ -355,6 +354,8 @@ body {
     width: auto;
     height: var(--s-logo);
     fill: var(--c-text);
+    will-change: right;
+
 
     &--black {
       fill: var(--c-text);
