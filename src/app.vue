@@ -63,11 +63,13 @@
 
         this.$refs.nav.resetVertical();
 
-        if (this.$refs.logo.$el.offsetWidth + this.$refs.nav.$el.offsetWidth + 2 * gutter > vh - gutter * 0.5){
-          this.$refs.nav.setVertical();
-        }
+        requestAnimationFrame(() => {
+          if (this.$refs.logo.$el.offsetWidth + this.$refs.nav.$el.offsetWidth + 2 * gutter > vh - gutter * 0.5){
+            this.$refs.nav.setVertical();
+          }
 
-        this.$refs.nav.checkMobile(vw);
+          this.$refs.nav.checkMobile(vw);
+        });
       },
       resize: function () {
         this.checkVerticalNav();
