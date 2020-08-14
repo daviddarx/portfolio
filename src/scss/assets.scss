@@ -188,6 +188,7 @@ $breakpoints: (
 
   @include viewport('tablet') {
     --s-text: 2.2rem;
+    --s-text-h2: calc(var(--s-text) * 2.3);
   }
 
   @include viewport('tablet-s') {
