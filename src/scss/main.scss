@@ -1231,6 +1231,8 @@ body {
     left: 25vw;
 
     @include viewport('mobile-layout') {
+      --s-decal-y: 0;
+
       position: relative;
       top: 0;
       left: 0;
@@ -1263,6 +1265,10 @@ body {
     line-height: var(--s-line-height-lead);
     margin-top: -0.4em;
     margin-bottom: 2.5em;
+
+    @include viewport('mobile-layout') {
+      margin-bottom: 1.2em;
+    }
   }
 
   &__3-4 {
@@ -1299,6 +1305,10 @@ body {
 
   &__list {
     margin-top: 3em;
+
+    @include viewport('mobile-layout') {
+      margin-top: 2.7em;
+    }
 
     &:first-child {
       margin-top: 0;
