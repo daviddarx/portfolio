@@ -1441,7 +1441,7 @@ body {
       left: 0;
       top: 0;
       width: auto;
-      margin-bottom: var(--s-gutter);
+      margin-bottom: calc(var(--s-gutter) - 0.2em);
     }
   }
 
