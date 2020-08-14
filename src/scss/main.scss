@@ -1268,6 +1268,7 @@ body {
 
     @include viewport('mobile-layout') {
       margin-bottom: 1.2em;
+      margin-top: 1.5em;
     }
   }
 
@@ -1287,6 +1288,10 @@ body {
     position: relative;
     margin-top: 7em;
     margin-bottom: 5.5em;
+
+    @include viewport('mobile-layout') {
+      margin-bottom: 4.75em;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -1317,12 +1322,6 @@ body {
 }
 
 .info {
-  &__title {
-    @include viewport('mobile-layout') {
-      margin-bottom: calc(var(--s-gutter) * 1.1);
-    }
-  }
-
   &__image {
     filter: grayscale(100%) contrast(2) brightness(2);
     transition: filter var(--e-out) 0.3s;
@@ -1487,6 +1486,10 @@ body {
   &__title {
     .dash {
       --s-top: 0.3em;
+    }
+
+    @include viewport('mobile-layout') {
+      margin-bottom: 0.35em;
     }
   }
 
