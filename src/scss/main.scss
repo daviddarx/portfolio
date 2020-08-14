@@ -1214,6 +1214,10 @@ body {
     display: block;
     width: 75vw;
     margin-left: 25vw;
+
+    .home & {
+      display: flex;
+    }
   }
 
   &__page-title {
@@ -1383,6 +1387,15 @@ body {
     left: 25vw;
     top: calc(var(--s-gutter) - 0.1em);
     width: 20vw;
+
+    @include viewport('mobile-layout') {
+      order: 2;
+      position: relative;
+      left: 0;
+      top: 0;
+      width: auto;
+      margin-bottom: var(--s-gutter);
+    }
   }
 
   &__title-name {
@@ -1403,9 +1416,18 @@ body {
   }
 
   &__stage {
+    display: block;
     width: 50vw;
     height: calc(100vh - var(--s-gutter) * 2);
     background-color: black;
+
+    @include viewport('mobile-layout') {
+      order: 1;
+      flex-grow: 2;
+      width: 75vw;
+      height: auto;
+      margin-bottom: var(--s-gutter);
+    }
   }
 }
 
