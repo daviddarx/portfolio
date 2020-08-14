@@ -2011,6 +2011,11 @@ body {
   grid-row-gap: calc(var(--s-gutter) * 1);
   padding-bottom: 40%;
   align-items: center;
+
+  @include viewport('mobile-layout') {
+    display: block;
+    padding-bottom: 0;
+  }
 }
 
 .misc-list {
@@ -2030,6 +2035,10 @@ body {
 
   &:nth-child(2n+0) {
     transform: translateY(15vw);
+
+    @include viewport('mobile-layout') {
+      transform: none;
+    }
   }
 
   &__container {
@@ -2128,6 +2137,16 @@ body {
 
     #{$root}:hover & {
       transform: translateY(calc(var(--s-translateHover) - 0.75em));
+
+      @include viewport('mobile-layout') {
+        transform: translateY(calc(var(--s-translateHover)));
+      }
+    }
+
+    @include viewport('mobile-layout') {
+      padding-left: 0;
+      margin-top: 0.75em;
+      margin-bottom: calc(var(--s-gutter) * 1.5);
     }
 
     .dash {
