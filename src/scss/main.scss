@@ -1123,7 +1123,7 @@ body {
     --w-el: calc(var(--s-logo) * 0.8);
     --y-el: calc(var(--s-lines) * 4);
     --s-burger: calc(var(--w-el) + var(--s-gutter) * 0.5);
-    --decal-x-burger: calc((var(--s-burger) - var(--w-el)) * -0.65);
+    --decal-x-burger: calc((var(--s-burger) - var(--w-el)) * -0.5);
     --decal-y-burger: calc(var(--decal-x-burger) - var(--y-el) + var(--s-lines));
 
     display: none;
