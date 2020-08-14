@@ -18,35 +18,37 @@ export default {
       rootMarginBottom: 0,
       rootMarginBottomRatioToGutter: 2.5,
       isObserverFirstCallFired: false,
+      mobileDeactivationMaxWidth: 768,
     }
   },
   methods: {
     initTitlesObserver (pageTitleInit) {
-      if (!!window.IntersectionObserver) {
-
-        if (pageTitleInit) {
-          this.pageTitleInit = pageTitleInit;
-        }
-
-        this.title = document.querySelector('.hidable-title');
-
-        this.calculateRootMargin();
-
-        this.observer = new IntersectionObserver(this.intersectionListener, {
-          rootMargin: this.observerRootMargin
-        });
-
-        this.observerEntries = document.querySelectorAll('.hiding-title');
-        this.observerEntriesActive = [];
-
-        this.observerEntries.forEach((element, i) => {
-          element.setAttribute('id', i);
-          element.setAttribute('firstCalled', false);
-          this.observer.observe(element);
-        });
-
-        window.addEventListener('resize', this.resizeTitlesObserver);
+      if (pageTitleInit) {
+        this.pageTitleInit = pageTitleInit;
       }
+
+      if (this.getWindowWidth() > this.mobileDeactivationMaxWidth) {
+        if (!!window.IntersectionObserver) {
+          this.title = document.querySelector('.hidable-title');
+
+          this.calculateRootMargin();
+
+          this.observer = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.observerRootMargin
+          });
+
+          this.observerEntries = document.querySelectorAll('.hiding-title');
+          this.observerEntriesActive = [];
+
+          this.observerEntries.forEach((element, i) => {
+            element.setAttribute('id', i);
+            element.setAttribute('firstCalled', false);
+            this.observer.observe(element);
+          });
+        }
+      }
+
+      window.addEventListener('resize', this.resizeTitlesObserver);
     },
     destroyTitlesObserver () {
       if (!!window.IntersectionObserver) {
@@ -67,6 +69,10 @@ export default {
         this.isObserverFirstCallFired = false;
         window.removeEventListener('resize', this.resizeTitlesObserver);
       }
+    },
+    getWindowWidth () {
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      return vw;
     },
     calculateRootMargin () {
       this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
