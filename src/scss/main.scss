@@ -1380,6 +1380,16 @@ body {
 }
 
 .home {
+  @include viewport('mobile-layout') {
+    .animate-in {
+      --delay-id: 2;
+    }
+
+    .animate-in__s2 {
+      --delay-id: 1;
+    }
+  }
+
   &__title {
     @include label-small;
 
