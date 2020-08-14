@@ -1211,6 +1211,7 @@ body {
   box-sizing: border-box;
 
   @include viewport('mobile-layout') {
+    display: block;
     width: 75vw;
     margin-left: 25vw;
   }
