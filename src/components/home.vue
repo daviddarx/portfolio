@@ -14,8 +14,8 @@
 
       <router-link
         to="/projects"
+        class="home__stage animate-in animate-in__s2"
       >
-        <div class="home__stage animate-in animate-in__s2">
       </router-link>
 
       </div>
