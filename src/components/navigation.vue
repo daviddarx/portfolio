@@ -2,7 +2,7 @@
 <template>
   <nav
     class="navigation"
-    v-bind:class="{ 'is-mobile': this.isMobile, 'is-mobile-opened': this.isMobileOpened }"
+    v-bind:class="{ 'is-ready': this.isReady, 'is-vertical': this.isVertical, 'is-mobile': this.isMobile, 'is-mobile-opened': this.isMobileOpened }"
   >
     <h2 class="visually-hidden">Navigation</h2>
     <div
@@ -55,6 +55,8 @@
     data() {
       return {
         isDisplayed: false,
+        isReady: false,
+        isVertical: false,
         isMobile: false,
         isMobileOpened: false,
         mobileMaxWidth: 768
@@ -63,6 +65,7 @@
     mounted () {
       this.$router.afterEach(this.afterEach);
       this.$router.beforeEach(this.beforeEach);
+      requestAnimationFrame(this.displayNav);
     },
     methods: {
       afterEach: function (to, from) {
@@ -82,19 +85,25 @@
           this.isDisplayed = true;
         }
       },
+      setVertical: function () {
+        this.isVertical = true;
+      },
+      resetVertical: function () {
+        this.isVertical = false;
+      },
       checkMobile: function (windowW) {
         if (windowW < this.mobileMaxWidth) {
           this.setMobile();
         } else {
-          this.unsetMobile();
+          this.resetMobile();
         }
 
-        this.displayNav();
+        this.isReady = true;
       },
       setMobile: function () {
         this.isMobile = true;
       },
-      unsetMobile: function () {
+      resetMobile: function () {
         this.isMobile = false;
       },
       closeMobile: function () {

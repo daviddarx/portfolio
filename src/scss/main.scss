@@ -958,6 +958,7 @@ body {
   --c-nav-text-hover: var(--c-text-inverted);
 
   position: fixed;
+  opacity: 0;
   z-index: 999;
   bottom: var(--s-gutter);
   left: var(--s-gutter);
@@ -965,6 +966,10 @@ body {
   line-height: 1;
   transform: rotate(-90deg) translate(0, 100%);
   transform-origin: bottom left;
+
+  &.is-ready {
+    opacity: 1;
+  }
 
   &.is-mobile {
     --c-nav-text: var(--c-text-inverted);
