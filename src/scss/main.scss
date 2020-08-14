@@ -1375,7 +1375,7 @@ body {
     @include fontRunText();
 
     display: block;
-    font-size: 1.05rem;
+    font-size: var(--s-content-page-title-detail);
     text-transform: none;
     letter-spacing: 0.03em;
     padding-top: 0.5em;
@@ -1411,7 +1411,7 @@ body {
   &__year {
     @include fontRunText();
 
-    font-size: 1.05rem;
+    font-size: var(--s-content-page-title-detail);
   }
 }
 
