@@ -1210,6 +1210,11 @@ body {
   padding-right: var(--s-gutter);
   box-sizing: border-box;
 
+  @include viewport('mobile-layout') {
+    width: 75vw;
+    margin-left: 25vw;
+  }
+
   &__page-title {
     --s-decal-y: calc(var(--s-gutter) * 0.35);
     --d-transition: 0.15s;
@@ -1219,6 +1224,12 @@ body {
     position: fixed;
     top: calc(var(--s-gutter) - 0.1em);
     left: 25vw;
+
+    @include viewport('mobile-layout') {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
 
     &__el {
       display: block;
@@ -1253,6 +1264,10 @@ body {
     position: relative;
     left: -25vw;
     width: 75vw;
+
+    @include viewport('mobile-layout') {
+      left: 0;
+    }
   }
 
   &__subtitle {
