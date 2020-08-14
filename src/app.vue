@@ -61,11 +61,13 @@
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         const gutter = parseFloat(getComputedStyle(this.$refs.logo.$el).getPropertyValue('--s-gutter').split('vw')[0])/100 * vh;
 
-        this.$refs.nav.$el.classList.remove('vertical');
+        this.$refs.nav.$el.classList.remove('is-vertical');
 
         if (this.$refs.logo.$el.offsetWidth + this.$refs.nav.$el.offsetWidth + 2 * gutter > vh - gutter * 0.5){
-          this.$refs.nav.$el.classList.add('vertical');
+          this.$refs.nav.$el.classList.add('is-vertical');
         }
+
+        this.$refs.nav.checkMobile(vw);
       },
       resize: function () {
         this.checkVerticalNav();

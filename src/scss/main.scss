@@ -954,6 +954,9 @@ body {
   @include fontTitle;
   @include label;
 
+  --c-nav-text: var(--c-text);
+  --c-nav-text-hover: var(--c-text-inverted);
+
   position: fixed;
   z-index: 999;
   bottom: var(--s-gutter);
@@ -963,21 +966,63 @@ body {
   transform: rotate(-90deg) translate(0, 100%);
   transform-origin: bottom left;
 
+  &.is-mobile {
+    --c-nav-text: var(--c-text-inverted);
+    --c-nav-text-hover: var(--c-text);
+    --d-mobile-transition: 0.25s;
+    --e-mobile-transition: var(--e-inout);
+
+    transform: none;
+    left: 0;
+    bottom: 0;
+  }
+
+  &.is-mobile-opened {
+    --d-mobile-transition: 0.5s;
+    --e-mobile-transition: var(--e-out);
+  }
+
+  &__container {
+    .is-mobile & {
+      pointer-events: none;
+      width: 100vw;
+      padding: var(--s-gutter);
+      padding-bottom: calc(var(--s-gutter) * 2);
+      box-sizing: border-box;
+      transform: translateY(100%);
+      transition: transform var(--e-mobile-transition) var(--d-mobile-transition);
+      will-change: transform;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+        z-index: -2;
+      }
+    }
+
+    .is-mobile-opened & {
+      pointer-events: auto;
+      transform: none;
+    }
+  }
+
   &__link {
     --s-padding: -0.5em;
+    --t-normal: color ease-out 0.25s;
+    --t-mobile: opacity ease-out 0.25s, transform var(--e-out) 0.35s;
 
     display: inline-block;
     position: relative;
+    color: var(--c-nav-text);
     margin-right: 3.5vh;
-    transition: color ease-out 0.25s;
+    transition: var(--t-normal);
 
     &:last-child {
-      margin-right: 0;
-    }
-
-    .vertical & {
-      display: table;
-      margin-bottom: 1.5rem;
       margin-right: 0;
     }
 
@@ -990,12 +1035,11 @@ body {
       bottom: calc(var(--s-padding) + 0.2em);
       right: var(--s-padding);
       left: var(--s-padding);
-      background-color: var(--c-text);
+      background-color: var(--c-nav-text);
       z-index: -1;
       transform: scaleX(0);
       transform-origin: top right;
       transition: transform var(--e-inout) 0.25s;
-      will-change: transform;
     }
 
     &::after {
@@ -1009,7 +1053,7 @@ body {
     &:hover {
       @include twerk-anime();
 
-      color: var(--c-text-inverted);
+      color: var(--c-nav-text-hover);
 
       &::before {
         transform: none;
@@ -1029,7 +1073,7 @@ body {
       }
 
       &:hover {
-        color: var(--c-text);
+        color: var(--c-nav-text);
         animation: none;
 
         &::before {
@@ -1037,6 +1081,111 @@ body {
         }
       }
     }
+
+    .is-vertical &,
+    .is-mobile & {
+      display: table;
+      margin-bottom: 1.5rem;
+      margin-right: 0;
+    }
+
+    .is-mobile & {
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: var(--t-normal), var(--t-mobile);
+    }
+
+    .is-mobile-opened & {
+      opacity: 1;
+      transform: none;
+
+      @for $i from 1 to 10 {
+        &:nth-child(#{$i}) {
+          --d-transition: calc(#{$i} * 0.1s);
+
+          transition-delay: 0s, var(--d-transition), var(--d-transition);
+        }
+      }
+    }
+  }
+
+  &__burger {
+    --w-el: calc(var(--s-logo) * 0.8);
+    --y-el: calc(var(--s-lines) * 4);
+    --s-burger: calc(var(--w-el) + var(--s-gutter) * 0.5);
+    --decal-x-burger: calc((var(--s-burger) - var(--w-el)) * -0.65);
+    --decal-y-burger: calc(var(--decal-x-burger) - var(--y-el) + var(--s-lines));
+
+    display: none;
+    position: fixed;
+    z-index: 100;
+    cursor: pointer;
+    width: var(--s-burger);
+    height: var(--s-burger);
+    bottom: var(--s-gutter);
+    left: var(--s-gutter);
+    margin-left: var(--decal-x-burger);
+    margin-bottom: var(--decal-y-burger);
+
+    &-el {
+      --d-lines: 0.3s;
+      --c-lines: var(--c-nav-text-inverted);
+
+      width: var(--w-el);
+      height: var(--s-lines);
+      margin-top: 50%;
+      margin-left: 50%;
+      background-color: var(--c-lines);
+      transform: translate(-50%, 0);
+      transition: background-color linear var(--d-lines);
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: var(--w-el);
+        height: var(--s-lines);
+        margin-top: calc(var(--y-el) * -1);
+        background-color: var(--c-lines);
+        transition: background-color linear var(--d-lines), transform var(--e-inout) var(--d-lines), margin-top var(--e-inout) var(--d-lines);
+        transform-origin: center center;
+      }
+
+      &::after {
+        margin-top: var(--y-el);
+      }
+
+      .is-mobile-opened & {
+        --c-lines: var(--c-nav-text);
+
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+          margin-top: 0;
+        }
+
+        &::after {
+          transform: rotate(135deg);
+          margin-top: 0;
+        }
+      }
+    }
+
+    .is-mobile & {
+      display: block;
+    }
+  }
+
+  &__mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: -2;
   }
 }
 
