@@ -199,6 +199,10 @@ $breakpoints: (
     --s-decal-close-to-corner: 1em;
   }
 
+  @include viewport('mobile-layout') {
+    --s-logo: 5vh;
+  }
+
   @include viewport('mobile-l') {
     --s-text: 4.5rem;
     --s-text-h1: calc(var(--s-text) * 2);
