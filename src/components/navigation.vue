@@ -2,7 +2,13 @@
 <template>
   <nav
     class="navigation"
-    v-bind:class="{ 'is-ready': this.isReady, 'is-vertical': this.isVertical, 'is-mobile': this.isMobile, 'is-mobile-opened': this.isMobileOpened }"
+    v-bind:class="{
+      'is-ready': this.isReady,
+      'is-vertical': this.isVertical,
+      'is-hidden': this.isHidden,
+      'is-mobile': this.isMobile,
+      'is-mobile-opened': this.isMobileOpened
+    }"
   >
     <h2 class="visually-hidden">Navigation</h2>
     <div
@@ -57,6 +63,7 @@
         isDisplayed: false,
         isReady: false,
         isVertical: false,
+        isHidden: false,
         isMobile: false,
         isMobileOpened: false,
         mobileMaxWidth: 768
@@ -92,7 +99,7 @@
         this.isVertical = false;
       },
       checkMobile: function (windowW) {
-        if (windowW < this.mobileMaxWidth) {
+        if (windowW <= this.mobileMaxWidth) {
           this.setMobile();
         } else {
           this.resetMobile();
@@ -101,10 +108,15 @@
         this.isReady = true;
       },
       setMobile: function () {
+        this.isHidden = true;
         this.isMobile = true;
+        requestAnimationFrame(() => {
+          this.isHidden = false;
+        });
       },
       resetMobile: function () {
         this.isMobile = false;
+        this.isHidden = false;
       },
       closeMobile: function () {
         this.isMobileOpened = false;

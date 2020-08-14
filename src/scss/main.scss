@@ -971,6 +971,10 @@ body {
     opacity: 1;
   }
 
+  &.is-hidden {
+    display: none;
+  }
+
   &.is-mobile {
     --c-nav-text: var(--c-text-inverted);
     --c-nav-text-hover: var(--c-text);
