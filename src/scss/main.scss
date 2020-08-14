@@ -984,6 +984,7 @@ body {
     transform: none;
     left: 0;
     bottom: 0;
+    height: 0;
   }
 
   &.is-mobile-opened {
@@ -998,7 +999,6 @@ body {
       padding: var(--s-gutter);
       padding-bottom: calc(var(--s-gutter) * 2);
       box-sizing: border-box;
-      transform: translateY(100%);
       transition: transform var(--e-mobile-transition) var(--d-mobile-transition);
       will-change: transform;
 
@@ -1016,7 +1016,7 @@ body {
 
     .is-mobile-opened & {
       pointer-events: auto;
-      transform: none;
+      transform: translateY(-100%);
     }
   }
 
