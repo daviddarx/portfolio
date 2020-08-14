@@ -1090,12 +1090,12 @@ body {
     .is-vertical &,
     .is-mobile & {
       display: table;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25em;
       margin-right: 0;
     }
 
     .is-mobile & {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5em;
       opacity: 0;
       transform: translateY(100%);
       transition: var(--t-normal), var(--t-mobile);
