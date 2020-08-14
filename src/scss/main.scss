@@ -1455,12 +1455,18 @@ body {
 
   &__link {
     --s-padding: 2.2em;
+    --s-padding-bottom-cor: 0.3em;
 
     display: block;
     padding-top: var(--s-padding);
-    padding-bottom: calc(var(--s-padding) - 0.3em);
+    padding-bottom: calc(var(--s-padding) - var(--s-padding-bottom-cor));
     padding-left: 0;
     padding-right: var(--s-gutter);
+
+    @include viewport('tablet-s') {
+      --s-padding: 1.75em;
+      --s-padding-bottom-cor: 0.5em;
+    }
   }
 
   &__title {
@@ -1475,6 +1481,10 @@ body {
 
   &__detail {
     padding-top: 0.5em;
+
+    @include viewport('tablet-s') {
+      padding-top: 0.25em;
+    }
   }
 
   &__separation {
