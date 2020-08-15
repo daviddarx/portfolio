@@ -84,7 +84,9 @@
             <h3 class="content-page__title small-title font-compensated">
               {{expertise.title}}
             </h3>
-            <p v-html="expertise.desc">
+            <p
+              class="info__expertise-text"
+              v-html="expertise.desc">
             </p>
           </div>
         </div>
