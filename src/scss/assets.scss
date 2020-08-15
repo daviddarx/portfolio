@@ -208,14 +208,17 @@ $breakpoints: (
     --s-text: 4.5rem;
     --s-text-h1: calc(var(--s-text) * 2);
     --s-text-h2: calc(var(--s-text) * 1.75);
+    --s-text-lead: calc(var(--s-text) * 1.35);
   }
 
   @include viewport('mobile') {
     --s-gutter: 8vw;
     --s-text: 5.5rem;
     --s-text-h1: calc(var(--s-text) * 1.65);
+    --s-text-h2: calc(var(--s-text) * 1.5);
     --s-decal-close-to-corner: 1em;
     --s-text-small: calc(var(--s-text) * 0.7);
+    --s-text-lead: calc(var(--s-text) * 1);
   }
 
   @include viewport('mobile-s') {
