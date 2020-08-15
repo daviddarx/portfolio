@@ -1214,10 +1214,6 @@ body {
     display: block;
     width: 75vw;
     margin-left: 25vw;
-
-    .home & {
-      display: flex;
-    }
   }
 
   &__page-title {
@@ -1436,12 +1432,15 @@ body {
     width: 20vw;
 
     @include viewport('mobile-layout') {
-      order: 2;
-      position: relative;
-      left: 0;
-      top: 0;
+      position: fixed;
+      color: white;
+      z-index: 10;
+      left: 25vw;
+      top: auto;
+      bottom: var(--s-gutter);
+      padding: var(--s-gutter);
+      padding-bottom: calc(var(--s-gutter) - 0.15em);
       width: auto;
-      margin-bottom: calc(var(--s-gutter) - 0.2em);
     }
   }
 
@@ -1469,11 +1468,9 @@ body {
     background-color: black;
 
     @include viewport('mobile-layout') {
-      order: 1;
-      flex-grow: 2;
+      position: fixed;
       width: 75vw;
-      height: auto;
-      margin-bottom: var(--s-gutter);
+      height: calc(100vh - var(--s-gutter) * 2);
     }
   }
 }
