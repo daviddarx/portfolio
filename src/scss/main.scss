@@ -1557,6 +1557,11 @@ body {
       --s-padding: 1.75em;
       --s-padding-bottom-cor: 0.5em;
     }
+
+    @include viewport('mobile') {
+      --s-padding: 1.35em;
+      --s-padding-bottom-cor: 0.25em;
+    }
   }
 
   &__title {
@@ -1574,6 +1579,10 @@ body {
 
     @include viewport('tablet-s') {
       padding-top: 0.25em;
+    }
+
+    @include viewport('mobile') {
+      font-size: var(--s-text-small);
     }
   }
 
