@@ -222,6 +222,7 @@ $breakpoints: (
   }
 
   @include viewport('mobile-s') {
+    --s-logo: 8vw;
     --s-gutter: 6vw;
     --s-text-small: calc(var(--s-text) * 0.85);
     --s-decal-close-to-corner: 0.1em;
