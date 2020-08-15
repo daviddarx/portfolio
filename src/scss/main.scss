@@ -1438,6 +1438,7 @@ body {
       z-index: 10;
       left: 0;
       top: auto;
+      box-sizing: border-box;
       bottom: var(--s-gutter);
       padding: var(--s-gutter);
       padding-bottom: calc(var(--s-gutter) - 0.15em);
@@ -1469,7 +1470,7 @@ body {
 
     @include viewport('mobile-layout') {
       position: fixed;
-      width: 75vw;
+      width: 100%;
       height: calc(100vh - var(--s-gutter) * 2);
     }
   }
