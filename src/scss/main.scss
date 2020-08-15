@@ -1298,6 +1298,10 @@ body {
       margin-bottom: 4.75em;
     }
 
+    @include viewport('mobile-s') {
+      margin-bottom: 3.75em;
+    }
+
     &:first-child {
       margin-top: 0;
     }
