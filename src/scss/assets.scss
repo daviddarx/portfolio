@@ -207,6 +207,7 @@ $breakpoints: (
     --s-logo: 7vw;
     --s-text: 4.5rem;
     --s-text-h1: calc(var(--s-text) * 2);
+    --s-text-h2: calc(var(--s-text) * 1.75);
   }
 
   @include viewport('mobile') {
