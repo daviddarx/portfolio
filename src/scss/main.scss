@@ -1432,15 +1432,15 @@ body {
     width: 20vw;
 
     @include viewport('mobile-layout') {
-      position: fixed;
+      position: absolute;
+      width: 100%;
       color: white;
       z-index: 10;
-      left: 25vw;
+      left: 0;
       top: auto;
       bottom: var(--s-gutter);
       padding: var(--s-gutter);
       padding-bottom: calc(var(--s-gutter) - 0.15em);
-      width: auto;
     }
   }
 
