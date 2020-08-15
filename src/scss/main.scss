@@ -1199,6 +1199,8 @@ body {
 }
 
 .content-page {
+  --w-mobile-s: calc(100vw - var(--s-logo) - var(--s-gutter) * 1.7);
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1217,10 +1219,8 @@ body {
   }
 
   @include viewport('mobile-l') {
-    --w: calc(100vw - var(--s-logo) - var(--s-gutter) * 1.7);
-
-    width: var(--w);
-    margin-left: calc(100vw - var(--w));
+    width: var(--w-mobile-s);
+    margin-left: calc(100vw - var(--w-mobile-s));
   }
 
   &__page-title {
@@ -1282,6 +1282,8 @@ body {
 
     @include viewport('mobile-layout') {
       left: 0;
+      width: auto;
+      margin-right: calc(var(--s-gutter) * -1);
     }
   }
 
