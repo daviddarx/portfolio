@@ -1491,9 +1491,9 @@ body {
     background-color: black;
 
     @include viewport('mobile-layout') {
-      position: fixed;
+      position: absolute;
       width: 100%;
-      height: calc(100vh - var(--s-gutter) * 2);
+      height: calc(100% - var(--s-gutter) * 2);
     }
   }
 }
