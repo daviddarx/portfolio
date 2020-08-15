@@ -2174,13 +2174,25 @@ body {
       margin-bottom: calc(var(--s-gutter) * 1.5);
     }
 
+    @include viewport('mobile') {
+      line-height: calc(var(--s-line-height) * 0.8);
+    }
+
     .dash {
       --s-top: calc(var(--s-line-height) * 0.4em);
+
+      @include viewport('mobile') {
+        display: none;
+      }
     }
   }
 
   &__date {
     @include fontRunText();
+
+    @include viewport('mobile') {
+      display: block;
+    }
   }
 }
 
