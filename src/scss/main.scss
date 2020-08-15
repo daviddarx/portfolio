@@ -1479,9 +1479,10 @@ body {
     display: block;
     font-size: var(--s-content-page-title-detail);
     text-transform: none;
+    line-height: 1.5em;
     letter-spacing: 0.03em;
     padding-top: 0.5em;
-    transform: translateX(-0.02em);
+    transform: translate(-0.02em, -0.1em);
   }
 
   &__stage {
