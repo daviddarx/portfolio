@@ -1347,6 +1347,10 @@ body {
 
     text-align: justify;
     margin-top: var(--s-gutter);
+
+    @include viewport('mobile') {
+      font-size: var(--s-text-small);
+    }
   }
 
   &__steps-listing {
@@ -1401,10 +1405,15 @@ body {
     }
   }
 
-  &__expertise {
+  &__expertise-text {
     @include hyphens();
 
     text-align: justify;
+
+    @include viewport('mobile') {
+      font-size: var(--s-text-small);
+      margin-top: 0.8em;
+    }
   }
 }
 
