@@ -2231,7 +2231,13 @@ body {
 
   &__lead {
     width: 50%;
+    box-sizing: border-box;
     padding-top: 0.5em;
+
+    @include viewport('tablet') {
+      width: 100%;
+      padding-right: var(--s-gutter);
+    }
   }
 
   &__links {
@@ -2247,6 +2253,12 @@ body {
     padding-left: calc(var(--s-gutter) * 2);
     padding-right: calc(var(--s-gutter) * 2);
     padding-bottom: calc(var(--s-gutter) * 2);
+
+    @include viewport('tablet-s') {
+      padding-left: var(--s-gutter);
+      padding-right: var(--s-gutter);
+      padding-bottom: var(--s-gutter);
+    }
   }
 
   &__media {
