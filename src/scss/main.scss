@@ -1618,6 +1618,7 @@ body {
     z-index: 1000;
     top: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
     right: calc(var(--s-gutter) - var(--s-decal-close-to-corner));
+    background-color: var(--project-color);
   }
 
   &__cols {
