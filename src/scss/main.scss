@@ -2330,11 +2330,13 @@ body {
     transition: transform var(--e-inout) 0.4s;
   }
 
-  &:hover {
-    color: var(--c-hover-text);
+  @include hover() {
+    &:hover {
+      color: var(--c-hover-text);
 
-    &::before {
-      transform: none;
+      &::before {
+        transform: none;
+      }
     }
   }
 
@@ -2347,8 +2349,10 @@ body {
   }
 
   &__text-container {
-    #{$root}:hover & {
-      @include twerk-anime();
+    @include hover() {
+      #{$root}:hover & {
+        @include twerk-anime();
+      }
     }
   }
 
@@ -2364,8 +2368,10 @@ body {
     font-size: var(--s-text-small);
     margin-bottom: 0.5em;
 
-    #{$root}:hover & {
-      transform: translateY(var(--s-text-translate));
+    @include hover() {
+      #{$root}:hover & {
+        transform: translateY(var(--s-text-translate));
+      }
     }
   }
 
@@ -2375,28 +2381,44 @@ body {
     line-height: var(--s-line-height-titles-small);
     transition-duration: 0.2s, 0.5s;
 
-    #{$root}:hover & {
-      transform: translateY(var(--s-text-translate));
+    @include hover() {
+      #{$root}:hover & {
+        transform: translateY(var(--s-text-translate));
+      }
     }
   }
 
   &__arrow {
-    --s-width: 0;
-    --s-height: 0;
-    --c: var(--c-hover-text);
+    --s-width: 2em;
+    --s-height: 0.5em;
+    --c: white;
     --t: translate(-50%, 1em);
 
-    position: absolute;
+    position: relative;
+    margin-top: 0.75em;
+    margin-bottom: 1.5em;
     left: 50%;
     transform: var(--t);
+
+    @include hover() {
+      --s-width: 0;
+      --s-height: 0;
+      --c: var(--c-hover-text);
+
+      position: absolute;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
     &--next {
       transform: var(--t) scaleX(-1);
     }
 
-    #{$root}:hover & {
-      --s-width: 2.8em;
-      --s-height: 0.65em;
+    @include hover() {
+      #{$root}:hover & {
+        --s-width: 2.8em;
+        --s-height: 0.65em;
+      }
     }
   }
 }
