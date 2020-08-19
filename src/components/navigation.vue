@@ -42,6 +42,7 @@
     </div>
     <div
       class="navigation__burger"
+      v-if="this.isDisplayed"
       v-on:click="this.toogleMobile"
     >
       <div class="navigation__burger-el"></div>
