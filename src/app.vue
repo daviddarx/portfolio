@@ -2,6 +2,11 @@
 <template>
   <div
     class="website-container"
+    v-bind:class="{
+      'is-ios': this.isiOS,
+      'is-android': this.isAndroid,
+      'is-chromeios': this.isChromeiOS
+    }"
   >
     <h1 class="visually-hidden">David Darx</h1>
     <logo ref="logo"></logo>
@@ -19,6 +24,8 @@
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
   import TransitionBackground from './components/transition-background.vue';
+  import browserDetect from './browser-detect';
+
 
   export default Vue.extend({
     components: {
@@ -28,11 +35,18 @@
     },
     data() {
       return {
+        isiOS: false,
+        isAndroid: false,
+        isChromeiOS: false
       }
     },
     computed: {
     },
     mounted () {
+      this.isiOS = browserDetect.isiOS;
+      this.isAndroid = browserDetect.isAndroid;
+      this.isChromeiOS = browserDetect.isChromeiOS;
+
       this.$router.beforeEach(this.beforeEach);
       this.checkIfUserTouch();
       this.checkIfDarkMode(this.$router.currentRoute.meta.isDark);
