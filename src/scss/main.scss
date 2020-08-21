@@ -125,8 +125,10 @@ body {
   opacity: 0;
   transition: opacity ease-out 0.2s;
 
-  &:hover {
-    @include twerk-anime();
+  @include hover() {
+    &:hover {
+      @include twerk-anime();
+    }
   }
 
   &.is-displayed {
@@ -164,8 +166,10 @@ body {
       transform: scale(0);
       transition: transform var(--e-out) 0.35s;
 
-      #{$root}:hover & {
-        transform: scale(1);
+      @include hover() {
+        #{$root}:hover & {
+          transform: scale(1);
+        }
       }
     }
   }
@@ -212,14 +216,16 @@ body {
     transition: transform var(--e-out) 0.35s;
   }
 
-  &:hover {
-    --c-arrow: white;
+  @include hover() {
+    &:hover {
+      --c-arrow: white;
 
-    @include twerk-anime();
+      @include twerk-anime();
 
-    &::before {
-      transform-origin: bottom left;
-      transform: scaleY(1);
+      &::before {
+        transform-origin: bottom left;
+        transform: scaleY(1);
+      }
     }
   }
 
@@ -236,8 +242,10 @@ body {
       background-color: black;
     }
 
-    &:hover {
-      --c-arrow: black;
+    @include hover() {
+      &:hover {
+        --c-arrow: black;
+      }
     }
   }
 
@@ -327,8 +335,10 @@ body {
   }
 
   &__container {
-    &:hover {
-      @include twerk-anime();
+    @include hover() {
+      &:hover {
+        @include twerk-anime();
+      }
     }
   }
 
@@ -342,10 +352,12 @@ body {
     overflow: hidden;
     transition: width var(--e-inout) 0.5s;
 
-    #{$root}:hover & {
-      width: 100%;
-      left: 0;
-      transform: none;
+    @include hover() {
+      #{$root}:hover & {
+        width: 100%;
+        left: 0;
+        transform: none;
+      }
     }
   }
 
@@ -361,9 +373,11 @@ body {
       position: absolute;
       right: 0;
 
-      #{$root}:hover & {
-        position: relative;
-        right: 0;
+      @include hover() {
+        #{$root}:hover & {
+          position: relative;
+          right: 0;
+        }
       }
     }
   }
@@ -437,19 +451,21 @@ body {
     }
   }
 
-  &:hover {
-    @include twerk-anime();
+  @include hover() {
+    &:hover {
+      @include twerk-anime();
 
-    color: white;
-    text-decoration: none;
+      color: white;
+      text-decoration: none;
 
-    .is-inverted & {
-      color: black;
-    }
+      .is-inverted & {
+        color: black;
+      }
 
-    &::before {
-      transform: none;
-      transform-origin: top left;
+      &::before {
+        transform: none;
+        transform-origin: top left;
+      }
     }
   }
 }
@@ -468,8 +484,10 @@ body {
   text-decoration: none;
   color: var(--c-text);
 
-  &:hover {
-    color: var(--c-bg);
+  @include hover() {
+    &:hover {
+      color: var(--c-bg);
+    }
   }
 
   &::before {
@@ -1059,14 +1077,16 @@ body {
       height: var(--s-lines);
     }
 
-    &:hover {
-      @include twerk-anime();
+    @include hover() {
+      &:hover {
+        @include twerk-anime();
 
-      color: var(--c-nav-text-hover);
+        color: var(--c-nav-text-hover);
 
-      &::before {
-        transform: none;
-        transform-origin: top left;
+        &::before {
+          transform: none;
+          transform-origin: top left;
+        }
       }
     }
 
@@ -1081,12 +1101,14 @@ body {
         transform: none;
       }
 
-      &:hover {
-        color: var(--c-nav-text);
-        animation: none;
+      @include hover() {
+        &:hover {
+          color: var(--c-nav-text);
+          animation: none;
 
-        &::before {
-          transform: scaleX(0);
+          &::before {
+            transform: scaleX(0);
+          }
         }
       }
     }
@@ -1335,9 +1357,11 @@ body {
     filter: grayscale(100%) contrast(2) brightness(2);
     transition: filter var(--e-out) 0.3s;
 
-    &:hover {
-      filter: none;
-      transition-duration: 1s;
+    @include hover() {
+      &:hover {
+        filter: none;
+        transition-duration: 1s;
+      }
     }
 
     &-el {
@@ -1574,8 +1598,10 @@ body {
     transition: color ease-out 0.2s;
     will-change: color;
 
-    #{$root}:hover & {
-      @include twerk-anime();
+    @include hover() {
+      #{$root}:hover & {
+        @include twerk-anime();
+      }
     }
   }
 
@@ -2073,8 +2099,10 @@ body {
   }
 
   &__container {
-    #{$root}:hover & {
-      @include twerk-anime();
+    @include hover() {
+      #{$root}:hover & {
+        @include twerk-anime();
+      }
     }
   }
 
@@ -2114,8 +2142,10 @@ body {
       transition: var(--t-transform);
     }
 
-    #{$root}:hover & {
-      transform: scale3d(var(--s-scaleHover), var(--s-scaleHover), 1);
+    @include hover() {
+      #{$root}:hover & {
+        transform: scale3d(var(--s-scaleHover), var(--s-scaleHover), 1);
+      }
     }
   }
 
@@ -2137,8 +2167,10 @@ body {
       transition: var(--t-visibility);
     }
 
-    #{$root}:hover & {
-      visibility: visible;
+    @include hover() {
+      #{$root}:hover & {
+        visibility: visible;
+      }
     }
   }
 
@@ -2155,8 +2187,10 @@ body {
       opacity: 1;
     }
 
-    #{$root}:hover & {
-      opacity: 0;
+    @include hover() {
+      #{$root}:hover & {
+        opacity: 0;
+      }
     }
   }
 
@@ -2166,11 +2200,13 @@ body {
     padding-left: 1.5em;
     transition: transform var(--e-scaleHover) var(--d-translateHover);
 
-    #{$root}:hover & {
-      transform: translateY(calc(var(--s-translateHover) - 0.75em));
+    @include hover() {
+      #{$root}:hover & {
+        transform: translateY(calc(var(--s-translateHover) - 0.75em));
 
-      @include viewport('mobile-layout') {
-        transform: translateY(calc(var(--s-translateHover)));
+        @include viewport('mobile-layout') {
+          transform: translateY(calc(var(--s-translateHover)));
+        }
       }
     }
 
@@ -2331,11 +2367,13 @@ body {
   }
 
   @include hover() {
-    &:hover {
-      color: var(--c-hover-text);
+    @include hover() {
+      &:hover {
+        color: var(--c-hover-text);
 
-      &::before {
-        transform: none;
+        &::before {
+          transform: none;
+        }
       }
     }
   }
