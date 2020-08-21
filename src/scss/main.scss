@@ -2345,7 +2345,7 @@ body {
   @include viewport('tablet-s') {
     --s-text-translate: calc(var(--s-text) * -0.5);
 
-    display: block;
+    flex-wrap: wrap;
     margin-top: var(--s-gutter);
   }
 }
@@ -2362,8 +2362,13 @@ body {
 
   @include viewport('tablet-s') {
     display: block;
+    flex-basis: 100%;
     padding: calc(var(--s-gutter) * 2);
     border-top: var(--s-lines) solid var(--c-hover-bg);
+
+    &:first-child {
+      order: 2;
+    }
   }
 
   &::before {
