@@ -2265,6 +2265,16 @@ body {
     padding: var(--s-gutter);
   }
 
+  &__title {
+    @include viewport('tablet') {
+      padding-right: var(--s-gutter);
+    }
+
+    @include viewport('mobile-l') {
+      padding-right: calc(var(--s-gutter) * 2);
+    }
+  }
+
   &__lead {
     width: 50%;
     box-sizing: border-box;
@@ -2273,6 +2283,10 @@ body {
     @include viewport('tablet') {
       width: 100%;
       padding-right: var(--s-gutter);
+    }
+
+    @include viewport('mobile-l') {
+      padding-right: calc(var(--s-gutter) * 2);
     }
   }
 
