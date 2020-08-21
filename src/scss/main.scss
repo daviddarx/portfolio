@@ -2570,6 +2570,12 @@ body {
       --delay-id: #{$i};
     }
   }
+
+  .is-chromeios & {
+    transform: none;
+    transition: none;
+    opacity: 1;
+  }
 }
 
 .transition-wave-in-enter-active {
