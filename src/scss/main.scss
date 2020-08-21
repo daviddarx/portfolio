@@ -1460,6 +1460,9 @@ body {
 
 .home {
   @include viewport('mobile-layout') {
+    position: relative;
+    height: 100vh;
+
     .animate-in {
       --delay-id: 2;
     }
@@ -1478,16 +1481,15 @@ body {
     width: 20vw;
 
     @include viewport('mobile-layout') {
-      position: absolute;
+      position: fixed;
       width: 100%;
       color: white;
       z-index: 10;
-      left: 0;
+      left: auto;
       top: auto;
-      box-sizing: border-box;
       bottom: var(--s-gutter);
       padding: var(--s-gutter);
-      padding-bottom: calc(var(--s-gutter) - 0.4em);
+      padding-bottom: calc(var(--s-gutter) - 0.3em);
     }
   }
 
@@ -1516,7 +1518,8 @@ body {
     background-color: black;
 
     @include viewport('mobile-layout') {
-      position: absolute;
+      position: fixed;
+      top: var(--s-gutter);
       width: 100%;
       height: calc(100% - var(--s-gutter) * 2);
     }
