@@ -19,6 +19,7 @@
     <preloader class="media-video__preloader"></preloader>
     <video
       muted
+      playsinline
       preload="auto"
       class="media-video__el"
       ref="video"
@@ -63,12 +64,13 @@
     methods: {
       enter: function () {
         if (this.autoplay == true) {
+          this.play();
+
           this.isPlaying = true;
           this.isLoading = true;
 
           if (this.isCanplaythrough == true) {
             this.isLoading = false;
-            this.play();
           }
         }
       },
