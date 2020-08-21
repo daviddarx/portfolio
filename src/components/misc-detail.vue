@@ -42,7 +42,7 @@
         </p>
       </div>
       <div
-        class="misc__medias animate-in animate-in__s6"
+        class="misc__medias animate-in animate-in__s4"
         v-if="infos.medias"
       >
         <div
