@@ -125,6 +125,10 @@ body {
   opacity: 0;
   transition: opacity ease-out 0.2s;
 
+  @include viewport('mobile-l') {
+    --s-dimensions: calc(var(--s-gutter) * 3.5);
+  }
+
   @include hover() {
     &:hover {
       @include twerk-anime();
@@ -186,8 +190,10 @@ body {
     transform: translate(-70%, -50%) rotate(45deg);
     transition: border-color ease-out 0.25s;
 
-    #{$root}:hover & {
-      border-color: var(--c-bt-bg);
+    @include hover() {
+      #{$root}:hover & {
+        border-color: var(--c-bt-bg);
+      }
     }
   }
 }
