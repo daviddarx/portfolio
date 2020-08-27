@@ -64,6 +64,7 @@
       <div class="project__col-right col-ow--r">
         <media-video
           v-bind:url="this.mediasPath+'scenes_overview.mp4'"
+          v-bind:poster="this.mediasPath+'scenes_overview.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'video-ow'"

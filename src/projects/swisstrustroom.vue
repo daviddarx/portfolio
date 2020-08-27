@@ -154,6 +154,7 @@
       </div>
       <media-video
         v-bind:url="this.mediasPath+'designs/st_4.mp4'"
+        v-bind:poster="this.mediasPath+'designs/st_4.jpg'"
         v-bind:autoplay="false"
         v-bind:isvideo="true"
         v-bind:id="'video-sc'"
