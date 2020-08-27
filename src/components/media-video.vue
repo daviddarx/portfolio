@@ -5,7 +5,7 @@
     v-bind:class="{'is-loading' : isLoading}"
   >
     <div
-      v-if="this.autoplay==false"
+      v-if="this.isAutoPlay==false"
       v-on:click="this.togglePlay"
       v-bind:class="{'is-displayed' : !isPlaying}"
       class="media-video__play-button play-button"
@@ -33,6 +33,7 @@
 
 <script>
   import Preloader from './preloader.vue';
+  import browserDetect from '../browser-detect';
 
   export default {
     name: 'media-video',
@@ -43,6 +44,15 @@
       url: String,
       title: String,
       autoplay: Boolean
+    },
+    computed: {
+      isAutoPlay () {
+        if (browserDetect.isiOS == true || browserDetect.isAndroid == true) {
+          return false;
+        } else {
+          return this.autoplay;
+        }
+      }
     },
     data: function () {
       return {
@@ -63,7 +73,7 @@
     },
     methods: {
       enter: function () {
-        if (this.autoplay == true) {
+        if (this.isAutoPlay == true) {
           this.play();
 
           this.isPlaying = true;
@@ -119,7 +129,7 @@
       endListener: function () {
         this.$refs.video.currentTime = 0;
 
-        if (this.autoplay == true) {
+        if (this.isAutoPlay == true) {
           this.play();
         } else {
           this.togglePlay();
