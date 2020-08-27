@@ -21,6 +21,7 @@
       muted
       playsinline
       preload="auto"
+      v-bind:poster = this.poster
       class="media-video__el"
       ref="video"
     >
@@ -41,9 +42,22 @@
       'preloader': Preloader
     },
     props: {
-      url: String,
-      title: String,
-      autoplay: Boolean
+      url: {
+        type: String,
+        default: ''
+      },
+      poster: {
+        type: String,
+        default: undefined
+      },
+      title: {
+        type: String,
+        default: ''
+      },
+      autoplay: {
+        type: Boolean,
+        default: false
+      }
     },
     computed: {
       isAutoPlay () {
