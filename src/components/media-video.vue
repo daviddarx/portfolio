@@ -80,12 +80,13 @@
       },
       togglePlay: function () {
         if (this.isPlaying == false) {
+          this.play();
+
           this.isPlaying = true;
           this.isLoading = true;
 
           if (this.isCanplaythrough == true) {
             this.isLoading = false;
-            this.play();
           }
         } else {
           this.isPlaying = false;
