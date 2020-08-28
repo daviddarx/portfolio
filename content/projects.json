@@ -1,5 +1,6 @@
 {
   "routesPath":"/projects/",
+  "mediasPath":"/projects/",
   "main": [
     {
       "uid": "eaostop",
@@ -8,7 +9,9 @@
       "year": "2020",
       "color": "#e1061b",
       "colorCase": "#e1061b",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },{
       "uid": "astrorara",
       "title": "ETH AstroRara",
@@ -18,7 +21,9 @@
       "skills": "Konzept & Wireframes, Art Direction & Digital Design",
       "color": "#759bde",
       "colorCase": "#272527",
-      "inverted": true
+      "inverted": true,
+      "thumb1": "ar/thumb_01.jpg",
+      "thumb2": "ar/thumb_02.jpg"
     },
     {
       "uid": "maz",
@@ -27,7 +32,9 @@
       "year": "2020",
       "color": "#1aa4bf",
       "colorCase": "#1aa4bf",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "anima",
@@ -36,7 +43,9 @@
       "year": "2020",
       "color": "#e02141",
       "colorCase": "#e02141",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "aso",
@@ -45,7 +54,9 @@
       "year": "2020",
       "color": "#e32236",
       "colorCase": "#e32236",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "bwi",
@@ -54,7 +65,9 @@
       "year": "2020",
       "color": "#00b8ea",
       "colorCase": "#00b8ea",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "flm",
@@ -65,7 +78,9 @@
       "skills": "Corporate Branding, Konzept & Wireframes,  Art Direction & Digital Design",
       "color": "#3d7ac3",
       "colorCase": "#edf0f2",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "flm/thumb_01.jpg",
+      "thumb2": "flm/thumb_02.jpg"
     },
     {
       "uid": "uzhinno",
@@ -74,7 +89,9 @@
       "year": "2019",
       "color": "#8439a2",
       "colorCase": "#8439a2",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "dionisio",
@@ -83,7 +100,9 @@
       "year": "2019",
       "color": "#33a55c",
       "colorCase": "#33a55c",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "pornydays",
@@ -92,7 +111,9 @@
       "year": "2019",
       "color": "#c55249",
       "colorCase": "#c55249",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "compona",
@@ -101,7 +122,9 @@
       "year": "2018",
       "color": "#e32236",
       "colorCase": "#e32236",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "intelliact",
@@ -110,7 +133,9 @@
       "year": "2018",
       "color": "#ff004a",
       "colorCase": "#ff004a",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "medidata",
@@ -119,7 +144,9 @@
       "year": "2018",
       "color": "#01519E",
       "colorCase": "#01519E",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "seed",
@@ -128,7 +155,9 @@
       "year": "2018",
       "color": "#d9d930",
       "colorCase": "#d9d930",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "swisstrustroom",
@@ -139,7 +168,9 @@
       "skills": "Konzept & Wireframes, Art Direction & Digital Design, Animation",
       "color": "#3a86d0",
       "colorCase": "#1b548b",
-      "inverted": true
+      "inverted": true,
+      "thumb1": "st/thumb_01.jpg",
+      "thumb2": "st/thumb_02.jpg"
     },
     {
       "uid": "pom",
@@ -148,7 +179,9 @@
       "year": "2017",
       "color": "#13d96b",
       "colorCase": "#13d96b",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "mammut",
@@ -157,7 +190,9 @@
       "year": "2016",
       "color": "#e2001a",
       "colorCase": "#e2001a",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "cooprezepte",
@@ -166,7 +201,9 @@
       "year": "2016",
       "color": "#ff8c01",
       "colorCase": "#ff8c01",
-      "inverted": false
+      "inverted": false,
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     }
   ]
 }
