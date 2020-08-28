@@ -3,7 +3,7 @@
   <div
     class="project-list"
     v-on:mouseover="mouseOverListener"
-    v-on:mouseout="mouseOutListener"
+    v-on:mouseleave="mouseLeaveListener"
   >
     <router-link
       v-bind:to="route"
@@ -20,6 +20,24 @@
       >
         {{datas.type}}
       </p>
+      <div class="project-list__thumb project-list__thumb--01">
+        <img
+          class="project-list__thumb-el project-list__thumb-el--01"
+          @load="thumbLoaded1"
+          v-bind:class="{ 'is-loaded' : this.isThumb1Loaded }"
+          v-bind:src="this.thumb1URL"
+          ref="thumb1"
+        >
+      </div>
+      <div class="project-list__thumb project-list__thumb--02">
+        <img
+          class="project-list__thumb-el project-list__thumb-el--02"
+          @load="thumbLoaded2"
+          v-bind:class="{ 'is-loaded' : this.isThumb1Loaded }"
+          v-bind:src="this.thumb2URL"
+          ref="thumb2"
+        >
+      </div>
     </router-link>
   </div>
 </template>
@@ -32,11 +50,20 @@
     name: 'project-list',
     mixins: [dash],
     props: {
-      datas: Object
+      datas: {
+        type: Object,
+        default: {}
+      }
     },
     data: function () {
       return {
-        currentColor: ''
+        currentColor: '',
+        thumb1URL: undefined,
+        thumb2URL: undefined,
+        isThumb1Loaded: false,
+        isThumb2Loaded: false,
+        areThumbsInvertedX: false,
+        isHover: false,
       }
     },
     computed: {
@@ -47,11 +74,30 @@
     mounted () {
     },
     methods: {
-      mouseOverListener: function (){
-        this.currentColor = this.datas.color;
+      mouseOverListener: function () {
+        if (this.isHover == false) {
+          this.isHover = true;
+
+          this.currentColor = this.datas.color;
+
+          if (!this.thumb1URL) {
+            this.thumb1URL = projects.mediasPath+this.datas.thumb1;
+            this.thumb2URL = projects.mediasPath+this.datas.thumb2;
+          }
+        }
       },
-      mouseOutListener: function (){
+      mouseLeaveListener: function () {
+        this.isHover = false;
+
         this.currentColor = "";
+
+        console.log("leave");
+      },
+      thumbLoaded1: function () {
+        this.isThumb1Loaded = true;
+      },
+      thumbLoaded2: function () {
+        this.isThumb2Loaded = true;
       },
       destroy: function () {
         setTimeout(() => {
