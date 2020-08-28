@@ -450,7 +450,6 @@ body {
     transform: scaleX(0);
     transform-origin: top right;
     transition: transform var(--e-inout) 0.25s;
-    will-change: transform;
 
     .is-inverted & {
       background-color: white;
@@ -568,7 +567,6 @@ body {
   &__el {
     width: var(--s-dimensions);
     height: var(--s-dimensions);
-    will-change: transform;
 
     &::before,
     &::after {
@@ -655,7 +653,6 @@ body {
   height: 0;
   pointer-events: none;
   transform: translate(var(--pos-x), var(--pos-y));
-  will-change: transform;
 }
 
 .preloader {
@@ -752,7 +749,6 @@ body {
   min-height: calc(var(--s-gutter) * 2 + var(--s-preloader));
   outline: var(--s-lines) solid var(--c-border);
   transition: outline-color linear 0.2s, min-height linear 0s 0.2s;
-  will-change: min-height;
 
   &.is-loaded {
     outline-color: transparent;
@@ -1605,7 +1601,6 @@ body {
   &__title {
     font-size: var(--s-text-h2);
     transition: color ease-out 0.2s;
-    will-change: color;
 
     @include hover() {
       #{$root}:hover & {
@@ -2576,7 +2571,6 @@ body {
   transform: translateY(var(--s-translateYAnimateIn));
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
   transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
-  will-change: opacity, transform;
 
   .is-displayed & {
     opacity: 1;
