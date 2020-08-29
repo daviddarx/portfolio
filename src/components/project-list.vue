@@ -84,10 +84,6 @@
 
         this.$refs.thumb1.style.setProperty('--d-animation-in-delay', newDelay1+'s');
         this.$refs.thumb2.style.setProperty('--d-animation-in-delay', newDelay2+'s');
-
-        console.log(newDelay1);
-        console.log(newDelay2);
-        console.log("--");
       },
       getRandomRange(min, max) {
         return Math.random() * (max - min) + min;
