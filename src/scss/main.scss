@@ -1613,7 +1613,8 @@ body {
 
   &__thumb {
     --s-width: calc(75vw * 0.5);
-    --s-left: -25vw;
+    --s-left-1: -25vw;
+    --s-left-2: calc(50vw - var(--s-width));
 
     pointer-events: none;
     position: absolute;
@@ -1628,11 +1629,21 @@ body {
     }
 
     &--01 {
+      --s-left: var(--s-left-1);
+
+      #{$root}:nth-child(2n+0) & {
+        --s-left: var(--s-left-2);
+      }
+
       top: 0;
     }
 
     &--02 {
-      --s-left: calc(50vw - var(--s-width));
+      --s-left: var(--s-left-2);
+
+      #{$root}:nth-child(2n+0) & {
+        --s-left: var(--s-left-1);
+      }
 
       bottom: 0;
     }
