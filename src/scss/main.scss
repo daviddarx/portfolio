@@ -1615,6 +1615,15 @@ body {
     --s-width: calc(75vw * 0.5);
     --s-left-1: -25vw;
     --s-left-2: calc(50vw - var(--s-width));
+    --s-scale: 1;
+    --s-translateY: 0;
+    --d-animation-in: 0.2s;
+    --d-animation-in-delay: 0.5s;
+    --d-animation-in-delay-randomizer: 1;
+    --s-scaleHover: 0.75;
+    --d-scaleHover: 0.35s;
+    --e-scaleHover: var(--e-inout);
+    --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
 
     pointer-events: none;
     position: absolute;
@@ -1649,14 +1658,12 @@ body {
     }
 
     &-el {
-      --s-translateY: 0;
-
       display: block;
       width: 100%;
       opacity: 0;
-      transition: opacity ease-out 0.25s;
-      transform: translateY(var(--s-translateY));
-      will-change: transform;
+      transform: translateY(var(--s-translateY)) scale3d(var(--s-scale), var(--s-scale), 1);
+      transition: opacity ease-out var(--d-animation-in), var(--t-transform);
+      transition-delay: 0s;
 
       &--01 {
         --s-translateY: calc(-100% - var(--s-lines));
@@ -1669,7 +1676,10 @@ body {
       &.is-loaded {
         @include hover() {
           #{$root}:hover & {
+            --s-scale: var(--s-scaleHover);
+
             opacity: 1;
+            transition-delay: var(--d-animation-in-delay), var(--d-animation-in-delay);
           }
         }
       }

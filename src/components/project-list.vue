@@ -58,12 +58,12 @@
     data: function () {
       return {
         currentColor: '',
+        isHover: false,
         thumb1URL: undefined,
         thumb2URL: undefined,
         isThumb1Loaded: false,
         isThumb2Loaded: false,
-        areThumbsInvertedX: false,
-        isHover: false,
+        areThumbsInvertedX: false
       }
     },
     computed: {
@@ -72,8 +72,26 @@
       }
     },
     mounted () {
+      this.setThumbsAnimationDelay();
     },
     methods: {
+      setThumbsAnimationDelay: function () {
+        let initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
+        let delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
+
+        let newDelay1 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
+        let newDelay2 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
+
+        this.$refs.thumb1.style.setProperty('--d-animation-in-delay', newDelay1+'s');
+        this.$refs.thumb2.style.setProperty('--d-animation-in-delay', newDelay2+'s');
+
+        console.log(newDelay1);
+        console.log(newDelay2);
+        console.log("--");
+      },
+      getRandomRange(min, max) {
+        return Math.random() * (max - min) + min;
+      },
       mouseOverListener: function () {
         if (this.isHover == false) {
           this.isHover = true;
