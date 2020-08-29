@@ -104,8 +104,6 @@
         this.isHover = false;
 
         this.currentColor = "";
-
-        console.log("leave");
       },
       thumbLoaded1: function () {
         this.isThumb1Loaded = true;
