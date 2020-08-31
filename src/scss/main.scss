@@ -1616,11 +1616,13 @@ body {
     --s-left-1: -25vw;
     --s-left-2: calc(50vw - var(--s-width));
     --s-scale: 1;
+    --s-scaleHover: 0.75;
     --s-translateY: 0;
+    --s-posY: 0;
+    --s-posYMargin: calc(var(--s-gutter) * 0.2);
     --d-animation-in: 0.2s;
     --d-animation-in-delay: 0.25s;
     --d-animation-in-delay-randomizer: 1;
-    --s-scaleHover: 0.75;
     --d-scaleHover: 0.35s;
     --e-scaleHover: var(--e-inout);
     --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
@@ -1662,20 +1664,19 @@ body {
       display: block;
       width: 100%;
       opacity: 0;
+      top: calc(var(--s-posY) + var(--s-posYMargin));
       transform: translateY(var(--s-translateY)) scale3d(var(--s-scale), var(--s-scale), 1);
       transition: opacity ease-out var(--d-animation-in), var(--t-transform);
       transition-delay: 0s;
 
       &--01 {
         --s-translateY: calc(-100% - var(--s-lines));
-
-        top: 90px;
       }
 
       &--02 {
         --s-translateY: 100%;
 
-        top: -80px;
+        top: calc((var(--s-posY) + var(--s-posYMargin)) * -1);
       }
 
       &.is-loaded {

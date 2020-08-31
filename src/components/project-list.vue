@@ -73,17 +73,26 @@
     },
     mounted () {
       this.setThumbsAnimationDelay();
+
+      window.addEventListener('resize', this.resize);
     },
     methods: {
       setThumbsAnimationDelay: function () {
-        let initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
-        let delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
+        const initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
+        const delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
 
-        let newDelay1 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
-        let newDelay2 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
+        const newDelay1 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
+        const newDelay2 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
 
         this.$refs.thumb1.style.setProperty('--d-animation-in-delay', newDelay1+'s');
         this.$refs.thumb2.style.setProperty('--d-animation-in-delay', newDelay2+'s');
+      },
+      setThumbVerticalMargin: function (thumb) {
+        const thumbHeight = thumb.offsetHeight;
+        const scale = parseFloat(getComputedStyle(thumb).getPropertyValue('--s-scaleHover'));
+        const posY = (thumbHeight - (thumbHeight * scale)) * 0.5;
+
+        thumb.style.setProperty('--s-posY', posY+'px');
       },
       getRandomRange(min, max) {
         return Math.random() * (max - min) + min;
@@ -107,14 +116,22 @@
       },
       thumbLoaded1: function () {
         this.isThumb1Loaded = true;
+        this.setThumbVerticalMargin(this.$refs.thumb1);
       },
       thumbLoaded2: function () {
         this.isThumb2Loaded = true;
+        this.setThumbVerticalMargin(this.$refs.thumb2);
+      },
+      resize: function () {
+        if (this.isThumb1Loaded) this.setThumbVerticalMargin(this.$refs.thumb1);
+        if (this.isThumb2Loaded) this.setThumbVerticalMargin(this.$refs.thumb2);
       },
       destroy: function () {
-        setTimeout(() => {
+        setTimeout(() => { //wait for page transition to reset color
           this.currentColor = "";
         }, 500);
+
+        window.removeEventListener('resize', this.resize);
       }
     }
   }
