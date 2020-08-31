@@ -3,17 +3,15 @@
   "mediasPath":"/projects/",
   "main": [
     {
-      "uid": "flm",
-      "title": "Freunde Landesmuseum Zürich",
-      "type": "Branding & One-Pager",
+      "uid": "eaostop",
+      "title": "EAO E-Stop",
+      "type": "Produkt-Konfigurator",
       "year": "2020",
-      "agency": "Eyekon",
-      "skills": "Corporate Branding, Konzept & Wireframes,  Art Direction & Digital Design",
-      "color": "#3d7ac3",
-      "colorCase": "#edf0f2",
+      "color": "#e1061b",
+      "colorCase": "#e1061b",
       "inverted": false,
-      "thumb1": "flm/thumb_01.jpg",
-      "thumb2": "flm/thumb_02.jpg"
+      "thumb1": "thumb_01.jpg",
+      "thumb2": "thumb_02.jpg"
     },
     {
       "uid": "astrorara",
@@ -27,19 +25,6 @@
       "inverted": true,
       "thumb1": "ar/thumb_01.jpg",
       "thumb2": "ar/thumb_02.jpg"
-    },
-    {
-      "uid": "swisstrustroom",
-      "title": "Swisscom SwissTrustRoom",
-      "type": "Produkt One-Pager",
-      "year": "2020",
-      "agency": "Eyekon",
-      "skills": "Konzept & Wireframes, Art Direction & Digital Design, Animation",
-      "color": "#3a86d0",
-      "colorCase": "#1b548b",
-      "inverted": true,
-      "thumb1": "st/thumb_01.jpg",
-      "thumb2": "st/thumb_02.jpg"
     },
     {
       "uid": "maz",
@@ -84,6 +69,19 @@
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
+    },
+    {
+      "uid": "flm",
+      "title": "Freunde Landesmuseum Zürich",
+      "type": "Branding & One-Pager",
+      "year": "2019",
+      "agency": "Eyekon",
+      "skills": "Corporate Branding, Konzept & Wireframes,  Art Direction & Digital Design",
+      "color": "#3d7ac3",
+      "colorCase": "#edf0f2",
+      "inverted": false,
+      "thumb1": "flm/thumb_01.jpg",
+      "thumb2": "flm/thumb_02.jpg"
     },
     {
       "uid": "uzhinno",
@@ -161,6 +159,19 @@
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
+    },
+    {
+      "uid": "swisstrustroom",
+      "title": "Swisscom SwissTrustRoom",
+      "type": "Produkt One-Pager",
+      "year": "2017",
+      "agency": "Eyekon",
+      "skills": "Konzept & Wireframes, Art Direction & Digital Design, Animation",
+      "color": "#3a86d0",
+      "colorCase": "#1b548b",
+      "inverted": true,
+      "thumb1": "st/thumb_01.jpg",
+      "thumb2": "st/thumb_02.jpg"
     },
     {
       "uid": "pom",
