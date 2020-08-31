@@ -1618,7 +1618,7 @@ body {
     --s-scale: 1;
     --s-translateY: 0;
     --d-animation-in: 0.2s;
-    --d-animation-in-delay: 0.5s;
+    --d-animation-in-delay: 0.25s;
     --d-animation-in-delay-randomizer: 1;
     --s-scaleHover: 0.75;
     --d-scaleHover: 0.35s;
@@ -1658,6 +1658,7 @@ body {
     }
 
     &-el {
+      position: relative;
       display: block;
       width: 100%;
       opacity: 0;
@@ -1667,10 +1668,14 @@ body {
 
       &--01 {
         --s-translateY: calc(-100% - var(--s-lines));
+
+        top: 90px;
       }
 
       &--02 {
         --s-translateY: 100%;
+
+        top: -80px;
       }
 
       &.is-loaded {
