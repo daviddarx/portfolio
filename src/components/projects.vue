@@ -31,9 +31,10 @@
           <div class="project-list-container">
             <project-list
               v-for="project in getProjectsForYear(year)"
+              v-bind:id="project.id"
               v-bind:key="project.title"
               v-bind:datas="project"
-              v-bind:class="{ 'is-fist': i==0}"
+              v-bind:class="{ 'is-first': i==0}"
               ref="projectList"
             >
             </project-list>
@@ -54,6 +55,10 @@
 
   delete projects.default;
 
+  projects.main.forEach((item, i) => {
+    item.id = i;
+  });
+
   export default Vue.extend({
     name: "info-keep",
     components: {
@@ -67,7 +72,11 @@
         isDisplayed : false,
         isMounted: false,
         pageTitleOnLoad: "2020",
-        pageTitle: "2020"
+        pageTitle: "2020",
+        projectsItemsToObserve: undefined,
+        projectsObserver: undefined,
+        projectsObserverRootMargin: '0px 0px 0px 0px',
+        firstResized: false,
       }
     },
     computed: {
@@ -92,9 +101,11 @@
       }
     },
     beforeRouteLeave (to, from, next) {
+      window.removeEventListener('resize', this.resize);
       this.isMounted = false;
       this.isDisplayed = false;
       this.destroyTitlesObserver();
+      this.destroyProjectsObserver();
       this.$refs.projectList.forEach(item => {
         item.destroy();
       });
@@ -105,13 +116,77 @@
         this.isMounted = true;
         setTimeout(this.displayProjects, 100);
 
+        window.addEventListener('resize', this.resize);
+        this.resize();
+
         this.initTitlesObserver(this.pageTitleOnLoad);
+        this.initProjectsObserver();
       },
       getProjectsForYear: function (year) {
         return this.projects.main.filter(project => project.year == year);
       },
       displayProjects: function() {
         this.isDisplayed = true;
+      },
+      calculateProjectsRootMargin () {
+        const margin = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        this.projectsObserverRootMargin = `0px 0px ${margin}px 0px`;
+      },
+      initProjectsObserver: function () {
+        if (!!window.IntersectionObserver) {
+          this.projectsItemsToObserve = [];
+
+          this.$refs.projectList.forEach((item) => {
+            if (item.$el.getAttribute('observed') != 'false') {
+              this.projectsItemsToObserve.push(item);
+            }
+          });
+
+          if (this.projectsItemsToObserve.length > 0) {
+            this.calculateProjectsRootMargin();
+
+            this.projectsObserver = new IntersectionObserver(this.projectsIntersectionListener, {
+              rootMargin: this.projectsObserverRootMargin
+            });
+
+            this.projectsItemsToObserve.forEach((item) => {
+              this.projectsObserver.observe(item.$el);
+            });
+          }
+        }
+      },
+      destroyProjectsObserver: function () {
+        if (!!window.IntersectionObserver && this.projectsObserver) {
+          this.projectsItemsToObserve.forEach((item) => {
+            this.projectsObserver.unobserve(item.$el);
+          });
+          this.projectsObserver.disconnect();
+          this.projectsObserver = undefined;
+        }
+      },
+      projectsIntersectionListener (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            const projectListItem = this.$refs.projectList[parseInt(entry.target.getAttribute('id'))];
+
+            projectListItem.loadImage();
+
+            entry.target.setAttribute('observed', 'false');
+            this.projectsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      resize: function () {
+        if (this.firstResized == true && this.projectsObserver) {
+          this.destroyProjectsObserver();
+          this.initProjectsObserver();
+        }
+
+        this.$refs.projectList.forEach(item => {
+          item.resize();
+        });
+
+        this.firstResized = true;
       }
     }
   });

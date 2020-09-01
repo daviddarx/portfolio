@@ -73,10 +73,14 @@
     },
     mounted () {
       this.setThumbsAnimationDelay();
-
-      window.addEventListener('resize', this.resize);
     },
     methods: {
+      loadImage: function () {
+        if (!this.thumb1URL) {
+          this.thumb1URL = projects.mediasPath+this.datas.thumb1;
+          this.thumb2URL = projects.mediasPath+this.datas.thumb2;
+        }
+      },
       setThumbsAnimationDelay: function () {
         const initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
         const delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
@@ -98,15 +102,10 @@
         return Math.random() * (max - min) + min;
       },
       mouseOverListener: function () {
-        if (this.isHover == false) {
+        if (this.isHover == false) { //to avoid firing on each child, because of mouseover instead of mouseenter, which can cause performance problem
           this.isHover = true;
 
           this.currentColor = this.datas.color;
-
-          if (!this.thumb1URL) {
-            this.thumb1URL = projects.mediasPath+this.datas.thumb1;
-            this.thumb2URL = projects.mediasPath+this.datas.thumb2;
-          }
         }
       },
       mouseLeaveListener: function () {
@@ -130,8 +129,6 @@
         setTimeout(() => { //wait for page transition to reset color
           this.currentColor = "";
         }, 500);
-
-        window.removeEventListener('resize', this.resize);
       }
     }
   }
