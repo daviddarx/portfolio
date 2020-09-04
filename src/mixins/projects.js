@@ -3,6 +3,7 @@ export default {
     return {
       isMounted: false,
       refsArray: undefined,
+      delayedLoadsArray: undefined,
       observer: undefined,
       observerItems: undefined,
       observerRootMargin: "-10%" //20vh to compensate
@@ -13,9 +14,27 @@ export default {
       this.isMounted = true;
       requestAnimationFrame(() => {
         this.refsArray = Object.values(this.$refs);
+        this.setDelayedLoads();
         this.setIntersectionObserver();
       });
       window.addEventListener('resize', this.resize);
+    },
+    setDelayedLoads () {
+      this.delayedLoadsArray = [];
+
+      this.refsArray.forEach(ref => {
+        if (ref.loadImage && ref.autoLoad == false) {
+          this.delayedLoadsArray.push(ref);
+        }
+      });
+
+      this.loadNextImage();
+    },
+    loadNextImage () {
+      if (this.delayedLoadsArray.length > 0) {
+        this.delayedLoadsArray[0].loadImage();
+        this.delayedLoadsArray.shift();
+      }
     },
     setIntersectionObserver () {
       this.observerItems = document.body.querySelectorAll('.observed');
@@ -72,6 +91,8 @@ export default {
         });
         this.refsArray = [];
       }
+
+      this.delayedLoadsArray = [];
 
       if (this.observer) {
         this.observerItems.forEach(item => {
