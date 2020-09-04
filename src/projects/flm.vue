@@ -17,6 +17,9 @@
           v-bind:url="this.lm1Datas.url"
           v-bind:hdRatio="this.lm1Datas.hd"
           v-bind:backgroundImage="true"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageDeco1"
           class="deco-lm-01"
         >
         </deco-image>
@@ -45,6 +48,9 @@
           v-bind:url="this.lm2Datas.url"
           v-bind:hdRatio="this.lm2Datas.hd"
           v-bind:backgroundImage="true"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageDeco2"
           class="deco-lm-02"
         >
         </deco-image>
@@ -77,7 +83,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_01.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
-            v-on:loaded="this.customResize"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.firstLogoLoaded"
             ref="logore1"
           >
           </media-image>
@@ -87,6 +94,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_02.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore2"
           >
           </media-image>
@@ -96,6 +105,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_03.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore3"
           >
           </media-image>
@@ -105,6 +116,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_04.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore4"
           >
           </media-image>
@@ -114,6 +127,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_05.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore5"
           >
           </media-image>
@@ -123,6 +138,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_06.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore6"
           >
           </media-image>
@@ -132,6 +149,8 @@
             v-bind:url="this.mediasPath+'logo/re_logo_07.jpg'"
             v-bind:title="'Logo Recherche'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="logore7"
           >
           </media-image>
@@ -169,6 +188,8 @@
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="lfre1"
           >
           </media-image>
@@ -180,6 +201,8 @@
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="lfre2"
           >
           </media-image>
@@ -191,6 +214,8 @@
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="lfre3"
           >
           </media-image>
@@ -221,6 +246,8 @@
               v-bind:url="this.mediasPath+'logo/logo_final_01_1.jpg'"
               v-bind:title="'Finale Identität'"
               v-bind:hdRatio="2"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
               ref="finalidlogo11"
             >
             </media-image>
@@ -230,6 +257,8 @@
               v-bind:url="this.mediasPath+'logo/logo_final_02_1.jpg'"
               v-bind:title="'Finale Identität'"
               v-bind:hdRatio="2"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
               ref="finalidlogo21"
             >
             </media-image>
@@ -239,6 +268,8 @@
               v-bind:url="this.mediasPath+'logo/logo_final_01_2.jpg'"
               v-bind:title="'Finale Identität'"
               v-bind:hdRatio="2"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
               ref="finalidlogo12"
             >
             </media-image>
@@ -248,6 +279,8 @@
               v-bind:url="this.mediasPath+'logo/logo_final_02_2.jpg'"
               v-bind:title="'Finale Identität'"
               v-bind:hdRatio="2"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
               ref="finalidlogo22"
             >
             </media-image>
@@ -275,6 +308,8 @@
             v-bind:url="this.lfFinalData.url"
             v-bind:title="'Finales Look&Feel'"
             v-bind:hdRatio="this.lfFinalData.hd"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="finalidlf"
             class="final-id__lf"
           >
@@ -299,6 +334,8 @@
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="flmfinalde11"
         >
         </media-image>
@@ -307,6 +344,8 @@
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="flmfinalde12"
         >
         </media-image>
@@ -315,6 +354,8 @@
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="flmfinalde13"
         >
         </media-image>
@@ -327,6 +368,8 @@
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmfinalde2"
             class="flm-final-de__screen-02"
           >
@@ -339,6 +382,8 @@
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmfinalde3"
             class="flm-final-de__screen-03"
           >
@@ -363,6 +408,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd1"
           >
           </media-image>
@@ -373,6 +420,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd2"
           >
           </media-image>
@@ -383,6 +432,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd3"
           >
           </media-image>
@@ -393,6 +444,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd4"
           >
           </media-image>
@@ -403,6 +456,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd5"
           >
           </media-image>
@@ -413,6 +468,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="flmrd6"
           >
           </media-image>
@@ -499,7 +556,11 @@
       this.destroy();
     },
     methods: {
-      customResize () {
+      firstLogoLoaded: function () {
+        this.customResize();
+        this.loadNextImage();
+      },
+      customResize: function () {
         const logoReDecoHeight = this.$refs.logoredesc.offsetHeight + this.$refs.logore1.$el.offsetHeight;
         this.$refs.logoredeco.style.setProperty('--height', logoReDecoHeight + "px");;
       }
