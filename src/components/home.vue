@@ -5,9 +5,24 @@
     ref="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-
+  ../../static/projects/ar/scenes_overview.mp4<br>
   <video width="400" controls ref="video1">
     <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
+    Your browser does not support HTML video.
+  </video>
+
+  <br><br>
+  https://files.daviddarx.com/stuffs/testvideo/scenes_overview.mp4<br>
+  <video width="400" controls ref="video1">
+    <source src="https://files.daviddarx.com/stuffs/testvideo/scenes_overview.mp4" type="video/mp4">
+    Your browser does not support HTML video.
+  </video>
+
+
+  <br><br>
+  https://files.daviddarx.com/stuffs/testvideo/scenes_overview.mp4<br>
+  <video width="400" controls ref="video1">
+    <source src="https://files.daviddarx.com/stuffs/testvideo/scenes_overview.mp4" type="video/mp4">
     Your browser does not support HTML video.
   </video>
 
