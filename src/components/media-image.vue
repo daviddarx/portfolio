@@ -153,8 +153,10 @@
         }
       },
       computeImageNaturalDimensions: function () {
-        this.imageNaturalWidthComputed = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
-        this.imageNaturalHeightComputed = Math.round(this.$refs.image.naturalHeight * this.hdRatioReversed);
+        if (this.$refs.image) {
+          this.imageNaturalWidthComputed = Math.round(this.$refs.image.naturalWidth * this.hdRatioReversed);
+          this.imageNaturalHeightComputed = Math.round(this.$refs.image.naturalHeight * this.hdRatioReversed);
+        }
       },
       getScaleDezoomed: function () {
         this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
