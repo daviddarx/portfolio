@@ -11,9 +11,13 @@
     Your browser does not support HTML video.
   </video>
 
-  <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video2">
-      <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
+  <video muted="muted" playsinline controls="controls" class="test" ref="video2">
+      <source src="https://deploy-preview-12--daviddarx-portfolio.netlify.app/projects/ar/scenes_overview.mp4" type="video/mp4">
   </video>
+
+  <!-- <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video2">
+      <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
+  </video> -->
 
     <div class="content-page">
       <h1 class="home__title animate-in">
@@ -44,7 +48,7 @@
     mounted () {
       setTimeout(this.displayHome, 100);
 
-      console.log("test 5");
+      console.log("test 6");
 
       this.$refs.video1.addEventListener("canplay", function() {
         console.log("oncanplay1");
