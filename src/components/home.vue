@@ -56,9 +56,9 @@
         console.log("oncanplay1");
       });
 
-      this.$refs.video2.addEventListener("canplay", function() {
-        console.log("oncanplay2");
-      });
+//       this.$refs.video2.addEventListener("canplay", function() {
+//         console.log("oncanplay2");
+//       });
     },
     methods: {
       displayHome: function() {
