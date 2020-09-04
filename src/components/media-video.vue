@@ -136,6 +136,7 @@
         // console.log('progress: ' + this.getBuffered());
       },
       canplaythroughListener: function () {
+        console.log("canplaythroug");
         if (this.isPlaying == true) {
           this.play();
         }
