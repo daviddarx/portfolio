@@ -6,8 +6,9 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
 
-  <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video">
-      <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
+  <video width="400" controls ref="video">
+    <source src="https://deploy-preview-12--daviddarx-portfolio.netlify.app/projects/ar/scenes_overview.mp4" type="video/mp4">
+    Your browser does not support HTML video.
   </video>
 
     <div class="content-page">
@@ -39,9 +40,12 @@
     mounted () {
       setTimeout(this.displayHome, 100);
 
-      console.log("test 2");
-    },
+      console.log("test 4");
 
+      this.$refs.video.addEventListener("canplay", function() {
+        console.log("oncanplay");
+      });
+    },
     methods: {
       displayHome: function() {
         this.isDisplayed = true;
