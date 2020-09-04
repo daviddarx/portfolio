@@ -5,8 +5,12 @@
     ref="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <div class="content-page">
 
+  <video muted="muted" playsinline="" autoplay preload="auto" poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test">
+      <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
+  </video>
+
+    <div class="content-page">
       <h1 class="home__title animate-in">
         <span class="home__title-name font-compensated">David Darx</span>
         <span class="home__title-detail">Digital Design &amp; Art Direction</span>
@@ -34,6 +38,8 @@
     },
     mounted () {
       setTimeout(this.displayHome, 100);
+
+      console.log("test 1");
     },
 
     methods: {
@@ -43,4 +49,12 @@
     }
   });
 </script>
+
+<style>
+  .test {
+    width: 600px;
+    position: relative;
+    margin-left: 50%;
+  }
+</style>
 
