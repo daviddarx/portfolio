@@ -6,7 +6,7 @@
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
 
-  <video muted="muted" playsinline="" autoplay preload="auto" poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test">
+  <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video">
       <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
   </video>
 
@@ -39,7 +39,7 @@
     mounted () {
       setTimeout(this.displayHome, 100);
 
-      console.log("test 1");
+      console.log("test 2");
     },
 
     methods: {
