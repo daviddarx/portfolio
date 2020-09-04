@@ -36,6 +36,10 @@
         type: Number,
         default: 768
       },
+      autoLoad: {
+        type: Boolean,
+        default: true
+      },
       centered: {
         type: Boolean,
         default: true
@@ -112,25 +116,27 @@
       }
     },
     mounted () {
-      this.getWindowSize();
-
-      this.computeHD();
-
-      if(this.zoomable == true){
-        this.setImageWindowGutter();
-        this.createZoomIcon();
-        this.$refs.container.addEventListener('click', this.imageClickListener);
-
-        if (window.isTouch == false) {
-          this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
-          this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
-        }
-      }
+      if (this.autoLoad == true) this.loadImage();
     },
     methods: {
+      loadImage: function () {
+        this.getWindowSize();
+
+        this.computeHD();
+
+        if(this.zoomable == true){
+          this.setImageWindowGutter();
+          this.createZoomIcon();
+          this.$refs.container.addEventListener('click', this.imageClickListener);
+
+          if (window.isTouch == false) {
+            this.$refs.image.addEventListener('mouseenter', this.imageEnterListener);
+            this.$refs.image.addEventListener('mouseleave', this.imageLeaveListener);
+          }
+        }
+      },
       imageLoaded: function () {
         this.isLoaded = true;
-
         this.$emit('loaded');
 
         this.computeImageNaturalDimensions();
