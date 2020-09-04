@@ -195,6 +195,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-fd-01"
           >
           </media-image>
@@ -209,7 +211,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-02"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -223,7 +227,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-03"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -237,7 +243,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-04"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -251,7 +259,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-05"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -265,7 +275,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-06"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -279,7 +291,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-07"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -293,7 +307,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-08"
           >
           </media-image>
           <p class="desc-fd-ar">
@@ -307,7 +323,9 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="375"
-            ref="image-fd-01"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="image-fd-09"
           >
           </media-image>
           <p class="desc-fd-ar">
