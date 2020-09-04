@@ -10,6 +10,9 @@
           v-if="this.isMounted"
           v-bind:url="this.bookIntroDatas.url"
           v-bind:hdRatio="this.bookIntroDatas.hd"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageIntro"
           class="book-intro"
         >
         </deco-image>
@@ -31,12 +34,18 @@
 
     <deco-image
       v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      v-bind:autoLoad="false"
+      v-on:loaded="this.loadNextImage"
+      ref="imageDeco1"
       class="deco-stars deco-stars--1"
     >
     </deco-image>
 
     <deco-image
       v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      v-bind:autoLoad="false"
+      v-on:loaded="this.loadNextImage"
+      ref="imageDeco2"
       class="deco-stars deco-stars--2"
     >
     </deco-image>
@@ -95,6 +104,9 @@
       <div class="project__col-right project__col-right--inverted col-ctx--r">
         <deco-image
           v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageDeco3"
           class="deco-stars deco-stars--3"
         >
         </deco-image>
@@ -102,6 +114,9 @@
           v-if="this.isMounted"
           v-bind:url="this.contextImageDatas.url"
           v-bind:hdRatio="this.contextImageDatas.hd"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageCtx"
           class="image-ctx"
         >
         </deco-image>
@@ -119,6 +134,9 @@
           <deco-image
             v-bind:url="this.mediasPath+'designs/logo_01.jpg'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="imageLogo1"
             class="logo-ar"
           >
         </div>
@@ -126,6 +144,9 @@
           <deco-image
             v-bind:url="this.mediasPath+'designs/logo_02.jpg'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="imageLogo2"
             class="logo-ar"
           >
         </div>
@@ -133,6 +154,9 @@
           <deco-image
             v-bind:url="this.mediasPath+'designs/logo_03.jpg'"
             v-bind:hdRatio="2"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="imageLogo3"
             class="logo-ar"
           >
         </div>
@@ -153,6 +177,9 @@
       <deco-image
         v-bind:url="this.ballsDatas.url"
         v-bind:hdRatio="this.ballsDatas.hd"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
+        ref="imageBalls"
         class="balls"
       >
     </section>
@@ -291,16 +318,25 @@
       </div>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
+        ref="imageDeco4"
         class="deco-stars deco-stars--4"
       >
       </deco-image>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
+        ref="imageDeco5"
         class="deco-stars deco-stars--5"
       >
       </deco-image>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
+        ref="imageDeco6"
         class="deco-stars deco-stars--6"
       >
       </deco-image>
