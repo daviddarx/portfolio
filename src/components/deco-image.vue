@@ -24,6 +24,10 @@
         type: Number,
         default: 1
       },
+      autoLoad: {
+        type: Boolean,
+        default: true
+      },
       backgroundImage: {
         type: Boolean,
         default: false
@@ -39,15 +43,20 @@
       }
     },
     mounted () {
-      this.computeHD();
-
-      if (this.backgroundImage == true) {
-        this.$refs.container.style.backgroundImage=`url('${this.finalURL}')`;
-      }
+      if (this.autoLoad == true) this.loadImage();
     },
     methods: {
+      loadImage: function () {
+        this.computeHD();
+
+        if (this.backgroundImage == true) {
+          this.$refs.container.style.backgroundImage=`url('${this.finalURL}')`;
+        }
+      },
       imageLoaded: function () {
         this.isLoaded = true;
+        this.$emit('loaded');
+        console.log("loaded deco " + this.finalURL);
       },
       computeHD: function () {
         this.getWindowSize();
