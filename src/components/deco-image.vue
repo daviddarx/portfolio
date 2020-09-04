@@ -56,7 +56,6 @@
       imageLoaded: function () {
         this.isLoaded = true;
         this.$emit('loaded');
-        console.log("loaded deco " + this.finalURL);
       },
       computeHD: function () {
         this.getWindowSize();
