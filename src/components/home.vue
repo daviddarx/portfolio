@@ -20,21 +20,6 @@
   <!-- <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video2">
       <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
   </video> -->
-
-    <div class="content-page">
-      <h1 class="home__title animate-in">
-        <span class="home__title-name font-compensated">David Darx</span>
-        <span class="home__title-detail">Digital Design &amp; Art Direction</span>
-      </h1>
-
-      <router-link
-        to="/projects"
-        class="home__stage animate-in animate-in__s2"
-      >
-      </router-link>
-
-      </div>
-    </div>
   </div>
 </template>
 
