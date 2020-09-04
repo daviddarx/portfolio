@@ -7,13 +7,15 @@
   >
 
   <video width="400" controls ref="video1">
-    <source src="https://deploy-preview-12--daviddarx-portfolio.netlify.app/projects/ar/scenes_overview.mp4" type="video/mp4">
+    <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
     Your browser does not support HTML video.
   </video>
 
-  <video muted="muted" playsinline controls="controls" class="test" ref="video2">
+  <!-- https://deploy-preview-12--daviddarx-portfolio.netlify.app/projects/ar/scenes_overview.mp4 -->
+
+  <!-- <video muted="muted" playsinline controls="controls" class="test" ref="video2">
       <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
-  </video>
+  </video> -->
 
   <!-- <video muted="muted" playsinline poster="../../static/projects/ar/scenes_overview.jpg" controls="controls" class="test" ref="video2">
       <source src="../../static/projects/ar/scenes_overview.mp4" type="video/mp4">
