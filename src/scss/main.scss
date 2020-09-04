@@ -362,7 +362,7 @@ body {
       #{$root}:hover & {
         width: 100%;
         left: 0;
-        transform: none;
+        transform: translateX(0);
       }
     }
   }
@@ -468,7 +468,7 @@ body {
       }
 
       &::before {
-        transform: none;
+        transform: scaleX(1);
         transform-origin: top left;
       }
     }
@@ -1001,7 +1001,7 @@ body {
     --d-mobile-transition: 0.25s;
     --e-mobile-transition: var(--e-inout);
 
-    transform: none;
+    transform: rotate(0deg) translate(0, 0);
     left: 0;
     bottom: 0;
     height: 0;
@@ -1086,7 +1086,7 @@ body {
         color: var(--c-nav-text-hover);
 
         &::before {
-          transform: none;
+          transform: scaleX(1);
           transform-origin: top left;
         }
       }
@@ -1100,7 +1100,7 @@ body {
       }
 
       &::after {
-        transform: none;
+        transform: scaleX(1);
       }
 
       @include hover() {
@@ -1131,7 +1131,7 @@ body {
 
     .is-mobile-opened & {
       opacity: 1;
-      transform: none;
+      transform: translateY(0);
 
       @for $i from 1 to 10 {
         &:nth-child(#{$i}) {
@@ -2188,7 +2188,7 @@ body {
     transform: translateY(15vw);
 
     @include viewport('mobile-layout') {
-      transform: none;
+      transform: translateY(0);
     }
   }
 
@@ -2489,7 +2489,7 @@ body {
         color: var(--c-hover-text);
 
         &::before {
-          transform: none;
+          transform: scaleY(1);
         }
       }
     }

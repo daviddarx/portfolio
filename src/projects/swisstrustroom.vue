@@ -543,7 +543,7 @@
       }
 
       @include viewport('tablet-s') {
-        transform: none;
+        transform: translateY(0);
       }
     }
   }
