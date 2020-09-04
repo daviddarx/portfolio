@@ -4,24 +4,15 @@
     v-if="this.isMounted"
     class="st"
   >
-    <deco-image
-      v-bind:url="this.mediasPath+'cloud.png'"
-      class="deco-cloud deco-cloud--1"
-    >
-    </deco-image>
-
-    <deco-image
-      v-bind:url="this.mediasPath+'cloud.png'"
-      class="deco-cloud deco-cloud--2"
-    >
-    </deco-image>
-
     <div class="project__cols project__intro intro-st">
       <div class="project__col-left">
         <deco-image
           v-if="this.isMounted"
           v-bind:url="this.boxHeaderDatas.url"
           v-bind:hdRatio="this.boxHeaderDatas.hd"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageBoxHeader"
           class="box-header"
         >
         </deco-image>
@@ -40,6 +31,24 @@
         </div>
       </div>
     </div>
+
+    <deco-image
+      v-bind:url="this.mediasPath+'cloud.png'"
+      v-bind:autoLoad="false"
+      v-on:loaded="this.loadNextImage"
+      ref="imageDeco1"
+      class="deco-cloud deco-cloud--1"
+    >
+    </deco-image>
+
+    <deco-image
+      v-bind:url="this.mediasPath+'cloud.png'"
+      v-bind:autoLoad="false"
+      v-on:loaded="this.loadNextImage"
+      ref="imageDeco2"
+      class="deco-cloud deco-cloud--2"
+    >
+    </deco-image>
 
     <section class="project__section project__section--padding-2x project__section--colored project__cols section-bw">
       <div class="project__col-left">
@@ -65,6 +74,8 @@
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="image-bw-01"
           class="project__thumb"
         >
@@ -75,6 +86,8 @@
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="image-bw-02"
           class="project__thumb"
         >
@@ -88,6 +101,8 @@
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="image-bw-03"
           class="project__thumb"
         >
@@ -98,12 +113,17 @@
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
           ref="image-bw-04"
           class="project__thumb"
         >
         </media-image>
         <deco-image
           v-bind:url="this.mediasPath+'cloud.png'"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageDeco3"
           class="deco-cloud deco-cloud--3"
         >
         </deco-image>
@@ -127,6 +147,9 @@
         <deco-image
           v-bind:url="this.boxLFDatas.url"
           v-bind:hdRatio="this.boxLFDatas.hd"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageBoxLF"
           class="box-lf"
         >
         </deco-image>
@@ -135,6 +158,9 @@
         <deco-image
           v-bind:url="this.mediasPath+'switches.png'"
           v-bind:hdRatio="2"
+          v-bind:autoLoad="false"
+          v-on:loaded="this.loadNextImage"
+          ref="imageSwitchesLF"
           class="switches-lf"
         >
         </deco-image>
@@ -173,6 +199,8 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
         ref="image-fd-01"
       >
       </media-image>
@@ -181,6 +209,8 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
         ref="image-fd-02"
       >
       </media-image>
@@ -189,6 +219,8 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
         ref="image-fd-03"
       >
       </media-image>
@@ -197,6 +229,8 @@
         v-bind:title="'Finales Design'"
         v-bind:hdRatio="2"
         v-bind:zoomable="true"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
         ref="image-fd-04"
       >
       </media-image>
@@ -205,6 +239,9 @@
     <section class="project__section project__section--padding-2x section-rd">
       <deco-image
         v-bind:url="this.mediasPath+'cloud.png'"
+        v-bind:autoLoad="false"
+        v-on:loaded="this.loadNextImage"
+        ref="imageDeco4"
         class="deco-cloud deco-cloud--4"
       >
       </deco-image>
@@ -218,6 +255,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-01"
           >
           </media-image>
@@ -228,6 +267,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-02"
           >
           </media-image>
@@ -238,6 +279,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-03"
           >
           </media-image>
@@ -248,6 +291,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-04"
           >
           </media-image>
@@ -258,6 +303,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-05"
           >
           </media-image>
@@ -268,6 +315,8 @@
             v-bind:title="'Responsive Design'"
             v-bind:hdRatio="2"
             v-bind:hdMinViewportWidth="320"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
             ref="image-rd-06"
           >
           </media-image>
@@ -348,6 +397,7 @@
     --opacity: 0.5;
 
     position: absolute;
+    z-index: -1;
     animation: cloud 10s ease-in-out infinite alternate;
 
     &--1 {
