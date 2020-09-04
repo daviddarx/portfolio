@@ -2662,13 +2662,9 @@ body {
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
   transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
 
-  .project & {
-    will-change: opacity, transform;
-  }
-
   .is-displayed & {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 
   @for $i from 1 to 10 {
@@ -2678,7 +2674,7 @@ body {
   }
 
   .is-chromeios & {
-    transform: none;
+    transform: translateY(0);
     transition: none;
     opacity: 1;
   }
