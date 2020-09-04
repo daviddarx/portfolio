@@ -4,18 +4,6 @@
     v-if="this.isMounted"
     class="ar"
   >
-    <deco-image
-      v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
-      class="deco-stars deco-stars--1"
-    >
-    </deco-image>
-
-    <deco-image
-      v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
-      class="deco-stars deco-stars--2"
-    >
-    </deco-image>
-
     <div class="project__cols project__intro intro-ar">
       <div class="project__col-left">
         <deco-image
@@ -40,6 +28,18 @@
         </div>
       </div>
     </div>
+
+    <deco-image
+      v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      class="deco-stars deco-stars--1"
+    >
+    </deco-image>
+
+    <deco-image
+      v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      class="deco-stars deco-stars--2"
+    >
+    </deco-image>
 
     <section class="project__section project__section--padding-2x project__cols section-ow">
       <div class="project__col-left col-ow--l">
@@ -414,6 +414,7 @@
     --s-width: 100%;
 
     position: absolute;
+    z-index: -1;
     width: var(--s-width);
     top: var(--s-top);
     left: var(--s-left);
