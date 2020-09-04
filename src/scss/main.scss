@@ -2662,6 +2662,10 @@ body {
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
   transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
 
+  .project & {
+    will-change: opacity, transform;
+  }
+
   .is-displayed & {
     opacity: 1;
     transform: none;
