@@ -84,6 +84,7 @@
       // this.$refs.video.addEventListener('progress', this.progressListener); // to remove
       this.$refs.video.addEventListener('canplaythrough', this.canplaythroughListener);
       this.$refs.video.addEventListener('ended', this.endListener);
+      this.$refs.video.load();
     },
     methods: {
       enter: function () {
