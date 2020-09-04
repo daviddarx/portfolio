@@ -307,6 +307,7 @@
     </section>
     <div class="cta-container-ar">
       <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small">Projekt online anschauen</a>
+      <p class="cta-detail-ar">(Optimiert für Smartphones)</p>
     </div>
   </project>
 </template>
@@ -846,5 +847,10 @@
     padding-top: var(--s-gutter);
     text-align: center;
   }
-  </style>
+
+  .cta-detail-ar {
+    font-size: var(--s-text-small);
+    margin-top: 1.25em;
+  }
+</style>
 
