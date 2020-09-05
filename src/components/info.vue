@@ -33,7 +33,7 @@
           </media-gif>
         </div>
         <div
-          class="info__introduction hiding-title"
+          class="info__introduction"
           v-html="this.info.introduction"
         >
         </div>
