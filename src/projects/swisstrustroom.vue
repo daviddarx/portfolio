@@ -179,8 +179,8 @@
         </div>
       </div>
       <media-video
-        v-bind:url="this.mediasPath+'designs/st_4.mp4'"
-        v-bind:poster="this.mediasPath+'designs/st_4.jpg'"
+        v-bind:url="this.videosPath+'st_4.mp4'"
+        v-bind:poster="this.videosPath+'st_4.jpg'"
         v-bind:autoplay="false"
         v-bind:isvideo="true"
         v-bind:id="'video-sc'"
@@ -345,7 +345,8 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: "/projects/st/"
+        mediasPath: '/projects/st/',
+        videosPath: 'https://files.daviddarx.com/works/videos/'
       }
     },
     computed: {
