@@ -2,7 +2,10 @@
 <template>
   <div class="credits">
     <span class="credits__text">
-      Design+Code ©{{this.year}} David Darx
+      Design &amp; Code – David Darx<br>
+      Textkorrekturen – Cérdric Knapp<br>
+      Foto- &amp; Videoaufnahmen – Silvio Strickler<br>
+      ©{{this.year}}
     </span>
   </div>
 </template>
