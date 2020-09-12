@@ -27,7 +27,7 @@
         </div>
         <p class="contact__address">
           Pflanzschulstrasse 35<br>
-          8004 Zürich<br>
+          Im wunderschönen K4, Zürich<br>
           CH <span class="dash">–</span> Schweiz
         </p>
       </div>
