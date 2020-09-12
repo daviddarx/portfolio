@@ -1359,11 +1359,9 @@ body {
     filter: grayscale(100%) contrast(2) brightness(2);
     transition: filter var(--e-out) 0.3s;
 
-    @include hover() {
-      &:hover {
-        filter: none;
-        transition-duration: 1s;
-      }
+    &:hover {
+      filter: none;
+      transition-duration: 1s;
     }
 
     &-el {
