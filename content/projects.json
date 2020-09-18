@@ -176,13 +176,15 @@
     {
       "uid": "pom",
       "title": "pom+Consulting",
-      "type": "Digitaler Auftritt",
+      "type": "Brand Relaunch",
       "year": "2017",
+      "agency": "Eyekon",
+      "skills": "Corporate Branding, Art Direction & Digital Design",
       "color": "#13d96b",
       "colorCase": "#13d96b",
       "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "thumb1": "pom/thumb_02.jpg",
+      "thumb2": "pom/thumb_01.jpg"
     },
     {
       "uid": "mammut",
