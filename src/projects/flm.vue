@@ -680,6 +680,8 @@
 
     &__right {
       padding-bottom: calc(var(--s-gutter) * 2);
+      position: relative;
+      margin-top: -0.3em;
 
       @include viewport('tablet-s') {
         padding-bottom: var(--s-gutter);
