@@ -39,14 +39,16 @@ export default {
     setIntersectionObserver () {
       this.observerItems = document.body.querySelectorAll('.observed');
 
-      if (!!window.IntersectionObserver) {
-        this.observer = new IntersectionObserver(this.intersectionListener, {
-          rootMargin: this.observerRootMargin
-        });
+      if(this.observerItems.length >= 1) {
+        if (!!window.IntersectionObserver) {
+          this.observer = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.observerRootMargin
+          });
 
-        this.observerItems.forEach(item => {
-          this.observer.observe(item);
-        });
+          this.observerItems.forEach(item => {
+            this.observer.observe(item);
+          });
+        }
       }
     },
     intersectionListener: function (entries, observer) {
@@ -57,8 +59,10 @@ export default {
         if (isVideo == true) {
           const videoID = entry.target.getAttribute('id');
           this.refsArray.forEach((item) => {
-            if (item.$el.getAttribute('id') == videoID) {
-              videoComponent = item;
+            if(item.$el) {
+              if (item.$el.getAttribute('id') == videoID) {
+                videoComponent = item;
+              }
             }
           });
 
