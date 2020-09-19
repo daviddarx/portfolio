@@ -2546,7 +2546,7 @@ body {
   &__arrow {
     --s-width: 2em;
     --s-height: 0.5em;
-    --c: white;
+    --c: var(--c-text);
     --t: translate(-50%, 1em);
 
     position: relative;
@@ -2555,10 +2555,18 @@ body {
     left: 50%;
     transform: var(--t);
 
+    .is-black & {
+      --c: var(--c-text-inverted);
+    }
+
     @include hover() {
       --s-width: 0;
       --s-height: 0;
       --c: var(--c-hover-text);
+
+      .is-black & {
+        --c: var(--c-text);
+      }
 
       position: absolute;
       margin-top: 0;
