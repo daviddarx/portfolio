@@ -661,9 +661,8 @@
       padding: 0;
 
       @include viewport('tablet-s') {
-        height: 50vw;
-        left: 0;
-        margin-left: calc(var(--s-gutter) * -1);
+        left: auto;
+        margin-left: 0;
         margin-bottom: var(--s-gutter);
       }
     }
@@ -694,6 +693,13 @@
         height: 100%;
         width: auto;
         animation: pom-intro-animation 20s ease-in-out infinite alternate;
+
+        @include viewport('tablet-s') {
+          position: relative;
+          height: auto;
+          width: 100%;
+          animation: none;
+        }
       }
     }
   }
@@ -719,6 +725,14 @@
     padding-top: 0;
     padding-bottom: 0;
 
+    @include viewport('tablet-s') {
+      display: block;
+    }
+
+    @include viewport('mobile-l') {
+      margin-top: var(--s-gutter);
+    }
+
     &__desc {
       box-sizing: border-box;
       width: calc(50% - var(--s-gutter) * 1);
@@ -727,7 +741,7 @@
       padding-top: calc(var(--s-gutter) * 2 - 0.5em);
 
       @include viewport('tablet') {
-        padding-right: var(--s-gutter);
+        padding: calc(var(--s-gutter) * 1.5);
       }
 
       @include viewport('tablet-s') {
@@ -742,8 +756,10 @@
       flex-wrap: wrap;
 
       @include viewport('tablet-s') {
-        width: calc(100% + var(--s-gutter));
-        margin-left: var(--s-gutter);
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--s-gutter);
+        padding-top: 0;
       }
     }
 
@@ -751,7 +767,16 @@
       position: relative;
       width: 50%;
       box-sizing: border-box;
-      padding-bottom: 1px;
+      margin-bottom: 1px;
+      background-color: white;
+
+      @include viewport('mobile') {
+        width: 100%;
+      }
+
+      &:first-child {
+        background-color: #e5e5e5;
+      }
 
       &:nth-child(2n) {
         &::after {
@@ -763,6 +788,11 @@
           left: 0;
           background-color: var(--c-background);
         }
+      }
+
+      .media-image {
+        height: 100%;
+        display: flex;
       }
     }
   }
@@ -777,6 +807,11 @@
     padding-top: 0;
     padding-bottom: 0;
 
+    @include viewport('tablet-s') {
+      display: block;
+      padding-bottom: calc(var(--s-gutter) * 0.5);
+    }
+
     &__desc {
       order: 2;
       box-sizing: border-box;
@@ -785,9 +820,14 @@
       padding-top: calc(var(--s-gutter) * 2 - 0.5em);
       padding-left: calc(var(--s-gutter) * 2 + 1%);
 
+      @include viewport('tablet') {
+        padding: calc(var(--s-gutter) * 1.5);
+        padding-left: calc(var(--s-gutter) * 1.5 + 1%);
+      }
+
       @include viewport('tablet-s') {
-        width: calc(100% + var(--s-gutter));
-        margin-left: var(--s-gutter);
+        width: 100%;
+        padding: var(--s-gutter);
       }
     }
 
@@ -801,6 +841,9 @@
 
       @include viewport('tablet-s') {
         width: 100%;
+        box-sizing: border-box;
+        padding: var(--s-gutter);
+        padding-top: 0;
       }
     }
 
@@ -813,8 +856,19 @@
       z-index: 102;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
+      @include viewport('tablet-s') {
+        --s-translate: 1%;
+
+        position: relative;
+      }
+
       &--alt {
         transform: translate(var(--s-translate-f), var(--s-translate-f));
+
+        @include viewport('tablet-s') {
+          position: absolute;
+          width: calc(100vw - var(--s-gutter) * 2);
+        }
 
         &::after {
           content: "";
@@ -862,6 +916,19 @@
       padding: calc(var(--s-gutter) * 2);
       padding-bottom: calc(var(--s-gutter) * 1.25);
       padding-top: 30vw;
+
+      @include viewport('desktop') {
+        padding-top: 25vw;
+      }
+
+      @include viewport('tablet-s') {
+        padding: var(--s-gutter);
+        padding-top: 20vw;
+      }
+
+      @include viewport('mobile-l') {
+        display: block;
+      }
     }
 
     &__desc {
@@ -871,9 +938,19 @@
       box-sizing: border-box;
       padding-right: var(--s-padding);
 
+      @include viewport('mobile-l') {
+        width: 100%;
+        padding: 0;
+      }
+
       &:last-child {
         padding-right: 0;
         padding-left: var(--s-padding);
+
+        @include viewport('mobile-l') {
+          padding: 0;
+          padding-top: calc(var(--s-gutter) * 0.5);
+        }
       }
     }
 
@@ -881,16 +958,27 @@
       position: relative;
       overflow: hidden;
       height: 50vw;
+      max-height: calc(1920px * 0.5);
+      background-color: #eee;
     }
 
     &__claims {
       position: relative;
-      margin-top: calc(var(--s-gutter) * -2);
       display: flex;
       flex-wrap: wrap;
+      max-width: 1440px;
+      margin: 0 auto;
+      margin-top: calc(var(--s-gutter) * -2);
       padding: calc(var(--s-gutter) * 2);
       padding-top: 0;
       padding-bottom: 0;
+
+      @include viewport('tablet-s') {
+        padding: var(--s-gutter);
+        padding-top: 0;
+        padding-bottom: var(--s-gutter);
+        margin-top: calc(var(--s-gutter) * -1);
+      }
     }
 
     &__claim {
@@ -899,6 +987,14 @@
       padding-right: 1px;
       padding-bottom: 1px;
       box-shadow: var(--shadow-01);
+
+      @include viewport('mobile-l') {
+        width: 50%;
+      }
+
+      @include viewport('mobile') {
+        width: 100%;
+      }
     }
   }
 
@@ -908,6 +1004,14 @@
 
     @include viewport('desktop') {
       margin-top: 0;
+    }
+
+    @include viewport('tablet') {
+      margin-bottom: 0;
+    }
+
+    @include viewport('tablet-s') {
+      margin-bottom: var(--s-gutter);
     }
 
     &__title {
@@ -924,9 +1028,13 @@
       margin: 0 auto;
     }
 
-    &__screen-01,
-    &__screen-02 {
+    &__screen-02,
+    &__screen-03 {
       margin-bottom: calc(var(--s-gutter-col) * 2);
+
+      @include viewport('tablet') {
+        margin-bottom: 0;
+      }
     }
 
     &__screen-03,
@@ -935,7 +1043,6 @@
 
       @include viewport('tablet') {
         transform: translateY(0);
-        margin-top: var(--s-gutter);
       }
     }
 
@@ -944,10 +1051,10 @@
 
       @include viewport('tablet') {
         display: block;
-        margin-top: var(--s-gutter);
 
         & > div {
           padding: 0;
+          margin-top: var(--s-gutter);
         }
       }
     }
@@ -964,6 +1071,10 @@
 
     &__title {
       margin-bottom: calc(var(--s-gutter) * 0.75);
+
+      @include viewport('tablet-s') {
+        margin-top: var(--s-gutter);
+      }
     }
 
     .project__mobile-thumb {
@@ -987,6 +1098,15 @@
     padding: calc(var(--s-gutter) * 2);
     padding-bottom: 0;
     text-align: center;
+
+    @include viewport('tablet') {
+      margin-top: var(--s-gutter);
+    }
+
+    @include viewport('tablet-s') {
+      padding: var(--s-gutter);
+      padding-bottom: 0;
+    }
 
     &__title {
       @include label-small;
