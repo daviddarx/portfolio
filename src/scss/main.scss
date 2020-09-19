@@ -1446,15 +1446,23 @@ body {
 }
 
 .contact {
-  &__image {
-    height: 45vw;
-    background-color: black;
+  &__video-container {
+    cursor: pointer;
+  }
+
+  &__video {
+    filter: grayscale(100%) contrast(2) brightness(2);
+    transition: filter var(--e-out) 1s;
+
+    &:hover {
+      filter: none;
+    }
   }
 
   &__address {
     font-size: var(--s-text-lead);
     line-height: var(--s-line-height-lead);
-    margin-top: var(--s-gutter);
+    margin-top: calc(var(--s-gutter) * 0.85);
   }
 }
 

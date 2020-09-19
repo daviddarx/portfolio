@@ -22,12 +22,21 @@
       </div>
       <div class="content-page__content animate-in animate-in__s2">
         <div
-          class="contact__image content-page__3-4 hiding-title"
+          class="contact__video-container content-page__3-4 hiding-title"
+          v-on:click="this.videoClick"
         >
+          <media-video
+            v-bind:url="this.videosPath+'k4_1920_5.mp4'"
+            v-bind:poster="this.videosPath+'k4.jpg'"
+            v-bind:autoplay="true"
+            ref="video"
+            class="contact__video"
+          >
+          </media-video>
         </div>
         <p class="contact__address">
           Pflanzschulstrasse 35<br>
-          Im wunderschönen K4, Zürich<br>
+          Im schönen K4, Zürich<br>
           CH <span class="dash">–</span> Schweiz
         </p>
       </div>
@@ -38,23 +47,27 @@
 
 <script>
   import Vue from "vue";
+  import MediaVideo from '../components/media-video.vue';
   import Credits from './credits.vue';
   import contentPageTitle from '../mixins/content-page-title';
 
   export default Vue.extend({
     components: {
+      'media-video': MediaVideo,
       'credits': Credits
     },
     mixins: [contentPageTitle],
     data() {
       return {
         isDisplayed : false,
-        pageTitle: "Kontakt"
+        pageTitle: "Kontakt",
+        videosPath: 'https://files.daviddarx.com/works/videos/k4/'
       }
     },
     mounted () {
       setTimeout(this.displayContact, 100);
       this.initTitlesObserver(this.pageTitle);
+      this.$refs.video.enter();
     },
     beforeDestroy () {
       this.destroyTitlesObserver();
@@ -62,6 +75,9 @@
     methods: {
       displayContact: function() {
         this.isDisplayed = true;
+      },
+      videoClick: function () {
+        this.$refs.video.togglePlay();
       }
     }
   });
