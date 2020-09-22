@@ -793,6 +793,11 @@
       .media-image {
         height: 100%;
         display: flex;
+
+        @include viewport('tablet-s') {
+          height: auto;
+          display: block;
+        }
       }
     }
   }
