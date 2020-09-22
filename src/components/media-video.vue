@@ -57,6 +57,10 @@
       autoplay: {
         type: Boolean,
         default: false
+      },
+      toggleclick: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -84,6 +88,10 @@
       // this.$refs.video.addEventListener('progress', this.progressListener); // to remove
       this.$refs.video.addEventListener('canplaythrough', this.canplaythroughListener);
       this.$refs.video.addEventListener('ended', this.endListener);
+
+      if (this.isAutoPlay == true && this.toggleclick == true) {
+        this.$refs.video.addEventListener('click', this.togglePlay);
+      }
     },
     methods: {
       enter: function () {
@@ -173,6 +181,10 @@
         // this.$refs.video.removeEventListener('progress', this.progressListener); // to remove
         this.$refs.video.removeEventListener('canplaythrough', this.canplaythroughListener);
         this.$refs.video.removeEventListener('ended', this.endListener);
+
+        if (this.isAutoPlay == true && this.toggleclick == true) {
+          this.$refs.video.removeEventListener('click', this.togglePlay);
+        }
       }
     }
   }
