@@ -23,12 +23,12 @@
       <div class="content-page__content animate-in animate-in__s2">
         <div
           class="contact__video-container content-page__3-4 hiding-title"
-          v-on:click="this.videoClick"
         >
           <media-video
             v-bind:url="this.videosPath+'k4_1920_5.mp4'"
             v-bind:poster="this.videosPath+'k4.jpg'"
             v-bind:autoplay="true"
+            v-bind:toggleclick="true"
             ref="video"
             class="contact__video"
           >
@@ -75,9 +75,6 @@
     methods: {
       displayContact: function() {
         this.isDisplayed = true;
-      },
-      videoClick: function () {
-        this.$refs.video.togglePlay();
       }
     }
   });
