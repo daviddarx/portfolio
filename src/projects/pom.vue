@@ -73,6 +73,7 @@
 
       <div class="pom-logos__container">
         <div class="pom-logos__logo">
+          <span class="pom-logos__caption">Das ursprüngliche Logo</span>
           <media-image
             v-bind:url="this.mediasPath+'logo/pom_logo_01.svg'"
             v-bind:title="'Logo Recherche'"
@@ -124,6 +125,7 @@
           </media-image>
         </div>
         <div class="pom-logos__logo">
+          <span class="pom-logos__caption">Das finale Logo</span>
           <media-image
             v-bind:url="this.mediasPath+'logo/pom_logo_06.svg'"
             v-bind:title="'Logo Recherche'"
@@ -761,6 +763,16 @@
         padding: var(--s-gutter);
         padding-top: 0;
       }
+    }
+
+    &__caption {
+      position: absolute;
+      z-index: 200;
+      color: black;
+      font-size: var(--s-text-small);
+      padding: 1em;
+      padding-top: 0.8em;
+      opacity: 0.65;
     }
 
     &__logo {
