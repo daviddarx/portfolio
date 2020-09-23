@@ -1405,7 +1405,7 @@ body {
     flex-basis: 25%;
     text-align: right;
     position: relative;
-    margin-top: 0.15em;
+    margin-top: -0.15em;
     font-size: var(--s-text-small);
 
     @include viewport('mobile-layout') {
@@ -1426,7 +1426,7 @@ body {
   &__step-additional {
     display: block;
     font-size: var(--s-text-small);
-    padding-top: 1em;
+    padding-top: 1.5em;
 
     @include viewport('mobile-layout') {
       padding-top: 0.8em;
