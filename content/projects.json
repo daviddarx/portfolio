@@ -4,11 +4,11 @@
   "main": [
     {
       "uid": "eaostop",
-      "title": "EAO E-Stop",
+      "title": "EAO E-Stop Konfigurator",
       "type": "Produkt-Konfigurator",
       "year": "2020",
-      "color": "#e1061b",
-      "colorCase": "#e1061b",
+      "color": "#E32013",
+      "colorCase": "#E32013",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
