@@ -224,7 +224,10 @@
               </h2>
               <div class="project__pick-desc">
                 <p>
-                  Entstanden ist dabei ein Set aus sechs Claims für die sechs Tätigkeitsfelder sowie eine Bildwelt, die die Claims in virtuelle 3D Landschaften aus Architektur-Zitaten und baulichen Fragmenten projiziert. Die Animationen wurden in 3D räumlich gestaltet und ergeben einen sehr flexiblen Pool an bewegten und statischen Bildern, die zusammen mit den Claims vielseitig einsetzbar sind.
+                  Entstanden ist dabei ein Set aus sechs Claims für die sechs Tätigkeitsfelder sowie eine Bildwelt, die die Claims in virtuelle 3D Landschaften aus Architektur-Zitaten und baulichen Fragmenten projiziert.
+                </p>
+                <p>
+                  Die Animationen wurden in 3D räumlich gestaltet und ergeben einen sehr flexiblen Pool an bewegten und statischen Bildern, die zusammen mit den Claims vielseitig einsetzbar sind.
                 </p>
               </div>
             </div>

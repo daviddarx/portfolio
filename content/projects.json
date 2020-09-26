@@ -4,11 +4,11 @@
   "main": [
     {
       "uid": "eaostop",
-      "title": "EAO E-Stop",
+      "title": "EAO E-Stop Konfigurator",
       "type": "Produkt-Konfigurator",
       "year": "2020",
-      "color": "#e1061b",
-      "colorCase": "#e1061b",
+      "color": "#E32013",
+      "colorCase": "#E32013",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
@@ -27,12 +27,12 @@
       "thumb2": "ar/thumb_02.jpg"
     },
     {
-      "uid": "maz",
-      "title": "MAZ",
-      "type": "Digitaler Auftritt & Webshop",
+      "uid": "aso",
+      "title": "Ausland-schweizer-Organisation",
+      "type": "Brand Relaunch",
       "year": "2020",
-      "color": "#1aa4bf",
-      "colorCase": "#1aa4bf",
+      "color": "#e32236",
+      "colorCase": "#e32236",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
@@ -49,23 +49,12 @@
       "thumb2": "thumb_02.jpg"
     },
     {
-      "uid": "aso",
-      "title": "Ausland-schweizer-Organisation",
-      "type": "Brand Relaunch",
-      "year": "2020",
-      "color": "#e32236",
-      "colorCase": "#e32236",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
-      "uid": "bwi",
-      "title": "BWI",
-      "type": "Brand Relaunch",
-      "year": "2020",
-      "color": "#00b8ea",
-      "colorCase": "#00b8ea",
+      "uid": "pornydays",
+      "title": "Porny Days",
+      "type": "Digitaler Auftritt",
+      "year": "2019",
+      "color": "#c55249",
+      "colorCase": "#c55249",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
@@ -106,12 +95,12 @@
       "thumb2": "thumb_02.jpg"
     },
     {
-      "uid": "pornydays",
-      "title": "Porny Days",
-      "type": "Digitaler Auftritt",
-      "year": "2019",
-      "color": "#c55249",
-      "colorCase": "#c55249",
+      "uid": "intelliact",
+      "title": "Intelliact",
+      "type": "Brand Relaunch",
+      "year": "2018",
+      "color": "#ff004a",
+      "colorCase": "#ff004a",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
@@ -128,34 +117,12 @@
       "thumb2": "thumb_02.jpg"
     },
     {
-      "uid": "intelliact",
-      "title": "Intelliact",
-      "type": "Brand Relaunch",
-      "year": "2018",
-      "color": "#ff004a",
-      "colorCase": "#ff004a",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
       "uid": "medidata",
       "title": "MediData",
       "type": "Brand Relaunch",
       "year": "2018",
       "color": "#01519E",
       "colorCase": "#01519E",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
-      "uid": "seed",
-      "title": "Seed Communication",
-      "type": "Digitaler Auftritt",
-      "year": "2018",
-      "color": "#d9d930",
-      "colorCase": "#d9d930",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
