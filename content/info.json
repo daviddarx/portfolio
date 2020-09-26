@@ -32,49 +32,49 @@
     {
       "title": "Digital Art Director",
       "agency": "Eyekon",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
-      "date1": "Sept. 2016",
+      "additional": "Entre UX et communication, je m'occupe chez Eyekon de la plupart de la création visuelle, principalement pour le secteur publique et des PMEs.",
+      "date1": "2016",
       "date2": "Heute",
       "place": "Zürich"
     },
     {
       "title": "Digital Designer",
       "agency": "Unic",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
-      "date1": "Apr. 2014",
-      "date2": "Aug. 2016",
+      "additional": "C'est chez Unic que j'ai pu gagné de l'expérience au sein d'équipes conséquentes en créant des plateforme digitlales d'envergure pour des clients nationaux.",
+      "date1": "2014",
+      "date2": "2016",
       "place": "Zürich"
     },
     {
       "title": "Web Designer",
       "agency": "Custom Design",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
-      "date1": "Aug. 2012",
-      "date2": "März 2014",
+      "additional": "Custom Design est un petit atelier graphique où j'étais en charge du département web et m'occupais de tout les projets digitaux, de la conception à la création, en passant par la gestion de projet.",
+      "date1": "2012",
+      "date2": "2014",
       "place": "Fribourg"
     },
     {
       "title": "Web Designer",
       "agency": "Freelance",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
-      "date1": "Jan. 2011",
-      "date2": "Aug. 2012",
+      "additional": "En pourcentage partiel, j'étais mandaté par diverses agences web pour la conception et la création visuelle de leur projets.",
+      "date1": "2011",
+      "date2": "2012",
       "place": "Fribourg"
     },
     {
       "title": "Interactive Designer",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
+      "additional": "Associé au sein du studio pluridisciplinaire Horsform, je m'occupais de la partie web et étais responsable pour l'ensemble des processus: contact client, création et développement, gestion de projet.",
       "agency": "Horsform",
-      "date1": "Nov. 2007",
-      "date2": "Aug. 2012",
+      "date1": "2007",
+      "date2": "2012",
       "place": "Fribourg"
     },
     {
       "title": "Multimedia Designer",
       "agency": "Custom Design",
-      "additional": "Unic is enthusiastic about creating digital experience and first-class e-Business solutions, and have been doing so for over 20 years.",
-      "date1": "Aug. 2007",
-      "date2": "Nov. 2007",
+      "additional": "Durant mon stage chez Custom Design, j'ai principalement conçu, designé et développé le site de l'entreprise",
+      "date1": "2007",
+      "date2": "2007",
       "place": "Fribourg"
     }
   ],
@@ -89,14 +89,14 @@
     },
     {
       "title": "Sprachen",
-      "desc": "Französisch (Muttersprache), Deutsch, Englisch, Spanish (Grundlage)."
+      "desc": "Französisch (Muttersprache), Deutsch (Verhandlungssicher), Englisch (Verhandlungssicher), Spanish (Grundkenntnisse)."
     }
   ],
   "education": [
     {
       "title": "Interactive Media Design",
       "school": "Eikon, Berufsfachschule für Gestaltung",
-      "additional": "Spezialausbildung Interaction Design",
+      "additional": "Spezialausbildung Interaction Design<br><br> Durant ma formation multimédia (Communication, Print, Video, Motion & 3D, Interactive) mon coeur a vite balancé pour la conception d'interactions.",
       "date1": "2004",
       "date2": "2007",
       "place": "Fribourg"
@@ -104,7 +104,7 @@
     {
       "title": "Matura",
       "school": "Kollegium Heilig Kreuz",
-      "additional": "Spezialausbildung Spanish & Visuelle Gestaltung",
+      "additional": "Spezialausbildung Spanish & Visuelle Gestaltung<br><br>C'est sur les bancs d'école qu'est née ma passion pour le visuel, principalement au travers du graffiti.",
       "date1": "2000",
       "date2": "2004",
       "place": "Fribourg"
@@ -135,6 +135,7 @@
     "Antidoping Schweiz",
     "GastroFribourg",
     "SwissAid",
+    "L//P",
     "EPFL Lausanne",
     "Montreux Jazz Festival",
     "UEFA",

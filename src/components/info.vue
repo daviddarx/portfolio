@@ -111,9 +111,9 @@
               <span>{{education.school}} <span class="dash dash--spaced">–</span> {{education.place}}</span>
               <span
                 v-if="education.additional"
+                v-html="education.additional"
                 class="info__step-additional"
               >
-                {{education.additional}}
               </span>
             </div>
             <div class="info__step-date">
