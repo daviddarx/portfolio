@@ -1833,7 +1833,7 @@ body {
   &__title {
     display: block;
     font-size: var(--s-text-h1);
-    padding-right: var(--s-gutter);
+    padding-right: calc(var(--s-gutter) * 4);
     padding-top: calc(var(--s-gutter) * 2);
     padding-bottom: calc(var(--s-gutter) - 0.2em);
 
@@ -1875,6 +1875,7 @@ body {
       @include label-small;
 
       display: block;
+      letter-spacing: 0.05em;
     }
 
     &-desc {
@@ -2048,6 +2049,7 @@ body {
   &__pick-title {
     @include label-small;
 
+    letter-spacing: 0.05em;
     line-height: 1.4;
   }
 
