@@ -93,6 +93,10 @@ $breakpoints: (
   @include text-indent();
 }
 
+@mixin justify {
+  // text-align: justify;
+}
+
 @mixin hyphens {
   hyphens: auto;
   -ms-hyphens: auto;

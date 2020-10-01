@@ -1373,8 +1373,8 @@ body {
   &__introduction {
     @include text-indent();
     @include hyphens();
+    @include justify();
 
-    text-align: justify;
     margin-top: var(--s-gutter);
 
     @include viewport('mobile') {
@@ -1436,8 +1436,7 @@ body {
 
   &__expertise-text {
     @include hyphens();
-
-    text-align: justify;
+    @include justify();
 
     @include viewport('mobile') {
       font-size: var(--s-text-small);
@@ -1946,8 +1945,8 @@ body {
 
   &__lead {
     @include hyphens();
+    @include justify();
 
-    text-align: justify;
     padding-right: var(--s-gutter);
 
     @include viewport('tablet-s') {
@@ -1958,8 +1957,8 @@ body {
   &__desc {
     @include text-indent();
     @include hyphens();
+    @include justify();
 
-    text-align: justify;
     font-size: var(--s-text-small);
     padding-right: var(--s-gutter);
     padding-top: 1.5em;
@@ -2056,8 +2055,8 @@ body {
   &__pick-desc {
     @include text-indent();
     @include hyphens();
+    @include justify();
 
-    text-align: justify;
     font-size: var(--s-text-small);
     padding-top: 0.8em;
   }
