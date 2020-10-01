@@ -34,6 +34,7 @@
 
     <deco-image
       v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      v-bind:_="1"
       v-bind:autoLoad="false"
       v-on:loaded="this.loadNextImage"
       ref="imageDeco1"
@@ -43,6 +44,7 @@
 
     <deco-image
       v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+      v-bind:hdRatio="1"
       v-bind:autoLoad="false"
       v-on:loaded="this.loadNextImage"
       ref="imageDeco2"
@@ -104,6 +106,7 @@
       <div class="project__col-right project__col-right--inverted col-ctx--r">
         <deco-image
           v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+          v-bind:hdRatio="1"
           v-bind:autoLoad="false"
           v-on:loaded="this.loadNextImage"
           ref="imageDeco3"
@@ -336,6 +339,7 @@
       </div>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:hdRatio="1"
         v-bind:autoLoad="false"
         v-on:loaded="this.loadNextImage"
         ref="imageDeco4"
@@ -344,6 +348,7 @@
       </deco-image>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:hdRatio="1"
         v-bind:autoLoad="false"
         v-on:loaded="this.loadNextImage"
         ref="imageDeco5"
@@ -352,6 +357,7 @@
       </deco-image>
       <deco-image
         v-bind:url="this.mediasPath+'stars_bg_hd.jpg'"
+        v-bind:hdRatio="1"
         v-bind:autoLoad="false"
         v-on:loaded="this.loadNextImage"
         ref="imageDeco6"
