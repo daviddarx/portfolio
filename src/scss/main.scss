@@ -1254,6 +1254,7 @@ body {
     @include label-small;
 
     position: fixed;
+    z-index: 1;
     top: calc(var(--s-gutter) - 0.1em);
     left: 25vw;
 
