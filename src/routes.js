@@ -14,7 +14,7 @@ let routes = [
     path: '/',
     name: 'home',
     component: Home,
-    meta: { transitionTitle: '' }
+    meta: { transitionTitle: 'gotoAndPlay(0)' }
   },
   {
     label: 'Projects',
