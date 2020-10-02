@@ -2666,6 +2666,8 @@ body {
 }
 
 .animate-in {
+  --s-translate-x: 0%;
+  --s-translate-y: 0%;
   --s-translateYAnimateIn: 10vh;
   --d-delay: 0.25s;
   --d-delay-step: 0.2s;
@@ -2676,13 +2678,13 @@ body {
   --delay-id: 0;
 
   opacity: 0;
-  transform: translateY(var(--s-translateYAnimateIn));
+  transform: translate(var(--s-translate-x), calc(var(--s-translate-y) + var(--s-translateYAnimateIn)));
   transition: opacity var(--e-opacity) var(--d-in-opacity), transform var(--e-transform) var(--d-in-transform);
   transition-delay: calc(var(--d-delay) + var(--delay-id) * var(--d-delay-step));
 
   .is-displayed & {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(var(--s-translate-x), var(--s-translate-y));
   }
 
   @for $i from 1 to 10 {
@@ -2692,7 +2694,7 @@ body {
   }
 
   .is-chromeios & {
-    transform: translateY(0);
+    transform: translate(var(--s-translate-x), var(--s-translate-y));
     transition: none;
     opacity: 1;
   }
