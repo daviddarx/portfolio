@@ -478,7 +478,7 @@
     </section>
 
     <div class="flm-cta-container">
-      <a href="https://www.freunde-landesmuseum.ch/" target="_blank" class="cta cta--small cta--inverted flm-cta">Projekt online anschauen</a>
+      <a href="https://www.freunde-landesmuseum.ch/" target="_blank" class="cta cta--small flm-cta">Projekt online anschauen</a>
     </div>
   </project>
 </template>
@@ -1003,6 +1003,14 @@
 
   .flm-cta {
     @include flm-mockup();
+
+    --c-bg: var(--c-title);
+
+    @include hover() {
+      &:hover {
+        color: black;
+      }
+    }
   }
 
 </style>
