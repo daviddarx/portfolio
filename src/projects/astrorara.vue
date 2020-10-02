@@ -366,7 +366,7 @@
       </deco-image>
     </section>
     <div class="cta-container-ar">
-      <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small">Projekt online anschauen</a>
+      <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small cta-ar">Projekt online anschauen</a>
       <p class="cta-detail-ar">(Optimiert für Smartphones)</p>
     </div>
   </project>
@@ -906,13 +906,17 @@
   }
 
   .cta-container-ar {
-    padding-top: var(--s-gutter);
+    padding-top: calc(var(--s-gutter) * 2);
     text-align: center;
+  }
+
+  .cta-ar {
+    --c-bg: #5477b5;
   }
 
   .cta-detail-ar {
     font-size: var(--s-text-small);
-    margin-top: 1.25em;
+    margin-top: 2em;
   }
 </style>
 
