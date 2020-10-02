@@ -15,6 +15,7 @@
       <router-view :key="$route.fullPath"></router-view>
     </keep-alive>
     <transition-backround></transition-backround>
+    <browser-warning></browser-warning>
   </div>
 </template>
 
@@ -24,6 +25,7 @@
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
   import TransitionBackground from './components/transition-background.vue';
+  import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
 
 
@@ -32,6 +34,7 @@
       'logo': Logo,
       'custom-navigation': CustomNavigation,
       'transition-backround': TransitionBackground,
+      'browser-warning': BrowserWarning,
     },
     data() {
       return {

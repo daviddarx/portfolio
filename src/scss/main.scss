@@ -2632,6 +2632,55 @@ body {
   }
 }
 
+.browser-warning {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+
+  &__infos {
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    bottom: var(--s-gutter);
+    box-sizing: border-box;
+    padding-right: var(--s-gutter);
+
+    @include viewport('mobile-l') {
+      width: 100%;
+      left: 0;
+      padding-left: var(--s-gutter);
+      padding-right: var(--s-gutter);
+    }
+  }
+
+  &__title {
+    font-size: calc(var(--s-text-h2) * 0.75);
+  }
+
+  &__desc {
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+
+  &__logo {
+    z-index: 1000;
+    pointer-events: none;
+
+    .logo__mask {
+      display: none;
+    }
+
+    .logo__el {
+      fill: white;
+    }
+  }
+}
+
 .transition-logo {
   z-index: 999;
   pointer-events: none;
