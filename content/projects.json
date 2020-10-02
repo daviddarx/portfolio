@@ -7,11 +7,13 @@
       "title": "EAO E-Stop Konfigurator",
       "type": "Produkt-Konfigurator",
       "year": "2020",
-      "color": "#E32013",
-      "colorCase": "#E32013",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "agency": "Eyekon",
+      "skills": "Sparring UX & Konzept, Art Direction & Digital Design",
+      "color": "#e72128",
+      "colorCase": "#2F2F2F",
+      "inverted": true,
+      "thumb1": "eao/thumb_01.jpg",
+      "thumb2": "eao/thumb_02.jpg"
     },
     {
       "uid": "astrorara",
