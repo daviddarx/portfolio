@@ -521,11 +521,11 @@
       <a href="https://www.pom.ch/" target="_blank" class="cta cta--small pom-cta">Projekt online anschauen</a>
     </div>
 
-    <div class="pom-credits">
-      <h2 class="pom-credits__title">
+    <div class="project__credits">
+      <h2 class="project__credits-title">
         Akkreditiv
       </h2>
-      <div class="pom-credits__desc">
+      <div class="project__credits-desc">
         <p>
           Konzept &amp; Claims – Thomas Wirth<br>
           Konzept &amp; Wireframing  – Alexandre Robert<br>
@@ -1112,31 +1112,6 @@
   .pom-cta-container {
     margin-top: calc(var(--s-gutter) * 2);
     text-align: center;
-  }
-
-  .pom-credits {
-    padding: calc(var(--s-gutter) * 2);
-    padding-bottom: 0;
-    text-align: center;
-
-    @include viewport('tablet') {
-      margin-top: var(--s-gutter);
-    }
-
-    @include viewport('tablet-s') {
-      padding: var(--s-gutter);
-      padding-bottom: 0;
-    }
-
-    &__title {
-      @include label-small;
-    }
-
-    &__desc {
-      font-size: var(--s-text-small);
-      padding-top: 1.5em;
-      line-height: 2.5;
-    }
   }
 
 </style>
