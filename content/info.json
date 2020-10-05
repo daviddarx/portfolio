@@ -1,6 +1,6 @@
 {
-  "lead":"Designer passionné et perfection&shy;niste, j’adore créer des produits digitaux qui ont du caractère et qui font du sens.",
-  "introduction":"<p>Agé de 37 ans, dont 13 dans la communication digitale, je suis originaire de Fribourg im Welschland. Émigré en 2014 vers l’eldorado digital suisse, je mène depuis une vie heureuse à Zürich.</p><p>Portant autant d’attention aux détails qu’à l’image d’ensemble, j’adore observer les dernières tendances, mais déteste les suivre aveuglément.</p><p>Intéressé et critique, j’aime être impliqué dès les phases de recherche et de conception, pour trouver des solutions élégantes mais surtout fonctionnelles.</p><p>Mes solides compétences en Front-end m’aident enfin à collaborer avec les développeurs pour atteindre un résultat optimal.</p>",
+  "lead":"Als leiden&shy;schaft&shy;licher und per&shy;fektion&shy;istischer Designer liebe ich es, digitale Produkte zu kreieren, die Charakter haben und Sinn ergeben.",
+  "introduction":"<p>Mit 37 Jahren, davon 13 in digitaler Kommunikation, komme ich aus Freiburg im Welschland. Ich bin 2014 ins Schweizer Digital Eldorado ausgewandert und führe seitdem ein glückliches Leben in Zürich.</p><p>Ich achte genauso auf die Details wie auf das Gesamtbild und liebe es, die neuesten Trends zu beobachten, aber ich hasse es, ihnen blind zu folgen.</p><p>Interessiert und kritisch, ich bin gerne ab die Recherche- und Konzeptionsphase involviert, um elegante, aber vor allem funktionale Lösungen zu finden.</p><p>Meine soliden Front-End-Kompetenzen helfen mir schließlich, mit Entwicklern zusammenzuarbeiten, um optimale Ergebnisse zu erzielen.</p>",
   "gifTitle": "David Darx",
   "gifPath": "info/gif/",
   "gifImages": [
@@ -32,7 +32,7 @@
     {
       "title": "Digital Art Director",
       "agency": "Eyekon",
-      "additional": "Entre UX et communication, je m'occupe chez Eyekon de la plupart de la création visuelle, principalement pour le secteur publique et des PMEs.",
+      "additional": "Zwischen UX und Kommunikation kümmere ich mich bei Eyekon um den größte Teil der visuellen Gestaltung, hauptsächlich für den öffentlichen Sektor und KMUs.",
       "date1": "2016",
       "date2": "Heute",
       "place": "Zürich"
@@ -40,7 +40,7 @@
     {
       "title": "Digital Designer",
       "agency": "Unic",
-      "additional": "C'est chez Unic que j'ai pu gagné de l'expérience au sein d'équipes conséquentes en créant des plateforme digitlales d'envergure pour des clients nationaux.",
+      "additional": "Bei Unic konnte Erfahrungen mit grösseren Teams sammeln und großangelegte digitale Plattformen für nationale Kunden gestalten.",
       "date1": "2014",
       "date2": "2016",
       "place": "Zürich"
@@ -48,7 +48,7 @@
     {
       "title": "Web Designer",
       "agency": "Custom Design",
-      "additional": "Custom Design est un petit atelier graphique où j'étais en charge du département web et m'occupais de tout les projets digitaux, de la conception à la création, en passant par la gestion de projet.",
+      "additional": "Custom Design ist eine kleine Grafikwerkstatt, in der ich für die Webabteilung verantwortlich war und mich um alle digitalen Projekte kümmerte, von der Konzeption bis der Gestaltung, einschließlich des Projektmanagements.",
       "date1": "2012",
       "date2": "2014",
       "place": "Fribourg"
@@ -56,14 +56,14 @@
     {
       "title": "Web Designer",
       "agency": "Freelance",
-      "additional": "En pourcentage partiel, j'étais mandaté par diverses agences web pour la conception et la création visuelle de leur projets.",
+      "additional": "Zum Teilzeit wurde ich von verschiedenen Webagenturen mit der Konzeption und Gestaltung ihrer Projekte beauftragt.",
       "date1": "2011",
       "date2": "2012",
       "place": "Fribourg"
     },
     {
       "title": "Interactive Designer",
-      "additional": "Associé au sein du studio pluridisciplinaire Horsform, je m'occupais de la partie web et étais responsable pour l'ensemble des processus: contact client, création et développement, gestion de projet.",
+      "additional": "Als Partner im multidisziplinären Studio Horsform kümmerte ich mich um die Webabteilung und war für die gesamten Prozesse verantwortlich: Kundenkontakt &amp; Acquise, Gestaltung und Entwicklung, Projektmanagement.",
       "agency": "Horsform",
       "date1": "2007",
       "date2": "2012",
@@ -72,7 +72,7 @@
     {
       "title": "Multimedia Designer",
       "agency": "Custom Design",
-      "additional": "Durant mon stage chez Custom Design, j'ai principalement conçu, designé et développé le site de l'entreprise",
+      "additional": "Während meines Praktikums bei Custom Design habe ich hauptsächlich die Website des Unternehmens konzipiert, gestaltet und entwickelt.",
       "date1": "2007",
       "date2": "2007",
       "place": "Fribourg"
@@ -96,7 +96,7 @@
     {
       "title": "Interactive Media Design",
       "school": "Eikon, Berufsfachschule für Gestaltung",
-      "additional": "Spezialausbildung Interaction Design<br><br> Durant ma formation multimédia (Communication, Print, Video, Motion & 3D, Interactive) mon coeur a vite balancé pour la conception d'interactions.",
+      "additional": "Spezialausbildung Interaction Design<br><br> Während meiner Multimedia-Ausbildung (Kommunikation, Print, Video, Motion & 3D, Interaction) schwankte mein Herz schnell für die Gestaltung von Interaktionen.",
       "date1": "2004",
       "date2": "2007",
       "place": "Fribourg"
@@ -104,7 +104,7 @@
     {
       "title": "Matura",
       "school": "Kollegium Heilig Kreuz",
-      "additional": "Spezialausbildung Spanish & Visuelle Gestaltung<br><br>C'est sur les bancs d'école qu'est née ma passion pour le visuel, principalement au travers du graffiti.",
+      "additional": "Spezialausbildung Spanish & Visuelle Gestaltung<br><br>Meine Leidenschaft für das Visuelle wurde auf den Schulbänken geboren, hauptsächlich durch Graffiti.",
       "date1": "2000",
       "date2": "2004",
       "place": "Fribourg"
