@@ -37,7 +37,7 @@
         <p class="project__lead">
           Die EAO AG ist eine der weltweit führenden Herstellerinnen von hochkomplexen, spezifischen Human Machine Interfaces (HMI) – darunter beispielsweise Bedienelemente für Cockpits, Türöffner oder Not-Halt-Tasten.
         </p>
-        <div class="project__desc">
+        <div class="project__desc eao-desc">
           <p>
             Für ihren ersten Schritt in der digitalen Transformation ihrer Produkt-Beratung beauftragte EAO Eyekon und die Produktdaten-Spezialisten von <a href="https://www.intelliact.ch" target="_blank" class="text-link">Intelliact</a> mit der Erstellung eines digitalen Produkt-Konfigurators für die Not-Aus-Tasten der Marke.
           </p>
@@ -524,12 +524,33 @@
       width: 75%;
       right: 0;
       top: 0;
+
+      @include viewport('mobile-l') {
+        width: 100%;
+      }
+
+      @include viewport('mobile-l') {
+        width: 120%;
+      }
     }
 
     &--2 {
       width: 230%;
       bottom: 0;
       transform: translate(-65%, 60%);
+
+      @include viewport('desktop') {
+        width: 180%;
+        transform: translate(-65%, 70%);
+      }
+
+      @include viewport('desktop') {
+        transform: translate(-70%, 85%);
+      }
+
+      @include viewport('tablet-s') {
+        display: none;
+      }
     }
   }
 
@@ -542,7 +563,20 @@
       width: 190%;
       margin-left: -78%;
       margin-top: -14%;
+
+      @include viewport('tablet-s') {
+        position: relative;
+        width: 120%;
+        margin-left: 50%;
+        margin-top: 0;
+        transform: translateX(-50%);
+      }
     }
+  }
+
+  .eao-desc {
+    position: relative;
+    z-index: 10;
   }
 
   .eao-ps {
@@ -554,6 +588,10 @@
       position: relative;
       padding-right: calc(var(--s-gutter) * 2);
       z-index: 2;
+
+      @include viewport('desktop') {
+        padding-right: 0;
+      }
     }
 
     &__desc {
@@ -572,6 +610,14 @@
       transition-duration: var(--d-fade), 0s;
       transition-delay: var(--d-fade-in-delay), 0s;
 
+      @include viewport('tablet-s') {
+        height: 30vw;
+      }
+
+      @include viewport('mobile') {
+        height: 35vw;
+      }
+
       &--hidden {
         opacity: 0;
         visibility: hidden;
@@ -583,9 +629,28 @@
       position: absolute;
       width: 150%;
       right: 0;
+      z-index: -1;
+
+      @include viewport('desktop') {
+        width: 125%;
+      }
+
+      @include viewport('tablet-s') {
+        top: 0;
+        width: 100%;
+      }
+
+      @include viewport('mobile') {
+        top: 0;
+        width: 130%;
+      }
 
       &--1 {
         transform: translate(20%, -25%);
+
+        @include viewport('tablet-s') {
+          transform: translate(20%, -20%);
+        }
       }
 
       &--2 {
@@ -609,6 +674,17 @@
       transition-duration: var(--d-fade), var(--d-fade);
       transition-delay: var(--d-fade-in-delay), var(--d-fade-in-delay);
 
+      @include viewport('tablet-s') {
+        width: 70%;
+        right: 20%;
+        top: 40%;
+      }
+
+      @include viewport('mobile') {
+        width: 80%;
+        right: 10%;
+      }
+
       .eao-ps__step--hidden & {
         opacity: 0;
         transform: translateY(var(--s-decal-y));
@@ -620,6 +696,10 @@
 
   .eao-ps-video {
     padding-top: 0;
+
+    @include viewport('mobile-s') {
+      padding-top: 0;
+    }
   }
 
   .eao-pc {
@@ -628,6 +708,11 @@
     &__left {
       flex-basis: var(--s-col-desc);
       padding-left: var(--s-col-desc-padding);
+
+      @include viewport('tablet-s') {
+        padding-left: 0;
+        padding-bottom: var(--s-gutter);
+      }
     }
 
     &__right {
@@ -640,9 +725,19 @@
     padding-top: 0;
     padding-bottom: calc(var(--s-gutter) * 3);
 
+    @include viewport('tablet-s') {
+      padding-top: var(--s-gutter);
+      padding-bottom: calc(var(--s-gutter) * 2);
+    }
+
     &__left {
       flex-basis: var(--s-col-desc);
       padding-right: var(--s-col-desc-padding);
+
+      @include viewport('tablet-s') {
+        padding-right: 0;
+        padding-bottom: var(--s-gutter);
+      }
     }
 
     &__right {
@@ -659,9 +754,25 @@
 
     padding-bottom: calc(var(--s-gutter) * 6);
 
+    @include viewport('tablet') {
+      padding-bottom: calc(var(--s-gutter) * 4);
+    }
+
     &__title {
       text-align: center;
       margin-bottom: calc(var(--s-gutter) * 1.6);
+
+      @include viewport('tablet') {
+        margin-bottom: calc(var(--s-gutter) * 1);
+      }
+
+      @include viewport('tablet') {
+        padding-top: calc(var(--s-gutter) * 0.25);
+      }
+
+      @include viewport('mobile-l') {
+        padding-top: calc(var(--s-gutter) * 0.75);
+      }
     }
 
     &__screen--outline {
@@ -707,8 +818,6 @@
   }
 
   .eao-rd {
-    @include anti-aliased();
-
     --c-background: var(--c-grey);
 
     position: relative;
@@ -716,6 +825,10 @@
     text-align: center;
     padding-top: calc(var(--s-gutter) * 4);
     padding-bottom: calc(var(--s-gutter) * 4);
+
+    @include viewport('tablet-s') {
+      padding-top: calc(var(--s-gutter) * 3);
+    }
 
     &::after {
       content: "";
@@ -733,6 +846,10 @@
       left: 50%;
       top: 0;
       transform: translate(-50%, -35%);
+
+      @include viewport('tablet-s') {
+        width: 85%;
+      }
     }
 
     &__title {
@@ -740,6 +857,10 @@
 
       @include viewport('tablet-s') {
         margin-top: var(--s-gutter);
+      }
+
+      @include viewport('mobile-s') {
+        margin-top: calc(var(--s-gutter) * 3);
       }
     }
 
