@@ -940,6 +940,10 @@
     &__title {
       text-align: center;
       margin-bottom: calc(var(--s-gutter) * 1.15);
+
+      @include viewport('tablet-s') {
+        margin-top: var(--s-gutter);
+      }
     }
 
     &__screen-01 {
