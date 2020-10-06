@@ -54,7 +54,7 @@
     <section class="project__section project__section--padding-none project__section--colored pom-logos">
       <div class="pom-logos__desc">
         <div class="project__pick">
-          <h2 class="project__pick-title">
+          <h2 class="project__pick-title pom-logos__title">
             Logo Recherche
           </h2>
           <div class="project__pick-desc">
@@ -141,7 +141,7 @@
     <section class="project__section project__section--padding-none project__section--colored pom-lf">
       <div class="pom-lf__desc">
         <div class="project__pick">
-          <h2 class="project__pick-title">
+          <h2 class="project__pick-title pom-lf__title">
             Look&amp;Feel Recherche
           </h2>
           <div class="project__pick-desc">
@@ -738,6 +738,10 @@
       margin-top: var(--s-gutter);
     }
 
+    &__title {
+      color: var(--c-1);
+    }
+
     &__desc {
       box-sizing: border-box;
       width: calc(50% - var(--s-gutter) * 1);
@@ -830,6 +834,10 @@
     @include viewport('tablet-s') {
       display: block;
       padding-bottom: calc(var(--s-gutter) * 0.5);
+    }
+
+    &__title {
+      color: var(--c-1);
     }
 
     &__desc {
