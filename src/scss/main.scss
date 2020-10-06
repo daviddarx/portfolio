@@ -2159,8 +2159,12 @@ body {
     }
 
     @include viewport('tablet-s') {
-      padding: var(--s-gutter);
-      padding-bottom: 0;
+      padding: 0;
+      padding-top: calc(var(--s-gutter) * 2);
+    }
+
+    @include viewport('mobile') {
+      padding-top: calc(var(--s-gutter) * 3);
     }
   }
 
@@ -2171,7 +2175,6 @@ body {
   &__credits-desc {
     font-size: var(--s-text-small);
     padding-top: 1.5em;
-    line-height: 2.5;
   }
 
   &__background {
