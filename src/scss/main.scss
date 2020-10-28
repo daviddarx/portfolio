@@ -1038,6 +1038,14 @@ body {
   }
 
   &__container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .is-vertical & ,
+    .is-mobile & {
+      display: block;
+    }
+
     .is-mobile & {
       pointer-events: none;
       width: 100vw;
@@ -1073,10 +1081,10 @@ body {
     display: inline-block;
     position: relative;
     color: var(--c-nav-text);
-    margin-right: 3.5vh;
+    margin-right: 4.5vh;
     transition: var(--t-normal);
 
-    &:last-child {
+    &:first-child {
       margin-right: 0;
     }
 
