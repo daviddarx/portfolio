@@ -81,7 +81,7 @@
         this.$refs.nav.resetVertical();
 
         requestAnimationFrame(() => {
-          if (this.$refs.logo.$el.offsetWidth + this.$refs.nav.$el.offsetWidth + 2 * gutter > vh - gutter * 0.5){
+          if (this.$refs.logo.$el.offsetWidth + this.$refs.nav.$el.offsetWidth + 2 * gutter > vh - gutter){
             this.$refs.nav.setVertical();
           }
 
