@@ -398,6 +398,10 @@ body {
         transform: rotate(0deg);
       }
     }
+
+    @include viewport('mobile-l') {
+      height: calc(var(--s-logo) * 0.9);
+    }
   }
 
   &__p1 {
