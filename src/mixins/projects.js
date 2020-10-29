@@ -36,7 +36,7 @@ export default {
     loadNextImage () {
       this.endTime = new Date();
       var timeDiff = (this.endTime - this.startTime) / 1000;
-      console.log("image loaded daviddarx – " + this.delayedLoadsArray.length + " – " + timeDiff);
+      console.log("image loaded files.daviddarx.com – " + this.delayedLoadsArray.length + " – " + timeDiff);
 
       if (this.delayedLoadsArray.length > 0) {
         this.delayedLoadsArray[0].loadImage();
