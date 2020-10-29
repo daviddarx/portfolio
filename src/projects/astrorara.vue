@@ -390,7 +390,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: '/projects/ar/',
+        mediasPath: 'https://files.daviddarx.com/projects/ar/',
         videosPath: 'https://files.daviddarx.com/works/videos/'
       }
     },

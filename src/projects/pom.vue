@@ -555,7 +555,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: "/projects/pom/",
+        mediasPath: "https://files.daviddarx.com/projects/pom/",
         videosPath: 'https://files.daviddarx.com/works/videos/',
         isIntroImageLoaded: false,
       }
