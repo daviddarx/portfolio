@@ -6,7 +6,9 @@ export default {
       delayedLoadsArray: undefined,
       observer: undefined,
       observerItems: undefined,
-      observerRootMargin: "-10%" //20vh to compensate
+      observerRootMargin: "-10%", //20vh to compensate,
+      startTime: 0,
+      endTime: 0
     }
   },
   methods: {
@@ -18,6 +20,7 @@ export default {
         this.setIntersectionObserver();
       });
       window.addEventListener('resize', this.resize);
+      this.startTime = new Date();
     },
     setDelayedLoads () {
       this.delayedLoadsArray = [];
@@ -31,6 +34,10 @@ export default {
       this.loadNextImage();
     },
     loadNextImage () {
+      this.endTime = new Date();
+      var timeDiff = (this.endTime - this.startTime) / 1000;
+      console.log("image loaded netlify – " + this.delayedLoadsArray.length + " – " + timeDiff);
+
       if (this.delayedLoadsArray.length > 0) {
         this.delayedLoadsArray[0].loadImage();
         this.delayedLoadsArray.shift();
