@@ -1084,6 +1084,10 @@ body {
     margin-right: 4.5vh;
     transition: var(--t-normal);
 
+    @include viewport('vertical') {
+      margin-right: 3vh;
+    }
+
     &:first-child {
       margin-right: 0;
     }
