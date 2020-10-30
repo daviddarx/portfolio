@@ -1409,7 +1409,7 @@ body {
 
   &__introduction {
     @include text-indent();
-    @include hyphens();
+    // @include hyphens();
     @include justify();
 
     margin-top: var(--s-gutter);
