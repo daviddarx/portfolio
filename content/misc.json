@@ -1,7 +1,7 @@
 {
   "lead":"Die Sammlung der Vergessenen: Gebeinen von anderen Ären, nicht ausgewählte Varianten oder ver&shy;passte Pitches, Exprerimenten, alles was nicht in den Projekten dürfte, troztem aber noch exis&shy;tieren sollte.",
   "routesPath":"/misc/",
-  "mediasPath":"/miscs/",
+  "mediasPath":"https://files.daviddarx.com/works/static/miscs/",
   "videosPath":"https://files.daviddarx.com/works/videos/",
   "collection": [
     {
@@ -372,7 +372,7 @@
       "links": [
         {
           "title": "Konzept & Wireframes",
-          "url": "https://files.daviddarx.com/portfolio/trend_analyzer/trend_analyser_01_konzept.pdf"
+          "url": "https://files.daviddarx.com/works/addons/trend_analyzer/trend_analyser_01_konzept.pdf"
         }
       ],
       "medias": [
@@ -516,7 +516,7 @@
       "links": [
         {
           "title": "Template",
-          "url": "https://files.daviddarx.com/works/predentec/"
+          "url": "https://files.daviddarx.com/works/addons/predentec/"
         }
       ],
       "medias": [
@@ -563,7 +563,7 @@
       "links": [
         {
           "title": "Template",
-          "url": "https://files.daviddarx.com/works/olio-leo/"
+          "url": "https://files.daviddarx.com/works/addons/olio-leo/"
         }
       ],
       "medias": [
@@ -613,11 +613,11 @@
       "links": [
         {
           "title": "Grid Konzept",
-          "url": "https://files.daviddarx.com/works/barbu/grid/"
+          "url": "https://files.daviddarx.com/works/addons/barbu/grid/"
         },
         {
           "title": "Template",
-          "url": "https://files.daviddarx.com/works/barbu/website/"
+          "url": "https://files.daviddarx.com/works/addons/barbu/website/"
         }
       ],
       "medias": [
@@ -664,7 +664,7 @@
       "links": [
         {
           "title": "Template",
-          "url": "https://files.daviddarx.com/works/swissaid/"
+          "url": "https://files.daviddarx.com/works/addons/swissaid/"
         }
       ],
       "medias": [

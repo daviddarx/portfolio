@@ -1,6 +1,6 @@
 {
   "routesPath":"/projects/",
-  "mediasPath":"/projects/",
+  "mediasPath":"https://files.daviddarx.com/works/static/projects/",
   "main": [
     {
       "uid": "eaostop",

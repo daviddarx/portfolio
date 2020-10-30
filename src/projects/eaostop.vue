@@ -437,7 +437,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: '/projects/eao/',
+        mediasPath: 'https://files.daviddarx.com/works/static/projects/eao/',
         videosPath: 'https://files.daviddarx.com/works/videos/',
         currentProductStage: 1,
         productStageSwitchInterval: undefined,

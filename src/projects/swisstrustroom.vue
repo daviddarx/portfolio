@@ -345,7 +345,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: '/projects/st/',
+        mediasPath: 'https://files.daviddarx.com/works/static/projects/st/',
         videosPath: 'https://files.daviddarx.com/works/videos/'
       }
     },

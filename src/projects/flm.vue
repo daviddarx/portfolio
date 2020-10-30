@@ -499,7 +499,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: "/projects/flm/"
+        mediasPath: "https://files.daviddarx.com/works/static/projects/flm/"
       }
     },
     computed: {
