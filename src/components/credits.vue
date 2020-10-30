@@ -3,7 +3,7 @@
   <div class="credits">
     <span class="credits__text">
       Design &amp; Code – David Darx<br>
-      Textkorrekturen – Cérdric Knapp<br>
+      Copy &amp; Lektorat – Cérdric Knapp<br>
       Foto- &amp; Videoaufnahmen – Silvio Strickler<br>
       ©{{this.year}}
     </span>
