@@ -40,12 +40,17 @@
       return {
         isiOS: false,
         isAndroid: false,
-        isChromeiOS: false
+        isChromeiOS: false,
+        splashScreen: undefined
       }
     },
     computed: {
     },
     mounted () {
+      console.log("mounted");
+      this.splashScreen = document.querySelector('.splash-screen');
+      this.splashScreen.classList.add('hidden');
+
       this.isiOS = browserDetect.isiOS;
       this.isAndroid = browserDetect.isAndroid;
       this.isChromeiOS = browserDetect.isChromeiOS;
