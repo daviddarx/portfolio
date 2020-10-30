@@ -49,7 +49,16 @@
     mounted () {
       console.log("mounted");
       this.splashScreen = document.querySelector('.splash-screen');
-      this.splashScreen.classList.add('hidden');
+      this.splashScreen.classList.add('half');
+
+      console.log(document.fonts.check('1em Sang-Bleu-Sunrise'));
+      console.log(document.fonts.check('1em Mont-Bold'));
+
+      document.fonts.ready.then(() => {
+        this.splashScreen.classList.add('hidden');
+        console.log(document.fonts.check('1em Sang-Bleu-Sunrise'));
+        console.log(document.fonts.check('1em Mont-Bold'));
+      });
 
       this.isiOS = browserDetect.isiOS;
       this.isAndroid = browserDetect.isAndroid;
