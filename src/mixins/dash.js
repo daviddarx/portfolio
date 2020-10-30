@@ -4,7 +4,7 @@ export default {
       let additionalClass = (isSpaced == true) ? ' dash--spaced' : '';
           additionalClass = (isTitle == true) ? additionalClass+' dash--title' : additionalClass;
       if(string){
-        return string.replace('–', `<span class="dash${additionalClass}">–</span>`);
+        return string.replaceAll('–', `<span class="dash${additionalClass}">–</span>`);
       }
     },
     getDash: function(isSpaced, isTitle) {
