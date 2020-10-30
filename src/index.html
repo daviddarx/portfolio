@@ -9,6 +9,25 @@
 
 		<title>David Darx – Portfolio 2020</title>
 
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .splash-screen {
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+
+      .splash-screen.hidden {
+        display: none;
+      }
+    </style>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -25,6 +44,8 @@
 	</head>
 
 	<body>
+    <div class="splash-screen">
+    </div>
     <div id="app"></div>
     <script src="/index.js"></script>
 	</body>
