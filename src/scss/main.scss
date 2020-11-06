@@ -1041,7 +1041,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
 
-    .is-vertical & ,
+    .is-vertical &,
     .is-mobile & {
       display: block;
     }
