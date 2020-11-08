@@ -53,11 +53,7 @@
     computed: {
     },
     mounted () {
-      console.log("mounted");
       this.splashScreen = document.querySelector('.splash');
-
-      console.log("font 1 " + document.fonts.check('1em Sang-Bleu-Sunrise'));
-      console.log("font 2 " + document.fonts.check('1em Mont-Bold'));
 
       document.fonts.ready.then(() => {
         this.isLoaded = true;
@@ -65,9 +61,6 @@
         setTimeout(() => {
           this.$refs.view.display();
         }, this.displayAfterLoadedDelay);
-
-        console.log("font 1 " + document.fonts.check('1em Sang-Bleu-Sunrise'));
-        console.log("font 2 " + document.fonts.check('1em Mont-Bold'));
       });
 
       this.isiOS = browserDetect.isiOS;
