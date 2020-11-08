@@ -164,7 +164,7 @@
       }
     },
     mounted () {
-      setTimeout(this.displayInfo, 100);
+      setTimeout(this.display, 100);
       this.initTitlesObserver(this.pageTitle);
     },
     beforeDestroy () {
@@ -172,8 +172,10 @@
       this.destroyTitlesObserver();
     },
     methods: {
-      displayInfo: function() {
-        this.isDisplayed = true;
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+        }
       }
     }
   });

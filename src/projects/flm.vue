@@ -3,6 +3,7 @@
   <project
     v-if="this.isMounted"
     class="flm"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
 
     <svg viewBox="0 0 1440 862" xmlns="http://www.w3.org/2000/svg" class="deco-lines deco-lines--01">

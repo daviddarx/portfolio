@@ -1,6 +1,10 @@
 
 <template>
-  <project>
+  <project
+    v-if="this.isMounted"
+    class="mammut"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <!-- Contenu mammut -->
   </project>
 </template>

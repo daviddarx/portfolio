@@ -3,6 +3,7 @@
   <project
     v-if="this.isMounted"
     class="st"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="project__cols project__intro intro-st">
       <div class="project__col-left">

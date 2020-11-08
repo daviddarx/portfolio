@@ -12,7 +12,11 @@
     <logo ref="logo"></logo>
     <custom-navigation ref="nav"></custom-navigation>
     <keep-alive :include="['misc-keep', 'info-keep']">
-      <router-view :key="$route.fullPath"></router-view>
+      <router-view
+        :key="$route.fullPath"
+        ref="view"
+      >
+      </router-view>
     </keep-alive>
     <transition-backround></transition-backround>
     <browser-warning></browser-warning>
@@ -41,23 +45,29 @@
         isiOS: false,
         isAndroid: false,
         isChromeiOS: false,
-        splashScreen: undefined
+        splashScreen: undefined,
+        isLoaded: false,
+        displayAfterLoadedDelay: 600
       }
     },
     computed: {
     },
     mounted () {
       console.log("mounted");
-      this.splashScreen = document.querySelector('.splash-screen');
-      this.splashScreen.classList.add('half');
+      this.splashScreen = document.querySelector('.splash');
 
-      console.log(document.fonts.check('1em Sang-Bleu-Sunrise'));
-      console.log(document.fonts.check('1em Mont-Bold'));
+      console.log("font 1 " + document.fonts.check('1em Sang-Bleu-Sunrise'));
+      console.log("font 2 " + document.fonts.check('1em Mont-Bold'));
 
       document.fonts.ready.then(() => {
+        this.isLoaded = true;
         this.splashScreen.classList.add('hidden');
-        console.log(document.fonts.check('1em Sang-Bleu-Sunrise'));
-        console.log(document.fonts.check('1em Mont-Bold'));
+        setTimeout(() => {
+          this.$refs.view.display();
+        }, this.displayAfterLoadedDelay);
+
+        console.log("font 1 " + document.fonts.check('1em Sang-Bleu-Sunrise'));
+        console.log("font 2 " + document.fonts.check('1em Mont-Bold'));
       });
 
       this.isiOS = browserDetect.isiOS;

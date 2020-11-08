@@ -2,7 +2,7 @@
 <template>
   <div
     class="project"
-    v-bind:class="{ 'is-inverted': this.isInverted, 'is-selection-inverted': this.isInverted, 'is-displayed': this.isDisplayed }"
+    v-bind:class="{ 'is-inverted': this.isInverted, 'is-selection-inverted': this.isInverted}"
     v-bind:style="{backgroundColor: this.color}"
   >
     <div class="project__preheader">
@@ -90,7 +90,6 @@
         skills: '',
         color: '',
         isInverted: false,
-        isDisplayed: false,
         subtitlePrev: 'Voriges Projekt',
         subtitleNext: 'Nächstes Projekt'
       }
@@ -117,13 +116,8 @@
       this.isInverted = projects.main[this.indexCurrent].inverted;
 
       document.body.style.setProperty('--project-color', this.color);
-
-      setTimeout(this.displayProject, 350);
     },
     methods: {
-      displayProject: function() {
-        this.isDisplayed = true;
-      }
     }
   }
 </script>
