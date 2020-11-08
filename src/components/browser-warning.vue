@@ -45,10 +45,10 @@
 
       const b = browser();
 
-      if (b.name == 'ie' & b.versionNumber <= 11 ) {
+      if (b.name == 'ie') {
         this.isWarningDisplayed = true;
       }
-      if (b.name == 'edge' & b.versionNumber < 20 ) {
+      if (b.name == 'edge' & b.versionNumber < 19 ) {
         this.isWarningDisplayed = true;
       } 
     }

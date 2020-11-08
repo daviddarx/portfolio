@@ -12,7 +12,11 @@
     <logo ref="logo"></logo>
     <custom-navigation ref="nav"></custom-navigation>
     <keep-alive :include="['misc-keep', 'info-keep']">
-      <router-view :key="$route.fullPath"></router-view>
+      <router-view
+        :key="$route.fullPath"
+        ref="view"
+      >
+      </router-view>
     </keep-alive>
     <transition-backround></transition-backround>
     <browser-warning></browser-warning>
@@ -40,12 +44,25 @@
       return {
         isiOS: false,
         isAndroid: false,
-        isChromeiOS: false
+        isChromeiOS: false,
+        splashScreen: undefined,
+        isLoaded: false,
+        displayAfterLoadedDelay: 600
       }
     },
     computed: {
     },
     mounted () {
+      this.splashScreen = document.querySelector('.splash');
+
+      document.fonts.ready.then(() => {
+        this.isLoaded = true;
+        this.splashScreen.classList.add('hidden');
+        setTimeout(() => {
+          this.$refs.view.display();
+        }, this.displayAfterLoadedDelay);
+      });
+
       this.isiOS = browserDetect.isiOS;
       this.isAndroid = browserDetect.isAndroid;
       this.isChromeiOS = browserDetect.isChromeiOS;

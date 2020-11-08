@@ -114,7 +114,7 @@
     methods: {
       setupMounting: function() {
         this.isMounted = true;
-        setTimeout(this.displayProjects, 100);
+        setTimeout(this.display, 100);
 
         window.addEventListener('resize', this.resize);
         this.resize();
@@ -125,8 +125,10 @@
       getProjectsForYear: function (year) {
         return this.projects.main.filter(project => project.year == year);
       },
-      displayProjects: function() {
-        this.isDisplayed = true;
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+        }
       },
       calculateProjectsRootMargin () {
         const margin = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);

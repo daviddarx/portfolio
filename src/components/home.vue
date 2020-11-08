@@ -32,12 +32,14 @@
       }
     },
     mounted () {
-      setTimeout(this.displayHome, 100);
+      setTimeout(this.display, 100);
     },
 
     methods: {
-      displayHome: function() {
-        this.isDisplayed = true;
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+        }
       }
     }
   });

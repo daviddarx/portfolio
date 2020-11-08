@@ -141,7 +141,7 @@
 
       this.infos = misc.collection[this.indexCurrent];
 
-      setTimeout(this.displayMisc, 100);
+      setTimeout(this.display, 100);
 
       window.addEventListener('resize', this.resize);
     },
@@ -168,9 +168,11 @@
       window.removeEventListener('resize', this.resize);
     },
     methods: {
-      displayMisc: function() {
-        this.isDisplayed = true;
-        this.setIntersectionObserver();
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+          this.setIntersectionObserver();
+        }
       },
       setIntersectionObserver: function() {
         if (!!window.IntersectionObserver) {

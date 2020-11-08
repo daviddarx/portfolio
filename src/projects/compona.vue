@@ -1,6 +1,10 @@
 
 <template>
-  <project>
+  <project
+    v-if="this.isMounted"
+    class="compona"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <!-- Contenu compona -->
   </project>
 </template>

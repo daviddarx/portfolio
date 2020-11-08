@@ -1,6 +1,10 @@
 
 <template>
-  <project>
+  <project
+    v-if="this.isMounted"
+    class="dionisio"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <!-- Contenu dionisio -->
   </project>
 </template>

@@ -1,6 +1,10 @@
 
 <template>
-  <project>
+  <project
+    v-if="this.isMounted"
+    class="porny"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <!-- Contenu pornydays -->
   </project>
 </template>

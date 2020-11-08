@@ -1,6 +1,10 @@
 
 <template>
-  <project>
+  <project
+    v-if="this.isMounted"
+    class="anima"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
+  >
     <!-- Contenu anima -->
   </project>
 </template>

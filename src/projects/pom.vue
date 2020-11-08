@@ -3,6 +3,7 @@
   <project
     v-if="this.isMounted"
     class="pom"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <template
       v-slot:preheader

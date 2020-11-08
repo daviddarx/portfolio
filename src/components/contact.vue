@@ -65,7 +65,7 @@
       }
     },
     mounted () {
-      setTimeout(this.displayContact, 100);
+      setTimeout(this.display, 100);
       this.initTitlesObserver(this.pageTitle);
       this.$refs.video.enter();
     },
@@ -73,8 +73,10 @@
       this.destroyTitlesObserver();
     },
     methods: {
-      displayContact: function() {
-        this.isDisplayed = true;
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+        }
       }
     }
   });

@@ -3,6 +3,7 @@
   <project
     v-if="this.isMounted"
     class="ar"
+    v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <div class="project__cols project__intro intro-ar">
       <div class="project__col-left">

@@ -1,6 +1,7 @@
 export default {
   data() {
     return {
+      isDisplayed: false, // here instead of projects because of inheritance for the routes/app for displaying after splash screen
       isMounted: false,
       refsArray: undefined,
       delayedLoadsArray: undefined,
@@ -18,6 +19,13 @@ export default {
         this.setIntersectionObserver();
       });
       window.addEventListener('resize', this.resize);
+
+      setTimeout(this.display, 350);
+    },
+    display () {
+      if (this.$parent.isLoaded == true) {
+        this.isDisplayed = true;
+      }
     },
     setDelayedLoads () {
       this.delayedLoadsArray = [];

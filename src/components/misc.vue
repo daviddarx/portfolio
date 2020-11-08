@@ -144,10 +144,12 @@
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
 
-        setTimeout(this.displayMisc, 100);
+        setTimeout(this.display, 100);
       },
-      displayMisc: function() {
-        this.isDisplayed = true;
+      display: function() {
+        if (this.$parent.isLoaded == true) {
+          this.isDisplayed = true;
+        }
       },
       initPixi: function() {
         this.pixi.app = new PIXI.Application({
