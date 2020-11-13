@@ -29,28 +29,6 @@
       "thumb2": "ar/thumb_02.jpg"
     },
     {
-      "uid": "aso",
-      "title": "Ausland-schweizer-Organisation",
-      "type": "Brand Relaunch",
-      "year": "2020",
-      "color": "#e32236",
-      "colorCase": "#e32236",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
-      "uid": "anima",
-      "title": "Anima-Strath",
-      "type": "Digitaler Auftritt & Webshop",
-      "year": "2020",
-      "color": "#e02141",
-      "colorCase": "#e02141",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
       "uid": "pornydays",
       "title": "Porny Days",
       "type": "Digitaler Auftritt",
