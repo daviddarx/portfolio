@@ -1587,13 +1587,22 @@ body {
   }
 
   &__subtitle {
-    position: relative;
-    margin-bottom: 0;
-    top: -0.5em;
+    position: absolute;
+    top: -1.2em;
+
+    @include viewport('tablet-s') {
+      position: relative;
+      margin-bottom: 0;
+      top: -0.5em;
+    }
 
     .dash {
       --s-top: 0.3em;
     }
+  }
+
+  &__year-container {
+    position: relative;
   }
 
   &__year {
@@ -1604,7 +1613,9 @@ body {
 }
 
 .project-list-container {
-  padding-bottom: calc(var(--s-gutter) * 2);
+  @include viewport('tablet-s') {
+    padding-bottom: calc(var(--s-gutter) * 2);
+  }
 }
 
 .project-list {

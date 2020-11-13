@@ -20,6 +20,7 @@
         <div
           v-for="(year, i) in getYears"
           v-bind:key="year"
+          class="projects__year-container"
         >
           <h2
             class="content-page__subtitle content-page__3-4 hiding-title projects__subtitle"
