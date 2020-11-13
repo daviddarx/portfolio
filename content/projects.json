@@ -64,28 +64,6 @@
       "thumb2": "thumb_02.jpg"
     },
     {
-      "uid": "dionisio",
-      "title": "Claudio Dionisio",
-      "type": "One-Pager Auftritt",
-      "year": "2019",
-      "color": "#33a55c",
-      "colorCase": "#33a55c",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
-      "uid": "intelliact",
-      "title": "Intelliact",
-      "type": "Brand Relaunch",
-      "year": "2018",
-      "color": "#ff004a",
-      "colorCase": "#ff004a",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
       "uid": "compona",
       "title": "Compona",
       "type": "Digitaler Auftritt & Webshop",
