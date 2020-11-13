@@ -14,9 +14,9 @@ export default {
       windowW: 0,
       windowH: 0,
       rootMarginTop: 0,
-      rootMarginTopRatioToGutter: 1,
+      rootMarginTopRatioToGutter: 0,
       rootMarginBottom: 0,
-      rootMarginBottomRatioToGutter: 2.5,
+      rootMarginBottomRatioToGutter: 1,
       isObserverFirstCallFired: false,
       mobileDeactivationMaxWidth: 768,
     }
