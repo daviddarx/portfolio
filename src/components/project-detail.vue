@@ -151,10 +151,8 @@
         entries.forEach(entry => {
           if(entry.isIntersecting){
             this.isCloseButtonTransparent = true;
-            console.log("enter");
           } else {
             this.isCloseButtonTransparent = false;
-            console.log("leave");
           }
         });
       }
