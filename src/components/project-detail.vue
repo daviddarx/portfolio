@@ -9,7 +9,11 @@
       <slot name="preheader"></slot>
     </div>
 
-    <div class="project__close-button close-button animate-in animate-in__s3">
+    <div
+      class="project__close-button close-button animate-in animate-in__s3"
+      ref="close"
+      v-bind:class="{ 'is-transparent': this.isCloseButtonTransparent}"
+    >
       <router-link
         class="close-button__link"
         to="/projects"
@@ -19,7 +23,10 @@
     </div>
 
     <div class="project__container">
-      <div class="project__header">
+      <div
+        class="project__header"
+        ref="header"
+      >
         <h1 class="project__title animate-in animate-in__s1">
           {{this.title}}
         </h1>
@@ -91,7 +98,10 @@
         color: '',
         isInverted: false,
         subtitlePrev: 'Voriges Projekt',
-        subtitleNext: 'Nächstes Projekt'
+        subtitleNext: 'Nächstes Projekt',
+        isCloseButtonTransparent: true,
+        scrollObserver: undefined,
+        scrollObserverMargin: "-10%"
       }
     },
     mounted () {
@@ -116,8 +126,38 @@
       this.isInverted = projects.main[this.indexCurrent].inverted;
 
       document.body.style.setProperty('--project-color', this.color);
+
+      this.setScrollObserver();
+    },
+    beforeDestroy () {
+      this.resetScrollObserver();
     },
     methods: {
+      setScrollObserver: function () {
+        console.log("set observer");
+        if (!!window.IntersectionObserver) {
+          this.scrollObserver = new IntersectionObserver(this.intersectionListener, {
+            rootMargin: this.scrollObserverMargin
+          });
+          this.scrollObserver.observe(this.$refs.header);
+        }
+      },
+      resetScrollObserver: function () {
+        console.log("reset observer");
+        this.scrollObserver.unobserve(this.$refs.header);
+        this.scrollObserver.disconnect();
+      },
+      intersectionListener: function (entries, observer) {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            this.isCloseButtonTransparent = true;
+            console.log("enter");
+          } else {
+            this.isCloseButtonTransparent = false;
+            console.log("leave");
+          }
+        });
+      }
     }
   }
 </script>
