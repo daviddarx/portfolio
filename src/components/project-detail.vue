@@ -134,7 +134,6 @@
     },
     methods: {
       setScrollObserver: function () {
-        console.log("set observer");
         if (!!window.IntersectionObserver) {
           this.scrollObserver = new IntersectionObserver(this.intersectionListener, {
             rootMargin: this.scrollObserverMargin
@@ -143,7 +142,6 @@
         }
       },
       resetScrollObserver: function () {
-        console.log("reset observer");
         this.scrollObserver.unobserve(this.$refs.header);
         this.scrollObserver.disconnect();
       },
