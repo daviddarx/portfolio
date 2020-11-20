@@ -1013,7 +1013,7 @@
   }
 
   .porny-fd {
-    --c-background: rgba(0, 0, 0, 0.12);
+    --c-background: rgba(0, 0, 0, 0.1);
 
     padding-bottom: calc(var(--s-gutter) * 4);
 
