@@ -1896,7 +1896,7 @@ body {
     font-size: var(--s-text-h1);
     padding-right: calc(var(--s-gutter) * 4);
     padding-top: calc(var(--s-gutter) * 2);
-    padding-bottom: calc(var(--s-gutter) - 0.2em);
+    padding-bottom: calc(var(--s-gutter) + 0.1em);
 
     @include viewport('tablet-s') {
       --delay-id: 0 !important;
