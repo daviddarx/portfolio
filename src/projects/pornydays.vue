@@ -737,18 +737,22 @@
       right: 0;
       width: 100%;
       max-width: 1228px;
-      transform: translate(20%, -55%);
       animation: deco 10s ease-in-out infinite alternate;
+
+      @include viewport('desktop-xl') {
+        --x: -10%;
+        --y: 5%;
+      }
     }
   }
 
   @keyframes deco {
     from {
-      transform: translate(20%, -55%);
+      transform: translate(calc(var(--x) + 20%), calc(var(--y) - 55%));
     }
 
     to {
-      transform: translate(18%, -57%);
+      transform: translate(calc(var(--x) + 18%), calc(var(--y) - 57%));
     }
   }
 
