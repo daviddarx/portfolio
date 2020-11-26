@@ -296,6 +296,7 @@
       >
       </media-image>
 
+      <div class="porny-fd__screen porny-fd__screen-02">
         <media-image
           v-bind:url="this.mediasPath+'designs/porny_d_02.1.jpg'"
           v-bind:title="'Finales Design'"
