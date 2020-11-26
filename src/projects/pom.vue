@@ -325,7 +325,7 @@
       </h2>
       <div class="pom-final-de__screen pom-final-de__screen-01">
         <media-image
-          v-bind:url="this.mediasPath+'designs/pom_d_01.1.jpg'"
+          v-bind:url="this.mediasPath+'designs/pom_d_01_1.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -336,7 +336,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/pom_d_01.2.jpg'"
+          v-bind:url="this.mediasPath+'designs/pom_d_01_2.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -347,7 +347,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/pom_d_01.3.jpg'"
+          v-bind:url="this.mediasPath+'designs/pom_d_01_3.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -358,7 +358,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/pom_d_01.4.jpg'"
+          v-bind:url="this.mediasPath+'designs/pom_d_01_4.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
