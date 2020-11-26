@@ -728,6 +728,9 @@
 
   .porny-deco {
     &__el {
+      --x: 0%;
+      --y: 0%;
+
       position: absolute;
       z-index: 100;
       top: 0;
