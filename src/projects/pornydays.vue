@@ -740,6 +740,17 @@
       animation: deco 10s ease-in-out infinite alternate;
 
       @include viewport('desktop-xl') {
+        --x: -10%;
+        --y: 4%;
+      }
+
+      @include viewport('desktop-l') {
+        --x: -5%;
+        --y: 0%;
+
+        width: 75%;
+      }
+
       @include viewport('desktop-xxl') {
         --x: -10%;
         --y: 5%;
@@ -1116,6 +1127,8 @@
     }
 
     .project__mobile-thumb {
+      --box-shadow: none;
+
       position: relative;
       z-index: 101;
     }
