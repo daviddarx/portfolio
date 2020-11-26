@@ -862,6 +862,10 @@
       width: 100%;
       height: 100%;
       animation: lf-stills 15s ease-in-out both infinite;
+
+      @include viewport('desktop-xl') {
+        margin-top: calc(var(--s-gutter) * 1);
+      }
     }
 
     &__still {
@@ -934,6 +938,7 @@
 
     &__video-container {
       border: 1px solid var(--c-border);
+      padding-bottom: 1px;
     }
   }
 
