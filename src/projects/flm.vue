@@ -844,7 +844,7 @@
   .final-id {
     margin-top: calc(var(--s-gutter) * 2);
 
-    @include viewport('tablet') {
+    @include viewport('tablet-s') {
       margin-top: var(--s-gutter);
       padding-left: var(--s-gutter);
       padding-right: var(--s-gutter);
