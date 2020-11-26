@@ -298,7 +298,7 @@
 
       <div class="porny-fd__screen porny-fd__screen-02">
         <media-image
-          v-bind:url="this.mediasPath+'designs/porny_d_02.1.jpg'"
+          v-bind:url="this.mediasPath+'designs/porny_d_02_1.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -309,7 +309,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/porny_d_02.2.jpg'"
+          v-bind:url="this.mediasPath+'designs/porny_d_02_2.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"

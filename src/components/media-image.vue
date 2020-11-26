@@ -145,7 +145,7 @@
       computeHD: function () {
         if (window.devicePixelRatio > 1 && window.windowW > this.hdMinViewportWidth && this.hdRatio > 1) {
           const splittedURL = this.url.split('.');
-          this.finalURL = splittedURL[0]+'_hd.'+splittedURL[1];
+          this.finalURL = splittedURL[0] + '.' + splittedURL[1] + '.' + splittedURL[2] + '_hd.' + splittedURL[3];
           this.hdRatioReversed = 1 / this.hdRatio;
         } else {
           this.finalURL = this.url;

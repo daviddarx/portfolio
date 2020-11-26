@@ -217,7 +217,7 @@
       </h2>
       <div class="eao-fd__screen-01">
         <media-image
-          v-bind:url="this.mediasPath+'designs/eao_d_01.1.jpg'"
+          v-bind:url="this.mediasPath+'designs/eao_d_01_1.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -228,7 +228,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/eao_d_01.2.jpg'"
+          v-bind:url="this.mediasPath+'designs/eao_d_01_2.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
@@ -239,7 +239,7 @@
         </media-image>
 
         <media-image
-          v-bind:url="this.mediasPath+'designs/eao_d_01.3.jpg'"
+          v-bind:url="this.mediasPath+'designs/eao_d_01_3.jpg'"
           v-bind:title="'Finales Design'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
