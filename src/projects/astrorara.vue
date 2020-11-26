@@ -733,7 +733,7 @@
     padding-bottom: calc(var(--s-padding) * 0.5);
     margin-top: calc(var(--s-gutter) * 0.5);
 
-    @include viewport('desktop-xl') {
+    @include viewport('desktop-xxl') {
       margin-top: calc(var(--s-gutter) * 2);
     }
 
@@ -826,7 +826,7 @@
     margin-bottom: calc(var(--s-gutter) * 1);
     margin-top: calc(var(--s-gutter) * 0.5);
 
-    @include viewport('desktop-xl') {
+    @include viewport('desktop-xxl') {
       margin-top: calc(var(--s-gutter) * 1);
     }
 
@@ -861,7 +861,7 @@
     text-align: center;
     padding-top: 1.5em;
 
-    @include viewport('desktop-xl') {
+    @include viewport('desktop-xxl') {
       font-size: calc(var(--s-text-small) * 0.75);
     }
 
@@ -884,7 +884,7 @@
     color: var(--c-title);
     margin-top: 0.4em;
 
-    @include viewport('desktop-xl') {
+    @include viewport('desktop-xxl') {
       font-size: calc(var(--s-text-small) * 0.75);
     }
 

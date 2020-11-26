@@ -9,7 +9,8 @@
 
 // utilities
 $breakpoints: (
-  'desktop-xl': 'min-width: 1921px',
+  'desktop-xxl': 'min-width: 1921px',
+  'desktop-xl': 'max-width: 1920px',
   'desktop-l': 'max-width: 1440px',
   'desktop': 'max-width: 1280px',
   'tablet': 'max-width: 1024px',
@@ -180,7 +181,7 @@ $breakpoints: (
     --s-logo: 4.75vh;
   }
 
-  @include viewport('desktop-xl') {
+  @include viewport('desktop-xxl') {
     --s-logo: 4.5vh;
   }
 

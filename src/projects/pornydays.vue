@@ -740,6 +740,7 @@
       animation: deco 10s ease-in-out infinite alternate;
 
       @include viewport('desktop-xl') {
+      @include viewport('desktop-xxl') {
         --x: -10%;
         --y: 5%;
       }
@@ -863,7 +864,7 @@
       height: 100%;
       animation: lf-stills 15s ease-in-out both infinite;
 
-      @include viewport('desktop-xl') {
+      @include viewport('desktop-xxl') {
         margin-top: calc(var(--s-gutter) * 1);
       }
     }
