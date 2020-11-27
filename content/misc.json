@@ -2,7 +2,6 @@
   "lead":"Die Sammlung der Vergessenen: Gebeinen von anderen Ären, nicht ausgewählte Varianten oder ver&shy;passte Pitches, Exprerimenten, alles was nicht in den Projekten dürfte, troztem aber noch exis&shy;tieren sollte.",
   "routesPath":"/misc/",
   "mediasPath":"https://files.daviddarx.com/works/static/miscs/",
-  "videosPath":"https://files.daviddarx.com/works/videos/",
   "collection": [
     {
       "uid": "digital-playground",
@@ -28,8 +27,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "stages.mp4",
-          "poster": "stages.jpg",
+          "url": "digital_playground/stages.mp4",
+          "poster": "digital_playground/stages.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -109,8 +108,8 @@
         },
         {
           "type": "video",
-          "url": "klicklick.mp4",
-          "poster": "klicklick.jpg",
+          "url": "kliclick/klicklick.mp4",
+          "poster": "kliclick/klicklick.jpg",
           "autoplay": true,
           "additionalMargin": "l"
         },
@@ -437,8 +436,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "dw.mp4",
-          "poster": "dw.jpg",
+          "url": "digital_watches/dw.mp4",
+          "poster": "digital_watches/dw.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -522,8 +521,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "predentec.mp4",
-          "poster": "predentec.jpg",
+          "url": "predentec/predentec.mp4",
+          "poster": "predentec/predentec.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -623,8 +622,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "barbu.mp4",
-          "poster": "barbu.jpg",
+          "url": "barbu/barbu.mp4",
+          "poster": "barbu/barbu.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -708,8 +707,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "little_chaperon.mp4",
-          "poster": "little_chaperon.jpg",
+          "url": "little_chaperon/little_chaperon.mp4",
+          "poster": "little_chaperon/little_chaperon.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -761,8 +760,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "flash_experimente.mp4",
-          "poster": "flash_experimente.jpg",
+          "url": "flash_experimente/flash_experimente.mp4",
+          "poster": "flash_experimente/flash_experimente.jpg",
           "autoplay": true,
           "additionalMargin": false
         },
@@ -808,8 +807,8 @@
       "medias": [
         {
           "type": "video",
-          "url": "custom_design.mp4",
-          "poster": "custom_design.jpg",
+          "url": "custom_design/custom_design.mp4",
+          "poster": "custom_design/custom_design.jpg",
           "autoplay": true,
           "additionalMargin": false
         },

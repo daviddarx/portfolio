@@ -75,8 +75,8 @@
 
       <div class="project__col-right col-ow--r">
         <media-video
-          v-bind:url="this.videosPath+'ar_scenes_overview.mp4'"
-          v-bind:poster="this.videosPath+'ar_scenes_overview.jpg'"
+          v-bind:url="this.mediasPath+'ar_scenes_overview.mp4'"
+          v-bind:poster="this.mediasPath+'ar_scenes_overview.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'video-ow'"
@@ -391,8 +391,7 @@
     mixins: [projectsMixins],
     data: function () {
       return {
-        mediasPath: 'https://files.daviddarx.com/works/static/projects/ar/',
-        videosPath: 'https://files.daviddarx.com/works/videos/'
+        mediasPath: 'https://files.daviddarx.com/works/static/projects/ar/'
       }
     },
     computed: {

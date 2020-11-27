@@ -129,8 +129,8 @@
 
     <section class="project__section project__section--padding-2x eao-ps-video">
       <media-video
-        v-bind:url="this.videosPath+'eao_sc_03.mp4'"
-        v-bind:poster="this.videosPath+'eao_sc_03.jpg'"
+        v-bind:url="this.mediasPath+'sc/eao_sc_03.mp4'"
+        v-bind:poster="this.mediasPath+'sc/eao_sc_03.jpg'"
         v-bind:autoplay="true"
         v-bind:isvideo="true"
         v-bind:id="'video-eao1'"
@@ -159,8 +159,8 @@
 
       <div class="project__col-left eao-pc__right">
         <media-video
-          v-bind:url="this.videosPath+'eao_sc_01.mp4'"
-          v-bind:poster="this.videosPath+'eao_sc_01.jpg'"
+          v-bind:url="this.mediasPath+'sc/eao_sc_01.mp4'"
+          v-bind:poster="this.mediasPath+'sc/eao_sc_01.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'video-eao2'"
@@ -199,8 +199,8 @@
 
       <div class="project__col-right eao-ev__right">
         <media-video
-          v-bind:url="this.videosPath+'eao_sc_02.mp4'"
-          v-bind:poster="this.videosPath+'eao_sc_02.jpg'"
+          v-bind:url="this.mediasPath+'sc/eao_sc_02.mp4'"
+          v-bind:poster="this.mediasPath+'sc/eao_sc_02.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'video-eao3'"
@@ -439,7 +439,6 @@
     data: function () {
       return {
         mediasPath: 'https://files.daviddarx.com/works/static/projects/eao/',
-        videosPath: 'https://files.daviddarx.com/works/videos/',
         currentProductStage: 1,
         productStageSwitchInterval: undefined,
         productStageSwitchIntervalDuration: 7000

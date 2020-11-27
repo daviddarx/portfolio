@@ -238,8 +238,8 @@
 
       <div class="pom-claims__video-container">
         <media-video
-          v-bind:url="this.videosPath+'pom_claims.mp4'"
-          v-bind:poster="this.videosPath+'pom_claims.jpg'"
+          v-bind:url="this.mediasPath+'/claims/pom_claims.mp4'"
+          v-bind:poster="this.mediasPath+'/claims/pom_claims.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'pom-video'"
@@ -557,7 +557,6 @@
     data: function () {
       return {
         mediasPath: "https://files.daviddarx.com/works/static/projects/pom/",
-        videosPath: 'https://files.daviddarx.com/works/videos/',
         isIntroImageLoaded: false,
       }
     },

@@ -66,8 +66,8 @@
           </media-image>
           <media-video
             v-else-if="media.type=='video'"
-            v-bind:url="misc.videosPath+media.url"
-            v-bind:poster="misc.videosPath+media.poster"
+            v-bind:url="misc.mediasPath+media.url"
+            v-bind:poster="misc.mediasPath+media.poster"
             v-bind:title="infos.title"
             v-bind:autoplay="media.autoplay"
             v-bind:id="i"

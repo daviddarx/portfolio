@@ -139,8 +139,8 @@
       <div class="porny-lf__sc porny-lf__sc--01">
         <div class="porny-lf__video-container">
           <media-video
-            v-bind:url="this.videosPath+'porny_bw_01.mp4'"
-            v-bind:poster="this.videosPath+'porny_bw_01.jpg'"
+            v-bind:url="this.mediasPath+'bw/porny_bw_01.mp4'"
+            v-bind:poster="this.mediasPath+'bw/porny_bw_01.jpg'"
             v-bind:autoplay="true"
             v-bind:isvideo="true"
             v-bind:id="'porny-lf-1'"
@@ -153,8 +153,8 @@
       <div class="porny-lf__sc porny-lf__sc--02">
         <div class="porny-lf__video-container">
           <media-video
-            v-bind:url="this.videosPath+'porny_bw_02.mp4'"
-            v-bind:poster="this.videosPath+'porny_bw_02.jpg'"
+            v-bind:url="this.mediasPath+'bw/porny_bw_02.mp4'"
+            v-bind:poster="this.mediasPath+'bw/porny_bw_02.jpg'"
             v-bind:autoplay="true"
             v-bind:isvideo="true"
             v-bind:id="'porny-lf-2'"
@@ -167,8 +167,8 @@
       <div class="porny-lf__sc porny-lf__sc--03">
         <div class="porny-lf__video-container">
           <media-video
-            v-bind:url="this.videosPath+'porny_bw_03.mp4'"
-            v-bind:poster="this.videosPath+'porny_bw_03.jpg'"
+            v-bind:url="this.mediasPath+'bw/porny_bw_03.mp4'"
+            v-bind:poster="this.mediasPath+'bw/porny_bw_03.jpg'"
             v-bind:autoplay="true"
             v-bind:isvideo="true"
             v-bind:id="'porny-lf-3'"
@@ -200,8 +200,8 @@
       </div>
       <div class="porny-pg__video">
         <media-video
-          v-bind:url="this.videosPath+'porny_program_8.mp4'"
-          v-bind:poster="this.videosPath+'porny_program.jpg'"
+          v-bind:url="this.mediasPath+'program/porny_program_8.mp4'"
+          v-bind:poster="this.mediasPath+'program/porny_program.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'porny-pg'"
@@ -478,8 +478,8 @@
 
       <div class="porny-2020__sc">
         <media-video
-          v-bind:url="this.videosPath+'porny_2020_video.mp4'"
-          v-bind:poster="this.videosPath+'porny_2020_video.jpg'"
+          v-bind:url="this.mediasPath+'2020/porny_2020_video.mp4'"
+          v-bind:poster="this.mediasPath+'2020/porny_2020_video.jpg'"
           v-bind:autoplay="true"
           v-bind:isvideo="true"
           v-bind:id="'porny-2020-sc'"
@@ -600,7 +600,6 @@
     data: function () {
       return {
         mediasPath: "https://files.daviddarx.com/works/static/projects/porny/",
-        videosPath: 'https://files.daviddarx.com/works/videos/',
         windowW: 0,
         windowH: 0,
         isLogoHover: false,

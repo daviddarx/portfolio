@@ -25,8 +25,8 @@
           class="contact__video-container content-page__3-4 hiding-title"
         >
           <media-video
-            v-bind:url="this.videosPath+'k4_1920_5.mp4'"
-            v-bind:poster="this.videosPath+'k4.jpg'"
+            v-bind:url="this.mediasPath+'k4_1920_5.mp4'"
+            v-bind:poster="this.mediasPath+'k4.jpg'"
             v-bind:autoplay="true"
             v-bind:toggleclick="true"
             ref="video"
@@ -61,7 +61,7 @@
       return {
         isDisplayed : false,
         pageTitle: "Kontakt",
-        videosPath: 'https://files.daviddarx.com/works/videos/k4/'
+        mediasPath: 'https://files.daviddarx.com/works/static/contact/'
       }
     },
     mounted () {
