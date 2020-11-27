@@ -160,7 +160,7 @@
         <div class="pom-lf__board pom-lf__board--alt pom-lf__board--alt-02">
           <media-image
             v-bind:url="this.mediasPath+'lf/lf_alt_02.jpg'"
-            v-bind:title="'Look&Feel Recherche'"
+            v-bind:title="'Look & Feel Recherche'"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
             ref="lf3"
@@ -170,7 +170,7 @@
         <div class="pom-lf__board pom-lf__board--alt pom-lf__board--alt-01">
           <media-image
             v-bind:url="this.mediasPath+'lf/lf_alt_01.jpg'"
-            v-bind:title="'Look&Feel Recherche'"
+            v-bind:title="'Look & Feel Recherche'"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
             ref="lf2"
@@ -181,7 +181,7 @@
           <media-image
             v-bind:url="this.mediasPath+'lf/lf.jpg'"
             v-bind:hdRatio="2"
-            v-bind:title="'Look&Feel Recherche'"
+            v-bind:title="'Look & Feel Recherche'"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
             ref="lf1"

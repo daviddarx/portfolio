@@ -185,7 +185,7 @@
         <div class="project__col-third">
           <media-image
             v-bind:url="this.mediasPath+'designs/flm_lf_01.jpg'"
-            v-bind:title="'Look&Feel Entwurf'"
+            v-bind:title="'Look & Feel Entwurf'"
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
@@ -198,7 +198,7 @@
         <div class="project__col-third">
           <media-image
             v-bind:url="this.mediasPath+'designs/flm_lf_02.jpg'"
-            v-bind:title="'Look&Feel Entwurf'"
+            v-bind:title="'Look & Feel Entwurf'"
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
@@ -211,7 +211,7 @@
         <div class="project__col-third">
           <media-image
             v-bind:url="this.mediasPath+'designs/flm_lf_03.jpg'"
-            v-bind:title="'Look&Feel Entwurf'"
+            v-bind:title="'Look & Feel Entwurf'"
             v-bind:hdRatio="2"
             v-bind:zoomable="true"
             v-bind:centered="false"
@@ -307,7 +307,7 @@
         <div class="project__col-left final-id__lf-col-right">
           <media-image
             v-bind:url="this.lfFinalData.url"
-            v-bind:title="'Finales Look&Feel'"
+            v-bind:title="'Finales Look & Feel'"
             v-bind:hdRatio="this.lfFinalData.hd"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"

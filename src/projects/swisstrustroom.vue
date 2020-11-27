@@ -71,7 +71,7 @@
       <div class="project__col-left project__col-left--inverted thumbs-bw-01">
         <media-image
           v-bind:url="this.mediasPath+'designs/st_l&f_01.jpg'"
-          v-bind:title="'Look&Feel Untersuchung'"
+          v-bind:title="'Look & Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
@@ -83,7 +83,7 @@
         </media-image>
         <media-image
           v-bind:url="this.mediasPath+'designs/st_l&f_02.jpg'"
-          v-bind:title="'Look&Feel Untersuchung'"
+          v-bind:title="'Look & Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
@@ -98,7 +98,7 @@
       <div class="project__col-right project__col-right--inverted thumbs-bw-02">
         <media-image
           v-bind:url="this.mediasPath+'designs/st_l&f_03.jpg'"
-          v-bind:title="'Look&Feel Untersuchung'"
+          v-bind:title="'Look & Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
@@ -110,7 +110,7 @@
         </media-image>
         <media-image
           v-bind:url="this.mediasPath+'designs/st_l&f_04.jpg'"
-          v-bind:title="'Look&Feel Untersuchung'"
+          v-bind:title="'Look & Feel Untersuchung'"
           v-bind:hdRatio="2"
           v-bind:zoomable="true"
           v-bind:centered="false"
