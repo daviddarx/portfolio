@@ -1,5 +1,5 @@
 {
-  "lead":"Die Sammlung der Vergessenen: Gebeinen von anderen Ären, nicht ausgewählte Varianten oder ver&shy;passte Pitches, Exprerimenten, alles was nicht in den Projekten dürfte, troztem aber noch exis&shy;tieren sollte.",
+  "lead":"Wegwerfen wäre schade: Eigen&shy;sinnige Designs, ver&shy;passte Pitches, ver&shy;staubte Experi&shy;mente – und, wer weiss, viel&shy;leicht die eine oder andere Perle. Stöbern erwünscht.",
   "routesPath":"/misc/",
   "mediasPath":"https://files.daviddarx.com/works/static/miscs/",
   "collection": [
@@ -9,7 +9,7 @@
       "date": "2020",
       "thumb": "digital_playground/thumb.jpg",
       "thumbDimensions": [1000, 1000],
-      "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Exprerimenten – Farbenverbot als einzige Spielregel",
+      "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Experimenten – Farbverbot als einzige Spielregel.",
       "links": [
         {
           "title": "01",
@@ -92,7 +92,7 @@
       "date": "2020",
       "thumb": "kliclick/thumb.jpg",
       "thumbDimensions": [1000, 1000],
-      "lead": "Kein Briefing, keine Users, keine Anforderungen. Online animierte Galerie für ziellose Bilder",
+      "lead": "Kein Briefing, keine User, keine Anforderungen. Dynamisch generierte Galerie für ziellose Bilder.",
       "links": [
         {
           "title": "Zur Galerie",
@@ -173,7 +173,7 @@
       "date": "2019",
       "thumb": "hfh/thumb.jpg",
       "thumbDimensions": [1000, 591],
-      "lead": "Relaunch der Website für die HfH, Interkantonale Hochschule für Heilpädagogik",
+      "lead": "Website-Relaunch der Interkantonalen Hochschule für Heilpädagogik HFH.",
       "medias": [
         {
           "type": "image",
@@ -214,7 +214,7 @@
       "date": "2018",
       "thumb": "studer/thumb.jpg",
       "thumbDimensions": [1000, 1000],
-      "lead": "Visuelle Ausforschüngen für die Flaschen der Distrillerie Studer",
+      "lead": "Visuelle Auffrischung für die Flaschen der Distillerie Studer.",
       "medias": [
         {
           "type": "image",
@@ -276,7 +276,7 @@
       "date": "2018",
       "thumb": "uzh_pitch/thumb.jpg",
       "thumbDimensions": [1022, 790],
-      "lead": "Look&Feel Entwürfe für das Pitch des Relaunchs von der Universität Zürich",
+      "lead": "Look & Feel: Entwürfe zum (verlorenen) Pitch für den Web-Relaunch der Universität Zürich.",
       "medias": [
         {
           "type": "image",
@@ -301,7 +301,7 @@
       "date": "2018",
       "thumb": "tcm/thumb.jpg",
       "thumbDimensions": [1280, 1056],
-      "lead": "Look&Feel Entwürfe für TCM, die Experten für Traditionelle Chinesische Medizin und Akupunktur",
+      "lead": "Look & Feel: Entwürfe für TCM, die Experten für Traditionelle Chinesische Medizin und Akupunktur.",
       "medias": [
         {
           "type": "image",
@@ -334,7 +334,7 @@
       "date": "2017",
       "thumb": "myclimate/thumb.jpg",
       "thumbDimensions": [1000, 588],
-      "lead": "Look&Feel Entwürfe der Startseite für myclimate, Ihr Partner für wirksamen Klimaschutz",
+      "lead": "Look & Feel: Entwürfe für die Startseite von myclimate (Klimaschutz).",
       "medias": [
         {
           "type": "image",
@@ -367,7 +367,7 @@
       "date": "2016",
       "thumb": "trend_analyzer/thumb.jpg",
       "thumbDimensions": [1000, 922],
-      "lead": "Konzeption & Look&Feel für ein Trend Analyser von pom+",
+      "lead": "Konzeption und Look & Feel für einen interaktives Analyse-Tool im Bereich Immobilien.",
       "links": [
         {
           "title": "Konzept & Wireframes",
@@ -406,7 +406,7 @@
       "date": "2016",
       "thumb": "digital_watches/thumb.jpg",
       "thumbDimensions": [1000, 652],
-      "lead": "Sammlung von verschiedenen digitalen Uhren, die weder Hand noch Fuß haben.",
+      "lead": "Sammlung verschiedener digitaler Uhren, die weder Hand noch Fuss haben.",
       "links": [
         {
           "title": "01",
@@ -488,7 +488,7 @@
       "date": "2015",
       "thumb": "coop_grillerinstinkt/thumb.jpg",
       "thumbDimensions": [1024, 691],
-      "lead": "Rezeptblog für die Grillwerken von dem wallenden Andreas Stüssi",
+      "lead": "Rezeptblog für die Kreationen von Grillmeister Andreas Stüssi.",
       "medias": [
         {
           "type": "image",
@@ -511,7 +511,7 @@
       "date": "2014",
       "thumb": "predentec/thumb.jpg",
       "thumbDimensions": [1000, 685],
-      "lead": "One-pager für die Zahnarztpraxis Predentec, Premium Dental Technology",
+      "lead": "One-Pager für die Zahnarztpraxis Predentec (Premium Dental Technology).",
       "links": [
         {
           "title": "Template",
@@ -558,7 +558,7 @@
       "date": "2013",
       "thumb": "olio_leo/thumb.jpg",
       "thumbDimensions": [1000, 1000],
-      "lead": "Corporate Design & Digital Auftritt für Olio Leo, die handwerklichen Olivenöle",
+      "lead": "Handgemachtes Olivenöl: Corporate Design & Digitalauftritt für Olio Leo.",
       "links": [
         {
           "title": "Template",
@@ -608,7 +608,7 @@
       "date": "2012",
       "thumb": "barbu/thumb.jpg",
       "thumbDimensions": [1000, 800],
-      "lead": "Online Portfolio für Barbu TV, Videoproduktion aus Dubaï.",
+      "lead": "Online-Portfolio für Barbu TV, eine Videoagentur aus Dubaï.",
       "links": [
         {
           "title": "Grid Konzept",
@@ -659,7 +659,7 @@
       "date": "2011",
       "thumb": "swissaid/thumb.jpg",
       "thumbDimensions": [1000, 1000],
-      "lead": "Digital Auftritt für Swissaid, die Schweizerische Stiftung für Entwicklungszusammenarbeit",
+      "lead": "Digitalauftritt für Swissaid, die Schweizerische Stiftung für Entwicklungszusammenarbeit.",
       "links": [
         {
           "title": "Template",
@@ -703,7 +703,7 @@
       "date": "2009",
       "thumb": "little_chaperon/thumb.jpg",
       "thumbDimensions": [1000, 699],
-      "lead": "Flash Website für Little Chaperon, Fashion Design aus Freiburg",
+      "lead": "Flash-Website für Little Chaperon, Fashion Design aus Freiburg.",
       "medias": [
         {
           "type": "video",
@@ -756,7 +756,7 @@
       "date": "2009",
       "thumb": "flash_experimente/thumb.jpg",
       "thumbDimensions": [1000, 720],
-      "lead": "Diverse Flash Animationen – Timeline & Actionscript",
+      "lead": "Diverse Flash-Animationen – Timeline & Actionscript.",
       "medias": [
         {
           "type": "video",
@@ -803,7 +803,7 @@
       "date": "2008",
       "thumb": "custom_design/thumb.jpg",
       "thumbDimensions": [1000, 741],
-      "lead": "Flash Website für Custom Design, die DIY Könige aus Freiburg",
+      "lead": "Flash-Website für Custom Design, die DIY-Könige aus Freiburg.",
       "medias": [
         {
           "type": "video",
