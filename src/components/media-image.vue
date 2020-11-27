@@ -112,7 +112,8 @@
         zoomedImageScrollRatioToDezoom: 0.5,
         displayZoomedImageTimeout: undefined,
         displayZoomedImageTimeoutDuration: 100,
-        minimalRatioToZoomImageOnRetina: 1
+        minimalRatioToZoomImageOnRetina: 1,
+        responsiveStepToDeactiveZooming: 768
       }
     },
     mounted () {
@@ -162,7 +163,7 @@
         this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
       },
       checkIfZoomable: function () {
-        if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidthComputed) {
+        if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidthComputed && window.windowW >= this.responsiveStepToDeactiveZooming) {
           if (window.devicePixelRatio > 1 && this.imageNaturalWidthComputed / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
             this.isZoomable = false;
           } else {
@@ -232,18 +233,20 @@
         window.zoomIcon.classList.remove('is-active');
       },
       startZoomIconMouseMoveAnimation: function () {
-        window.zoomIconPosition = {
-          x: window.windowW * 0.5,
-          y: window.windowH * 0.5,
-        };
-        window.zoomIconPositionTarget = {
-           x: window.windowW * 0.5,
-          y: window.windowH * 0.5,
-        };
-        this.isZoomIconListeningMouseMove = true;
-        this.moveDebouncedZoomIcon = debounce(this.zoomIconMouseMoveListener, 1);
-        window.addEventListener('mousemove', this.moveDebouncedZoomIcon);
-        this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
+        if (window.windowW >= this.responsiveStepToDeactiveZooming) {
+          window.zoomIconPosition = {
+            x: window.windowW * 0.5,
+            y: window.windowH * 0.5,
+          };
+          window.zoomIconPositionTarget = {
+            x: window.windowW * 0.5,
+            y: window.windowH * 0.5,
+          };
+          this.isZoomIconListeningMouseMove = true;
+          this.moveDebouncedZoomIcon = debounce(this.zoomIconMouseMoveListener, 1);
+          window.addEventListener('mousemove', this.moveDebouncedZoomIcon);
+          this.zoomedIconAnimationFrame = requestAnimationFrame(this.animateZoomIcon);
+        }
       },
       stopZoomIconMouseMoveAnimation: function () {
         if (this.isZoomIconListeningMouseMove == true) {
