@@ -63,7 +63,9 @@
         thumb2URL: undefined,
         isThumb1Loaded: false,
         isThumb2Loaded: false,
-        areThumbsInvertedX: false
+        areThumbsInvertedX: false,
+        initialDelay: undefined,
+        delayRandomizer:undefined
       }
     },
     computed: {
@@ -82,14 +84,16 @@
         }
       },
       setThumbsAnimationDelay: function () {
-        const initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
-        const delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
+        if(!this.initialDelay) this.initialDelay = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay').split('s')[0]);
+        if(!this.delayRandomizer) this.delayRandomizer = parseFloat(getComputedStyle(this.$refs.thumb1).getPropertyValue('--d-animation-in-delay-randomizer'));
 
-        const newDelay1 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
-        const newDelay2 = initialDelay + this.getRandomRange(initialDelay * delayRandomizer * -1, initialDelay * delayRandomizer);
+        const newDelay1 = this.initialDelay + this.getRandomRange(this.initialDelay * this.delayRandomizer * -1, this.initialDelay * this.delayRandomizer);
+        const newDelay2 = this.initialDelay + this.getRandomRange(this.initialDelay * this.delayRandomizer * -1, this.initialDelay * this.delayRandomizer);
 
         this.$refs.thumb1.style.setProperty('--d-animation-in-delay', newDelay1+'s');
         this.$refs.thumb2.style.setProperty('--d-animation-in-delay', newDelay2+'s');
+
+        console.log(newDelay1+" "+newDelay2);
       },
       setThumbVerticalMargin: function (thumb) {
         const thumbHeight = thumb.offsetHeight;
@@ -104,8 +108,8 @@
       mouseOverListener: function () {
         if (this.isHover == false) { //to avoid firing on each child, because of mouseover instead of mouseenter, which can cause performance problem
           this.isHover = true;
-
           this.currentColor = this.datas.color;
+          this.setThumbsAnimationDelay();
         }
       },
       mouseLeaveListener: function () {
