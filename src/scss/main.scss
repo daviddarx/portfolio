@@ -1684,6 +1684,12 @@ body {
     --e-scaleHover: var(--e-inout);
     --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
 
+    @include viewport('mobile-layout') {
+      --s-width: 50vw;
+      --s-left-1: -25vw;
+      --s-left-2: calc(25vw + 2px);
+    }
+
     pointer-events: none;
     position: absolute;
     z-index: -1;
