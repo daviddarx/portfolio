@@ -92,8 +92,6 @@
 
         this.$refs.thumb1.style.setProperty('--d-animation-in-delay', newDelay1+'s');
         this.$refs.thumb2.style.setProperty('--d-animation-in-delay', newDelay2+'s');
-
-        console.log(newDelay1+" "+newDelay2);
       },
       setThumbVerticalMargin: function (thumb) {
         const thumbHeight = thumb.offsetHeight;
