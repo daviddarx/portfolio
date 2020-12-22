@@ -898,8 +898,10 @@ body {
       opacity: 0;
     }
 
-    .is-touch & {
-      display: block;
+    #{$root}.is-zoomable & {
+      .is-touch & {
+        display: block;
+      }
     }
   }
 }
