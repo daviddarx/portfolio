@@ -69,7 +69,7 @@
             </h2>
             <div class="project__pick-desc eao-ps__desc">
               <p>
-                Der User konnte diese Frage ganz oben auf der Startseite antworten und die Website stellte dann verwandte Produkte und Artikel dar, die auf den fünf wichtigsten Outdoor-Sportaktivitäten basieren.
+                Der User konnte diese Frage ganz oben auf der Startseite antworten und die Website stellte dann verwandte Produkte und Stories dar, die auf den fünf wichtigsten Outdoor-Sportaktivitäten basieren.
               </p>
             </div>
           </div>
@@ -77,91 +77,101 @@
       </div>
 
       <div class="mam-adv__screen mam-adv__screen--01">
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_02.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd1"
-        >
-        </media-image>
+        <div class="mam-adv__screen-container">
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_02.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd1"
+          >
+          </media-image>
+        </div>
       </div>
 
       <div class="mam-adv__screen mam-adv__screen--02">
         <p class="mam-adv__legend">
           Standardmäßig wurden handverlesene Inhalte aus allen Kategorien angezeigt:
         </p>
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_01_1.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd21"
-        >
-        </media-image>
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_01_2.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd22"
-        >
-        </media-image>
+        <div class="mam-adv__screen-container">
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_01_1.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd21"
+          >
+          </media-image>
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_01_2.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd22"
+          >
+          </media-image>
+        </div>
       </div>
 
       <div class="mam-adv__screen mam-adv__screen--03">
         <p class="mam-adv__legend">
           Um eine große Anzahl von Produktkategorien und Werbeaktionen zu verwalten, die in der Navigation angezeigt werden sollen, wurde eine Off-Canvas-Lösung gewählt:
         </p>
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_03.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd3"
-        >
-        </media-image>
+        <div class="mam-adv__screen-container">
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_03.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd3"
+          >
+          </media-image>
+        </div>
       </div>
 
       <div class="project__cols mam-adv__small-screens">
         <div class="project__col-left">
-          <media-image
-            v-bind:url="this.mediasPath+'designs/mammut_d_04.jpg'"
-            v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
-            v-bind:zoomable="true"
-            v-bind:centered="false"
-            v-bind:autoLoad="false"
-            v-on:loaded="this.loadNextImage"
-            ref="mamfd4"
-            class="mam-adv__screen mam-adv__screen--04"
-          >
-          </media-image>
+          <div class="mam-adv__screen-container">
+            <media-image
+              v-bind:url="this.mediasPath+'designs/mammut_d_04.jpg'"
+              v-bind:title="'Finales Design'"
+              v-bind:hdRatio="2"
+              v-bind:zoomable="true"
+              v-bind:centered="false"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
+              ref="mamfd4"
+              class="mam-adv__screen mam-adv__screen--04"
+            >
+            </media-image>
+          </div>
           <p class="mam-adv__legend mam-adv__legend--bottom">
             Full-Screen Suche mit Live-Empfehlungen
           </p>
         </div>
         <div class="project__col-right">
-          <media-image
-            v-bind:url="this.mediasPath+'designs/mammut_d_05.jpg'"
-            v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
-            v-bind:zoomable="true"
-            v-bind:centered="false"
-            v-bind:autoLoad="false"
-            v-on:loaded="this.loadNextImage"
-            ref="mamfd5"
-            class="mam-adv__screen mam-adv__screen--05"
-          >
-          </media-image>
+          <div class="mam-adv__screen-container">
+            <media-image
+              v-bind:url="this.mediasPath+'designs/mammut_d_05.jpg'"
+              v-bind:title="'Finales Design'"
+              v-bind:hdRatio="2"
+              v-bind:zoomable="true"
+              v-bind:centered="false"
+              v-bind:autoLoad="false"
+              v-on:loaded="this.loadNextImage"
+              ref="mamfd5"
+              class="mam-adv__screen mam-adv__screen--05"
+            >
+            </media-image>
+          </div>
           <p class="mam-adv__legend mam-adv__legend--bottom">
             Warenkorb
           </p>
@@ -169,39 +179,43 @@
       </div>
 
       <div class="mam-adv__screen mam-adv__screen--06">
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_06_1.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd61"
-        >
-        </media-image>
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_06_2.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd62"
-        >
-        </media-image>
+        <div class="mam-adv__screen-container">
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_06_1.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd61"
+          >
+          </media-image>
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_06_2.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd62"
+          >
+          </media-image>
+        </div>
       </div>
 
       <div class="mam-adv__screen mam-adv__screen--07">
-        <media-image
-          v-bind:url="this.mediasPath+'designs/mammut_d_07.jpg'"
-          v-bind:title="'Finales Design'"
-          v-bind:hdRatio="2"
-          v-bind:zoomable="true"
-          v-bind:autoLoad="false"
-          v-on:loaded="this.loadNextImage"
-          ref="mamfd7"
-        >
-        </media-image>
+        <div class="mam-adv__screen-container">
+          <media-image
+            v-bind:url="this.mediasPath+'designs/mammut_d_07.jpg'"
+            v-bind:title="'Finales Design'"
+            v-bind:hdRatio="2"
+            v-bind:zoomable="true"
+            v-bind:autoLoad="false"
+            v-on:loaded="this.loadNextImage"
+            ref="mamfd7"
+          >
+          </media-image>
+        </div>
       </div>
     </section>
 
@@ -369,8 +383,28 @@
       color: var(--c-title);
     }
 
-    .media-image {
-      --outline-final: 1px solid rgba(255, 255, 255, 0.1);
+    .project__date,
+    .project__agency {
+      flex-basis: 14%;
+
+      @include viewport('desktop') {
+        flex-basis: 13%;
+      }
+
+      @include viewport('tablet-s') {
+        flex-basis: 33%;
+      }
+
+      @include viewport('mobile-l') {
+        flex-basis: 100%;
+      }
+    }
+
+    .project__col-right {
+      @include viewport('tablet-s') {
+        position: relative;
+        margin-top: -10%;
+      }
     }
   }
 
@@ -390,11 +424,26 @@
   .mam-intro {
     padding-bottom: calc(var(--s-gutter) * 1.5);
 
+    @include viewport('desktop') {
+      padding-bottom: calc(var(--s-gutter) * 0.5);
+    }
+
     &__img {
       position: absolute;
       z-index: -100;
       width: 140%;
       transform: translate(-30%, -35%);
+
+      @include viewport('desktop') {
+        transform: translate(-30%, -30%);
+      }
+
+      @include viewport('tablet-s') {
+        position: relative;
+        width: 100%;
+        transform: translate(0, 0);
+        margin-top: -25%;
+      }
     }
   }
 
@@ -403,6 +452,11 @@
       flex-basis: 50%;
       box-sizing: border-box;
       padding-right: calc(var(--s-gutter) * 2);
+
+      @include viewport('tablet-s') {
+        margin-top: calc(var(--s-gutter) * 0.5);
+        padding-right: 0;
+      }
     }
 
     &__right {
@@ -414,11 +468,24 @@
       position: absolute;
       z-index: -1;
       top: 0;
-      left: 0;
+      left: var(--s-gutter-col);
       right: calc(var(--s-gutter) * -2);
       height: 500px;
       background-size: cover;
       background-position: center top;
+
+      @include viewport('desktop-xl') {
+        height: 740px;
+      }
+
+      @include viewport('tablet-s') {
+        position: relative;
+        left: calc(var(--s-gutter) * -1);
+        right: auto;
+        width: 100vw;
+        height: 300px;
+        margin-top: var(--s-gutter);
+      }
 
       &::after {
         content: "";
@@ -432,7 +499,27 @@
     }
 
     &__screen {
+      max-width: 1240px;
+      margin: 0 auto;
       margin-top: calc(var(--s-gutter) * 2);
+
+      @include viewport('tablet-s') {
+        margin-top: calc(var(--s-gutter) * 1.5);
+      }
+
+      @include viewport('mobile-l') {
+        margin-top: var(--s-gutter);
+      }
+
+      @include viewport('mobile-s') {
+        margin-top: calc(var(--s-gutter) * 2);
+      }
+
+      &--01 {
+        @include viewport('tablet-s') {
+          margin-top: var(--s-gutter);
+        }
+      }
 
       &--02 {
         position: relative;
@@ -454,10 +541,29 @@
       }
     }
 
+    &__screen-container {
+      outline: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     &__legend {
+      @include hyphens();
+
       font-size: var(--s-text-small);
       width: 35%;
       margin-bottom: 2em;
+
+      @include viewport('desktop-xl') {
+        width: 50%;
+      }
+
+      @include viewport('tablet') {
+        width: 50%;
+      }
+
+      @include viewport('tablet-s') {
+        width: 100%;
+        margin-bottom: 1.2em;
+      }
 
       &--bottom {
         width: 100%;
@@ -488,6 +594,10 @@
 
       position: relative;
       z-index: 101;
+    }
+
+    .media-image {
+      --outline-final: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 
