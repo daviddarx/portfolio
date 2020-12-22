@@ -944,6 +944,10 @@ body {
   z-index: 1000;
   transform: translate(var(--pos-x), var(--pos-y));
   will-change: transform;
+
+  &.deactived {
+    display: none;
+  }
 }
 
 .media-image-zoomed-background {

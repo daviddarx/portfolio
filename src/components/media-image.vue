@@ -415,6 +415,8 @@
       },
       animateZoomedImageOutComplete: function () {
         this.$refs.zoomedImage.removeEventListener('mouseleave', this.imageLeaveListener);
+        this.$refs.zoomedImageContainer.classList.add('deactived')
+
         clearInterval(this.zoomedImageAnimationOutInterval);
         window.cancelAnimationFrame(this.zoomedImageAnimationFrame);
       },
@@ -443,6 +445,8 @@
           this.createZoomedBackground();
           this.createZoomedImage();
           this.scrollDebounced = debounce(this.scrollListener, 200);
+        } else {
+          this.$refs.zoomedImageContainer.classList.remove('deactived')
         }
 
         this.setZoomedImage();
