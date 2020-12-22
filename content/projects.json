@@ -118,11 +118,13 @@
       "title": "Mammut",
       "type": "Digitalauftritt & Online Shop",
       "year": "2016",
-      "color": "#e2001a",
-      "colorCase": "#e2001a",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "agency": "Unic",
+      "skills": "Digital Design, Sparring UX",
+      "color": "#FF1B34",
+      "colorCase": "#222222",
+      "inverted": true,
+      "thumb1": "mammut/thumb_01.jpg",
+      "thumb2": "mammut/thumb_02.jpg"
     },
     {
       "uid": "cooprezepte",
