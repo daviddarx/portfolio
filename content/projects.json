@@ -58,7 +58,7 @@
       "uid": "uzhinno",
       "title": "UZH Innovation Hub",
       "type": "Online Präsentation",
-      "year": "2019",
+      "year": "2018",
       "color": "#8439a2",
       "colorCase": "#8439a2",
       "inverted": false,
@@ -72,17 +72,6 @@
       "year": "2018",
       "color": "#e32236",
       "colorCase": "#e32236",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
-    },
-    {
-      "uid": "medidata",
-      "title": "MediData",
-      "type": "Brand Relaunch",
-      "year": "2018",
-      "color": "#01519E",
-      "colorCase": "#01519E",
       "inverted": false,
       "thumb1": "thumb_01.jpg",
       "thumb2": "thumb_02.jpg"
