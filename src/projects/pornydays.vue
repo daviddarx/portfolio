@@ -571,8 +571,8 @@
       </h2>
       <div class="project__credits-desc">
         <p>
-          Full-Stack Zusammenarbeit &amp; teschnische Leitung  – David Aerne<br>
-          Copy –  Cédric Knapp
+          Full-Stack Zusammenarbeit &amp; teschnische Leitung – David Aerne<br>
+          Copy – Cédric Knapp
         </p>
       </div>
     </div>
