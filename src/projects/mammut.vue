@@ -81,7 +81,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_02.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -99,7 +99,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_01_1.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -109,7 +109,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_01_2.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -127,7 +127,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_03.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -143,7 +143,7 @@
             <media-image
               v-bind:url="this.mediasPath+'designs/mammut_d_04.jpg'"
               v-bind:title="'Finales Design'"
-              v-bind:hdRatio="2"
+              v-bind:hdRatio="1"
               v-bind:zoomable="true"
               v-bind:centered="false"
               v-bind:autoLoad="false"
@@ -162,7 +162,7 @@
             <media-image
               v-bind:url="this.mediasPath+'designs/mammut_d_05.jpg'"
               v-bind:title="'Finales Design'"
-              v-bind:hdRatio="2"
+              v-bind:hdRatio="1"
               v-bind:zoomable="true"
               v-bind:centered="false"
               v-bind:autoLoad="false"
@@ -183,7 +183,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_06_1.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -193,7 +193,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_06_2.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
@@ -208,7 +208,7 @@
           <media-image
             v-bind:url="this.mediasPath+'designs/mammut_d_07.jpg'"
             v-bind:title="'Finales Design'"
-            v-bind:hdRatio="2"
+            v-bind:hdRatio="1"
             v-bind:zoomable="true"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
