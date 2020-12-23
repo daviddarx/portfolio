@@ -38,7 +38,7 @@
         <p class="project__lead">
           Die berühmte Marke für Wintersportausrüstung und -bekleidung beauftragte Unic 2016 mit der vollständigen Neugestaltung ihrer Website und der Einrichtung eines integrierten Shops zur Digitalisierung des Verkaufsprozesses.
         </p>
-        <div class="project__desc eao-desc">
+        <div class="project__desc mam-desc">
           <p>
             Das Hauptziel war es, die Produkte von Mammut attraktiv zu präsentieren und zum Direktverkauf anzubieten, während die umfangreichen Inhalte der Athleten und der Community sinnvoll  integriert wurden.
           </p>
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <section class="project__section project__section--padding-2x mam-adv">
+    <section class="project__section project__section--padding-2x project__section--colored mam-adv">
       <div class="project__cols project__cols--reversed">
         <div class="project__col-right mam-adv__right">
           <deco-image
@@ -67,7 +67,7 @@
             <h2 class="project__pick-title">
               Was ist dein nächstes Abenteuer mit Mammut?
             </h2>
-            <div class="project__pick-desc eao-ps__desc">
+            <div class="project__pick-desc mam-adv__desc">
               <p>
                 Der User konnte diese Frage ganz oben auf der Startseite antworten und die Website stellte dann verwandte Produkte und Stories dar, die auf den fünf wichtigsten Outdoor-Sportaktivitäten basieren.
               </p>
@@ -338,11 +338,11 @@
         let datas = {};
 
         if (windowW > 1440 || (windowW > 1280 && window.devicePixelRatio > 1)) {
-          datas.url = this.mediasPath+'deco_01_hd.png';
+          datas.url = this.mediasPath+'deco_01.png';
           datas.hd = 1;
         } else {
           datas.url = this.mediasPath+'deco_01.png';
-          datas.hd = 2;
+          datas.hd = 1;
         }
         return datas;
       },
@@ -376,6 +376,7 @@
 
   .mammut {
     --c-title: #ff1b34;
+    --c-grey-value: 45;
 
     .project__meta-title,
     .project__title,
@@ -415,9 +416,13 @@
       --s-translateYAnimateIn: 0;
 
       z-index: 200;
-      width: 65%;
+      width: 50%;
       right: 0;
       top: 0;
+
+      @include viewport('mobile-l') {
+        width: 75%;
+      }
     }
   }
 
@@ -432,7 +437,7 @@
       position: absolute;
       z-index: -100;
       width: 140%;
-      transform: translate(-30%, -35%);
+      transform: translate(-30%, -33%);
 
       @include viewport('desktop') {
         transform: translate(-30%, -30%);
@@ -443,11 +448,41 @@
         width: 100%;
         transform: translate(0, 0);
         margin-top: -25%;
+        margin-left: -2%;
+      }
+
+      @include viewport('mobile-l') {
+        margin-top: -20%;
+        margin-bottom: 5%;
       }
     }
   }
 
   .mam-adv {
+    --c-background: rgba(var(--c-grey-value), var(--c-grey-value), var(--c-grey-value), 1);
+
+    margin-top: calc(var(--s-gutter) * 2);
+
+    @include viewport('tablet-s') {
+      margin-top: calc(var(--s-gutter) * 1.2);
+      padding-bottom: calc(var(--s-gutter) * 2);
+    }
+
+    .project__pick-title,
+    .project__pick-desc {
+      @include anti-aliased();
+    }
+
+    .project__pick-desc {
+      color: white;
+    }
+
+    &__desc {
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &__left {
       flex-basis: 50%;
       box-sizing: border-box;
@@ -470,13 +505,10 @@
       top: 0;
       left: var(--s-gutter-col);
       right: calc(var(--s-gutter) * -2);
-      height: 500px;
+      height: 740px;
+      margin-top: calc(var(--s-gutter) * -3);
       background-size: cover;
       background-position: center top;
-
-      @include viewport('desktop-xl') {
-        height: 740px;
-      }
 
       @include viewport('tablet-s') {
         position: relative;
@@ -484,7 +516,7 @@
         right: auto;
         width: 100vw;
         height: 300px;
-        margin-top: var(--s-gutter);
+        margin-top: 0;
       }
 
       &::after {
@@ -494,7 +526,7 @@
         height: 75%;
         left: 0;
         bottom: 0;
-        background: linear-gradient(0deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 0) 100%);
+        background: linear-gradient(0deg, rgba(var(--c-grey-value), var(--c-grey-value), var(--c-grey-value), 1) 0%, rgba(var(--c-grey-value), var(--c-grey-value), var(--c-grey-value), 0) 100%);
       }
     }
 
@@ -516,9 +548,7 @@
       }
 
       &--01 {
-        @include viewport('tablet-s') {
-          margin-top: var(--s-gutter);
-        }
+        margin-top: var(--s-gutter);
       }
 
       &--02 {
@@ -532,7 +562,7 @@
           height: 5%;
           left: 0;
           bottom: 0;
-          background: linear-gradient(0deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 0) 100%);
+          background: linear-gradient(0deg, rgba(var(--c-grey-value), var(--c-grey-value), var(--c-grey-value), 1) 0%, rgba(var(--c-grey-value), var(--c-grey-value), var(--c-grey-value), 0) 100%);
         }
       }
 
@@ -547,7 +577,9 @@
 
     &__legend {
       @include hyphens();
+      @include anti-aliased();
 
+      color: white;
       font-size: var(--s-text-small);
       width: 35%;
       margin-bottom: 2em;
@@ -576,8 +608,12 @@
   .mam-rd {
     position: relative;
     color: var(--project-color);
-    padding-top: var(--s-gutter);
+    padding-top: calc(var(--s-gutter) * 2.5);
     text-align: center;
+
+    @include viewport('tablet-s') {
+      padding-top: calc(var(--s-gutter) * 2);
+    }
 
     &__title {
       @include anti-aliased();
@@ -590,14 +626,14 @@
     }
 
     .project__mobile-thumb {
-      --box-shadow: none;
+      --box-shadow: 0 10px 30px rgba(29, 51, 74, 0.05), 0 15px 10px rgba(29, 51, 74, 0.05);
 
       position: relative;
       z-index: 101;
     }
 
     .media-image {
-      --outline-final: 1px solid rgba(255, 255, 255, 0.1);
+      --outline-final: 1px solid rgba(29, 51, 74, 0.25);
     }
   }
 

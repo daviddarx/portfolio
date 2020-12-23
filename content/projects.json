@@ -110,8 +110,8 @@
       "agency": "Unic",
       "skills": "Digital Design, Sparring UX",
       "color": "#FF1B34",
-      "colorCase": "#222222",
-      "inverted": true,
+      "colorCase": "#E0EDF3",
+      "inverted": false,
       "thumb1": "mammut/thumb_01.jpg",
       "thumb2": "mammut/thumb_02.jpg"
     },
