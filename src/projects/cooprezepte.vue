@@ -341,6 +341,40 @@
       position: absolute;
       width: 125%;
       transform: translate(-27%, -5%);
+
+      @include viewport('desktop') {
+        width: 145%;
+        transform: translate(-35%, 1%);
+      }
+
+      @include viewport('tablet') {
+        width: 135%;
+        transform: translate(-35%, -5%);
+      }
+
+      @include viewport('tablet-s') {
+        position: relative;
+        width: 100%;
+        transform: translate(-2%, 0);
+        margin-bottom: calc(var(--s-gutter) * 0.5);
+      }
+
+      @include viewport('mobile-l') {
+        margin-top: calc(var(--s-gutter) * 0.5);
+      }
+
+      @include viewport('mobile') {
+        width: 110%;
+        transform: translate(-6%, 0);
+        margin-top: calc(var(--s-gutter) * 0.25);
+      }
+
+      @include viewport('mobile-s') {
+        width: 100%;
+        transform: translate(-2%, 0);
+        margin-top: calc(var(--s-gutter) * 0.25);
+      }
+
     }
   }
 
@@ -366,10 +400,11 @@
       margin-bottom: calc(var(--s-gutter) * 1.6);
 
       @include viewport('tablet') {
+        margin-top: 0;
         margin-bottom: calc(var(--s-gutter) * 1);
       }
 
-      @include viewport('tablet') {
+      @include viewport('tablet-s') {
         padding-top: calc(var(--s-gutter) * 0.25);
       }
 
@@ -384,7 +419,7 @@
       margin-top: calc(var(--s-gutter) * 2);
 
       @include viewport('tablet-s') {
-        margin-top: calc(var(--s-gutter) * 1.5);
+        margin-top: calc(var(--s-gutter) * 1);
       }
 
       @include viewport('mobile-l') {
@@ -418,6 +453,10 @@
       &--03,
       &--06 {
         margin-top: calc(var(--s-gutter) * 3);
+
+        @include viewport('tablet-s') {
+          margin-top: calc(var(--s-gutter) * 1);
+        }
       }
     }
 
