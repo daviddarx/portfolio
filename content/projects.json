@@ -120,11 +120,13 @@
       "title": "Coop Rezepte",
       "type": "Rezept-Platform",
       "year": "2016",
-      "color": "#ff8c01",
-      "colorCase": "#ff8c01",
+      "agency": "Unic",
+      "skills": "Digital Design, Sparring UX",
+      "color": "#ff8c00",
+      "colorCase": "#ff8c00",
       "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "thumb1": "cooprz/thumb_01.jpg",
+      "thumb2": "cooprz/thumb_02.jpg"
     }
   ]
 }
