@@ -374,7 +374,6 @@
         transform: translate(-2%, 0);
         margin-top: calc(var(--s-gutter) * 0.25);
       }
-
     }
   }
 
