@@ -58,6 +58,10 @@
         type: Boolean,
         default: false
       },
+      muted: {
+        type: Boolean,
+        default: true
+      },
       toggleclick: {
         type: Boolean,
         default: false
@@ -91,6 +95,9 @@
 
       if (this.isAutoPlay == true && this.toggleclick == true) {
         this.$refs.video.addEventListener('click', this.togglePlay);
+      }
+      if (this.muted == false) {
+        this.$refs.video.muted = false;
       }
     },
     methods: {
