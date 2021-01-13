@@ -70,11 +70,13 @@
       "title": "Compona",
       "type": "Digitalauftritt & Webshop",
       "year": "2018",
+      "agency": "Eyekon",
+      "skills": "Art Direction & Digital Design, Sparring UX",
       "color": "#e32236",
-      "colorCase": "#e32236",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "colorCase": "#b91d2d",
+      "inverted": true,
+      "thumb1": "compona/thumb_01.jpg",
+      "thumb2": "compona/thumb_02.jpg"
     },
     {
       "uid": "swisstrustroom",
