@@ -466,6 +466,19 @@
       width: 130%;
       margin-left: -32%;
       margin-top: -3%;
+
+      @include viewport('desktop') {
+        width: 160%;
+        margin-left: -60%;
+        margin-top: -3%;
+      }
+
+      @include viewport('tablet') {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        margin-bottom: calc(var(--s-gutter) * 1.3);
+      }
     }
   }
 
@@ -475,6 +488,7 @@
 
     @include viewport('tablet-s') {
       display: block;
+      margin-top: calc(var(--s-gutter) * 3)
     }
 
     &__desc {
@@ -482,11 +496,25 @@
       flex-basis: 50%;
       box-sizing: border-box;
       padding: calc(var(--s-gutter) * 2);
+      padding-bottom: var(--s-gutter);
       padding-top: 0;
+
+      @include viewport('tablet') {
+        padding: var(--s-gutter);
+        padding-top: 0;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &__video {
       flex-basis: 50%;
+
+      @include viewport('tablet-s') {
+        padding: 0 var(--s-gutter);
+      }
     }
   }
 
@@ -495,6 +523,7 @@
 
     @include viewport('tablet-s') {
       display: block;
+      margin-top: calc(var(--s-gutter) * 2);
     }
 
     &__desc {
@@ -503,11 +532,24 @@
       order: 2;
       box-sizing: border-box;
       padding: calc(var(--s-gutter) * 2);
+      padding-bottom: var(--s-gutter);
+
+      @include viewport('tablet') {
+        padding: var(--s-gutter);
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &__video {
       flex-basis: 50%;
       order: 1;
+
+      @include viewport('tablet-s') {
+        padding: 0 var(--s-gutter);
+      }
     }
   }
 
@@ -518,6 +560,11 @@
       text-align: center;
       padding-top: calc(var(--s-gutter) * 0.25);
       padding-bottom: calc(var(--s-gutter) * 1.75);
+
+      @include viewport('tablet-s') {
+        padding-top: var(--s-gutter);
+        padding-bottom: var(--s-gutter);
+      }
     }
 
     &__video {
@@ -549,12 +596,23 @@
       padding-top: calc(var(--s-gutter) * 0.75);
       padding-bottom: calc(var(--s-gutter) * 1.75);
       color: black;
+
+      @include viewport('tablet-s') {
+        padding-top: 0;
+        padding-bottom: var(--s-gutter);
+      }
     }
 
     &__screen {
       --outline-final: 2px solid #d7dbe6;
 
+      max-width: 1280px;
+      margin: 0 auto;
       margin-top: calc(var(--s-gutter) * 2);
+
+      @include viewport('tablet-s') {
+        margin-top: var(--s-gutter);
+      }
 
       &--01 {
         margin-top: 0;
@@ -604,6 +662,7 @@
 
       @include viewport('tablet-s') {
         margin-top: var(--s-gutter);
+        padding-bottom: var(--s-gutter);
       }
     }
   }
