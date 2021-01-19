@@ -310,6 +310,17 @@
       </div>
     </div>
 
+    <div class="project__credits mam-awards">
+      <h2 class="project__credits-title">
+        Awards
+      </h2>
+      <div class="project__credits-desc">
+        <p>
+          BOSW 2017 – Gold in der Kategorie Usability<br>
+        </p>
+      </div>
+    </div>
+
   </project>
 </template>
 
@@ -635,6 +646,10 @@
     .media-image {
       --outline-final: 1px solid rgba(29, 51, 74, 0.25);
     }
+  }
+
+  .mam-awards {
+    padding-top: calc(var(--s-gutter) * 0.5);
   }
 
 </style>
