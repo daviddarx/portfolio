@@ -488,7 +488,7 @@
 
     @include viewport('tablet-s') {
       display: block;
-      margin-top: calc(var(--s-gutter) * 3)
+      margin-top: calc(var(--s-gutter) * 3);
     }
 
     &__desc {
