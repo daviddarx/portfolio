@@ -370,6 +370,17 @@
       <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small cta-ar">Projekt online anschauen</a>
       <p class="cta-detail-ar">(Optimiert für Smartphones)</p>
     </div>
+
+    <div class="project__credits astro-awards">
+      <h2 class="project__credits-title">
+        Awards
+      </h2>
+      <div class="project__credits-desc">
+        <p>
+          Best of Swiss Apps 2020 – Bronze-Award
+        </p>
+      </div>
+    </div>
   </project>
 </template>
 
