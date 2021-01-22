@@ -383,7 +383,7 @@
       <h2 class="project__pick-title porny-rd__title">
         Responsive Design
       </h2>
-      <div class="project__mobile-thumbs">
+      <div class="project__mobile-thumbs porny-rd__thumbs">
         <div class="project__mobile-thumb project__mobile-thumb--01">
           <media-image
             v-bind:url="this.mediasPath+'designs/porny_m_01.jpg'"
@@ -1227,6 +1227,10 @@
       @include viewport('mobile-s') {
         margin-top: var(--s-gutter);
       }
+    }
+
+    &__thumbs {
+      --s-mobile: 375px;
     }
 
     .project__mobile-thumb {
