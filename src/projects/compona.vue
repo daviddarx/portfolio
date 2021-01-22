@@ -558,7 +558,7 @@
 
     &__title {
       text-align: center;
-      padding-top: calc(var(--s-gutter) * 0.25);
+      padding-top: var(--s-gutter);
       padding-bottom: calc(var(--s-gutter) * 1.75);
 
       @include viewport('tablet-s') {
