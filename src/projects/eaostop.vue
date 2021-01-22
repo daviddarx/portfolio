@@ -211,6 +211,29 @@
       </div>
     </section>
 
+    <section class="project__section project__section--padding-2x eao-film">
+      <div class="project__pick">
+        <h2 class="project__pick-title eao-film__title">
+          Erklärfilm
+        </h2>
+      </div>
+      <div
+        class="eao-film__video"
+      >
+        <media-video
+          v-bind:url="this.mediasPath+'erklaerfilm/eao_erklaer_film.mp4'"
+          v-bind:poster="this.mediasPath+'erklaerfilm/eao_erklaer_film.jpg'"
+          v-bind:autoplay="false"
+          v-bind:muted="false"
+          v-bind:isvideo="true"
+          v-bind:id="'eao-film'"
+          ref="eao-film"
+          class="eao-film__video-el observed"
+        >
+        </media-video>
+      </div>
+    </section>
+
     <section class="project__section project__section--padding-2x project__section--colored eao-fd">
       <h2 class="project__pick-title eao-fd__title">
         Finales Design
@@ -324,7 +347,7 @@
       <h2 class="project__pick-title eao-rd__title">
         Responsive Design
       </h2>
-      <div class="project__mobile-thumbs">
+      <div class="project__mobile-thumbs eao-rd__thumbs">
         <div class="project__mobile-thumb project__mobile-thumb--01">
           <media-image
             v-bind:url="this.mediasPath+'designs/eao_m_01.jpg'"
@@ -411,8 +434,8 @@
       </h2>
       <div class="project__credits-desc">
         <p>
-          UX &amp; Wireframing  – Marco Lüthi<br>
-          3D Renderings –  Giacomo Pedemonte &amp; Deny Fousek
+          UX &amp; Wireframing, Erklärfilm – Marco Lüthi<br>
+          3D Renderings – Giacomo Pedemonte &amp; Deny Fousek
         </p>
       </div>
     </div>
@@ -502,6 +525,8 @@
 
   .eao {
     --c-title: #e72128;
+    --c-grey: #ebebeb;
+    --c-grey-dark: #2f2f2f;
     --s-col-vid: 65%;
     --s-col-desc: 35%;
     --s-col-desc-padding: calc(var(--s-gutter) * 0.75);
@@ -537,15 +562,20 @@
     &--2 {
       width: 230%;
       bottom: 0;
-      transform: translate(-65%, 60%);
+      transform: translate(-60%, 75%);
 
-      @include viewport('desktop') {
-        width: 180%;
-        transform: translate(-65%, 70%);
+      @include viewport('desktop-xl') {
+        transform: translate(-60%, 70%);
       }
 
       @include viewport('desktop') {
-        transform: translate(-70%, 85%);
+        width: 200%;
+        transform: translate(-65%, 80%);
+      }
+
+      @include viewport('tablet') {
+        width: 230%;
+        transform: translate(-65%, 90%);
       }
 
       @include viewport('tablet-s') {
@@ -721,9 +751,7 @@
   }
 
   .eao-ev {
-    overflow: hidden;
     padding-top: 0;
-    padding-bottom: calc(var(--s-gutter) * 3);
 
     @include viewport('tablet-s') {
       padding-top: var(--s-gutter);
@@ -745,16 +773,62 @@
     }
 
     &__video {
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 1px;
+    }
+  }
+
+  .eao-film {
+    padding-top: var(--s-gutter);
+    padding-bottom: 0;
+
+    @include viewport('tablet-s') {
+      padding-top: 0;
+    }
+
+    &__title {
+      text-align: center;
+      padding-bottom: calc(var(--s-gutter) * 1.75);
+
+      @include viewport('tablet-s') {
+        padding-top: 0;
+        padding-bottom: var(--s-gutter);
+      }
+    }
+
+    &__video {
+      position: relative;
+      padding-bottom: calc(var(--s-gutter) * 2);
+
+      &::after {
+        --s-margin: calc(var(--s-gutter) * -2);
+
+        content: "";
+        position: absolute;
+        top: calc(50% - var(--s-gutter));
+        bottom: 0;
+        left: var(--s-margin);
+        right: var(--s-margin);
+        background-color: var(--c-grey);
+        z-index: -1;
+      }
+    }
+
+    &__video-el {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin: 0 auto;
+      max-width: 1920px;
     }
   }
 
   .eao-fd {
-    --c-background: #ebebeb;
+    --c-background: var(--c-grey);
 
+    padding-top: var(--s-gutter);
     padding-bottom: calc(var(--s-gutter) * 6);
 
-    @include viewport('tablet') {
+    @include viewport('tablet-s') {
+      padding-top: 0;
       padding-bottom: calc(var(--s-gutter) * 4);
     }
 
@@ -763,15 +837,12 @@
       margin-bottom: calc(var(--s-gutter) * 1.6);
 
       @include viewport('tablet') {
-        margin-bottom: calc(var(--s-gutter) * 1);
-      }
-
-      @include viewport('tablet') {
         padding-top: calc(var(--s-gutter) * 0.25);
       }
 
-      @include viewport('mobile-l') {
-        padding-top: calc(var(--s-gutter) * 0.75);
+      @include viewport('tablet-s') {
+        padding-top: 0;
+        margin-bottom: var(--s-gutter);
       }
     }
 
@@ -818,7 +889,7 @@
   }
 
   .eao-rd {
-    --c-background: var(--c-grey);
+    --c-background: var(--c-grey-dark);
 
     position: relative;
     color: white;
@@ -862,6 +933,10 @@
       @include viewport('mobile-s') {
         margin-top: calc(var(--s-gutter) * 3);
       }
+    }
+
+    &__thumbs {
+      --s-mobile: 375px;
     }
 
     .project__mobile-thumb {
