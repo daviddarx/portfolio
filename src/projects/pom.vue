@@ -15,7 +15,7 @@
         v-bind:autoLoad="false"
         v-on:loaded="loadNextImage"
         ref="imageDeco1"
-        class="pom-deco pom-deco--1 animate-in"
+        class="pom-deco pom-deco--1"
       >
       </deco-image>
 
