@@ -39,7 +39,7 @@
         <p class="project__lead">
           Compona ist ein Distributor für elektronische Komponenten, der seit 40 Jahren Kataloge mit mehr als 1'000 Seiten und 40’000 Produkte druckte.
         </p>
-        <div class="project__desc eao-desc">
+        <div class="project__desc">
           <p>
             Zwar existierte bereits ein Web-Katalog, dieser wusste aber aufgrund unzureichender Übersicht und langer Ladezeiten nicht vollends zu überzeugen – weshalb die meisten Kunden weiterhin auf den Print-Wälzer zurückgriffen.
           </p>
