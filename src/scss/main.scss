@@ -509,6 +509,7 @@ body {
 
 .cta {
   @include text-link();
+  @include aliased();
 
   --c-text: white;
   --c-bg: black;
@@ -546,6 +547,8 @@ body {
   }
 
   &--inverted {
+    @include anti-aliased();
+
     --c-text: black;
     --c-bg: white;
   }
