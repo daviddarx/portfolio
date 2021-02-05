@@ -110,7 +110,7 @@
     <section class="project__section project__section--padding-2x project__section--colored project__cols uzh-proto">
       <div class="project__col-right uzh-proto__desc is-selection-normal">
         <div class="project__pick">
-          <h2 class="project__pick-title">
+          <h2 class="project__pick-title uzh-proto__title">
             Finales Prototyp
           </h2>
           <div class="project__pick-desc">
@@ -136,14 +136,16 @@
         </media-video>
       </div>
       <div class="uzh-proto__cta">
-        <a href="https://files.daviddarx.com/works/addons/uzh-inno/prototype/" target="_blank" class="cta cta--small">Prototyp online schauen</a>
+        <div class="uzh-proto__cta-container">
+          <a href="https://files.daviddarx.com/works/addons/uzh-inno/prototype/" target="_blank" class="cta cta--small">Prototyp online schauen</a>
+        </div>
       </div>
     </section>
 
     <section class="project__section project__section--padding-none uzh-story">
       <div class="project__col-right uzh-story__desc is-selection-normal">
         <div class="project__pick">
-          <h2 class="project__pick-title">
+          <h2 class="project__pick-title uzh-story__title">
             Storyboarding
           </h2>
           <div class="project__pick-desc">
@@ -405,6 +407,48 @@
 <style lang="scss">
   @import '../scss/assets.scss';
 
+  .uzh {
+    --i1-w: 110%;
+    --i1-s: 0.85;
+    --i1-rx: 11deg;
+    --i1-ry: 4deg;
+    --i1-rz: 14deg;
+    --i1-tx: -8%;
+    --i1-ty: 26%;
+    --i2-s: 0.9;
+    --i2-rx: 10deg;
+    --i2-ry: 3deg;
+    --i2-rz: 14deg;
+    --i2-tx: -10%;
+    --i2-ty: 26%;
+
+    @include viewport('desktop') {
+      --i1-s: 0.9;
+      --i2-s: 0.95;
+      --i1-rx: 8deg;
+      --i2-rx: 6deg;
+      --i1-rz: 10deg;
+      --i2-rz: 11deg;
+      --i1-tx: -10%;
+      --i2-tx: -12%;
+      --i1-ty: 60%;
+      --i2-ty: 60%;
+    }
+
+    @include viewport('tablet') {
+      --i1-ty: 10%;
+      --i2-ty: 15%;
+    }
+
+    @include viewport('tablet-s') {
+      --i1-w: 90%;
+      --i1-tx: 5%;
+      --i2-tx: 7%;
+      --i1-ty: 0%;
+      --i2-ty: 5%;
+    }
+  }
+
   .uzh-deco {
     --w: 60vw;
     --s-translate-x: 10%;
@@ -416,6 +460,12 @@
     right: 0;
     width: var(--w);
     max-width: 1851px;
+
+    @include viewport('tablet-s') {
+      --w: 100vw;
+      --s-translate-x: 15%;
+      --s-translate-y: -10%;
+    }
   }
 
   .uzh-intro {
@@ -425,17 +475,26 @@
       perspective: 15vw;
       top: 0;
       bottom: 0;
+
+      @include viewport('vertical') {
+        transform: translateY(-30%);
+      }
+
+      @include viewport('tablet') {
+        transform: none;
+      }
     }
 
     &__img {
       position: absolute;
       z-index: 10;
-      width: 117%;
-      transform: rotateX(11deg) rotateY(4deg) rotateZ(12deg) translate(-16%, 12%);
+      width: var(--i1-w);
+      transform: scale(var(--i1-s)) rotateX(var(--i1-rx)) rotateY(var(--i1-ry)) rotateZ(var(--i1-rz)) translate(var(--i1-tx), var(--i1-ty));
       animation: uzh-intro-anime 10s ease-in-out both infinite;
 
-      @include viewport('desktop') {
-        // width: 150%;
+      @include viewport('tablet-s') {
+        position: relative;
+        padding-bottom: 20%;
       }
     }
 
@@ -450,7 +509,7 @@
 
   @keyframes uzh-intro-anime {
     50% {
-      transform: rotateX(13deg) rotateY(6deg) rotateZ(10deg) translate(-18%, 15%);
+      transform: scale(var(--i2-s)) rotateX(var(--i2-rx)) rotateY(var(--i2-ry)) rotateZ(var(--i2-rz)) translate(var(--i2-tx), var(--i2-ty));
     }
   }
 
@@ -483,6 +542,13 @@
       p:last-child {
         margin-bottom: 0;
       }
+
+      @include viewport('tablet') {
+        position: relative;
+        bottom: auto;
+        padding-right: var(--s-gutter);
+        padding-bottom: var(--s-gutter);
+      }
     }
 
     &__video-02,
@@ -509,6 +575,12 @@
     padding-top: calc(var(--s-gutter) * 2.5);
     padding-bottom: 0;
 
+    &__title {
+      @include viewport('mobile-s') {
+        padding-top: calc(var(--s-gutter) * 2.5);
+      }
+    }
+
     &__desc {
       @include aliased();
 
@@ -516,6 +588,11 @@
 
       p:last-child {
         margin-bottom: 0;
+      }
+
+      @include viewport('tablet-s') {
+        margin-left: 0;
+        flex-basis: 100%;
       }
     }
 
@@ -536,6 +613,12 @@
         background-color: var(--project-color);
         z-index: -1;
       }
+    }
+
+    &__video-el,
+    &__cta-container {
+      max-width: 1600px;
+      margin: 0 auto;
     }
 
     &__video-el {
@@ -573,6 +656,20 @@
       height: calc(var(--s-gutter) * 2);
       bottom: 0;
       background-color: black;
+
+      @include viewport('tablet-s') {
+        height: calc(var(--s-gutter) * 1.5);
+      }
+
+      @include viewport('mobile-l') {
+        height: calc(var(--s-gutter) * 1);
+      }
+    }
+
+    &__title {
+      @include viewport('mobile-s') {
+        padding-top: calc(var(--s-gutter) * 2.5);
+      }
     }
 
     &__desc {
@@ -582,6 +679,12 @@
       p:last-child {
         margin-bottom: 0;
       }
+
+      @include viewport('tablet-s') {
+        margin-left: 0;
+        flex-basis: 100%;
+        padding-left: var(--s-gutter);
+      }
     }
 
     &__screens {
@@ -589,21 +692,38 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: calc(var(--s-gutter-col) * 2);
       margin-top: calc(var(--s-gutter) * 1.25);
+
+      @include viewport('mobile-l') {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
     &__screen {
       &:nth-child(-n+4) {
         transform: translateX(calc(var(--s-gutter) * 2));
+
+        @include viewport('mobile-l') {
+          transform: none;
+        }
       }
 
       &:nth-child(n+9):nth-child(-n+13) {
         transform: translateX(calc(var(--s-gutter) * -2));
+
+        @include viewport('mobile-l') {
+          transform: none;
+        }
       }
     }
   }
 
   .uzh-fp {
     padding-bottom: calc(var(--s-gutter) * 4);
+
+    @include viewport('tablet-s') {
+      padding-top: calc(var(--s-gutter) * 2);
+      padding-bottom: var(--s-gutter);
+    }
 
     &__title {
       text-align: center;
@@ -614,18 +734,55 @@
         padding-top: 0;
         padding-bottom: var(--s-gutter);
       }
+
+      @include viewport('mobile-s') {
+        padding-top: calc(var(--s-gutter) * 1.5);
+      }
+    }
+
+    &__video {
+      padding-bottom: var(--s-gutter);
+
+      @include viewport('mobile-s') {
+        padding-bottom: calc(var(--s-gutter) * 2);
+      }
     }
   }
 
   .uzh-ctx {
+    @include viewport('tablet-s') {
+      padding: var(--s-gutter);
+    }
+
     &__video {
       padding: 0;
       transform: translate(-1px, calc(var(--s-gutter) * -2));
+
+      @include viewport('tablet-s') {
+        transform: none;
+      }
     }
 
     &__desc {
       order: 2;
       padding: calc(var(--s-gutter) * 2);
+
+      @include viewport('tablet') {
+        padding: calc(var(--s-gutter) * 1.5);
+      }
+
+      @include viewport('tablet-s') {
+        padding: 0;
+        padding-bottom: calc(var(--s-gutter) * 0.5);
+      }
+
+      @include viewport('mobile') {
+        padding-bottom: calc(var(--s-gutter) * 1);
+      }
+
+      @include viewport('mobile-s') {
+        padding-top: calc(var(--s-gutter) * 2);
+      }
     }
 
     &__links {
