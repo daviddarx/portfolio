@@ -167,6 +167,8 @@ body {
       left: 0;
       background-color: var(--c-bt-lines);
       border-radius: 100%;
+      border: var(--s-lines) solid var(--c-bt-bg);
+      box-sizing: border-box;
       transform: scale(0);
       transition: transform var(--e-out) 0.35s;
 
