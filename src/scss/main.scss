@@ -1851,7 +1851,8 @@ body {
   }
 
   &__col-left,
-  &__col-right {
+  &__col-right,
+  &__col-full {
     position: relative;
     flex-basis: 50%;
     flex-shrink: 0;
@@ -1884,6 +1885,10 @@ body {
       padding-left: 0;
       padding-right: 0;
     }
+  }
+
+  &__coll-full {
+    flex-basis: 100%;
   }
 
   &__col-third {
