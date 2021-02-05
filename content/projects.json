@@ -57,13 +57,15 @@
     {
       "uid": "uzhinno",
       "title": "UZH Innovation Hub",
-      "type": "Online Präsentation",
+      "type": "Online-Präsentation",
+      "agency": "Eyekon",
+      "skills": "Konzept & Storyboard, Art Direction & Digital Design, Creative Coding",
       "year": "2018",
       "color": "#8439a2",
-      "colorCase": "#8439a2",
-      "inverted": false,
-      "thumb1": "thumb_01.jpg",
-      "thumb2": "thumb_02.jpg"
+      "colorCase": "#5B2272",
+      "inverted": true,
+      "thumb1": "uzh/thumb_01.jpg",
+      "thumb2": "uzh/thumb_02.jpg"
     },
     {
       "uid": "compona",
