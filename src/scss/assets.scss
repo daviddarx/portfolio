@@ -157,7 +157,7 @@ $breakpoints: (
   --s-letter-spacing-readability: 0.025em;
   --s-gutter: 8vh;
   --s-gutter-col: calc(var(--s-gutter) * 0.25);
-  --s-logo: calc(var(--s-text-small) * 2.3);
+  --s-logo: calc(var(--s-text-small) * 2.4);
   --s-lines: 2px;
   --s-twerk: 0.5px;
   --s-decal-close-to-corner: 0.5em;
@@ -175,22 +175,6 @@ $breakpoints: (
 
   @include viewport('vertical-xl') {
     --s-gutter: 5vh;
-  }
-
-  @media (min-width: 1920px) {
-    --s-logo: 4.75vh;
-  }
-
-  @include viewport('desktop-xxl') {
-    --s-logo: 4.5vh;
-  }
-
-  @media (min-aspect-ratio: 20/9) {
-    --s-logo: 6vh;
-  }
-
-  @include viewport('vertical-xl') {
-    --s-logo: 3.5vh;
   }
 
   @include viewport('desktop') {
