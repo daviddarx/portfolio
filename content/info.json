@@ -81,21 +81,21 @@
   "expertise": [
     {
       "title": "Konzeption & Gestaltung",
-      "desc": "Konzept & Wireframes, IA, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management.<br><br>Figma, Sketch, Invision, Zeplin, Photoshop, Illustrator, InDesign, After Effects, Final Cut, Keynote."
+      "desc": "Konzept & Wireframes, IA, Prototyping, Storytelling, Art Direction, Digital Design, IxD & UI Design, Branding, Motion Design & UI Animation, Project Management.<br><br>Software: Figma, Sketch, Invision, Zeplin, Photoshop, Illustrator, InDesign, After Effects, Final Cut, Keynote."
     },
     {
       "title": "Entwicklung",
-      "desc": "Frontend: HTML5 Sementic Markup, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Frameworks & Tools: Github, Tower, NPM, Parcel.js, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js, und fast jede andere Bibliothek, die von einem Projekt angefordert wird.<br><br>Früher: Flash, Actionscript 2&3, OOP, Papervision."
+      "desc": "Frontend: Semantical HTML5, BEM, CSS3, Javascript, Responsive Design, Creative Coding.<br><br>Frameworks & Tools: Github, Tower, NPM, Parcel.js, Vue.js, Sass, Jquery, GSAP, PixiJS, Three.js.<br><br>Früher: Flash, Actionscript 2&3, Papervision."
     },
     {
       "title": "Sprachen",
-      "desc": "Französisch (Muttersprache), Deutsch (Verhandlungssicher), Englisch (Verhandlungssicher), Spanish (Grundkenntnisse)."
+      "desc": "Französisch (Muttersprache), Deutsch (verhandlungssicher), Englisch (fließend), Spanish (Grundkenntnisse)."
     }
   ],
   "education": [
     {
       "title": "Interactive Media Design",
-      "school": "Eikon, Berufsfachschule für Gestaltung",
+      "school": "Eikon/Émaf, Berufsfachschule für Gestaltung",
       "additional": "Spezialausbildung Interaction Design<br><br>Während meiner Multimedia-Ausbildung (Kommunikation, Print, Video, Motion & 3D, Interaction) merkte ich schnell, dass mein Herz für die Gestaltung von Interaktionen schlug.",
       "date1": "2004",
       "date2": "2007",
