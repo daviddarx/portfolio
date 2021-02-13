@@ -1470,8 +1470,6 @@ body {
   }
 
   &__step-title {
-    padding-bottom: 0.1em;
-
     @include viewport('mobile-layout') {
       padding-bottom: 0;
     }
@@ -1480,10 +1478,12 @@ body {
   &__step-additional {
     display: block;
     font-size: var(--s-text-small);
-    padding-top: 1.5em;
+    padding-top: 2em;
+    padding-left: 3.2em;
 
     @include viewport('mobile-layout') {
-      padding-top: 0.8em;
+      padding-top: 1em;
+      padding-left: 0;
     }
   }
 

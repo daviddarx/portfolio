@@ -57,9 +57,9 @@
               <span>{{experience.agency}} <span class="dash dash--spaced">–</span> {{experience.place}}</span>
               <span
                 v-if="experience.additional"
+                v-html="experience.additional"
                 class="info__step-additional"
               >
-                {{experience.additional}}
               </span>
             </div>
             <div class="info__step-date">
