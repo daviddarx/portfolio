@@ -32,15 +32,16 @@
           >
           </media-gif>
         </div>
+
         <div
           class="info__introduction"
           v-html="this.info.introduction"
         >
         </div>
+
         <div class="info__cv">
           <a href="https://files.daviddarx.com/daviddarx_cv_2021.pdf" target="_blank" class="cta cta--small">CV herunterladen</a>
         </div>
-
 
         <h2
           class="content-page__subtitle content-page__3-4 hiding-title"
@@ -48,6 +49,7 @@
         >
           Erfahrung
         </h2>
+
         <div class="content-page__list-container">
           <div
             class="content-page__list info__steps-listing"
