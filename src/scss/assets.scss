@@ -73,7 +73,7 @@ $breakpoints: (
 
 @mixin text-indent {
   p {
-    text-indent: 2em;
+    text-indent: 2.5em;
     margin-bottom: 0;
 
     &:first-of-type {
