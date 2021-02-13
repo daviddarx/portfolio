@@ -37,6 +37,10 @@
           v-html="this.info.introduction"
         >
         </div>
+        <div class="info__cv">
+          <a href="https://files.daviddarx.com/daviddarx_cv_2021.pdf" target="_blank" class="cta cta--small">CV herunterladen</a>
+        </div>
+
 
         <h2
           class="content-page__subtitle content-page__3-4 hiding-title"
