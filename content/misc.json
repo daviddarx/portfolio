@@ -6,7 +6,7 @@
     {
       "uid": "digital-playground",
       "title": "Digital Playground",
-      "date": "2020",
+      "date": "2020/2019",
       "thumb": "digital_playground/thumb.jpg",
       "thumbDimensions": [1000, 1000],
       "lead": "Sammlung von verschiedenen abstrakten und interaktiven Creative Coding Experimenten – Farbverbot als einzige Spielregel.",
@@ -89,7 +89,7 @@
     {
       "uid": "kliclick",
       "title": "kliclick",
-      "date": "2020",
+      "date": "2019",
       "thumb": "kliclick/thumb.jpg",
       "thumbDimensions": [1000, 1000],
       "lead": "Kein Briefing, keine User, keine Anforderungen. Dynamisch generierte Galerie für ziellose Bilder.",
