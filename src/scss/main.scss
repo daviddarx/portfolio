@@ -1523,6 +1523,48 @@ body {
   }
 }
 
+.frontend {
+  &__git {
+    margin-bottom: 3em;
+  }
+}
+
+.frontend-link {
+  $root: #{&};
+
+  text-decoration: none;
+  margin-bottom: 3em;
+
+  &__infos {
+    @include fontTitle();
+
+    display: block;
+    font-size: var(--s-text-small);
+    text-decoration: none;
+    margin-bottom: 0.5em;
+  }
+
+  &__detail {
+    @include fontRunText();
+
+    font-size: 0.9em;
+  }
+
+  &__url {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+
+    @include hover() {
+      #{$root}:hover & {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 .home {
   @include viewport('mobile-layout') {
     position: relative;

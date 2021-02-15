@@ -4,6 +4,7 @@ import Misc from './components/misc.vue';
 import MiscDetail from './components/misc-detail.vue';
 import Info from './components/info.vue';
 import Contact from './components/contact.vue';
+import Frontend from './components/frontend.vue';
 import * as ProjectsComponents from './projects/*.vue';
 import * as ProjectsDatas from '../content/projects.json';
 
@@ -50,6 +51,13 @@ let routes = [
     name: 'contact',
     component: Contact,
     meta: { transitionTitle: 'Kontakt' }
+  },
+  {
+    label: 'Frontend',
+    path: '/frontend',
+    name: 'frontend',
+    component: Frontend,
+    meta: { transitionTitle: 'Frontend' }
   }
 ];
 

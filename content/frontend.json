@@ -1,0 +1,165 @@
+{
+  "lead":"Eine Auswahl von Projekten, bei denen ich mich auch um die technische Umsetzung gekümmert habe.",
+  "links": [
+    {
+      "title": "Digital Playground",
+      "year": "2019-2020",
+      "detail": "Creative Coding",
+      "urls": [
+        "https://daviddarx.com/stage-03.html",
+        "https://daviddarx.com/stage-02.html",
+        "https://daviddarx.com/stage-01.html"
+      ]
+    },
+    {
+      "title": "Pornydays",
+      "year": "2019",
+      "detail": "Vue.js Website (Zusammenarbeit mit David Aerne)",
+      "urls": [
+        "https://pornydays.love"
+      ]
+    },
+    {
+      "title": "Kliclick",
+      "year": "2019",
+      "detail": "Interaktive Galerie",
+      "urls": [
+        "https://kliclick.daviddarx.com"
+      ]
+    },
+    {
+      "title": "Dionisio.ch",
+      "year": "2019",
+      "detail": "One-Pager (Eyekon AG)",
+      "urls": [
+        "https://www.dionisio.ch"
+      ]
+    },
+    {
+      "title": "Astrorara",
+      "year": "2020",
+      "detail": "3D-Visualisierung (Eyekon AG)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/astrorara"
+      ]
+    },
+    {
+      "title": "UZH Innovation",
+      "year": "2018",
+      "detail": "Interaktive Präsentation (Eyekon AG)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/uzh-inno"
+      ]
+    },
+    {
+      "title": "MediData",
+      "year": "2018",
+      "detail": "Produktfinder (Eyekon AG)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/medidata"
+      ]
+    },
+    {
+      "title": "pom+",
+      "year": "2017 (Eyekon AG)",
+      "detail": "Responsive Navigation Overlay (Eyekon AG)",
+      "urls": [
+        "https://www.pom.ch"
+      ]
+    },
+    {
+      "title": "Sarah Solderer",
+      "year": "2016",
+      "detail": "One-Pager",
+      "urls": [
+        "http://sarahsolderer.com"
+      ]
+    },
+    {
+      "title": "Digital Watches",
+      "year": "2016",
+      "detail": "Creative Coding",
+      "urls": [
+        "https://files.daviddarx.com/cc/digital-watches/01",
+        "https://files.daviddarx.com/cc/digital-watches/02",
+        "https://files.daviddarx.com/cc/digital-watches/03",
+        "https://files.daviddarx.com/cc/digital-watches/04",
+        "https://files.daviddarx.com/cc/digital-watches/05",
+        "https://files.daviddarx.com/cc/digital-watches/06"
+      ]
+    },
+    {
+      "title": "Predentec",
+      "year": "2014",
+      "detail": "One-Pager (Custom Design Sàrl)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/predentec"
+      ]
+    },
+    {
+      "title": "Olio Leo",
+      "year": "2013",
+      "detail": "Online-Shop",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/olio-leo"
+      ]
+    },
+    {
+      "title": "Barbu TV",
+      "year": "2012",
+      "detail": "Studio-Portfolio",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/barbu/grid",
+        "https://files.daviddarx.com/works/addons/barbu/template"
+      ]
+    },
+    {
+      "title": "Maiergrill",
+      "year": "2012",
+      "detail": "Digitalauftritt (Custom Design Sàrl)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/custom"
+      ]
+    },
+    {
+      "title": "Custom Design",
+      "year": "2012",
+      "detail": "One-Pager (Custom Design Sàrl)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/custom"
+      ]
+    },
+    {
+      "title": "Custom Design – Wishes",
+      "year": "2012",
+      "detail": "Interaktive Galerie (Custom Design Sàrl)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/custom-wishes"
+      ]
+    },
+    {
+      "title": "Swissaid",
+      "year": "2011",
+      "detail": "Digitalauftritt (L//P AG)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/swissaid"
+      ]
+    },
+    {
+      "title": "Groupe E",
+      "year": "2010",
+      "detail": "Digitalauftritt (L//P AG)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/groupe-e"
+      ]
+    },
+    {
+      "title": "EPFL Middle East",
+      "year": "2010",
+      "detail": "Digitalauftritt (Horsform Sàrl)",
+      "urls": [
+        "https://files.daviddarx.com/works/addons/epfl"
+      ]
+    }
+  ]
+}
