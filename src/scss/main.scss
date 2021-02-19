@@ -1566,7 +1566,11 @@ body {
 }
 
 .home {
+  --h-stage: calc(100vh - var(--s-gutter) * 2);
+
   @include viewport('mobile-layout') {
+    --h-stage: calc(100% - var(--s-gutter) * 2);
+
     position: relative;
     height: 100vh;
 
@@ -1619,17 +1623,30 @@ body {
   }
 
   &__stage {
+    position: relative;
     display: block;
     width: 50vw;
-    height: calc(100vh - var(--s-gutter) * 2);
-    background-color: black;
+    height: var(--h-stage);
+    overflow: hidden;
 
     @include viewport('mobile-layout') {
       position: fixed;
       top: var(--s-gutter);
       width: 100%;
-      height: calc(100% - var(--s-gutter) * 2);
     }
+  }
+
+  &__video {
+    --w: auto;
+    --h: calc(var(--h-stage) + 1px);
+    --x: 0;
+    --y: 0;
+
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--w);
+    height: var(--h);
   }
 }
 
