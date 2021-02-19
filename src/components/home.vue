@@ -62,7 +62,6 @@
         videoY: 0,
         mobileStep: 768,
         videoRatio: 1280/1080,
-        mediasPath: 'https://files.daviddarx.com/works/static/home/'
       }
     },
     mounted () {
