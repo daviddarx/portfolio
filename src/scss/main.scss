@@ -1584,23 +1584,35 @@ body {
   }
 
   &__title {
+    --s-left-mobile: 0.5em;
+
     @include label-small;
 
     position: fixed;
     left: 25vw;
     top: calc(var(--s-gutter) - 0.1em);
     width: 20vw;
+    transform-origin: top left;
 
     @include viewport('mobile-layout') {
       position: fixed;
-      width: 100%;
-      color: white;
-      z-index: 10;
-      left: auto;
+      left: calc(var(--s-gutter) + var(--s-left-mobile));
       top: auto;
-      bottom: var(--s-gutter);
-      padding: var(--s-gutter);
-      padding-bottom: calc(var(--s-gutter) - 0.3em);
+      bottom: calc(var(--s-gutter) * 1.9);
+      width: 100vh;
+      transform: rotate(-90deg) !important;
+    }
+
+    @include viewport('mobile-l') {
+      --s-left-mobile: 0.25em;
+    }
+
+    @include viewport('mobile') {
+      --s-left-mobile: 0.05em;
+    }
+
+    @include viewport('mobile-s') {
+      bottom: calc(var(--s-gutter) * 3);
     }
   }
 
@@ -1620,6 +1632,11 @@ body {
     letter-spacing: 0.03em;
     padding-top: 0.5em;
     transform: translate(-0.02em, -0.1em);
+
+    @include viewport('mobile-layout') {
+      display: inline;
+      padding-left: 1em;
+    }
   }
 
   &__stage {
