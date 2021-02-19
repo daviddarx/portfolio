@@ -29,6 +29,7 @@
         v-bind:src="this.url"
         type="video/mp4"
       >
+    <video>
   </div>
 </template>
 
