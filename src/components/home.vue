@@ -87,9 +87,6 @@
           this.videoX = (this.videoW - this.stageW) * -0.5;
         }
 
-        console.log(this.videoW + " " + this.videoH);
-        console.log(this.videoX + " " + this.videoY);
-
         this.$refs.video.style.setProperty('--w', this.videoW + "px");
         this.$refs.video.style.setProperty('--h', this.videoH + "px");
         this.$refs.video.style.setProperty('--x', this.videoX + "px");
