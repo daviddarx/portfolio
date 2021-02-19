@@ -1507,15 +1507,6 @@ body {
     cursor: pointer;
   }
 
-  &__video {
-    filter: grayscale(100%) contrast(2) brightness(2);
-    transition: filter var(--e-out) 1s;
-
-    &:hover {
-      filter: none;
-    }
-  }
-
   &__address {
     font-size: var(--s-text-lead);
     line-height: var(--s-line-height-lead);
