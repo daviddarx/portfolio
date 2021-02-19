@@ -24,15 +24,21 @@
         <div
           class="contact__video-container content-page__3-4 hiding-title"
         >
-          <media-video
-            v-bind:url="this.mediasPath+'k4_1920_5.mp4'"
-            v-bind:poster="this.mediasPath+'k4.jpg'"
-            v-bind:autoplay="true"
-            v-bind:toggleclick="true"
+          <video
+            muted
+            autoplay
+            playsinline
+            loop
+            preload="auto"
+            poster = "https://files.daviddarx.com/works/static/contact/k4.jpg"
             ref="video"
             class="contact__video"
           >
-          </media-video>
+            <source
+              src = "https://files.daviddarx.com/works/static/contact/k4_1920_5.mp4"
+              type = "video/mp4"
+            >
+          </video>
         </div>
         <p class="contact__address">
           Pflanzschulstrasse 35<br>
@@ -53,7 +59,6 @@
 
   export default Vue.extend({
     components: {
-      'media-video': MediaVideo,
       'credits': Credits
     },
     mixins: [contentPageTitle],
@@ -67,7 +72,6 @@
     mounted () {
       setTimeout(this.display, 100);
       this.initTitlesObserver(this.pageTitle);
-      this.$refs.video.enter();
     },
     beforeDestroy () {
       this.destroyTitlesObserver();

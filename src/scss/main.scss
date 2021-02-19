@@ -1503,8 +1503,9 @@ body {
 }
 
 .contact {
-  &__video-container {
-    cursor: pointer;
+  &__video {
+    width: 100%;
+    height: auto;
   }
 
   &__address {
