@@ -34,8 +34,7 @@
             src = "https://files.daviddarx.com/works/static/home/home.mp4"
             type = "video/mp4"
           >
-        <video>
-
+        </video>
       </router-link>
 
     </div>
