@@ -1197,7 +1197,7 @@ body {
   }
 
   &__burger {
-    --w-el: calc(var(--s-logo) * 0.8);
+    --w-el: var(--s-burger-w);
     --y-el: calc(var(--s-lines) * 4);
     --s-burger: calc(var(--w-el) + var(--s-gutter) * 0.5);
     --decal-x-burger: calc((var(--s-burger) - var(--w-el)) * -0.5);
@@ -1584,7 +1584,7 @@ body {
   }
 
   &__title {
-    --s-left-mobile: 0.5em;
+    --s-left-mobile: calc(var(--s-burger-w) * 0.5) - 0.6em;
 
     @include label-small;
 
@@ -1599,20 +1599,16 @@ body {
       left: calc(var(--s-gutter) + var(--s-left-mobile));
       top: auto;
       bottom: calc(var(--s-gutter) * 1.9);
-      width: 100vh;
+      width: calc(100vh - var(--s-gutter) * 6);
       transform: rotate(-90deg) !important;
+
+      @media (min-aspect-ratio: 12/8) {
+        display: none;
+      }
     }
 
-    @include viewport('mobile-l') {
-      --s-left-mobile: 0.25em;
-    }
-
-    @include viewport('mobile') {
-      --s-left-mobile: 0.05em;
-    }
-
-    @include viewport('mobile-s') {
-      bottom: calc(var(--s-gutter) * 3);
+    &.is-hidden {
+      display: none;
     }
   }
 

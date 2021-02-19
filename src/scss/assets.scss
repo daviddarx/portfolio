@@ -163,6 +163,7 @@ $breakpoints: (
   --s-decal-close-to-corner: 0.5em;
   --s-preloader: 100px;
   --s-preloader-line: 1px;
+  --s-burger-w: calc(var(--s-logo) * 0.8);
 
   //eases
   --e-in: cubic-bezier(0.895, 0.03, 0.685, 0.22); // quart
