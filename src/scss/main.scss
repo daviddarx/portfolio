@@ -1620,6 +1620,8 @@ body {
   }
 
   &__stage {
+    $root: #{&};
+
     position: relative;
     display: block;
     width: 50vw;
@@ -1630,6 +1632,94 @@ body {
       position: fixed;
       top: var(--s-gutter);
       width: 100%;
+    }
+
+    &-overlay {
+      --s-margin: calc(var(--s-gutter) * 2);
+
+      position: absolute;
+      display: none;
+      top: var(--s-margin);
+      bottom: var(--s-margin);
+      left: var(--s-margin);
+      right: var(--s-margin);
+      z-index: 1;
+      text-align: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: black;
+        transform: scaleY(0);
+        transform-origin: top left;
+        transition: transform var(--e-inout) 0.25s;
+
+        @include hover() {
+          #{$root}:hover & {
+            transform: scaleY(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+
+      @include hover() {
+        display: block;
+
+        #{$root}:hover & {
+          @include twerk-anime();
+        }
+      }
+
+      @include viewport('tablet-s') {
+        display: none;
+      }
+    }
+
+    &-title {
+      @include fontTitle();
+      @include anti-aliased();
+
+      color: white;
+      position: absolute;
+      top: 50%;
+      opacity: 0;
+      transform: translate(-50%, 0);
+      transition: opacity var(--e-inout) 0.25s, transform var(--e-inout) 0.25s;
+      transition-delay: 0.15s;
+
+      @include hover() {
+        #{$root}:hover & {
+          opacity: 1;
+          transform: translate(-50%, -2em);
+          transition-timing-function: var(--e-out);
+        }
+      }
+    }
+
+    &-arrow {
+      --s-width: 2em;
+      --s-height: 0.5em;
+      --c: var(--c-text);
+      --t: translate(-50%, 1em);
+      --c: var(--c-text-inverted);
+      --s-width: 0;
+      --s-height: 0;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: var(--t) scaleX(-1);
+
+      @include hover() {
+        #{$root}:hover & {
+          --s-width: 2.8em;
+          --s-height: 0.65em;
+        }
+      }
     }
   }
 
