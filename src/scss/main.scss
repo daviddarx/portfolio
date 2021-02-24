@@ -2432,45 +2432,24 @@ body {
 
   &__img-el {
     --d-delay: 0s;
-    --t-visibility: visibility linear calc(var(--d-fading) + var(--d-scaleHover));
+    --t-filter: filter var(--e-out) calc(var(--d-fading) + var(--d-scaleHover));
 
     width: 100%;
     display: block;
-    visibility: hidden;
     opacity: 0;
-    transition: var(--t-visibility), opacity ease-out var(--d-fading);
+    transition: var(--t-filter), opacity ease-out var(--d-fading);
 
     #{$root}.is-displayed & {
       opacity: 1;
     }
 
     #{$root}.is-animated-in & {
-      transition: var(--t-visibility);
+      transition: var(--t-filter);
     }
 
     @include hover() {
       #{$root}:hover & {
-        visibility: visible;
-      }
-    }
-  }
-
-  &__img-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity ease-out var(--d-fading);
-    transition-delay: var(--d-scaleHover);
-
-    #{$root}.is-displayed & {
-      opacity: 1;
-    }
-
-    @include hover() {
-      #{$root}:hover & {
-        opacity: 0;
+        // filter: grayscale(100%) contrast(2) brightness(2);
       }
     }
   }

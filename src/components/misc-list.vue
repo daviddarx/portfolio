@@ -21,11 +21,6 @@
             @load="imageLoaded"
             ref="image"
           >
-          <canvas
-            class="misc-list__img-canvas"
-            ref="canvas"
-          >
-          </canvas>
         </div>
         <h2
           class="misc-list__info"
@@ -77,13 +72,6 @@
           width: this.$refs.image.clientWidth,
           height: this.$refs.image.clientHeight
         };
-      },
-      cloneCanvas: function (pixiCanvas) {
-        this.$refs.canvas.width = pixiCanvas.width;
-        this.$refs.canvas.height = pixiCanvas.height;
-        this.$refs.canvas.getContext('2d').drawImage(pixiCanvas, 0, 0);
-
-        this.resize();
       },
       setReady: function () {
         this.isReady = true;
