@@ -2449,7 +2449,7 @@ body {
 
     @include hover() {
       #{$root}:hover & {
-        // filter: grayscale(100%) contrast(2) brightness(2);
+        filter: grayscale(100%) contrast(2) brightness(2);
       }
     }
   }
