@@ -19,8 +19,6 @@
       >
       </p>
 
-      ajouter montreux? martincramatte
-
       <div class="content-page__content animate-in animate-in__s2">
 
         <h2
