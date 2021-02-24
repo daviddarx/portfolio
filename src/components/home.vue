@@ -20,6 +20,12 @@
         class="home__stage animate-in animate-in__s2"
         ref="stage"
       >
+        <div class="home__stage-overlay">
+          <span class="home__stage-title">
+            Projekte
+          </span>
+          <div class="home__stage-arrow arrow"></div>
+        </div>
         <video
           muted
           autoplay
