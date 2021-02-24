@@ -1410,14 +1410,6 @@ body {
 
 .info {
   &__image {
-    filter: grayscale(100%) contrast(2) brightness(2);
-    transition: filter var(--e-out) 0.3s;
-
-    &:hover {
-      filter: none;
-      transition-duration: 1s;
-    }
-
     &-el {
       min-height: calc(75vw * 9 / 16);
     }
