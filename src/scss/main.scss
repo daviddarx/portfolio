@@ -2446,12 +2446,6 @@ body {
     #{$root}.is-animated-in & {
       transition: var(--t-filter);
     }
-
-    @include hover() {
-      #{$root}:hover & {
-        filter: grayscale(100%) contrast(2) brightness(2);
-      }
-    }
   }
 
   &__info {
