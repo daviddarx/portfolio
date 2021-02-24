@@ -1750,12 +1750,10 @@ body {
     --s-translateY: 0;
     --s-posY: 0;
     --s-posYMargin: calc(var(--s-gutter) * 0.2);
-    --d-animation-in: 0.2s;
+    --d-animation-in: 0.35s;
     --d-animation-in-delay: 0.25s;
     --d-animation-in-delay-randomizer: 1;
     --d-scaleHover: 0.35s;
-    --d-imageEffect: 0.5s;
-    --d-imageEffectDelay: 0.2s;
     --e-scaleHover: var(--e-inout);
     --t-transform: transform var(--e-scaleHover) var(--d-scaleHover);
 
@@ -1798,18 +1796,14 @@ body {
     }
 
     &-el {
-      --filter: grayscale(100%) contrast(2) brightness(2);
-
       position: relative;
       display: block;
       width: 100%;
       opacity: 0;
       top: calc(var(--s-posY) + var(--s-posYMargin));
       transform: translateY(var(--s-translateY)) scale3d(var(--s-scale), var(--s-scale), 1);
-      transition: opacity ease-out var(--d-animation-in), var(--t-transform), filter ease-out var(--d-imageEffect);
+      transition: opacity ease-out var(--d-animation-in), var(--t-transform);
       transition-delay: 0s, var(--d-animation-in), 0s;
-      -webkit-filter: var(--filter);
-      filter: var(--filter);
 
       &--01 {
         --s-translateY: calc(-100% - var(--s-lines));
@@ -1827,8 +1821,7 @@ body {
             --s-scale: var(--s-scaleHover);
 
             opacity: 1;
-            filter: none;
-            transition-delay: var(--d-animation-in-delay), var(--d-animation-in-delay), calc(var(--d-animation-in) + var(--d-animation-in-delay) + var(--d-imageEffectDelay));
+            transition-delay: var(--d-animation-in-delay), var(--d-animation-in-delay);
           }
         }
       }
