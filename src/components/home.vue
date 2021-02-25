@@ -26,21 +26,14 @@
           </span>
           <div class="home__stage-arrow arrow"></div>
         </div>
-        <video
-          muted
-          autoplay
-          playsinline
-          loop
-          preload="auto"
-          poster = "https://files.daviddarx.com/works/static/home/home.jpg"
-          class="home__video"
-          ref="video"
-        >
-          <source
-            src = "https://files.daviddarx.com/works/static/home/home.mp4"
-            type = "video/mp4"
+        <media-gif
+            class="home__gif"
+            v-bind:title="gifTitle"
+            v-bind:path="gifPath"
+            v-bind:images="gifImages"
+            ref="gif"
           >
-        </video>
+          </media-gif>
       </router-link>
 
     </div>
@@ -49,8 +42,12 @@
 
 <script>
   import Vue from "vue";
+  import MediaGif from './media-gif.vue';
 
   export default Vue.extend({
+    components: {
+      'media-gif': MediaGif
+    },
     data() {
       return {
         isDisplayed : false,
@@ -61,12 +58,37 @@
         stageW: 0,
         stageH: 0,
         stageRatio: 0,
-        videoW: 0,
-        videoH: 0,
-        videoX: 0,
-        videoY: 0,
+        gifW: 0,
+        gifH: 0,
+        gifX: 0,
+        gifY: 0,
         mobileStep: 768,
-        videoRatio: 1280/1080,
+        gifRatio: 1280/1080,
+        gifTitle: "Projekte",
+        gifPath: "https://files.daviddarx.com/works/static/home/",
+        gifImages: [
+          "01.1.jpg",
+          "01.2.jpg",
+          "02.1.jpg",
+          "02.2.jpg",
+          "03.1.jpg",
+          "03.2.jpg",
+          "04.1.jpg",
+          "04.2.jpg",
+          "05.1.jpg",
+          "05.2.jpg",
+          "06.1.jpg",
+          "06.2.jpg",
+          "07.1.jpg",
+          "07.2.jpg",
+          "08.1.jpg",
+          "08.2.jpg",
+          "09.1.jpg",
+          "09.2.jpg",
+          "10.1.jpg",
+          "10.2.jpg",
+          "10.3.jpg"
+        ]
       }
     },
     mounted () {
@@ -90,22 +112,22 @@
         this.stageH = this.$refs.stage.$el.offsetHeight;
         this.stageRatio = this.stageW / this.stageH;
 
-        if (this.stageRatio > this.videoRatio) {
-          this.videoW = this.stageW;
-          this.videoH = this.videoW / this.videoRatio;
-          this.videoX = 0;
-          this.videoY = (this.videoH - this.stageH) * -0.5;
+        if (this.stageRatio > this.gifRatio) {
+          this.gifW = this.stageW;
+          this.gifH = this.gifW / this.gifRatio;
+          this.gifX = 0;
+          this.gifY = (this.gifH - this.stageH) * -0.5;
         } else {
-          this.videoH = this.stageH;
-          this.videoW = this.videoH * this.videoRatio;
-          this.videoY = 0;
-          this.videoX = (this.videoW - this.stageW) * -0.5;
+          this.gifH = this.stageH;
+          this.gifW = this.gifH * this.gifRatio;
+          this.gifY = 0;
+          this.gifX = (this.gifW - this.stageW) * -0.5;
         }
 
-        this.$refs.video.style.setProperty('--w', this.videoW + "px");
-        this.$refs.video.style.setProperty('--h', this.videoH + "px");
-        this.$refs.video.style.setProperty('--x', this.videoX + "px");
-        this.$refs.video.style.setProperty('--y', this.videoY + "px");
+        this.$refs.gif.$el.style.setProperty('--w', this.gifW + "px");
+        this.$refs.gif.$el.style.setProperty('--h', this.gifH + "px");
+        this.$refs.gif.$el.style.setProperty('--x', this.gifX + "px");
+        this.$refs.gif.$el.style.setProperty('--y', this.gifY + "px");
 
         if (this.windowW <= this.mobileStep) {
           if (this.$refs.titleName.offsetWidth + this.$refs.titleDetail.offsetWidth > this.windowH * this.titleHideRatioToVH) {
