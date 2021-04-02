@@ -36,6 +36,7 @@
         <div
           class="info__introduction"
           v-html="this.info.introduction"
+          ref="intro"
         >
         </div>
 
@@ -166,22 +167,41 @@
       return {
         info: info,
         isDisplayed : false,
-        pageTitle: "Info"
+        pageTitle: "Info",
+        introLinks: undefined
       }
     },
     mounted () {
       setTimeout(this.display, 100);
       this.initTitlesObserver(this.pageTitle);
+      this.initIntroLinks();
     },
     beforeDestroy () {
       this.$refs.gif.destroy();
       this.destroyTitlesObserver();
+      this.reinitIntroLinks();
     },
     methods: {
       display: function() {
         if (this.$parent.isLoaded == true) {
           this.isDisplayed = true;
         }
+      },
+      initIntroLinks: function () {
+        this.introLinks = this.$refs.intro.querySelectorAll('a');
+
+        this.introLinks.forEach(link => {
+          link.addEventListener("click", this.introLinksClickListener);
+        });
+      },
+      introLinksClickListener: function (e) {
+        e.preventDefault()
+        this.$router.push(e.target.getAttribute("href"))
+      },
+      reinitIntroLinks: function () {
+        this.introLinks.forEach(link => {
+          link.removeEventListener("click", this.introLinksClickListener);
+        });
       }
     }
   });
