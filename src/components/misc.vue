@@ -52,9 +52,6 @@
   import dash from '../mixins/dash';
   import contentPageTitle from '../mixins/content-page-title';
 
-  import {AdjustmentFilter} from '@pixi/filter-adjustment';
-  import * as PIXI from 'pixi.js';
-
   export default Vue.extend({
     name: "misc-keep",
     components: {
@@ -75,15 +72,6 @@
         miscsObserver: undefined,
         miscsObserverRootMargin: '0px 0px 0px 0px',
         firstResized: false,
-        pixi: {
-          sprites: [],
-          settings: {
-            saturation: 0,
-            contrast: 2,
-            brightness: 2
-          }
-        },
-        loadedPixiImageToProcessOnMounting: undefined,
         pageTitle: "Kunterbunt"
       }
     },
@@ -93,8 +81,6 @@
       });
     },
     mounted () {
-      this.initPixi();
-
       this.launchFirstLoads();
 
       this.setupMounting();
@@ -135,11 +121,6 @@
         this.initTitlesObserver(this.pageTitle);
         this.initMiscsObserver();
 
-        if (this.loadedPixiImageToProcessOnMounting) {
-          this.setPixiImage(this.loadedPixiImageToProcessOnMounting);
-          this.loadedPixiImageToProcessOnMounting = undefined;
-        }
-
         if (window.contentPageSavedHeight) {
           this.$refs.contentPage.style.minHeight = window.contentPageSavedHeight + 'px';
         }
@@ -151,62 +132,11 @@
           this.isDisplayed = true;
         }
       },
-      initPixi: function() {
-        this.pixi.app = new PIXI.Application({
-          width: 1,
-          height: 1,
-          antialias: true,
-          resolution: window.devicePixelRatio
-        });
-        this.pixi.app.renderer.autoResize = true;
-        this.pixi.app.stop();
-
-        this.pixi.filter = new AdjustmentFilter();
-        this.pixi.filter.saturation = this.pixi.settings.saturation;
-        this.pixi.filter.contrast = this.pixi.settings.contrast;
-        this.pixi.filter.brightness = this.pixi.settings.brightness;
-      },
-      setPixiImage: function (miscItem) {
-        if (this.isMounted == true) {
-          const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[miscItem.imgURL].texture);
-              sprite.filters = [this.pixi.filter];
-
-          this.pixi.sprites[miscItem.id] = sprite;
-
-          this.drawPixiImage(miscItem);
-
-          miscItem.cloneCanvas(this.pixi.app.view);
-          miscItem.setReady();
-
-          this.loadNext();
-        } else {
-          this.loadedPixiImageToProcessOnMounting = miscItem;
-        }
-      },
-      drawPixiImage: function (miscItem) {
-        const imgSize = miscItem.getImageDimensions();
-
-        this.pixi.sprite = this.pixi.sprites[miscItem.id];
-        this.pixi.app.stage.addChild(this.pixi.sprite);
-
-        this.pixi.app.renderer.resize(imgSize.width, imgSize.height);
-        this.pixi.sprite.width = imgSize.width;
-        this.pixi.sprite.height = imgSize.height;
-
-        this.renderPixi();
-        this.pixi.app.stage.removeChild(this.pixi.sprite);
-      },
-      renderPixi: function() {
-        this.pixi.app.renderer.render( this.pixi.app.stage);
-      },
       loadCompleteListener: function (miscItem) {
-        if (PIXI.Loader.shared.resources[miscItem.imgURL] == undefined) {
-          PIXI.Loader.shared.add(miscItem.imgURL).load(() => {
-            this.setPixiImage(miscItem);
-          });
-        } else {
-          this.setPixiImage(miscItem);
-        }
+        miscItem.setReady();
+        miscItem.resize();
+
+        this.loadNext();
 
         this.miscItemsToLoad.shift();
 
@@ -291,11 +221,7 @@
         this.$refs.miscItem.forEach(miscItem => {
           const thumbHeight = Math.round(miscItem.$el.offsetWidth * parseInt(miscItem.$el.getAttribute("thumbH")) / parseInt(miscItem.$el.getAttribute("thumbW")));
           miscItem.$el.style.setProperty('--s-image-height', thumbHeight + 'px');
-
-          if (this.pixi.sprites[miscItem.id]){
-            this.drawPixiImage(miscItem);
-            miscItem.cloneCanvas(this.pixi.app.view);
-          }
+          miscItem.resize();
         });
 
         this.firstResized = true;
