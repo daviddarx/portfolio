@@ -94,6 +94,7 @@ body {
   line-height: var(--s-line-height);
   color: var(--c-text);
   overflow-x: hidden;
+  background-color: var(--c-body);
 
   &.is-dark {
     --c-text: rgba(255, 255, 255, 1);
@@ -397,7 +398,9 @@ body {
 
     @include hover() {
       #{$root}:hover & {
-        fill: white;
+        --c-text-inverted: var(--c-body-hex);
+
+        fill: var(--c-text-inverted);
         transform: rotate(0deg);
       }
     }
@@ -488,7 +491,7 @@ body {
     &:hover {
       @include twerk-anime();
 
-      color: white;
+      color: var(--c-text-inverted);
       text-decoration: none;
 
       .is-inverted & {
@@ -1015,6 +1018,7 @@ body {
   @include fontTitle;
   @include label;
 
+  --c-text-inverted: var(--c-body-hex);
   --c-nav-text: var(--c-text);
   --c-nav-text-hover: var(--c-text-inverted);
 
@@ -1405,6 +1409,14 @@ body {
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  .text-link {
+    --c-text-inverted: var(--c-body-hex);
+  }
+
+  .cta {
+    --c-text: var(--c-body-hex);
   }
 }
 
@@ -2910,12 +2922,16 @@ body {
   }
 
   .logo__el {
-    fill: white;
+    --c-text-inverted: var(--c-body-hex);
+
+    fill: var(--c-text-inverted);
   }
 }
 
 .transition-title {
   @include fontTitle();
+
+  --c-text-inverted: var(--c-body-hex);
 
   position: fixed;
   pointer-events: none;
@@ -2923,7 +2939,7 @@ body {
   bottom: var(--s-gutter);
   right: var(--s-gutter);
   line-height: var(--s-line-height-titles);
-  color: white;
+  color: var(--c-text-inverted);
   text-transform: uppercase;
   font-size: var(--s-logo);
   letter-spacing: 0.025em;

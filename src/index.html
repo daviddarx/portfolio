@@ -33,6 +33,7 @@
         --delay-logo-out: 0s;
         --duration-splash: 0.5s;
         --delay-splash: 0.9s;
+        --c-white: #e6e6e6;
 
         position: fixed;
         top: 0;
@@ -94,7 +95,7 @@
         left: var(--x-bg);
         width: var(--s-bg);
         height: var(--s-bg);
-        background-color: white;
+        background-color: var(--c-white);
         transform-origin: top left;
         transform: scaleY(1);
         transition: transform var(--e-inout) var(--duration-logo) var(--delay-logo);
@@ -111,7 +112,7 @@
       }
 
       .hidden .splash__logo-el {
-        fill: white;
+        fill: var(--c-white);
       }
 
       .splash__logo-p1 {
