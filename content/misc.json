@@ -168,6 +168,85 @@
       ]
     },
     {
+      "uid": "dionisio",
+      "title": "Dionisio.ch",
+      "date": "2019",
+      "thumb": "dionisio/thumb.jpg",
+      "thumbDimensions": [1000, 1000],
+      "lead": "Animiertes One-Pager (Design & Code) für Claudio Dionisio, der etablierte Digital-Berater aus Zürich.",
+      "links": [
+        {
+          "title": "www.dionisio.ch",
+          "url": "https://www.dionisio.ch/"
+        }
+      ],
+      "medias": [
+        {
+          "type": "video",
+          "url": "dionisio/dionisio_screen.mp4",
+          "poster": "dionisio/dionisio_screen.jpg",
+          "autoplay": true,
+          "additionalMargin": false
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_01.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_02.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_03.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_04.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_05.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_06.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        },
+        {
+          "type": "image",
+          "url": "dionisio/dionisio_07.jpg",
+          "hdRatio": 2,
+          "additionalMargin": "l",
+          "zoomable": true,
+          "zoomableGutter": true
+        }
+      ]
+    },
+    {
       "uid": "hfh",
       "title": "HfH",
       "date": "2019",
