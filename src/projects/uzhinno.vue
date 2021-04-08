@@ -309,7 +309,7 @@
       </h2>
       <div class="uzh-fp__video">
         <media-video
-          v-bind:url="this.mediasPath+'fp/uzh_fp.mp4'"
+          v-bind:url="this.mediasPath+'fp/uzh_fp_1060_4mbs.mp4'"
           v-bind:poster="this.mediasPath+'fp/uzh_fp.jpg'"
           v-bind:autoplay="false"
           v-bind:isvideo="true"
