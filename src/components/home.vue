@@ -37,7 +37,7 @@
           ref="video"
         >
           <source
-            src = "https://files.daviddarx.com/works/static/home/home.mp4"
+            v-bind:src="this.videoURL"
             type = "video/mp4"
           >
         </video>
@@ -67,6 +67,20 @@
         videoY: 0,
         mobileStep: 768,
         videoRatio: 1280/1080,
+      }
+    },
+    computed: {
+      videoURL: function () {
+        const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let videoName = "home_1280_6mbs.mp4";
+
+        if (windowW <= 375) { 
+          videoName = "home_720_3mbs.mp4";
+        } else if (windowW < 1440) {
+          videoName = "home_960_4mbs.mp4";
+        }
+
+        return "https://files.daviddarx.com/works/static/home/" + videoName;
       }
     },
     mounted () {
