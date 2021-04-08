@@ -334,14 +334,17 @@ body {
   --s-rotate: 0deg; // -45deg;
   --s-translateX: 0%; // -10% with rotation
   --s-translateY: -3%; // -10% with rotation
+  --s-dim: calc(var(--s-logo) * 1.7);
+  --s-margin-t: calc((var(--s-dim) - var(--s-logo)) * -0.5);
+  --s-margin-l: calc(var(--s-margin-t) * 1.2);
 
   $root: #{&};
 
   position: fixed;
   z-index: 1;
   cursor: pointer;
-  top: var(--s-gutter);
-  left: var(--s-gutter);
+  top: calc(var(--s-gutter) + var(--s-margin-t));
+  left: calc(var(--s-gutter) + var(--s-margin-l));
   transform: translate(var(--s-translateX), var(--s-translateY));
 
   .is-dark & {
@@ -349,17 +352,14 @@ body {
   }
 
   &__container {
-    --s-dim: calc(var(--s-logo) * 1.7);
-    --s-margin: calc((var(--s-dim) - var(--s-logo)) * -0.5);
-
     &::before,
     &::after {
       content: "";
       position: absolute;
       width: var(--s-dim);
       height: var(--s-dim);
-      top: var(--s-margin);
-      left: calc(var(--s-margin) * 1.2);
+      top: 0;
+      left: 0;
       background-color: var(--c-text);
       z-index: -1;
       transform: scaleY(0);
@@ -387,8 +387,17 @@ body {
     }
   }
 
+  &__link {
+    display: block;
+    width: var(--s-dim);
+    height: var(--s-dim);
+  }
+
   &__el {
     display: block;
+    position: relative;
+    top: calc(var(--s-margin-t) * -1);
+    left: calc(var(--s-margin-l) * -1);
     height: var(--s-logo);
     width: auto;
     fill: var(--c-text);

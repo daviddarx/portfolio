@@ -6,6 +6,7 @@
     <div class="logo__container">
       <router-link
         to="/"
+        class="logo__link"
       >
         <svg class="logo__el" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 667.757 726.486">
           <path class="logo__p3" d="M374.9,623.3c-26.3,0.1-65.7,0.2-117,0.2c-55.6,0-105.8,0-106.3,0l-39.6,0V142.7c-34.7,0-69.5,0-104.2,0c-2.6,0-5.1,0-7.7,0
