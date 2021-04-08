@@ -35,7 +35,7 @@
             class="contact__video"
           >
             <source
-              src = "https://files.daviddarx.com/works/static/contact/k4_1920_5.mp4"
+              v-bind:src = this.videoURL
               type = "video/mp4"
             >
           </video>
@@ -67,6 +67,18 @@
         isDisplayed : false,
         pageTitle: "Kontakt",
         mediasPath: 'https://files.daviddarx.com/works/static/contact/'
+      }
+    },
+    computed: {
+      videoURL: function () {
+        const windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        let videoName = "k4_1920_5.mp4";
+
+        if (windowW <= 768) { 
+          videoName = "k4_1920_3.mp4";
+        }
+
+        return "https://files.daviddarx.com/works/static/contact/" + videoName;
       }
     },
     mounted () {
