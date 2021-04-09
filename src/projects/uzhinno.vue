@@ -37,14 +37,14 @@
       </div>
       <div class="project__col-right">
         <p class="project__lead">
-          2018 eingeführt, der UZH Innovation Hub ist die Drehscheibe für Innovation und Unternehmertum an der Universität Zürich.
+          Der UZH Innovation Hub ist seit 2018 Drehscheibe für Innovation und Entrepreneurship an der Universität Zürich.
         </p>
         <div class="project__desc uzh-intro__desc">
           <p>
-            Er beschleunigt als Katalysator die Weiterentwicklung von neuen Erfindungen und Ideen und stärkt den Transfer von innovativer Forschung und Lehre in Wirtschaft und Gesellschaft.
+            Er beschleunigt als Katalysator die Weiterentwicklung neuer Erfindungen und Ideen und stärkt den Transfer von innovativer Forschung und Lehre in Wirtschaft und Gesellschaft.
           </p>
           <p>
-	          Eyekon wurde beauftragt, ein Key-Visual und eine interatkive Präsentation zu kreieren, in der die Ziele des Kompetenzzentrums und die verfügbaren Mittel aufgeführt sind, um Studierende und Forschende unter anderem bei der Gründung von Start-Ups zu unterstützen.
+	          Eyekon wurde damit beauftragt, ein Key-Visual und eine interaktive Präsentation zu kreieren, um die Ziele des Kompetenzzentrums und die verfügbaren Mittel zu vermitteln und so Studierende und Forschende unter anderem bei der Gründung von Start-Ups zu unterstützen.
           </p>
         </div>
       </div>
@@ -58,13 +58,13 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Um den Hub als Innovationsbeschleuniger zu darstellen, wurde  eine abstrakte und minimalistische Bildsprache bevorzugt, die nach Metaphern arbeitet.
+              Um den Hub als Innovationsbeschleuniger darzustellen, wurde eine abstrakte, minimalistische Bildsprache gewählt.
             </p>
             <p>
-              Das Key-Visual soll in 3D (three.js) animiert sein und sich ständig weiter entwickeln, während der Benutzer die Folien der Präsentation durchsucht. Damit wirkt die Präsentation innovativ, interkativ und lebending.
+              Das Key-Visual sollte in 3D (three.js) animiert werden und sich ständig weiterentwickeln, während der Benutzer mit der Präsentation interagiert, um einen innovativen, interaktiven und lebendigen Touch zu vermitteln.
             </p>
             <p>
-              Während der Recherche-Phase wurden verschiedenen Konzepten und Darstellungen experimentiert, um den verschiedenen Elementen der Story attraktiv darzustellen.
+              Während der Recherche-Phase wurde mit verschiedenen Konzepten experimentiert, um die verschiedenen Elementen der Story attraktiv darzustellen.
             </p>
           </div>
         </div>
@@ -111,14 +111,14 @@
       <div class="project__col-right uzh-proto__desc is-selection-normal">
         <div class="project__pick">
           <h2 class="project__pick-title uzh-proto__title">
-            Finales Prototyp
+            Finaler Prototyp
           </h2>
           <div class="project__pick-desc">
             <p>
-              Sobald das finale Key-Visual mit dem Kunden definiert wurde, haben wir einen interaktiven Prototyp erstellt, der alle Phasen umfasst, in denen die Geschichte des Hubs und der Zweck seiner vier Aktionsfelder erzählt werden können.
+              Mit der Abnahme des finalen Key-Visuals wurde sogleich ein interaktiver Prototyp erstellt.
             </p>
             <p>
-              Die Hauptidee besteht darin, eine Zusammenfassung von Forschung und Innovation (schwarze Punkte) zu darstellen, die durch eine Struktur aus vier Einheiten (farbige Punkte) unterstützt wird, die dazu beitragen, Ergebnisse und Fortschritte nach außen zu übertragen, in die Gesellschaft und in die Wirtschaft.
+              Die Hauptidee besteht darin, einen Kern aus Forschung und Innovation (schwarze Punkte) darzustellen und dessen Ergebnisse und Fortschritte nach aussen zu tragen, in die Gesellschaft und Wirtschaft. Die vier Farben stellen dabei die vier Aktionsfelder des Innovation Hubs dar.
             </p>
           </div>
         </div>
@@ -137,7 +137,7 @@
       </div>
       <div class="uzh-proto__cta">
         <div class="uzh-proto__cta-container">
-          <a href="https://files.daviddarx.com/works/addons/uzh-inno/prototype/" target="_blank" class="cta cta--small">Prototyp online schauen</a>
+          <a href="https://files.daviddarx.com/works/addons/uzh-inno/prototype/" target="_blank" class="cta cta--small">Prototyp online anschauen</a>
         </div>
       </div>
     </section>
@@ -150,7 +150,7 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Auf dieser Basis haben wir bei der Erstellung des Storyboards mit dem UZH-Team zusammengearbeitet, um Schritt für Schritt die Funktionen und Ziele des Hubs unter dem Leitsatz "Let’s bring Innovation to Life" zu veranschaulichen.
+              Auf Basis der Visuals wurden in Zusammenarbeit mit dem UZH-Team verschiedene Storyboards ausgearbeitet, um Schritt für Schritt die Funktionen und Ziele des Hubs unter dem Leitsatz «Let’s bring Innovation to Life» zu veranschaulichen.
             </p>
           </div>
         </div>
@@ -329,10 +329,10 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Die Präsentation wurde schließlich auf der Homepage des Innovation Hub platziert, und das Key-Visual wurde für den Skin der Website verwendet.
+              Die Präsentation wurde schliesslich in die Homepage des Innovation Hub integriert, und das Key-Visual wurde fürs Website-Skinning verwendet.
             </p>
             <div class="uzh-ctx__links">
-              <a href="https://www.innovation.uzh.ch/" target="_blank" class="cta cta--small uzh-ctx__cta">Projekt online schauen</a>
+              <a href="https://www.innovation.uzh.ch/" target="_blank" class="cta cta--small uzh-ctx__cta">Projekt online anschauen</a>
               <a href="https://files.daviddarx.com/works/addons/uzh-inno/" target="_blank" class="uzh-ctx__link text-link">Präsentation Standalone</a>
             </div>
           </div>
