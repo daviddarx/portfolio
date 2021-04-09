@@ -20,7 +20,7 @@
       </div>
       <div class="project__col-right">
         <p class="project__lead">
-          Die ETH-Bibliothek verfügt über eine Sammlung von mehr als 75.000 Bände an Monografien und Zeitschriften, die zwischen dem 15. und 19. Jahrhundert veröffentlicht wurden.
+          Die ETH-Bibliothek verfügt über eine Sammlung von mehr als 75.000 Bänden an Monografien und Zeitschriften, die zwischen dem 15. und 19. Jahrhundert veröffentlicht wurden.
         </p>
         <div class="project__desc">
           <p>
@@ -67,7 +67,7 @@
               AstroRara zeigt, wie in alten und seltenen Drucken dargestellte Abbildungen und Instrumente ursprünglich zur Nutzung gedacht waren.
             </p>
             <p>
-	            Mittels touch-interaktiver Animation erhalten die digitalen Illustrationen eine neue Dimension, und dadurch einen Mehrwert gegenüber den physischen Originalen.
+	            Mittels touch-interaktiver Animation erhalten die digitalisierten Illustrationen eine neue Dimension, und dadurch einen Mehrwert gegenüber den physischen Originalen, die der Öffentlichkeit nicht zugänglich sind.
             </p>
           </div>
         </div>
@@ -95,10 +95,10 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Dazu liefern ergänzende Texte zu Autoren und Werken zusätzliche Hintergrundinformationen, auch verfügbar zum Anhören als Audio-File. So hat der User die Möglichkeit, mehr über die Werke zu erfahren, während er/sie bedient.
+              Ergänzende Texte zu Autoren und Werken liefern zusätzliche Hintergrundinformationen, auch verfügbar zum Anhören als Audio-File. So haben User die Möglichkeit, während der interaktiven Bedienung mehr über die Werke zu erfahren.
             </p>
             <p>
-              AstroRara bietet auch gleichzeitig Zugriff auf die Originalveröffentlichungen auf der <a href="https://www.e-rara.ch/" target="_blank" class="text-link">e-rara</a> Plattform der ETH.
+              Zudem bietet AstroRara Zugriff auf die gescannten Original auf der Plattform <a href="https://www.e-rara.ch/" target="_blank" class="text-link">e-rara</a> der ETH Zürich.
             </p>
           </div>
         </div>
@@ -174,7 +174,7 @@
         </h2>
         <div class="project__pick-desc pick-balls__desc">
           <p>
-            Um Werke in sehr unterschiedlichen Formaten homogen präsentieren zu können, wurden die verschiedenen Illustrationen in Kugeln eingekapselt, als Erinnerung an Planeten und Perlen.
+            Um die original unterschiedlich formatierten Werke homogen präsentieren zu können, werden die verschiedenen Illustrationen in Kugelform dargestellt – eine Anspielung auf Planeten und Perlen.
           </p>
         </div>
       </div>
@@ -367,7 +367,7 @@
       </deco-image>
     </section>
     <div class="cta-container-ar">
-      <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small cta-ar">Projekt online anschauen</a>
+      <a href="https://astrorara.library.ethz.ch/" target="_blank" class="cta cta--small cta-ar">Fertige Website anschauen</a>
       <p class="cta-detail-ar">(Optimiert für Smartphones)</p>
     </div>
 
