@@ -37,14 +37,14 @@
       </div>
       <div class="project__col-right">
         <p class="project__lead">
-          Compona ist ein Distributor für elektronische Komponenten, der seit 40 Jahren Kataloge mit mehr als 1'000 Seiten und 40’000 Produkte druckte.
+          Compona ist ein Distributor für elektronische Steckerkomponenten – über 40’000 Produkte, die seit 40 Jahren Kataloge mit mehr als 1'000 Seiten füllten.
         </p>
         <div class="project__desc">
           <p>
             Zwar existierte bereits ein Web-Katalog, dieser wusste aber aufgrund unzureichender Übersicht und langer Ladezeiten nicht vollends zu überzeugen – weshalb die meisten Kunden weiterhin auf den Print-Wälzer zurückgriffen.
           </p>
           <p>
-	          2018 beschlossen sie, ihre Vertriebskanäle vollständig digital zu gestalten. Eyekon und <a href="https://www.intelliact.ch" target="_blank" class="text-link">Intelliact</a> wurden für das Relaunch des Online-Katalog und Webshop beauftragt, um durch bessere Usability und Performance die Print-Version vergessen zu lassen.
+	          Als Compona 2018 beschloss, die Vertriebskanäle vollständig digital zu gestalten wurden Eyekon und <a href="https://www.intelliact.ch" target="_blank" class="text-link">Intelliact</a> für den Relaunch des Online-Katalogs und Webshops beauftragt.
           </p>
         </div>
       </div>
@@ -54,11 +54,11 @@
       <div class="compona-pick-1__desc">
         <div class="project__pick">
           <h2 class="project__pick-title">
-            Live Suche &amp; fortschrittene Filterung
+            Live-Suche &amp; fortschrittliche Filterung
           </h2>
           <div class="project__pick-desc">
             <p>
-              Durchgesetzt hat sich ein dynamisches Konzept, das dem User erlaubt, über verschiedene Wege zum Produkt zu gelangen. Eine Direktsuche richtet sich an Kunden, die mit der technischen Materie bereits vertraut sind und konkrete Vorstellungen haben. Sie lässt sowohl eine Volltextsuche als auch die Suche nach Tags zu.
+              Durchgesetzt hat sich ein dynamisches Konzept, das dem User erlaubt, über verschiedene Wege zum Produkt zu gelangen. Eine Direktsuche richtet sich an Kunden, die mit der technischen Materie bereits vertraut sind und bereits konkrete Vorstellungen haben. Sie lässt sowohl eine Volltextsuche als auch die Suche nach Tags zu.
             </p>
             <p>
               Für unerfahrenere Kunden setzen wir auf einen Filter mit innovativer Baumstruktur, die es erlaubt, über Drop-Downs vom gewünschten Hersteller bis zum spezifischen Produkt zu gelangen.
@@ -91,7 +91,7 @@
               Die Ergebnisse werden in einer Liste dargestellt, die sich dem Wunsch des Kunden anpassen lässt, indem er beliebig Spalten mit Zusatzinformationen verschiebt, hinzugefügt oder löscht.
             </p>
             <p>
-	            Noch weiter steigern wir die Usability mit einer Beratungsfunktion: zu jedem Suchergebnis schlägt der Shop passende Werkzeuge, Komplementär- oder Substitutionsgüter vor.
+	            Noch weiter steigern wir die Usability mit einer Beratungsfunktion: zu jedem Suchergebnis schlägt der Shop passendes Werkzeug und Zubehör vor.
             </p>
           </div>
         </div>
@@ -341,7 +341,7 @@
     </section>
 
     <div class="compona-cta-container">
-      <a href="https://www.compona.com.com/" target="_blank" class="cta cta--small">Projekt online anschauen</a><br>
+      <a href="https://www.compona.com.com/" target="_blank" class="cta cta--small">Fertige Website anschauen</a><br>
     </div>
 
     <div class="project__credits">
