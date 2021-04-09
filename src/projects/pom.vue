@@ -43,10 +43,10 @@
         </p>
         <div class="project__desc">
           <p>
-            Nach mehr als 20 Jahren Tätigkeit beauftragte pom+ Eyekon, seine Positionierung gemeinsam zu überdenken und einen neuen Marktauftritt zu schaffen.
+            Nach mehr als 20 Jahren Tätigkeit beauftragte pom+ Eyekon, die Positionierung gemeinsam zu überdenken und einen neuen Marktauftritt zu schaffen.
           </p>
           <p>
-            Unsere Mission war es, die Leidenschaft für Innovation von pom+ spürbar zu machen und gleichzeitig glaubwürdig Kompetenz und Umsetzungs-Stärke zu vermittel.
+            Unsere Mission war es, die Leidenschaft für Innovation von pom+ spürbar zu machen und gleichzeitig glaubwürdig Kompetenz und Umsetzungsstärke zu vermitteln.
           </p>
         </div>
       </div>
@@ -56,17 +56,14 @@
       <div class="pom-logos__desc">
         <div class="project__pick">
           <h2 class="project__pick-title pom-logos__title">
-            Logo Recherche
+            Logo-Recherche
           </h2>
           <div class="project__pick-desc">
             <p>
-              In der ersten Phase des Projekts und nach der ersten typografischen Recherche haben wir verschiedene Möglichkeiten untersucht, um das pom+ Logo zu aktualisieren.
+              Nach einer ersten typografischen Recherche wurden verschiedene Möglichkeiten zur Darstellung des Pluszeichens im Logo getestet, und eine offizielle Änderung des Firmennamens in «pomplus» lange in Betracht gezogen.
             </p>
             <p>
-              Es wurden verschiedene Möglichkeiten zur Darstellung des Pluszeichens getestet, und eine Änderung des Firmennamens in "pomplus" wurde lange in Betracht gezogen.
-            </p>
-            <p>
-	            Um eine bereits etablierte Marke zu erkennen, wurde jedoch beschlossen, auf einer Konstruktion zu bleiben, die der bestehenden ähnlich ist, und dabei eine modernere, stärkere Typografie und lebendigere Farben zu verwenden.
+              Um die Wiedererkennung der bereits etablierte Marke weiterhin zu gewährleisten, setzte sich jedoch eine Konstruktion durch, die der bestehenden ähnlich ist und dabei eine modernere, stärkere Typografie und lebendigere Farben verwendet.
             </p>
           </div>
         </div>
@@ -143,14 +140,14 @@
       <div class="pom-lf__desc">
         <div class="project__pick">
           <h2 class="project__pick-title pom-lf__title">
-            Look&amp;Feel Recherche
+            Look &amp; Feel
           </h2>
           <div class="project__pick-desc">
             <p>
-              Mit verschiedenen Moodboards haben wir einige mögliche Wege erkundet, bevor wir Schritt für Schritt das neue Look &amp; Feel von pom + definiert haben: frisch und luftig, modern und kontrastreich.
+              Mit verschiedenen Moodboards wurden mögliche Wege erkundet, bevor wir Schritt für Schritt das neue Look &amp; Feel von pom+ definiert haben: frisch und luftig, modern und kontrastreich.
             </p>
             <p>
-              Dünne Schlagschatten und diffuse Räumlichkeit verleihen dem überwiegend weißen Raum Volumen, während eine starke Schrift und ein Hauch von Grün-Türkis für Kontraste und Akzente sorgen.
+              Dünne Schlagschatten und diffuse Räumlichkeit verleihen dem überwiegend weissen Raum Volumen, während eine starke Schrift und ein Hauch von Grün-Türkis für Kontraste und Akzente sorgen.
             </p>
           </div>
         </div>
@@ -519,7 +516,7 @@
     </section>
 
     <div class="pom-cta-container">
-      <a href="https://www.pom.ch/" target="_blank" class="cta cta--small pom-cta">Projekt online anschauen</a>
+      <a href="https://www.pom.ch/" target="_blank" class="cta cta--small pom-cta">Fertige Website anschauen</a>
     </div>
 
     <div class="project__credits">
