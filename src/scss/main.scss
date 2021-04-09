@@ -1442,6 +1442,7 @@ body {
     // @include hyphens();
     @include justify();
 
+    letter-spacing: -0.0025em;
     margin-top: var(--s-gutter);
 
     @include viewport('mobile') {
