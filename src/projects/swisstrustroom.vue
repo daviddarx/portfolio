@@ -20,14 +20,14 @@
       </div>
       <div class="project__col-right">
         <p class="project__lead">
-          Im Jahr 2017 führte Swisscom sein cloud-basiertes Hochsicher-heitsportal ein, zum Austausch vertraulicher Informationen.
+          Swisscom führt im Jahr 2017 ein cloud-basiertes Hochsicherheitsportal zum Austausch vertraulicher Informationen ein.
         </p>
         <div class="project__desc">
           <p>
-            Die SwissTrustRoom-Lösung wurde für Vorstandsmitglieder, Führungskräfte oder Projektmanager entwickelt und bietet ein optimales Management vertraulicher Gruppenaufgaben und strategischer Projekte.
+            Der SwissTrustRoom wurde für Vorstandsmitglieder, Führungskräfte oder Projektmanager entwickelt und bietet ein optimales Management vertraulicher Gruppenaufgaben und strategischer Projekte.
           </p>
           <p>
-            Eyekon wurde beauftragt, eine Micro-Site zu entwickeln, um das Produkt und seine verschiedenen Vorteile zu präsentieren.
+            Eyekon wurde beauftragt, eine Microsite zu entwickeln, um das Produkt und seine verschiedenen Vorteile zu präsentieren.
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@
           </h2>
           <div class="project__pick-desc pick-bw__desc">
             <p>
-              SwissTrustRoom ist sicher. Um Sicherheit als Kernbotschaft zu vermitteln, haben wir nach den ersten Untersuchungen eine Analogie mit einem Safe bevorzugt, für die Bildwelt und das Funktionieren des One-Pagers.
+              Um Sicherheit als Kernbotschaft zu vermitteln, haben wir uns nach den ersten Untersuchungen für eine Safe-Analogie entschieden.
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@
           </h2>
           <div class="project__pick-desc">
             <p >
-              Da ein Safe weder modern noch digital wirkt, wurde eine abstraktere und grafischere Variante entwickelt, um das Produkt als sicheren Raum in der Cloud zu präsentieren, in dem eine starke Identifizierung nötig ist.
+              Da ein Safe weder modern noch digital wirkt, wurde eine abstraktere und grafischere Variante entwickelt, um das Produkt als sicheren Raum in der Cloud zu präsentieren.
             </p>
           </div>
         </div>
@@ -175,7 +175,7 @@
         </h2>
         <div class="project__pick-desc project__col-right pick-sc__desc">
           <p>
-            Um die Erfahrung zu beleben und einen Überraschungseffekt hinzuzufügen, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
+            Um die Erfahrung zu beleben und einen Überraschungseffekt zu generieren, wurde die Analogie zum Safe für den Rahmen der Webseite verwendet und animiert, während der Benutzer die Seite scrollt.
           </p>
         </div>
       </div>
