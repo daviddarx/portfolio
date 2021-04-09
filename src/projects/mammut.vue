@@ -40,7 +40,7 @@
         </p>
         <div class="project__desc mam-desc">
           <p>
-            Das Hauptziel war es, die Produkte von Mammut attraktiv zu präsentieren und zum Direktverkauf anzubieten, während die umfangreichen Inhalte der Athleten und der Community sinnvoll  integriert wurden.
+            Das Hauptziel war es, die Produkte von Mammut attraktiv zu präsentieren und zum Direktverkauf anzubieten und gleichzeitig die umfangreichen Inhalte der Athleten und der Community sinnvoll zu integrieren.
           </p>
         </div>
       </div>
@@ -69,7 +69,7 @@
             </h2>
             <div class="project__pick-desc mam-adv__desc">
               <p>
-                Der User konnte diese Frage ganz oben auf der Startseite antworten und die Website stellte dann verwandte Produkte und Stories dar, die auf den fünf wichtigsten Outdoor-Sportaktivitäten basieren.
+                Die Frage, die User beim Website-Einstieg beantworten konnten, führte zu einer personalisierten Produkt- und Story-Ansicht, basierend auf den fünf wichtigsten Outdoor-Sportaktivitäten.
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@
 
       <div class="mam-adv__screen mam-adv__screen--02">
         <p class="mam-adv__legend">
-          Standardmäßig wurden handverlesene Inhalte aus allen Kategorien angezeigt:
+          Standardmässig wurden handverlesene Inhalte aus allen Kategorien angezeigt:
         </p>
         <div class="mam-adv__screen-container">
           <media-image
@@ -121,7 +121,7 @@
 
       <div class="mam-adv__screen mam-adv__screen--03">
         <p class="mam-adv__legend">
-          Um eine große Anzahl von Produktkategorien und Werbeaktionen zu verwalten, die in der Navigation angezeigt werden sollen, wurde eine Off-Canvas-Lösung gewählt:
+          Um eine grosse Anzahl von Produktkategorien und Werbeaktionen zu verwalten, die in der Navigation angezeigt werden sollen, wurde eine Off-Canvas-Lösung gewählt:
         </p>
         <div class="mam-adv__screen-container">
           <media-image
