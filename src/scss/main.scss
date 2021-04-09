@@ -1359,6 +1359,7 @@ body {
     line-height: var(--s-line-height-lead);
     margin-top: -0.4em;
     margin-bottom: 2.5em;
+    letter-spacing: -0.0025em;
 
     @include viewport('mobile-layout') {
       margin-bottom: 1.2em;
