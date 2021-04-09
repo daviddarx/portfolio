@@ -361,7 +361,7 @@
       </h2>
       <div class="project__credits-desc">
         <p>
-          BOSW 2019 – Mater Kandidat, Gold Technology, Silber Digital Commerce, Bronze Innovation<br>
+          BOSW 2019 – Master Kandidat, Gold Technology, Silber Digital Commerce, Bronze Innovation<br>
           dcom 2019 – Digital Commerce Award, 5. Rang
         </p>
       </div>
