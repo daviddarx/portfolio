@@ -20,11 +20,11 @@
       </div>
       <div class="project__col-right">
         <p class="project__lead">
-          Coop beauftragte Unic mit der Erstellung ihrer ersten Rezeptplattform, dem Vorfahren des aktuellen Foodby.
+          Coop beauftragte Unic mit der Erstellung ihrer ersten Rezeptplattform, dem Vorfahren von «Fooby».
         </p>
         <div class="project__desc">
           <p>
-            Die Plattform war mehr als nur eine Rezeptliste. Sie bot bereits erweiterte Funktionen, mit denen Benutzer beispielsweise ihre eigenen Kochbücher erstellen, ihre Rezepte mit Anmerkungen versehen oder ihre Einkaufslisten erstellen und bearbeiten können.
+            Die Plattform war mehr als nur eine Rezeptliste: Sie bot bereits erweiterte Funktionen, mit denen Benutzer beispielsweise ihre eigenen Kochbücher erstellen, ihre Rezepte mit Anmerkungen versehen oder ihre Einkaufslisten erstellen und bearbeiten können.
           </p>
         </div>
       </div>
