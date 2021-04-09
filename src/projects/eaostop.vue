@@ -40,10 +40,10 @@
         </p>
         <div class="project__desc eao-desc">
           <p>
-            Für ihren ersten Schritt in der digitalen Transformation ihrer Produkt-Beratung beauftragte EAO Eyekon und die Produktdaten-Spezialisten von <a href="https://www.intelliact.ch" target="_blank" class="text-link">Intelliact</a> mit der Erstellung eines digitalen Produkt-Konfigurators für die Not-Aus-Tasten der Marke.
+            Für die digitale Transformation der Produktberatung beauftragte EAO Eyekon und die Produktdaten-Spezialisten von <a href="https://www.intelliact.ch" target="_blank" class="text-link">Intelliact</a> mit der Erstellung eines digitalen 3D-Konfigurators für modulare Interfaces.
           </p>
           <p>
-            Letzteres ermöglicht dieser, über die Produkt -Auswahl und -Konfiguration hinaus die Hochwertigkeit von EAO in Bezug auf Design und Verarbeitung zu vermitteln.
+            Nicht zuletzt ermöglicht dieser, über die Konfiguration hinaus die Hochwertigkeit von EAO in Bezug auf Design und Verarbeitung zu vermitteln.
           </p>
         </div>
       </div>
@@ -107,20 +107,20 @@
       <div class="project__col-left eao-ps__right">
         <div class="project__pick">
           <h2 class="project__pick-title">
-            Zielgruppenspezifische Zugänge &amp; Produktenbühne
+            Zielgruppenspezifische Zugänge &amp; Produktbühne
           </h2>
           <div class="project__pick-desc eao-ps__desc">
             <p>
-              Der Konfigurator bietet einen differenzierten Ansatz, um  die beiden Hauptzielgruppen spezifisch anzusprechen, die während der Benutzer-recherche aufgetreten sind.
+              Der Konfigurator bietet einen differenzierten Ansatz, um die beiden eruierten Hauptzielgruppen spezifisch anzusprechen.
             </p>
             <p>
               Technisch versierte Ingenieure können direkt auf das gewünschte Produkt zugreifen, indem sie eine erweiterte Filterung basierend auf technischen Kriterien verwenden.
             </p>
             <p>
-	            Produktdesigner profitieren ihrerseits vom Schnellzugang zum passenden E-Stop über eine Bühne die acht Merkmale visuell inszeniert, wie beispielsweise Schaltleistung oder Witterungs-beständigkeit.
+              Produktdesigner profitieren ihrerseits vom Schnellzugang über eine Bühne, die acht wichtige Produkteigenschaften visuell inszeniert, beispielsweise Schaltleistung oder Witterungsbeständigkeit.
             </p>
             <p>
-	            Dieses Schaufenster ermöglicht es auch, das anerkannte Know-how von EAO für das Design und die Veredelung seiner Produkte hervorzuheben und die E-Commerce-Plattform in ein Markenerlebnis zu verwandeln.
+	            Dieser «Showroom» ermöglicht es auch, das USPs wie hochwertiges Design und die Veredelung der Produkte hervorzuheben und die E-Commerce-Plattform in ein durchgängiges Markenerlebnis zu verwandeln.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@
               Da die meisten Produkte aus mehreren austauschbaren Komponenten bestehen, sind sie auf verschiedenste Arten konfigurierbar.
             </p>
             <p>
-              Während Power-User alle verschiedenen Funktionen über die Seitenleiste einstellen können, wird weniger technisch versierten Benutzern eine visuellere Konfiguration für die Hauptfunktionen angeboten.
+              Während «Power-User» alle verschiedenen Eigenschaften über die Seitenleiste wählen können, wird weniger technisch versierten Benutzern eine visuellere Konfiguration direkt am Produkt angeboten.
             </p>
           </div>
         </div>
@@ -179,10 +179,10 @@
           </h2>
           <div class="project__pick-desc eao-ps__desc">
             <p>
-              Da die meisten Produkte aus mehreren austauschbaren Komponenten bestehen, sind sie auf verschiedenste Arten konfigurierbar.
+              Manchmal ist es schwierig, rein von den technischen Spezifikationen her auf die Verwendbarkeit eines Produkts zu schliessen. Aus diesem Grund wurden die «Experience Views» entwickelt.
             </p>
             <p>
-              Während Power-User alle verschiedenen Funktionen über die Seitenleiste einstellen können, wird weniger technisch versierten Benutzern eine visuellere Konfiguration für die Hauptfunktionen angeboten.
+              Sie betten die Produkte in einen für die Zielgruppen sinnvollen Kontext ein und machen sie so erlebbar: Positioniert auf einem Messraster, montiert auf einer Platte, ausgeleuchtet bei Dunkelheit.
             </p>
           </div>
         </div>
@@ -424,7 +424,7 @@
     </section>
 
     <div class="eao-cta-container">
-      <a href="https://digikey.eao.com/" target="_blank" class="cta cta--small eao-cta">Projekt online anschauen</a><br>
+      <a href="https://digikey.eao.com/" target="_blank" class="cta cta--small eao-cta">Fertige Website anschauen</a><br>
       <a href="https://www.eyekon.ch/projekte/eao-3d-konfigurator" target="_blank" class="text-link eao-doku">Ausführliche Dokumentation (eyekon.ch)</a>
     </div>
 
@@ -436,6 +436,17 @@
         <p>
           UX &amp; Wireframing, Erklärfilm – Marco Lüthi<br>
           3D Renderings – Giacomo Pedemonte &amp; Deny Fousek
+        </p>
+      </div>
+    </div>
+
+    <div class="project__credits eao-awards">
+      <h2 class="project__credits-title">
+        Awards
+      </h2>
+      <div class="project__credits-desc">
+        <p>
+          BOSW 2020 – Master Kandidat, Ergebnis im September 2021<br>
         </p>
       </div>
     </div>
@@ -963,6 +974,10 @@
   .eao-doku {
     font-size: var(--s-text-small);
     margin-top: 2em;
+  }
+
+  .eao-awards {
+    padding-top: calc(var(--s-gutter) * 0.5);
   }
 </style>
 
