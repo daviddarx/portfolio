@@ -27,14 +27,14 @@
       </div>
       <div class="project__col-right intro-flm__right">
         <p class="project__lead">
-          In 2019 hat sich die "Gesellschaft Landesmuseum Zürich" in "Freunde Landesmuseum Zürich" (FLM) umbenannt und damit einen neuen Look bekommen, zwischen Tradition und Modernität.
+          Mit der Neuorientierung der «Gesellschaft Landesmuseum Zürich» und der damit verbundenen Umbenennung in «Freunde Landesmuseum Zürich (FLM)» musste ein neuer Look her, der den Spagat zwischen Tradition und Modernität schafft.
         </p>
         <div class="project__desc">
           <p>
-            Die FLM unterstützen das Landes­museum Zürich. Sie ermöglichen den Erwerb von Museumsobjekten und fördern den kulturellen Auftrag des Museums: Sammeln, Erhalten und Ausstellen.
+            Die FLM unterstützen das Landes­museum Zürich als Gönnerverein. Sie ermöglichen den Erwerb von Museumsobjekten und fördern den kulturellen Auftrag des Museums: Sammeln, Erhalten und Ausstellen.
           </p>
           <p>
-            Eyekon begleitete den Verein während dieses Prozesses und war verantwortlich für die Schaffung einer neuen Identität und einer Mikro-Site, auf der der Verein, seine Ziele und Erfolge vorgestellt wurden, um neue Mitglieder zu gewinnen.
+            Eyekon begleitete den Verein während der Neuorientierung und war verantwortlich für die Schaffung einer neuen Identität und einer Microsite, auf der der Verein, seine Ziele und Erfolge vorgestellt wurden, um neue Mitglieder zu gewinnen.
           </p>
         </div>
       </div>
@@ -62,17 +62,14 @@
       >
         <div class="project__pick">
           <h2 class="project__pick-title">
-            Logo Recherche
+            Logo-Recherche
           </h2>
           <div class="project__pick-desc">
             <p>
-              Die neue Identität sollte idealerweise etwas mit dem Landesmuseum selbst zu tun haben.
+              Die neue Identität sollte idealerweise das Landesmuseum selbst miteinbeziehen – so wurde die ikonische Architektur des 2016 renovierten Museums zum Ausgangspunkt für die visuelle Ausarbeitung des neuen FLM-Logos.
             </p>
             <p>
-              Die ikonische Architektur des 2016 renovierten Museums war der erste Ausgangspunkt für die visuelle Recherche des neuen FLM Logos.
-            </p>
-            <p>
-	            Die Perspektiven und geometrischen Formen des Museums wurden auf realistische oder abstrakte Weise abgelehnt, um ein eigenes Icon zu erstellen.
+	            Die Geometrie des neuen Museumskomplexes wurde verschiedenen Perspektiven und verschiedenen Verfremdungsstufen unterzogen, um ein einzigartiges Icon zu erstellen.
             </p>
           </div>
         </div>
@@ -168,14 +165,11 @@
         <div class="project__col-right">
           <div class="project__pick">
             <h2 class="project__pick-title lf-re__title">
-              Look &amp; Feel Entwürfe
+              Look &amp; Feel
             </h2>
             <div class="project__pick-desc lf-re__desc">
               <p>
-                Parallel dazu wurden früh Skizzen von Look &amp; Feel für die verschiedenen Identitäten erstellt, um dem Kunden zu Beginn des Projekts einen Überblick über die verschiedenen Positionierungsmöglichkeiten zu geben.
-              </p>
-              <p>
-                Zwischen Tradition, Historie und Modernität, wo fühlen sich die Freunde des Landesmuseum am Besten zu Hause?
+                Parallel dazu wurden für die verschiedenen Identitäten früh Look&amp;Feel-Skizzen erarbeitet, um dem Kunden zu Beginn des Projekts einen Überblick über die verschiedenen Positionierungsmöglichkeiten zu geben: Wo fühlen sich die Freunde des Landesmuseum zu Hause zwischen Tradition, Historie und Modernität?
               </p>
             </div>
           </div>
@@ -233,10 +227,10 @@
             </h2>
             <div class="project__pick-desc">
               <p>
-                Um eine reifere Zielgruppe besser zu erreichen, haben wir uns für einen nüchterneren und raffinierteren Ansatz entschieden, der nur ein typografisches Logo enthält.
+                Um die vornehmlich ältere Zielgruppe anzusprechen, haben wir uns für einen nüchternen und raffinierten Ansatz entschieden, der nur ein typografisches Logo enthält.
               </p>
               <p>
-                Basierend auf einer moderneren Schrift, die Verwandschaft zum Landesmuseum wird durch den identischen typografischen Aufbau geschafft.
+                Basierend auf einer moderneren Schrift wird eine Verwandschaft zum Landesmuseum durch den identischen typografischen Logo-Aufbau hergestellt.
               </p>
             </div>
           </div>
@@ -293,13 +287,10 @@
           <div class="project__pick">
             <div class="project__pick-desc">
               <p>
-                Das renovierte Museum spielt mit Kontrasten und kombiniert verschiedenste Architekturstile, zwischen Mittelalter und Modernität.
+                Das Landesmuseum Museum spielt architektonisch mit Kontrasten. Um an diese Kontraste zu erinnern, behält die Identität der FLM die historische und traditionelle Schriftart des Museums, die American Typewriter.
               </p>
               <p>
-                Um an diese Kontraste zu erinnern, behält die Identität des FLM die historische und traditionellere Schriftart des Museums, die American Typewriter.
-              </p>
-              <p>
-                Das Ganze wird ergänzt mit geometrische Linien, die an den modernsten Teil des Gebäudes erinnern.
+                Abgerundet wird der Auftritt mit geometrischen Linien, die an den modernsten Teil des Gebäudes erinnern.
               </p>
             </div>
           </div>
@@ -479,7 +470,7 @@
     </section>
 
     <div class="flm-cta-container">
-      <a href="https://www.freunde-landesmuseum.ch/" target="_blank" class="cta cta--small flm-cta">Projekt online anschauen</a>
+      <a href="https://www.freunde-landesmuseum.ch/" target="_blank" class="cta cta--small flm-cta">Fertige Website anschauen</a>
     </div>
   </project>
 </template>
