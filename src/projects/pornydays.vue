@@ -61,14 +61,14 @@
       </div>
       <div class="project__col-right porny-intro__right">
         <p class="project__lead">
-          Porny Days ist ein Film Kunst Festival in Zürich. Durch Filme, Debatten, Performances &amp; Workshops steht das Festival für positive Sexualität und bietet eine Alternative zu Mainstream-Pornographie.
+          Porny Days ist ein Film- und Kunstfestival in Zürich. Auf dem Programm stehen Filmvorführungen, Debatten, Performances &amp; Workshops – mit dem Ziel, positive Sexualität zu thematisieren und eine Alternative zur Mainstream-Pornographie zu bieten.
         </p>
         <div class="project__desc">
           <p>
-            In Zusammenarbeit mit <a href="http://elastiq.ch/" target="_blank" class="text-link">David Aerne</a> und als persönliches Projekt haben wir dem Festival eine komplette Überarbeitung ihrer Website angeboten.
+            Der Neuauftritt der Prony Days entstand in Zusammenarbeit mit <a href="http://elastiq.ch/" target="_blank" class="text-link">David Aerne</a> als privates, ehrenamtliches Projekt.
           </p>
           <p>
-            Mit dem Hauptziel der Informationsreduzierung und einer vereinfachten Darstellung des gesamten Programms hatten wir Carte Blanche,  um die neue digitale visuelle Identität des Festivals zu definieren.
+            Als Dank für unser Entgegenkommen erhielten wir einen Freipass, um nebst dem Hauptziel der Informationsreduzierung und einer vereinfachten Programm-Darstellung die neue visuelle Identität des Festivals zu definieren.
           </p>
         </div>
       </div>
@@ -82,13 +82,13 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Erstellen einer Website mit einfacher Struktur und starker typografischer Komponente: so war unsere ursprüngliche Motivation für dieses Nebenprojekt.
+              Unsere ursprüngliche Motivation für dieses Nebenprojekt: Erstellen einer Website mit einfacher Struktur und starker typografischer Komponente.
             </p>
             <p>
-              Das schlichte und monochrome Layout unterstreicht die verwendete Schriftart, eine kontrastierende, verspielte und elegante Sans-Serif.
+              Das schlichte und monochrome Layout unterstreicht die verwendete Schriftart, eine kontrastierende, verspielte und doch elegante Sans-Serif.
             </p>
             <p>
-              Um die berühmte « Porny Touch » des verspieltes Festivals zu vermitteln haben wir dazu generatives Creative Coding beigefügt, um den Hintergrund der Website zu beleben und eine abstrakte Bildwelt zu erstellen, die elegant und dennoch explizit ist.
+              Um den berühmten «Porny Touch » des verspielten Festivals zu vermitteln, wurde generatives Creative Coding verwendet – was den Website-Hintergrund belebt und eine abstrakte Bildwelt erschafft, die elegant und dennoch explizit ist.
             </p>
           </div>
         </div>
@@ -189,10 +189,10 @@
             </h2>
             <div class="project__pick-desc">
               <p>
-                Um einen Überblick über alles zu geben, was das Festival zu bieten hat, haben wir das Programm zum Hauptelement der Website gemacht, das vollständig direkt auf der Startseite präsentiert wird.
+                Um den Festival-Aspekt hervorzuheben und einen schnellen Überblick zu ermöglichen, wurde das Programm zum Hauptelement der Website erkoren, vollständig zugänglich direkt auf der Startseite.
               </p>
               <p>
-                Nach Event-Typ filterbar, das Programm erlaubt dem Benutzer durch das gesamte Angebot chronologisch und ohne Seitenwechsel zu gehen.
+                Mithilfe eines Filters können User das gesamte Angebot chronologisch und ohne Seitenwechsel kennenlernen.
               </p>
             </div>
           </div>
@@ -220,10 +220,10 @@
           </h2>
           <div class="project__pick-desc">
             <p>
-              Das Porny-Team ist schelmisch und nimmt sich nie zu ernst. So zum Beispiel das Slogan des Festival: « If you come, you will come again. »
+              Das Porny-Team zeichnet sich dadurch aus, dass es frech kommuniziert und sich dabei nie zu ernst nimmt. Widerspiegelt wird das zum Beispiel im Slogan des Festivals: « If you come, you will come again.»
             </p>
             <p>
-              Um dies über die Bilder hinaus zu vermitteln, haben wir einen Redakteur beauftragt, bestimmten Schlüsselbereichen der Website einige suggestive Augenzwingkern hinzuzufügen.
+              Um diese Aspekte über die Bilder hinaus zu vermitteln, haben wir einen Redakteur beauftragt, bestimmten Schlüsselbereichen der Website ein suggestives Augenzwingkern zu verleihen.
             </p>
           </div>
         </div>
@@ -463,14 +463,14 @@
       <div class="porny-2020__desc">
         <div class="project__pick">
           <h2 class="project__pick-title">
-            2020 Ausgabe
+            Ausgabe 2020
           </h2>
           <div class="project__pick-desc">
             <p>
-              Wir freuen uns jetzt darauf, die Bildwelt jedes Jahr zu aktualisieren und das Layout und die Funktionalität gezielt zu verbessern.
+              Die Bildwelt des Festivals wird jedes Jahr aktualisiert und Layout/Funktionalität werden gezielt verbessert.
             </p>
             <p>
-              Für die 2020 Edition haben wir eine Reihe erotischer und interaktiver Kaleidoskope erstellt, um in einer ähnlichen Bildsprache zu bleiben: abstrakt, suggestiv und fleischig.
+              Für die 2020 Edition haben wir eine Reihe erotischer und interaktiver Kaleidoskope erstellt, um in einer passenden Bildsprache zu bleiben: abstrakt, suggestiv und…fleischig.
             </p>
           </div>
         </div>
@@ -561,8 +561,8 @@
     </section>
 
     <div class="porny-cta-container">
-      <a href="https://archive-2019.pornydays.love/" target="_blank" class="cta cta--small porny-cta">2019 Ausgabe</a>
-      <a href="https://www.pornydays.love/" target="_blank" class="cta cta--small porny-cta">2020 Ausgabe</a>
+      <a href="https://archive-2019.pornydays.love/" target="_blank" class="cta cta--small porny-cta">Ausgabe 2019</a>
+      <a href="https://www.pornydays.love/" target="_blank" class="cta cta--small porny-cta">Ausgabe 2020</a>
     </div>
 
     <div class="project__credits">
