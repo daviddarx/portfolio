@@ -100,8 +100,11 @@
         this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         this.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-        this.stageW = this.$refs.stage.$el.offsetWidth;
-        this.stageH = this.$refs.stage.$el.offsetHeight;
+        if (this.$refs.stage.$el) {
+          this.stageW = this.$refs.stage.$el.offsetWidth;
+          this.stageH = this.$refs.stage.$el.offsetHeight;
+        }
+
         this.stageRatio = this.stageW / this.stageH;
 
         if (this.stageRatio > this.videoRatio) {
