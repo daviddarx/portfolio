@@ -75,7 +75,6 @@
           <media-image
             v-bind:url="this.mediasPath+'logo/pom_logo_01.svg'"
             v-bind:title="'Logo Recherche'"
-            v-bind:hdRatio="2"
             v-bind:autoLoad="false"
             v-on:loaded="this.loadNextImage"
             ref="logo1"
