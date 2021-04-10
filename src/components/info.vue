@@ -41,7 +41,7 @@
         </div>
 
         <div class="info__cv">
-          <a href="https://files.daviddarx.com/works/static/info/daviddarx_cv_2021.pdf" target="_blank" class="cta cta--small">CV herunterladen</a>
+          <a href="https://files.daviddarx.com/works/static/info/david_darx_cv_2021.pdf" target="_blank" class="cta cta--small">CV herunterladen</a>
         </div>
 
         <h2
