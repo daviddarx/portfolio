@@ -100,7 +100,7 @@
         this.windowW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         this.windowH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-        if (this.$refs.stage.$el) {
+        if (this.$refs.stage) {
           this.stageW = this.$refs.stage.$el.offsetWidth;
           this.stageH = this.$refs.stage.$el.offsetHeight;
         }
