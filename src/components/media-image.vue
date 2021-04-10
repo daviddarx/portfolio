@@ -163,15 +163,17 @@
         this.scaleDezoomed = this.$refs.image.offsetWidth / this.imageNaturalWidthComputed * this.hdRatioReversed;
       },
       checkIfZoomable: function () {
-        if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidthComputed && window.windowW >= this.responsiveStepToDeactiveZooming) {
-          if (window.devicePixelRatio > 1 && this.imageNaturalWidthComputed / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
-            this.isZoomable = false;
+        if (this.$refs.image) {
+          if(this.zoomable == true && this.$refs.image.offsetWidth < this.imageNaturalWidthComputed && window.windowW >= this.responsiveStepToDeactiveZooming) {
+            if (window.devicePixelRatio > 1 && this.imageNaturalWidthComputed / this.$refs.image.offsetWidth < this.minimalRatioToZoomImageOnRetina) {
+              this.isZoomable = false;
+            } else {
+              this.isZoomable = true;
+              this.getScaleDezoomed();
+            }
           } else {
-            this.isZoomable = true;
-            this.getScaleDezoomed();
+            this.isZoomable = false;
           }
-        } else {
-          this.isZoomable = false;
         }
       },
       checkIfZoomedImageTooWide: function () {
