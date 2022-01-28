@@ -1137,12 +1137,25 @@ body {
       transition: transform var(--e-inout) 0.25s;
     }
 
+    &::before {
+      body.windows.chrome &, 
+      body.windows.firefox & {
+        top: calc(var(--s-padding) + 0.1em);
+        bottom: calc(var(--s-padding) + 0.05em);
+      }
+    }
+
     &::after {
       left: 0;
       right: 0;
       top: 0.95em;
       bottom: auto;
       height: var(--s-lines);
+
+      body.windows.chrome &, 
+      body.windows.firefox & {
+        top: 1.1em;
+      }
     }
 
     @include hover() {
@@ -1762,12 +1775,19 @@ body {
 
 .projects {
   --d-opacity: 0.35s;
+  --top-dash: 0.3em;
+  --top-dash-windows: 0.45em;
 
   overflow: hidden;
 
   &__title {
     .dash {
-      --s-top: 0.3em;
+      --s-top: var(--top-dash);
+
+      body.windows.chrome &, 
+      body.windows.firefox & {
+        --s-top: var(--top-dash-windows);
+      }
     }
 
     @include viewport('mobile-layout') {
@@ -1786,7 +1806,12 @@ body {
     }
 
     .dash {
-      --s-top: 0.3em;
+      --s-top: var(--top-dash);
+
+      body.windows.chrome &, 
+      body.windows.firefox & {
+        --s-top: var(--top-dash-windows);
+      }
     }
   }
 

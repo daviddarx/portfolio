@@ -45,6 +45,12 @@
 
       const b = browser();
 
+      document.body.classList.add(b.name);
+
+      if (b.os == 'Windows 10' || b.os == 'Windows 11') {
+        document.body.classList.add('windows');
+      }
+
       if (b.name == 'ie') {
         this.isWarningDisplayed = true;
       }
